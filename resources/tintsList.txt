@@ -1,0 +1,6 @@
+0 - Legal
+1 - Illegal
+2 - Illegal
+3 - Legal
+4 - Legal
+5 - Legal

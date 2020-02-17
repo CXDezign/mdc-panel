@@ -1,0 +1,28 @@
+N/A
+[PD] Police Officer I
+[PD] Police Officer II
+[PD] Police Officer III
+[PD] Police Officer III+1
+[PD] Detective I
+[PD] Detective II
+[PD] Detective III
+[PD] Sergeant I
+[PD] Sergeant II
+[PD] Lieutenant I
+[PD] Lieutenant II
+[PD] Captain
+[PD] Commander
+[PD] Deputy Chief of Police
+[PD] Assistant Chief of Police
+[PD] Chief of Police
+[PD] Forensic Analyst
+[PD] Crime Scene Investigator
+[SD] Deputy Sheriff
+[SD] Sergeant
+[SD] Lieutenant
+[SD] Captain
+[SD] Area Commander
+[SD] Division Chief
+[SD] Assistant Sheriff
+[SD] Undersheriff
+[SD] Sheriff

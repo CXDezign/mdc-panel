@@ -1,0 +1,4 @@
+Melee
+Narcotics
+Weapons
+Other
