@@ -56,6 +56,14 @@
 				navigation();
 				include("./templates/tdPatrolReportResults.php");
 				break;
+			case 'arrestCharges':
+				navigation();
+				include("./templates/arrestChargesForm.php");
+				break;
+			case 'arrestReport':
+				navigation();
+				include("./templates/arrestReportForm.php");
+				break;
 		}
 	} else {
 		homePage();

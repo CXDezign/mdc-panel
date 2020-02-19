@@ -5,10 +5,12 @@
 	require 'models/trafficReport.php';
 	require 'models/evidenceLog.php';
 	require 'models/trafficPatrol.php';
+	require 'models/arrestReport.php';
 	$g = new General();
 	$tr = new TrafficReport();
 	$el = new EvidenceLog();
 	$tp = new TrafficPatrol();
+	$ar = new ArrestReport();
 
 ?>
 <!DOCTYPE html>

@@ -15,6 +15,14 @@ class General {
 		$time = date("H:i", $unix);
 		return $time;
 	}
+	
+	public function getTimeArrest() {
+
+		$unix = time();
+		$time = date("H:i", $unix);
+		$arrestTime = date("H:i", strtotime("-30 minutes", strtotime($time)));
+		return $arrestTime;
+	}
 
 	public function cookieTrafficReport() {
 

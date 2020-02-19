@@ -1,0 +1,522 @@
+{
+  "1": {
+  	"id": "101",
+    "charge": "Domestic Terrorism",
+    "type": "F",
+    "classes": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "time": {
+      "days": "20",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "2": {
+  	"id": "102",
+    "charge": "Tax Evasion",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "2",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "2500",
+      "2": "3000",
+      "3": "5000"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "3": {
+  	"id": "103",
+    "charge": "Voter Fraud / Voter Pandering",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "2",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "4": {
+ 	"id": "104",
+    "charge": "Corruption of Public Office",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "4",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "5": {
+  	"id": "105",
+    "charge": "Incitement To Riot",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "3",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "6": {
+  	"id": "106",
+    "charge": "Unlawful Assembly",
+    "type": "M",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "3",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "7": {
+  	"id": "107",
+    "charge": "Neglect of Public Duty",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "time": {
+      "days": "3",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "8": {
+  	"id": "108",
+    "charge": "Bribery of a Public Official",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "3",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "9": {
+  	"id": "109",
+    "charge": "Tampering with Evidence",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "3",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "10": {
+  	"id": "110",
+    "charge": "Witness Intimidation",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "time": {
+      "days": "2",
+      "hours": "0",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "11": {
+  	"id": "111",
+    "charge": "Contempt of Court",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "4",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "12": {
+  	"id": "112",
+    "charge": "Perjury",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "4",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "13": {
+  	"id": "113",
+    "charge": "Obstruction of Public Duty",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "6",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "14": {
+  	"id": "114",
+    "charge": "Misuse of an Emergency Hotline",
+    "type": "M",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "0",
+      "min": "20"
+    },
+    "fine": {
+      "1": "5000",
+      "2": "5000",
+      "3": "5000"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "15": {
+  	"id": "115",
+    "charge": "Resisting Arrest",
+    "type": "M",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "6",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "16": {
+  	"id": "116",
+    "charge": "Impersonation of a Individual/Government Official",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "1",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "17": {
+  	"id": "117",
+    "charge": "Corruption of Public Office",
+    "type": "M",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "0",
+      "min": "30"
+    },
+    "fine": {
+      "1": "5000",
+      "2": "5000",
+      "3": "5000"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "18": {
+  	"id": "118",
+    "charge": "Subpoena Violation / Failure to Abide by State Orders",
+    "type": "M",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "0",
+      "min": "30"
+    },
+    "fine": {
+      "1": "2000",
+      "2": "2000",
+      "3": "2000"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "19": {
+  	"id": "119",
+    "charge": "Assault & Battery on a Government Worker",
+    "type": "F",
+    "classes": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "time": {
+      "days": "0",
+      "hours": "6",
+      "min": "0"
+    },
+    "fine": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "impound": {
+      "1": "0",
+      "2": "0",
+      "3": "0"
+    },
+    "suspension": "0"
+  },
+  "20": {
+  	"id": "120",
+    "charge": "Evading a Peace Officer",
+    "type": "F",
+    "classes": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "time": {
+      "days": "0",
+      "hours": "1",
+      "min": "0"
+    },
+    "fine": {
+      "1": "5000",
+      "2": "10000",
+      "3": "20000"
+    },
+    "impound": {
+      "1": "1",
+      "2": "3",
+      "3": "6"
+    },
+    "suspension": "7"
+  }
+}
