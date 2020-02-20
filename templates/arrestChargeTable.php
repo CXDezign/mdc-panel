@@ -32,7 +32,7 @@
 			 
 			 $impound[] = $charge['impound'][$offence];
 			 
-			 $suspension[] = $charge['suspension'];
+			 $suspension[] = $charge['suspension'][$offence];
 			 
 			$x++;
 		  }  
