@@ -83,6 +83,16 @@ class General {
 		}
 
 	}
+	
+	public function cookieArrestReport() {
+
+		if (isset($_SESSION['arrestReport'])) {
+			return $_SESSION['arrestReport'];
+		} else {
+			return "";
+		}
+
+	}
 
 	public function cookieCallSign() {
 

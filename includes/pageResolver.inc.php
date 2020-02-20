@@ -64,6 +64,10 @@
 				navigation();
 				include("./templates/arrestReportForm.php");
 				break;
+			case 'arrestReportResults':
+				navigation();
+				include ("./templates/arrestReportResults.php");
+				break; 
 		}
 	} else {
 		homePage();

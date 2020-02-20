@@ -215,17 +215,17 @@ The defendant was found to be X."
 				name="inputEvidence"
 				rows="4"
 				placeholder="Any evidence in conjunction with the arrest."
-				required></textarea>
-				<small id="helpDashcam" class="form-text text-muted">Enter any evidence which will support the arrest ((Shadowplay included)) <strong>Essential if suspect pleads no contest or not guilty</strong></small>
+				></textarea>
+				<small id="helpDashcam" class="form-text text-muted">Enter any evidence which will support the arrest ((Streamable included)) <strong>Essential if suspect pleads no contest or not guilty</strong></small>
 			</div>
 			<div class="form-group col-6">
-				<label>Dashboard Camera</label>
+				<label>OPTIONAL: Dashboard Camera</label>
 				<textarea
 				class="form-control"
 				id="inputDashcam"
 				name="inputDashcam"
 				rows="4"
-				placeholder="The dashboard camera would show..."></textarea>
+				placeholder="Start with: Dashcam footage shows ((Only fill this section in with roleplay dashcam if needed, Streamables must go in evidence section))"></textarea>
 				<small id="helpDashcam" class="form-text text-muted">(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <b style="color: darkred;">Lying in this section will lead to punishments</b>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</small>
 			</div>
 		</div>
@@ -246,7 +246,6 @@ The defendant was found to be X."
 					name="inputWristband"
 					placeholder="Red / Blue or Yellow"
 					list="wristband_list"
-					required
 					data-placement="bottom" title="Inmates Wristband">
 					<datalist id="wristband_list">
 					<?php
@@ -273,7 +272,6 @@ The defendant was found to be X."
 					name="inputBracelet"
 					placeholder="White or Orange"
 					list="bracelet_list"
-					required
 					data-placement="bottom" title="Inmates Bracelet">
 					<datalist id="bracelet_list">
 					<?php

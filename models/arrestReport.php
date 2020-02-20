@@ -88,6 +88,35 @@ class ArrestReport {
 			$pleaCount++;
 		}
 	}
+
+	public function getPlea($input) {
+		switch ($input) {
+			case 'Guilty':
+				return 'PLEADS <b>GUILTY</b>';
+				break;
+			case 'Not Guilty':
+				return 'PLEADS <b>NOT GUILTY</b>';
+				break;
+			case 'No Contest':
+				return 'PLEADS <b>NO CONTEST</b>';
+				break;
+			}
+		}
+
+	
+	public function getDashboardCamera($input,$callsign) {
+
+		switch ($input) {
+			case '':
+				return '<b style="color: #9944dd;">* The dashboard camera footage of '.$callsign.' supports the above narrative. *</b>';
+				break;
+			default:
+				return '<b style="color: #9944dd;">* '.$input.' *</b>';
+				break;
+		}
+	}
+
+		
 	
 }
 
