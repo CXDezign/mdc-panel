@@ -24,9 +24,18 @@
 			 $chargeName[] =  $charge['type'].$class.' '.$chargeNum.'. '.$charge['charge'];
 			 $type[] = $charge['type'];
 			 
-			 $days[] = $charge['time']['days'];
-			 $hours[] = $charge['time']['hours'];
-			 $mins[] = $charge['time']['min'];
+			 if($chargeID == '69')
+			 {
+			 	$days[] = $charge['time'][$offence]['days'];
+			 	$hours[] = $charge['time'][$offence]['hours'];
+			 	$mins[] = $charge['time'][$offence]['min'];
+			 } else {
+			 	$days[] = $charge['time']['days'];
+			 	$hours[] = $charge['time']['hours'];
+			 	$mins[] = $charge['time']['min'];
+			 }
+			 
+			 
 			 
 			 $fine[] = $charge['fine'][$offence];
 			 

@@ -52,6 +52,11 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="container mt-2 text-center">
+			<a class="btn btn-info px-5" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/" role="button"><i class="fas fa-archive fa-fw"></i> Open Penal Code</a>
+		</div>
+		
 		<div class="container my-5 text-center">
 		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-plus-square fa-fw"></i>Calculate Arrest</button>
 	</div>

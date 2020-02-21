@@ -579,8 +579,8 @@
       "C": true
     },
     "time": {
-      "days": "0",
-      "hours": "1",
+      "days": "1",
+      "hours": "0",
       "min": "0"
     },
     "fine": {
@@ -1801,12 +1801,12 @@
   },
   "61": {
   	"id": "404",
-    "charge": "",
-    "type": "",
+    "charge": "Speeding",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -1814,29 +1814,29 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "2500",
+      "2": "5000",
+      "3": "7500"
     },
     "impound": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "1"
     },
     "suspension": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "3"
     }
   },
   "62": {
   	"id": "405",
-    "charge": "",
-    "type": "",
+    "charge": "Failure to Yield to a Traffic Control Device",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -1844,29 +1844,32 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "2500",
+      "3": "5000",
+      "4": "5000"
     },
     "impound": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "0",
+      "4": "0"
     },
     "suspension": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "0",
+      "4": "3"
     }
   },
   "63": {
   	"id": "406",
-    "charge": "",
-    "type": "",
+    "charge": "Illegal Parking",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -1879,9 +1882,9 @@
       "3": "0"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -1891,52 +1894,52 @@
   },
   "64": {
   	"id": "407",
-    "charge": "",
-    "type": "",
+    "charge": "Reckless Driving",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "1",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "2500",
+      "2": "5000",
+      "3": "15000"
     },
     "impound": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "1"
     },
     "suspension": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "7"
     }
   },
   "65": {
   	"id": "408",
-    "charge": "",
-    "type": "",
+    "charge": "Vehicular Noise Violation",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "20"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "1000",
+      "3": "1000"
     },
     "impound": {
       "1": "0",
@@ -1951,12 +1954,12 @@
   },
   "66": {
   	"id": "409",
-    "charge": "",
-    "type": "",
+    "charge": "Negligent Operation of a Vehicle",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -1964,29 +1967,29 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "2500",
+      "2": "5000",
+      "3": "7500"
     },
     "impound": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "1"
     },
     "suspension": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "3"
     }
   },
   "67": {
   	"id": "410",
-    "charge": "",
-    "type": "",
+    "charge": "Illegal Usage of Hydraulics",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -1994,9 +1997,9 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "2500",
+      "2": "2500",
+      "3": "2500"
     },
     "impound": {
       "1": "0",
@@ -2011,12 +2014,12 @@
   },
   "68": {
   	"id": "411",
-    "charge": "",
-    "type": "",
+    "charge": "Tinted Windows",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2024,14 +2027,14 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "2500",
+      "3": "5000"
     },
     "impound": {
       "1": "0",
       "2": "0",
-      "3": "0"
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -2041,22 +2044,34 @@
   },
   "69": {
   	"id": "412",
-    "charge": "",
-    "type": "",
+    "charge": "Driving under the Influence of Alcohol or Narcotics [DUI]",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
-      "hours": "0",
-      "min": "0"
+      "1": {
+      	"days": "0",
+      	"hours": "3",
+      	"min": "0"
+      },
+      "2": {
+      	"days": "0",
+      	"hours": "6",
+      	"min": "0"
+      },
+      "3": {
+      	"days": "1",
+      	"hours": "0",
+      	"min": "0"
+      }
     },
     "fine": {
       "1": "0",
-      "2": "0",
-      "3": "0"
+      "2": "7500",
+      "3": "12000"
     },
     "impound": {
       "1": "0",
@@ -2064,34 +2079,34 @@
       "3": "0"
     },
     "suspension": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "3",
+      "2": "7",
+      "3": "1"
     }
   },
   "70": {
   	"id": "413",
-    "charge": "",
-    "type": "",
+    "charge": "Motor Vehicle Contest",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "45"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "5000",
+      "2": "5000",
+      "3": "5000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -2101,27 +2116,27 @@
   },
   "71": {
   	"id": "414",
-    "charge": "",
-    "type": "",
+    "charge": "Vehicular Endangerment",
+    "type": "F",
     "classes": {
       "A": false,
-      "B": false,
-      "C": false
+      "B": true,
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "2",
       "hours": "0",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "10000",
+      "2": "10000",
+      "3": "10000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -2131,27 +2146,27 @@
   },
   "72": {
   	"id": "415",
-    "charge": "",
-    "type": "",
+    "charge": "Driving Without a Valid License",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "30"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "2500",
+      "2": "2500",
+      "3": "2500"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -2161,12 +2176,12 @@
   },
   "73": {
   	"id": "416",
-    "charge": "",
-    "type": "",
+    "charge": "Jaywalking",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2174,9 +2189,9 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1500",
+      "2": "1500",
+      "3": "1500"
     },
     "impound": {
       "1": "0",
@@ -2191,12 +2206,12 @@
   },
   "74": {
   	"id": "417",
-    "charge": "",
-    "type": "",
+    "charge": "Possession of Open Container",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2204,9 +2219,9 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "1000",
+      "3": "1000"
     },
     "impound": {
       "1": "0",
@@ -2221,12 +2236,12 @@
   },
   "75": {
   	"id": "418",
-    "charge": "",
-    "type": "",
+    "charge": "Failure to Wear a Seatbelt/Safety Equipment",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2234,9 +2249,9 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "1000",
+      "3": "1000"
     },
     "impound": {
       "1": "0",
@@ -2251,12 +2266,12 @@
   },
   "76": {
   	"id": "419",
-    "charge": "",
-    "type": "",
+    "charge": "Operation of a Unsafe Motor Vehicle",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2264,14 +2279,14 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "5000",
+      "2": "5000",
+      "3": "5000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -2281,12 +2296,12 @@
   },
   "77": {
   	"id": "420",
-    "charge": "",
-    "type": "",
+    "charge": "Vehicle Registration Violation",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2294,44 +2309,44 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "5000",
+      "2": "5000",
+      "3": "5000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "7",
+      "2": "7",
+      "3": "7"
     }
   },
   "78": {
   	"id": "421",
-    "charge": "",
-    "type": "",
+    "charge": "Operating an Aircraft Without A License",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "2",
       "hours": "0",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "25000",
+      "2": "25000",
+      "3": "25000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
       "1": "0",
@@ -2341,8 +2356,8 @@
   },
   "79": {
   	"id": "422",
-    "charge": "",
-    "type": "",
+    "charge": "Reckless Operation Of An Aircraft",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
@@ -2350,43 +2365,43 @@
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "2",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "50000",
+      "2": "50000",
+      "3": "50000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     },
     "suspension": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1",
+      "2": "1",
+      "3": "1"
     }
   },
   "80": {
   	"id": "423",
-    "charge": "",
-    "type": "",
+    "charge": "Failure To Adhere To ATC",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "30"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "50000",
+      "2": "50000",
+      "3": "50000"
     },
     "impound": {
       "1": "0",
@@ -2401,27 +2416,27 @@
   },
   "81": {
   	"id": "424",
-    "charge": "",
-    "type": "",
+    "charge": "Aerial Evasion",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "2",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "100000",
+      "2": "100000",
+      "3": "100000"
     },
     "impound": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "99",
+      "2": "99",
+      "3": "99"
     },
     "suspension": {
       "1": "0",
@@ -2431,17 +2446,17 @@
   },
   "82": {
   	"id": "501",
-    "charge": "",
-    "type": "",
+    "charge": " Indecent Exposure",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "45"
     },
     "fine": {
       "1": "0",
@@ -2461,17 +2476,17 @@
   },
   "83": {
   	"id": "502",
-    "charge": "",
-    "type": "",
+    "charge": "Lewd or Dissolute Conduct in Public",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "45"
     },
     "fine": {
       "1": "0",
@@ -2491,16 +2506,16 @@
   },
   "84": {
   	"id": "503",
-    "charge": "",
-    "type": "",
+    "charge": "Prostitution",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "8",
       "min": "0"
     },
     "fine": {
@@ -2521,15 +2536,15 @@
   },
   "85": {
   	"id": "504",
-    "charge": "",
-    "type": "",
+    "charge": "Pandering/Pimping",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "2",
       "hours": "0",
       "min": "0"
     },
@@ -2551,15 +2566,15 @@
   },
   "86": {
   	"id": "505",
-    "charge": "",
-    "type": "",
+    "charge": "Manufacturing A Controlled Substance",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "6",
       "hours": "0",
       "min": "0"
     },
@@ -2581,22 +2596,22 @@
   },
   "87": {
   	"id": "506",
-    "charge": "",
-    "type": "",
+    "charge": "Possession Of A Controlled Substance",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "20"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "500",
+      "2": "500",
+      "3": "500"
     },
     "impound": {
       "1": "0",
@@ -2611,22 +2626,22 @@
   },
   "88": {
   	"id": "507",
-    "charge": "",
-    "type": "",
+    "charge": "Possession Of A Controlled Substance with Intent to Distribute",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "2",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "1000",
+      "3": "1000"
     },
     "impound": {
       "1": "0",
@@ -2641,22 +2656,22 @@
   },
   "89": {
   	"id": "508",
-    "charge": "",
-    "type": "",
+    "charge": "Drug Smuggling",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "2",
       "hours": "0",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "10000",
+      "2": "10000",
+      "3": "10000"
     },
     "impound": {
       "1": "0",
@@ -2671,22 +2686,22 @@
   },
   "90": {
   	"id": "509",
-    "charge": "",
-    "type": "",
+    "charge": "Drug Trafficking",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "6",
       "hours": "0",
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "40000",
+      "2": "40000",
+      "3": "40000"
     },
     "impound": {
       "1": "0",
@@ -2701,16 +2716,16 @@
   },
   "91": {
   	"id": "510",
-    "charge": "",
-    "type": "",
+    "charge": "Facial Obstruction",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "1",
       "min": "0"
     },
     "fine": {
@@ -2731,15 +2746,15 @@
   },
   "92": {
   	"id": "511",
-    "charge": "",
-    "type": "",
+    "charge": "Animal Abuse / Cruelty",
+    "type": "F",
     "classes": {
       "A": false,
-      "B": false,
+      "B": true,
       "C": false
     },
     "time": {
-      "days": "0",
+      "days": "3",
       "hours": "0",
       "min": "0"
     },
@@ -2761,15 +2776,15 @@
   },
   "93": {
   	"id": "512",
-    "charge": "",
-    "type": "",
+    "charge": "Child Abuse / Endangerment",
+    "type": "F",
     "classes": {
-      "A": false,
-      "B": false,
+      "A": true,
+      "B": true,
       "C": false
     },
     "time": {
-      "days": "0",
+      "days": "3",
       "hours": "0",
       "min": "0"
     },
@@ -2791,17 +2806,17 @@
   },
   "94": {
   	"id": "513",
-    "charge": "",
-    "type": "",
+    "charge": "Sale of Alcohol / Tobacco to a Minor",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "30"
     },
     "fine": {
       "1": "0",
@@ -2821,17 +2836,17 @@
   },
   "95": {
   	"id": "514",
-    "charge": "",
-    "type": "",
+    "charge": "Minor Alcohol / Tobacco Violation",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "30"
     },
     "fine": {
       "1": "0",
@@ -2851,12 +2866,12 @@
   },
   "96": {
   	"id": "515",
-    "charge": "",
-    "type": "",
+    "charge": "Fire Code Violation",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2864,9 +2879,9 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "3000",
+      "2": "3000",
+      "3": "3000"
     },
     "impound": {
       "1": "0",
@@ -2881,12 +2896,12 @@
   },
   "97": {
   	"id": "516",
-    "charge": "",
-    "type": "",
+    "charge": "Littering",
+    "type": "I",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
@@ -2894,9 +2909,9 @@
       "min": "0"
     },
     "fine": {
-      "1": "0",
-      "2": "0",
-      "3": "0"
+      "1": "1000",
+      "2": "1000",
+      "3": "1000"
     },
     "impound": {
       "1": "0",
@@ -2911,15 +2926,15 @@
   },
   "98": {
   	"id": "517",
-    "charge": "",
-    "type": "",
+    "charge": "Child Neglect",
+    "type": "M",
     "classes": {
-      "A": false,
-      "B": false,
+      "A": true,
+      "B": true,
       "C": false
     },
     "time": {
-      "days": "0",
+      "days": "1",
       "hours": "0",
       "min": "0"
     },
@@ -2941,17 +2956,17 @@
   },
   "99": {
   	"id": "518",
-    "charge": "",
-    "type": "",
+    "charge": "Disturbing the Peace",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "30"
     },
     "fine": {
       "1": "0",
@@ -2971,15 +2986,15 @@
   },
   "100": {
   	"id": "601",
-    "charge": "",
-    "type": "",
+    "charge": "Discharging A Firearm From A Motor Vehicle",
+    "type": "F",
     "classes": {
-      "A": false,
-      "B": false,
-      "C": false
+      "A": true,
+      "B": true,
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "1",
       "hours": "0",
       "min": "0"
     },
@@ -3001,16 +3016,16 @@
   },
   "101": {
   	"id": "602",
-    "charge": "",
-    "type": "",
+    "charge": "Carrying an Unlicensed Firearm",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
-      "hours": "0",
+      "hours": "3",
       "min": "0"
     },
     "fine": {
@@ -3031,15 +3046,15 @@
   },
   "102": {
   	"id": "603",
-    "charge": "",
-    "type": "",
+    "charge": "Possession Of A Prohibited Firearm or Explosive Device",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "2",
       "hours": "0",
       "min": "0"
     },
@@ -3061,15 +3076,15 @@
   },
   "103": {
   	"id": "604",
-    "charge": "",
-    "type": "",
+    "charge": "Unlicensed Sale of Firearms/Explosives",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "2",
       "hours": "0",
       "min": "0"
     },
@@ -3091,15 +3106,15 @@
   },
   "104": {
   	"id": "605",
-    "charge": "",
-    "type": "",
+    "charge": "Brandishing a Firearm",
+    "type": "F",
     "classes": {
       "A": false,
-      "B": false,
-      "C": false
+      "B": true,
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "1",
       "hours": "0",
       "min": "0"
     },
@@ -3121,15 +3136,15 @@
   },
   "105": {
   	"id": "606",
-    "charge": "",
-    "type": "",
+    "charge": "Discharging a Firearm in Public",
+    "type": "F",
     "classes": {
-      "A": false,
-      "B": false,
-      "C": false
+      "A": true,
+      "B": true,
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "1",
       "hours": "0",
       "min": "0"
     },
@@ -3151,17 +3166,17 @@
   },
   "106": {
   	"id": "607",
-    "charge": "",
-    "type": "",
+    "charge": "SHAFT Code Violation",
+    "type": "M",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
       "days": "0",
       "hours": "0",
-      "min": "0"
+      "min": "30"
     },
     "fine": {
       "1": "0",
@@ -3181,15 +3196,15 @@
   },
   "107": {
   	"id": "608",
-    "charge": "",
-    "type": "",
+    "charge": "Possession of a Firearm by Convicted Felon",
+    "type": "F",
     "classes": {
       "A": false,
       "B": false,
-      "C": false
+      "C": true
     },
     "time": {
-      "days": "0",
+      "days": "1",
       "hours": "0",
       "min": "0"
     },
