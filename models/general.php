@@ -2,6 +2,10 @@
 
 class General {
 
+	public function getVersion() {
+		return 'v1.8.0';
+	}
+
 	public function getDate() {
 
 		$unix = time();
