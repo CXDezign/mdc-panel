@@ -2,15 +2,17 @@
 
 	session_start();
 	require 'models/general.php';
+	require 'models/arrestReport.php';
 	require 'models/trafficReport.php';
 	require 'models/evidenceLog.php';
+	require 'models/deathReport.php';
 	require 'models/trafficPatrol.php';
-	require 'models/arrestReport.php';
 	$g = new General();
+	$ar = new ArrestReport();
 	$tr = new TrafficReport();
 	$el = new EvidenceLog();
+	$el = new DeathReport();
 	$tp = new TrafficPatrol();
-	$ar = new ArrestReport();
 
 ?>
 <!DOCTYPE html>

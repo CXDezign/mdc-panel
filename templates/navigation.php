@@ -14,12 +14,11 @@
 				Generators
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				<a class="dropdown-item" href="index.php?page=arrestCharges">Arrest Report</a>
 				<a class="dropdown-item" href="index.php?page=trafficReport">Traffic Report</a>
-				<a class="dropdown-item" href="index.php?page=deathReport">Death Report</a>
 				<a class="dropdown-item" href="index.php?page=evidenceLog">Evidence Registration Log</a>
-				<div class="dropdown-divider"></div>
-					<a class="dropdown-item disabled" href="#">TD: Patrol Report</a>
-				</div>
+				<a class="dropdown-item" href="index.php?page=deathReport">Death Report</a>
+				<a class="dropdown-item" href="index.php?page=tdPatrolReport">TD: Patrol Report</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="index.php?page=resources">Resources</a>
