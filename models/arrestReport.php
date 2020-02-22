@@ -157,11 +157,11 @@ class ArrestReport {
 		return '<b>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</b>';
 	}
 	
-	public function getDashboardCamera($input,$callsign) {
+	public function getDashboardCamera($input, $callsign) {
 
 		switch ($input) {
 			case '':
-				return '<b style="color: #9944dd;">* The dashboard camera footage of '.$callsign.' supports the above narrative. *</b>';
+			return '<b style="color: #9944dd;">* Dashboard camera from the '.$callsign.' unit captures video and audio footage to prove the above narrative to be true. *</b>';
 				break;
 			default:
 				return '<b style="color: #9944dd;">* '.$input.' *</b>';

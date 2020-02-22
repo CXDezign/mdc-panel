@@ -114,7 +114,7 @@
 		$officers = implode(", ", $officers);
 		
 		if ($inputWristband != 0 || $inputBracelet != 0) {
-			$wristbandBracelet = "<b>".$ar->getBracelet($inputBracelet)." & ".$ar->getWristband($inputWristband)"</b>.";
+			$wristbandBracelet = "<b>".$ar->getBracelet($inputBracelet)." & ".$ar->getWristband($inputWristband)."</b>.<br>";
 		} else {
 			$wristbandBracelet = "";
 		}
@@ -130,7 +130,7 @@
 		 on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.
 		 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br><br>"
 		 .nl2br($inputNarrative)."<br><br>
-		".$wristbandBracelet."<br>
+		".$wristbandBracelet."
 		".$ar->getPlea($inputPlea, $inputDefName)."<br><br>
 		".$ar->getDashboardCamera($inputDashcam, $inputCallsign)."<br>".$evidence;
 		
