@@ -34,8 +34,11 @@
 		<link rel="stylesheet" href="styles/custom.css?v=1.7">
 	</head>
 	<body>
-		<?php
-			include("includes/pageResolver.inc.php");
-		?>
+		<div class="wrapper">
+			<?php
+				include ("templates/sidebar.php");
+				include("includes/pageResolver.inc.php");
+			?>
+		</div>
 	</body>
 </html>

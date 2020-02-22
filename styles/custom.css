@@ -1,20 +1,62 @@
-/*body {
+body {
 	color: #fff;
 	background-color: #1f1f1f;
-}*/
+	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
+	background-size: 600px 600px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
 
-body {
+/*body {
 	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
 	background-size: 600px 600px;
 	background-color: rgba(238, 238, 238, 0.95);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+}*/
+
+a {
+	color: #fff;
+}
+
+a:hover {
+	color: #ddd;
+	text-decoration: none;
 }
 
 .wrapper {
-	display: block;
-	width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+	font-size: 80%;
+    min-width: 260px;
+    max-width: 260px;
+    height: 100vh;
+    position: fixed;
+}
+
+#sidebar i {
+	color: #ddd;
+}
+
+#sidebar li {
+	border-radius: 3px;
+	padding: 2px 8px;
+	transition: background .1s linear;
+	margin-bottom: 2px;
+}
+
+#sidebar li:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+#sidebar li:hover a:first-child {
+	color: #ddd;
+	text-decoration: none;
 }
 
 .input-group-midpend {
@@ -22,7 +64,7 @@ body {
 	margin-right: -1px;
 }
 
-/*.form-control {
+.form-control {
 	display: block;
 	width: 100%;
 	height: calc(1.5em + .75rem + 2px);
@@ -68,4 +110,4 @@ body {
 	background-color: #404040;
 	border: 1px solid #404040;
 	border-radius: .25rem;
-}*/
+}
