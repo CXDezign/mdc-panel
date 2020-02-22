@@ -41,23 +41,6 @@
 				</div>
 			</div>
 			<div class="form-group col-2">
-				<label>Time of Arrest</label>
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-clock"></i></span>
-					</div>
-					<input
-					class="form-control"
-					type="text"
-					id="inputTimeOfArrest"
-					name="inputTimeOfArrest"
-					placeholder="00:00 - 24:00"
-					value="<?php echo $g->getTimeArrest(); ?>"
-					required
-					data-placement="bottom" title="24-Hour Format - 00:00">
-				</div>
-			</div>
-			<div class="form-group col-2">
 				<label>Call Sign</label>
 				<input
 				class="form-control"
@@ -128,7 +111,8 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-map-marked-alt fa-fw"></i> Location of Arrest Details</h4>
+		<h4><i class="fas fa-map-marked-alt fa-fw"></i> Arrest Details</h4>
+
 		<div class="form-row">
 			<div class="form-group col-4">
 				<label>District</label>
@@ -176,7 +160,7 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-clipboard fa-fw"></i> Defendant & Narrative</h4>
+		<h4><i class="fas fa-clipboard fa-fw"></i> Suspect & Narrative</h4>
 		<div class="form-row">
 			<div class="form-group col-4">
 				<label>Full Name</label>
@@ -187,7 +171,7 @@
 				name="inputDefName"
 				placeholder="Firstname Lastname"
 				required
-				data-placement="bottom" title="Defendant - Full Name">
+				data-placement="bottom" title="Suspect - Full Name">
 			</div>
 		</div>
 		<div class="form-row">
@@ -198,14 +182,14 @@
 				id="inputNarrative"
 				name="inputNarrative"
 				rows="4"
-				placeholder="Witnessed the defendant to be X on the X street.
-The defendant was found to be X."
+				placeholder="Witnessed the suspect to be X on the X street.
+The suspect was found to be X."
 				required></textarea>
-				<small id="helpDashcam" class="form-text text-muted">Enter as much detail as possible in regards to the arrest, what was witnessed by the officer. Include as much information as possible of the events leading up to the arrest.</small>
+				<small id="helpDashcam" class="form-text text-muted">Enter as much detail as possible in regards to the arrest, chronologically describing the events leading up to the arrest and explaining the reasoning for charging the suspect with particular charges.</small>
 			</div>
 		</div>
 		
-		<h4><i class="fas fa-clipboard fa-fw"></i> Evidence</h4>
+		<h4><i class="fas fa-fingerprint fa-fw"></i> Evidence</h4>
 		<div class="form-row">
 			<div class="form-group col-6">
 				<label>Evidence</label>
@@ -214,76 +198,81 @@ The defendant was found to be X."
 				id="inputEvidence"
 				name="inputEvidence"
 				rows="4"
-				placeholder="Any evidence in conjunction with the arrest."
+				placeholder="Videos, Photographs, Links, Audio Recordings / Transcripts, Witness Statements"
 				></textarea>
-				<small id="helpDashcam" class="form-text text-muted">Enter any evidence which will support the arrest ((Streamable included)) <strong>Essential if suspect pleads no contest or not guilty</strong></small>
+				<small class="form-text text-muted">
+					<strong>Required if suspect pleads No Contest or Not Guilty</strong>.
+					<hr>
+					Enter any evidence supporting the arrest.
+				</small>
 			</div>
 			<div class="form-group col-6">
-				<label>OPTIONAL: Dashboard Camera</label>
+				<label>Dashboard Camera</label>
 				<textarea
 				class="form-control"
 				id="inputDashcam"
 				name="inputDashcam"
 				rows="4"
-				placeholder="Start with: Dashcam footage shows ((Only fill this section in with roleplay dashcam if needed, Streamables must go in evidence section))"></textarea>
-				<small id="helpDashcam" class="form-text text-muted">(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <b style="color: darkred;">Lying in this section will lead to punishments</b>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</small>
+				placeholder="The dashboard camera captures audio and footage displaying..."></textarea>
+				<small class="form-text text-muted">
+					<strong>Required if suspect pleads No Contest or Not Guilty and if dashboard camera recording is not available in the evidence section</strong>.
+					<hr>
+					(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <b style="color: darkred;">Lying in this section will lead to punishments</b>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))
+				</small>
 			</div>
 		</div>
 		
-		<h4><i class="fas fa-landmark fa-fw"></i> Writband/Bracelet & Plea</h4>
+		<h4><i class="fas fa-landmark fa-fw"></i> Processing Details</h4>
 		<div class="form-row">
 			
 			<div class="form-group col-4">
-				<label>Wristband (Leave blank if MRS)</label>
+				<label>Wristband</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-microchip"></i></span>
+						<span class="input-group-text"><i class="fas fa-fw fa-tag"></i></span>
 					</div>
-					<input
+					<select
 					class="form-control"
-					type="text"
 					id="inputWristband"
 					name="inputWristband"
-					placeholder="Red / Blue or Yellow"
-					list="wristband_list"
-					data-placement="bottom" title="Inmates Wristband">
-					<datalist id="wristband_list">
+					required>
+					<option value="0" selected>N/A</option>
 					<?php
 						$ar->wristbandChooser();
 					?>
-					</datalist>
-					<small id="helpWristband" class="form-text text-muted">
-						<strong>Red Wristband:</strong> Any and all violent charges. <br />
-						<strong>Blue Wristband:</strong> Any and all non-violent charges. <br />
-						<strong>Yellow Wristband:</strong> Any and all medical related concerns.
-					</small>
+					</select>
 				</div>
+				<small class="form-text text-muted">
+					<strong>N/A</strong>: Only when arresting at Level I Lockups.<br>
+					<hr>
+					<strong><span style="color: rgba(200,0,0,255)">Red Wristband</span></strong>: Any and all violent charges.<br>
+					<strong><span style="color: rgba(0,0,200,255)">Blue Wristband</span></strong>: Any and all non-violent charges.<br>
+					<strong><span style="color: #FFBF40;">Yellow Wristband</span></strong>: Any and all medical related concerns. (Terminally Ill, Contageous Disease, etc).
+				</small>
 			</div>
 			<div class="form-group col-4">
-				<label>Bracelet (Leave blank if MRS)</label>
+				<label>Bracelet</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-microchip"></i></span>
+						<span class="input-group-text"><i class="fas fa-fw fa-tag"></i></span>
 					</div>
-					<input
+					<select
 					class="form-control"
-					type="text"
 					id="inputBracelet"
 					name="inputBracelet"
-					placeholder="White or Orange"
-					list="bracelet_list"
-					data-placement="bottom" title="Inmates Bracelet">
-					<datalist id="bracelet_list">
+					required>
+					<option value="0" selected>N/A</option>
 					<?php
 						$ar->braceletChooser();
 					?>
-					</datalist>
-					<small id="helpBracelet" class="form-text text-muted">
-						<strong>White Bracelet:</strong> Any and all violent charges. <br />
-						<strong>Orange Bracelet:</strong> Any and all non-violent charges. <br />
-						<strong style="opacity: 0;">=============================================</strong>
-					</small>
+					</select>
 				</div>
+				<small class="form-text text-muted">
+					<strong>N/A</strong>: Only when arresting at Level I Lockups.<br>
+					<hr>
+					<strong><span style="color: #808080;">White Bracelet:</span></strong> General inmate population.<br>
+					<strong><span style="color: #FF8000;">Orange Bracelet:</span></strong> Juveniles (Male and Female)<br>
+				</small>
 			</div>
 			<div class="form-group col-4">
 				<label>Plea</label>
@@ -291,21 +280,19 @@ The defendant was found to be X."
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
 					</div>
-					<input
+					<select
 					class="form-control"
-					type="text"
 					id="inputPlea"
 					name="inputPlea"
-					placeholder="Guilty / Not Guilty or No Contest"
-					list="plea_list"
-					required
-					data-placement="bottom" title="Inmates Plea">
-					<datalist id="plea_list">
+					required>
 					<?php
 						$ar->pleaChooser();
 					?>
-					</datalist>
+					</select>
 				</div>
+				<small class="form-text text-muted">
+					Please remember to ask for GTA:W forum name if pleading <b>Not Guilty</b> or <b>No Contest</b>.
+				</small>
 			</div>
 		</div>
 		

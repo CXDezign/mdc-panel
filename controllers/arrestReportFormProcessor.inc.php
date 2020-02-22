@@ -24,12 +24,6 @@
 			errorPage();
 		}
 		
-		if (isset($_POST['inputTimeOfArrest'])) {
-			$inputTimeOfArrest = $_POST['inputTimeOfArrest'];
-		} else {
-			errorPage();
-		}
-		
 		if (isset($_POST['inputCallsign'])) {
 			$inputCallsign = $_POST['inputCallsign'];
 			setcookie("callSign",$inputCallsign,time()+21960, "/MDC");
@@ -119,33 +113,38 @@
 		
 		$officers = implode(", ", $officers);
 		
-		if($inputWristband != '' || $inputBracelet != '') {
-			$wristbandBracelet = "<br> The Arrestee has the following wristbands: <b>".$inputBracelet." Bracelet</b> & <b>".$inputWristband." Wristband</b>";
+		if ($inputWristband != 0 || $inputBracelet != 0) {
+			$wristbandBracelet = "<b>".$ar->getBracelet($inputBracelet)." & ".$ar->getWristband($inputWristband)"</b>.";
 		} else {
 			$wristbandBracelet = "";
 		}
 		
-		if($inputEvidence != '') {
+		if ($inputEvidence != '') {
 			$evidence = '<b>EVIDENCE</b><br>'. nl2br($inputEvidence);
 		} else {
 			$evidence = '';
 		}
 		
-		$arrestReport = $officers.", under the callsign <b>".$inputCallsign.
-		"</b> conducted an arrest on <b>".$inputDefName."
-		</b> on the <b>".strtoupper($inputDate)."</b> at approximately <b>".$inputTimeOfArrest.
-		"</b>. The arrest happened at<b> ".$inputStreet.", ".$inputDistrict.
-		"</b><br><br>".nl2br($inputNarrative)."<br>The arrest was processed at approximately: <b>".$inputTime."</b><br>".$wristbandBracelet."<br> (( * ".strtoupper($inputDefName).
-		" ".$ar->getPlea($inputPlea)." * ))<br><br>".$ar->getDashboardCamera($inputDashcam,$inputCallsign)."<br>".$evidence;
+		$arrestReport = $officers.", under the callsign <b>".$inputCallsign."</b>
+		 conducted an arrest on <b>".$inputDefName."</b>
+		 on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.
+		 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br><br>"
+		 .nl2br($inputNarrative)."<br><br>
+		".$wristbandBracelet."<br>
+		".$ar->getPlea($inputPlea, $inputDefName)."<br><br>
+		".$ar->getDashboardCamera($inputDashcam, $inputCallsign)."<br>".$evidence;
 		
 		$_SESSION['arrestReport'] = $arrestReport;
 		
 		header('Location: ../index.php?page=arrestReportResults');
 		exit();
+
 	} else {
+
 		$arrestReport = "Error! Contact xanx#0001 or Skent#8307 on Discord";
 		$_SESSION['arrestReport'] = $arrestReport;
 		header('Location: ../index.php?page=arrestReportResults');
 		exit();
+
 	}
 ?>

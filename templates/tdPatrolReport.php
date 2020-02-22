@@ -54,7 +54,7 @@
 				<center><small id="helpTime" class="form-text text-muted">24-Hour Format</small></center>	
 			</div>
 			<div class="form-group col-3">
-				<label for="inputCallsign">Call Sign</label>
+				<label>Call Sign</label>
 				<input
 				class="form-control"
 				type="text"
