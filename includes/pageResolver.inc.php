@@ -7,6 +7,9 @@
 			case '':
 				include ("./templates/main.php");
 				break;
+			case 'map':
+				include("./map/index.php");
+				break;
 			case 'resources':
 				include("./templates/resources.php");
 				break;

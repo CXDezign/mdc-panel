@@ -8,6 +8,9 @@
 			<a class="nav-link" target="_blank" href="https://mdc.gta.world"><i class="fas fa-fw fa-desktop mr-2"></i>MDC</a>
 		</li>
 		<li class="nav-item">
+			<a class="nav-link" href="index.php?page=map"><i class="fas fa-fw fa-map-marker-alt mr-2"></i>Street Guide</a>
+		</li>
+		<li class="nav-item">
 			<a class="nav-link dropdown-toggle" href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 				<i class="fas fa-fw fa-archive mr-2"></i>Generators
 			</a>
