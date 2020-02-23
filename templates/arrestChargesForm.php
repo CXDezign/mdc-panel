@@ -4,7 +4,7 @@
 
 		<h4><i class="fas fa-receipt fa-fw"></i> Charges</h4>
 		<div class="form-row chargeGroup">
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Crime ID, Title, & Classification</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -21,7 +21,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Crime Type</label>
 				<select
 				id="inputCrimeType"
@@ -33,7 +33,7 @@
 				?>
 				</select>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Crime Offence</label>
 				<select
 				id="inputCrimeOffence"
@@ -45,7 +45,7 @@
 				?>
 				</select>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Options</label>
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addCharge"><i class="fas fa-plus-square fa-fw"></i> Add Charge</a>
@@ -63,7 +63,7 @@
 	</form>
 
 	<div class="container fieldChargeCopy" style="display: none;">
-		<div class="form-group col-6">
+		<div class="form-group col-xl-6">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
@@ -79,7 +79,7 @@
 				</select>
 			</div>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<select
 			id="inputCrimeType"
 			name="inputCrimeType[]"
@@ -90,7 +90,7 @@
 			?>
 			</select>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<select
 			id="inputCrimeOffence"
 			name="inputCrimeOffence[]"
@@ -101,7 +101,7 @@
 			?>
 			</select>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeCharge" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Remove Charge</button>
 			</div>

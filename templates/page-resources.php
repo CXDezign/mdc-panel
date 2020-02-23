@@ -1,6 +1,6 @@
 <div class="container mb-5 pb-5">
 	<div class="row mb-4">
-		<div class="col-6">
+		<div class="col-xl-6">
 			<div class="card bg-dark">
 				<div class="card-body text-light">
 					<h5 class="card-title">Miranda Rights</h5>

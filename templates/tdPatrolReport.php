@@ -4,7 +4,7 @@
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
 		<div class="form-row">
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Date</label>
 				<div class="input-group">
 					<input
@@ -29,7 +29,7 @@
 				</div>
 				<center><small id="helpDate" class="form-text text-muted">DD/MMM/YYYY Format</small></center>
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Time</label>
 				<div class="input-group">
 					<input
@@ -53,7 +53,7 @@
 				</div>
 				<center><small id="helpTime" class="form-text text-muted">24-Hour Format</small></center>	
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Call Sign</label>
 				<input
 				class="form-control"
@@ -69,7 +69,7 @@
 
 		<h4><i class="fas fa-car fa-fw"></i> Traffic Stops</h4>
 		<div class="form-row groupSlotTS">
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Additional Options</label>
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addSlotTS"><i class="fas fa-plus-square fa-fw"></i> Traffic Stop Slot</a>
@@ -79,7 +79,7 @@
 
 
 		<div class="row">
-			<div class="col-3">
+			<div class="col-xl-3">
 				<div class="form-group">
 					<h5 class="text-center"><i class="fas fa-truck-pickup fa-fw"></i> Vehicle Impounds</h5>
 					<input
@@ -90,7 +90,7 @@
 					placeholder="#">
 				</div>
 			</div>
-			<div class="col-3">
+			<div class="col-xl-3">
 				<div class="form-group">
 					<h5 class="text-center"><i class="fas fa-car-crash fa-fw"></i> Traffic Investigations</h5>
 					<input
@@ -101,7 +101,7 @@
 					placeholder="#">
 				</div>
 			</div>
-			<div class="col-3">
+			<div class="col-xl-3">
 				<div class="form-group">
 					<h5 class="text-center"><i class="fas fa-id-card fa-fw"></i> License Suspensions</h5>
 					<input
@@ -112,7 +112,7 @@
 					placeholder="#">
 				</div>
 			</div>
-			<div class="col-3">
+			<div class="col-xl-3">
 				<div class="form-group">
 					<h5 class="text-center"><i class="fas fa-user-lock fa-fw"></i> Arrests Conducted</h5>
 					<input
@@ -127,7 +127,7 @@
 
 		<h4><i class="fas fa-clipboard fa-fw"></i> Notes & Other Details</h4>
 		<div class="form-row">
-			<div class="form-group col-12">
+			<div class="form-group col-xl-12">
 				<textarea
 				class="form-control"
 				id="inputNotes"
@@ -137,7 +137,7 @@
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="form-group col-12">
+			<div class="form-group col-xl-12">
 				<input
 				class="form-control"
 				type="text"
@@ -156,7 +156,7 @@
 	<!-- COPY SLOTS -->
 
 	<div class="container groupCopySlotTS" style="display: none;">
-		<div class="form-group col-3">
+		<div class="form-group col-xl-3">
 			<input
 			class="form-control"
 			type="text"
@@ -165,7 +165,7 @@
 			placeholder="Firstname Lastname"
 			required>
 		</div>
-		<div class="form-group col-6">
+		<div class="form-group col-xl-6">
 			<input
 			class="form-control"
 			type="text"
@@ -174,7 +174,7 @@
 			placeholder="Reason"
 			required>
 		</div>
-		<div class="form-group col-1">
+		<div class="form-group col-xl-1">
 			<input
 			class="form-control"
 			type="text"
@@ -183,7 +183,7 @@
 			placeholder="#"
 			data-placement="bottom" title="Leave empty if none for warnings.">
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Slot</button>
 			</div>

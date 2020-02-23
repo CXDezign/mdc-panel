@@ -70,7 +70,7 @@
 			<a class="nav-link" target="_blank" href="https://lsfd.gta.world"><i class="fas fa-fw fa-fire-extinguisher mr-2"></i>LSFD</a>
 		</li>
 		<li class="nav-item mt-5">
-			<a class="nav-link" target="_blank" href="https://lspd.gta.world/viewtopic.php?f=665&t=24968"><i class="fas fa-fw fa-columns mr-2"></i>MDC Paperwork - Thread</a>
+			<a class="nav-link" target="_blank" href="https://lspd.gta.world/viewtopic.php?f=665&t=24968"><i class="fas fa-fw fa-columns mr-2"></i>MDC Panel - Thread</a>
 		</li>
 	</ul>
 </nav>

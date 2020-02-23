@@ -8,8 +8,8 @@ class EvidenceLog {
 		$itemCount = 1;
 
 		foreach ($items as $item) {
-				echo "<option value=".$itemCount.">".$item."</option>";
-				$itemCount++;
+			echo "<option value=".$itemCount.">".$item."</option>";
+			$itemCount++;
 		}
 	}
 

@@ -11,7 +11,7 @@
 	$ar = new ArrestReport();
 	$tr = new TrafficReport();
 	$el = new EvidenceLog();
-	$el = new DeathReport();
+	$dr = new DeathReport();
 	$tp = new TrafficPatrol();
 
 ?>
