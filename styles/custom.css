@@ -1,4 +1,106 @@
 body {
+	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
+	background-size: 600px 600px;
+	background-color: rgba(238, 238, 238, 0.95);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#sidebar a {
+	color: #fff;
+}
+
+#sidebar a:hover {
+	color: #ddd;
+	text-decoration: none;
+}
+
+.wrapper {
+	display: flex;
+	align-items: stretch;
+}
+
+#container {
+	display: block;
+	width: calc(100vw - 260px);
+	margin-top: 50px;
+	margin-left: 260px;
+}
+
+#sidebar {
+	height: 100vh;
+	position: fixed;
+	font-size: 80%;
+	min-width: 260px;
+	max-width: 260px;
+}
+
+#sidebar i {
+	color: #fff;
+}
+
+#sidebar li {
+	border-radius: 3px;
+	padding: 2px 8px;
+	transition: background .1s linear, color .1s linear, margin-left .1s linear;
+	margin-bottom: 2px;
+}
+
+#sidebar li:hover {
+	color: #4095e8;
+	background: rgba(255,255,255,0.1);
+}
+
+.card-panel i {
+	transition: color .1s linear!important;
+}
+
+#card-main-map:hover i {
+	color: #e74c3c!important;
+}
+
+#card-main-generators:hover i {
+	color: #9d7146!important;
+}
+
+#card-main-resources:hover i {
+	color: #7e52e1!important;
+}
+
+#card-main-penal:hover i {
+	color: #d5a03d!important;
+}
+
+#card-generators-arrest:hover i {
+	color: #cbc2c5!important;
+}
+
+#card-generators-traffic:hover i {
+	color: #2167c2!important;
+} 
+
+#card-generators-evidence:hover i {
+	color: #7da522!important;
+}
+
+#card-generators-death:hover i {
+	color: #eaede1!important;
+}
+
+#card-generators-tdpatrol:hover i {
+	color: #b83028!important;
+}
+
+/*
+
+DARK MODE
+
+body {
 	color: #fff;
 	background-color: #1f1f1f;
 	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
@@ -6,57 +108,6 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-}
-
-/*body {
-	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
-	background-size: 600px 600px;
-	background-color: rgba(238, 238, 238, 0.95);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-}*/
-
-a {
-	color: #fff;
-}
-
-a:hover {
-	color: #ddd;
-	text-decoration: none;
-}
-
-.wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
-#sidebar {
-	font-size: 80%;
-    min-width: 260px;
-    max-width: 260px;
-    height: 100vh;
-    position: fixed;
-}
-
-#sidebar i {
-	color: #ddd;
-}
-
-#sidebar li {
-	border-radius: 3px;
-	padding: 2px 8px;
-	transition: background .1s linear;
-	margin-bottom: 2px;
-}
-
-#sidebar li:hover {
-	background: rgba(255,255,255,0.1);
-}
-
-#sidebar li:hover a:first-child {
-	color: #ddd;
-	text-decoration: none;
 }
 
 .input-group-midpend {
@@ -111,3 +162,4 @@ a:hover {
 	border: 1px solid #404040;
 	border-radius: .25rem;
 }
+*/

@@ -4,7 +4,7 @@
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
 		<div class="form-row">
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Date</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -22,7 +22,7 @@
 					data-placement="bottom" title="DD/MMM/YYYY Format">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Time</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -39,7 +39,7 @@
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Call Sign</label>
 				<input
 				class="form-control"
@@ -55,7 +55,7 @@
 
 		<h4><i class="fas fa-user-shield fa-fw"></i> Officer Details</h4>
 		<div class="form-row officerGroup">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Full Name</label>
 				<input
 				class="form-control"
@@ -67,7 +67,7 @@
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -85,7 +85,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Badge</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -102,7 +102,7 @@
 					data-placement="bottom" title="Officer - Badge">
 				</div>
 			</div>
-			<div class="form-group col-1">
+			<div class="form-group col-xl-1">
 				<label>Options</label>
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addOfficer"><i class="fas fa-plus-square"></i> Slot</a>
@@ -112,7 +112,7 @@
 
 		<h4><i class="fas fa-clipboard fa-fw"></i> Defendant & Narrative</h4>
 		<div class="form-row">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Full Name</label>
 				<input
 				type="text"
@@ -123,7 +123,7 @@
 				required
 				data-placement="bottom" title="Defendant - Full Name">
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Drivers License</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -142,7 +142,7 @@
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Narrative & Notes</label>
 				<textarea
 				class="form-control"
@@ -154,7 +154,7 @@ The defendant was found to be X."
 				required></textarea>
 				<small id="helpDashcam" class="form-text text-muted">Enter as much detail as possible in regards to the traffic stop, what was witnessed by the officer, whether the defendant complied and was respectful, items of interest in the vehicle's cabin, occupancy.</small>
 			</div>
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Dashboard Camera</label>
 				<textarea
 				class="form-control"
@@ -168,7 +168,7 @@ The defendant was found to be X."
 
 		<h4><i class="fas fa-car fa-fw"></i> Vehicle Details</h4>
 		<div class="form-row">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Make & Model</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -190,7 +190,7 @@ The defendant was found to be X."
 					</datalist>
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Paint</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -206,7 +206,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Example: Silver, Red, Black">
 				</div>
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Identification Plate</label>
 				<input
 				type="text"
@@ -216,7 +216,7 @@ The defendant was found to be X."
 				placeholder="Identification Plate"
 				data-placement="bottom" title="Leave empty if unregistered.">
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Tint Level</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -237,7 +237,7 @@ The defendant was found to be X."
 
 		<h4><i class="fas fa-map-marked-alt fa-fw"></i> Location Details</h4>
 		<div class="form-row">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>District</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -259,7 +259,7 @@ The defendant was found to be X."
 					</datalist>
 				</div>
 			</div>
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Street Name</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -285,7 +285,7 @@ The defendant was found to be X."
 
 		<h4><i class="fas fa-receipt fa-fw"></i> Charges</h4>
 		<div class="form-row citationGroup">
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Crime ID, Title, & Classification</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -302,7 +302,7 @@ The defendant was found to be X."
 					</select>
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Crime Type</label>
 				<select
 				id="inputCrimeType"
@@ -314,7 +314,7 @@ The defendant was found to be X."
 				?>
 				</select>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Fine</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -329,7 +329,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Leave empty if none.">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Options</label>
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addCitation"><i class="fas fa-plus-square fa-fw"></i> Citation</a>
@@ -342,7 +342,7 @@ The defendant was found to be X."
 	</form>
 
 	<div class="container fieldGroupCopy" style="display: none;">
-		<div class="form-group col-4">
+		<div class="form-group col-xl-4">
 			<input
 			class="form-control"
 			type="text"
@@ -351,7 +351,7 @@ The defendant was found to be X."
 			placeholder="Firstname Lastname"
 			required>
 		</div>
-		<div class="form-group col-3">
+		<div class="form-group col-xl-3">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
@@ -367,7 +367,7 @@ The defendant was found to be X."
 				</select>
 			</div>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
@@ -381,7 +381,7 @@ The defendant was found to be X."
 				required>
 			</div>
 		</div>
-		<div class="form-group col-1">
+		<div class="form-group col-xl-1">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeOfficer" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Slot</button>
 			</div>
@@ -389,7 +389,7 @@ The defendant was found to be X."
 	</div>
 
 	<div class="container fieldCitationCopy" style="display: none;">
-		<div class="form-group col-6">
+		<div class="form-group col-xl-6">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
@@ -405,7 +405,7 @@ The defendant was found to be X."
 				</select>
 			</div>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<select
 			id="inputCrimeType"
 			name="inputCrimeType[]"
@@ -416,7 +416,7 @@ The defendant was found to be X."
 			?>
 			</select>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-dollar-sign"></i></span>
@@ -429,7 +429,7 @@ The defendant was found to be X."
 				placeholder="####">
 			</div>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeCitation" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Citation</button>
 			</div>

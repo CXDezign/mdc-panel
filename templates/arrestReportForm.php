@@ -5,7 +5,7 @@
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
 		<div class="form-row">
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Date</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -23,7 +23,7 @@
 					data-placement="bottom" title="DD/MMM/YYYY Format">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Time</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -40,7 +40,7 @@
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Call Sign</label>
 				<input
 				class="form-control"
@@ -56,7 +56,7 @@
 
 		<h4><i class="fas fa-user-shield fa-fw"></i> Officer Details</h4>
 		<div class="form-row officerGroup">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Full Name</label>
 				<input
 				class="form-control"
@@ -68,7 +68,7 @@
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -86,7 +86,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Badge</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -103,7 +103,7 @@
 					data-placement="bottom" title="Officer - Badge">
 				</div>
 			</div>
-			<div class="form-group col-1">
+			<div class="form-group col-xl-1">
 				<label>Options</label>
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addOfficer"><i class="fas fa-plus-square"></i> Slot</a>
@@ -114,7 +114,7 @@
 		<h4><i class="fas fa-map-marked-alt fa-fw"></i> Arrest Details</h4>
 
 		<div class="form-row">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>District</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -136,7 +136,7 @@
 					</datalist>
 				</div>
 			</div>
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Street Name</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -162,7 +162,7 @@
 
 		<h4><i class="fas fa-clipboard fa-fw"></i> Suspect & Narrative</h4>
 		<div class="form-row">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Full Name</label>
 				<input
 				type="text"
@@ -175,7 +175,7 @@
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="form-group col-12">
+			<div class="form-group col-xl-12">
 				<label>Narrative & Notes</label>
 				<textarea
 				class="form-control"
@@ -191,7 +191,7 @@ The suspect was found to be X."
 		
 		<h4><i class="fas fa-fingerprint fa-fw"></i> Evidence</h4>
 		<div class="form-row">
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Evidence</label>
 				<textarea
 				class="form-control"
@@ -206,7 +206,7 @@ The suspect was found to be X."
 					Enter any evidence supporting the arrest.
 				</small>
 			</div>
-			<div class="form-group col-6">
+			<div class="form-group col-xl-6">
 				<label>Dashboard Camera</label>
 				<textarea
 				class="form-control"
@@ -225,7 +225,7 @@ The suspect was found to be X."
 		<h4><i class="fas fa-landmark fa-fw"></i> Processing Details</h4>
 		<div class="form-row">
 			
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Wristband</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -250,7 +250,7 @@ The suspect was found to be X."
 					<strong><span style="color: #FFBF40;">Yellow Wristband</span></strong>: Any and all medical related concerns. (Terminally Ill, Contageous Disease, etc).
 				</small>
 			</div>
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Bracelet</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -274,7 +274,7 @@ The suspect was found to be X."
 					<strong><span style="color: #FF8000;">Orange Bracelet:</span></strong> Juveniles (Male and Female)<br>
 				</small>
 			</div>
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Plea</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -302,7 +302,7 @@ The suspect was found to be X."
 	</form>
 
 	<div class="container fieldGroupCopy" style="display: none;">
-		<div class="form-group col-4">
+		<div class="form-group col-xl-4">
 			<input
 			class="form-control"
 			type="text"
@@ -311,7 +311,7 @@ The suspect was found to be X."
 			placeholder="Firstname Lastname"
 			required>
 		</div>
-		<div class="form-group col-3">
+		<div class="form-group col-xl-3">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
@@ -327,7 +327,7 @@ The suspect was found to be X."
 				</select>
 			</div>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
@@ -341,7 +341,7 @@ The suspect was found to be X."
 				required>
 			</div>
 		</div>
-		<div class="form-group col-1">
+		<div class="form-group col-xl-1">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeOfficer" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Slot</button>
 			</div>

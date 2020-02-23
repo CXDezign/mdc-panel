@@ -6,7 +6,7 @@
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
 		<div class="form-row">
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Date</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -24,7 +24,7 @@
 					data-placement="bottom" title="DD/MMM/YYYY Format">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Time</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -41,7 +41,7 @@
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
 			</div>
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Full Name</label>
 				<input
 				class="form-control"
@@ -53,7 +53,7 @@
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -75,7 +75,7 @@
 
 		<h4><i class="fas fa-user-slash fa-fw"></i> Suspect Information</h4>
 		<div class="form-row">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Full Name</label>
 				<input
 				class="form-control"
@@ -91,7 +91,7 @@
 
 		<h4><i class="fas fa-cannabis fa-fw"></i> Item Registry</h4>
 		<div class="form-row">
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Category</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -110,7 +110,7 @@
 			</div>
 		</div>
 		<div class="form-row groupItemRegistry">
-			<div class="form-group col-4">
+			<div class="form-group col-xl-4">
 				<label>Name</label>
 				<input
 				class="form-control"
@@ -121,7 +121,7 @@
 				required
 				data-placement="bottom" title="Item Name">
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Amount</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -137,7 +137,7 @@
 					data-placement="bottom" title="Item Amount">
 				</div>
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Options</label>
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addItemRegistry"><i class="fas fa-plus-square fa-fw"></i> Item</a>
@@ -148,7 +148,7 @@
 
 		<h4><i class="fas fa-camera fa-fw"></i> Evidence</h4>
 		<div class="form-row groupEvidence">
-			<div class="form-group col-10">
+			<div class="form-group col-xl-10">
 				<input
 				class="form-control"
 				type="text"
@@ -157,7 +157,7 @@
 				placeholder="https://imgur.com"
 				data-placement="bottom" title="Leave empty if none.">
 			</div>
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addImage"><i class="fas fa-plus-square fa-fw"></i> Photograph</a>
 				</div>
@@ -175,7 +175,7 @@
 
 
 	<div class="container groupCopyItemRegistry" style="display: none;">
-		<div class="form-group col-4">
+		<div class="form-group col-xl-4">
 			<input
 			class="form-control"
 			type="text"
@@ -185,7 +185,7 @@
 			required
 			data-placement="bottom" title="Item Name">
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
@@ -200,7 +200,7 @@
 				data-placement="bottom" title="Item Amount">
 			</div>
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeItem" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Item</button>
 			</div>
@@ -208,7 +208,7 @@
 	</div>
 
 	<div class="container groupCopyImage" style="display: none;">
-		<div class="form-group col-10">
+		<div class="form-group col-xl-10">
 			<input
 			class="form-control"
 			type="text"
@@ -216,7 +216,7 @@
 			name="inputEvidenceImage[]"
 			placeholder="https://imgur.com">
 		</div>
-		<div class="form-group col-2">
+		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeImage" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Photograph</button>
 			</div>
