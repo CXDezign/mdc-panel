@@ -10,8 +10,11 @@
 			case 'map':
 				include("./map/index.php");
 				break;
+			case 'generators':
+				include("./templates/page-generators.php");
+				break;
 			case 'resources':
-				include("./templates/resources.php");
+				include("./templates/page-resources.php");
 				break;
 			case 'trafficReport':
 				include("./templates/trafficReportForm.php");

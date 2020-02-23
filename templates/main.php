@@ -1,59 +1,50 @@
 <div class="container mb-5 pb-5">
-	<h1 class="my-3">MDC Paperwork Generators</h1>
-	<div class="row mb-4">
-		<div class="col-6">
-			<div class="card bg-dark text-white">
-				<div class="card-body">
-					<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-landmark text-muted"></i></p>
-					<h5 class="card-title">Arrest Report</h5>
-					<p class="card-text">Calculate time and fines from charges. Then generate an arrest report</p>
-					<a href="index.php?page=arrestCharges" class="btn btn-light">Start Arrest</a>
+	<div class="row">
+		<div class="col-xl-6 mb-4">
+			<a href="index.php?page=map">
+				<div class="card card-panel bg-dark text-white" id="card-main-map">
+					<div class="card-body">
+						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-map-marker-alt text-muted"></i></p>
+						<h5 class="card-title">Street Guide</h5>
+						<p class="card-text">Find street locations, locate official government buildings, explore the various districts of the San Andreas state.</p>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
-		<div class="col-6">
-			<div class="card bg-dark text-white">
-				<div class="card-body">
-					<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-car text-muted"></i></p>
-					<h5 class="card-title">Traffic Report</h5>
-					<p class="card-text">Generate a traffic report.</p>
-					<a href="index.php?page=trafficReport" class="btn btn-light">Traffic Report</a>
+		<div class="col-xl-6 mb-4">
+			<a href="index.php?page=generators">
+				<div class="card card-panel bg-dark text-white" id="card-main-generators">
+					<div class="card-body">
+						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-archive text-muted"></i></p>
+						<h5 class="card-title">Paperwork Generators</h5>
+						<p class="card-text">Generate a multitude different types of paperwork reports, logs, and more to assist your process.</p>
+					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row mb-4">
-		<div class="col-6">
-			<div class="card bg-dark text-white">
-				<div class="card-body">
-					<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-camera text-muted"></i></p>
-					<h5 class="card-title">Evidence Registration Log</h5>
-					<p class="card-text">Generate an evidence registration log.</p>
-					<a href="index.php?page=evidenceLog" class="btn btn-light">Evidence Registration Log</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-6">
-			<div class="card bg-dark text-white">
-				<div class="card-body">
-					<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-skull text-muted"></i></p>
-					<h5 class="card-title">Death Report</h5>
-					<p class="card-text">Generate a death report.</p>
-					<a href="index.php?page=deathReport" class="btn btn-light">Death Report</a>
-				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-6">
-			<div class="card bg-dark text-white">
-				<div class="card-body">
-					<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-car-crash text-muted"></i></p>
-					<h5 class="card-title">Traffic Division: Patrol Report</h5>
-					<p class="card-text">Generate a traffic division patrol report.</p>
-					<a href="index.php?page=tdPatrolReport" class="btn btn-light">Traffic Division: Patrol Report</a>
+		<div class="col-xl-6 mb-4">
+			<a href="index.php?page=resources">
+				<div class="card card-panel bg-dark text-white" id="card-main-resources">
+					<div class="card-body">
+						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-book text-muted"></i></p>
+						<h5 class="card-title">Resources</h5>
+						<p class="card-text">Access some quick and handy resources.</p>
+					</div>
 				</div>
-			</div>
+			</a>
+		</div>
+		<div class="col-xl-6 mb-4">
+			<a target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/">
+				<div class="card card-panel bg-dark text-white" id="card-main-penal">
+					<div class="card-body">
+						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-balance-scale text-muted"></i></p>
+						<h5 class="card-title">San Andreas Penal Code</h5>
+						<p class="card-text">Access the San Andreas Penal Code.</p>
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
 </div>

@@ -1,5 +1,4 @@
 <div class="container mb-5 pb-5">
-	<h1 class="my-3">Resources</h1>
 	<div class="row mb-4">
 		<div class="col-6">
 			<div class="card bg-dark">
