@@ -61,7 +61,7 @@
 		</div>
 
 		<h4><i class="fas fa-car fa-fw"></i> Add Events</h4>
-		<div class="form-row groupSlotTS">
+		<div class="form-row groupSlotEvent">
 			<div class="form-group col-12">
 				<label>Event Options</label>
 				<div class="col-12"> 
@@ -90,58 +90,163 @@
 
 	<!-- COPY SLOTS -->
 
-	<div class="container groupCopySlotTS" style="display: none;">
-		<div class="form-group col-3">
-			<input
-			class="form-control"
-			type="text"
-			id="inputNameTS[]"
-			name="inputNameTS[]"
-			placeholder="Firstname Lastname"
-			required>
-		</div>
-		<div class="form-group col-6">
-			<input
-			class="form-control"
-			type="text"
-			id="inputReasonTS[]"
-			name="inputReasonTS[]"
-			placeholder="Reason"
-			required>
-		</div>
-		<div class="form-group col-1">
-			<input
-			class="form-control"
-			type="text"
-			id="inputCitationsTS[]"
-			name="inputCitationsTS[]"
-			placeholder="#"
-			data-placement="bottom" title="Leave empty if none for warnings.">
-		</div>
-		<div class="form-group col-2">
-			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Slot</button>
+	<div class="container groupCopySlotInfo" style="display: none;">
+		<h6>Information Event</h6>
+		<div class="form-row col-12">
+			<div class="form-group col-8">
+				<input
+				class="form-control"
+				type="text"
+				id="inputReasonInfo[]"
+				name="inputReasonInfo[]"
+				placeholder="EG: Code 7 MRS"
+				required>
 			</div>
+			<div class="form-group col-2">
+				<div class="input-group-addon"> 
+					<button class="btn btn-danger w-100 removeSlotInfo" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
+				</div>
+			</div>
+		</div>
+		<div class="form-row col-12">
+			<hr />
+		</div>
+	</div>
+	
+	<div class="container groupCopySlotTraffic" style="display: none;">
+		<h6>Traffic Stop Event</h6>
+		<div class="form-row col-12">
+			<div class="form-group col-4">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-fw fa-car"></i></span>
+					</div>
+					<input
+					class="form-control"
+					type="text"
+					id="inputVeh"
+					name="inputVeh"
+					placeholder="Make & Model"
+					list="vehicle_list"
+					required
+					data-placement="bottom" title="Example: Benefactor Schwartzer">
+					<datalist id="vehicle_list">
+					<?php
+						$tr->vehicleChooser();
+					?>
+					</datalist>
+				</div>
+			</div>
+			<div class="form-group col-4">
+					<input
+					type="text"
+					class="form-control"
+					id="inputVehPlate"
+					name="inputVehPlate"
+					placeholder="Identification Plate"
+					data-placement="bottom" title="Leave empty if unregistered.">
+			</div>
+		</div>
+		<div class="form-row col-12">
+			<div class="form-group col-4">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-fw fa-map-marked-alt"></i></span>
+					</div>
+					<input
+					class="form-control"
+					type="text"
+					id="inputDistrict"
+					name="inputDistrict"
+					placeholder="District"
+					list="district_list"
+					required
+					data-placement="bottom" title="Location - District">
+					<datalist id="district_list">
+					<?php
+						$tr->districtChooser();
+					?>
+					</datalist>
+				</div>
+			</div>
+			<div class="form-group col-xl-4">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-fw fa-road"></i></span>
+					</div>
+					<input
+					class="form-control"
+					type="text"
+					id="inputStreet"
+					name="inputStreet"
+					placeholder="Street Name"
+					list="street_list"
+					required
+					data-placement="bottom" title="Location - Street Name">
+					<datalist id="street_list">
+					<?php
+						$tr->streetChooser();
+					?>
+					</datalist>
+				</div>
+			</div>
+		</div>
+		<div class="form-row col-12">
+			<div class="form-group col-8">
+				<input
+				class="form-control"
+				type="text"
+				id="inputReasonTS[]"
+				name="inputReasonTS[]"
+				placeholder="Brief explanation of Traffic Stop"
+				required>
+			</div>
+			<div class="form-group col-2">
+				<div class="input-group-addon"> 
+					<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
+				</div>
+			</div>
+		</div>
+		<div class="form-row col-12">
+			<hr />
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		var event = 1;
 		// Maximum Slots
-		var maxSlotTS = 30;
-		$(".addSlotTS").click(function(){
-			if($('body').find('.groupSlotTS').length < maxSlotTS){
-				var fieldHTML = '<div class="form-row groupSlotTS">'+$(".groupCopySlotTS").html()+'</div>';
-				$('body').find('.groupSlotTS:last').after(fieldHTML);
+		var maxSlotInfo = 30;
+		var maxSlotTraffic = 30;
+		$(".addSlotInfo").click(function(){
+			if($('body').find('.groupSlotEvent').length < maxSlotInfo){
+				$('.groupCopySlotInfo h6').text('Information (Event #'+event+')');
+				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotInfo").html()+'</div>';
+				$('body').find('.groupSlotEvent:last').after(fieldHTML);
+				event++;
 			}else{
-				alert('Maximum '+maxSlotTS+' traffic stop slots are allowed.');
+				alert('Maximum '+maxSlotInfo+' Info slots are allowed.');
+			}
+		});
+		
+		$(".addSlotTS").click(function(){
+			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
+				$('.groupCopySlotTraffic h6').text('Traffic Stop (Event #'+event+')');
+				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotTraffic").html()+'</div>';
+				$('body').find('.groupSlotEvent:last').after(fieldHTML);
+				event++;
+				
+			}else{
+				alert('Maximum '+maxSlotTraffic+' Traffic Stop slots are allowed.');
 			}
 		});
 
+		$("body").on("click",".removeSlotInfo",function(){ 
+			$(this).parents(".groupSlotEvent").remove();
+		});
 		$("body").on("click",".removeSlotTS",function(){ 
-			$(this).parents(".groupSlotTS").remove();
+			$(this).parents(".groupSlotEvent").remove();
 		});
 
 		// Tooltips

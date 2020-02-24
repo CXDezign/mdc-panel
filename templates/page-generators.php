@@ -59,5 +59,16 @@
 				</div>
 			</a>
 		</div>
+		<div class="col-xl-6 mb-4">
+			<a href="index.php?page=patrolLog">
+				<div class="card card-panel bg-dark text-white" id="card-generators-patrol">
+					<div class="card-body">
+						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-list-alt text-muted"></i></p>
+						<h5 class="card-title">Patrol Log</h5>
+						<p class="card-text">Start your patrol log by clicking here, upon ending your patrol a patrol log will be generated.</p>
+					</div>
+				</div>
+			</a>
+		</div>
 	</div>
 </div>
