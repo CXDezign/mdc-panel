@@ -76,6 +76,24 @@
 			$inputArrestee = $_POST['inputArrestee'];
 		}
 		
+		if (isset($_POST['inputNotes'])) {
+			$inputNotes = $_POST['inputNotes'];
+		}
+		
+		if(empty($inputNotes) == false)
+		{
+			$notes = "Additional Notes: ".$inputNotes;
+		} else {
+			$notes = "";
+		}
+		
+		if(empty($inputPartner) == false)
+		{
+			$partner = $g->getRank($inputRank)." ".$inputPartner;
+		} else {
+			$partner = "N/A";
+		}
+		
 		if(empty($type) == false)
 		{
 			$i = 0;
@@ -94,7 +112,7 @@
 					$traffic++;
 				} else if ($eventType == '3')
 				{
-					$events[] = "[*]";
+					$events[] = "[*] [b]".$inputTimeEvent[$i]."[/b] - Performed an [b]arrest[/b] on [url=https://mdc.gta.world/record/'".str_replace(' ', '_', $inputArrestee[$arrest])."']".$inputArrestee[$arrest]."[/url]";
 					$arrest++;
 				}
 				$i++;
@@ -117,12 +135,12 @@ Mission Row Station[/b][/size]<br />
 [color=white]...[/color]<br />
 [b][u]Patrol Information[/u][/b]<br />
 <br />
-[b]Date:[/b] ".$inputDate.count($type)."<br />
+[b]Date:[/b] ".$inputDate."<br />
 [b]Start time:[/b] ".$inputTime."<br />
 [b]End time:[/b] ".$g->getTime()."<br />
 
 [b]Callsign:[/b] ".$inputCallsign."<br />
-[b]Partner:[/b] <br />
+[b]Partner:[/b] ".$partner."<br />
 [color=white]...[/color] <br />
 [hr][/hr] <br />
 [color=white]...[/color] <br />
@@ -131,6 +149,7 @@ Mission Row Station[/b][/size]<br />
 [list] <br />
 ".$events."
 [/list] <br />
+".$notes." <br />
  <br />
 [/divbox]";
 

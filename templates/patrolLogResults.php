@@ -12,10 +12,10 @@
 		<a tabindex="0" class="btn btn-primary px-5" onclick="copy()" data-toggle="tooltip" title="Copied!"><i class="fas fa-copy fa-fw"></i> Copy Patrol Log</a>
 	</div>
 	<div class="container mt-2 text-center">
-		<a class="btn btn-info px-5" target="_blank" href="https://mdc.gta.world/record/<?php echo $g->cookieDefNameURL(); ?>" role="button"><i class="fas fa-archive fa-fw"></i> Create Record: <?php echo $g->cookieDefName(); ?></a>
+		<a class="btn btn-info px-5" target="_blank" href="https://lspd.gta.world/viewforum.php?f=829" role="button"><i class="fas fa-archive fa-fw"></i> Create Patrol Log</a>
 	</div>
 	<div class="container mt-5 text-center">	
-		<a class="btn btn-secondary px-5" href="index.php?page=trafficReport" role="button"><i class="fas fa-arrow-alt-circle-left fa-fw"></i> Return</a>
+		<a class="btn btn-secondary px-5" href="index.php?page=patrolLog" role="button"><i class="fas fa-arrow-alt-circle-left fa-fw"></i> Return</a>
 	</div>
 </div>
 

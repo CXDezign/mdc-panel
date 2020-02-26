@@ -304,13 +304,23 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		//Initial Time
-		$.ajax({
-	        url: 'resources/time.php',
-	        success: function(time) {
-	            $('.timeSlot').attr("value", time);
-	        },
-	    });
+		//Initial Time + Function
+		function updateTime(){
+			$.ajax({
+		        url: 'resources/time.php',
+		        success: function(time) {
+		            $('.groupCopySlotInfo').find('.timeSlot').attr("value", time);
+		            $('.groupCopySlotTraffic').find('.timeSlot').attr("value", time);
+		            $('.groupCopySlotArrest').find('.timeSlot').attr("value", time);
+		        },
+		    });
+		}
+		
+		updateTime();
+		
+	    
+	    //Update Time every 10 seconds
+	    setInterval(updateTime, 10000);
 		
 		
 		var event = 1;
@@ -319,13 +329,6 @@
 		var maxSlotTraffic = 30;
 		
 		$(".addSlotInfo").click(function(){
-			//Update Time
-			$.ajax({
-		        url: 'resources/time.php',
-		        success: function(time) {
-		            $('.groupCopySlotInfo').find('.timeSlot').attr("value", time);
-		        },
-		    });
 			if($('body').find('.groupSlotEvent').length < maxSlotInfo){
 
 				$('.groupCopySlotInfo h6').text('Information (Event #'+event+')');
@@ -338,13 +341,6 @@
 		});
 		
 		$(".addSlotTS").click(function(){
-			//Update Time
-			$.ajax({
-		        url: 'resources/time.php',
-		        success: function(time) {
-		            $('.groupCopySlotTraffic').find('.timeSlot').attr("value", time);
-		        },
-		    });
 			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
 				$('.groupCopySlotTraffic h6').text('Traffic Stop (Event #'+event+')');
 				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotTraffic").html()+'</div>';
@@ -357,13 +353,6 @@
 		});
 		
 		$(".addSlotArrest").click(function(){
-			//Update Time
-			$.ajax({
-		        url: 'resources/time.php',
-		        success: function(time) {
-		            $('.groupCopySlotArrest').find('.timeSlot').attr("value", time);
-		        },
-		    });
 			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
 				$('.groupCopySlotArrest h6').text('Arrest (Event #'+event+')');
 				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotArrest").html()+'</div>';
