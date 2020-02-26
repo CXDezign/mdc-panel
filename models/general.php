@@ -3,7 +3,7 @@
 class General {
 
 	public function getVersion() {
-		return 'v1.8.1';
+		return 'v1.8.2';
 	}
 
 	public function getDate() {
@@ -18,14 +18,6 @@ class General {
 		$unix = time();
 		$time = date("H:i", $unix);
 		return $time;
-	}
-	
-	public function getTimeArrest() {
-
-		$unix = time();
-		$time = date("H:i", $unix);
-		$arrestTime = date("H:i", strtotime("-30 minutes", strtotime($time)));
-		return $arrestTime;
 	}
 
 	public function cookieTrafficReport() {
