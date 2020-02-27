@@ -280,13 +280,22 @@
 				placeholder="XX:XX"
 				required>
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-4">
 				<input
 				class="form-control"
 				type="text"
 				id="inputArrestee"
 				name="inputArrestee[]"
 				placeholder="Name of person you arrested"
+				required>
+			</div>
+			<div class="form-group col-2">
+				<input
+				class="form-control"
+				type="number"
+				id="inputArrestID"
+				name="inputArrestID[]"
+				placeholder="Arrest Report ID"
 				required>
 			</div>
 			<div class="form-group col-2">

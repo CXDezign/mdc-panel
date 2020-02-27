@@ -14,7 +14,7 @@
 	if (isset($_POST['submit'])) {
 
 		if (isset($_POST['inputDate'])) {
-			$inputDate = $_POST['inputDate'];
+			$inputDate = strtoupper($_POST['inputDate']);
 		} else {
 			errorPage();
 		}
@@ -76,6 +76,10 @@
 			$inputArrestee = $_POST['inputArrestee'];
 		}
 		
+		if (isset($_POST['inputArrestID'])) {
+			$inputArrestID = $_POST['inputArrestID'];
+		}
+		
 		if (isset($_POST['inputNotes'])) {
 			$inputNotes = $_POST['inputNotes'];
 		}
@@ -112,7 +116,7 @@
 					$traffic++;
 				} else if ($eventType == '3')
 				{
-					$events[] = "[*] [b]".$inputTimeEvent[$i]."[/b] - Performed an [b]arrest[/b] on [url=https://mdc.gta.world/record/'".str_replace(' ', '_', $inputArrestee[$arrest])."']".$inputArrestee[$arrest]."[/url]";
+					$events[] = "[*] [b]".$inputTimeEvent[$i]."[/b] - Performed an [b]arrest[/b] on [url=https://mdc.gta.world/record/".str_replace(' ', '_', $inputArrestee[$arrest])."]".$inputArrestee[$arrest]."[/url] (Arrest Report: [b]#".$inputArrestID[$arrest]."[/b])";
 					$arrest++;
 				}
 				$i++;
@@ -124,8 +128,8 @@
 		
 		$events = implode("<br />", $events);
 
-$patrolLog = "[divbox=white] [color=white]...[/color]<br />
-[center][img]https://i.imgur.com/jiFlwXC.png[/img]<br />
+$patrolLog = "[divbox2=white] [color=white]...[/color]<br />
+[center][lspdlogo=200][/lspdlogo]<br />
 <br />
 [size=120][b]Los Santos Police Department<br />
 Mission Row Station[/b][/size]<br />
@@ -151,7 +155,7 @@ Mission Row Station[/b][/size]<br />
 [/list] <br />
 ".$notes." <br />
  <br />
-[/divbox]";
+[/divbox2]";
 
 		$_SESSION['patrolLog'] = $patrolLog;
 
