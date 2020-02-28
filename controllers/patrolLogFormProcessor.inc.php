@@ -168,7 +168,7 @@ Mission Row Station[/b][/size]
 
 	} else {
 
-		$trafficPatrol = "Error! Contact xanx#0001 on Discord";
+		$patrolLog = "Error! Contact xanx#0001 on Discord";
 		$_SESSION['patrolLog'] = $patrolLog;
 		header('Location: ../index.php?page=patrolLogResults');
 		exit();
