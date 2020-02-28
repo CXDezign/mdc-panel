@@ -36,7 +36,7 @@
 					placeholder="00:00 - 24:00"
 					value="<?php echo $g->getTime(); ?>"
 					required
-					data-placement="bottom" title="24-Hour Format - 00:00">
+					data-placement="bottom" title="24-Hour Format">
 				</div>
 			</div>
 			<div class="form-group col-xl-2">

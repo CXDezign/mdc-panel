@@ -3,9 +3,9 @@
 		
 	<form action="controllers/patrolLogFormProcessor.inc.php" method="POST">
 
-		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
+		<h4><i class="fas fa-archive fa-fw mr-2"></i>General Details</h4>
 		<div class="form-row">
-			<div class="form-group col-2">
+			<div class="form-group col-xl-2">
 				<label>Date</label>
 				<div class="input-group">
 					<input
@@ -16,12 +16,12 @@
 					placeholder="DD/MMM/YYYY"
 					style="text-transform: uppercase;"
 					value="<?php echo $g->getDate()?>"
-					required>
+					required
+					data-placement="bottom" title="DD/MMM/YYYY Format">
 				</div>
-				<center><small id="helpDate" class="form-text text-muted">DD/MMM/YYYY Format</small></center>
 			</div>
-			<div class="form-group col-2">
-				<label>Start of Patrol Time</label>
+			<div class="form-group col-xl-2">
+				<label>Patrol Start Time</label>
 				<div class="input-group">
 					<input
 					class="form-control"
@@ -30,11 +30,25 @@
 					name="inputTime"
 					placeholder="00:00"
 					value="<?php echo $g->getTime()?>"
-					required>
-				</div>
-				<center><small id="helpTime" class="form-text text-muted">24-Hour Format</small></center>	
+					required
+					data-placement="bottom" title="24-Hour Format">
+				</div>	
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-2">
+				<label>Patrol End Time</label>
+				<div class="input-group">
+					<input
+					class="form-control"
+					type="text"
+					id="inputTimeEnd"
+					name="inputTimeEnd"
+					placeholder="24:00"
+					value=""
+					required
+					data-placement="bottom" title="24-Hour Format">
+				</div>	
+			</div>
+			<div class="form-group col-xl-3">
 				<label>Call Sign</label>
 				<input
 				class="form-control"
@@ -43,12 +57,12 @@
 				name="inputCallsign"
 				placeholder="Call Sign"
 				value="<?php echo $g->cookieCallSign(); ?>"
-				required>
-				<small id="helpCallSign" class="form-text text-muted">Example: 2-ADAM-1, 2A1</small>
+				required
+				data-placement="bottom" title="Example: 2-ADAM-1, 2A1">
 			</div>
 		</div>
 		<div class="form-row">
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Partner</label>
 				<input
 				class="form-control"
@@ -56,10 +70,9 @@
 				id="inputPartner"
 				name="inputPartner"
 				placeholder="Firstname Lastname"
-				>
-				<small id="helpCallSign" class="form-text text-muted">Leave blank if solo patrol</small>
+				data-placement="bottom" title="Leave empty if on solo patrol.">
 			</div>
-			<div class="form-group col-3">
+			<div class="form-group col-xl-3">
 				<label>Partner Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -78,21 +91,33 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-car fa-fw"></i> Add Events</h4>
+		<h4><i class="fas fa-car fa-fw mr-2"></i>Add Events</h4>
 		<div class="form-row groupSlotEvent">
-			<div class="form-group col-12">
+			<div class="form-group col-xl-12">
 				<label>Event Options</label>
-				<div class="col-12"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addSlotInfo col-2"><i class="fas fa-plus-square fa-fw"></i> Add Information</a>
-					<a href="javascript:void(0)" class="btn btn-success w-100 addSlotTS col-2"><i class="fas fa-plus-square fa-fw"></i> Add Traffic Stop</a>
-					<a href="javascript:void(0)" class="btn btn-success w-100 addSlotArrest col-2"><i class="fas fa-plus-square fa-fw"></i> Add Arrest</a>
+				<div class="form-row">
+					<div class="col-xl-3">
+						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotInfo">
+							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Generic Event
+						</a>
+					</div>
+					<div class="col-xl-2">
+						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotTS">
+							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Traffic Stop
+						</a>
+					</div>
+					<div class="col-xl-2">
+						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotArrest">
+							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Arrest
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<h4><i class="fas fa-clipboard fa-fw"></i> Notes & Other Details</h4>
+		<h4><i class="fas fa-clipboard fa-fw mr-2"></i>Notes & Other Details</h4>
 		<div class="form-row">
-			<div class="form-group col-12">
+			<div class="form-group col-xl-12">
 				<textarea
 				class="form-control"
 				id="inputNotes"
@@ -102,71 +127,87 @@
 			</div>
 		</div>
 		<div class="container my-5 text-center">
-			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-plus-square fa-fw"></i>End Patrol</button>
+			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+				<i class="fas fa-plus-square fa-fw mr-2"></i>End Patrol
+			</button>
 		</div>
 	</form>
 
 	<!-- COPY SLOTS -->
 
-	<div class="container groupCopySlotInfo" style="display: none;">
-		<h6>Information Event</h6>
-		<div class="form-row col-12">
-				<input
-				style="display: none;"
-				type="text"
-				id="type"
-				name="type[]"
-				value="1">
-			<div class="form-group col-2">
-				<input
-				class="form-control timeSlot"
-				type="text"
-				id="inputTimeEvent"
-				name="inputTimeEvent[]"
-				placeholder="XX:XX"
-				required>
-			</div>
-			<div class="form-group col-6">
-				<input
-				class="form-control"
-				type="text"
-				id="inputReasonInfo"
-				name="inputReasonInfo[]"
-				placeholder="EG: Code 7 MRS"
-				required>
-			</div>
-			<div class="form-group col-2">
-				<div class="input-group-addon"> 
-					<button class="btn btn-danger w-100 removeSlotInfo" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
-				</div>
-			</div>
+	<div class="container bg-dark groupCopySlotInfo" style="display: none;">
+		<div class="col-xl-12">
+			<label class="font-weight-bold">Generic Event</label>
 		</div>
-		<div class="form-row col-12">
-			<hr />
+		<input
+		style="display: none;"
+		type="text"
+		id="type"
+		name="type[]"
+		value="1">
+		<div class="form-group col-xl-1">
+			<input
+			class="form-control timeSlot"
+			type="text"
+			id="inputTimeEvent"
+			name="inputTimeEvent[]"
+			placeholder="00:00"
+			required>
+		</div>
+		<div class="form-group col-xl-9">
+			<input
+			class="form-control"
+			type="text"
+			id="inputReasonInfo"
+			name="inputReasonInfo[]"
+			placeholder="Examples: Code 6 at X location, Handled emergency call ID ####, Provided perimeter on X scene."
+			required>
+		</div>
+		<div class="form-group col-xl-2">
+			<button class="btn btn-danger w-100 removeSlotInfo" type="button" id="button-addon2">
+				<i class="fas fa-minus-square mr-2"></i>Event
+			</button>
+		</div>
+		<div class="col-xl-12">
+			<hr/>
 		</div>
 	</div>
 	
 	<div class="container groupCopySlotTraffic" style="display: none;">
-		<h6>Traffic Stop Event</h6>
-		<div class="form-row col-12">
+		<div class="col-xl-12">
+			<label class="font-weight-bold">Traffic Stop</label>
+		</div>
+		<input
+		style="display: none;"
+		type="text"
+		id="type[]"
+		name="type[]"
+		value="2">
+		<div class="form-group col-xl-1">
 			<input
-			style="display: none;"
+			class="form-control timeSlot"
 			type="text"
-			id="type[]"
-			name="type[]"
-			value="2">
-			<div class="form-group col-2">
-				<input
-				class="form-control timeSlot"
-				type="text"
-				id="inputTimeEvent"
-				name="inputTimeEvent[]"
-				placeholder="XX:XX"
-				required>
+			id="inputTimeEvent"
+			name="inputTimeEvent[]"
+			placeholder="00:00"
+			required>
+		</div>
+		<div class="form-group col-xl-9">
+			<input
+			class="form-control"
+			type="text"
+			id="inputReasonTS"
+			name="inputReasonTS[]"
+			placeholder="Traffic Stop Reasoning"
+			required>
+		</div>
+		<div class="form-group col-xl-2">
+			<div class="input-group-addon">
+				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
 			</div>
 		</div>
-		<div class="form-row col-12">
-			<div class="form-group col-4">
+		<div class="form-row col-xl-12">
+			<div class="form-group col-xl-4">
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-car"></i></span>
@@ -187,18 +228,18 @@
 					</datalist>
 				</div>
 			</div>
-			<div class="form-group col-4">
-					<input
-					type="text"
-					class="form-control"
-					id="inputVehPlate"
-					name="inputVehPlate[]"
-					placeholder="Identification Plate"
-					data-placement="bottom" title="Leave empty if unregistered.">
+			<div class="form-group col-xl-4">
+				<input
+				type="text"
+				class="form-control"
+				id="inputVehPlate"
+				name="inputVehPlate[]"
+				placeholder="Identification Plate"
+				data-placement="bottom" title="Leave empty if unregistered.">
 			</div>
 		</div>
-		<div class="form-row col-12">
-			<div class="form-group col-4">
+		<div class="form-row col-xl-12">
+			<div class="form-group col-xl-4">
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-map-marked-alt"></i></span>
@@ -241,55 +282,44 @@
 				</div>
 			</div>
 		</div>
-		<div class="form-row col-12">
-			<div class="form-group col-8">
-				<input
-				class="form-control"
-				type="text"
-				id="inputReasonTS"
-				name="inputReasonTS[]"
-				placeholder="Brief explanation of Traffic Stop"
-				required>
-			</div>
-			<div class="form-group col-2">
-				<div class="input-group-addon"> 
-					<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
-				</div>
-			</div>
-		</div>
-		<div class="form-row col-12">
-			<hr />
+		<div class="col-xl-12">
+			<hr/>
 		</div>
 	</div>
 	
 	<div class="container groupCopySlotArrest" style="display: none;">
-		<h6>Arrest Event</h6>
-		<div class="form-row col-12">
+		<div class="col-xl-12">
+			<label class="font-weight-bold">Arrest</label>
+		</div>
+		<input
+		style="display: none;"
+		type="text"
+		id="type[]"
+		name="type[]"
+		value="3">
+		<div class="form-group col-xl-1">
 			<input
-			style="display: none;"
+			class="form-control timeSlot"
 			type="text"
-			id="type[]"
-			name="type[]"
-			value="3">
-			<div class="form-group col-2">
-				<input
-				class="form-control timeSlot"
-				type="text"
-				id="inputTimeEvent"
-				name="inputTimeEvent[]"
-				placeholder="XX:XX"
-				required>
-			</div>
-			<div class="form-group col-4">
-				<input
-				class="form-control"
-				type="text"
-				id="inputArrestee"
-				name="inputArrestee[]"
-				placeholder="Name of person you arrested"
-				required>
-			</div>
-			<div class="form-group col-2">
+			id="inputTimeEvent"
+			name="inputTimeEvent[]"
+			placeholder="00:00"
+			required>
+		</div>
+		<div class="form-group col-xl-4">
+			<input
+			class="form-control"
+			type="text"
+			id="inputArrestee"
+			name="inputArrestee[]"
+			placeholder="Firstname Lastname"
+			required>
+		</div>
+		<div class="form-group col-xl-4">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
+				</div>
 				<input
 				class="form-control"
 				type="number"
@@ -298,22 +328,23 @@
 				placeholder="Arrest Report ID"
 				required>
 			</div>
-			<div class="form-group col-2">
-				<div class="input-group-addon"> 
-					<button class="btn btn-danger w-100 removeSlotArrest" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
-				</div>
+		</div>
+		<div class="form-group col-xl-2">
+			<div class="input-group-addon"> 
+				<button class="btn btn-danger w-100 removeSlotArrest" type="button" id="button-addon2">
+					<i class="fas fa-minus-square mr-2"></i>Event
+				</button>
 			</div>
 		</div>
-		<div class="form-row col-12">
-			<hr />
+		<div class="col-xl-12">
+			<hr/>
 		</div>
 	</div>
-	
 </div>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		//Initial Time + Function
+		// Initial Time + Function
 		function updateTime(){
 			$.ajax({
 		        url: 'resources/time.php',
@@ -326,11 +357,9 @@
 		}
 		
 		updateTime();
-		
 	    
-	    //Update Time every 10 seconds
+	    // Update Time every 10 seconds
 	    setInterval(updateTime, 10000);
-		
 		
 		var event = 1;
 		// Maximum Slots
@@ -339,36 +368,33 @@
 		
 		$(".addSlotInfo").click(function(){
 			if($('body').find('.groupSlotEvent').length < maxSlotInfo){
-
-				$('.groupCopySlotInfo h6').text('Information (Event #'+event+')');
+				$('.groupCopySlotInfo label').text('Generic Event');
 				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotInfo").html()+'</div>';
 				$('body').find('.groupSlotEvent:last').after(fieldHTML);
 				event++;
-			}else{
+			} else {
 				alert('Maximum '+maxSlotInfo+' Info slots are allowed.');
 			}
 		});
 		
 		$(".addSlotTS").click(function(){
 			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
-				$('.groupCopySlotTraffic h6').text('Traffic Stop (Event #'+event+')');
+				$('.groupCopySlotTraffic label').text('Traffic Stop');
 				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotTraffic").html()+'</div>';
 				$('body').find('.groupSlotEvent:last').after(fieldHTML);
 				event++;
-				
-			}else{
+			} else {
 				alert('Maximum '+maxSlotTraffic+' Traffic Stop slots are allowed.');
 			}
 		});
 		
 		$(".addSlotArrest").click(function(){
 			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
-				$('.groupCopySlotArrest h6').text('Arrest (Event #'+event+')');
+				$('.groupCopySlotArrest label').text('Arrest');
 				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotArrest").html()+'</div>';
 				$('body').find('.groupSlotEvent:last').after(fieldHTML);
 				event++;
-				
-			}else{
+			} else {
 				alert('Maximum '+maxSlotTraffic+' Arrest slots are allowed.');
 			}
 		});

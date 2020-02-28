@@ -25,6 +25,12 @@
 			errorPage();
 		}
 
+		if (isset($_POST['inputTimeEnd'])) {
+			$inputTimeEnd = $_POST['inputTimeEnd'];
+		} else {
+			errorPage();
+		}
+
 		if (isset($_POST['inputCallsign'])) {
 			$inputCallsign = $_POST['inputCallsign'];
 			setcookie("callSign",$inputCallsign,time()+21960, "/MDC");
@@ -128,33 +134,31 @@
 		
 		$events = implode("<br />", $events);
 
-$patrolLog = "[divbox2=white] [color=white]...[/color]<br />
-[center][lspdlogo=200][/lspdlogo]<br />
-<br />
-[size=120][b]Los Santos Police Department<br />
-Mission Row Station[/b][/size]<br />
-[i]Patrol Log Entry[/i][/center]<br />
-[color=white]...[/color]<br />
-[hr][/hr]<br />
-[color=white]...[/color]<br />
-[b][u]Patrol Information[/u][/b]<br />
-<br />
-[b]Date:[/b] ".$inputDate."<br />
-[b]Start time:[/b] ".$inputTime."<br />
-[b]End time:[/b] ".$g->getTime()."<br />
-
-[b]Callsign:[/b] ".$inputCallsign."<br />
-[b]Partner:[/b] ".$partner."<br />
-[color=white]...[/color] <br />
-[hr][/hr] <br />
-[color=white]...[/color] <br />
-[b][u]Details[/u][/b] <br />
- <br />
-[list] <br />
+$patrolLog = "[divbox2=white]
+[center][lspdlogo=200][/lspdlogo]
+[color=white]...[/color]
+[size=120][b]Los Santos Police Department
+Mission Row Station[/b][/size]
+[i]Patrol Log Entry[/i][/center]
+[color=white]...[/color]
+[hr][/hr]
+[color=white]...[/color]
+[b][u]Patrol Information[/u][/b]
+[color=white]...[/color]
+[b]Date:[/b] ".$inputDate."
+[b]Start time:[/b] ".$inputTime."
+[b]End time:[/b] ".$inputTimeEnd."
+[color=white]...[/color]
+[b]Callsign:[/b] ".$inputCallsign."
+[b]Partner:[/b] ".$partner."
+[color=white]...[/color]
+[hr][/hr]
+[color=white]...[/color]
+[b][u]Details[/u][/b]
+[list]
 ".$events."
-[/list] <br />
-".$notes." <br />
- <br />
+[/list]
+".$notes."
 [/divbox2]";
 
 		$_SESSION['patrolLog'] = $patrolLog;
