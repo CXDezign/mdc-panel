@@ -33,6 +33,9 @@
 				<li>
 					<a class="nav-link" href="index.php?page=tdPatrolReport"><i class="fas fa-fw fa-car-crash mr-2"></i>TD: Patrol Report</a>
 				</li>
+				<li>
+					<a class="nav-link" href="index.php?page=patrolLog"><i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log</a>
+				</li>
 			</ul>
 		</li>
 		<li class="nav-item">

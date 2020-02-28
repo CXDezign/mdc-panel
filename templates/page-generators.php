@@ -63,9 +63,9 @@
 			<a href="index.php?page=patrolLog">
 				<div class="card card-panel bg-dark text-white" id="card-generators-patrol">
 					<div class="card-body">
-						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-list-alt text-muted"></i></p>
+						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-clipboard-list text-muted"></i></p>
 						<h5 class="card-title">Patrol Log</h5>
-						<p class="card-text">Start your patrol log by clicking here, upon ending your patrol a patrol log will be generated.</p>
+						<p class="card-text">Start your patrol log and generate a patrol log report at the end of shift.</p>
 					</div>
 				</div>
 			</a>
