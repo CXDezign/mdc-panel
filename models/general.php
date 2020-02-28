@@ -89,6 +89,16 @@ class General {
 		}
 
 	}
+	
+	public function cookiePatrolLogReport() {
+
+		if (isset($_SESSION['patrolLog'])) {
+			return $_SESSION['patrolLog'];
+		} else {
+			return "";
+		}
+
+	}
 
 	public function cookieCallSign() {
 

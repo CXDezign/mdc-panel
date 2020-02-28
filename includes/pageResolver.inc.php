@@ -49,6 +49,12 @@
 			case 'arrestReportResults':
 				include ("./templates/arrestReportResults.php");
 				break; 
+			case 'patrolLog':
+				include ("./templates/patrolLogForm.php");
+				break; 
+			case 'patrolLogResults':
+				include ("./templates/patrolLogResults.php");
+				break; 
 		}
 	} else {
 		include ("./templates/main.php");
