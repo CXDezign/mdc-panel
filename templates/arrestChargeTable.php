@@ -23,7 +23,9 @@
 		$chargeName[] =  $charge['type'].$class.' '.$chargeNum.'. '.$charge['charge'];
 		$type[] = $charge['type'];
 
-		if ($chargeID == '69') {
+		$multiDimensionalCrimeTimes = array(20,69);
+
+		if (in_array($chargeID, $multiDimensionalCrimeTimes)) {
 			$days[] = $charge['time'][$offence]['days'];
 			$hours[] = $charge['time'][$offence]['hours'];
 			$mins[] = $charge['time'][$offence]['min'];
