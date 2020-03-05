@@ -3,7 +3,7 @@
 class General {
 
 	public function getVersion() {
-		return 'v1.8.2';
+		return 'v1.8.3';
 	}
 
 	public function getDate() {
