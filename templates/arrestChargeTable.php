@@ -1,5 +1,5 @@
-<!-- CHARGES -->
-<?php 
+<?php
+
 	$numCharges = count($_POST['inputCrime']);
 	$penal = json_decode(file_get_contents("resources/penalSearch.json"), true);
 	$x = 0;
@@ -23,7 +23,7 @@
 		$chargeName[] =  $charge['type'].$class.' '.$chargeNum.'. '.$charge['charge'];
 		$type[] = $charge['type'];
 
-		$multiDimensionalCrimeTimes = array(20,69);
+		$multiDimensionalCrimeTimes = array(412);
 
 		if (in_array($chargeID, $multiDimensionalCrimeTimes)) {
 			$days[] = $charge['time'][$offence]['days'];
@@ -41,6 +41,8 @@
 
 		$suspension[] = $charge['suspension'][$offence];
 
+		$court[] = $charge['court'];
+
 		$x++;
 	}
 ?>
@@ -53,9 +55,11 @@
 		<th scope="col">Fine Amount</th>
 		<th scope="col">Impounds</th>
 		<th scope="col">License Suspensions</th>
+		<th scope="col">Court</th>
 	</thead>
 	<tbody>
 		<?php
+
 		$i = 0;
 		while ($i < $numCharges) {
 			echo '<tr><td>'.$chargeName[$i].'</td><td>';
@@ -70,20 +74,26 @@
 			<td class="text-center">$'.number_format($fine[$i]).'</td>
 			<td class="text-left">';
 			if ($impound[$i] == '0') {
-				echo '<span class="badge badge-danger"> No</span>';
+				echo '<span class="badge badge-dark">No</span>';
 			} else {
-				echo '<span class="badge badge-success"> Yes | '.$impound[$i].' Days</span>';
+				echo '<span class="badge badge-success">Yes | '.$impound[$i].' Days</span>';
 			}
 			echo '</td><td class="text-left">';
 			if ($suspension[$i] == '0') {
-				echo '<span class="badge badge-danger"> No</span>';
+				echo '<span class="badge badge-dark">No</span>';
 			} else {
-				echo '<span class="badge badge-success"> Yes | '.$suspension[$i].' Days</span>';
+				echo '<span class="badge badge-success">Yes | '.$suspension[$i].' Days</span>';
+			}
+			echo '</td><td class="text-left">';
+			if ($court[$i] == true) {
+				echo '<span class="badge badge-success"><i class="fas fa-fw fa-check-circle"></i></span>';
+			} else {
+				echo '<span class="badge badge-dark"><i class="fas fa-fw fa-times-circle"></i></span>';
 			}
 			echo '</td></tr>';
-
 			$i++;
 		}
+
 		?>
 	</tbody>
 </table>
@@ -96,7 +106,29 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan="2"><?php $hoursAdd = 0; $d = 0; $daysAdd = 0; while ($d < $numCharges){ $daysAdd=$daysAdd+$days[$d]; $d++; } echo $daysAdd;?> days, <?php $h = 0; $hourssAdd = 0; while ($h < $numCharges){ $hoursAdd=$hoursAdd+$hours[$h]; $h++; } echo $hoursAdd;?> hours, <?php $m = 0; $minsAdd = 0; while ($m < $numCharges){ $minsAdd=$minsAdd+$mins[$m]; $m++; } echo $minsAdd;?> minutes</td>
+			<td colspan="2">
+				<?php
+					$hoursAdd = 0;
+					$d = 0;
+					$daysAdd = 0;
+					while ($d < $numCharges) {
+						$daysAdd=$daysAdd+$days[$d]; $d++;
+					}
+					echo $daysAdd.' days, ';
+					$h = 0;
+					$hourssAdd = 0;
+					while ($h < $numCharges) {
+						$hoursAdd=$hoursAdd+$hours[$h]; $h++;
+					}
+					echo $hoursAdd. ' hours, ';
+					$m = 0;
+					$minsAdd = 0;
+					while ($m < $numCharges) {
+						$minsAdd=$minsAdd+$mins[$m]; $m++;
+					}
+					echo $minsAdd.' minutes';
+				?>
+			</td>
 			<td colspan="2">
 				<?php
 				$z = 0;

@@ -46,8 +46,10 @@
 			</div>
 			<div class="form-group col-xl-2">
 				<label>Options</label>
-				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addCharge"><i class="fas fa-fw fa-plus-square mr-1"></i>Add Charge</a>
+				<div class="input-group-addon">
+					<a href="javascript:void(0)" class="btn btn-success w-100 addCharge">
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Add Charge
+					</a>
 				</div>
 			</div>
 		</div>
@@ -57,7 +59,9 @@
 		</div>
 		
 		<div class="container my-5 text-center">
-		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest</button>
+		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+			<i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest
+		</button>
 	</div>
 	</form>
 
@@ -109,12 +113,14 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		var maxCharges = 10;
+
+		var maxCharges = 20;
+
 		$(".addCharge").click(function(){
 			if($('body').find('.chargeGroup').length < maxCharges){
 				var fieldHTML = '<div class="form-row chargeGroup">'+$(".fieldChargeCopy").html()+'</div>';
 				$('body').find('.chargeGroup:last').after(fieldHTML);
-			}else{
+			} else {
 				alert('Maximum '+maxCharges+' charges are allowed.');
 			}
 		});

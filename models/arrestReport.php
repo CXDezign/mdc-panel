@@ -7,7 +7,8 @@ class ArrestReport {
 		$chargeCount = 1;
 		
 		foreach ($charges as $charge) {
-			echo "<option value=".$chargeCount.">".$charge."</option>";
+			$chargeVal = substr($charge,0,3);
+			echo '<option value="'.$chargeVal.'">'.$charge.'</option>';
 			$chargeCount++;
 		}
 	}
