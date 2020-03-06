@@ -124,9 +124,3 @@
 		});
 	});
 </script>
-
-<script>
-	$(document).ready(function(){
-		$('input').tooltip();
-	});
-</script>
