@@ -264,6 +264,9 @@ class TrafficReport {
 			case 24:
 				return 'F';
 				break;
+			case 25:
+				return 'I';
+				break;
 			default:
 				return '?';
 				break;
@@ -361,6 +364,9 @@ class TrafficReport {
 			case 24:
 				return $this->colourRed();
 				break;
+			case 25:
+				return $this->colourGreen();
+				break;
 			default:
 				return $this->colourUnknown();
 				break;
@@ -441,6 +447,9 @@ class TrafficReport {
 				break;
 			case 24:
 				return '424. Aerial Evasion';
+				break;
+			case 25:
+				return '425. Negligent Operation of Bicycle';
 				break;
 			default:
 				return 'Unknown Charge';

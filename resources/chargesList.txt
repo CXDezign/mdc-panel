@@ -2,7 +2,7 @@
 402. Hit and Run (M)
 403. Reckless Operation Of an Off-Road or Naval Vehicle (M)
 404. Speeding (I)
-405. Failure to Yield to a Traffic Control Device (I)
+405. Failure to Yield/Stop to a Traffic Control Device (I)
 406. Illegal Parking (I)
 407. Reckless Driving (M)
 408. Vehicular Noise Violation (I)
@@ -22,3 +22,4 @@
 422. Reckless Operation Of An Aircraft (F)
 423. Failure To Adhere To ATC (F)
 424. Aerial Evasion (F)
+425. Negligent Operation of Bicycle (I)
