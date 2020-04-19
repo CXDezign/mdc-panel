@@ -3,13 +3,11 @@
 class ArrestReport {
 
 	public function chargeChooser() {
-		$charges = file ('resources/fullChargesList.txt');
-		$chargeCount = 1;
-		
+
+		$charges = json_decode(file_get_contents("resources/penalSearch.json"), true);
+
 		foreach ($charges as $charge) {
-			$chargeVal = substr($charge,0,3);
-			echo '<option value="'.$chargeVal.'">'.$charge.'</option>';
-			$chargeCount++;
+			echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
 		}
 	}
 	
