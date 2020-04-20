@@ -3,6 +3,10 @@
 		<a href="index.php"><img src="./images/Logo-MDC.png" width="175px"></a>
 	</div>
 	<hr class="mx-3">
+		<div class="container text-white text-center">
+			<div id="timestamp"></div>
+		</div>
+	<hr class="mx-3">
 	<ul class="list-unstyled components px-3">
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" href="https://mdc.gta.world"><i class="fas fa-fw fa-desktop mr-2"></i>Mobile Data Computer</a>
@@ -77,3 +81,18 @@
 		</li>
 	</ul>
 </nav>
+<script>
+	$(document).ready(function() {
+		timestamp();
+		setInterval(timestamp, 1000);
+	});
+
+	function timestamp() {
+		$.ajax({
+			url: 'controllers/timestamp.php',
+			success: function(data) {
+				$('#timestamp').html(data);
+			},
+		});
+	}
+</script>

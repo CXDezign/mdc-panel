@@ -20,6 +20,11 @@ a:hover {
 	text-decoration: none;
 }
 
+#timestamp {
+	color: #FFF;
+	font-size: 18px;
+}
+
 .wrapper {
 	display: flex;
 	align-items: stretch;
