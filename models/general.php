@@ -3,6 +3,7 @@
 class General {
 
 	public function getVersion() {
+
 		return 'v1.9.0';
 	}
 
@@ -11,6 +12,7 @@ class General {
 		$unix = time();
 		$date = date("d/M/Y", $unix);
 		return $date;
+
 	}
 
 	public function getTime() {
@@ -27,7 +29,6 @@ class General {
 		} else {
 			return "";
 		}
-
 	}
 
 	public function cookieTrafficPatrol() {

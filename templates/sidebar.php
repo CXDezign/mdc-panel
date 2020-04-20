@@ -1,6 +1,6 @@
 <nav id="sidebar" class="bg-dark">
 	<div class="text-center my-3">
-		<a href="index.php"><img src="./images/Logo-MDC.png" width="175px"></a>
+		<a href="/MDC"><img src="./images/Logo-MDC.png" width="175px"></a>
 	</div>
 	<hr class="mx-3">
 		<div class="container text-white text-center">
@@ -12,7 +12,7 @@
 			<a class="nav-link" target="_blank" href="https://mdc.gta.world"><i class="fas fa-fw fa-desktop mr-2"></i>Mobile Data Computer</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="index.php"><i class="fas fa-fw fa-th-large mr-2"></i>Dashboard</a>
+			<a class="nav-link" href="/MDC"><i class="fas fa-fw fa-th-large mr-2"></i>Dashboard</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="index.php?page=map"><i class="fas fa-fw fa-map-marker-alt mr-2"></i>Street Guide</a>
