@@ -223,7 +223,7 @@
 					data-placement="bottom" title="Example: Benefactor Schwartzer">
 					<datalist id="vehicle_list">
 					<?php
-						$pl->vehicleChooser();
+						$g->vehicleChooser();
 					?>
 					</datalist>
 				</div>
@@ -255,7 +255,7 @@
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
 					<?php
-						$pl->districtChooser();
+						$g->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -276,7 +276,7 @@
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
 					<?php
-						$pl->streetChooser();
+						$g->streetChooser();
 					?>
 					</datalist>
 				</div>

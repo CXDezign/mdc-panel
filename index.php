@@ -7,14 +7,12 @@
 	require 'models/evidenceLog.php';
 	require 'models/deathReport.php';
 	require 'models/trafficPatrol.php';
-	require 'models/patrolLog.php';
 	$g = new General();
 	$ar = new ArrestReport();
 	$tr = new TrafficReport();
 	$el = new EvidenceLog();
 	$dr = new DeathReport();
 	$tp = new TrafficPatrol();
-	$pl = new PatrolLog();
 
 ?>
 <!DOCTYPE html>

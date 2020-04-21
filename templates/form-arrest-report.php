@@ -132,7 +132,7 @@
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
 					<?php
-						$ar->districtChooser();
+						$g->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -154,7 +154,7 @@
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
 					<?php
-						$ar->streetChooser();
+						$g->streetChooser();
 					?>
 					</datalist>
 				</div>

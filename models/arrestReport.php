@@ -1,37 +1,6 @@
 <?php
 
 class ArrestReport {
-
-	public function chargeChooser() {
-
-		$charges = json_decode(file_get_contents("resources/penalSearch.json"), true);
-
-		foreach ($charges as $charge) {
-			echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
-		}
-	}
-	
-	public function crimeTypeChooser() {
-
-		$crimeTypes = file ('resources/crimeTypeList.txt');
-		$crimeTypeCount = 1;
-
-		foreach ($crimeTypes as $crimeType) {
-			echo "<option value=".$crimeTypeCount.">".$crimeType."</option>";
-			$crimeTypeCount++;
-		}
-	}
-	
-	public function offenceChooser() {
-
-		$crimeOffence = file ('resources/offenceList.txt');
-		$crimeOffenceCount = 1;
-
-		foreach ($crimeOffence as $offence) {
-			echo "<option value=".$crimeOffenceCount.">".$offence."</option>";
-			$crimeOffenceCount++;
-		}
-	}
 	
 	public function streetChooser() {
 
@@ -65,7 +34,6 @@ class ArrestReport {
 			$braceletCount++;
 		}
 	}
-
 
 	public function wristbandChooser() {
 

@@ -13,39 +13,6 @@ class TrafficReport {
 		}
 	}
 
-	public function vehicleChooser() {
-
-		$vehicles = file ('resources/vehiclesList.txt');
-		$vehicleCount = 1;
-
-		foreach ($vehicles as $vehicle) {
-			echo "<option>".$vehicle."</option>";
-			$vehicleCount++;
-		}
-	}
-
-	public function streetChooser() {
-
-		$streets = file ('resources/streetsList.txt');
-		$streetCount = 1;
-
-		foreach ($streets as $street) {
-			echo "<option>".$street."</option>";
-			$streetCount++;
-		}
-	}
-
-	public function districtChooser() {
-
-		$districts = file ('resources/districtsList.txt');
-		$districtCount = 1;
-
-		foreach ($districts as $district) {
-			echo "<option>".$district."</option>";
-			$districtCount++;
-		}
-	}
-
 	public function paintChooser() {
 
 		$paints = file ('resources/paintsList.txt');
@@ -65,28 +32,6 @@ class TrafficReport {
 		foreach ($tints as $tint) {
 			echo "<option value=".$tintCount.">".$tint."</option>";
 			$tintCount++;
-		}
-	}
-
-	public function chargeChooser() {
-
-		$charges = file ('resources/chargesList.txt');
-		$chargeCount = 1;
-
-		foreach ($charges as $charge) {
-			echo "<option value=".$chargeCount.">".$charge."</option>";
-			$chargeCount++;
-		}
-	}
-
-	public function crimeTypeChooser() {
-
-		$crimeTypes = file ('resources/crimeTypeList.txt');
-		$crimeTypeCount = 1;
-
-		foreach ($crimeTypes as $crimeType) {
-			echo "<option value=".$crimeTypeCount.">".$crimeType."</option>";
-			$crimeTypeCount++;
 		}
 	}
 

@@ -186,7 +186,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Example: Benefactor Schwartzer">
 					<datalist id="vehicle_list">
 					<?php
-						$tr->vehicleChooser();
+						$g->vehicleChooser();
 					?>
 					</datalist>
 				</div>
@@ -311,7 +311,7 @@ The defendant was found to be X."
 				class="form-control"
 				required>
 				<?php
-					$tr->crimeTypeChooser();
+					$g->crimeTypeChooser();
 				?>
 				</select>
 			</div>
@@ -413,7 +413,7 @@ The defendant was found to be X."
 			class="form-control"
 			required>
 			<?php
-				$tr->crimeTypeChooser();
+				$g->crimeTypeChooser();
 			?>
 			</select>
 		</div>

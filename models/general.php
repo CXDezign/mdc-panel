@@ -235,12 +235,67 @@ class General {
 		}
 	}
 
+	public function streetChooser() {
+
+		$streets = file ('resources/streetsList.txt');
+		$streetCount = 1;
+
+		foreach ($streets as $street) {
+			echo "<option>".$street."</option>";
+			$streetCount++;
+		}
+	}
+
+	public function districtChooser() {
+
+		$districts = file ('resources/districtsList.txt');
+		$districtCount = 1;
+
+		foreach ($districts as $district) {
+			echo "<option>".$district."</option>";
+			$districtCount++;
+		}
+	}
+
+	public function vehicleChooser() {
+
+		$vehicles = file ('resources/vehiclesList.txt');
+		$vehicleCount = 1;
+
+		foreach ($vehicles as $vehicle) {
+			echo "<option>".$vehicle."</option>";
+			$vehicleCount++;
+		}
+	}
+
 	public function chargeChooser() {
 
 		$charges = json_decode(file_get_contents("resources/penalSearch.json"), true);
 
 		foreach ($charges as $charge) {
 			echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
+		}
+	}
+
+	public function crimeTypeChooser() {
+
+		$crimeTypes = file ('resources/crimeTypeList.txt');
+		$crimeTypeCount = 1;
+
+		foreach ($crimeTypes as $crimeType) {
+			echo "<option value=".$crimeTypeCount.">".$crimeType."</option>";
+			$crimeTypeCount++;
+		}
+	}
+	
+	public function offenceChooser() {
+
+		$crimeOffence = file ('resources/offenceList.txt');
+		$crimeOffenceCount = 1;
+
+		foreach ($crimeOffence as $offence) {
+			echo "<option value=".$crimeOffenceCount.">".$offence."</option>";
+			$crimeOffenceCount++;
 		}
 	}
 
