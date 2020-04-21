@@ -22,10 +22,19 @@ class General {
 		return $time;
 	}
 
-	public function cookieTrafficReport() {
+	public function sessionGeneratedReportType() {
 
-		if (isset($_SESSION['trafficReport'])) {
-			return $_SESSION['trafficReport'];
+		if (isset($_SESSION['generatedReportType'])) {
+			return $_SESSION['generatedReportType'];
+		} else {
+			return "";
+		}
+	}
+
+	public function sessionGeneratedReport() {
+
+		if (isset($_SESSION['generatedReport'])) {
+			return $_SESSION['generatedReport'];
 		} else {
 			return "";
 		}
@@ -282,6 +291,54 @@ class General {
 				break;
 		}
 	}
+
+	public function chargeChooser() {
+
+		$charges = json_decode(file_get_contents("resources/penalSearch.json"), true);
+
+		foreach ($charges as $charge) {
+			echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
+		}
+	}
+
+	public function getCrimeType($input) {
+
+		switch ($input) {
+			case 1:
+				return 'C';
+				break;
+			case 2:
+				return 'B';
+				break;
+			case 3:
+				return 'A';
+				break;
+			default:
+				return '?';
+				break;
+		}
+	}
+
+	public function getCrimeColour($input) {
+
+		switch ($input) {
+			case "I":
+				$colour = "#27ae60";
+				break;
+			case "M":
+				$colour = "#f39c12";
+				break;
+			case "F":
+				$colour = "#e74c3c";
+				break;
+			case "":
+			default:
+				$colour = "#000";
+				break;
+		}
+		return '<span style="color: '.$colour.';">';
+	}
+
 }
 
 ?>

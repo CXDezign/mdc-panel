@@ -20,7 +20,7 @@
 		$charge = $penal[$chargeID];
 		$chargeNum = $charge['id'];
 
-		$chargeName[] =  $charge['type'].$class.' '.$chargeNum.'. '.$charge['charge'];
+		$chargeName[] = $charge['type'].$class.' '.$chargeNum.'. '.$charge['charge'];
 		$type[] = $charge['type'];
 
 		$multiDimensionalCrimeTimes = array(412);
