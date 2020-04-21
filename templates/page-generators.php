@@ -1,7 +1,8 @@
 <div class="container mb-5 pb-5">
-	<div class="row">
+	<h1><i class="fas fa-fw fa-archive mr-2"></i></i>Paperwork Generators</h1>
+	<div class="row mt-5">
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=arrestCharges">
+			<a href="/paperwork-generators/arrest-charges">
 				<div class="card card-panel bg-dark text-white" id="card-generators-arrest">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-landmark text-muted"></i></p>
@@ -12,7 +13,7 @@
 			</a>
 		</div>
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=trafficReport">
+			<a href="/paperwork-generators/traffic-report">
 				<div class="card card-panel bg-dark text-white" id="card-generators-traffic">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-car text-muted"></i></p>
@@ -25,7 +26,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=evidenceLog">
+			<a href="/paperwork-generators/evidence-registration-log">
 				<div class="card card-panel bg-dark text-white" id="card-generators-evidence">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-cannabis text-muted"></i></p>
@@ -36,7 +37,7 @@
 			</a>
 		</div>
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=deathReport">
+			<a href="/paperwork-generators/death-report">
 				<div class="card card-panel bg-dark text-white" id="card-generators-death">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-skull text-muted"></i></p>
@@ -49,7 +50,7 @@
 	</div>
 	<div class="row">
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=tdPatrolReport">
+			<a href="/paperwork-generators/traffic-division-patrol-report">
 				<div class="card card-panel bg-dark text-white" id="card-generators-tdpatrol">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-car-crash text-muted"></i></p>
@@ -60,7 +61,7 @@
 			</a>
 		</div>
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=patrolLog">
+			<a href="/paperwork-generators/patrol-log">
 				<div class="card card-panel bg-dark text-white" id="card-generators-patrol">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-clipboard-list text-muted"></i></p>

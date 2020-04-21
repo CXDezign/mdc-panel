@@ -1,6 +1,7 @@
 <div class="container mb-5 pb-5">
 	<h1 class="my-3">Traffic Division: Patrol Report - Form</h1>
-	<form action="controllers/TDPatrolReportProcessor.inc.php" method="POST">
+	<form action="/controllers/formProcessor.inc.php" method="POST">
+		<input type="hidden" id="generatorType" name="generatorType" value="TrafficDivisionPatrolReport">
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
 		<div class="form-row">

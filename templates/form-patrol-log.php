@@ -1,7 +1,7 @@
 <div class="container mb-5 pb-5">
 	<h1 class="my-3">Patrol Log - Form</h1>
-		
-	<form action="controllers/patrolLogFormProcessor.inc.php" method="POST">
+	<form action="/controllers/formProcessor.inc.php" method="POST">
+		<input type="hidden" id="generatorType" name="generatorType" value="PatrolLog">
 
 		<h4><i class="fas fa-archive fa-fw mr-2"></i>General Details</h4>
 		<div class="form-row">
@@ -343,23 +343,23 @@
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function() {
+
 		// Initial Time + Function
 		function updateTime(){
 			$.ajax({
-		        url: 'resources/time.php',
-		        success: function(time) {
-		            $('.groupCopySlotInfo').find('.timeSlot').attr("value", time);
-		            $('.groupCopySlotTraffic').find('.timeSlot').attr("value", time);
-		            $('.groupCopySlotArrest').find('.timeSlot').attr("value", time);
-		        },
-		    });
+				url: '/resources/time.php',
+				success: function(time) {
+				$('.groupCopySlotInfo').find('.timeSlot').attr("value", time);
+				$('.groupCopySlotTraffic').find('.timeSlot').attr("value", time);
+				$('.groupCopySlotArrest').find('.timeSlot').attr("value", time);
+				},
+			});
 		}
-		
+
 		updateTime();
-	    
-	    // Update Time every 10 seconds
-	    setInterval(updateTime, 10000);
+		// Update Time every 10 seconds
+		setInterval(updateTime, 10000);
 		
 		var event = 1;
 		// Maximum Slots

@@ -1,7 +1,8 @@
 <div class="container mb-5 pb-5">
-	<div class="row">
+	<h1><i class="fas fa-fw fa-th-large mr-2"></i></i>Dashboard</h1>
+	<div class="row mt-5">
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=map">
+			<a href="/street-guide">
 				<div class="card card-panel bg-dark text-white" id="card-main-map">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-map-marker-alt text-muted"></i></p>
@@ -12,7 +13,7 @@
 			</a>
 		</div>
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=generators">
+			<a href="/paperwork-generators">
 				<div class="card card-panel bg-dark text-white" id="card-main-generators">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-archive text-muted"></i></p>
@@ -25,11 +26,11 @@
 	</div>
 	<div class="row">
 		<div class="col-xl-6 mb-4">
-			<a href="index.php?page=resources">
+			<a href="/useful-resources">
 				<div class="card card-panel bg-dark text-white" id="card-main-resources">
 					<div class="card-body">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-book text-muted"></i></p>
-						<h5 class="card-title">Resources</h5>
+						<h5 class="card-title">Useful Resources</h5>
 						<p class="card-text">Access some quick and handy resources.</p>
 					</div>
 				</div>

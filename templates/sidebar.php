@@ -1,6 +1,6 @@
 <nav id="sidebar" class="bg-dark">
 	<div class="text-center my-3">
-		<a href="/MDC"><img src="./images/Logo-MDC.png" width="175px"></a>
+		<a href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
 	</div>
 	<hr class="mx-3">
 		<div class="container text-white text-center">
@@ -9,13 +9,13 @@
 	<hr class="mx-3">
 	<ul class="list-unstyled components px-3">
 		<li class="nav-item">
+			<a class="nav-link" href="/"><i class="fas fa-fw fa-th-large mr-2"></i>Dashboard</a>
+		</li>
+		<li class="nav-item">
 			<a class="nav-link" target="_blank" href="https://mdc.gta.world"><i class="fas fa-fw fa-desktop mr-2"></i>Mobile Data Computer</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/MDC"><i class="fas fa-fw fa-th-large mr-2"></i>Dashboard</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="index.php?page=map"><i class="fas fa-fw fa-map-marker-alt mr-2"></i>Street Guide</a>
+			<a class="nav-link" href="/street-guide"><i class="fas fa-fw fa-map-marker-alt mr-2"></i>Street Guide</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link dropdown-toggle" href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -23,27 +23,27 @@
 			</a>
 			<ul class="collapse list-unstyled" id="generatorSubmenu">
 				<li>
-					<a class="nav-link" href="index.php?page=arrestCharges"><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report</a>
+					<a class="nav-link" href="/paperwork-generators/arrest-charges"><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report</a>
 				</li>
 				<li>
-					<a class="nav-link" href="index.php?page=trafficReport"><i class="fas fa-fw fa-car mr-2"></i>Traffic Report</a>
+					<a class="nav-link" href="/paperwork-generators/traffic-report"><i class="fas fa-fw fa-car mr-2"></i>Traffic Report</a>
 				</li>
 				<li>
-					<a class="nav-link" href="index.php?page=evidenceLog"><i class="fas fa-fw fa-cannabis mr-2"></i>Evidence Log</a>
+					<a class="nav-link" href="/paperwork-generators/evidence-registration-log"><i class="fas fa-fw fa-cannabis mr-2"></i>Evidence Log</a>
 				</li>
 				<li>
-					<a class="nav-link" href="index.php?page=deathReport"><i class="fas fa-fw fa-skull mr-2"></i>Death Report</a>
+					<a class="nav-link" href="/paperwork-generators/death-report"><i class="fas fa-fw fa-skull mr-2"></i>Death Report</a>
 				</li>
 				<li>
-					<a class="nav-link" href="index.php?page=tdPatrolReport"><i class="fas fa-fw fa-car-crash mr-2"></i>TD: Patrol Report</a>
+					<a class="nav-link" href="/paperwork-generators/traffic-division-patrol-report"><i class="fas fa-fw fa-car-crash mr-2"></i>TD: Patrol Report</a>
 				</li>
 				<li>
-					<a class="nav-link" href="index.php?page=patrolLog"><i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log</a>
+					<a class="nav-link" href="/paperwork-generators/patrol-log"><i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log</a>
 				</li>
 			</ul>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="index.php?page=resources"><i class="fas fa-fw fa-book mr-2"></i>Resources</a>
+			<a class="nav-link" href="/useful-resources"><i class="fas fa-fw fa-book mr-2"></i>Useful Resources</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/"><i class="fas fa-fw fa-balance-scale mr-2"></i>San Andreas Penal Code</a>
@@ -89,7 +89,7 @@
 
 	function timestamp() {
 		$.ajax({
-			url: 'controllers/timestamp.php',
+			url: '/controllers/timestamp.php',
 			success: function(data) {
 				$('#timestamp').html(data);
 			},

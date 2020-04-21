@@ -1,6 +1,6 @@
 <div class="container mb-5 pb-5">
 	<h1 class="my-3">Arrest Report - Charges</h1>
-	<form action="index.php?page=arrestReport" method="POST">
+	<form action="/paperwork-generators/arrest-report" method="POST">
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
 		<div class="form-row chargeGroup">
 			<div class="form-group col-xl-6">
@@ -113,7 +113,6 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-
 		var maxCharges = 20;
 
 		$(".addCharge").click(function(){

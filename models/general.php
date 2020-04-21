@@ -12,7 +12,6 @@ class General {
 		$unix = time();
 		$date = date("d/M/Y", $unix);
 		return $date;
-
 	}
 
 	public function getTime() {
@@ -40,74 +39,22 @@ class General {
 		}
 	}
 
-	public function cookieTrafficPatrol() {
+	public function sessionGeneratedThreadTitle() {
 
-		if (isset($_SESSION['trafficPatrol'])) {
-			return $_SESSION['trafficPatrol'];
+		if (isset($_SESSION['generatedThreadTitle'])) {
+			return $_SESSION['generatedThreadTitle'];
 		} else {
 			return "";
 		}
-
 	}
 
-	public function cookieDeathReport() {
+	public function sessionGeneratedThreadURL() {
 
-		if (isset($_SESSION['deathReport'])) {
-			return $_SESSION['deathReport'];
+		if (isset($_SESSION['generatedThreadURL'])) {
+			return $_SESSION['generatedThreadURL'];
 		} else {
 			return "";
 		}
-
-	}
-
-	public function cookieDeathReportTitle() {
-
-		if (isset($_SESSION['deathReportTitle'])) {
-			return $_SESSION['deathReportTitle'];
-		} else {
-			return "";
-		}
-
-	}
-
-	public function cookieEvidenceLog() {
-
-		if (isset($_SESSION['evidenceLog'])) {
-			return $_SESSION['evidenceLog'];
-		} else {
-			return "";
-		}
-
-	}
-
-	public function cookieEvidenceLogTitle() {
-
-		if (isset($_SESSION['evidenceLogTitle'])) {
-			return $_SESSION['evidenceLogTitle'];
-		} else {
-			return "";
-		}
-
-	}
-	
-	public function cookieArrestReport() {
-
-		if (isset($_SESSION['arrestReport'])) {
-			return $_SESSION['arrestReport'];
-		} else {
-			return "";
-		}
-
-	}
-	
-	public function cookiePatrolLogReport() {
-
-		if (isset($_SESSION['patrolLog'])) {
-			return $_SESSION['patrolLog'];
-		} else {
-			return "";
-		}
-
 	}
 
 	public function cookieCallSign() {
@@ -149,7 +96,6 @@ class General {
 		} else {
 			return "";
 		}		
-
 	}
 
 	public function cookieRank() {
@@ -159,7 +105,6 @@ class General {
 		} else {
 			return "";
 		}
-
 	}
 
 	public function cookieBadge() {
@@ -169,7 +114,6 @@ class General {
 		} else {
 			return "";
 		}		
-
 	}
 
 	public function cookieTrafficPatrolURL() {
@@ -179,7 +123,6 @@ class General {
 		} else {
 			return "";
 		}
-
 	}
 
 	public function rankChooser() {
