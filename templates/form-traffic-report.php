@@ -255,7 +255,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
 					<?php
-						$tr->districtChooser();
+						$g->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -277,7 +277,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
 					<?php
-						$tr->streetChooser();
+						$g->streetChooser();
 					?>
 					</datalist>
 				</div>

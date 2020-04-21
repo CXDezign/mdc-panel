@@ -6,14 +6,12 @@
 	require '../models/arrestReport.php';
 	require '../models/deathReport.php';
 	require '../models/evidenceLog.php';
-	require '../models/patrolLog.php';
 	require '../models/trafficPatrol.php';
 	$g = new General();
 	$tr = new TrafficReport();
 	$ar = new ArrestReport();
 	$dr = new DeathReport();
 	$el = new EvidenceLog();
-	$pl = new PatrolLog();
 	$tp = new TrafficPatrol();
 
 	if (isset($_POST['generatorType'])) {
@@ -132,7 +130,7 @@
 
 			// Report Builder
 			$generatedReportType = "Arrest Report";
-			$generatedReport = $officers.", under the callsign <b>".$inputCallsign."</b>
+			$generatedReport = $officers."under the callsign <b>".$inputCallsign."</b>
 			 conducted an arrest on <b>".$inputDefName."</b>
 			 on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.
 			 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br><br>"
