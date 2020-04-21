@@ -111,21 +111,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var maxCharges = 20;
 
-		$(".addCharge").click(function(){
-			if($('body').find('.chargeGroup').length < maxCharges){
-				var fieldHTML = '<div class="form-row chargeGroup">'+$(".fieldChargeCopy").html()+'</div>';
-				$('body').find('.chargeGroup:last').after(fieldHTML);
-			} else {
-				alert('Maximum '+maxCharges+' charges are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeCharge",function(){ 
-			$(this).parents(".chargeGroup").remove();
-		});
-	});
-</script>
+<?php
+	require "form-footer.php";
+?>

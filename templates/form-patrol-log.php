@@ -102,7 +102,7 @@
 						</a>
 					</div>
 					<div class="col-xl-2">
-						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotTS">
+						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotEventTS">
 							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Traffic Stop
 						</a>
 					</div>
@@ -342,79 +342,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		// Initial Time + Function
-		function updateTime(){
-			$.ajax({
-				url: '/resources/time.php',
-				success: function(time) {
-				$('.groupCopySlotInfo').find('.timeSlot').attr("value", time);
-				$('.groupCopySlotTraffic').find('.timeSlot').attr("value", time);
-				$('.groupCopySlotArrest').find('.timeSlot').attr("value", time);
-				},
-			});
-		}
-
-		updateTime();
-		// Update Time every 10 seconds
-		setInterval(updateTime, 10000);
-		
-		var event = 1;
-		// Maximum Slots
-		var maxSlotInfo = 30;
-		var maxSlotTraffic = 30;
-		
-		$(".addSlotInfo").click(function(){
-			if($('body').find('.groupSlotEvent').length < maxSlotInfo){
-				$('.groupCopySlotInfo label').text('Generic Event');
-				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotInfo").html()+'</div>';
-				$('body').find('.groupSlotEvent:last').after(fieldHTML);
-				event++;
-			} else {
-				alert('Maximum '+maxSlotInfo+' Info slots are allowed.');
-			}
-		});
-		
-		$(".addSlotTS").click(function(){
-			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
-				$('.groupCopySlotTraffic label').text('Traffic Stop');
-				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotTraffic").html()+'</div>';
-				$('body').find('.groupSlotEvent:last').after(fieldHTML);
-				event++;
-			} else {
-				alert('Maximum '+maxSlotTraffic+' Traffic Stop slots are allowed.');
-			}
-		});
-		
-		$(".addSlotArrest").click(function(){
-			if($('body').find('.groupSlotEvent').length < maxSlotTraffic){
-				$('.groupCopySlotArrest label').text('Arrest');
-				var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotArrest").html()+'</div>';
-				$('body').find('.groupSlotEvent:last').after(fieldHTML);
-				event++;
-			} else {
-				alert('Maximum '+maxSlotTraffic+' Arrest slots are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeSlotInfo",function(){ 
-			$(this).parents(".groupSlotEvent").remove();
-			event--;
-		});
-		$("body").on("click",".removeSlotTS",function(){ 
-			$(this).parents(".groupSlotEvent").remove();
-			event--;
-		});
-		
-		$("body").on("click",".removeSlotArrest",function(){ 
-			$(this).parents(".groupSlotEvent").remove();
-			event--;
-		});
-
-		// Tooltips
-		$('input').tooltip();
-
-	});
-</script>
+<?php
+	require "form-footer.php";
+?>

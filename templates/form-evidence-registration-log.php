@@ -225,43 +225,6 @@
 
 </div>
 
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		var maxItems = 5;
-		$(".addItemRegistry").click(function(){
-			if($('body').find('.groupItemRegistry').length < maxItems){
-				var fieldHTML = '<div class="form-row groupItemRegistry">'+$(".groupCopyItemRegistry").html()+'</div>';
-				$('body').find('.groupItemRegistry:last').after(fieldHTML);
-			}else{
-				alert('Maximum '+maxItems+' items are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeItem",function(){ 
-			$(this).parents(".groupItemRegistry").remove();
-		});
-	});
-</script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var maxEvidence = 5;
-		$(".addImage").click(function(){
-			if($('body').find('.groupEvidence').length < maxEvidence){
-				var fieldHTML = '<div class="form-row groupEvidence">'+$(".groupCopyImage").html()+'</div>';
-				$('body').find('.groupEvidence:last').after(fieldHTML);
-			}else{
-				alert('Maximum '+maxEvidence+' evidence slots are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeImage",function(){ 
-			$(this).parents(".groupEvidence").remove();
-		});
-	});
-</script>
-<script>
-	$(document).ready(function(){
-		$('input').tooltip();
-	});
-</script>
+<?php
+	require "form-footer.php";
+?>

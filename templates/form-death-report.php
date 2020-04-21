@@ -239,12 +239,12 @@
 		<div class="form-row groupEvidence">
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addImage"><i class="fas fa-plus-square fa-fw"></i> Photograph</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceImage"><i class="fas fa-plus-square fa-fw"></i> Photograph</a>
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addBox"><i class="fas fa-plus-square fa-fw"></i> Description</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceBox"><i class="fas fa-plus-square fa-fw"></i> Description</a>
 				</div>
 			</div>
 		</div>
@@ -310,56 +310,6 @@
 
 </div>
 
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		var maxWitness = 5;
-		$(".addWitness").click(function(){
-			if($('body').find('.groupWitness').length < maxWitness){
-				var fieldHTML = '<div class="form-row groupWitness">'+$(".groupCopyWitness").html()+'</div>';
-				$('body').find('.groupWitness:last').after(fieldHTML);
-			}else{
-				alert('Maximum '+maxWitness+' witnesses are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeWitness",function(){ 
-			$(this).parents(".groupWitness").remove();
-		});
-	});
-</script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var maxEvidence = 5;
-		$(".addImage").click(function(){
-			if($('body').find('.groupEvidence').length < maxEvidence){
-				var fieldHTML = '<div class="form-row groupEvidence">'+$(".groupCopyImage").html()+'</div>';
-				$('body').find('.groupEvidence:last').after(fieldHTML);
-			}else{
-				alert('Maximum 4 evidence slots are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeImage",function(){ 
-			$(this).parents(".groupEvidence").remove();
-		});
-
-		$(".addBox").click(function(){
-			if($('body').find('.groupEvidence').length < maxEvidence){
-				var fieldHTML = '<div class="form-row groupEvidence">'+$(".groupCopyBox").html()+'</div>';
-				$('body').find('.groupEvidence:last').after(fieldHTML);
-			}else{
-				alert('Maximum 4 evidence slots are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeBox",function(){ 
-			$(this).parents(".groupEvidence").remove();
-		});
-	});
-</script>
-<script>
-	$(document).ready(function(){
-		$('input').tooltip();
-	});
-</script>
+<?php
+	require "form-footer.php";
+?>

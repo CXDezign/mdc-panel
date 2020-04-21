@@ -349,26 +349,7 @@ The suspect was found to be X."
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var maxSlots = 4;
-		$(".addOfficer").click(function(){
-			if($('body').find('.officerGroup').length < maxSlots){
-				var fieldHTML = '<div class="form-row officerGroup">'+$(".fieldGroupCopy").html()+'</div>';
-				$('body').find('.officerGroup:last').after(fieldHTML);
-			}else{
-				alert('Maximum '+maxSlots+' officer slots are allowed.');
-			}
-		});
 
-		$("body").on("click",".removeOfficer",function(){ 
-			$(this).parents(".officerGroup").remove();
-		});
-	});
-</script>
-
-<script>
-	$(document).ready(function(){
-		$('input').tooltip();
-	});
-</script>
+<?php
+	require "form-footer.php";
+?>

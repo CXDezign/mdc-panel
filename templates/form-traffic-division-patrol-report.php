@@ -192,26 +192,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-
-		// Maximum Slots
-		var maxSlotTS = 30;
-		$(".addSlotTS").click(function(){
-			if($('body').find('.groupSlotTS').length < maxSlotTS){
-				var fieldHTML = '<div class="form-row groupSlotTS">'+$(".groupCopySlotTS").html()+'</div>';
-				$('body').find('.groupSlotTS:last').after(fieldHTML);
-			}else{
-				alert('Maximum '+maxSlotTS+' traffic stop slots are allowed.');
-			}
-		});
-
-		$("body").on("click",".removeSlotTS",function(){ 
-			$(this).parents(".groupSlotTS").remove();
-		});
-
-		// Tooltips
-		$('input').tooltip();
-
-	});
-</script>
+<?php
+	require "form-footer.php";
+?>
