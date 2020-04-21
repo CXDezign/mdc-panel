@@ -172,7 +172,7 @@
 			type="text"
 			id="inputReasonTS[]"
 			name="inputReasonTS[]"
-			placeholder="Reason"
+			placeholder="Pullover Reason"
 			required>
 		</div>
 		<div class="form-group col-xl-1">
@@ -181,8 +181,8 @@
 			type="text"
 			id="inputCitationsTS[]"
 			name="inputCitationsTS[]"
-			placeholder="#"
-			data-placement="bottom" title="Leave empty if none for warnings.">
+			placeholder="#">
+			<small id="helpDashcam" class="form-text text-muted"><center>Citations</center></small>
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
