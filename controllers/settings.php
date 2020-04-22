@@ -8,8 +8,13 @@
 
 		if ($request->type == "toggleMode") {
 
-			
-			
+			$toggleMode = $g->cookieToggleMode();
+			if ($toggleMode == false) {
+				setcookie("toggleMode",true,2147483647, "/");
+			} else {
+				setcookie("toggleMode",false,2147483647, "/");
+			}
+		}
 	}
 
 ?>

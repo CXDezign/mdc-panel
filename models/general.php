@@ -57,10 +57,10 @@ class General {
 		}
 	}
 
-	public function cookieDarkMode() {
+	public function cookieToggleMode() {
 
-		if (isset($_COOKIE['darkMode'])) {
-			return $_COOKIE['darkMode'];
+		if (isset($_COOKIE['toggleMode'])) {
+			return $_COOKIE['toggleMode'];
 		} else {
 			return false;
 		}

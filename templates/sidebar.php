@@ -91,7 +91,7 @@
 
 	$(document).on("click", "#toggleMode", function (e) {
 		$.ajax({
-			url: "/controllers/settings.php",
+			url: "controllers/settings.php",
 			type: "POST",
 			data: {
 				type: "toggleMode",

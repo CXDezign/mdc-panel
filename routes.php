@@ -4,7 +4,10 @@
 		case '':
 		case '/':
 		case '/dashboard':
-			require __DIR__ . "/templates/dashboard.php";
+			require __DIR__ . "/templates/page-dashboard.php";
+			break;
+		case '/settings':
+			require __DIR__ . "/templates/page-settings.php";
 			break;
 		case '/street-guide':
 			require __DIR__ . "/map/index.php";
@@ -44,7 +47,7 @@
 			break;
 		default:
 			http_response_code(404);
-			require __DIR__ . "/templates/dashboard.php";
+			require __DIR__ . "/templates/page-dashboard.php";
 			break;
 	}
 ?>

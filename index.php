@@ -14,6 +14,8 @@
 	$dr = new DeathReport();
 	$tp = new TrafficPatrol();
 
+	$cookieToggleMode = $g->cookieToggleMode();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +37,7 @@
 	<title>MDC Panel - <?php echo $g->getVersion(); ?></title>
 	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=<?php echo $g->getVersion(); ?>">
 	<?php
-		if ($cookieDarkMode == false) {
+		if ($cookieToggleMode == true) {
 			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v=<?php echo $g->getVersion(); ?>">';
 		}
 	?>
