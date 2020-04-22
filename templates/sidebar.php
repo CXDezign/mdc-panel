@@ -3,9 +3,9 @@
 		<a href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
 	</div>
 	<hr class="mx-3">
-		<div class="container text-white text-center">
-			<div id="timestamp"></div>
-		</div>
+		<?php
+			require "clock.php";
+		?>
 	<hr class="mx-3">
 	<ul class="list-unstyled components px-3">
 		<li class="nav-item">
@@ -81,18 +81,3 @@
 		</li>
 	</ul>
 </nav>
-<script>
-	$(document).ready(function() {
-		timestamp();
-		setInterval(timestamp, 1000);
-	});
-
-	function timestamp() {
-		$.ajax({
-			url: '/controllers/timestamp.php',
-			success: function(data) {
-				$('#timestamp').html(data);
-			},
-		});
-	}
-</script>
