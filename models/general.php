@@ -137,8 +137,8 @@ class General {
 		}
 
 		foreach ($ranks as $rank) {
-				echo "<option value=".$rankCount.">".$rank."</option>";
-				$rankCount++;
+			echo "<option value=".$rankCount.">".$rank."</option>";
+			$rankCount++;
 		}
 	}
 

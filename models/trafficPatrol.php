@@ -15,11 +15,13 @@ class TrafficPatrol {
 	}
 
 	public function noteResolver($input) {
+
 		if (!$input) {
 			return "N/A";
 		} else {
 			return $input;
 		}
+		
 	}
 
 }

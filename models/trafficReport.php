@@ -61,35 +61,41 @@ class TrafficReport {
 
 	public function getDashboardCamera($input) {
 
+		$dashboardCamera = "";
+
 		switch ($input) {
 			case '':
-				return '<b style="color: #9944dd;">* The dashboard camera footage supports the above narrative. *</b>';
+				$dashboardCamera = 'The dashboard camera footage supports the above narrative.';
 				break;
 			default:
-				return '<b style="color: #9944dd;">* '.$input.' *</b>';
+				$dashboardCamera = $input;
 				break;
 		}
+		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
 	}
 
 	public function getVehicleTint($input) {
 
+		$vehicleTint = "";
+
 		switch ($input) {
 			case 0:
-				return 'The vehicle had a legal tint level after visual inspection.';
+				$vehicleTint = 'a legal tint level after visual inspection.';
 				break;
 			case 1:
 			case 2:
-				return 'The vehicle had an illegal tint level (<b>'.$input.'</b>) after inspection with the tint meter device.';
+				$vehicleTint = 'an illegal tint level (<b>'.$input.'</b>) after inspection with the tint meter device.';
 				break;
 			case 3:
 			case 4:
 			case 5:
-				return 'The vehicle had a legal tint level (<b>'.$input.'</b>) after inspection with the tint meter device.';
+				$vehicleTint = 'a legal tint level (<b>'.$input.'</b>) after inspection with the tint meter device.';
 				break;
 			default:
-				return 'The vehicle had a legal tint level after a visual inspection.';
+				$vehicleTint = 'a legal tint level after a visual inspection.';
 				break;
 		}
+		return 'The vehicle had '.$vehicleTint;
 	}
 
 	public function getVehiclePlates($input) {
