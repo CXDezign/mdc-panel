@@ -79,5 +79,25 @@
 		<li class="nav-item mt-5">
 			<a class="nav-link" target="_blank" href="https://lspd.gta.world/viewtopic.php?f=665&t=24968"><i class="fas fa-fw fa-columns mr-2"></i>MDC Panel - Thread</a>
 		</li>
+		<div class="mt-5">
+			<center>
+				<input id="toggleMode" type="checkbox" checked data-toggle="toggle" data-on="Day Mode" data-off="Night Mode" data-onstyle="light" data-offstyle="dark">
+			</center>
+		</div>
 	</ul>
 </nav>
+
+<script>
+
+	$(document).on("click", "#toggleMode", function (e) {
+		$.ajax({
+			url: "/controllers/settings.php",
+			type: "POST",
+			data: {
+				type: "toggleMode",
+				mode: $('#toggleMode').val()
+			},
+		});
+	});
+
+</script>

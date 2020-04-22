@@ -57,6 +57,16 @@ class General {
 		}
 	}
 
+	public function cookieDarkMode() {
+
+		if (isset($_COOKIE['darkMode'])) {
+			return $_COOKIE['darkMode'];
+		} else {
+			return false;
+		}
+
+	}
+
 	public function cookieCallSign() {
 
 		if (isset($_COOKIE['callSign'])) {

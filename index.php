@@ -34,9 +34,18 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<title>MDC Panel - <?php echo $g->getVersion(); ?></title>
 	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=<?php echo $g->getVersion(); ?>">
+	<?php
+		if ($cookieDarkMode == false) {
+			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v=<?php echo $g->getVersion(); ?>">';
+		}
+	?>
 
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Bootstrap Switch Button -->
+	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
 	<!-- Map -->
 	<link rel="stylesheet" type="text/css" href="/map/style.css">
