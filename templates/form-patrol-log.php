@@ -1,9 +1,9 @@
 <div class="container mb-5 pb-5">
-	<h1 class="my-3">Patrol Log - Form</h1>
+	<h1><i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log - Form</h1>
+	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="PatrolLog">
-
-		<h4><i class="fas fa-archive fa-fw mr-2"></i>General Details</h4>
+		<h4><i class="fas fa-fw fa-archive mr-2"></i>General Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-2">
 				<label>Date</label>
@@ -91,31 +91,31 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-car fa-fw mr-2"></i>Add Events</h4>
+		<h4><i class="fas fa-fw fa-car mr-2"></i>Add Events</h4>
 		<div class="form-row groupSlotEvent">
 			<div class="form-group col-xl-12">
 				<label>Event Options</label>
 				<div class="form-row">
 					<div class="col-xl-3">
 						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotInfo">
-							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Generic Event
+							<i class="fas fa-fw fa-plus-square mr-1"></i>Add Generic Event
 						</a>
 					</div>
 					<div class="col-xl-2">
 						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotEventTS">
-							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Traffic Stop
+							<i class="fas fa-fw fa-plus-square mr-1"></i>Add Traffic Stop
 						</a>
 					</div>
 					<div class="col-xl-2">
 						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotArrest">
-							<i class="fas fa-plus-square fa-fw mr-2"></i>Add Arrest
+							<i class="fas fa-fw fa-plus-square mr-1"></i>Add Arrest
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<h4><i class="fas fa-clipboard fa-fw mr-2"></i>Notes & Other Details</h4>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Notes & Other Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-12">
 				<textarea
@@ -128,7 +128,7 @@
 		</div>
 		<div class="container my-5 text-center">
 			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
-				<i class="fas fa-plus-square fa-fw mr-2"></i>End Patrol
+				<i class="fas fa-fw fa-plus-square mr-1"></i>End Patrol
 			</button>
 		</div>
 	</form>
@@ -165,7 +165,7 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<button class="btn btn-danger w-100 removeSlotInfo" type="button" id="button-addon2">
-				<i class="fas fa-minus-square mr-2"></i>Event
+				<i class="fas fa-fw fa-minus-square mr-1"></i>Event
 			</button>
 		</div>
 		<div class="col-xl-12">
@@ -203,7 +203,8 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon">
-				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Event</button>
+				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Event</button>
 			</div>
 		</div>
 		<div class="form-row col-xl-12">
@@ -332,7 +333,7 @@
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
 				<button class="btn btn-danger w-100 removeSlotArrest" type="button" id="button-addon2">
-					<i class="fas fa-minus-square mr-2"></i>Event
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Event
 				</button>
 			</div>
 		</div>

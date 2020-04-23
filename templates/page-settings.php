@@ -1,6 +1,6 @@
 <div class="container mb-5 pb-5">
 	<h1><i class="fas fa-fw fa-cog mr-2"></i></i>Settings</h1>
-	<hr class="my-3"></h1>
+	<hr>
 	<center><h4><i class="fas fa-globe fa-fw mr-2"></i>Site Preferences</h4></center>
 	<form>
 		<div class="row">

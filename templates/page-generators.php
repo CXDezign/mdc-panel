@@ -1,6 +1,7 @@
 <div class="container mb-5 pb-5">
 	<h1><i class="fas fa-fw fa-archive mr-2"></i></i>Paperwork Generators</h1>
-	<div class="row mt-5">
+	<hr>
+	<div class="row">
 		<div class="col-xl-6 mb-4">
 			<a href="/paperwork-generators/arrest-charges">
 				<div class="card card-panel bg-dark text-white" id="card-generators-arrest">

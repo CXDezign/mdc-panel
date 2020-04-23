@@ -37,6 +37,12 @@ a:hover {
 	font-weight: 600;
 }
 
+#breadcrumb li a {
+	background-color: rgba(255,255,255,1);
+	padding: 4px 16px;
+	border-radius: 5px;
+}
+
 #container {
 	display: block;
 	width: calc(100vw - 260px);
@@ -65,6 +71,11 @@ a:hover {
 #sidebar li:hover {
 	color: #4095e8;
 	background: rgba(255,255,255,0.1);
+}
+
+#sidebar #timestamp {
+	background-color: rgba(0,0,0,.1);
+	border-radius: 5px;
 }
 
 .card-panel i {

@@ -1,10 +1,11 @@
 <div class="container mb-5 pb-5">
 	<?php require 'templates/form-arrest-charge-table.php'; ?>
-	<h1 class="my-3">Arrest Report - Form</h1>
+	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Form</h1>
+	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="ArrestReport">
 
-		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
+		<h4><i class="fas fa-fw fa-archive mr-2"></i>General Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-2">
 				<label>Date</label>
@@ -55,7 +56,7 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-user-shield fa-fw"></i> Officer Details</h4>
+		<h4><i class="fas fa-fw fa-user-shield mr-2"></i>Officer Details</h4>
 		<div class="form-row officerGroup">
 			<div class="form-group col-xl-4">
 				<label>Full Name</label>
@@ -107,12 +108,13 @@
 			<div class="form-group col-xl-1">
 				<label>Options</label>
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addOfficer"><i class="fas fa-plus-square"></i> Slot</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addOfficer">
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Slot</a>
 				</div>
 			</div>
 		</div>
 
-		<h4><i class="fas fa-map-marked-alt fa-fw"></i> Arrest Details</h4>
+		<h4><i class="fas fa-fw fa-map-marked-alt mr-2"></i>Arrest Details</h4>
 
 		<div class="form-row">
 			<div class="form-group col-xl-4">
@@ -161,7 +163,7 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-clipboard fa-fw"></i> Suspect & Narrative</h4>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Suspect & Narrative</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-4">
 				<label>Full Name</label>
@@ -190,7 +192,7 @@ The suspect was found to be X."
 			</div>
 		</div>
 		
-		<h4><i class="fas fa-fingerprint fa-fw"></i> Evidence</h4>
+		<h4><i class="fas fa-fw fa-fingerprint mr-2"></i>Evidence</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-6">
 				<label>Evidence</label>
@@ -223,7 +225,7 @@ The suspect was found to be X."
 			</div>
 		</div>
 		
-		<h4><i class="fas fa-landmark fa-fw"></i> Processing Details</h4>
+		<h4><i class="fas fa-fw fa-landmark mr-2"></i>Processing Details</h4>
 		<div class="form-row">
 			
 			<div class="form-group col-xl-4">
@@ -298,7 +300,9 @@ The suspect was found to be X."
 		</div>
 		
 		<div class="container my-5 text-center">
-		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-plus-square fa-fw"></i>Submit</button>
+		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+			<i class="fas fa-fw fa-plus-square mr-1"></i>Submit
+		</button>
 	</div>
 	</form>
 
@@ -344,7 +348,9 @@ The suspect was found to be X."
 		</div>
 		<div class="form-group col-xl-1">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeOfficer" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Slot</button>
+				<button class="btn btn-danger w-100 removeOfficer" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Slot
+				</button>
 			</div>
 		</div>
 	</div>

@@ -1,10 +1,11 @@
 <div class="container mb-5 pb-5">
-	<h1 class="mt-3">Death Report - Form</h1>
-	<h6 class="mb-4"><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=1356&t=25509">Death Reports - Thread</a></h6>
+	<h1><i class="fas fa-fw fa-skull mr-2"></i>Death Report - Form</h1>
+	<h6><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=1356&t=25509">Death Reports - Thread</a></h6>
+	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="DeathReport">
 
-		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
+		<h4><i class="fas fa-fw fa-archive mr-2"></i>General Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-2">
 				<label>Date</label>
@@ -85,7 +86,7 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-skull fa-fw"></i> Deceased Information</h4>
+		<h4><i class="fas fa-fw fa-skull mr-2"></i>Deceased Information</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-4">
 				<label>Full Name</label>
@@ -110,7 +111,7 @@
 		</div>
 
 
-		<h4><i class="fas fa-eye fa-fw"></i> Witnesses Information</h4>
+		<h4><i class="fas fa-eye fa-fw mr-2"></i>Witnesses Information</h4>
 		<div class="form-row groupWitness">
 			<div class="form-group col-xl-4">
 				<label>Full Name</label>
@@ -125,13 +126,15 @@
 			<div class="form-group col-xl-2">
 				<label>Options</label>
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addWitness"><i class="fas fa-plus-square fa-fw"></i> Witness</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addWitness">
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Witness
+					</a>
 				</div>
 			</div>
 		</div>
 
 
-		<h4><i class="fas fa-clipboard fa-fw"></i> Administrative Information</h4>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Administrative Information</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-4">
 				<label>First Responding Officer</label>
@@ -234,19 +237,19 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-camera fa-fw mr-2"></i>Evidence</h4>
+		<h4><i class="fas fa-fw fa-camera mr-2"></i>Evidence</h4>
 		<div class="form-row groupEvidence">
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceImage">
-						<i class="fas fa-plus-square fa-fw mr-2"></i>Photograph
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Photograph
 					</a>
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
 					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceBox">
-						<i class="fas fa-plus-square fa-fw mr-2"></i>Description
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Description
 					</a>
 				</div>
 			</div>
@@ -254,7 +257,7 @@
 
 		<div class="container my-5 text-center">
 			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
-				<i class="fas fa-plus-square fa-fw mr-2"></i>Submit
+				<i class="fas fa-fw fa-plus-square mr-1"></i>Submit
 			</button>
 		</div>
 	</form>
@@ -274,7 +277,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeWitness" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Witness</button>
+				<button class="btn btn-danger w-100 removeWitness" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Witness
+				</button>
 			</div>
 		</div>
 	</div>
@@ -290,7 +295,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeImage" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Photograph</button>
+				<button class="btn btn-danger w-100 removeImage" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Photograph
+				</button>
 			</div>
 		</div>
 	</div>
@@ -306,7 +313,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeBox" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Description</button>
+				<button class="btn btn-danger w-100 removeBox" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Description
+				</button>
 			</div>
 		</div>
 	</div>

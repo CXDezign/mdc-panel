@@ -1,5 +1,6 @@
 <div class="container mb-5 pb-5">
-	<h1 class="my-3">Arrest Report - Charges</h1>
+	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Charges</h1>
+	<hr>
 	<form action="/paperwork-generators/arrest-report" method="POST">
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
 		<div class="form-row chargeGroup">
@@ -55,7 +56,9 @@
 		</div>
 		
 		<div class="container mt-2 text-center">
-			<a class="btn btn-info px-5" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/" role="button"><i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code</a>
+			<a class="btn btn-info px-5" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/" role="button">
+				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
+			</a>
 		</div>
 		
 		<div class="container my-5 text-center">
@@ -106,7 +109,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeCharge" type="button" id="button-addon2"><i class="fas fa-fw fa-minus-square mr-1"></i>Remove Charge</button>
+				<button class="btn btn-danger w-100 removeCharge" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Remove Charge
+				</button>
 			</div>
 		</div>
 	</div>

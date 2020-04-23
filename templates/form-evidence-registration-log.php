@@ -1,10 +1,11 @@
 <div class="container mb-5 pb-5">
-	<h1 class="mt-3">Evidence Registration Log - Form</h1>
-	<h6 class="mb-4"><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=388&t=5760">Evidence Locker Registry - Thread</a></h6>
+	<h1><i class="fas fa-fw fa-cannabis mr-2"></i>Evidence Registration Log - Form</h1>
+	<h6><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=388&t=5760">Evidence Locker Registry - Thread</a></h6>
+	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="EvidenceRegistrationLog">
 
-		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
+		<h4><i class="fas fa-fw fa-archive mr-2"></i>General Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-2">
 				<label>Date</label>
@@ -73,7 +74,7 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-user-slash fa-fw"></i> Suspect Information</h4>
+		<h4><i class="fas fa-fw fa-user-slash mr-2"></i>Suspect Information</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-4">
 				<label>Full Name</label>
@@ -89,7 +90,7 @@
 		</div>
 
 
-		<h4><i class="fas fa-cannabis fa-fw"></i> Item Registry</h4>
+		<h4><i class="fas fa-fw fa-cannabis mr-2"></i>Item Registry</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-2">
 				<label>Category</label>
@@ -140,13 +141,15 @@
 			<div class="form-group col-xl-2">
 				<label>Options</label>
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addItemRegistry"><i class="fas fa-plus-square fa-fw"></i> Item</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addItemRegistry">
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Item
+					</a>
 				</div>
 			</div>
 		</div>
 
 
-		<h4><i class="fas fa-camera fa-fw"></i> Evidence</h4>
+		<h4><i class="fas fa-fw fa-camera mr-2"></i>Evidence</h4>
 		<div class="form-row groupEvidence">
 			<div class="form-group col-xl-10">
 				<input
@@ -159,14 +162,18 @@
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addImage"><i class="fas fa-plus-square fa-fw"></i> Photograph</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addImage">
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Photograph
+					</a>
 				</div>
 			</div>
 		</div>
 
 
 		<div class="container my-5 text-center">
-		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-plus-square fa-fw"></i>Submit</button>
+		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+			<i class="fas fa-fw fa-plus-square mr-1"></i>Submit
+		</button>
 	</div>
 	</form>
 
@@ -202,7 +209,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeItem" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Item</button>
+				<button class="btn btn-danger w-100 removeItem" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Item
+				</button>
 			</div>
 		</div>
 	</div>
@@ -218,7 +227,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeImage" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Photograph</button>
+				<button class="btn btn-danger w-100 removeImage" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Photograph
+				</button>
 			</div>
 		</div>
 	</div>

@@ -46,7 +46,8 @@
 		$x++;
 	}
 ?>
-<h1 class="my-3">Sentencing Charges & Citations</h1>
+<h1><i class="fas fa-fw fa-landmark mr-2"></i>Sentencing Charges</h1>
+<hr>
 <table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
 		<th scope="col">Charge Title</th>

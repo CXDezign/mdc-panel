@@ -1,9 +1,10 @@
 <div class="container mb-5 pb-5">
-	<h1 class="my-3">Traffic Division: Patrol Report - Form</h1>
+	<h1><i class="fas fa-fw fa-car-crash mr-2"></i>Traffic Division: Patrol Report - Form</h1>
+	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="TrafficDivisionPatrolReport">
 
-		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
+		<h4><i class="fas fa-fw fa-archive mr-2"></i>General Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-6">
 				<label>Date</label>
@@ -68,12 +69,14 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-car fa-fw"></i> Traffic Stops</h4>
+		<h4><i class="fas fa-fw fa-car mr-2"></i>Traffic Stops</h4>
 		<div class="form-row groupSlotTS">
 			<div class="form-group col-xl-2">
 				<label>Additional Options</label>
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addSlotTS"><i class="fas fa-plus-square fa-fw"></i> Traffic Stop Slot</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addSlotTS">
+						<i class="fas fa-fw fa-plus-square mr-1"></i>Traffic Stop Slot
+					</a>
 				</div>
 			</div>
 		</div>
@@ -82,7 +85,7 @@
 		<div class="row">
 			<div class="col-xl-3">
 				<div class="form-group">
-					<h5 class="text-center"><i class="fas fa-truck-pickup fa-fw"></i> Vehicle Impounds</h5>
+					<h5 class="text-center"><i class="fas fa-fw fa-truck-pickup mr-2"></i>Vehicle Impounds</h5>
 					<input
 					class="form-control"
 					type="number"
@@ -93,7 +96,7 @@
 			</div>
 			<div class="col-xl-3">
 				<div class="form-group">
-					<h5 class="text-center"><i class="fas fa-car-crash fa-fw"></i> Traffic Investigations</h5>
+					<h5 class="text-center"><i class="fas fa-fw fa-car-crash mr-2"></i>Traffic Investigations</h5>
 					<input
 					class="form-control"
 					type="number"
@@ -104,7 +107,7 @@
 			</div>
 			<div class="col-xl-3">
 				<div class="form-group">
-					<h5 class="text-center"><i class="fas fa-id-card fa-fw"></i> License Suspensions</h5>
+					<h5 class="text-center"><i class="fas fa-fw fa-id-card mr-2"></i>License Suspensions</h5>
 					<input
 					class="form-control"
 					type="number"
@@ -115,7 +118,7 @@
 			</div>
 			<div class="col-xl-3">
 				<div class="form-group">
-					<h5 class="text-center"><i class="fas fa-user-lock fa-fw"></i> Arrests Conducted</h5>
+					<h5 class="text-center"><i class="fas fa-fw fa-user-lock mr-2"></i>Arrests Conducted</h5>
 					<input
 					class="form-control"
 					type="number"
@@ -126,7 +129,7 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-clipboard fa-fw"></i> Notes & Other Details</h4>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Notes & Other Details</h4>
 		<div class="form-row">
 			<div class="form-group col-xl-12">
 				<textarea
@@ -150,7 +153,9 @@
 			</div>
 		</div>
 		<div class="container my-5 text-center">
-			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-plus-square fa-fw"></i>Submit</button>
+			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+				<i class="fas fa-fw fa-plus-square mr-1"></i>Submit
+			</button>
 		</div>
 	</form>
 
@@ -186,7 +191,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2"><i class="fas fa-minus-square"></i> Slot</button>
+				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2">
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Slot
+				</button>
 			</div>
 		</div>
 	</div>
