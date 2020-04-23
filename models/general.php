@@ -77,6 +77,16 @@ class General {
 
 	}
 
+	public function cookieToggleBreadcrumb() {
+
+		if (isset($_COOKIE['toggleBreadcrumb'])) {
+			return $_COOKIE['toggleBreadcrumb'];
+		} else {
+			return false;
+		}
+
+	}
+
 	public function cookieName() {
 
 		if (isset($_COOKIE['officerName'])) {

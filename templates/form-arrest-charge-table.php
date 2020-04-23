@@ -47,7 +47,7 @@
 	}
 ?>
 <h1 class="my-3">Sentencing Charges & Citations</h1>
-<table class="table table-striped" style="background-color: white">
+<table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
 		<th scope="col">Charge Title</th>
 		<th scope="col">Type</th>
@@ -98,7 +98,7 @@
 	</tbody>
 </table>
 <hr>
-<table class="table table-striped" style="background-color: white">
+<table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
 		<th colspan="2">Total Time</th>
 		<th colspan="2">Fines</th>

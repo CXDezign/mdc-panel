@@ -1,5 +1,5 @@
 <?php
-	
+
 	session_start();
 	require '../models/general.php';
 	require '../models/trafficReport.php';
@@ -530,4 +530,3 @@
 		exit();
 
 	}
-?>

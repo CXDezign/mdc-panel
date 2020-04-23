@@ -1,5 +1,5 @@
 <?php
-	$request = $_SERVER['REQUEST_URI'];
+	$request = rtrim($_SERVER['REQUEST_URI'], "/");
 	switch ($request) {
 		case '':
 		case '/':

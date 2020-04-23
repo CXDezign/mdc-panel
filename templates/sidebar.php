@@ -1,10 +1,11 @@
 <nav id="sidebar" class="bg-dark">
 	<div class="text-center my-3">
-		<a href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
+		<a class="d-block" href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
+		<span class="badge badge-light"><?php echo $g->getVersion(); ?></span>
 	</div>
 	<?php
-		if ($cookieToggleClock == false) {
-			require "clock.php";
+		if ($g->cookieToggleClock() == false) {
+			require "includes/clock.php";
 		}
 	?>
 	<ul class="list-unstyled components px-3">

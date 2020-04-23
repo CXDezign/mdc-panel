@@ -30,10 +30,16 @@ a:hover {
 	align-items: stretch;
 }
 
+#breadcrumb {
+	background: unset!important;
+	border-bottom: 1px solid rgba(0,0,0,.1)!important;
+	border-radius: 0!important;
+	font-weight: 600;
+}
+
 #container {
 	display: block;
 	width: calc(100vw - 260px);
-	margin-top: 50px;
 	margin-left: 260px;
 }
 

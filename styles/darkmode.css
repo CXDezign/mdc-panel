@@ -60,3 +60,17 @@ body {
 	border: 1px solid #404040;
 	border-radius: .25rem;
 }
+
+.table-light {
+	color: #fff;
+	background-color: #343a40;
+}
+
+.table-light td, .table-light th, .table-light thead th {
+	border-color: #454d55;
+}
+
+.table-light.table-hover tbody tr:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,.075);
+}

@@ -52,6 +52,30 @@
 					>
 				</center>
 			</div>
+			<div class="form-group col-xl-4">
+				<center>
+				<label>Toggle Breadcrumb</label><br>
+					<input
+					id="settingsToggleBreadcrumb"
+					name="settingsToggleBreadcrumb"
+					type="checkbox"
+					data-toggle="toggle"
+					data-off="<i class='fas fa-fw fa-check'></i>"
+					data-on="<i class='fas fa-fw fa-ban'></i>"
+					data-onstyle="danger"
+					data-offstyle="success"
+					data-width="100"
+					<?php
+						$toggleBreadcrumb = $g->cookieToggleBreadcrumb();
+						if ($toggleBreadcrumb == false) {
+							echo '';
+						} else {
+							echo 'checked';
+						}
+					?>
+					>
+				</center>
+			</div>
 		</div>
 	</form>
 	<hr class="my-3"></h1>
@@ -135,6 +159,21 @@
 				url: 'controllers/settings.php',
 				data: {
 					type: "settingsToggleClock"
+				},
+				success: function () {
+					setTimeout(function() {
+						location.reload();
+					}, 250);
+				},
+			});
+		});
+
+		$('#settingsToggleBreadcrumb').change(function() {
+			$.ajax({
+				type: 'POST',
+				url: 'controllers/settings.php',
+				data: {
+					type: "settingsToggleBreadcrumb"
 				},
 				success: function () {
 					setTimeout(function() {

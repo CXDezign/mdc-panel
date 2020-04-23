@@ -34,6 +34,19 @@
 		}
 	}
 
+	if ($formType == "settingsToggleBreadcrumb") {
+
+		$toggleBreadcrumb = $g->cookieToggleBreadcrumb();
+
+		if ($toggleBreadcrumb == false) {
+			$toggleBreadcrumb = true;
+			setcookie("toggleBreadcrumb",$toggleBreadcrumb,2147483647,"/");
+		} else {
+			$toggleBreadcrumb = false;
+			setcookie("toggleBreadcrumb",$toggleBreadcrumb,2147483647,"/");
+		}
+	}
+
 	if ($formType == "settingsCharacter") {
 
 		$name = $_POST['name'];

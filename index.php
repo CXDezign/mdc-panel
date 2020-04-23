@@ -1,21 +1,6 @@
 <?php
 
-	session_start();
-	require 'models/general.php';
-	require 'models/arrestReport.php';
-	require 'models/trafficReport.php';
-	require 'models/evidenceLog.php';
-	require 'models/deathReport.php';
-	require 'models/trafficPatrol.php';
-	$g = new General();
-	$ar = new ArrestReport();
-	$tr = new TrafficReport();
-	$el = new EvidenceLog();
-	$dr = new DeathReport();
-	$tp = new TrafficPatrol();
-
-	$cookieToggleMode = $g->cookieToggleMode();
-	$cookieToggleClock = $g->cookieToggleClock();
+	require 'includes/initialise.php';
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +14,7 @@
 	<meta property="og:image" content="http://xanx.co.uk/MDC/images/Logo-MDC.png">
 	<meta property="og:description" content="MDC Panel - Created by xanx.">
 
-	<title>MDC Panel - <?php echo $g->getVersion(); ?></title>
+	<title>MDC Panel</title>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
@@ -40,7 +25,7 @@
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=<?php echo $g->getVersion(); ?>">
 	<?php
-		if ($cookieToggleMode == true) {
+		if ($g->cookieToggleMode() == true) {
 			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v=<?php echo $g->getVersion(); ?>">';
 		}
 	?>
@@ -75,8 +60,13 @@
 	?>
 		<div id="container">
 		<?php
-			require("routes.php");
+			require("templates/breadcrumbs.php");
 		?>
+			<div class="container mt-5">
+			<?php
+				require("routes.php");
+			?>
+			</div>
 		</div>
 	</div>
 </body>
