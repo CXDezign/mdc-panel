@@ -148,8 +148,7 @@
 				id="inputTDPatrolReportURL"
 				name="inputTDPatrolReportURL"
 				value="<?php echo $g->cookieTrafficPatrolURL(); ?>"
-				placeholder="Direct URL to your personal Patrol Report thread."
-				required>
+				placeholder="Direct URL to your personal Patrol Report thread.">
 			</div>
 		</div>
 		<div class="container my-5 text-center">
@@ -183,7 +182,7 @@
 		<div class="form-group col-xl-1">
 			<input
 			class="form-control"
-			type="text"
+			type="number"
 			id="inputCitationsTS[]"
 			name="inputCitationsTS[]"
 			placeholder="#">

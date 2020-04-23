@@ -2,6 +2,7 @@
 	<div id="timestamp">|</div>
 </div>
 <script>
+	timestamp();
 	$(document).ready(function() {
 		timestamp();
 		setInterval(timestamp, 1000);

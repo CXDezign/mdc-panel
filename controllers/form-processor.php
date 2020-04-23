@@ -6,13 +6,11 @@
 	require '../models/arrestReport.php';
 	require '../models/deathReport.php';
 	require '../models/evidenceLog.php';
-	require '../models/trafficPatrol.php';
 	$g = new General();
 	$tr = new TrafficReport();
 	$ar = new ArrestReport();
 	$dr = new DeathReport();
 	$el = new EvidenceLog();
-	$tp = new TrafficPatrol();
 
 	if (isset($_POST['generatorType'])) {
 
@@ -323,67 +321,54 @@
 		}
 
 		if ($generatorType == "TrafficDivisionPatrolReport") {
+
 			// Variables
 			$redirectPath = "thread";
-			$inputDateFrom = $_POST['inputDateFrom'];
-			$inputDateTo = $_POST['inputDateTo'];
-			$inputTimeFrom = $_POST['inputTimeFrom'];
-			$inputTimeTo = $_POST['inputTimeTo'];
-			$inputCallsign = $_POST['inputCallsign'];
+			$inputDateFrom = (empty($_POST['inputDateFrom'])) ? $g->getDate() : $_POST['inputDateFrom'];
+			$inputDateTo = (empty($_POST['inputDateTo'])) ? $g->getDate() : $_POST['inputDateTo'];
+			$inputTimeFrom = (empty($_POST['inputTimeFrom'])) ? $g->getTime() : $_POST['inputTimeFrom'];
+			$inputTimeTo = (empty($_POST['inputTimeTo'])) ? $g->getTime() : $_POST['inputTimeTo'];
+
+			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'UNKNOWN CALL SIGN' : strtoupper($_POST['inputCallsign']);
 			setcookie("callSign",$inputCallsign,time()+21960, "/");
-			$inputNameTS = $_POST['inputNameTS'];
-			$inputNameTS = array_filter($inputNameTS);
-			$inputReasonTS = $_POST['inputReasonTS'];
-			$inputReasonTS = array_filter($inputReasonTS);
-			$inputCitationsTS = $_POST['inputCitationsTS'];
-			$inputVehicleImpounds = $_POST['inputVehicleImpounds'];
-			$inputTrafficInvestigations = $_POST['inputTrafficInvestigations'];
-			$inputLicenseSuspensions = $_POST['inputLicenseSuspensions'];
-			$inputArrestsConducted = $_POST['inputArrestsConducted'];
-			$inputNotes = $_POST['inputNotes'];
-			$inputTDPatrolReportURL = $_POST['inputTDPatrolReportURL'];
+
+			$inputNameTS = (empty($_POST['inputNameTS'])) ? '' : array_filter($_POST['inputNameTS']);
+			$inputReasonTS = (empty($_POST['inputReasonTS'])) ? '' : array_filter($_POST['inputReasonTS']);
+			$inputCitationsTS = (empty($_POST['inputCitationsTS'])) ? '' : $_POST['inputCitationsTS'];
+
+			$inputVehicleImpounds = (empty($_POST['inputVehicleImpounds'])) ? '0' : $_POST['inputVehicleImpounds'];
+			$inputTrafficInvestigations = (empty($_POST['inputTrafficInvestigations'])) ? '0' : $_POST['inputTrafficInvestigations'];
+			$inputLicenseSuspensions = (empty($_POST['inputLicenseSuspensions'])) ? '0' : $_POST['inputLicenseSuspensions'];
+			$inputArrestsConducted = (empty($_POST['inputArrestsConducted'])) ? '0' : $_POST['inputArrestsConducted'];
+
+			$inputNotes = (empty($_POST['inputNotes'])) ? 'N/A' : $_POST['inputNotes'];
+			$inputTDPatrolReportURL = (empty($_POST['inputTDPatrolReportURL'])) ? "https://lspd.gta.world/viewforum.php?f=101" : $_POST['inputTDPatrolReportURL'];
 			setcookie("inputTDPatrolReportURL",$inputTDPatrolReportURL,2147483647, "/");
 
 			// Traffic Stop Resolver
 			if (empty($inputNameTS) == false) {
 
-				$iTS = 0;
-				$iCitations = 0;
+				$iTS = count($inputNameTS);
+				$iCitations = array_sum($inputCitationsTS);
 				$iWarnings = 0;
+				$trafficStops = "";
 
-				foreach ($inputNameTS as $trafficStop) {
-					$trafficStops[] = "[*]" . $trafficStop . " - " . $inputReasonTS[$iTS];
-					if ($inputCitationsTS[$iTS]) {
-						$iCitations += $inputCitationsTS[$iTS];
-					} else {
+				foreach ($inputNameTS as $TSID => $name) {
+					$trafficStops .= "[*]" . $name . " - " . $inputReasonTS[$TSID];
+					if (!$inputCitationsTS[$TSID]) {
 						$iWarnings++;
 					}
-					$iTS++;
 				}
 
-				$trafficStops = implode("", $trafficStops);
-
 				$trafficStopText = "[b]Traffic Stops:[/b] " . $iTS . "[list=circle]" . $trafficStops . "[/list]";
+
 			} else {
+
 				$iTS = 0;
 				$iCitations = 0;
 				$iWarnings = 0;
 
 				$trafficStopText = "[b]Traffic Stops:[/b] " . $iTS;
-			}
-
-			// Statistic Resolvers
-			if (!$inputVehicleImpounds) {
-				$inputVehicleImpounds = 0;
-			}
-			if (!$inputLicenseSuspensions) {
-				$inputLicenseSuspensions = 0;
-			}
-			if (!$inputArrestsConducted) {
-				$inputArrestsConducted = 0;
-			}
-			if (!$inputTrafficInvestigations) {
-				$inputTrafficInvestigations = 0;
 			}
 
 			// Report Builder
@@ -397,7 +382,7 @@
 				[size=100][b]Traffic Division[/b][/size]
 				[size=85][color=#012B47][b]TRAFFIC PATROL REPORT[/b][/color][/size][/center]
 				[hr][/hr]
-				[b]Date:[/b] " . strtoupper($tp->dateResolver($inputDateFrom, $inputDateTo)) . "
+				[b]Date:[/b] " . strtoupper($g->dateResolver($inputDateFrom, $inputDateTo)) . "
 				[b]Time:[/b] " . $inputTimeFrom . " - " . $inputTimeTo . "
 				[b]Call-sign:[/b] " . $inputCallsign . "
 
@@ -409,18 +394,21 @@
 				[b]Arrests conducted:[/b] " . $inputArrestsConducted . "
 				[b]Traffic investigations:[/b] " . $inputTrafficInvestigations . "
 
-				[b]Notes (Optional):[/b] " . $tp->noteResolver($inputNotes) . "
+				[b]Notes (Optional):[/b] " . $inputNotes . "
 				[/divbox2]";
 		}
 
 		if ($generatorType == "PatrolLog") {
+
 			// Variables
 			$redirectPath = "thread";
 			$inputDate = strtoupper($_POST['inputDate']);
 			$inputTime = $_POST['inputTime'];
 			$inputTimeEnd = $_POST['inputTimeEnd'];
-			$inputCallsign = $_POST['inputCallsign'];
+
+			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'UNKNOWN CALL SIGN' : strtoupper($_POST['inputCallsign']);
 			setcookie("callSign",$inputCallsign,time()+21960, "/");
+
 			$inputPartner = $_POST['inputPartner'];
 			$inputRank = $_POST['inputRank'];
 			$type = $_POST['type'];

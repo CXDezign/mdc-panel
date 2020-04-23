@@ -1,6 +1,6 @@
 <div class="container mb-5 pb-5">
 	<h1><i class="fas fa-fw fa-cannabis mr-2"></i>Evidence Registration Log - Form</h1>
-	<h6><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=388&t=5760">Evidence Locker Registry - Thread</a></h6>
+	<h6><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=388&t=5760">Evidence Locker Registry - Thread<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></a></h6>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="EvidenceRegistrationLog">

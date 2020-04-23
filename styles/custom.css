@@ -11,23 +11,23 @@ a:hover {
 	text-decoration: none;
 }
 
-#sidebar a {
-	color: #fff;
+#logo-footer {
+	opacity: 0.1;
 }
 
-#sidebar a:hover {
-	color: #ddd;
-	text-decoration: none;
-}
-
-#timestamp {
-	color: #FFF;
-	font-size: 18px;
+.fa-ss {
+	transform: translate(0, -2px);
 }
 
 .wrapper {
 	display: flex;
 	align-items: stretch;
+}
+
+#container {
+	display: block;
+	width: calc(100vw - 260px);
+	margin-left: 260px;
 }
 
 #breadcrumb {
@@ -43,12 +43,6 @@ a:hover {
 	border-radius: 5px;
 }
 
-#container {
-	display: block;
-	width: calc(100vw - 260px);
-	margin-left: 260px;
-}
-
 #sidebar {
 	height: 100vh;
 	position: fixed;
@@ -57,13 +51,22 @@ a:hover {
 	max-width: 260px;
 }
 
+#sidebar a {
+	color: #fff;
+}
+
+#sidebar a:hover {
+	color: #ddd;
+	text-decoration: none;
+}
+
 #sidebar i {
 	color: #fff;
 }
 
 #sidebar li {
 	border-radius: 3px;
-	padding: 2px 8px;
+	padding: 2px 0;
 	transition: background .1s linear, color .1s linear, margin-left .1s linear;
 	margin-bottom: 2px;
 }
@@ -76,6 +79,13 @@ a:hover {
 #sidebar #timestamp {
 	background-color: rgba(0,0,0,.1);
 	border-radius: 5px;
+}
+
+#timestamp {
+	color: #FFF;
+	font-size: 18px;
+	letter-spacing: 1.5px;
+	font-weight: 600;
 }
 
 .card-panel i {

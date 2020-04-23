@@ -8,6 +8,10 @@ body {
 	background-attachment: fixed;
 }
 
+hr {
+	border-top: 1px solid rgba(0,0,0,.25);
+}
+
 .input-group-midpend {
 	margin-left: -1px;
 	margin-right: -1px;
@@ -77,4 +81,8 @@ body {
 
 #breadcrumb li a {
 	background-color: rgba(0,0,0,.25);
+}
+
+#breadcrumb {
+	border-bottom: 1px solid rgba(0,0,0,.2)!important;
 }

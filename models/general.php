@@ -155,6 +155,18 @@ class General {
 		}
 	}
 
+	public function dateResolver($date1, $date2) {
+
+		if (!$date2) {
+			return $date1;
+		} elseif ($date1 == $date2) {
+			return $date1;
+		} else {
+			return $date1 . ' - ' . $date2;
+		}
+
+	}
+
 	public function rankChooser() {
 
 		$ranks = file ('resources/ranksList.txt');

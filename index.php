@@ -60,13 +60,16 @@
 	?>
 		<div id="container">
 		<?php
-			require("templates/breadcrumbs.php");
+			require("includes/breadcrumbs.php");
 		?>
 			<div class="container mt-5">
 			<?php
 				require("routes.php");
 			?>
 			</div>
+		<?php
+			require("templates/footer.php");
+		?>
 		</div>
 	</div>
 </body>
