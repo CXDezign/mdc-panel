@@ -1,6 +1,6 @@
 <div class="container mb-5 pb-5">
 	<h1 class="my-3">Traffic Report - Form</h1>
-	<form action="/controllers/formProcessor.inc.php" method="POST">
+	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="TrafficReport">
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>

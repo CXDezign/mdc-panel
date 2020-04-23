@@ -1,7 +1,7 @@
 <div class="container mb-5 pb-5">
 	<h1 class="mt-3">Death Report - Form</h1>
 	<h6 class="mb-4"><a target="_blank" href="https://lspd.gta.world/viewtopic.php?f=1356&t=25509">Death Reports - Thread</a></h6>
-	<form action="/controllers/formProcessor.inc.php" method="POST">
+	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="DeathReport">
 
 		<h4><i class="fas fa-archive fa-fw"></i> General Details</h4>
@@ -234,25 +234,29 @@
 			</div>
 		</div>
 
-
-		<h4><i class="fas fa-camera fa-fw"></i> Evidence</h4>
+		<h4><i class="fas fa-camera fa-fw mr-2"></i>Evidence</h4>
 		<div class="form-row groupEvidence">
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceImage"><i class="fas fa-plus-square fa-fw"></i> Photograph</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceImage">
+						<i class="fas fa-plus-square fa-fw mr-2"></i>Photograph
+					</a>
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
-					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceBox"><i class="fas fa-plus-square fa-fw"></i> Description</a>
+					<a href="javascript:void(0)" class="btn btn-success w-100 addEvidenceBox">
+						<i class="fas fa-plus-square fa-fw mr-2"></i>Description
+					</a>
 				</div>
 			</div>
 		</div>
 
-
 		<div class="container my-5 text-center">
-		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5"><i class="fas fa-plus-square fa-fw"></i>Submit</button>
-	</div>
+			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+				<i class="fas fa-plus-square fa-fw mr-2"></i>Submit
+			</button>
+		</div>
 	</form>
 
 
