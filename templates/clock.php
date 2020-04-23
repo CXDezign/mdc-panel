@@ -1,6 +1,8 @@
+<hr class="mx-3">
 <div class="container text-white text-center">
 	<div id="timestamp"></div>
 </div>
+<hr class="mx-3">
 <script>
 	$(document).ready(function() {
 		timestamp();

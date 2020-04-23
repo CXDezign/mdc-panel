@@ -2,11 +2,11 @@
 	<div class="text-center my-3">
 		<a href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
 	</div>
-	<hr class="mx-3">
-		<?php
+	<?php
+		if ($cookieToggleClock == false) {
 			require "clock.php";
-		?>
-	<hr class="mx-3">
+		}
+	?>
 	<ul class="list-unstyled components px-3">
 		<li class="nav-item">
 			<a class="nav-link" href="/"><i class="fas fa-fw fa-th-large mr-2"></i>Dashboard</a>

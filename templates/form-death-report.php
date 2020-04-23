@@ -57,7 +57,7 @@
 					required>
 					<datalist id="district_list">
 					<?php
-						$tr->districtChooser();
+						$g->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -78,7 +78,7 @@
 					required>
 					<datalist id="street_list">
 					<?php
-						$tr->streetChooser();
+						$g->streetChooser();
 					?>
 					</datalist>
 				</div>

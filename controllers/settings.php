@@ -4,17 +4,44 @@
 	require '../models/general.php';
 	$g = new General();
 
-	public function actions(Request $request) {
+	// Initialise Variables
+	$formType = $_POST['type'];
 
-		if ($request->type == "toggleMode") {
+	if ($formType == "settingsToggleMode") {
 
-			$toggleMode = $g->cookieToggleMode();
-			if ($toggleMode == false) {
-				setcookie("toggleMode",true,2147483647, "/");
-			} else {
-				setcookie("toggleMode",false,2147483647, "/");
-			}
+		$toggleMode = $g->cookieToggleMode();
+
+		if ($toggleMode == false) {
+			$toggleMode = true;
+			setcookie("toggleMode",$toggleMode,2147483647,"/");
+		} else {
+			$toggleMode = false;
+			setcookie("toggleMode",$toggleMode,2147483647,"/");
 		}
+
+	}
+
+	if ($formType == "settingsToggleClock") {
+
+		$toggleClock = $g->cookieToggleClock();
+
+		if ($toggleClock == false) {
+			$toggleClock = true;
+			setcookie("toggleClock",$toggleClock,2147483647,"/");
+		} else {
+			$toggleClock = false;
+			setcookie("toggleClock",$toggleClock,2147483647,"/");
+		}
+	}
+
+	if ($formType == "settingsCharacter") {
+
+		$name = $_POST['name'];
+		$rank = $_POST['rank'];
+		$badge = $_POST['badge'];
+		setcookie("officerName",$name,2147483647,"/");
+		setcookie("officerRank",$rank,2147483647,"/");
+		setcookie("officerBadge",$badge,2147483647,"/");
 	}
 
 ?>

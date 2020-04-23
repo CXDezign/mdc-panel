@@ -67,12 +67,12 @@ class General {
 
 	}
 
-	public function cookieCallSign() {
+	public function cookieToggleClock() {
 
-		if (isset($_COOKIE['callSign'])) {
-			return $_COOKIE['callSign'];
+		if (isset($_COOKIE['toggleClock'])) {
+			return $_COOKIE['toggleClock'];
 		} else {
-			return "";
+			return false;
 		}
 
 	}
@@ -84,6 +84,34 @@ class General {
 		} else {
 			return "";
 		}		
+
+	}
+
+	public function cookieRank() {
+
+		if (isset($_COOKIE['officerRank'])) {
+			return $_COOKIE['officerRank'];
+		} else {
+			return "";
+		}
+	}
+
+	public function cookieBadge() {
+
+		if (isset($_COOKIE['officerBadge'])) {
+			return $_COOKIE['officerBadge'];
+		} else {
+			return "";
+		}		
+	}
+
+	public function cookieCallSign() {
+
+		if (isset($_COOKIE['callSign'])) {
+			return $_COOKIE['callSign'];
+		} else {
+			return "";
+		}
 
 	}
 
@@ -103,24 +131,6 @@ class General {
 			$nameURL = $_COOKIE['defName'];
 			$nameURL = str_replace(" ", "_", $nameURL);
 			return $nameURL;
-		} else {
-			return "";
-		}		
-	}
-
-	public function cookieRank() {
-
-		if (isset($_COOKIE['officerRank'])) {
-			return $_COOKIE['officerRank'];
-		} else {
-			return "";
-		}
-	}
-
-	public function cookieBadge() {
-
-		if (isset($_COOKIE['officerBadge'])) {
-			return $_COOKIE['officerBadge'];
 		} else {
 			return "";
 		}		
