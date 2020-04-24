@@ -11,6 +11,10 @@ a:hover {
 	text-decoration: none;
 }
 
+optgroup {
+	font-style: unset;
+}
+
 #logo-footer {
 	opacity: 0.1;
 }

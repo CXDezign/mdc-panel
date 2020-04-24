@@ -65,9 +65,8 @@
 					id="inputRank"
 					name="inputRank"
 					required>
-					<option value="<?php echo $g->cookieRank(); ?>"><?php echo $g->getRank($g->cookieRank());?></option>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(1);
 					?>
 					</select>
 				</div>
@@ -104,7 +103,7 @@
 					name="inputItemCategory"
 					required>
 					<?php
-						$el->itemCategoryChooser();
+						$g->itemCategoryChooser();
 					?>
 					</select>
 				</div>
@@ -159,6 +158,7 @@
 				name="inputEvidenceImage[]"
 				placeholder="https://imgur.com"
 				data-placement="bottom" title="Leave empty if none.">
+				<small class="form-text text-muted"><center>Optional evidence field. Only provide direct URLs to images.</center></small>
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 

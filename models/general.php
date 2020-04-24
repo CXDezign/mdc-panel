@@ -167,114 +167,55 @@ class General {
 
 	}
 
-	public function rankChooser() {
+	public function rankChooser($cookie) {
 
-		$ranks = file ('resources/ranksList.txt');
+		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
 
-		if (isset($_COOKIE['officerRank'])) {
-			$cookieOfficerRank = $_COOKIE['officerRank'];
-		} else {
-			$cookieOfficerRank = "";
-		}
-
 		foreach ($ranks as $rank) {
-			echo "<option value=".$rankCount.">".$rank."</option>";
+
+			if ($rankCount === 0) {
+				echo "<option value=".$rankCount.">".$rank."</option>";
+				if ($cookie === 1) {
+					if (isset($_COOKIE['officerRank'])) {
+						echo '<optgroup label="Saved Cookie">';
+						echo "<option selected value=".$_COOKIE['officerRank'].">".$this->getRank($_COOKIE['officerRank'],0)."</option>";
+						echo '</optgroup>';
+					}
+				}
+				echo '<optgroup label="Los Santos Police Department">';
+			}
+
+			if ($rankCount === 19) {
+				echo '</optgroup>';
+				echo '<optgroup label="Los Santos Sheriff&#39s Department">';
+			}
+
+			if ($rankCount === 28) {
+				echo '</optgroup>';
+			}
+
+			if ($rankCount > 0) {
+				echo "<option value=".$rankCount.">".$rank."</option>";
+			}
 			$rankCount++;
 		}
 	}
 
-	public function getRank($input) {
+	public function getRank($input, $path) {
 
-		switch ($input) {
+		switch ($path) {
 			case 0:
-				return 'Unknown Rank';
+				$path = "";
 				break;
 			case 1:
-				return 'Police Officer I';
-				break;
-			case 2:
-				return 'Police Officer II';
-				break;
-			case 3:
-				return 'Police Officer III';
-				break;
-			case 4:
-				return 'Police Officer III+1';
-				break;
-			case 5:
-				return 'Detective I';
-				break;
-			case 6:
-				return 'Detective II';
-				break;
-			case 7:
-				return 'Detective III';
-				break;
-			case 8:
-				return 'Sergeant I';
-				break;
-			case 9:
-				return 'Sergeant II';
-				break;
-			case 10:
-				return 'Lieutenant I';
-				break;
-			case 11:
-				return 'Lieutenant II';
-				break;
-			case 12:
-				return 'Captain';
-				break;
-			case 13:
-				return 'Commander';
-				break;
-			case 14:
-				return 'Deputy Chief of Police';
-				break;
-			case 15:
-				return 'Assistant Chief of Police';
-				break;
-			case 16:
-				return 'Chief of Police';
-				break;
-			case 17:
-				return 'Forensic Analyst';
-				break;
-			case 18:
-				return 'Crime Scene Investigator';
-				break;
-			case 19:
-				return 'Deputy Sheriff';
-				break;
-			case 20:
-				return 'Sergeant';
-				break;
-			case 21:
-				return 'Lieutenant';
-				break;
-			case 22:
-				return 'Captain';
-				break;
-			case 23:
-				return 'Area Commander';
-				break;
-			case 24:
-				return 'Division Chief';
-				break;
-			case 25:
-				return 'Assistant Sheriff';
-				break;
-			case 26:
-				return 'Undersheriff';
-				break;
-			case 27:
-				return 'Sheriff';
-				break;
-			default:
-				return 'Unknown Rank';
+				$path = "../";
 				break;
 		}
+		$ranks = file($path.'resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $ranks[$input];
+
 	}
 
 	public function streetChooser() {
@@ -377,6 +318,25 @@ class General {
 				break;
 		}
 		return '<span style="color: '.$colour.';">';
+	}
+
+	public function itemCategoryChooser() {
+
+		$items = file('resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
+		$itemCount = 0;
+
+		foreach ($items as $item) {
+			echo "<option value=".$itemCount.">".$item."</option>";
+			$itemCount++;
+		}
+
+	}
+
+	public function getItemCategory($input) {
+
+		$items = file('../resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
+		return $items[$input];
+
 	}
 
 }

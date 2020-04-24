@@ -102,9 +102,8 @@
 					class="form-control"
 					id="inputRank"
 					name="inputRank">
-					<option value="<?php echo $g->cookieRank(); ?>"><?php echo $g->getRank($g->cookieRank());?></option>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(1);
 					?>
 					</select>
 				</div>

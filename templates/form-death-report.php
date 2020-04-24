@@ -105,8 +105,7 @@
 				id="inputDeathReason"
 				name="inputDeathReason"
 				rows="1"
-				placeholder="Apparent Cause of Death"
-				required></textarea>
+				placeholder="Apparent Cause of Death"></textarea>
 			</div>
 		</div>
 
@@ -159,7 +158,7 @@
 					name="inputRespondingRank"
 					required>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(0);
 					?>
 					</select>
 				</div>
@@ -188,7 +187,7 @@
 					name="inputHandlingRank"
 					required>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(0);
 					?>
 					</select>
 				</div>

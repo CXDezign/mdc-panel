@@ -155,7 +155,7 @@
 				placeholder="Witnessed the defendant to be X on the X street.
 The defendant was found to be X."
 				required></textarea>
-				<small id="helpDashcam" class="form-text text-muted">Enter as much detail as possible in regards to the traffic stop, what was witnessed by the officer, whether the defendant complied and was respectful, items of interest in the vehicle's cabin, occupancy.</small>
+				<small class="form-text text-muted">Enter as much detail as possible in regards to the traffic stop, what was witnessed by the officer, whether the defendant complied and was respectful, items of interest in the vehicle's cabin, occupancy.</small>
 			</div>
 			<div class="form-group col-xl-6">
 				<label>Dashboard Camera</label>
@@ -165,7 +165,7 @@ The defendant was found to be X."
 				name="inputDashcam"
 				rows="4"
 				placeholder="The dashboard camera would pick up on the defendant to be X on the X street."></textarea>
-				<small id="helpDashcam" class="form-text text-muted">(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <b style="color: darkred;">Lying in this section will lead to punishments</b>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</small>
+				<small class="form-text text-muted">(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <b style="color: darkred;">Lying in this section will lead to punishments</b>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</small>
 			</div>
 		</div>
 

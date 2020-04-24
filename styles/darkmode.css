@@ -12,6 +12,10 @@ hr {
 	border-top: 1px solid rgba(0,0,0,.25);
 }
 
+optgroup {
+	background-color: #282828;
+}
+
 .input-group-midpend {
 	margin-left: -1px;
 	margin-right: -1px;

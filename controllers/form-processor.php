@@ -4,13 +4,9 @@
 	require '../models/general.php';
 	require '../models/trafficReport.php';
 	require '../models/arrestReport.php';
-	require '../models/deathReport.php';
-	require '../models/evidenceLog.php';
 	$g = new General();
 	$tr = new TrafficReport();
 	$ar = new ArrestReport();
-	$dr = new DeathReport();
-	$el = new EvidenceLog();
 
 	if (isset($_POST['generatorType'])) {
 
@@ -23,6 +19,7 @@
 		$generatedThreadTitle = "";
 
 		if ($generatorType == "TrafficReport") {
+
 			// Variables
 			$redirectPath = "report";
 			$inputDate = strtoupper($_POST['inputDate']);
@@ -81,6 +78,7 @@
 		}
 
 		if ($generatorType == "ArrestReport") {
+
 			// Variables
 			$redirectPath = "report";
 			$inputDate = $_POST['inputDate'];
@@ -104,6 +102,7 @@
 			$inputBracelet = $_POST['inputBracelet'];
 			$inputPlea = $_POST['inputPlea'];
 
+
 			// Officer Resolver
 			$iOfficer = 0;
 			$officers = "";
@@ -112,6 +111,7 @@
 				$iOfficer++;
 			}
 
+
 			// Wristband & Bracelet Resolver
 			if ($inputWristband != 0 || $inputBracelet != 0) {
 				$wristbandBracelet = "<b>".$ar->getBracelet($inputBracelet)." & ".$ar->getWristband($inputWristband)."</b>.<br>";
@@ -119,12 +119,14 @@
 				$wristbandBracelet = "";
 			}
 
+
 			// Evidence Resolver			
 			if ($inputEvidence != '') {
 				$evidence = '<b>EVIDENCE</b><br>'. nl2br($inputEvidence);
 			} else {
 				$evidence = '';
 			}
+
 
 			// Report Builder
 			$generatedReportType = "Arrest Report";
@@ -139,66 +141,81 @@
 		}
 
 		if ($generatorType == "DeathReport") {
+
 			// Variables
 			$redirectPath = "thread";
-			$inputDate = $_POST['inputDate'];
-			$inputTime = $_POST['inputTime'];
-			$inputDistrict = $_POST['inputDistrict'];
-			$inputStreet = $_POST['inputStreet'];
-			$inputDeathName = $_POST['inputDeathName'];
-			$inputDeathReason = $_POST['inputDeathReason'];
-			$inputWitnessName = $_POST['inputWitnessName'];
-			$inputWitnessName = array_filter($inputWitnessName);
-			$inputRespondingName = $_POST['inputRespondingName'];
-			$inputRespondingRank = $_POST['inputRespondingRank'];
-			$inputHandlingName = $_POST['inputHandlingName'];
-			$inputHandlingRank = $_POST['inputHandlingRank'];
-			$inputCoronerName = $_POST['inputCoronerName'];
-			$inputCaseNumber = $_POST['inputCaseNumber'];
-			$inputRecord = $_POST['inputRecord'];
-			$inputEvidenceImage = $_POST['inputEvidenceImage'];
-			$inputEvidenceImage = array_filter($inputEvidenceImage);
-			$inputEvidenceBox = $_POST['inputEvidenceBox'];
-			$inputEvidenceBox = array_filter($inputEvidenceBox);
+			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
+			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
 
-			// Evidence Resolver
-			if (empty($inputEvidenceImage) == false) {
-				$i = 1;
-				foreach ($inputEvidenceImage as $inputEvidenceImg) {
-					$evidenceImage[] = "[altspoiler=EXHIBIT - Photograph #0".$i."][img]".$inputEvidenceImg."[/img][/altspoiler]";
-					$i++;
-				}
-				$evidenceImage = implode("", $evidenceImage);
-			} else {
-				$evidenceImage = "";
-			}
-			if (empty($inputEvidenceBox) == false) {
-				$i = 1;
-				foreach ($inputEvidenceBox as $inputEvidenceB) {
-					$evidenceBox[] = "[altspoiler=EXHIBIT - Description #0".$i."]".$inputEvidenceB."[/altspoiler]";
-					$i++;
-				}
-				$evidenceBox = implode("", $evidenceBox);
-			} else {
-				$evidenceBox = "";
-			}
+			$inputDistrict = (empty($_POST['inputDistrict'])) ? "UNKNOWN DISTRICT" : $_POST['inputDistrict'];
+			$inputStreet = (empty($_POST['inputStreet'])) ? "UNKNOWN STREET" : $_POST['inputStreet'];
+
+			$inputDeathName = (empty($_POST['inputDeathName'])) ? "JOHN/JANE DOE" : $_POST['inputDeathName'];
+			$inputDeathReason = (empty($_POST['inputDeathReason'])) ? "UNKNOWN CAUSE OF DEATH" : $_POST['inputDeathReason'];
+
+			$inputWitnessName = (empty($_POST['inputWitnessName'])) ? '' : array_values(array_filter($_POST['inputWitnessName']));
+
+			$inputRespondingName = (empty($_POST['inputRespondingName'])) ? "UNKNOWN RESPONDING OFFICER" : $_POST['inputRespondingName'];
+			$inputRespondingRank = (empty($_POST['inputRespondingRank'])) ? 0 : $_POST['inputRespondingRank'];
+
+			$inputHandlingName = (empty($_POST['inputHandlingName'])) ? "N/A" : $_POST['inputHandlingName'];
+			$inputHandlingRank = (empty($_POST['inputHandlingRank'])) ? 0 : $_POST['inputHandlingRank'];
+
+			$inputCoronerName = (empty($_POST['inputCoronerName'])) ? "N/A" : $_POST['inputCoronerName'];
+			$inputCaseNumber = (empty($_POST['inputCaseNumber'])) ? "N/A" : $_POST['inputCaseNumber'];
+			$inputRecord = (empty($_POST['inputRecord'])) ? "#" : $_POST['inputRecord'];
+
+			$inputEvidenceImage = (empty($_POST['inputEvidenceImage'])) ? '' : array_values(array_filter($_POST['inputEvidenceImage']));
+			$inputEvidenceBox = (empty($_POST['inputEvidenceBox'])) ? '' : array_values(array_filter($_POST['inputEvidenceBox']));
+
 
 			// Witness Resolver
+			$witnesses = "N/A";
 			if (empty($inputWitnessName) == false) {
-				$i = 1;
-				foreach ($inputWitnessName as $witnessName) {
-					$witnesses[] = $witnessName;
-					$i++;
+
+				$witnesses = "";
+				$iWitnesses = count($inputWitnessName);
+
+				if ($iWitnesses > 1) {
+					$witnesses .= "[list]";
+					foreach ($inputWitnessName as $witness) {
+						$witnesses .= "[*]".$witness;
+					}
+					$witnesses .= "[/list]";
+				} else {
+					foreach ($inputWitnessName as $witness) {
+						$witnesses .= $witness;
+					}
 				}
-				$witnesses = implode(", ", $witnesses);
-			} else {
-				$witnesses = "N/A";
 			}
+
+
+			// Evidence Resolver
+			$evidenceImage = "";
+			if (empty($inputEvidenceImage) == false) {
+
+				$evidenceImage = "";
+				foreach ($inputEvidenceImage as $eImgID => $image) {
+					$evidenceImageCount = $eImgID + 1;
+					$evidenceImage .= "[altspoiler=EXHIBIT - Photograph #".$evidenceImageCount."][img]".$image."[/img][/altspoiler]";
+				}
+			}
+
+			$evidenceBox = "";
+			if (empty($inputEvidenceBox) == false) {
+
+				$evidenceBox = "";
+				foreach ($inputEvidenceBox as $eBoxID => $box) {
+					$evidenceBoxCount = $eBoxID + 1;
+					$evidenceBox .= "[altspoiler=EXHIBIT - Description #".$evidenceBoxCount."]".$box."[/altspoiler]";
+				}
+			}
+
 
 			// Report Builder
 			$generatedReportType = "Death Report";
 			$generatedThreadURL = "https://lspd.gta.world/posting.php?mode=post&f=1356";
-			$generatedThreadTitle = $dr->getDeceasedName($inputDeathName)." - ".strtoupper($inputDate)." - ".$inputStreet.", ".$inputDistrict;
+			$generatedThreadTitle = $inputDeathName." - ".strtoupper($inputDate)." - ".$inputStreet.", ".$inputDistrict;
 			$generatedReport = "
 				[divbox2=white]
 				[aligntable=right,0,0,15,0,0,transparent]LOS SANTOS POLICE DEPT.
@@ -213,18 +230,18 @@
 				[hr][/hr]
 				[b]1. GENERAL INFORMATION[/b]
 				[hr][/hr]
-				[list=none][b]NAME OF DECEASED:[/b] ".$dr->getDeceasedName($inputDeathName)."
+				[list=none][b]NAME OF DECEASED:[/b] ".$inputDeathName."
 				[b]TIME & DATE OF DEATH:[/b] ".$inputTime." - ".strtoupper($inputDate)."
 				[b]LOCATION OF DEATH:[/b] ".$inputStreet.", ".$inputDistrict."
 				[b]APPARENT CAUSE OF DEATH:[/b] ".$inputDeathReason."
 				[b]WITNESSES:[/b] ".$witnesses."[/list]
 				[b]2. ADMINISTRATIVE INFORMATION[/b]
 				[hr][/hr]
-				[list=none][b]FIRST RESPONDING OFFICER:[/b] ".$g->getRank($inputRespondingRank)." ".$inputRespondingName."
-				[b]HANDLING DETECTIVE/FORENSIC ANALYST:[/b] ".$g->getRank($inputHandlingRank)." ".$dr->getHandlingName($inputHandlingName)."
-				[b]HANDLING CORONER:[/b] ".$dr->getHandlingCoroner($inputCoronerName)."
-				[b]CORONER CASE NUMBER:[/b] ".$dr->getCoronerCaseNumber($inputCaseNumber)."
-				[b]RELEVANT MDC RECORDS:[/b] [url=".$dr->getMDCRecord($inputRecord)."]LINK[/url][/list]
+				[list=none][b]FIRST RESPONDING OFFICER:[/b] ".$g->getRank($inputRespondingRank,1)." ".$inputRespondingName."
+				[b]HANDLING DETECTIVE/FORENSIC ANALYST:[/b] ".$g->getRank($inputHandlingRank,1)." ".$inputHandlingName."
+				[b]HANDLING CORONER:[/b] ".$inputCoronerName."
+				[b]CORONER CASE NUMBER:[/b] ".$inputCaseNumber."
+				[b]RELEVANT MDC RECORDS:[/b] [url=".$inputRecord."]LINK[/url][/list]
 				[b]3. EVIDENCE[/b]
 				".$evidenceImage."
 				".$evidenceBox."
@@ -233,43 +250,54 @@
 		}
 
 		if ($generatorType == "EvidenceRegistrationLog") {
+
 			// Variables
 			$redirectPath = "thread";
-			$inputDate = $_POST['inputDate'];
-			$inputTime = $_POST['inputTime'];
-			$inputName = $_POST['inputName'];
-			setcookie("officerName",$inputName,2147483647, "/");
-			$inputRank = $_POST['inputRank'];
-			setcookie("officerRank",$inputRank,2147483647, "/");
-			$inputSuspectName = $_POST['inputSuspectName'];
-			$inputItemCategory = $_POST['inputItemCategory'];
-			$inputItemRegistry = $_POST['inputItemRegistry'];
-			$inputItemAmount = $_POST['inputItemAmount'];
-			$inputEvidenceImage = $_POST['inputEvidenceImage'];
-			$inputEvidenceImage = array_filter($inputEvidenceImage);
+			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
+			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+
+			$inputName = (empty($_POST['inputName'])) ? "UNKNOWN NAME" : $_POST['inputName'];
+			setcookie("officerName",$inputName,2147483647,"/");
+			$inputRank = (empty($_POST['inputRank'])) ? 0 : $_POST['inputRank'];
+			setcookie("officerRank",$inputRank,2147483647,"/");
+
+			$inputSuspectName = (empty($_POST['inputSuspectName'])) ? "UNKNOWN NAME" : $_POST['inputSuspectName'];
+			$inputItemCategory = (empty($_POST['inputItemCategory'])) ? 0 : $_POST['inputItemCategory'];
+
+			$inputItemRegistry = array_map(function($value) {
+				return $value === "" ? "UNKNOWN ITEM" : $value;
+			}, $_POST['inputItemRegistry']);
+
+			$inputItemAmount = array_map(function($value) {
+				return $value === "" ? "?" : $value;
+			}, $_POST['inputItemAmount']);
+
+			$inputEvidenceImage = (empty($_POST['inputEvidenceImage'])) ? '' : array_values(array_filter($_POST['inputEvidenceImage']));
+
 
 			// Evidence Resolver
+			$evidence = "N/A";
 			if (empty($inputEvidenceImage) == false) {
-				$i = 1;
-				foreach ($inputEvidenceImage as $evidenceImage) {
-					$evidence[] = "[altspoiler=EXHIBIT #0".$i."][img]".$evidenceImage."[/img][/altspoiler]";
-					$i++;
-				}
-				$evidence = implode("", $evidence);
-			} else {
+
 				$evidence = "";
+				foreach ($inputEvidenceImage as $eID => $image) {
+					$evidenceCount = $eID + 1;
+					$evidence .= "[altspoiler=EXHIBIT #".$evidenceCount."][img]".$image."[/img][/altspoiler]";
+				}
 			}
 
+
 			// Item Resolver
-			for ($i=0;$i<count($inputItemRegistry);$i++) {
-				$items[$i] = "[*] x".$inputItemAmount[$i]." - ".$inputItemRegistry[$i];
+			$items = "";
+			foreach ($inputItemRegistry as $itemID => $item) {
+				$items .= "[*] x".$inputItemAmount[$itemID]." - ".$item;
 			}
-			$items = implode("", $items);
+
 
 			// Report Builder
 			$generatedReportType = "Evidence Registration Log";
 			$generatedThreadURL = "https://lspd.gta.world/posting.php?mode=post&f=388";
-			$generatedThreadTitle = "[".$el->getItemCategory($inputItemCategory)."] ".$inputSuspectName." [".strtoupper($inputDate)."]";
+			$generatedThreadTitle = "[".$g->getItemCategory($inputItemCategory)."] ".$inputSuspectName." [".strtoupper($inputDate)."]";
 			$generatedReport = "
 				[divbox2=#fff]
 				[center][lspdlogo=150][/lspdlogo]
@@ -281,8 +309,8 @@
 				[hr][/hr]
 				[color=white]...[/color]
 				[b]Name:[/b] ".$inputName."
-				[b]Rank:[/b] ".$g->getRank($inputRank)."
-				[b]Date & Time:[/b] ".strtoupper($inputDate)." -  ".$inputTime."
+				[b]Rank:[/b] ".$g->getRank($inputRank,1)."
+				[b]Date & Time:[/b] ".strtoupper($inputDate)." - ".$inputTime."
 
 				[b]Suspect Name:[/b] ".$inputSuspectName."
 				[b]Items name & amount:[/b]
@@ -292,32 +320,6 @@
 				[b]Screenshot:[/b]
 				".$evidence."
 				[/divbox2]";
-
-				/*$evidenceLog = "[divbox2=#FFF]
-				[center][lspdlogo=150][/lspdlogo]
-
-				[size=120][b]Los Santos Police Department
-				Mission Row Station[/b][/size]
-				[i]Evidence Registration Log[/i][/center]
-				[hr][/hr]
-				[b]1. GENERAL INFORMATION[/b]
-				[hr][/hr]
-				[list=none][b]DATE & TIME:[/b] ".strtoupper($inputDate)." -  ".$inputTime."
-				[b]EVIDENCE BOOKING OFFICER:[/b] ".$g->getRank($inputRank)." ".$inputName."
-				[b]SUSPECT:[/B] ".$inputSuspectName."
-				[/list]
-				[hr][/hr]
-				[b]2. ITEM REGISTRY[/b]
-				[hr][/hr]
-				[list=none][b]ITEM CATEGORY:[/b] ".$el->getItemCategory($inputItemCategory)."
-				[b]ITEM NAME AND AMOUNT:[/b] [list]
-				".$items."
-				[/list][/list]
-				[hr][/hr]
-				[b]3. EVIDENCE[/b]
-				[hr][/hr]
-				".$evidence."
-				[/divbox2]";*/
 		}
 
 		if ($generatorType == "TrafficDivisionPatrolReport") {
@@ -329,7 +331,7 @@
 			$inputTimeFrom = (empty($_POST['inputTimeFrom'])) ? $g->getTime() : $_POST['inputTimeFrom'];
 			$inputTimeTo = (empty($_POST['inputTimeTo'])) ? $g->getTime() : $_POST['inputTimeTo'];
 
-			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'UNKNOWN CALL SIGN' : strtoupper($_POST['inputCallsign']);
+			$inputCallsign = (empty($_POST['inputCallsign'])) ? '' : strtoupper($_POST['inputCallsign']);
 			setcookie("callSign",$inputCallsign,time()+21960, "/");
 
 			$inputNameTS = (empty($_POST['inputNameTS'])) ? '' : array_filter($_POST['inputNameTS']);
@@ -344,6 +346,7 @@
 			$inputNotes = (empty($_POST['inputNotes'])) ? 'N/A' : $_POST['inputNotes'];
 			$inputTDPatrolReportURL = (empty($_POST['inputTDPatrolReportURL'])) ? "https://lspd.gta.world/viewforum.php?f=101" : $_POST['inputTDPatrolReportURL'];
 			setcookie("inputTDPatrolReportURL",$inputTDPatrolReportURL,2147483647, "/");
+
 
 			// Traffic Stop Resolver
 			if (empty($inputNameTS) == false) {
@@ -367,9 +370,10 @@
 				$iTS = 0;
 				$iCitations = 0;
 				$iWarnings = 0;
-
 				$trafficStopText = "[b]Traffic Stops:[/b] " . $iTS;
+
 			}
+
 
 			// Report Builder
 			$generatedReportType = "Traffic Division: Patrol Report";
@@ -406,7 +410,7 @@
 			$inputTime = $_POST['inputTime'];
 			$inputTimeEnd = $_POST['inputTimeEnd'];
 
-			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'UNKNOWN CALL SIGN' : strtoupper($_POST['inputCallsign']);
+			$inputCallsign = (empty($_POST['inputCallsign'])) ? '' : strtoupper($_POST['inputCallsign']);
 			setcookie("callSign",$inputCallsign,time()+21960, "/");
 
 			$inputPartner = $_POST['inputPartner'];
@@ -499,6 +503,7 @@
 		$_SESSION['generatedThreadURL'] = $generatedThreadURL;
 
 		// Redirect
+		/*
 		if ($redirectPath == "report") {
 			header('Location: /paperwork-generators/generated-report');
 			exit();
@@ -506,6 +511,8 @@
 			header('Location: /paperwork-generators/generated-thread');
 			exit();
 		}
+
+		/**/
 
 	} else {
 

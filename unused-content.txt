@@ -1,0 +1,27 @@
+// Unused and new Evidence Registration Log template for forums.
+
+$evidenceLog = "[divbox2=#FFF]
+[center][lspdlogo=150][/lspdlogo]
+
+[size=120][b]Los Santos Police Department
+Mission Row Station[/b][/size]
+[i]Evidence Registration Log[/i][/center]
+[hr][/hr]
+[b]1. GENERAL INFORMATION[/b]
+[hr][/hr]
+[list=none][b]DATE & TIME:[/b] ".strtoupper($inputDate)." -  ".$inputTime."
+[b]EVIDENCE BOOKING OFFICER:[/b] ".$g->getRank($inputRank)." ".$inputName."
+[b]SUSPECT:[/B] ".$inputSuspectName."
+[/list]
+[hr][/hr]
+[b]2. ITEM REGISTRY[/b]
+[hr][/hr]
+[list=none][b]ITEM CATEGORY:[/b] ".$el->getItemCategory($inputItemCategory)."
+[b]ITEM NAME AND AMOUNT:[/b] [list]
+".$items."
+[/list][/list]
+[hr][/hr]
+[b]3. EVIDENCE[/b]
+[hr][/hr]
+".$evidence."
+[/divbox2]";
