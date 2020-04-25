@@ -3,8 +3,8 @@
 	<hr>
 	<div class="row">
 		<div class="col-xl-6">
-			<div class="card bg-dark">
-				<div class="card-body text-light">
+			<div class="card card-panel bg-dark text-white">
+				<div class="card-body">
 					<h5 class="card-title">Miranda Rights</h5>
 					<textarea
 					class="form-control shadow mb-3"
@@ -12,7 +12,7 @@
 					name="mirandaRights"
 					rows="4"
 					readonly>You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?</textarea>
-					<a class="btn btn-light text-dark" onclick="copy()" data-toggle="tooltip" title="Copied!">Copy Miranda Rights</a>
+					<a class="btn btn-primary text-white" onclick="copy()" data-toggle="tooltip" title="Copied!">Copy Miranda Rights</a>
 				</div>
 			</div>
 		</div>

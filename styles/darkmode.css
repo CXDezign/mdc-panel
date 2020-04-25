@@ -1,11 +1,8 @@
+/* HTML ELEMENTS */
+
 body {
 	color: #fff;
 	background-color: #1f1f1f;
-	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
-	background-size: 600px 600px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
 }
 
 hr {
@@ -15,6 +12,27 @@ hr {
 optgroup {
 	background-color: #282828;
 }
+
+
+small.text-muted {
+	color: #c9c9ca !important;
+}
+
+/* CARDS */
+
+.card.text-white {
+	color: #fff!important;
+}
+
+.card.bg-dark {
+	background-color: #151515!important;
+}
+
+.card .text-muted {
+	color: #2f2f2f!important;
+}
+
+/* INPUT FIELDS */
 
 .input-group-midpend {
 	margin-left: -1px;
@@ -69,6 +87,12 @@ optgroup {
 	border-radius: .25rem;
 }
 
+.form-control::placeholder {
+	color: #9a9ea2;
+}
+
+/* TABLES */
+
 .table-light {
 	color: #fff;
 	background-color: #343a40;
@@ -82,6 +106,8 @@ optgroup {
     color: #fff;
     background-color: rgba(255,255,255,.075);
 }
+
+/* BREADCRUMB */
 
 #breadcrumb li a {
 	background-color: rgba(0,0,0,.25);

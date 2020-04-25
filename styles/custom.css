@@ -1,18 +1,38 @@
 body {
-	background-image: url(../images/Logo-SanAndreasSealTransparent.png);
-	background-size: 600px 600px;
 	background-color: rgba(238, 238, 238, 0.95);
-	background-position: center;
+}
+
+body #container {
+	background-size: 500px 500px;
+	background-position: calc(50% + 130px) 50%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+a {
+	color: #e2b055;
 }
 
 a:hover {
+	color: #b78f48;
 	text-decoration: none;
 }
 
 optgroup {
 	font-style: unset;
+}
+
+.card.text-white {
+	color: #212529!important;
+}
+
+.card.bg-dark {
+	background-color: #fff!important;
+}
+
+.card .text-muted {
+	color: #e8e8e8!important;
 }
 
 #logo-footer {
@@ -53,6 +73,7 @@ optgroup {
 	font-size: 80%;
 	min-width: 260px;
 	max-width: 260px;
+	background-color: #282828;
 }
 
 #sidebar a {
@@ -101,7 +122,7 @@ optgroup {
 }
 
 #card-main-generators:hover i {
-	color: #9d7146!important;
+	color:#bf7226!important;
 }
 
 #card-main-resources:hover i {
@@ -109,7 +130,7 @@ optgroup {
 }
 
 #card-main-penal:hover i {
-	color: #d5a03d!important;
+	color: #e2b055!important;
 }
 
 #card-generators-arrest:hover i {
@@ -125,7 +146,7 @@ optgroup {
 }
 
 #card-generators-death:hover i {
-	color: #eaede1!important;
+	color: #8e8449!important;
 }
 
 #card-generators-tdpatrol:hover i {

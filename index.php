@@ -58,7 +58,13 @@
 	<?php
 		require("templates/sidebar.php");
 	?>
-		<div id="container">
+		<div id="container" style="
+			<?php
+			if ($g->cookieToggleBackgroundLogo() == false) {
+				echo 'background-image: url(../images/Logo-SanAndreasSealTransparent.png);';
+			}
+			?>
+		">
 		<?php
 			require("includes/breadcrumbs.php");
 		?>

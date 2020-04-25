@@ -1,4 +1,4 @@
-<nav id="sidebar" class="bg-dark">
+<nav id="sidebar">
 	<div class="text-center my-3">
 		<a class="d-block" href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
 		<span class="badge badge-light"><?php echo $g->getVersion(); ?></span>

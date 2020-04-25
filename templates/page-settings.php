@@ -76,6 +76,30 @@
 					>
 				</center>
 			</div>
+			<div class="form-group col-xl-4">
+				<center>
+				<label>Toggle Background Logo</label><br>
+					<input
+					id="settingsToggleBackgroundLogo"
+					name="settingsToggleBackgroundLogo"
+					type="checkbox"
+					data-toggle="toggle"
+					data-off="<i class='fas fa-fw fa-check'></i>"
+					data-on="<i class='fas fa-fw fa-ban'></i>"
+					data-onstyle="danger"
+					data-offstyle="success"
+					data-width="100"
+					<?php
+						$toggleBackgroundLogo = $g->cookieToggleBackgroundLogo();
+						if ($toggleBackgroundLogo == false) {
+							echo '';
+						} else {
+							echo 'checked';
+						}
+					?>
+					>
+				</center>
+			</div>
 		</div>
 	</form>
 	<hr class="my-3"></h1>
@@ -173,6 +197,21 @@
 				url: 'controllers/settings.php',
 				data: {
 					type: "settingsToggleBreadcrumb"
+				},
+				success: function () {
+					setTimeout(function() {
+						location.reload();
+					}, 250);
+				},
+			});
+		});
+
+		$('#settingsToggleBackgroundLogo').change(function() {
+			$.ajax({
+				type: 'POST',
+				url: 'controllers/settings.php',
+				data: {
+					type: "settingsToggleBackgroundLogo"
 				},
 				success: function () {
 					setTimeout(function() {

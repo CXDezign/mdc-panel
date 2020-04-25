@@ -87,6 +87,16 @@ class General {
 
 	}
 
+	public function cookieToggleBackgroundLogo() {
+
+		if (isset($_COOKIE['toggleBackgroundLogo'])) {
+			return $_COOKIE['toggleBackgroundLogo'];
+		} else {
+			return false;
+		}
+
+	}
+
 	public function cookieName() {
 
 		if (isset($_COOKIE['officerName'])) {

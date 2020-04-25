@@ -47,6 +47,19 @@
 		}
 	}
 
+	if ($formType == "settingsToggleBackgroundLogo") {
+
+		$toggleBackgroundLogo = $g->cookieToggleBackgroundLogo();
+
+		if ($toggleBackgroundLogo == false) {
+			$toggleBackgroundLogo = true;
+			setcookie("toggleBackgroundLogo",$toggleBackgroundLogo,2147483647,"/");
+		} else {
+			$toggleBackgroundLogo = false;
+			setcookie("toggleBackgroundLogo",$toggleBackgroundLogo,2147483647,"/");
+		}
+	}
+
 	if ($formType == "settingsCharacter") {
 
 		$name = $_POST['name'];
