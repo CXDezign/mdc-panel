@@ -1,4 +1,35 @@
 {
+	"000": {
+		"id": "000",
+		"charge": "UNKNOWN CHARGE",
+		"type": "?",
+		"classes": {
+			"A": false,
+			"B": false,
+			"C": false
+		},
+		"time": {
+			"days": "0",
+			"hours": "0",
+			"min": "0"
+		},
+		"fine": {
+			"1": "0",
+			"2": "0",
+			"3": "0"
+		},
+		"impound": {
+			"1": "0",
+			"2": "0",
+			"3": "0"
+		},
+		"suspension": {
+			"1": "0",
+			"2": "0",
+			"3": "0"
+		},
+		"court": false
+	},
 	"001": {
 		"id": "001",
 		"charge": "Treason",

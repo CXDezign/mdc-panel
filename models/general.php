@@ -254,9 +254,13 @@ class General {
 	public function chargeChooser() {
 
 		$charges = json_decode(file_get_contents("resources/penalSearch.json"), true);
+		$chargeCount = 0;
 
 		foreach ($charges as $charge) {
-			echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
+			if ($chargeCount != 0) {
+				echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
+			}
+			$chargeCount++;
 		}
 	}
 
@@ -284,20 +288,20 @@ class General {
 
 	public function getCrimeType($input) {
 
+		$type = "?";
+
 		switch ($input) {
 			case 1:
-				return 'C';
+				$type = 'C';
 				break;
 			case 2:
-				return 'B';
+				$type = 'B';
 				break;
 			case 3:
-				return 'A';
-				break;
-			default:
-				return '?';
+				$type = 'A';
 				break;
 		}
+		return $type;
 	}
 
 	public function getCrimeColour($input) {
@@ -319,6 +323,21 @@ class General {
 		}
 		return '<span style="color: '.$colour.';">';
 	}
+
+	public function getDashboardCamera($input) {
+
+		$dashboardCamera = "";
+
+		switch ($input) {
+			case '':
+				$dashboardCamera = 'No dashboard camera video or audio footage attached.';
+				break;
+			default:
+				$dashboardCamera = $input;
+				break;
+		}
+		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
+	}	
 
 	public function itemCategoryChooser() {
 

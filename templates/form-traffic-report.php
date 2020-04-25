@@ -80,9 +80,8 @@
 					id="inputRank"
 					name="inputRank[]"
 					required>
-					<option value="<?php echo $g->cookieRank(); ?>"><?php echo $g->getRank($g->cookieRank());?></option>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(1);
 					?>
 					</select>
 				</div>
@@ -367,7 +366,7 @@ The defendant was found to be X."
 				name="inputRank[]"
 				required>
 				<?php
-					$g->rankChooser();
+					$g->rankChooser(0);
 				?>
 				</select>
 			</div>

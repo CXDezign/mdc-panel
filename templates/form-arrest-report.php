@@ -81,9 +81,8 @@
 					id="inputRank"
 					name="inputRank[]"
 					required>
-					<option value="<?php echo $g->cookieRank(); ?>"><?php echo $g->getRank($g->cookieRank());?></option>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(1);
 					?>
 					</select>
 				</div>
@@ -114,8 +113,21 @@
 			</div>
 		</div>
 
-		<h4><i class="fas fa-fw fa-map-marked-alt mr-2"></i>Arrest Details</h4>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Arrest & Suspect Details</h4>
 
+		<div class="form-row">
+			<div class="form-group col-xl-4">
+				<label>Suspect's Full Name</label>
+				<input
+				type="text"
+				class="form-control"
+				id="inputDefName"
+				name="inputDefName"
+				placeholder="Firstname Lastname"
+				required
+				data-placement="bottom" title="Suspect - Full Name">
+			</div>
+		</div>
 		<div class="form-row">
 			<div class="form-group col-xl-4">
 				<label>District</label>
@@ -162,21 +174,6 @@
 				</div>
 			</div>
 		</div>
-
-		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Suspect & Narrative</h4>
-		<div class="form-row">
-			<div class="form-group col-xl-4">
-				<label>Full Name</label>
-				<input
-				type="text"
-				class="form-control"
-				id="inputDefName"
-				name="inputDefName"
-				placeholder="Firstname Lastname"
-				required
-				data-placement="bottom" title="Suspect - Full Name">
-			</div>
-		</div>
 		<div class="form-row">
 			<div class="form-group col-xl-12">
 				<label>Narrative & Notes</label>
@@ -191,6 +188,7 @@ The suspect was found to be X."
 				<small id="helpDashcam" class="form-text text-muted">Enter as much detail as possible in regards to the arrest, chronologically describing the events leading up to the arrest and explaining the reasoning for charging the suspect with particular charges.</small>
 			</div>
 		</div>
+
 		
 		<h4><i class="fas fa-fw fa-fingerprint mr-2"></i>Evidence</h4>
 		<div class="form-row">
@@ -327,7 +325,7 @@ The suspect was found to be X."
 				name="inputRank[]"
 				required>
 				<?php
-					$g->rankChooser();
+					$g->rankChooser(0);
 				?>
 				</select>
 			</div>

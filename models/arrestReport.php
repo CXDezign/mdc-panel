@@ -2,28 +2,6 @@
 
 class ArrestReport {
 	
-	public function streetChooser() {
-
-		$streets = file ('resources/streetsList.txt');
-		$streetCount = 1;
-
-		foreach ($streets as $street) {
-			echo "<option>".$street."</option>";
-			$streetCount++;
-		}
-	}
-
-	public function districtChooser() {
-
-		$districts = file ('resources/districtsList.txt');
-		$districtCount = 1;
-
-		foreach ($districts as $district) {
-			echo "<option>".$district."</option>";
-			$districtCount++;
-		}
-	}
-
 	public function braceletChooser() {
 
 		$bracelets = file ('resources/braceletList.txt');
@@ -59,7 +37,7 @@ class ArrestReport {
 
 	public function getBracelet($input) {
 
-		$bracelet = '';
+		$bracelet = 'UNKNOWN BRACELET';
 		$color = 'inherit';
 
 		switch ($input) {
@@ -71,17 +49,13 @@ class ArrestReport {
 				$bracelet = 'Orange Bracelet';
 				$color = '#FF8000';
 				break;
-			default:
-				$bracelet = 'Unknown Bracelet';
-				$color = 'inherit';
-				break;
 		}
 		return '<span style="color: '.$color.';">'.$bracelet.'</span>';
 	}
 
 	public function getWristband($input) {
 
-		$wristband = '';
+		$wristband = 'UNKNOWN WRISTBAND';
 		$color = 'inherit';
 
 		switch ($input) {
@@ -97,15 +71,13 @@ class ArrestReport {
 				$wristband = 'Yellow Wristband';
 				$color = '#ffbf40';
 				break;
-			default:
-				$wristband = 'Unknown Wristband';
-				$color = 'inherit';
-				break;
 		}
 		return '<span style="color: '.$color.';">'.$wristband.'</span>';
 	}
 
 	public function getPlea($input, $suspect) {
+
+		$plead = "UNKNOWN PLEA";
 
 		switch ($input) {
 			case 1:
@@ -117,25 +89,10 @@ class ArrestReport {
 			case 3:
 				$plead = 'No Contest';
 				break;
-			default:
-				$plead = 'Unknown';
-				break;
 		}
 		return '<b>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</b>';
 	}
 	
-	public function getDashboardCamera($input, $callsign) {
-
-		switch ($input) {
-			case '':
-			return '<b style="color: #9944dd;">* Dashboard camera from the '.$callsign.' unit captures video and audio footage to prove the above narrative to be true. *</b>';
-				break;
-			default:
-				return '<b style="color: #9944dd;">* '.$input.' *</b>';
-				break;
-		}
-	}
-
 }
 
 ?>

@@ -84,7 +84,7 @@
 					name="inputRank"
 					>
 					<?php
-						$g->rankChooser();
+						$g->rankChooser(0);
 					?>
 					</select>
 				</div>

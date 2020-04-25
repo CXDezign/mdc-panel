@@ -11,6 +11,7 @@ class TrafficReport {
 			echo "<option value=".$licenseCount.">".$license."</option>";
 			$licenseCount++;
 		}
+
 	}
 
 	public function paintChooser() {
@@ -22,6 +23,7 @@ class TrafficReport {
 			echo "<option value=".$paintCount.">".$paint."</option>";
 			$paintCount++;
 		}
+
 	}
 
 	public function tintChooser() {
@@ -33,45 +35,33 @@ class TrafficReport {
 			echo "<option value=".$tintCount.">".$tint."</option>";
 			$tintCount++;
 		}
+
 	}
 
 	public function getDefLicense($input) {
 
+		$defLicense = 'an <b>UNKNOWN DRIVERS LICENSE STATUS</b>.';
+
 		switch ($input) {
 			case 1:
-				return 'a <b>valid drivers license</b>.';
+				$defLicense = 'a <b>valid drivers license</b>.';
 				break;
 			case 2:
-				return '<b>no drivers license</b>.';
+				$defLicense = '<b>no drivers license</b>.';
 				break;
 			case 3:
-				return 'an <b>expired drivers license</b>.';
+				$defLicense = 'an <b>expired drivers license</b>.';
 				break;
 			case 4:
-				return 'a <b>suspended drivers license</b>.';
+				$defLicense = 'a <b>suspended drivers license</b>.';
 				break;
 			case 5:
-				return 'a <b>revoked drivers license</b>.';
-				break;
-			default:
-				return 'a <b>valid drivers license</b>.';
+				$defLicense = 'a <b>revoked drivers license</b>.';
 				break;
 		}
-	}
 
-	public function getDashboardCamera($input) {
+		return $defLicense;
 
-		$dashboardCamera = "";
-
-		switch ($input) {
-			case '':
-				$dashboardCamera = 'The dashboard camera footage supports the above narrative.';
-				break;
-			default:
-				$dashboardCamera = $input;
-				break;
-		}
-		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
 	}
 
 	public function getVehicleTint($input) {
@@ -95,31 +85,40 @@ class TrafficReport {
 				$vehicleTint = 'a legal tint level after a visual inspection.';
 				break;
 		}
+
 		return 'The vehicle had '.$vehicleTint;
+
 	}
 
-	public function getVehiclePlates($input) {
+	public function getVehiclePlates($input, $type) {
+
+		$plates = "";
+		$b = "";
+		$bb = "";
+
+		// HTML
+		if ($type == 0) {
+			$b = "<b>";
+			$bb = "</b>";
+		}
+
+		// BBCode
+		if ($type == 1) {
+			$b = "[b]";
+			$bb = "[/b]";
+		}
 
 		switch ($input) {
 			case '':
-				return '<b>unregistered</b>';
+				$plates = $b.'unregistered'.$bb;
 				break;
 			default:
-				return 'identification plate reading <b>'.$input.'</b>';
+				$plates = 'identification plate reading '.$b.$input.$bb;
 				break;
 		}
-	}
 
-	public function getCrimeFine($input) {
+		return $plates;
 
-		switch ($input) {
-			case '':
-				return 0;
-				break;
-			default:
-				return $input;
-				break;
-		}
 	}
 
 }
