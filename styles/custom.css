@@ -23,6 +23,10 @@ optgroup {
 	font-style: unset;
 }
 
+.card {
+	border: unset!important;
+}
+
 .card.text-white {
 	color: #212529!important;
 }
@@ -113,47 +117,104 @@ optgroup {
 	font-weight: 600;
 }
 
+.card-panel {
+	box-shadow: 0px 1px 0 rgba(0, 0, 0, .5);
+	transition: all .1s ease-in-out!important;
+}
+
 .card-panel i {
-	transition: color .1s linear!important;
+	text-shadow: 0px 1px 0 rgba(0, 0, 0, .25);
+	transition: all .1s ease-in-out!important;
+}
+
+
+#card-main-map:hover {
+	box-shadow: #e74c3c 0 1px 0px;
 }
 
 #card-main-map:hover i {
 	color: #e74c3c!important;
+	text-shadow: #e74c3c80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-main-generators:hover {
+	box-shadow: #ca9159 0 1px 0px;
 }
 
 #card-main-generators:hover i {
-	color:#bf7226!important;
+	color:#ca9159!important;
+	text-shadow: #ca915980 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-main-resources:hover {
+	box-shadow: #8764d7 0 1px 0px;
 }
 
 #card-main-resources:hover i {
-	color: #7e52e1!important;
+	color: #8764d7!important;
+	text-shadow: #8764d780 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-main-penal:hover {
+	box-shadow: #e2b055 0 1px 0px;
 }
 
 #card-main-penal:hover i {
 	color: #e2b055!important;
+	text-shadow: #e2b05580 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-arrest:hover {
+	box-shadow: #cbc2c5 0 1px 0px;
 }
 
 #card-generators-arrest:hover i {
 	color: #cbc2c5!important;
+	text-shadow: #cbc2c580 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-traffic:hover {
+	box-shadow: #2167c2 0 1px 0px;
 }
 
 #card-generators-traffic:hover i {
 	color: #2167c2!important;
-} 
+	text-shadow: #2167c280 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-evidence:hover {
+	box-shadow: #7da522 0 1px 0px;
+}
 
 #card-generators-evidence:hover i {
 	color: #7da522!important;
+	text-shadow: #7da52280 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-death:hover {
+	box-shadow: #8e8449 0 1px 0px;
 }
 
 #card-generators-death:hover i {
 	color: #8e8449!important;
+	text-shadow: #8e844980 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-tdpatrol:hover {
+	box-shadow: #e36528 0 1px 0px;
 }
 
 #card-generators-tdpatrol:hover i {
-	color: #b83028!important;
+	color: #e36528!important;
+	text-shadow: #e3652880 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-patrol:hover {
+	box-shadow: #11cab9 0 1px 0px;
 }
 
 #card-generators-patrol:hover i {
-	color: #2167c2!important;
+	color: #11cab9!important;
+	text-shadow: #11cab980 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 

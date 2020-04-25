@@ -20,6 +20,14 @@ small.text-muted {
 
 /* CARDS */
 
+.card-panel {
+	box-shadow: 0px -1px 0 rgba(255, 255, 255, .1);
+}
+
+.card-panel:hover {
+	box-shadow: 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
 .card.text-white {
 	color: #fff!important;
 }
@@ -29,6 +37,7 @@ small.text-muted {
 }
 
 .card .text-muted {
+	text-shadow: 0px -1px 0 rgba(255, 255, 255, 0.2);
 	color: #2f2f2f!important;
 }
 
@@ -115,4 +124,86 @@ small.text-muted {
 
 #breadcrumb {
 	border-bottom: 1px solid rgba(0,0,0,.2)!important;
+}
+
+/* ICONS */
+
+#card-main-map:hover {
+	box-shadow: #e74c3c80 0 -1px 0px;
+}
+
+#card-main-map:hover i {
+	text-shadow: #e74c3c80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-main-generators:hover {
+	box-shadow: #ca915980 0 -1px 0px;
+}
+
+#card-main-generators:hover i {
+	text-shadow: #ca915980 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-main-resources:hover {
+	box-shadow: #8764d780 0 -1px 0px;
+}
+
+#card-main-resources:hover i {
+	text-shadow: #8764d780 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-main-penal:hover {
+	box-shadow: #e2b05580 0 -1px 0px;
+}
+
+#card-main-penal:hover i {
+	text-shadow: #e2b05580 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-arrest:hover {
+	box-shadow: #cbc2c580 0 -1px 0px;
+}
+
+#card-generators-arrest:hover i {
+	text-shadow: #cbc2c580 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-traffic:hover {
+	box-shadow: #2167c280 0 -1px 0px;
+}
+
+#card-generators-traffic:hover i {
+	text-shadow: #2167c280 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+} 
+
+#card-generators-evidence:hover {
+	box-shadow: #7da52280 0 -1px 0px;
+}
+
+#card-generators-evidence:hover i {
+	text-shadow: #7da52280 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-death:hover {
+	box-shadow: #8e844980 0 -1px 0px;
+}
+
+#card-generators-death:hover i {
+	text-shadow: #8e844980 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-tdpatrol:hover {
+	box-shadow: #e3652880 0 -1px 0px;
+}
+
+#card-generators-tdpatrol:hover i {
+	text-shadow: #e3652880 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-patrol:hover {
+	box-shadow: #11cab980 0 -1px 0px;
+}
+
+#card-generators-patrol:hover i {
+	text-shadow: #11cab980 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
 }
