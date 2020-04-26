@@ -60,6 +60,32 @@
 		}
 	}
 
+	if ($formType == "settingsToggleHints") {
+
+		$toggleHints = $g->cookieToggleHints();
+
+		if ($toggleHints == false) {
+			$toggleHints = true;
+			setcookie("toggleHints",$toggleHints,2147483647,"/");
+		} else {
+			$toggleHints = false;
+			setcookie("toggleHints",$toggleHints,2147483647,"/");
+		}
+	}
+
+	if ($formType == "settingsToggleFooter") {
+
+		$toggleFooter = $g->cookieToggleFooter();
+
+		if ($toggleFooter == false) {
+			$toggleFooter = true;
+			setcookie("toggleFooter",$toggleFooter,2147483647,"/");
+		} else {
+			$toggleFooter = false;
+			setcookie("toggleFooter",$toggleFooter,2147483647,"/");
+		}
+	}
+
 	if ($formType == "settingsCharacter") {
 
 		$name = $_POST['name'];

@@ -97,6 +97,26 @@ class General {
 
 	}
 
+	public function cookieToggleHints() {
+
+		if (isset($_COOKIE['toggleHints'])) {
+			return $_COOKIE['toggleHints'];
+		} else {
+			return false;
+		}
+
+	}
+
+	public function cookieToggleFooter() {
+
+		if (isset($_COOKIE['toggleFooter'])) {
+			return $_COOKIE['toggleFooter'];
+		} else {
+			return false;
+		}
+
+	}
+
 	public function cookieName() {
 
 		if (isset($_COOKIE['officerName'])) {

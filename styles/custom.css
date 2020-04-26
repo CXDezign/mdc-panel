@@ -49,8 +49,28 @@ optgroup {
 	border-radius: 100vh;
 }
 
+.toggle-handle {
+	padding: 0 15px!important;
+}
+
+.toggle-off.btn {
+	padding-left: .75rem !important;
+}
+
+.toggle-on.btn {
+	padding-right: .75rem !important;
+}
+
 #logo-footer {
 	opacity: 0.1;
+}
+
+#footer {
+	opacity: 0.25;
+}
+
+#footer:hover {
+	opacity: 1;
 }
 
 /* MAIN */

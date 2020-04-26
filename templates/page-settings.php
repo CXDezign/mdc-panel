@@ -16,7 +16,8 @@
 					data-on="<i class='fas fa-fw fa-moon'></i>"
 					data-onstyle="dark"
 					data-offstyle="light"
-					data-width="100"
+					data-width="120"
+					data-height="20"
 					<?php
 						$toggleMode = $g->cookieToggleMode();
 						if ($toggleMode == false) {
@@ -36,11 +37,12 @@
 					name="settingsToggleClock"
 					type="checkbox"
 					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-check'></i>"
+					data-off="<i class='fas fa-fw fa-hourglass-half'></i>"
 					data-on="<i class='fas fa-fw fa-ban'></i>"
 					data-onstyle="danger"
 					data-offstyle="success"
-					data-width="100"
+					data-width="120"
+					data-height="20"
 					<?php
 						$toggleClock = $g->cookieToggleClock();
 						if ($toggleClock == false) {
@@ -60,11 +62,12 @@
 					name="settingsToggleBreadcrumb"
 					type="checkbox"
 					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-check'></i>"
+					data-off="<i class='fas fa-fw fa-home'></i>"
 					data-on="<i class='fas fa-fw fa-ban'></i>"
 					data-onstyle="danger"
 					data-offstyle="success"
-					data-width="100"
+					data-width="120"
+					data-height="20"
 					<?php
 						$toggleBreadcrumb = $g->cookieToggleBreadcrumb();
 						if ($toggleBreadcrumb == false) {
@@ -84,14 +87,65 @@
 					name="settingsToggleBackgroundLogo"
 					type="checkbox"
 					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-check'></i>"
+					data-off="<i class='fas fa-fw fa-image'></i>"
 					data-on="<i class='fas fa-fw fa-ban'></i>"
 					data-onstyle="danger"
 					data-offstyle="success"
-					data-width="100"
+					data-width="120"
+					data-height="20"
 					<?php
 						$toggleBackgroundLogo = $g->cookieToggleBackgroundLogo();
 						if ($toggleBackgroundLogo == false) {
+							echo '';
+						} else {
+							echo 'checked';
+						}
+					?>
+					>
+				</center>
+			</div>
+			<div class="form-group col-xl-4">
+				<center>
+				<label>Toggle Hints</label><br>
+					<input
+					id="settingsToggleHints"
+					name="settingsToggleHints"
+					type="checkbox"
+					data-toggle="toggle"
+					data-off="<i class='fas fa-fw fa-lightbulb'></i>"
+					data-on="<i class='fas fa-fw fa-ban'></i>"
+					data-onstyle="danger"
+					data-offstyle="success"
+					data-width="120"
+					data-height="20"
+					<?php
+						$toggleHints = $g->cookieToggleHints();
+						if ($toggleHints == false) {
+							echo '';
+						} else {
+							echo 'checked';
+						}
+					?>
+					>
+				</center>
+			</div>
+			<div class="form-group col-xl-4">
+				<center>
+				<label>Toggle Footer</label><br>
+					<input
+					id="settingsToggleFooter"
+					name="settingsToggleFooter"
+					type="checkbox"
+					data-toggle="toggle"
+					data-off="<i class='fas fa-fw fa-grip-lines'></i>"
+					data-on="<i class='fas fa-fw fa-ban'></i>"
+					data-onstyle="danger"
+					data-offstyle="success"
+					data-width="120"
+					data-height="20"
+					<?php
+						$toggleFooter = $g->cookieToggleFooter();
+						if ($toggleFooter == false) {
 							echo '';
 						} else {
 							echo 'checked';
@@ -149,7 +203,7 @@
 			</div>
 			<div class="container my-5 text-center">
 				<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
-					<i class="fas fa-save fa-fw mr-1"></i>Save
+					<i class="fas fa-save fa-fw mr-1"></i>Save Character Settings
 				</button>
 			</div>
 		</div>
@@ -171,7 +225,7 @@
 				success: function () {
 					setTimeout(function() {
 						location.reload();
-					}, 250);
+					}, 400);
 				},
 			});
 		});
@@ -186,7 +240,7 @@
 				success: function () {
 					setTimeout(function() {
 						location.reload();
-					}, 250);
+					}, 400);
 				},
 			});
 		});
@@ -201,7 +255,7 @@
 				success: function () {
 					setTimeout(function() {
 						location.reload();
-					}, 250);
+					}, 400);
 				},
 			});
 		});
@@ -216,7 +270,37 @@
 				success: function () {
 					setTimeout(function() {
 						location.reload();
-					}, 250);
+					}, 400);
+				},
+			});
+		});
+
+		$('#settingsToggleHints').change(function() {
+			$.ajax({
+				type: 'POST',
+				url: 'controllers/settings.php',
+				data: {
+					type: "settingsToggleHints"
+				},
+				success: function () {
+					setTimeout(function() {
+						location.reload();
+					}, 400);
+				},
+			});
+		});
+
+		$('#settingsToggleFooter').change(function() {
+			$.ajax({
+				type: 'POST',
+				url: 'controllers/settings.php',
+				data: {
+					type: "settingsToggleFooter"
+				},
+				success: function () {
+					setTimeout(function() {
+						location.reload();
+					}, 400);
 				},
 			});
 		});
@@ -235,7 +319,7 @@
 				success: function () {
 					setTimeout(function() {
 						location.reload();
-					}, 250);
+					}, 400);
 				},
 			});
 		});
