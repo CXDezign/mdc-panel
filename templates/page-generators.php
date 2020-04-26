@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5">
+<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="1000">
 	<h1><i class="fas fa-fw fa-archive mr-2"></i></i>Paperwork Generators</h1>
 	<hr>
 	<div class="row">

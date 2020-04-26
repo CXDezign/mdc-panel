@@ -13,7 +13,6 @@ optgroup {
 	background-color: #282828;
 }
 
-
 small.text-muted {
 	color: #c9c9ca !important;
 }
@@ -104,7 +103,7 @@ small.text-muted {
 
 .table-light {
 	color: #fff;
-	background-color: #343a40;
+	background-color: #303131;
 }
 
 .table-light td, .table-light th, .table-light thead th {

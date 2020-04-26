@@ -1,4 +1,4 @@
-<div class="container text-white text-center my-3 px-5">
+<div class="container text-white text-center my-3 px-5" data-aos="fade-in">
 	<div id="timestamp">|</div>
 </div>
 <script>

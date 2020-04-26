@@ -1,4 +1,4 @@
-<div class="container mb-5">
+<div class="container mb-5" data-aos="fade-in" data-aos-duration="1000">
 	<h1 class="my-3">Generated <?php echo $g->sessionGeneratedReportType();?></h1>
 	<h4><i class="fas fa-code fa-fw mr-2"></i>BBCode</h4>
 		<textarea

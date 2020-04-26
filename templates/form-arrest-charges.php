@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5">
+<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="1000">
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Charges</h1>
 	<hr>
 	<form action="/paperwork-generators/arrest-report" method="POST">

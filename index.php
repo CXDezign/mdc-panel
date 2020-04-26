@@ -13,6 +13,7 @@
 	<meta property="og:url" content="http://xanx.co.uk/MDC">
 	<meta property="og:image" content="http://xanx.co.uk/MDC/images/Logo-MDC.png">
 	<meta property="og:description" content="MDC Panel - Created by xanx.">
+	<link rel="icon" type="image/png" href="favicon.png">
 
 	<title>MDC Panel</title>
 
@@ -33,6 +34,9 @@
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/129680e694.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Animate on Scroll -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<!-- Bootstrap Switch Button -->
 	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
@@ -78,5 +82,9 @@
 		?>
 		</div>
 	</div>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 </body>
 </html>

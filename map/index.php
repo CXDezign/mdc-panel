@@ -1,4 +1,12 @@
-<div id="map"></div>
+<style>
+#breadcrumb {
+	display: none;
+}
+#footer {
+	display: none;
+}
+</style>
+<div id="map" data-aos="zoom-in" data-aos-duration="750"></div>
 <script>
 // Street Data
 var dataStreets = [

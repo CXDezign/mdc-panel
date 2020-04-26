@@ -13,8 +13,8 @@ body {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: calc(100vw - 260px);
-	height: 100vh;
+	width: calc(100% - 260px);
+	height: 100%;
 	left: 260px;
 }
 
