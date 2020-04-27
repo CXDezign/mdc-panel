@@ -3,7 +3,8 @@
 ?>
 <nav>
 	<ol class="breadcrumb" id="breadcrumb">
-		<li class="breadcrumb-item" data-aos="fade-in" data-aos-delay="100">
+		<div data-aos="flip-up" data-aos-delay="150">
+		<li class="breadcrumb-item d-inline-block">
 			<a href="/">
 				<i class="fa fa-fw fa-th-large mr-1"></i>Dashboard
 			</a>
@@ -18,12 +19,13 @@
 			foreach ($breadcrumbs as $crumb) {
 				$link = ucwords(str_replace(array(".php","-","_"), array(""," "," "), $crumb));
 				$root_domain .= $crumb.'/';
-				$breadcrumb .= '<li class="breadcrumb-item" data-aos="fade-in" data-aos-delay="100"><a href="'. $root_domain .'">' . $link . '</a></li>';
+				$breadcrumb .= '<li class="breadcrumb-item d-inline-block" data-aos="fade-in" data-aos-delay="100"><a href="'. $root_domain .'">' . $link . '</a></li>';
 			}
 
 			return $breadcrumb;
 		}
 		echo breadcrumbs();
+		echo "</div>";
 	}
 	?>
 	</ol>

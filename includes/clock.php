@@ -1,4 +1,4 @@
-<div class="container text-white text-center my-3 px-5" data-aos="fade-in">
+<div class="container text-white text-center my-3 px-5" data-aos="flip-up" data-aos-delay="150">
 	<div id="timestamp">|</div>
 </div>
 <script>
