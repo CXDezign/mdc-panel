@@ -74,6 +74,10 @@ optgroup {
 	opacity: 1;
 }
 
+.text-golden {
+	color: #e2b055;
+}
+
 /* MAIN */
 
 .wrapper {
