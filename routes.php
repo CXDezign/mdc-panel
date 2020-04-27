@@ -9,6 +9,9 @@
 		case '/settings':
 			require __DIR__ . "/templates/page-settings.php";
 			break;
+		case '/changelogs':
+			require __DIR__ . "/templates/page-changelogs.php";
+			break;
 		case '/street-guide':
 			require __DIR__ . "/map/index.php";
 			break;

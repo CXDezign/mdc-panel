@@ -1,7 +1,7 @@
 <nav id="sidebar">
 	<div class="text-center my-3">
 		<a class="d-block" href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
-		<span class="badge badge-light"><?php echo $g->getVersion(); ?></span>
+		<a href="/changelogs#<?php echo $g->getVersion(); ?>"><span class="badge badge-light"><?php echo $g->getVersion(); ?></span></a>
 	</div>
 	<?php
 		if ($g->cookieToggleClock() == false) {
@@ -116,9 +116,15 @@
 				<i class="fas fa-fw fa-columns mr-2"></i>MDC Panel - Thread<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i>
 			</a>
 		</li>
-		<li class="nav-item mt-5">
+		<hr class="my-3">
+		<li class="nav-item">
 			<a class="nav-link" href="/settings">
 				<i class="fas fa-fw fa-cog mr-2"></i>Settings
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/changelogs">
+				<i class="fas fa-fw fa-plug mr-2"></i>Changelogs
 			</a>
 		</li>
 	</ul>

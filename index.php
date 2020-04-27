@@ -76,7 +76,7 @@
 	<link rel="stylesheet" type="text/css" href="/map/src/leaflet.awesome-markers.css">
 	<script src="/map/src/leaflet.awesome-markers.js"></script>
 </head>
-<body>
+<body id="top">
 	<div class="wrapper">
 	<?php
 		require("templates/sidebar.php");

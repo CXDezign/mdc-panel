@@ -2,6 +2,7 @@
 
 html {
 	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -152,6 +153,29 @@ optgroup {
 	letter-spacing: 2px;
 	font-weight: 600;
 	text-shadow: 0 2px 4px #000000!important;
+}
+
+/* CHANGELOGS */
+
+.changelog-spacing {
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	margin-top: -300px;
+}
+
+.card-change {
+	box-shadow: 0 0 15px #00000000!important;
+	transition: all 5s linear;
+}
+
+.changelog-spacing:target + .card-change {
+	box-shadow: 0 0 15px #e2b055!important;
+}
+
+.cl-general {
+	color: #e2b055;
+	font-weight: 600;
 }
 
 /* CARDS */

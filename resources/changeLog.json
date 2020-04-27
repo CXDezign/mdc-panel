@@ -1,0 +1,197 @@
+{
+	"1.9.0": {
+		"id": "1.9.0",
+		"date": "28/APR/2020",
+		"changes": {
+			"1": "General - Updated MDC Panel Logo.",
+			"2": "General - Added a FavIcon.",
+			"3": "General - Visual overhaul.",
+			"4": "General - Reworked entire URL Routing system for neater links.",
+			"5": "General - Breadcrumb Navigation added.",
+			"6": "General - Live Sidebar Clock added.",
+			"7": "General - Site Settings & Preferences added.",
+			"8": "Paperwork Generators - Reworked from the ground-up for code efficiency, error checking, variable defaulting, clutter reduction, and optimisation for upcoming projects.",
+			"9": "Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
+			"10": "Traffic Report Generator - Updated to be using the same JSON Penal Code file as the Arrest Report Generator.",
+			"11": "Traffic Division: Patrol Report Generator - Added tips and hints for input fields for clarity."
+		}
+	},
+	"1.8.5": {
+		"id": "1.8.5",
+		"date": "19/APR/2020",
+		"changes": {
+			"1": "Arrest Report Generator - All charges now read from one single JSON file instead of two separate files for data extraction when calculating charges and for selectable choices from a list.",
+			"2": "Charges - Fixed charge 116 showing the incorrect charge title."
+		}
+	},
+	"1.8.4": {
+		"id": "1.8.4",
+		"date": "06/MAR/2020",
+		"changes": {
+			"1": "Penal Code - Updated all charges to the newest penal code update.",
+			"2": "Arrest Report Generator - Improved code.",
+			"3": "Arrest Charges Form - Fixed numerous icon spacing issues & removal of deprecated tooltip code.",
+			"4": "Arrest Charges Table - Added Court section to table."
+		}
+	},
+	"1.8.3": {
+		"id": "1.8.3",
+		"date": "05/MAR/2020",
+		"changes": {
+			"1": "General - Error tracker fixed.",
+			"2": "Charges - Fixed times for charge 120. depending on offence count."
+		}
+	},
+	"1.8.2": {
+		"id": "1.8.2",
+		"date": "28/FEB/2020",
+		"changes": {
+			"1": "Patrol Log Generator - Initial release.",
+			"2": "Street Guide - Added the LSPD Impound Lot to the map.",
+			"3": "Street Guide - Changed icon for the Twin-Tower Correctional Facility."
+		}
+	},
+	"1.8.1": {
+		"id": "1.8.1",
+		"date": "23/FEB/2020",
+		"changes": {
+			"1": "General - Renamed MDC Paperwork Generators to MDC Panel.",
+			"2": "General - Panel icons now light up when hovering your mouse over them.",
+			"3": "General - Mobile adjustments for better device scalability.",
+			"4": "Dashboard - Added a main dashboard hub for all the MDC Panel's features.",
+			"5": "Sidebar - Renamed numerous amounts of links and added the following: Dashboard, LSSD, LSFD, MDC Panel - Thread."
+		}
+	},
+	"1.8.0": {
+		"id": "1.8.0",
+		"date": "22/FEB/2020",
+		"changes": {
+			"1": "Street Guide - Initial Release.",
+			"2": "Arrest Report Generator - Initial Release",
+			"3": "Sidebar - Initial Release.",
+			"4": "Navigation Bar - Removed.",
+			"5": "Generators - Rearranged the generator panels.",
+			"6": "Added Legion Square to the District list."
+		}
+	},
+	"1.7.0": {
+		"id": "1.7.0",
+		"date": "14/FEB/2020",
+		"changes": {
+			"1": "General - Logo for the MDC has been updated.",
+			"2": "General - The background of the site has changed from the LSPD logo to the San Andreas Seal.",
+			"3": "Traffic Division Patrol Report Generator - Initial release.",
+			"4": "Traffic Report Generator - Fixed the text colouring issues when copying reports and using Dark/Day mode on the actual MDC."
+		}
+	},
+	"1.6.1": {
+		"id": "1.6.1",
+		"date": "22/JAN/2020",
+		"changes": {
+			"1": "General - Added LSSD ranks.",
+			"2": "General - Added many missing vehicles from the automatic completion dropdown.",
+			"3": "Added Vehicles - Albany Virgo Classic, Albany V-STR, Annis Kawaii, Benefactor Streiter (Sedan), Benefactor Streiter (SUV), Dinka Blista Kanjo, Dinka Flash, Dinka Sugoi, Karin Everon, Karin Sultan Classic, Lampadati Komoda, Maxwell Asbo, Maxwell Vagrant, Vapid Dominator Classic, Vapid Retinue MK II, Vapid Scout, Vapid Torrence, Överflöd Imorgon, Übermacht Rebla GTS.",
+			"4": "Traffic Report - Added level 5 tint option.",
+			"5": "Traffic Report - Fixed a spelling mistake."
+		}
+	},
+	"1.6.0": {
+		"id": "1.6.0",
+		"date": "22/JAN/2020",
+		"changes": {
+			"1": "Evidence Registration Log - Initial release (old format).",
+			"2": "General - Background opacity fixed across browsers.",
+			"3": "General - Fixed San Andreas Penal Code related links.",
+			"4": "Resources - Added a new submenu Resources. Contains quick resources.",
+			"5": "Traffic Report - Fixed copy and paste code for the generator for new MDC.",
+			"6": "Traffic Report - Fixed Create Record link for new MDC."
+		}
+	},
+	"1.5.0": {
+		"id": "1.5.0",
+		"date": "11/DEC/2019",
+		"changes": {
+			"1": "Evidence Registration Log Generator - Initial release, left disabled until further notice.",
+			"2": "Death Report Generator - now automatically adds N/A for accepted empty input fields once submitted.",
+			"3": "Death Report Generator - Improved the evidence processing code.",
+			"4": "Paperwork Generators - Added icons to the main generator picker page.",
+			"5": "Paperwork Generators - Updated the colour scheme.",
+			"6": "Navigation Bar - Sorted out the order of the navigation links.",
+			"7": "Navigation Bar - Added a Reports and Records Board link under the Los Santos Police Department navigation menu option.",
+			"8": "Navigation Bar - Spaced out the navigation bar title and logo."
+		}
+	},
+	"1.4.1": {
+		"id": "1.4.1",
+		"date": "11/DEC/2019",
+		"changes": {
+			"1": "General - Added META tags for previewing purposes such as when posting Discord links.",
+			"2": "General - Added an N/A, Forensic Analyst, and Crime Scene Investigator ranks to the rank chooser.",
+			"3": "Navigation Bar - Fixed a bug where the results page navigation bar would not work correctly when clicking on menus."
+		}
+	},
+	"1.4.0": {
+		"id": "1.4.0",
+		"date": "11/DEC/2019",
+		"changes": {
+			"1": "General - Website branding and name change to MDC.",
+			"2": "General - Website has been adjusted and accommodated for future projects and generators.",
+			"3": "General - Temporary switch to lightmode until a toggle is created.",
+			"4": "Death Report Generator - Initial release.",
+			"5": "Paperwork Generators - Added prepending icons to many input fields for form fill outs.",
+			"6": "Paperwork Generators - Addition of tooltips on hover or on focus to replace small help texts to remove visible clutter.",
+			"7": "Paperwork Generators - Fixed a bug where the rank chooser would remember the user's rank for each added slot."
+		}
+	},
+	"1.3.0": {
+		"id": "1.3.0",
+		"date": "27/NOV/2019",
+		"changes": {
+			"1": "Navigation Bar - Useful links and resources.",
+			"2": "Paperwork Generators - Make & Model section swapped from text input to autocomplete text input.",
+			"3": "Paperwork Generators - Street Name section swapped from text input to autocomplete text input.",
+			"4": "Paperwork Generators - District section swapped from text input to autocomplete text input.",
+			"5": "Paperwork Generators - Section Streetname has been renamed to Street Name."
+		}
+	},
+	"1.2.0": {
+		"id": "1.2.0",
+		"date": "26/NOV/2019",
+		"changes": {
+			"1": "Traffic Report Generator - Automatic crime classification detection and colouring.",
+			"2": "Traffic Report Generator - Fine section is now optional as not all crimes have fines attached to them.",
+			"3": "Traffic Report Generator - Crime ID, Title, & Classification section swapped from text input to list input.",
+			"4": "Traffic Report Generator - Crime Classification section was removed.",
+			"5": "Traffic Report Generator - Drivers License section swapped from radio input to list input.",
+			"6": "Traffic Report Generator - Tint Level section swapped from number input to list input.",
+			"7": "Traffic Report Generator - Certain section titles were renamed. (Tints -> Tint Level, Neighbourhood -> District, Defendant Details, Narrative, & Dashboard Camera -> Defendant & Narrative, Crime ID & Title -> Crime ID, Title, & Classification)",
+			"8": "Traffic Report Generator - Certain help messages were edited and refined."
+		}
+	},
+	"1.1.0": {
+		"id": "1.1.0",
+		"date": "23/NOV/2019",
+		"changes": {
+			"1": "General - Website now supports HTTPS SSL/TLS encryption.",
+			"2": "General - Dark mode has been activated.",
+			"3": "General - Small visual details have been adjusted.",
+			"4": "Generated Report - Added Create Record: Defendant Name button.",
+			"5": "Traffic Report Generator - Input fields now highlight when in use.",
+			"6": "Traffic Report Generator - Added Dashboard Camera section.",
+			"7": "Traffic Report Generator - Added Defendant Drivers License section.",
+			"8": "Traffic Report Generator - Added missing icon to the Submit button.",
+			"9": "Traffic Report Generator - Removed unneeded labels for subsequent Officer Slots & Citations.",
+			"10": "Traffic Report Generator - Expanded on various help messages / hints to provide more details.",
+			"11": "Traffic Report Generator - Brackets () around the crime class for citations have been removed."
+		}
+	},
+	"1.0.0": {
+		"id": "1.0.0",
+		"date": "22/NOV/2019",
+		"changes": {
+			"1": "Initial commit."
+		}
+	}
+
+
+}
