@@ -1,8 +1,3 @@
-<?php
-
-	require 'includes/initialise.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,31 +19,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=<?php echo $g->getVersion(); ?>">
-	<?php
-		if ($g->cookieToggleMode() == true) {
-			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v=<?php echo $g->getVersion(); ?>">';
-		}
-	?>
-	<style>
-		<?php
-		if ($g->cookieToggleHints() == true) {
-			?>
-			.form-group small {
-				display: none;
-			}
-			<?php
-		}
-
-		if ($g->cookieToggleFooter() == true) {
-			?>
-			#footer {
-				display: none;
-			}
-			<?php
-		}
-		?>
-	</style>
+	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=unavailable">
 
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/129680e694.js" crossorigin="anonymous"></script>
