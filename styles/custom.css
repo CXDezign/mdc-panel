@@ -6,7 +6,7 @@ html {
 }
 
 ::selection {
-  background: rgba(255,255,255,.15);
+  background: rgba(200,200,200,.5);
   border-radius: 5px;
 }
 
