@@ -99,6 +99,35 @@ class General {
 
 	// COOKIES
 
+	public function clearCookies() {
+
+		unset($_COOKIE['toggleMode']);
+		unset($_COOKIE['toggleClock']);
+		unset($_COOKIE['toggleBreadcrumb']);
+		unset($_COOKIE['toggleBackgroundLogo']);
+		unset($_COOKIE['toggleHints']);
+		unset($_COOKIE['toggleFooter']);
+		unset($_COOKIE['officerName']);
+		unset($_COOKIE['officerRank']);
+		unset($_COOKIE['officerBadge']);
+		unset($_COOKIE['callSign']);
+		unset($_COOKIE['defName']);
+		unset($_COOKIE['inputTDPatrolReportURL']);
+		setcookie('toggleMode', false, -1, '/');
+		setcookie('toggleClock', false, -1, '/');
+		setcookie('toggleBreadcrumb', false, -1, '/');
+		setcookie('toggleBackgroundLogo', false, -1, '/');
+		setcookie('toggleHints', false, -1, '/');
+		setcookie('toggleFooter', false, -1, '/');
+		setcookie('officerName', null, -1, '/');
+		setcookie('officerRank', null, -1, '/');
+		setcookie('officerBadge', null, -1, '/');
+		setcookie('callSign', null, -1, '/');
+		setcookie('defName', null, -1, '/');
+		setcookie('inputTDPatrolReportURL', null, -1, '/');
+
+	}
+
 	public function cookieToggleMode() {
 
 		if (isset($_COOKIE['toggleMode'])) {

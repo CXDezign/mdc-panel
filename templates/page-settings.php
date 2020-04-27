@@ -4,6 +4,18 @@
 	<center><h4><i class="fas fa-globe fa-fw mr-2"></i>Site Preferences</h4></center>
 	<form>
 		<div class="row">
+			<div class="form-group col-xl-12">
+				<center>
+				<label>Clear Site Cookies</label><br>
+					<div class="container my-2 text-center">
+						<button type="submit" id="clearCookies" name="clearCookies" class="btn btn-danger px-5">
+							<i class="fas fa-cookie-bite fa-fw mr-1"></i>Clear Site Cookies
+						</button>
+					</div>
+				</center>
+			</div>
+		</div>
+		<div class="row">
 			<div class="form-group col-xl-4">
 				<center>
 				<label>Toggle Day/Night Mode</label><br>
@@ -214,6 +226,22 @@
 <script>
 
 	$(function () {
+
+		$('#clearCookies').click(function(e) {
+			e.preventDefault();
+			$.ajax({
+				type: 'POST',
+				url: 'controllers/settings.php',
+				data: {
+					type: "settingsClearCookies"
+				},
+				success: function () {
+					setTimeout(function() {
+						location.reload();
+					}, 400);
+				},
+			});
+		});
 
 		$('#settingsToggleMode').change(function() {
 			$.ajax({

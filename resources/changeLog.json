@@ -9,12 +9,13 @@
 			"4": "General - Reworked entire URL Routing system for neater links.",
 			"5": "General - Breadcrumb Navigation added.",
 			"6": "General - Live Sidebar Clock added.",
-			"7": "General - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, & Footer toggles).",
+			"7": "General - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, Footer toggles & Clear Cookies.).",
 			"8": "General - Changelog system added.",
 			"9": "Paperwork Generators - Reworked from the ground-up for code efficiency, error checking, variable defaulting, clutter reduction, and optimisation for upcoming projects.",
-			"10": "Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
-			"11": "Traffic Report Generator - Updated to be using the same JSON Penal Code file as the Arrest Report Generator.",
-			"12": "Traffic Division: Patrol Report Generator - Added tips and hints for input fields for clarity."
+			"10": "Arrest Report Generators - Reworked entire backend code regarding the arrest charges table. The table will now display on the generated arrest report page.",
+			"11": "Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
+			"12": "Traffic Report Generator - Updated to be using the same JSON Penal Code file as the Arrest Report Generator.",
+			"13": "Traffic Division: Patrol Report Generator - Added tips and hints for input fields for clarity."
 		}
 	},
 	"1.8.5": {

@@ -73,6 +73,7 @@ optgroup {
 
 #footer {
 	opacity: 0.25;
+	transition: all .5s linear;
 }
 
 #footer:hover {

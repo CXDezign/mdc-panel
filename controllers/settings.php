@@ -7,6 +7,12 @@
 	// Initialise Variables
 	$formType = $_POST['type'];
 
+	if ($formType == "settingsClearCookies") {
+
+		$g->clearCookies();
+		
+	}
+
 	if ($formType == "settingsToggleMode") {
 
 		$toggleMode = $g->cookieToggleMode();
@@ -94,6 +100,7 @@
 		setcookie("officerName",$name,2147483647,"/");
 		setcookie("officerRank",$rank,2147483647,"/");
 		setcookie("officerBadge",$badge,2147483647,"/");
+
 	}
 
 ?>
