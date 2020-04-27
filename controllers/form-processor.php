@@ -17,6 +17,10 @@
 		$generatedReport = "";
 		$generatedThreadURL = "";
 		$generatedThreadTitle = "";
+		$showGeneratedThreadTitle = false;
+		$showGeneratedArrestChargeTables = false;
+		$generatedArrestChargeList = "";
+		$generatedArrestChargeTotals = "";
 
 		if ($generatorType == "TrafficReport") {
 
@@ -93,7 +97,7 @@
 			foreach ($inputCrime as $iCrime => $crime) {
 				$charge = $penal[$crime];
 				$chargeTitle = $charge['charge'];
-				$chargeClassification = $charge['type'];
+				$chargeClassification = $charge['classification'];
 				$chargeType = "?";
 				if (empty($inputCrimeType[$iCrime]) == false) {
 					$chargeType = $pg->getCrimeType($inputCrimeType[$iCrime]);
@@ -180,6 +184,9 @@
 			 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br>"
 			 .$wristbandBracelet."<br>".$pg->getPlea($inputPlea, $inputDefName)."<br><br>"
 			 .nl2br($inputNarrative)."<br><br>".$inputEvidence."<br>".$pg->getDashboardCamera($inputDashcam);
+			$showGeneratedArrestChargeTables = $_SESSION['showGeneratedArrestChargeTables'];
+			$generatedArrestChargeList = $_SESSION['generatedArrestChargeList'];
+			$generatedArrestChargeTotals = $_SESSION['generatedArrestChargeTotals'];
 		}
 
 		if ($generatorType == "DeathReport") {
@@ -602,30 +609,229 @@
 			$generatedReport = str_replace("				", "", $generatedReport);
 		}
 
+		if ($generatorType == "ArrestCharges") {
+
+			// Variables
+			$redirectPath = "arrest";
+			$rowBuilder = "";
+			$rowBuilderTotals = "";
+			$charges = $_POST['inputCrime'];
+
+
+			// Charge List Builder
+			foreach ($charges as $iCharge => $charge) {
+
+				// Charge Base
+				$charge = $penal[$charge];
+				$chargeID = $charge['id'];
+				$chargeName = $charge['charge'];
+				$chargeOffence = $_POST['inputCrimeOffence'][$iCharge];
+				$chargeFine[] = $charge['fine'][$chargeOffence];
+				$chargeFineFull = "$".number_format($chargeFine[$iCharge]);
+
+
+				// Charge Classification Builder
+				$chargeClassification = $charge['classification'];
+				$chargeClassificationFull = "";
+				switch ($chargeClassification) {
+					case "F":
+						$chargeClassificationFull = '<b class="text-danger">Felony</b>';
+						break;
+					case "M":
+						$chargeClassificationFull = '<b class="text-warning">Misdemeanor</b>';
+						break;
+					case "I":
+						$chargeClassificationFull = '<b class="text-success">Infraction</b>';
+						break;
+				}
+
+
+				// Charge Type Builder
+				$chargeType = $_POST['inputCrimeType'][$iCharge];
+				switch ($chargeType) {
+					case 1:
+						$chargeType = "C";
+						break;
+					case 2:
+						$chargeType = "B";
+						break;
+					case 3:
+						$chargeType = "A";
+						break;
+					default:
+						$chargeType = "?";
+						break;
+				}
+
+
+				// Impound Builder
+				$chargeImpound[] = $charge['impound'][$chargeOffence];
+				if ($chargeImpound[$iCharge] == 0) {
+					$chargeImpoundColour = "dark";
+					$chargeImpoundQuestion = "No";
+					$chargeImpoundTime = "";
+				} else {
+					$chargeImpoundColour = "success";
+					$chargeImpoundQuestion = "Yes";
+					$chargeImpoundTime = " | ".$chargeImpound[$iCharge]." Day(s)";
+				}
+				$chargeImpoundFull = '<span class="badge badge-'.$chargeImpoundColour.'">'.$chargeImpoundQuestion.$chargeImpoundTime.'</span>';
+
+
+				// Suspension Builder
+				$chargeSuspension[] = $charge['suspension'][$chargeOffence];
+				if ($chargeSuspension[$iCharge] == 0) {
+					$chargeSuspensionColour = "dark";
+					$chargeSuspensionQuestion = "No";
+					$chargeSuspensionTime = "";
+				} else {
+					$chargeSuspensionColour = "success";
+					$chargeSuspensionQuestion = "Yes";
+					$chargeSuspensionTime = " | ".$chargeSuspension[$iCharge]." Day(s)";
+				}
+				$chargeSuspensionFull = '<span class="badge badge-'.$chargeSuspensionColour.'">'.$chargeSuspensionQuestion.$chargeSuspensionTime.'</span>';
+
+
+				// Court Builder
+				$chargeCourt[] = $charge['court'];
+				if ($chargeCourt[$iCharge] == true) {
+					$chargeCourtColour = "success";
+					$chargeCourtIcon = "check-circle";
+				} else {
+					$chargeCourtColour = "dark";
+					$chargeCourtIcon = "times-circle";
+				}
+				$chargeCourtFull = '<span class="badge badge-'.$chargeCourtColour.'"><i class="fas fa-fw fa-'.$chargeCourtIcon.'"></i></span>';
+
+
+				// Time Builder
+				$multiDimensionalCrimeTimes = array(412);
+				if (in_array($charge, $multiDimensionalCrimeTimes)) {
+					$days[] = $charge['time'][$chargeOffence]['days'];
+					$hours[] = $charge['time'][$chargeOffence]['hours'];
+					$mins[] = $charge['time'][$chargeOffence]['min'];
+				} else {
+					$days[] = $charge['time']['days'];
+					$hours[] = $charge['time']['hours'];
+					$mins[] = $charge['time']['min'];
+				}
+
+				if ($days[$iCharge] == 0) {
+					$chargeDays = '';
+				} else {
+					$chargeDays = number_format($days[$iCharge]).' Day(s)';
+				}
+				if ($hours[$iCharge] == 0) {
+					$chargeHours = '';
+				} else {
+					$chargeHours = $hours[$iCharge]. ' Hour(s)';
+				}
+				if ($mins[$iCharge] == 0) {
+					$chargeMinutes = '';
+				} else {
+					$chargeMinutes = $mins[$iCharge].' Minute(s)';
+				}
+
+				$chargeTimeFull = $chargeDays.$chargeHours.$chargeMinutes;
+
+
+				// Finalisation Builders
+				$chargeTitle[] = $chargeClassification.$chargeType.' '.$chargeID.'. '.$chargeName;
+
+
+				// Rows Builder
+				$rowBuilder .= '
+					<tr>
+						<td>'.$chargeTitle[$iCharge].'</td>
+						<td>'.$chargeClassificationFull.'</td>
+						<td>'.$chargeTimeFull.'</td>
+						<td>'.$chargeFineFull.'</td>
+						<td>'.$chargeImpoundFull.'</td>
+						<td>'.$chargeSuspensionFull.'</td>
+						<td>'.$chargeCourtFull.'</td>
+					</tr>';
+
+			}
+
+			// Total Time
+			$chargeTimeTotalDays = number_format(array_sum($days)).' Day(s) ';
+			$chargeTimeTotalHours = array_sum($hours).' Hour(s) ';
+			$chargeTimeTotalMinutes = array_sum($mins).' Minute(s) ';
+			$chargeTimeTotal = $chargeTimeTotalDays.$chargeTimeTotalHours.$chargeTimeTotalMinutes;
+
+
+			// Total Fines
+			$chargeFineTotal = "$".number_format(array_sum($chargeFine));
+
+
+			// Total Impound Time
+			if (array_sum($chargeImpound) != 0) {
+				$chargeImpoundTotal = number_format(array_sum($chargeImpound))." Day(s)";
+			} else {
+				$chargeImpoundTotal = "No Impounds";
+			}
+
+
+			// Total Suspension Time
+			if (array_sum($chargeSuspension) != 0) {
+				$chargeSuspensionTotal = number_format(array_sum($chargeSuspension))." Day(s)";
+			} else {
+				$chargeSuspensionTotal = "No Suspensions";
+			}
+
+
+			// Totals Row Builder
+			$rowBuilderTotals = '
+				<tr>
+					<td>'.$chargeTimeTotal.'</td>
+					<td>'.$chargeFineTotal.'</td>
+					<td>'.$chargeImpoundTotal.'</td>
+					<td>'.$chargeSuspensionTotal.'</td>
+				</tr>';
+
+
+			// Session Builder
+			$showGeneratedArrestChargeTables = true;
+			$generatedArrestChargeList = $rowBuilder;
+			$generatedArrestChargeTotals = $rowBuilderTotals;
+		}
+
+
+
+
+
+
 		// Generator Finalisation
 		$_SESSION['generatedReport'] = $generatedReport;
 		$_SESSION['generatedReportType'] = $generatedReportType;
 		$_SESSION['generatedThreadTitle'] = $generatedThreadTitle;
 		$_SESSION['showGeneratedThreadTitle'] = $showGeneratedThreadTitle;
 		$_SESSION['generatedThreadURL'] = $generatedThreadURL;
+		$_SESSION['showGeneratedArrestChargeTables'] = $showGeneratedArrestChargeTables;
+		$_SESSION['generatedArrestChargeList'] = $generatedArrestChargeList;
+		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
+
 
 		// Redirect
-		if ($redirectPath == "report") {
-			header('Location: /paperwork-generators/generated-report');
-			exit();
-		} elseif ($redirectPath == "thread") {
-			header('Location: /paperwork-generators/generated-thread');
-			exit();
+		switch ($redirectPath) {
+			case "report":
+				header('Location: /paperwork-generators/generated-report');
+				break;
+				exit();
+			case "thread":
+				header('Location: /paperwork-generators/generated-thread');
+				break;
+				exit();
+			case "arrest":
+				header('Location: /paperwork-generators/arrest-report');
+				break;
+				exit();
 		}
 
 	} else {
 
-		// Redirect to previous page and show message on said page.
-		$generatedReport = "Fatal Error! Please contact xanx#0001 on Discord and describe the events in detail which occurred prior to this message.";
-		$generatedReportType = "Fatal Error";
-		$_SESSION['generatedReport'] = $generatedReport;
-		$_SESSION['generatedReportType'] = $generatedReportType;
-		header('Location: /paperwork-generators/generated-report');
+		// Redirect to error page
+		header('Location: /paperwork-generators/error');
 		exit();
 
 	}

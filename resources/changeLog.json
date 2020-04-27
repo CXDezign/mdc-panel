@@ -4,12 +4,12 @@
 		"date": "28/APR/2020",
 		"changes": {
 			"1": "General - Updated MDC Panel Logo.",
-			"2": "General - Added a FavIcon.",
-			"3": "General - Visual overhaul.",
+			"2": "General - Added a Favicon.",
+			"3": "General - Site-wide visual overhaul.",
 			"4": "General - Reworked entire URL Routing system for neater links.",
 			"5": "General - Breadcrumb Navigation added.",
 			"6": "General - Live Sidebar Clock added.",
-			"7": "General - Site Settings & Preferences added.",
+			"7": "General - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, & Footer toggles).",
 			"8": "General - Changelog system added.",
 			"9": "Paperwork Generators - Reworked from the ground-up for code efficiency, error checking, variable defaulting, clutter reduction, and optimisation for upcoming projects.",
 			"10": "Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
@@ -190,7 +190,7 @@
 		"id": "1.0.0",
 		"date": "22/NOV/2019",
 		"changes": {
-			"1": "Initial commit."
+			"1": "Initial release."
 		}
 	}
 

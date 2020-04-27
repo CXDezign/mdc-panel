@@ -21,6 +21,9 @@ class General {
 		return $time;
 	}
 
+
+	// SESSIONS
+
 	public function sessionGeneratedReportType() {
 
 		if (isset($_SESSION['generatedReportType'])) {
@@ -65,6 +68,36 @@ class General {
 			return "";
 		}
 	}
+
+	public function sessionShowGeneratedArrestChargeTables() {
+
+		if (isset($_SESSION['showGeneratedArrestChargeTables'])) {
+			return $_SESSION['showGeneratedArrestChargeTables'];
+		} else {
+			return true;
+		}
+	}
+
+	public function sessionGeneratedArrestChargeList() {
+
+		if (isset($_SESSION['generatedArrestChargeList'])) {
+			return $_SESSION['generatedArrestChargeList'];
+		} else {
+			return "";
+		}
+	}
+
+	public function sessionGeneratedArrestChargeTotals() {
+
+		if (isset($_SESSION['generatedArrestChargeTotals'])) {
+			return $_SESSION['generatedArrestChargeTotals'];
+		} else {
+			return "";
+		}
+	}
+
+
+	// COOKIES
 
 	public function cookieToggleMode() {
 

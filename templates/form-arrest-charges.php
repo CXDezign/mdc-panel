@@ -1,7 +1,9 @@
 <div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="1000">
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Charges</h1>
 	<hr>
-	<form action="/paperwork-generators/arrest-report" method="POST">
+	<form action="/controllers/form-processor.php" method="POST">
+		<input type="hidden" id="generatorType" name="generatorType" value="ArrestCharges">
+
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
 		<div class="form-row chargeGroup">
 			<div class="form-group col-xl-6">

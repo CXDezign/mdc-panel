@@ -105,7 +105,19 @@ class PaperworkGenerators {
 
 		foreach ($charges as $charge) {
 			if ($chargeCount != 0) {
-				echo '<option value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].' ('.$charge['type'].')'.'</option>';
+				$chargeClassification = $charge['classification'];
+				switch ($chargeClassification) {
+					case "F":
+						$chargeColour = "dc3545";
+						break;
+					case "M":
+						$chargeColour = "ffc107";
+						break;
+					case "I":
+						$chargeColour = "28a745";
+						break;
+				}
+				echo '<option style="color: #'.$chargeColour.';" value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].'</option>';
 			}
 			$chargeCount++;
 		}

@@ -6,6 +6,9 @@
 		case '/dashboard':
 			require __DIR__ . "/templates/page-dashboard.php";
 			break;
+		case '/paperwork-generators/error':
+			require __DIR__ . "/templates/error.php";
+			break;
 		case '/settings':
 			require __DIR__ . "/templates/page-settings.php";
 			break;
