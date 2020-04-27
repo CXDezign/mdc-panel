@@ -84,7 +84,7 @@
 					name="inputRank"
 					>
 					<?php
-						$g->rankChooser(0);
+						$pg->rankChooser(0);
 					?>
 					</select>
 				</div>
@@ -224,7 +224,7 @@
 					data-placement="bottom" title="Example: Benefactor Schwartzer">
 					<datalist id="vehicle_list">
 					<?php
-						$g->vehicleChooser();
+						$pg->vehicleChooser();
 					?>
 					</datalist>
 				</div>
@@ -256,7 +256,7 @@
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
 					<?php
-						$g->districtChooser();
+						$pg->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -277,7 +277,7 @@
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
 					<?php
-						$g->streetChooser();
+						$pg->streetChooser();
 					?>
 					</datalist>
 				</div>

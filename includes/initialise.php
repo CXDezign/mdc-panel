@@ -5,8 +5,6 @@
 
 	// Required Models
 	require 'models/general.php';
-	require 'models/arrestReport.php';
-	require 'models/trafficReport.php';
+	require 'models/paperwork-generators.php';
 	$g = new General();
-	$ar = new ArrestReport();
-	$tr = new TrafficReport();
+	$pg = new PaperworkGenerators();

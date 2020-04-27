@@ -81,7 +81,7 @@
 					name="inputRank[]"
 					required>
 					<?php
-						$g->rankChooser(1);
+						$pg->rankChooser(1);
 					?>
 					</select>
 				</div>
@@ -137,7 +137,7 @@
 					name="inputDefLicense"
 					required>
 					<?php
-						$tr->licenseChooser();
+						$pg->licenseChooser();
 					?>
 					</select>
 				</div>
@@ -187,7 +187,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Example: Benefactor Schwartzer">
 					<datalist id="vehicle_list">
 					<?php
-						$g->vehicleChooser();
+						$pg->vehicleChooser();
 					?>
 					</datalist>
 				</div>
@@ -230,7 +230,7 @@ The defendant was found to be X."
 					name="inputVehTint"
 					required>
 					<?php
-						$tr->tintChooser();
+						$pg->tintChooser();
 					?>
 					</select>
 				</div>
@@ -256,7 +256,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
 					<?php
-						$g->districtChooser();
+						$pg->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -278,7 +278,7 @@ The defendant was found to be X."
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
 					<?php
-						$g->streetChooser();
+						$pg->streetChooser();
 					?>
 					</datalist>
 				</div>
@@ -299,7 +299,7 @@ The defendant was found to be X."
 					name="inputCrime[]"
 					required>
 					<?php
-						$g->chargeChooser();
+						$pg->chargeChooser();
 					?>
 					</select>
 				</div>
@@ -312,7 +312,7 @@ The defendant was found to be X."
 				class="form-control"
 				required>
 				<?php
-					$g->crimeTypeChooser();
+					$pg->crimeTypeChooser();
 				?>
 				</select>
 			</div>
@@ -366,7 +366,7 @@ The defendant was found to be X."
 				name="inputRank[]"
 				required>
 				<?php
-					$g->rankChooser(0);
+					$pg->rankChooser(0);
 				?>
 				</select>
 			</div>
@@ -405,7 +405,7 @@ The defendant was found to be X."
 				name="inputCrime[]"
 				required>
 				<?php
-					$g->chargeChooser();
+					$pg->chargeChooser();
 				?>
 				</select>
 			</div>
@@ -417,7 +417,7 @@ The defendant was found to be X."
 			class="form-control"
 			required>
 			<?php
-				$g->crimeTypeChooser();
+				$pg->crimeTypeChooser();
 			?>
 			</select>
 		</div>

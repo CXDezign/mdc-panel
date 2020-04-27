@@ -1,12 +1,12 @@
 <?php
 
 	session_start();
+
+	// Required Models
 	require '../models/general.php';
-	require '../models/trafficReport.php';
-	require '../models/arrestReport.php';
+	require '../models/paperwork-generators.php';
 	$g = new General();
-	$tr = new TrafficReport();
-	$ar = new ArrestReport();
+	$pg = new PaperworkGenerators();
 
 	if (isset($_POST['generatorType'])) {
 
@@ -80,9 +80,9 @@
 			// Officer Resolver
 			$officers = "";
 			foreach ($inputName as $iOfficer => $officer) {
-				$officerRank = $g->getRank(0,1);
+				$officerRank = $pg->getRank(0,1);
 				if (empty($inputRank[$iOfficer]) == false) {
-					$officerRank = $g->getRank($inputRank[$iOfficer],1);
+					$officerRank = $pg->getRank($inputRank[$iOfficer],1);
 				}
 				$officers .= "<b>".$officerRank." ".$officer."</b> (<b>#".$inputBadge[$iOfficer]."</b>), ";
 			}
@@ -96,19 +96,19 @@
 				$chargeClassification = $charge['type'];
 				$chargeType = "?";
 				if (empty($inputCrimeType[$iCrime]) == false) {
-					$chargeType = $g->getCrimeType($inputCrimeType[$iCrime]);
+					$chargeType = $pg->getCrimeType($inputCrimeType[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
-					$fines .= "- <b>".$g->getCrimeColour($chargeClassification).$chargeClassification.$chargeType." ".$crime.". ".$chargeTitle."</span></b>.<br>";
+					$fines .= "- <b>".$pg->getCrimeColour($chargeClassification).$chargeClassification.$chargeType." ".$crime.". ".$chargeTitle."</span></b>.<br>";
 				} else {
-					$fines .= "- <b>".$g->getCrimeColour($chargeClassification).$chargeClassification.$chargeType." ".$crime.". ".$chargeTitle."</span></b> - <b style='color: green;'>$".number_format($inputCrimeFine[$iCrime])."</b> Citation.<br>";
+					$fines .= "- <b>".$pg->getCrimeColour($chargeClassification).$chargeClassification.$chargeType." ".$crime.". ".$chargeTitle."</span></b> - <b style='color: green;'>$".number_format($inputCrimeFine[$iCrime])."</b> Citation.<br>";
 				}
 			}
 
 
 			// Report Builder
 			$generatedReportType = "Traffic Report";
-			$generatedReport = $officers."under the call sign <b>".$inputCallsign."</b> on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.<br>Conducted a traffic stop on a <b>".$inputVehPaint." ".$inputVeh."</b>, ".$tr->getVehiclePlates($inputVehPlate,0).", on <b>".$inputStreet."</b>, <b>".$inputDistrict."</b>.<br>".$tr->getVehicleTint($inputVehTint)."<br>The defendant was identified as <b>".$inputDefName."</b>, possessing ".$tr->getDefLicense($inputDefLicense)."<br>".$inputNarrative."<br><br>Following charge(s) were issued:<br>".$fines."<br>".$g->getDashboardCamera($inputDashcam);
+			$generatedReport = $officers."under the call sign <b>".$inputCallsign."</b> on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.<br>Conducted a traffic stop on a <b>".$inputVehPaint." ".$inputVeh."</b>, ".$pg->getVehiclePlates($inputVehPlate,0).", on <b>".$inputStreet."</b>, <b>".$inputDistrict."</b>.<br>".$pg->getVehicleTint($inputVehTint)."<br>The defendant was identified as <b>".$inputDefName."</b>, possessing ".$pg->getDefLicense($inputDefLicense)."<br>".$inputNarrative."<br><br>Following charge(s) were issued:<br>".$fines."<br>".$pg->getDashboardCamera($inputDashcam);
 		}
 
 		if ($generatorType == "ArrestReport") {
@@ -157,9 +157,9 @@
 			// Officer Resolver
 			$officers = "";
 			foreach ($inputName as $iOfficer => $officer) {
-				$officerRank = $g->getRank(0,1);
+				$officerRank = $pg->getRank(0,1);
 				if (empty($inputRank[$iOfficer]) == false) {
-					$officerRank = $g->getRank($inputRank[$iOfficer],1);
+					$officerRank = $pg->getRank($inputRank[$iOfficer],1);
 				}
 				$officers .= "<b>".$officerRank." ".$officer."</b> (<b>#".$inputBadge[$iOfficer]."</b>), ";
 			}
@@ -168,7 +168,7 @@
 			// Wristband & Bracelet Resolver
 			$wristbandBracelet = "";
 			if ($inputWristband != 0 || $inputBracelet != 0) {
-				$wristbandBracelet = "<b>".$ar->getBracelet($inputBracelet)." & ".$ar->getWristband($inputWristband)."</b>.";
+				$wristbandBracelet = "<b>".$pg->getBracelet($inputBracelet)." & ".$pg->getWristband($inputWristband)."</b>.";
 			}
 
 
@@ -178,8 +178,8 @@
 			 conducted an arrest on <b>".$inputDefName."</b>
 			 on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.
 			 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br>"
-			 .$wristbandBracelet."<br>".$ar->getPlea($inputPlea, $inputDefName)."<br><br>"
-			 .nl2br($inputNarrative)."<br><br>".$inputEvidence."<br>".$g->getDashboardCamera($inputDashcam);
+			 .$wristbandBracelet."<br>".$pg->getPlea($inputPlea, $inputDefName)."<br><br>"
+			 .nl2br($inputNarrative)."<br><br>".$inputEvidence."<br>".$pg->getDashboardCamera($inputDashcam);
 		}
 
 		if ($generatorType == "DeathReport") {
@@ -256,6 +256,7 @@
 
 			// Report Builder
 			$generatedReportType = "Death Report";
+			$showGeneratedThreadTitle = true;
 			$generatedThreadURL = "https://lspd.gta.world/posting.php?mode=post&f=1356";
 			$generatedThreadTitle = $inputDeathName." - ".strtoupper($inputDate)." - ".$inputStreet.", ".$inputDistrict;
 			$generatedReport = "
@@ -279,8 +280,8 @@
 				[b]WITNESSES:[/b] ".$witnesses."[/list]
 				[b]2. ADMINISTRATIVE INFORMATION[/b]
 				[hr][/hr]
-				[list=none][b]FIRST RESPONDING OFFICER:[/b] ".$g->getRank($inputRespondingRank,1)." ".$inputRespondingName."
-				[b]HANDLING DETECTIVE/FORENSIC ANALYST:[/b] ".$g->getRank($inputHandlingRank,1)." ".$inputHandlingName."
+				[list=none][b]FIRST RESPONDING OFFICER:[/b] ".$pg->getRank($inputRespondingRank,1)." ".$inputRespondingName."
+				[b]HANDLING DETECTIVE/FORENSIC ANALYST:[/b] ".$pg->getRank($inputHandlingRank,1)." ".$inputHandlingName."
 				[b]HANDLING CORONER:[/b] ".$inputCoronerName."
 				[b]CORONER CASE NUMBER:[/b] ".$inputCaseNumber."
 				[b]RELEVANT MDC RECORDS:[/b] [url=".$inputRecord."]LINK[/url][/list]
@@ -289,6 +290,7 @@
 				".$evidenceBox."
 				[hr][/hr]
 				[/divbox2]";
+			$generatedReport = str_replace("				", "", $generatedReport);
 		}
 
 		if ($generatorType == "EvidenceRegistrationLog") {
@@ -340,8 +342,9 @@
 
 			// Report Builder
 			$generatedReportType = "Evidence Registration Log";
+			$showGeneratedThreadTitle = true;
 			$generatedThreadURL = "https://lspd.gta.world/posting.php?mode=post&f=388";
-			$generatedThreadTitle = "[".$g->getItemCategory($inputItemCategory)."] ".$inputSuspectName." [".strtoupper($inputDate)."]";
+			$generatedThreadTitle = "[".$pg->getItemCategory($inputItemCategory)."] ".$inputSuspectName." [".strtoupper($inputDate)."]";
 			$generatedReport = "
 				[divbox2=#fff]
 				[center][lspdlogo=150][/lspdlogo]
@@ -353,7 +356,7 @@
 				[hr][/hr]
 				[color=white]...[/color]
 				[b]Name:[/b] ".$inputName."
-				[b]Rank:[/b] ".$g->getRank($inputRank,1)."
+				[b]Rank:[/b] ".$pg->getRank($inputRank,1)."
 				[b]Date & Time:[/b] ".strtoupper($inputDate)." - ".$inputTime."
 
 				[b]Suspect Name:[/b] ".$inputSuspectName."
@@ -364,6 +367,7 @@
 				[b]Screenshot:[/b]
 				".$evidence."
 				[/divbox2]";
+			$generatedReport = str_replace("				", "", $generatedReport);
 		}
 
 		if ($generatorType == "TrafficDivisionPatrolReport") {
@@ -432,6 +436,7 @@
 
 			// Report Builder
 			$generatedReportType = "Traffic Division: Patrol Report";
+			$showGeneratedThreadTitle = false;
 			$generatedThreadURL = $g->cookieTrafficPatrolURL();
 			$generatedReport = "
 				[divbox2=#f7f7f7]
@@ -441,7 +446,7 @@
 				[size=100][b]Traffic Division[/b][/size]
 				[size=85][color=#012B47][b]TRAFFIC PATROL REPORT[/b][/color][/size][/center]
 				[hr][/hr]
-				[b]Date:[/b] " . strtoupper($g->dateResolver($inputDateFrom, $inputDateTo)) . "
+				[b]Date:[/b] " . strtoupper($pg->dateResolver($inputDateFrom, $inputDateTo)) . "
 				[b]Time:[/b] " . $inputTimeFrom . " - " . $inputTimeTo . "
 				[b]Call-sign:[/b] " . $inputCallsign . "
 
@@ -455,6 +460,7 @@
 
 				[b]Notes (Optional):[/b] " . $inputNotes . "
 				[/divbox2]";
+			$generatedReport = str_replace("				", "", $generatedReport);
 		}
 
 		if ($generatorType == "PatrolLog") {
@@ -525,7 +531,7 @@
 		
 			// Partner Resolver
 			if (empty($inputPartner) == false) {
-				$partner = $g->getRank($inputRank,1)." ".$inputPartner;
+				$partner = $pg->getRank($inputRank,1)." ".$inputPartner;
 			} else {
 				$partner = "N/A";
 			}
@@ -548,7 +554,7 @@
 					}
 
 					if ($eventType == '2') {
-						$events .= "[*] [b]".$inputTimeEvent[$iEvent]."[/b] - Conducted a [b]Traffic Stop[/b] on a [b]".$inputVeh[$traffic]."[/b], ".$tr->getVehiclePlates($inputVehPlate[$traffic],1).". Located on [b]".$inputStreet[$traffic].", ".$inputDistrict[$traffic]."[/b] - ".$inputReasonTS[$traffic];
+						$events .= "[*] [b]".$inputTimeEvent[$iEvent]."[/b] - Conducted a [b]Traffic Stop[/b] on a [b]".$inputVeh[$traffic]."[/b], ".$pg->getVehiclePlates($inputVehPlate[$traffic],1).". Located on [b]".$inputStreet[$traffic].", ".$inputDistrict[$traffic]."[/b] - ".$inputReasonTS[$traffic];
 						$traffic++;
 					}
 
@@ -563,6 +569,7 @@
 
 			// Report Builder
 			$generatedReportType = "Patrol Log";
+			$showGeneratedThreadTitle = false;
 			$generatedThreadURL = "https://lspd.gta.world/viewforum.php?f=829";
 			$generatedReport = "
 				[divbox2=white]
@@ -592,12 +599,14 @@
 				".$inputNotes."
 				[/list]
 				[/divbox2]";
+			$generatedReport = str_replace("				", "", $generatedReport);
 		}
 
-		// Report Finalisation
+		// Generator Finalisation
 		$_SESSION['generatedReport'] = $generatedReport;
 		$_SESSION['generatedReportType'] = $generatedReportType;
 		$_SESSION['generatedThreadTitle'] = $generatedThreadTitle;
+		$_SESSION['showGeneratedThreadTitle'] = $showGeneratedThreadTitle;
 		$_SESSION['generatedThreadURL'] = $generatedThreadURL;
 
 		// Redirect

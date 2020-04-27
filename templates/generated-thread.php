@@ -1,27 +1,45 @@
 <div class="container mb-5" data-aos="fade-in" data-aos-duration="1000">
 	<h1 class="my-3">Generated <?php echo $g->sessionGeneratedReportType();?></h1>
 	<h4><i class="fas fa-code fa-fw mr-2"></i>BBCode</h4>
+		<?php if ($g->sessionShowGeneratedThreadTitle() == true) { ?>
+			<textarea
+				class="form-control shadow mb-3"
+				id="generatedThreadTitle"
+				name="generatedThreadTitle"
+				rows="1"
+				readonly><?php echo $g->sessionGeneratedThreadTitle(); ?></textarea>
+		<?php } ?>
 		<textarea
-		class="form-control shadow mb-3"
-		id="generatedThreadTitle"
-		name="generatedThreadTitle"
-		rows="1"
-		readonly><?php echo $g->sessionGeneratedThreadTitle(); ?></textarea>
-		<textarea
-		class="form-control shadow mb-5"
-		id="generatedThread"
-		name="generatedThread"
-		rows="14"
-		readonly><?php echo $g->sessionGeneratedReport(); ?></textarea>
-	<div class="container mt-5 text-center">
-		<a tabindex="0" class="btn btn-primary px-5" onclick="copyThreadTitle()" data-toggle="tooltip" title="Copied!"><i class="fas fa-copy fa-fw mr-2"></i>Copy <?php echo $g->sessionGeneratedReportType();?> Title</a>
-	</div>
-	<div class="container mt-2 text-center">
-		<a tabindex="0" class="btn btn-primary px-5" onclick="copyThread()" data-toggle="tooltip" title="Copied!"><i class="fas fa-copy fa-fw mr-2"></i>Copy <?php echo $g->sessionGeneratedReportType();?></a>
-	</div>
-	<div class="container mt-2 text-center">
-		<a class="btn btn-info px-5" target="_blank" href="<?php echo $g->sessionGeneratedThreadURL();?>" role="button"><i class="fas fa-archive fa-fw mr-2"></i>Create Thread</a>
-	</div>
+			class="form-control shadow mb-5"
+			id="generatedThread"
+			name="generatedThread"
+			rows="15"
+			readonly><?php echo $g->sessionGeneratedReport(); ?></textarea>
+		<hr class="my-5">
+		<?php if ($g->sessionShowGeneratedThreadTitle() == true) { ?>
+		<div class="container mt-2 text-center">
+			<a tabindex="0" class="btn btn-primary px-5" onclick="copyThreadTitle()" data-toggle="tooltip" title="Copied!">
+				<i class="fas fa-copy fa-fw mr-2"></i>Copy <?php echo $g->sessionGeneratedReportType();?> Title
+			</a>
+		</div>
+		<?php } ?>
+		<div class="container mt-2 text-center">
+			<a tabindex="0" class="btn btn-primary px-5" onclick="copyThread()" data-toggle="tooltip" title="Copied!">
+				<i class="fas fa-copy fa-fw mr-2"></i>Copy <?php echo $g->sessionGeneratedReportType();?>
+			</a>
+		</div>
+		<div class="container mt-2 text-center">
+			<a class="btn btn-info px-5" target="_blank" href="<?php echo $g->sessionGeneratedThreadURL();?>" role="button">
+				<i class="fas fa-archive fa-fw mr-2"></i>
+				<?php
+					if ($g->sessionShowGeneratedThreadTitle() == 1) {
+						echo 'Create '.$g->sessionGeneratedReportType().' Thread';
+					} else {
+					 	echo 'Post '.$g->sessionGeneratedReportType();
+					}
+				?>
+			</a>
+		</div>
 </div>
 
 <script>

@@ -66,7 +66,7 @@
 					name="inputRank"
 					required>
 					<?php
-						$g->rankChooser(1);
+						$pg->rankChooser(1);
 					?>
 					</select>
 				</div>
@@ -103,7 +103,7 @@
 					name="inputItemCategory"
 					required>
 					<?php
-						$g->itemCategoryChooser();
+						$pg->itemCategoryChooser();
 					?>
 					</select>
 				</div>

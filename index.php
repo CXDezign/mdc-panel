@@ -12,7 +12,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="http://xanx.co.uk/MDC">
 	<meta property="og:image" content="http://xanx.co.uk/MDC/images/Logo-MDC.png">
-	<meta property="og:description" content="MDC Panel - Created by xanx.">
+	<meta property="og:description" content="MDC Panel - Multi-functional tools, generators, and resources for official government use.">
 	<link rel="icon" type="image/png" href="favicon.png">
 
 	<title>MDC Panel</title>

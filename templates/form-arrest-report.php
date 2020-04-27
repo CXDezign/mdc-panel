@@ -82,7 +82,7 @@
 					name="inputRank[]"
 					required>
 					<?php
-						$g->rankChooser(1);
+						$pg->rankChooser(1);
 					?>
 					</select>
 				</div>
@@ -146,7 +146,7 @@
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
 					<?php
-						$g->districtChooser();
+						$pg->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -168,7 +168,7 @@
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
 					<?php
-						$g->streetChooser();
+						$pg->streetChooser();
 					?>
 					</datalist>
 				</div>
@@ -239,7 +239,7 @@ The suspect was found to be X."
 					required>
 					<option value="0" selected>N/A</option>
 					<?php
-						$ar->wristbandChooser();
+						$pg->wristbandChooser();
 					?>
 					</select>
 				</div>
@@ -264,7 +264,7 @@ The suspect was found to be X."
 					required>
 					<option value="0" selected>N/A</option>
 					<?php
-						$ar->braceletChooser();
+						$pg->braceletChooser();
 					?>
 					</select>
 				</div>
@@ -287,7 +287,7 @@ The suspect was found to be X."
 					name="inputPlea"
 					required>
 					<?php
-						$ar->pleaChooser();
+						$pg->pleaChooser();
 					?>
 					</select>
 				</div>
@@ -325,7 +325,7 @@ The suspect was found to be X."
 				name="inputRank[]"
 				required>
 				<?php
-					$g->rankChooser(0);
+					$pg->rankChooser(0);
 				?>
 				</select>
 			</div>

@@ -16,7 +16,7 @@
 					name="inputCrime[]"
 					required>
 					<?php
-						$g->chargeChooser();
+						$pg->chargeChooser();
 					?>
 					</select>
 				</div>
@@ -29,7 +29,7 @@
 				class="form-control"
 				required>
 				<?php
-					$g->crimeTypeChooser();
+					$pg->crimeTypeChooser();
 				?>
 				</select>
 			</div>
@@ -41,7 +41,7 @@
 				class="form-control"
 				required>
 				<?php
-					$g->offenceChooser();
+					$pg->offenceChooser();
 				?>
 				</select>
 			</div>
@@ -80,7 +80,7 @@
 				name="inputCrime[]"
 				required>
 				<?php
-					$g->chargeChooser();
+					$pg->chargeChooser();
 				?>
 				</select>
 			</div>
@@ -92,7 +92,7 @@
 			class="form-control"
 			required>
 			<?php
-				$g->crimeTypeChooser();
+				$pg->crimeTypeChooser();
 			?>
 			</select>
 		</div>
@@ -103,7 +103,7 @@
 			class="form-control"
 			required>
 			<?php
-				$g->offenceChooser();
+				$pg->offenceChooser();
 			?>
 			</select>
 		</div>

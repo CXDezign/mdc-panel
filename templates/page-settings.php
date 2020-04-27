@@ -181,7 +181,7 @@
 					id="inputRank"
 					name="inputRank">
 					<?php
-						$g->rankChooser(1);
+						$pg->rankChooser(1);
 					?>
 					</select>
 				</div>

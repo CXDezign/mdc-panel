@@ -58,7 +58,7 @@
 					required>
 					<datalist id="district_list">
 					<?php
-						$g->districtChooser();
+						$pg->districtChooser();
 					?>
 					</datalist>
 				</div>
@@ -79,7 +79,7 @@
 					required>
 					<datalist id="street_list">
 					<?php
-						$g->streetChooser();
+						$pg->streetChooser();
 					?>
 					</datalist>
 				</div>
@@ -158,7 +158,7 @@
 					name="inputRespondingRank"
 					required>
 					<?php
-						$g->rankChooser(0);
+						$pg->rankChooser(0);
 					?>
 					</select>
 				</div>
@@ -187,7 +187,7 @@
 					name="inputHandlingRank"
 					required>
 					<?php
-						$g->rankChooser(0);
+						$pg->rankChooser(0);
 					?>
 					</select>
 				</div>
