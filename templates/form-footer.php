@@ -1,5 +1,19 @@
 <script type="text/javascript">
+
+	// Alert prior to closing tab/window
+	window.onbeforeunload = function(e) {
+		return "Woah! Slow down there cowboy, are you sure you want to lose that report?";
+	};
+
 	$(document).ready(function(){
+
+		// Allow redirects without alerts
+		$('a').click(function () {
+			window.onbeforeunload = null;
+		});
+		$('form').submit(function () {
+			window.onbeforeunload = null;
+		});
 
 		// Tooltips
 		$('input').tooltip();

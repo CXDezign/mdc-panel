@@ -1,4 +1,13 @@
 {
+	"1.9.1": {
+		"id": "1.9.1",
+		"date": "28/APR/2020",
+		"changes": {
+			"1": "General - All form fill out pages are now secured with alert messages to prevent accidental tab closure.",
+			"2": "General - Fixed highlighting text whilst using Day Mode.",
+			"3": "General - Fixed Clock & Breadcrumb animations to be more consistent."
+		}
+	},
 	"1.9.0": {
 		"id": "1.9.0",
 		"date": "27/APR/2020",
