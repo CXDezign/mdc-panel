@@ -7,6 +7,7 @@
 
 	$(document).ready(function(){
 
+		$('.selectpicker').selectpicker();
 		// Allow redirects without alerts
 		$('a').click(function () {
 			window.onbeforeunload = null;
@@ -70,6 +71,10 @@
 				if($('body').find('.chargeGroup').length < maxCharges){
 					var fieldHTML = '<div class="form-row chargeGroup">'+$(".fieldChargeCopy").html()+'</div>';
 					$('body').find('.chargeGroup:last').after(fieldHTML);
+					var Last = $('body').find('.chargeGroup:last');
+					Last.find('#inputCrime').addClass("selectpicker");
+					$(".selectpicker").selectpicker('refresh');
+
 				} else {
 					alert('Maximum '+maxCharges+' charges are allowed.');
 				}

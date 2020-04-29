@@ -13,10 +13,10 @@
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputCrime"
 					name="inputCrime[]"
-					required>
+					required  data-live-search="true">
 					<?php
 						$pg->chargeChooser();
 					?>
@@ -80,7 +80,7 @@
 				class="form-control"
 				id="inputCrime"
 				name="inputCrime[]"
-				required>
+				required  data-live-search="true">
 				<?php
 					$pg->chargeChooser();
 				?>
