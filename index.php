@@ -27,7 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=<?php echo $g->getVersion(); ?>">
 	<?php
 		if ($g->cookieToggleMode() == true) {
-			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v=<?php echo $g->getVersion(); ?>">';
+			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v='.$g->getVersion().'">';
 		}
 	?>
 	<style>
