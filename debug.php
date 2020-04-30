@@ -1,17 +1,18 @@
 <?php
 
-	/*echo '<pre>';
+	/*
+	echo '<pre>';
 		var_dump($VARIABLE);
-	echo '</pre>';*/
+	echo '</pre>';
+	*/
 
-	$inputNotes = "Hi World";
-	$notes = (empty($inputNotes)) ? 'N/A' : $inputNotes;
+	$ip = "192.168.1.1";
 
-	$inputNotes2 = null;
-	$notes2 = (empty($inputNotes2)) ? 'N/A' : $inputNotes2;
+	$int = ip2long($ip);
+	$str = long2ip($int);
 
-	echo $notes;
+	echo $int;
 	echo "<br>";
-	echo $notes2;
+	echo $str;
 
 ?>

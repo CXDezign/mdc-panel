@@ -8,6 +8,9 @@
 			require "includes/clock.php";
 		}
 	?>
+	<?php
+		require("includes/visitors.php");
+	?>
 	<ul class="list-unstyled components px-3">
 		<li class="nav-item">
 			<a class="nav-link" href="/">

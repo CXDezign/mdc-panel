@@ -4,7 +4,7 @@ class General {
 
 	public function getVersion() {
 
-		return '1.9.2';
+		return '1.9.3';
 	}
 
 	public function getDate() {

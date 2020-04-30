@@ -1,4 +1,11 @@
 {
+	"1.9.3": {
+		"id": "1.9.3",
+		"date": "30/APR/2020",
+		"changes": {
+			"1": "General - Live visitor counter."
+		}
+	},
 	"1.9.2": {
 		"id": "1.9.2",
 		"date": "30/APR/2020",

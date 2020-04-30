@@ -1,6 +1,6 @@
 <?php
 
-	$json = json_decode(file_get_contents("resources/changeLog.json"), true);
+	$json = json_decode(file_get_contents("db/changeLog.json"), true);
 
 	$changelog = "";
 	$changelogVersions = "";
