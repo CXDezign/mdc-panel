@@ -79,7 +79,7 @@
 						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputRank"
 					name="inputRank"
 					>

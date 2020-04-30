@@ -14,9 +14,10 @@
 					</div>
 					<select
 					class="form-control selectpicker"
+					data-live-search="true"
 					id="inputCrime"
 					name="inputCrime[]"
-					required  data-live-search="true">
+					required>
 					<?php
 						$pg->chargeChooser();
 					?>
@@ -26,9 +27,9 @@
 			<div class="form-group col-xl-2">
 				<label>Crime Type</label>
 				<select
+				class="form-control selectpicker"
 				id="inputCrimeType"
 				name="inputCrimeType[]"
-				class="form-control"
 				required>
 				<?php
 					$pg->crimeTypeChooser();
@@ -38,9 +39,9 @@
 			<div class="form-group col-xl-2">
 				<label>Crime Offence</label>
 				<select
+				class="form-control selectpicker"
 				id="inputCrimeOffence"
 				name="inputCrimeOffence[]"
-				class="form-control"
 				required>
 				<?php
 					$pg->offenceChooser();
@@ -77,10 +78,11 @@
 					<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
 				</div>
 				<select
-				class="form-control"
+				class="form-control select-picker-copy"
+				data-live-search="true"
 				id="inputCrime"
 				name="inputCrime[]"
-				required  data-live-search="true">
+				required>
 				<?php
 					$pg->chargeChooser();
 				?>
@@ -89,9 +91,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<select
+			class="form-control select-picker-copy"
 			id="inputCrimeType"
 			name="inputCrimeType[]"
-			class="form-control"
 			required>
 			<?php
 				$pg->crimeTypeChooser();
@@ -100,9 +102,9 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<select
+			class="form-control select-picker-copy"
 			id="inputCrimeOffence"
 			name="inputCrimeOffence[]"
-			class="form-control"
 			required>
 			<?php
 				$pg->offenceChooser();

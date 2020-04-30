@@ -1,4 +1,12 @@
 {
+	"1.9.2": {
+		"id": "1.9.2",
+		"date": "30/APR/2020",
+		"changes": {
+			"1": "General - All select inputs have been updated visually and certain menus also now support search boxes.",
+			"2": "Paperwork Generators - Further backend code improvements to select menus."
+		}
+	},
 	"1.9.1": {
 		"id": "1.9.1",
 		"date": "28/APR/2020",

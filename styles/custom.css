@@ -42,6 +42,10 @@ optgroup {
 
 /* GENERAL */
 
+.text-golden {
+	color: #e2b055;
+}
+
 .fa-ss {
 	color: rgba(255,255,255,0.4)!important;
 	transform: translate(0,-1px);
@@ -67,8 +71,20 @@ optgroup {
 	padding-right: .75rem !important;
 }
 
-#logo-footer {
-	opacity: 0.1;
+.bootstrap-select .no-results {
+	border-radius: 5px!important;
+	padding: 5px 15px!important;
+}
+
+.dropdown-item {
+	transition: all .1s linear!important;
+}
+
+/* FOOTER */
+
+.footerContainer {
+	position: relative;
+	z-index: -1000;
 }
 
 #footer {
@@ -80,8 +96,8 @@ optgroup {
 	opacity: 1;
 }
 
-.text-golden {
-	color: #e2b055;
+#logo-footer {
+	opacity: 0.1;
 }
 
 /* MAIN */

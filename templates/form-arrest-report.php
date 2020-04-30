@@ -80,7 +80,7 @@
 						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputRank"
 					name="inputRank[]"
 					required>
@@ -236,7 +236,7 @@ The suspect was found to be X."
 						<span class="input-group-text"><i class="fas fa-fw fa-tag"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputWristband"
 					name="inputWristband"
 					required>
@@ -261,7 +261,7 @@ The suspect was found to be X."
 						<span class="input-group-text"><i class="fas fa-fw fa-tag"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputBracelet"
 					name="inputBracelet"
 					required>
@@ -285,7 +285,7 @@ The suspect was found to be X."
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputPlea"
 					name="inputPlea"
 					required>
@@ -323,7 +323,7 @@ The suspect was found to be X."
 					<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
 				</div>
 				<select
-				class="form-control"
+				class="form-control select-picker-copy"
 				id="inputRank"
 				name="inputRank[]"
 				required>

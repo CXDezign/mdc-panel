@@ -99,6 +99,49 @@ small.text-muted {
 	color: #9a9ea2;
 }
 
+.input-group .bootstrap-select.form-control .dropdown-toggle {
+	background: #313131;
+	color: #fff;
+	border: 1px solid transparent;
+}
+
+.dropdown-toggle.btn-light {
+	color: #fff;
+	background-color: #313131;
+	border-color: #313131;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
+	color: #fff;
+	background-color: #212121;
+	border-color: #212121;
+}
+
+.bootstrap-select .no-results {
+	background: #282828!important;
+	color: #fff!important;
+}
+
+.dropdown-header {
+	color: #a4a4a4;
+}
+
+.dropdown-divider {
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.dropdown-menu {
+	background-color: #313131;
+}
+
+.dropdown-item {
+	color: #fff!important;
+}
+
+.dropdown-item:hover {
+	background-color: #212121;
+}
+
 /* TABLES */
 
 .table-light {

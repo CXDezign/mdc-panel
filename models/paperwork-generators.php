@@ -19,34 +19,43 @@ class PaperworkGenerators {
 		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
 
+		$groupNA = "";
+		$groupCookie = "";
+		$groupLSPD = "";
+		$groupLSSD = "";
+
+		if ($cookie === 1) {
+			if (isset($_COOKIE['officerRank'])) {
+				$groupCookie .= '<optgroup label="Saved Cookie">
+									<option selected value="'.$_COOKIE['officerRank'].'">
+									'.$this->getRank($_COOKIE['officerRank'],0).'
+									</option>
+								</optgroup>';
+			}
+		}
+
+		$ranksLSPD = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18);
+		$ranksLSSD = array(19,20,21,22,23,24,25,26,27);
+
 		foreach ($ranks as $rank) {
 
+			$statement = "<option value=".$rankCount.">".$rank."</option>";
+
 			if ($rankCount === 0) {
-				echo "<option value=".$rankCount.">".$rank."</option>";
-				if ($cookie === 1) {
-					if (isset($_COOKIE['officerRank'])) {
-						echo '<optgroup label="Saved Cookie">';
-						echo "<option selected value=".$_COOKIE['officerRank'].">".$this->getRank($_COOKIE['officerRank'],0)."</option>";
-						echo '</optgroup>';
-					}
-				}
-				echo '<optgroup label="Los Santos Police Department">';
+				$groupNA .= $statement;
 			}
 
-			if ($rankCount === 19) {
-				echo '</optgroup>';
-				echo '<optgroup label="Los Santos Sheriff&#39s Department">';
+			if (in_array($rankCount, $ranksLSPD)) {
+				$groupLSPD .= $statement;
+			}
+			if (in_array($rankCount, $ranksLSSD)) {
+				$groupLSSD .= $statement;
 			}
 
-			if ($rankCount === 28) {
-				echo '</optgroup>';
-			}
-
-			if ($rankCount > 0) {
-				echo "<option value=".$rankCount.">".$rank."</option>";
-			}
 			$rankCount++;
 		}
+
+		echo $groupNA.$groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup><optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
 	}
 
 	public function getRank($input, $path) {
@@ -108,16 +117,19 @@ class PaperworkGenerators {
 				$chargeClassification = $charge['classification'];
 				switch ($chargeClassification) {
 					case "F":
-						$chargeColour = "dc3545";
+						$chargeContent = "<span class='badge badge-danger'>";
 						break;
 					case "M":
-						$chargeColour = "ffc107";
+						$chargeContent = "<span class='badge badge-warning'>";
 						break;
 					case "I":
-						$chargeColour = "28a745";
+						$chargeContent = "<span class='badge badge-success'>";
 						break;
 				}
-				echo '<option style="color: #'.$chargeColour.';" value="'.$charge['id'].'">'.$charge['id'].'. '.$charge['charge'].'</option>';
+				echo '<option
+						data-content="'.$chargeContent.$charge['id'].'</span> '.$charge['charge'].'"
+						value="'.$charge['id'].'">
+						</option>';
 			}
 			$chargeCount++;
 		}
@@ -231,7 +243,7 @@ class PaperworkGenerators {
 
 	public function paintChooser() {
 
-		$paints = file ('resources/paintsList.txt');
+		$paints = file('resources/paintsList.txt');
 		$paintCount = 1;
 
 		foreach ($paints as $paint) {
@@ -243,13 +255,28 @@ class PaperworkGenerators {
 
 	public function tintChooser() {
 
-		$tints = file ('resources/tintsList.txt');
+		$tints = file('resources/tintsList.txt');
 		$tintCount = 0;
 
+		$groupTintLegal = "";
+		$groupTintIllegal = "";
+
+		$legalTintLevels = array(0,3,4,5);
+
 		foreach ($tints as $tint) {
-			echo "<option value=".$tintCount.">".$tint."</option>";
+
+			$statement = "<option value=".$tintCount.">".$tint."</option>";
+
+			if (in_array($tint, $legalTintLevels)) {
+				$groupTintLegal .= $statement;
+			} else {
+				$groupTintIllegal .= $statement;
+			}
 			$tintCount++;
+
 		}
+
+		echo '<optgroup label="Legal">'.$groupTintLegal.'</optgroup> <optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
 
 	}
 

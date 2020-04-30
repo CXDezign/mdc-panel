@@ -146,14 +146,14 @@
 				required
 				data-placement="bottom" title="First Responding Officer - Full Name">
 			</div>
-			<div class="form-group col-xl-md-3">
+			<div class="form-group col-xl-3">
 				<label>Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputRespondingRank"
 					name="inputRespondingRank"
 					required>
@@ -175,14 +175,14 @@
 				placeholder="Firstname Lastname"
 				data-placement="bottom" title="Leave empty if none.">
 			</div>
-			<div class="form-group col-xl-md-3">
+			<div class="form-group col-xl-3">
 				<label>Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
 					</div>
 					<select
-					class="form-control"
+					class="form-control selectpicker"
 					id="inputHandlingRank"
 					name="inputHandlingRank"
 					required>

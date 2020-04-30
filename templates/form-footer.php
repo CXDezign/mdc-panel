@@ -7,7 +7,6 @@
 
 	$(document).ready(function(){
 
-		$('.selectpicker').selectpicker();
 		// Allow redirects without alerts
 		$('a').click(function () {
 			window.onbeforeunload = null;
@@ -43,6 +42,9 @@
 				if($('body').find('.officerGroup').length < maxSlots){
 					var fieldHTML = '<div class="form-row officerGroup">'+$(".fieldGroupCopy").html()+'</div>';
 					$('body').find('.officerGroup:last').after(fieldHTML);
+					var Last = $('body').find('.officerGroup:last');
+					Last.find('.select-picker-copy').addClass("selectpicker");
+					$(".selectpicker").selectpicker('refresh');
 				} else {
 					alert('Maximum '+maxSlots+' officer slots are allowed.');
 				}
@@ -57,6 +59,9 @@
 				if($('body').find('.citationGroup').length < maxCitations){
 					var fieldHTML = '<div class="form-row citationGroup">'+$(".fieldCitationCopy").html()+'</div>';
 					$('body').find('.citationGroup:last').after(fieldHTML);
+					var Last = $('body').find('.citationGroup:last');
+					Last.find('.select-picker-copy').addClass("selectpicker");
+					$(".selectpicker").selectpicker('refresh');
 				} else {
 					alert('Maximum '+maxCitations+' citation slots are allowed.');
 				}
@@ -66,15 +71,14 @@
 			});
 
 			// Charges
-			var maxCharges = 20;
+			var maxCharges = 30;
 			$(".addCharge").click(function(){
 				if($('body').find('.chargeGroup').length < maxCharges){
 					var fieldHTML = '<div class="form-row chargeGroup">'+$(".fieldChargeCopy").html()+'</div>';
 					$('body').find('.chargeGroup:last').after(fieldHTML);
 					var Last = $('body').find('.chargeGroup:last');
-					Last.find('#inputCrime').addClass("selectpicker");
+					Last.find('.select-picker-copy').addClass("selectpicker");
 					$(".selectpicker").selectpicker('refresh');
-
 				} else {
 					alert('Maximum '+maxCharges+' charges are allowed.');
 				}
