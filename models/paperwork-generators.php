@@ -109,7 +109,7 @@ class PaperworkGenerators {
 
 	public function chargeChooser() {
 
-		$charges = json_decode(file_get_contents("resources/penalSearch.json"), true);
+		$charges = json_decode(file_get_contents("db/penalSearch.json"), true);
 		$chargeCount = 0;
 
 		foreach ($charges as $charge) {

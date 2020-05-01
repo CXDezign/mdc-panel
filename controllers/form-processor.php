@@ -12,7 +12,7 @@
 
 		// Initialise Common Variables
 		$generatorType = $_POST['generatorType'];
-		$penal = json_decode(file_get_contents("../resources/penalSearch.json"), true);
+		$penal = json_decode(file_get_contents("../db/penalSearch.json"), true);
 
 		// Session Variables
 		$generatedReportType = "";
