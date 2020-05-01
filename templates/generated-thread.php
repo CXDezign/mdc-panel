@@ -1,41 +1,46 @@
+<?php
+	
+	require("includes/session-variables.php");
+
+?>
 <div class="container mb-5" data-aos="fade-in" data-aos-duration="1000">
-	<h1 class="my-3">Generated <?php echo $g->sessionGeneratedReportType();?></h1>
+	<h1 class="my-3">Generated <?= $type ?></h1>
 	<h4><i class="fas fa-code fa-fw mr-2"></i>BBCode</h4>
-		<?php if ($g->sessionShowGeneratedThreadTitle() == true) { ?>
+		<?php if ($showTitle == true) { ?>
 			<textarea
 				class="form-control shadow mb-3"
 				id="generatedThreadTitle"
 				name="generatedThreadTitle"
 				rows="1"
-				readonly><?php echo $g->sessionGeneratedThreadTitle(); ?></textarea>
+				readonly><?= $title ?></textarea>
 		<?php } ?>
 		<textarea
 			class="form-control shadow mb-5"
 			id="generatedThread"
 			name="generatedThread"
 			rows="15"
-			readonly><?php echo $g->sessionGeneratedReport(); ?></textarea>
+			readonly><?= $report ?></textarea>
 		<hr class="my-5">
-		<?php if ($g->sessionShowGeneratedThreadTitle() == true) { ?>
+		<?php if ($showTitle == true) { ?>
 		<div class="container mt-2 text-center">
 			<a tabindex="0" class="btn btn-primary px-5" onclick="copyThreadTitle()" data-toggle="tooltip" title="Copied!">
-				<i class="fas fa-copy fa-fw mr-2"></i>Copy <?php echo $g->sessionGeneratedReportType();?> Title
+				<i class="fas fa-copy fa-fw mr-2"></i>Copy <?= $type ?> Title
 			</a>
 		</div>
 		<?php } ?>
 		<div class="container mt-2 text-center">
 			<a tabindex="0" class="btn btn-primary px-5" onclick="copyThread()" data-toggle="tooltip" title="Copied!">
-				<i class="fas fa-copy fa-fw mr-2"></i>Copy <?php echo $g->sessionGeneratedReportType();?>
+				<i class="fas fa-copy fa-fw mr-2"></i>Copy <?= $type ?>
 			</a>
 		</div>
 		<div class="container mt-2 text-center">
-			<a class="btn btn-info px-5" target="_blank" href="<?php echo $g->sessionGeneratedThreadURL();?>" role="button">
+			<a class="btn btn-info px-5" target="_blank" href="<?= $threadURL ?>" role="button">
 				<i class="fas fa-archive fa-fw mr-2"></i>
 				<?php
-					if ($g->sessionShowGeneratedThreadTitle() == 1) {
-						echo 'Create '.$g->sessionGeneratedReportType().' Thread';
+					if ($showTitle == 1) {
+						echo 'Create '.$type.' Thread';
 					} else {
-					 	echo 'Post '.$g->sessionGeneratedReportType();
+					 	echo 'Post '.$type;
 					}
 				?>
 			</a>

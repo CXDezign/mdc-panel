@@ -13,6 +13,8 @@
 		// Initialise Common Variables
 		$generatorType = $_POST['generatorType'];
 		$penal = json_decode(file_get_contents("../resources/penalSearch.json"), true);
+
+		// Session Variables
 		$generatedReportType = "";
 		$generatedReport = "";
 		$generatedThreadURL = "";
@@ -429,7 +431,6 @@
 
 			// Report Builder
 			$generatedReportType = "Traffic Division: Patrol Report";
-			$showGeneratedThreadTitle = false;
 			$generatedThreadURL = $g->cookieTrafficPatrolURL();
 			$generatedReport = "
 				[divbox2=#f7f7f7]
@@ -559,7 +560,6 @@
 
 			// Report Builder
 			$generatedReportType = "Patrol Log";
-			$showGeneratedThreadTitle = false;
 			$generatedThreadURL = "https://lspd.gta.world/viewforum.php?f=829";
 			$generatedReport = "
 				[divbox2=white]

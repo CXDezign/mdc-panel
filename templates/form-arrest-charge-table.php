@@ -1,3 +1,8 @@
+<?php
+	
+	require("includes/session-variables.php");
+
+?>
 <hr>
 <table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
@@ -10,11 +15,7 @@
 		<th scope="col">Court</th>
 	</thead>
 	<tbody>
-		<?php
-
-			echo $g->sessionGeneratedArrestChargeList();
-
-		?>
+		<?= $chargeTable ?>
 	</tbody>
 </table>
 <hr>
@@ -26,11 +27,7 @@
 		<th>Total Suspension Time</th>
 	</thead>
 	<tbody>
-		<?php
-
-			echo $g->sessionGeneratedArrestChargeTotals();
-
-		?>
+		<?= $chargeTableTotals ?>
 	</tbody>
 </table>
 <hr>
