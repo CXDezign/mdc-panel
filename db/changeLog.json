@@ -1,4 +1,15 @@
 {
+	"1.9.4": {
+		"id": "1.9.4",
+		"date": "01/MAY/2020",
+		"changes": {
+			"1": "Settings - Live visitor counter toggle option.",
+			"2": "Paperwork Generators - Main page recoded to display generators dynamically.",
+			"3": "Parking Ticket Generator - Initial release.",
+			"4": "Traffic Division Patrol Report Generator - Updated to the new format.",
+			"5": "Sidebar - Live visitor counter is now animated."
+		}
+	},
 	"1.9.3": {
 		"id": "1.9.3",
 		"date": "30/APR/2020",

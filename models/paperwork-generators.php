@@ -280,6 +280,67 @@ class PaperworkGenerators {
 
 	}
 
+	public function illegalParkingChooser() {
+
+		$illegalParkingReasons = file ('resources/illegalParkingList.txt');
+		$illegalParkingReasonsCount = 0;
+
+		$groupTrafficRelated = "";
+		$groupParkingRelated = "";
+		$groupTransportRelated = "";
+		$groupPropertyRelated = "";
+		$groupPedestrianTraffic = "";
+
+		$reasonsTR = array(1,2,3,4);
+		$reasonsPR = array(5,6,7);
+		$reasonsTrR = array(8,9,10);
+		$reasonsPrR = array(11,12,13);
+		$reasonsPT = array(14,15,16);
+
+		foreach ($illegalParkingReasons as $illegalParkingReason) {
+
+			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
+
+			if ($illegalParkingReasonsCount == 0) {
+				$groupDisabled = '<option value="" selected disbaled>'.$illegalParkingReason.'</option>';
+			}
+
+			if (in_array($illegalParkingReasonsCount, $reasonsTR)) {
+				$groupTrafficRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsPR)) {
+				$groupParkingRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsTrR)) {
+				$groupTransportRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsPrR)) {
+				$groupPropertyRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsPT)) {
+				$groupPedestrianTraffic .= $statement;
+			}
+
+			$illegalParkingReasonsCount++;
+		}
+
+		echo $groupDisabled.'
+		<optgroup label="Traffic Related">'.$groupTrafficRelated.'</optgroup>
+		<optgroup label="Parking Related">'.$groupParkingRelated.'</optgroup>
+		<optgroup label="Transport Related">'.$groupTransportRelated.'</optgroup>
+		<optgroup label="Property Related">'.$groupPropertyRelated.'</optgroup>
+		<optgroup label="Pedestrian Traffic">'.$groupPedestrianTraffic.'</optgroup>';
+
+	}
+	
+	public function getIllegalParking($input) {
+
+		$illegalParkingReasons = file('../resources/illegalParkingList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $illegalParkingReasons[$input];
+
+	}
+
 	public function getDefLicense($input) {
 
 		$defLicense = 'an <b>UNKNOWN DRIVERS LICENSE STATUS</b>.';
@@ -329,6 +390,23 @@ class PaperworkGenerators {
 		}
 
 		return 'The vehicle had '.$vehicleTint;
+
+	}
+
+	public function getVehicleRO($input) {
+
+		$RO = "";
+
+		switch ($input) {
+			case '':
+				$RO = '<b>unknown registered owner</b>';
+				break;
+			default:
+				$RO = 'registered to <b>'.$input.'</b>';
+				break;
+		}
+
+		return $RO;
 
 	}
 

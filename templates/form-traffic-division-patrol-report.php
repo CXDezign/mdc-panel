@@ -55,18 +55,6 @@
 				</div>
 				<center><small id="helpTime" class="form-text text-muted">24-Hour Format</small></center>	
 			</div>
-			<div class="form-group col-xl-3">
-				<label>Call Sign</label>
-				<input
-				class="form-control"
-				type="text"
-				id="inputCallsign"
-				name="inputCallsign"
-				placeholder="Call Sign"
-				value="<?php echo $g->cookieCallSign(); ?>"
-				required>
-				<small id="helpCallSign" class="form-text text-muted">Example: 2-ADAM-1, 2A1</small>
-			</div>
 		</div>
 
 		<h4><i class="fas fa-fw fa-car mr-2"></i>Traffic Stops</h4>
@@ -83,7 +71,7 @@
 
 
 		<div class="row">
-			<div class="col-xl-3">
+			<div class="col-xl-4">
 				<div class="form-group">
 					<h5 class="text-center"><i class="fas fa-fw fa-truck-pickup mr-2"></i>Vehicle Impounds</h5>
 					<input
@@ -94,7 +82,18 @@
 					placeholder="#">
 				</div>
 			</div>
-			<div class="col-xl-3">
+			<div class="col-xl-4">
+				<div class="form-group">
+					<h5 class="text-center"><i class="fas fa-fw fa-hands-helping mr-2"></i>Traffic Assists</h5>
+					<input
+					class="form-control"
+					type="number"
+					id="inputTrafficAssists"
+					name="inputTrafficAssists"
+					placeholder="#">
+				</div>
+			</div>
+			<div class="col-xl-4">
 				<div class="form-group">
 					<h5 class="text-center"><i class="fas fa-fw fa-car-crash mr-2"></i>Traffic Investigations</h5>
 					<input
@@ -102,28 +101,6 @@
 					type="number"
 					id="inputTrafficInvestigations"
 					name="inputTrafficInvestigations"
-					placeholder="#">
-				</div>
-			</div>
-			<div class="col-xl-3">
-				<div class="form-group">
-					<h5 class="text-center"><i class="fas fa-fw fa-id-card mr-2"></i>License Suspensions</h5>
-					<input
-					class="form-control"
-					type="number"
-					id="inputLicenseSuspensions"
-					name="inputLicenseSuspensions"
-					placeholder="#">
-				</div>
-			</div>
-			<div class="col-xl-3">
-				<div class="form-group">
-					<h5 class="text-center"><i class="fas fa-fw fa-user-lock mr-2"></i>Arrests Conducted</h5>
-					<input
-					class="form-control"
-					type="number"
-					id="inputArrestsConducted"
-					name="inputArrestsConducted"
 					placeholder="#">
 				</div>
 			</div>
@@ -168,15 +145,6 @@
 			id="inputNameTS[]"
 			name="inputNameTS[]"
 			placeholder="Firstname Lastname"
-			required>
-		</div>
-		<div class="form-group col-xl-6">
-			<input
-			class="form-control"
-			type="text"
-			id="inputReasonTS[]"
-			name="inputReasonTS[]"
-			placeholder="Pullover Reason"
 			required>
 		</div>
 		<div class="form-group col-xl-1">

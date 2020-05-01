@@ -386,18 +386,10 @@
 			$inputTimeFrom = (empty($_POST['inputTimeFrom'])) ? $g->getTime() : $_POST['inputTimeFrom'];
 			$inputTimeTo = (empty($_POST['inputTimeTo'])) ? $g->getTime() : $_POST['inputTimeTo'];
 
-			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'N/A' : strtoupper($_POST['inputCallsign']);
-			setcookie("callSign",$inputCallsign,time()+21960, "/");
-
 			$inputNameTS = (empty($_POST['inputNameTS'])) ? array() : $_POST['inputNameTS'];
 			$inputNameTS = array_map(function($value) {
 				return $value === "" ? "UNKNOWN NAME" : $value;
 			}, $inputNameTS);
-
-			$inputReasonTS = (empty($_POST['inputReasonTS'])) ? array() : $_POST['inputReasonTS'];
-			$inputReasonTS = array_map(function($value) {
-				return $value === "" ? "UNKNOWN REASON" : $value;
-			}, $inputReasonTS);
 
 			$inputCitationsTS = (empty($_POST['inputCitationsTS'])) ? array() : $_POST['inputCitationsTS'];
 			$inputCitationsTS = array_map(function($value) {
@@ -405,9 +397,8 @@
 			}, $inputCitationsTS);
 
 			$inputVehicleImpounds = (empty($_POST['inputVehicleImpounds'])) ? '0' : $_POST['inputVehicleImpounds'];
+			$inputTrafficAssists = (empty($_POST['inputTrafficAssists'])) ? '0' : $_POST['inputTrafficAssists'];
 			$inputTrafficInvestigations = (empty($_POST['inputTrafficInvestigations'])) ? '0' : $_POST['inputTrafficInvestigations'];
-			$inputLicenseSuspensions = (empty($_POST['inputLicenseSuspensions'])) ? '0' : $_POST['inputLicenseSuspensions'];
-			$inputArrestsConducted = (empty($_POST['inputArrestsConducted'])) ? '0' : $_POST['inputArrestsConducted'];
 
 			$inputNotes = (empty($_POST['inputNotes'])) ? 'N/A' : $_POST['inputNotes'];
 			$inputTDPatrolReportURL = (empty($_POST['inputTDPatrolReportURL'])) ? "https://lspd.gta.world/viewforum.php?f=101" : $_POST['inputTDPatrolReportURL'];
@@ -419,14 +410,10 @@
 
 				$iTS = count($inputNameTS);
 				$iCitations = array_sum($inputCitationsTS);
-				$iWarnings = 0;
 				$trafficStops = "";
 
 				foreach ($inputNameTS as $TSID => $name) {
-					$trafficStops .= "[*]" . $name . " - " . $inputReasonTS[$TSID];
-					if ($inputCitationsTS[$TSID] == 0) {
-						$iWarnings++;
-					}
+					$trafficStops .= "[*]" . $name;
 				}
 
 				$trafficStopText = "[b]Traffic Stops:[/b] " . $iTS . "[list=circle]" . $trafficStops . "[/list]";
@@ -435,7 +422,6 @@
 
 				$iTS = 0;
 				$iCitations = 0;
-				$iWarnings = 0;
 				$trafficStopText = "[b]Traffic Stops:[/b] " . $iTS;
 
 			}
@@ -453,17 +439,14 @@
 				[size=100][b]Traffic Division[/b][/size]
 				[size=85][color=#012B47][b]TRAFFIC PATROL REPORT[/b][/color][/size][/center]
 				[hr][/hr]
-				[b]Date:[/b] " . strtoupper($pg->dateResolver($inputDateFrom, $inputDateTo)) . "
-				[b]Time:[/b] " . $inputTimeFrom . " - " . $inputTimeTo . "
-				[b]Call-sign:[/b] " . $inputCallsign . "
+				[b]Date:[/b] ".strtoupper($pg->dateResolver($inputDateFrom, $inputDateTo))."
+				[b]Time:[/b] ".$inputTimeFrom." - ".$inputTimeTo."
 
-				" . $trafficStopText . "
-				[b]Warnings issued:[/b] " . $iWarnings . "
-				[b]Citations issued:[/b] " . $iCitations . "
-				[b]Vehicles impounded:[/b] " . $inputVehicleImpounds . "
-				[b]Licenses suspended:[/b] " . $inputLicenseSuspensions . "
-				[b]Arrests conducted:[/b] " . $inputArrestsConducted . "
-				[b]Traffic investigations:[/b] " . $inputTrafficInvestigations . "
+				".$trafficStopText."
+				[b]Citations Issued:[/b] ".$iCitations."
+				[b]Vehicles Impounded:[/b] ".$inputVehicleImpounds."
+				[b]Traffic Assists:[/b] ".$inputTrafficAssists."
+				[b]Traffic Investigations:[/b] ".$inputTrafficInvestigations."
 
 				[b]Notes (Optional):[/b] " . $inputNotes . "
 				[/divbox2]";
@@ -796,9 +779,69 @@
 			$generatedArrestChargeTotals = $rowBuilderTotals;
 		}
 
+		if ($generatorType == "ParkingTicket") {
+
+			// Variables
+			$redirectPath = "report";
+			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
+			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+
+			$inputName = (empty($_POST['inputName'])) ? "UNKNOWN NAME" : $_POST['inputName'];
+			setcookie("officerName",$inputName,2147483647,"/");
+			$inputRank = (empty($_POST['inputRank'])) ? 0 : $_POST['inputRank'];
+			setcookie("officerRank",$inputRank,2147483647,"/");
+			$inputBadge = (empty($_POST['inputBadge'])) ? "UNKNOWN BADGE" : $_POST['inputBadge'];
+			setcookie("officerBadge",$inputBadge,2147483647,"/");
+
+			$inputEvidenceImage = (empty($_POST['inputEvidenceImage'])) ? '' : array_values(array_filter($_POST['inputEvidenceImage']));
+
+			$inputVehRO = (empty($_POST['inputVehRO'])) ? 'UNKNOWN REGISTERED OWNER' : $_POST['inputVehRO'];
+			setcookie("defName",$inputVehRO,time()+3660,"/");
+			$inputVeh = (empty($_POST['inputVeh'])) ? "UNKNOWN VEHICLE" : $_POST['inputVeh'];
+			$inputVehPlate = (empty($_POST['inputVehPlate'])) ? "" : $_POST['inputVehPlate'];
+
+			$inputDistrict = (empty($_POST['inputDistrict'])) ? "UNKNOWN DISTRICT" : $_POST['inputDistrict'];
+			$inputStreet = (empty($_POST['inputStreet'])) ? "UNKNOWN STREET" : $_POST['inputStreet'];
+
+			$inputReason = (empty($_POST['inputReason'])) ? 0 : $_POST['inputReason'];
+			$inputFine = (empty($_POST['inputFine'])) ? 0 : $_POST['inputFine'];
 
 
+			// Evidence Resolver
+			$evidence = "N/A";
+			if (empty($inputEvidenceImage) == false) {
 
+				$evidence = "";
+				foreach ($inputEvidenceImage as $image) {
+					$evidence .= '<img src="'.$image.'" width="100%" />';
+				}
+			}
+
+
+			// Officer Resolver
+			$officers = "<b>".$pg->getRank($inputRank,1)." ".$inputName."</b> (<b>#".$inputBadge."</b>), ";
+
+
+			// Parking Ticket Resolver
+			$reason = $pg->getIllegalParking($inputReason);
+			$statement = "";
+
+
+			// Report Builder
+
+			// $uniqueID = "parkingTicket".uniqid();
+			// $data = [$generatedReportType, $generatedReport];
+			// return $data
+			// redirect
+			// generated-report change how it processes values, instead of sessions, use $data returned to view
+
+			$generatedReportType = "Parking Ticket";
+			$generatedReport = $generatedReport = $officers." on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.<br>Cited a <b>".$inputVeh."</b>, ".$pg->getVehiclePlates($inputVehPlate,0).", ".$pg->getVehicleRO($inputVehRO).", on <b>".$inputStreet."</b>, <b>".$inputDistrict."</b>.<br>
+
+				<b>Citation Reason:</b>
+				<ul><li><span style='color: #27ae60'>IC 406. Illegal Parking</span> - <b style='color: green;'>$".$inputFine."</b> - ".$pg->getIllegalParking($inputReason)."</li></ul>
+				<b>Evidence:</b><br>".$evidence;
+		}
 
 
 		// Generator Finalisation
@@ -810,7 +853,6 @@
 		$_SESSION['showGeneratedArrestChargeTables'] = $showGeneratedArrestChargeTables;
 		$_SESSION['generatedArrestChargeList'] = $generatedArrestChargeList;
 		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
-
 
 		// Redirect
 		switch ($redirectPath) {
