@@ -6,7 +6,7 @@
 	display: none;
 }
 </style>
-<div id="map" data-aos="zoom-in" data-aos-duration="750"></div>
+<div id="map" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250"></div>
 <script>
 // Street Data
 var dataStreets = [

@@ -11,7 +11,7 @@
 			require("includes/visitors.php");
 		}
 	?>
-	<ul class="list-unstyled components px-3">
+	<ul class="list-unstyled components px-3" data-aos="fade-in" data-aos-duration="25" data-aos-delay="100">
 		<li class="nav-item">
 			<a class="nav-link" href="/">
 				<i class="fas fa-fw fa-th-large mr-2"></i>Dashboard

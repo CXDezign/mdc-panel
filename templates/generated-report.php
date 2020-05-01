@@ -3,7 +3,7 @@
 	require("includes/session-variables.php");
 
 ?>
-<div class="container mb-5" data-aos="fade-in" data-aos-duration="1000">
+<div class="container mb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1 class="my-3">Generated <?= $type ?></h1>
 	<?php
 		if ($showChargeTable == true) {

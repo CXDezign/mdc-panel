@@ -178,6 +178,13 @@
 			}
 
 
+			// Evidence Resolver
+			$evidence = "";
+			if (empty($inputEvidence) == false) {
+				$evidence = '<br><br><b>Evidence:</b><br>'.nl2br($inputEvidence);
+			}
+
+
 			// Report Builder
 			$generatedReportType = "Arrest Report";
 			$generatedReport = $officers."under the callsign <b>".strtoupper($inputCallsign)."</b>
@@ -185,7 +192,7 @@
 			 on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.
 			 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br>"
 			 .$wristbandBracelet."<br>".$pg->getPlea($inputPlea, $inputDefName)."<br><br>"
-			 .nl2br($inputNarrative)."<br><br><b>Evidence:</b><br>".nl2br($_POST['inputEvidence'])."<br><br>".$pg->getDashboardCamera($inputDashcam);
+			 .nl2br($inputNarrative).$evidence."<br><br>".$pg->getDashboardCamera($inputDashcam);
 			$showGeneratedArrestChargeTables = $_SESSION['showGeneratedArrestChargeTables'];
 			$generatedArrestChargeList = $_SESSION['generatedArrestChargeList'];
 			$generatedArrestChargeTotals = $_SESSION['generatedArrestChargeTotals'];
