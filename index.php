@@ -13,8 +13,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta property="og:title" content="MDC Panel">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="http://xanx.co.uk/MDC">
-	<meta property="og:image" content="http://xanx.co.uk/MDC/images/Logo-MDC.png">
+	<meta property="og:url" content="http://xanx.co.uk">
+	<meta property="og:image" content="http://xanx.co.uk/images/Logo-MDC.png">
 	<meta property="og:description" content="MDC Panel - Multi-functional tools, generators, and resources for official government use.">
 
 	<!-- Bootstrap -->
