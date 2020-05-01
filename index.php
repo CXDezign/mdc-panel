@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="icon" type="image/png" href="favicon.png">
+	<title>MDC Panel</title>
+	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta property="og:title" content="MDC Panel">
@@ -13,42 +16,15 @@
 	<meta property="og:url" content="http://xanx.co.uk/MDC">
 	<meta property="og:image" content="http://xanx.co.uk/MDC/images/Logo-MDC.png">
 	<meta property="og:description" content="MDC Panel - Multi-functional tools, generators, and resources for official government use.">
-	<link rel="icon" type="image/png" href="favicon.png">
 
-	<title>MDC Panel</title>
-
+	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/styles/custom.css?v=<?php echo $g->getVersion(); ?>">
-	<?php
-		if ($g->cookieToggleMode() == true) {
-			echo '<link rel="stylesheet" type="text/css" href="/styles/darkmode.css?v='.$g->getVersion().'">';
-		}
-	?>
-	<style>
-		<?php
-		if ($g->cookieToggleHints() == true) {
-			?>
-			.form-group small {
-				display: none;
-			}
-			<?php
-		}
-
-		if ($g->cookieToggleFooter() == true) {
-			?>
-			#footer {
-				display: none;
-			}
-			<?php
-		}
-		?>
-	</style>
+	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getVersion() ?>">
 
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/129680e694.js" crossorigin="anonymous"></script>
@@ -84,25 +60,13 @@
 	<div class="wrapper">
 	<?php
 		require("templates/sidebar.php");
-	?>
-		<div id="container" style="
-			<?php
-			if ($g->cookieToggleBackgroundLogo() == false) {
-				echo 'background-image: url(../images/Logo-SanAndreasSealTransparent.png);';
-			}
-			?>
-		">
-		<?php
+		echo '<div id="container">';
 			require("includes/breadcrumbs.php");
-		?>
-			<div class="container mt-5">
-			<?php
+			echo '<div class="container mt-5">';
 				require("routes.php");
-			?>
-			</div>
-		<?php
+			echo '</div>';
 			require("templates/footer.php");
-		?>
+	?>
 		</div>
 	</div>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
