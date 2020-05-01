@@ -1,5 +1,5 @@
 <div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="1000">
-	<h1><i class="fas fa-fw fa-car mr-2"></i>Parking Ticket - Form</h1>
+	<h1><i class="fas fa-fw fa-parking mr-2"></i>Parking Ticket - Form</h1>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="ParkingTicket">

@@ -80,7 +80,7 @@
 
 ?>
 
-<div class="container text-center text-white mb-3" data-aos="flip-up" data-aos-delay="150">
+<div class="container text-center text-white mb-3" data-aos="flip-up" data-aos-delay="50">
 	<i class="fas fa-fw fa-users mr-1"></i>Visitors Online: <b>
 	<?php
 		echo $visitors_online;

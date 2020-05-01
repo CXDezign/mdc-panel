@@ -39,7 +39,7 @@ class PaperworkGenerators {
 
 		foreach ($ranks as $rank) {
 
-			$statement = "<option value=".$rankCount.">".$rank."</option>";
+			$statement = '<option value=".$rankCount.">'.$rank.'</option>';
 
 			if ($rankCount === 0) {
 				$groupNA .= $statement;
@@ -137,7 +137,7 @@ class PaperworkGenerators {
 
 	public function crimeTypeChooser() {
 
-		$crimeTypes = file ('resources/crimeTypeList.txt');
+		$crimeTypes = file('resources/crimeTypeList.txt');
 		$crimeTypeCount = 1;
 
 		foreach ($crimeTypes as $crimeType) {
@@ -148,7 +148,7 @@ class PaperworkGenerators {
 	
 	public function offenceChooser() {
 
-		$crimeOffence = file ('resources/offenceList.txt');
+		$crimeOffence = file('resources/offenceList.txt');
 		$crimeOffenceCount = 1;
 
 		foreach ($crimeOffence as $offence) {
@@ -231,7 +231,7 @@ class PaperworkGenerators {
 
 	public function licenseChooser() {
 
-		$licenses = file ('resources/licensesList.txt');
+		$licenses = file('resources/licensesList.txt');
 		$licenseCount = 1;
 
 		foreach ($licenses as $license) {
@@ -265,7 +265,7 @@ class PaperworkGenerators {
 
 		foreach ($tints as $tint) {
 
-			$statement = "<option value=".$tintCount.">".$tint."</option>";
+			$statement = '<option value=".$tintCount.">'.$tint.'</option>';
 
 			if (in_array($tint, $legalTintLevels)) {
 				$groupTintLegal .= $statement;
