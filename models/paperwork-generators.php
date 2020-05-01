@@ -39,7 +39,7 @@ class PaperworkGenerators {
 
 		foreach ($ranks as $rank) {
 
-			$statement = '<option value=".$rankCount.">'.$rank.'</option>';
+			$statement = '<option value="'.$rankCount.'">'.$rank.'</option>';
 
 			if ($rankCount === 0) {
 				$groupNA .= $statement;

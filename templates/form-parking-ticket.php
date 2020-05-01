@@ -106,7 +106,7 @@
 				name="inputEvidenceImage[]"
 				placeholder="https://imgur.com"
 				required>
-				<small class="form-text text-muted"><center>Optional evidence field. Only provide direct URLs to images.</center></small>
+				<small class="form-text text-muted"><center>Only provide direct URLs to images.</center></small>
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 
