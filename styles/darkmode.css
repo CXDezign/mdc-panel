@@ -211,12 +211,20 @@ small.text-muted {
 }
 
 #card-generators-traffic:hover {
-	box-shadow: #2167c280 0 -1px 0px;
+	box-shadow: #c9222e80 0 -1px 0px;
 }
 
 #card-generators-traffic:hover i {
-	text-shadow: #2167c280 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
-} 
+	text-shadow: #c9222e80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-parking:hover {
+	box-shadow: #0066b280 0 -1px 0px;
+}
+
+#card-generators-parking:hover i {
+	text-shadow: #0066b280 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
 
 #card-generators-evidence:hover {
 	box-shadow: #7da52280 0 -1px 0px;

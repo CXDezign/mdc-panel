@@ -7,9 +7,9 @@
 		if ($g->cookieToggleClock() == false) {
 			require "includes/clock.php";
 		}
-	?>
-	<?php
-		require("includes/visitors.php");
+		if ($g->cookieToggleLiveVisitorCounter() == false) {
+			require("includes/visitors.php");
+		}
 	?>
 	<ul class="list-unstyled components px-3">
 		<li class="nav-item">
@@ -43,13 +43,18 @@
 					</a>
 				</li>
 				<li>
+					<a class="nav-link" href="/paperwork-generators/parking-ticket">
+						<i class="fas fa-fw fa-parking mr-2"></i>Parking Ticket
+					</a>
+				</li>
+				<li>
 					<a class="nav-link" href="/paperwork-generators/evidence-registration-log">
 						<i class="fas fa-fw fa-cannabis mr-2"></i>Evidence Log
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" href="/paperwork-generators/death-report">
-						<i class="fas fa-fw fa-skull mr-2"></i>Death Report
+					<a class="nav-link" href="/paperwork-generators/patrol-log">
+						<i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log
 					</a>
 				</li>
 				<li>
@@ -58,8 +63,8 @@
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" href="/paperwork-generators/patrol-log">
-						<i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log
+					<a class="nav-link" href="/paperwork-generators/death-report">
+						<i class="fas fa-fw fa-skull mr-2"></i>Death Report
 					</a>
 				</li>
 			</ul>

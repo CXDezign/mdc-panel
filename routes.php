@@ -45,6 +45,9 @@
 		case '/paperwork-generators/patrol-log':
 			require __DIR__ . "/templates/form-patrol-log.php";
 			break;
+		case '/paperwork-generators/parking-ticket':
+			require __DIR__ . "/templates/form-parking-ticket.php";
+			break;
 		case '/paperwork-generators/generated-thread':
 			require __DIR__ . "/templates/generated-thread.php";
 			break;

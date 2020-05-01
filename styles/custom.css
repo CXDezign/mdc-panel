@@ -278,12 +278,21 @@ optgroup {
 }
 
 #card-generators-traffic:hover {
-	box-shadow: #2167c2 0 1px 0px;
+	box-shadow: #c9222e 0 1px 0px;
 }
 
 #card-generators-traffic:hover i {
-	color: #2167c2!important;
-	text-shadow: #2167c280 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+	color: #c9222e!important;
+	text-shadow: #c9222e80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-parking:hover {
+	box-shadow: #0066b2 0 1px 0px;
+}
+
+#card-generators-parking:hover i {
+	color: #0066b2!important;
+	text-shadow: #0066b280 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
 #card-generators-evidence:hover {
