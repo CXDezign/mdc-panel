@@ -4,7 +4,7 @@ class General {
 
 	public function getVersion() {
 
-		return '1.9.3';
+		return '1.9.4';
 	}
 
 	public function getDate() {
@@ -107,6 +107,7 @@ class General {
 		unset($_COOKIE['toggleBackgroundLogo']);
 		unset($_COOKIE['toggleHints']);
 		unset($_COOKIE['toggleFooter']);
+		unset($_COOKIE['toggleLiveVisitorCounter']);
 		unset($_COOKIE['officerName']);
 		unset($_COOKIE['officerRank']);
 		unset($_COOKIE['officerBadge']);
@@ -119,6 +120,7 @@ class General {
 		setcookie('toggleBackgroundLogo', false, -1, '/');
 		setcookie('toggleHints', false, -1, '/');
 		setcookie('toggleFooter', false, -1, '/');
+		setcookie('toggleLiveVisitorCounter', false, -1, '/');
 		setcookie('officerName', null, -1, '/');
 		setcookie('officerRank', null, -1, '/');
 		setcookie('officerBadge', null, -1, '/');
@@ -182,6 +184,16 @@ class General {
 
 		if (isset($_COOKIE['toggleFooter'])) {
 			return $_COOKIE['toggleFooter'];
+		} else {
+			return false;
+		}
+
+	}
+
+	public function cookieToggleLiveVisitorCounter() {
+
+		if (isset($_COOKIE['toggleLiveVisitorCounter'])) {
+			return $_COOKIE['toggleLiveVisitorCounter'];
 		} else {
 			return false;
 		}

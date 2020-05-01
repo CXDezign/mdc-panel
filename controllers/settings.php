@@ -92,6 +92,19 @@
 		}
 	}
 
+	if ($formType == "settingsToggleLiveVisitorCounter") {
+
+		$toggleLiveVisitorCounter = $g->cookieToggleLiveVisitorCounter();
+
+		if ($toggleLiveVisitorCounter == false) {
+			$toggleLiveVisitorCounter = true;
+			setcookie("toggleLiveVisitorCounter",$toggleLiveVisitorCounter,2147483647,"/");
+		} else {
+			$toggleLiveVisitorCounter = false;
+			setcookie("toggleLiveVisitorCounter",$toggleLiveVisitorCounter,2147483647,"/");
+		}
+	}
+
 	if ($formType == "settingsCharacter") {
 
 		$name = $_POST['name'];

@@ -166,6 +166,31 @@
 					>
 				</center>
 			</div>
+			<div class="form-group col-xl-4">
+				<center>
+				<label>Toggle Live Visitor Counter</label><br>
+					<input
+					id="settingsToggleLiveVisitorCounter"
+					name="settingsToggleLiveVisitorCounter"
+					type="checkbox"
+					data-toggle="toggle"
+					data-off="<i class='fas fa-fw fa-users'></i>"
+					data-on="<i class='fas fa-fw fa-ban'></i>"
+					data-onstyle="danger"
+					data-offstyle="success"
+					data-width="120"
+					data-height="20"
+					<?php
+						$toggleLiveVisitorCounter = $g->cookieToggleLiveVisitorCounter();
+						if ($toggleLiveVisitorCounter == false) {
+							echo '';
+						} else {
+							echo 'checked';
+						}
+					?>
+					>
+				</center>
+			</div>
 		</div>
 	</form>
 	<hr class="my-3"></h1>
@@ -324,6 +349,21 @@
 				url: 'controllers/settings.php',
 				data: {
 					type: "settingsToggleFooter"
+				},
+				success: function () {
+					setTimeout(function() {
+						location.reload();
+					}, 400);
+				},
+			});
+		});
+
+		$('#settingsToggleLiveVisitorCounter').change(function() {
+			$.ajax({
+				type: 'POST',
+				url: 'controllers/settings.php',
+				data: {
+					type: "settingsToggleLiveVisitorCounter"
 				},
 				success: function () {
 					setTimeout(function() {
