@@ -1,4 +1,15 @@
 {
+	"1.9.5": {
+		"id": "1.9.5",
+		"date": "01/MAY/2020",
+		"changes": {
+			"1": "General - Backend styling code optimisation.",
+			"2": "General - Animation delay changes.",
+			"3": "General - Session variables optimisation.",
+			"4": "Parking Ticket Generator - Title icon and evidence hint fixes.",
+			"5": "Paperwork Generators - Small backend code optimisations."
+		}
+	},
 	"1.9.4": {
 		"id": "1.9.4",
 		"date": "01/MAY/2020",
