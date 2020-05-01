@@ -28,56 +28,56 @@
 
 			// Variables
 			$redirectPath = "report";
-			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
-			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
 
-			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'N/A' : strtoupper($_POST['inputCallsign']);
+			$inputCallsign = $_POST['inputCallsign'] ?: 'N/A';
 			setcookie("callSign",$inputCallsign,time()+21960,"/");
 
-			$inputName = (empty($_POST['inputName'])) ? array() : $_POST['inputName'];
+			$inputName = $_POST['inputName'] ?: array();
 			$inputName = array_map(function($value) {
 				return $value === "" ? "UNKNOWN NAME" : $value;
 			}, $inputName);
 			setcookie("officerName",$inputName[0],2147483647,"/");
 
-			$inputRank = (empty($_POST['inputRank'])) ? array() : $_POST['inputRank'];
+			$inputRank = $_POST['inputRank'] ?: array();
 			$inputRank = array_map(function($value) {
 				return $value === "" ? 0 : $value;
 			}, $inputRank);
 			setcookie("officerRank",$inputRank[0],2147483647,"/");
 
-			$inputBadge = (empty($_POST['inputBadge'])) ? array() : $_POST['inputBadge'];
+			$inputBadge = $_POST['inputBadge'] ?: array();
 			$inputBadge = array_map(function($value) {
 				return $value === "" ? "" : $value;
 			}, $inputBadge);
 			setcookie("officerBadge",$inputBadge[0],2147483647,"/");
 
-			$inputDefName = (empty($_POST['inputDefName'])) ? 'UNKNOWN SUSPECT NAME' : $_POST['inputDefName'];
+			$inputDefName = $_POST['inputDefName'] ?: 'UNKNOWN SUSPECT NAME';
 			setcookie("defName",$inputDefName,time()+3660,"/");
 
-			$inputDefLicense = (empty($_POST['inputDefLicense'])) ? 0 : $_POST['inputDefLicense'];
-			$inputNarrative = (empty($_POST['inputNarrative'])) ? "" : $_POST['inputNarrative'];
-			$inputDashcam = (empty($_POST['inputDashcam'])) ? "" : $_POST['inputDashcam'];
+			$inputDefLicense = $_POST['inputDefLicense'] ?: 0;
+			$inputNarrative = $_POST['inputNarrative'] ?: "";
+			$inputDashcam = $_POST['inputDashcam'] ?: "";
 
-			$inputDistrict = (empty($_POST['inputDistrict'])) ? "UNKNOWN DISTRICT" : $_POST['inputDistrict'];
-			$inputStreet = (empty($_POST['inputStreet'])) ? "UNKNOWN STREET" : $_POST['inputStreet'];
+			$inputDistrict = $_POST['inputDistrict'] ?: "UNKNOWN DISTRICT";
+			$inputStreet = $_POST['inputStreet'] ?: "UNKNOWN STREET";
 
-			$inputVeh = (empty($_POST['inputVeh'])) ? "UNKNOWN VEHICLE" : $_POST['inputVeh'];
-			$inputVehPaint = (empty($_POST['inputVehPaint'])) ? "UNKNOWN PAINT" : $_POST['inputVehPaint'];
-			$inputVehPlate = (empty($_POST['inputVehPlate'])) ? "" : $_POST['inputVehPlate'];
-			$inputVehTint = (empty($_POST['inputVehTint'])) ? "" : $_POST['inputVehTint'];
+			$inputVeh = $_POST['inputVeh'] ?: "UNKNOWN VEHICLE";
+			$inputVehPaint = $_POST['inputVehPaint'] ?: "UNKNOWN PAINT";
+			$inputVehPlate = $_POST['inputVehPlate'] ?: "";
+			$inputVehTint = $_POST['inputVehTint'] ?: "";
 
-			$inputCrime = (empty($_POST['inputCrime'])) ? array() : $_POST['inputCrime'];
+			$inputCrime = $_POST['inputCrime'] ?: array();
 			$inputCrime = array_map(function($value) {
 				return $value === "" ? "UNKNOWN CHARGE" : $value;
 			}, $inputCrime);
 
-			$inputCrimeType = (empty($_POST['inputCrimeType'])) ? array() : $_POST['inputCrimeType'];
+			$inputCrimeType = $_POST['inputCrimeType'] ?: array();
 			$inputCrimeType = array_map(function($value) {
 				return $value === "" ? 0 : $value;
 			}, $inputCrimeType);
 
-			$inputCrimeFine = (empty($_POST['inputCrimeFine'])) ? array() : $_POST['inputCrimeFine'];
+			$inputCrimeFine = $_POST['inputCrimeFine'] ?: array();
 			$inputCrimeFine = array_map(function($value) {
 				return $value === "" ? 0 : $value;
 			}, $inputCrimeFine);
@@ -114,50 +114,50 @@
 
 			// Report Builder
 			$generatedReportType = "Traffic Report";
-			$generatedReport = $officers."under the call sign <b>".$inputCallsign."</b> on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.<br>Conducted a traffic stop on a <b>".$inputVehPaint." ".$inputVeh."</b>, ".$pg->getVehiclePlates($inputVehPlate,0).", on <b>".$inputStreet."</b>, <b>".$inputDistrict."</b>.<br>".$pg->getVehicleTint($inputVehTint)."<br>The defendant was identified as <b>".$inputDefName."</b>, possessing ".$pg->getDefLicense($inputDefLicense)."<br>".$inputNarrative."<br><br>Following charge(s) were issued:<br>".$fines."<br>".$pg->getDashboardCamera($inputDashcam);
+			$generatedReport = $officers."under the call sign <b>".strtoupper($inputCallsign)."</b> on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.<br>Conducted a traffic stop on a <b>".$inputVehPaint." ".$inputVeh."</b>, ".$pg->getVehiclePlates($inputVehPlate,0).", on <b>".$inputStreet."</b>, <b>".$inputDistrict."</b>.<br>".$pg->getVehicleTint($inputVehTint)."<br>The defendant was identified as <b>".$inputDefName."</b>, possessing ".$pg->getDefLicense($inputDefLicense)."<br>".$inputNarrative."<br><br>Following charge(s) were issued:<br>".$fines."<br>".$pg->getDashboardCamera($inputDashcam);
 		}
 
 		if ($generatorType == "ArrestReport") {
 
 			// Variables
 			$redirectPath = "report";
-			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
-			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
 
-			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'N/A' : strtoupper($_POST['inputCallsign']);
+			$inputCallsign = $_POST['inputCallsign'] ?: 'N/A';
 			setcookie("callSign",$inputCallsign,time()+21960,"/");
 
-			$inputName = (empty($_POST['inputName'])) ? array() : $_POST['inputName'];
+			$inputName = $_POST['inputName'] ?: array();
 			$inputName = array_map(function($value) {
 				return $value === "" ? "UNKNOWN NAME" : $value;
 			}, $inputName);
 			setcookie("officerName",$inputName[0],2147483647,"/");
 
-			$inputRank = (empty($_POST['inputRank'])) ? array() : $_POST['inputRank'];
+			$inputRank = $_POST['inputRank'] ?: array();
 			$inputRank = array_map(function($value) {
 				return $value === "" ? 0 : $value;
 			}, $inputRank);
 			setcookie("officerRank",$inputRank[0],2147483647,"/");
 
-			$inputBadge = (empty($_POST['inputBadge'])) ? array() : $_POST['inputBadge'];
+			$inputBadge = $_POST['inputBadge'] ?: array();
 			$inputBadge = array_map(function($value) {
 				return $value === "" ? "" : $value;
 			}, $inputBadge);
 			setcookie("officerBadge",$inputBadge[0],2147483647,"/");
 
-			$inputDistrict = (empty($_POST['inputDistrict'])) ? "UNKNOWN DISTRICT" : $_POST['inputDistrict'];
-			$inputStreet = (empty($_POST['inputStreet'])) ? "UNKNOWN STREET" : $_POST['inputStreet'];
+			$inputDistrict = $_POST['inputDistrict'] ?: "UNKNOWN DISTRICT";
+			$inputStreet = $_POST['inputStreet'] ?: "UNKNOWN STREET";
 
-			$inputDefName = (empty($_POST['inputDefName'])) ? 'UNKNOWN SUSPECT NAME' : $_POST['inputDefName'];
+			$inputDefName = $_POST['inputDefName'] ?: 'UNKNOWN SUSPECT NAME';
 			setcookie("defName",$inputDefName,time()+3660,"/");
 
-			$inputNarrative = (empty($_POST['inputNarrative'])) ? "UNKNOWN NOTES" : $_POST['inputNarrative'];
-			$inputEvidence = (empty($_POST['inputEvidence'])) ? '' : '<b>Evidence:</b><br>'.nl2br($_POST['inputEvidence'])."<br>";
-			$inputDashcam = (empty($_POST['inputDashcam'])) ? '' : $_POST['inputDashcam'];
+			$inputNarrative = $_POST['inputNarrative'] ?: "UNKNOWN NOTES";
+			$inputEvidence = $_POST['inputEvidence'] ?: '';
+			$inputDashcam = $_POST['inputDashcam'] ?: '';
 
-			$inputWristband = (empty($_POST['inputWristband'])) ? 0 : $_POST['inputWristband'];
-			$inputBracelet = (empty($_POST['inputBracelet'])) ? 0 : $_POST['inputBracelet'];
-			$inputPlea = (empty($_POST['inputPlea'])) ? 0 : $_POST['inputPlea'];
+			$inputWristband = $_POST['inputWristband'] ?: 0;
+			$inputBracelet = $_POST['inputBracelet'] ?: 0;
+			$inputPlea = $_POST['inputPlea'] ?: 0;
 
 
 			// Officer Resolver
@@ -180,12 +180,12 @@
 
 			// Report Builder
 			$generatedReportType = "Arrest Report";
-			$generatedReport = $officers."under the callsign <b>".$inputCallsign."</b>
+			$generatedReport = $officers."under the callsign <b>".strtoupper($inputCallsign)."</b>
 			 conducted an arrest on <b>".$inputDefName."</b>
 			 on the <b>".strtoupper($inputDate)."</b>, <b>".$inputTime."</b>.
 			 The suspect apprehension took place on<b> ".$inputStreet.", ".$inputDistrict."</b>.<br>"
 			 .$wristbandBracelet."<br>".$pg->getPlea($inputPlea, $inputDefName)."<br><br>"
-			 .nl2br($inputNarrative)."<br><br>".$inputEvidence."<br>".$pg->getDashboardCamera($inputDashcam);
+			 .nl2br($inputNarrative)."<br><br><b>Evidence:</b><br>".nl2br($_POST['inputEvidence'])."<br><br>".$pg->getDashboardCamera($inputDashcam);
 			$showGeneratedArrestChargeTables = $_SESSION['showGeneratedArrestChargeTables'];
 			$generatedArrestChargeList = $_SESSION['generatedArrestChargeList'];
 			$generatedArrestChargeTotals = $_SESSION['generatedArrestChargeTotals'];
@@ -195,29 +195,33 @@
 
 			// Variables
 			$redirectPath = "thread";
-			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
-			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
 
-			$inputDistrict = (empty($_POST['inputDistrict'])) ? "UNKNOWN DISTRICT" : $_POST['inputDistrict'];
-			$inputStreet = (empty($_POST['inputStreet'])) ? "UNKNOWN STREET" : $_POST['inputStreet'];
+			$inputDistrict = $_POST['inputDistrict'] ?: "UNKNOWN DISTRICT";
+			$inputStreet = $_POST['inputStreet'] ?: "UNKNOWN STREET";
 
-			$inputDeathName = (empty($_POST['inputDeathName'])) ? "JOHN/JANE DOE" : $_POST['inputDeathName'];
-			$inputDeathReason = (empty($_POST['inputDeathReason'])) ? "UNKNOWN CAUSE OF DEATH" : $_POST['inputDeathReason'];
+			$inputDeathName = $_POST['inputDeathName'] ?: "JOHN/JANE DOE";
+			$inputDeathReason = $_POST['inputDeathReason'] ?: "UNKNOWN CAUSE OF DEATH";
 
-			$inputWitnessName = (empty($_POST['inputWitnessName'])) ? '' : array_values(array_filter($_POST['inputWitnessName']));
+			$inputWitnessName = $_POST['inputWitnessName'] ?: array();
+			$inputWitnessName = array_values(array_filter($inputWitnessName));
 
-			$inputRespondingName = (empty($_POST['inputRespondingName'])) ? "UNKNOWN RESPONDING OFFICER" : $_POST['inputRespondingName'];
-			$inputRespondingRank = (empty($_POST['inputRespondingRank'])) ? 0 : $_POST['inputRespondingRank'];
+			$inputRespondingName = $_POST['inputRespondingName'] ?: "UNKNOWN RESPONDING OFFICER";
+			$inputRespondingRank = $_POST['inputRespondingRank'] ?: 0;
 
-			$inputHandlingName = (empty($_POST['inputHandlingName'])) ? "N/A" : $_POST['inputHandlingName'];
-			$inputHandlingRank = (empty($_POST['inputHandlingRank'])) ? 0 : $_POST['inputHandlingRank'];
+			$inputHandlingName = $_POST['inputHandlingName'] ?: "N/A";
+			$inputHandlingRank = $_POST['inputHandlingRank'] ?: 0;
 
-			$inputCoronerName = (empty($_POST['inputCoronerName'])) ? "N/A" : $_POST['inputCoronerName'];
-			$inputCaseNumber = (empty($_POST['inputCaseNumber'])) ? "N/A" : $_POST['inputCaseNumber'];
-			$inputRecord = (empty($_POST['inputRecord'])) ? "#" : $_POST['inputRecord'];
+			$inputCoronerName = $_POST['inputCoronerName'] ?: "N/A";
+			$inputCaseNumber = $_POST['inputCaseNumber'] ?: "N/A";
+			$inputRecord = $_POST['inputRecord'] ?: "#";
 
-			$inputEvidenceImage = (empty($_POST['inputEvidenceImage'])) ? '' : array_values(array_filter($_POST['inputEvidenceImage']));
-			$inputEvidenceBox = (empty($_POST['inputEvidenceBox'])) ? '' : array_values(array_filter($_POST['inputEvidenceBox']));
+			$inputEvidenceImage = $_POST['inputEvidenceImage'] ?: array();
+			$inputEvidenceImage = array_values(array_filter($inputEvidenceImage));
+
+			$inputEvidenceBox = $_POST['inputEvidenceBox'] ?: array();
+			$inputEvidenceBox = array_values(array_filter($inputEvidenceBox));
 
 
 			// Witness Resolver
@@ -306,28 +310,29 @@
 
 			// Variables
 			$redirectPath = "thread";
-			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
-			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
 
-			$inputName = (empty($_POST['inputName'])) ? "UNKNOWN NAME" : $_POST['inputName'];
+			$inputName = $_POST['inputName'] ?: "UNKNOWN NAME";
 			setcookie("officerName",$inputName,2147483647,"/");
-			$inputRank = (empty($_POST['inputRank'])) ? 0 : $_POST['inputRank'];
+			$inputRank = $_POST['inputRank'] ?: 0;
 			setcookie("officerRank",$inputRank,2147483647,"/");
 
-			$inputSuspectName = (empty($_POST['inputSuspectName'])) ? "UNKNOWN NAME" : $_POST['inputSuspectName'];
-			$inputItemCategory = (empty($_POST['inputItemCategory'])) ? 0 : $_POST['inputItemCategory'];
+			$inputSuspectName = $_POST['inputSuspectName'] ?: "UNKNOWN NAME";
+			$inputItemCategory = $_POST['inputItemCategory'] ?: 0;
 
-			$inputItemRegistry = (empty($_POST['inputItemRegistry'])) ? array() : $_POST['inputItemRegistry'];
+			$inputItemRegistry = $_POST['inputItemRegistry'] ?: array();
 			$inputItemRegistry = array_map(function($value) {
 				return $value === "" ? "UNKNOWN ITEM" : $value;
 			}, $inputItemRegistry);
 
-			$inputItemAmount = (empty($_POST['inputItemAmount'])) ? array() : $_POST['inputItemAmount'];
+			$inputItemAmount = $_POST['inputItemAmount'] ?: array();
 			$inputItemAmount = array_map(function($value) {
 				return $value === "" ? "?" : $value;
 			}, $inputItemAmount);
 
-			$inputEvidenceImage = (empty($_POST['inputEvidenceImage'])) ? '' : array_values(array_filter($_POST['inputEvidenceImage']));
+			$inputEvidenceImage = $_POST['inputEvidenceImage'] ?: array();
+			$inputEvidenceImage = array_values(array_filter($inputEvidenceImage));
 
 
 			// Evidence Resolver
@@ -383,27 +388,27 @@
 
 			// Variables
 			$redirectPath = "thread";
-			$inputDateFrom = (empty($_POST['inputDateFrom'])) ? $g->getDate() : $_POST['inputDateFrom'];
-			$inputDateTo = (empty($_POST['inputDateTo'])) ? $g->getDate() : $_POST['inputDateTo'];
-			$inputTimeFrom = (empty($_POST['inputTimeFrom'])) ? $g->getTime() : $_POST['inputTimeFrom'];
-			$inputTimeTo = (empty($_POST['inputTimeTo'])) ? $g->getTime() : $_POST['inputTimeTo'];
+			$inputDateFrom = $_POST['inputDateFrom'] ?: $g->getDate();
+			$inputDateTo = $_POST['inputDateTo'] ?: $g->getDate();
+			$inputTimeFrom = $_POST['inputTimeFrom'] ?: $g->getTime();
+			$inputTimeTo = $_POST['inputTimeTo'] ?: $g->getTime();
 
-			$inputNameTS = (empty($_POST['inputNameTS'])) ? array() : $_POST['inputNameTS'];
+			$inputNameTS = $_POST['inputNameTS'] ?: array();
 			$inputNameTS = array_map(function($value) {
 				return $value === "" ? "UNKNOWN NAME" : $value;
 			}, $inputNameTS);
 
-			$inputCitationsTS = (empty($_POST['inputCitationsTS'])) ? array() : $_POST['inputCitationsTS'];
+			$inputCitationsTS = $_POST['inputCitationsTS'] ?: array();
 			$inputCitationsTS = array_map(function($value) {
 				return $value === "" ? 0 : $value;
 			}, $inputCitationsTS);
 
-			$inputVehicleImpounds = (empty($_POST['inputVehicleImpounds'])) ? '0' : $_POST['inputVehicleImpounds'];
-			$inputTrafficAssists = (empty($_POST['inputTrafficAssists'])) ? '0' : $_POST['inputTrafficAssists'];
-			$inputTrafficInvestigations = (empty($_POST['inputTrafficInvestigations'])) ? '0' : $_POST['inputTrafficInvestigations'];
+			$inputVehicleImpounds = $_POST['inputVehicleImpounds'] ?: '0';
+			$inputTrafficAssists = $_POST['inputTrafficAssists'] ?: '0';
+			$inputTrafficInvestigations = $_POST['inputTrafficInvestigations'] ?: '0';
 
-			$inputNotes = (empty($_POST['inputNotes'])) ? 'N/A' : $_POST['inputNotes'];
-			$inputTDPatrolReportURL = (empty($_POST['inputTDPatrolReportURL'])) ? "https://lspd.gta.world/viewforum.php?f=101" : $_POST['inputTDPatrolReportURL'];
+			$inputNotes = $_POST['inputNotes'] ?: 'N/A';
+			$inputTDPatrolReportURL = $_POST['inputTDPatrolReportURL'] ?: "https://lspd.gta.world/viewforum.php?f=101";
 			setcookie("inputTDPatrolReportURL",$inputTDPatrolReportURL,2147483647, "/");
 
 
@@ -458,66 +463,73 @@
 
 			// Variables
 			$redirectPath = "thread";
-			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
-			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
-			$inputTimeEnd = (empty($_POST['inputTimeEnd'])) ? $g->getTime() : $_POST['inputTimeEnd'];
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
+			$inputTimeEnd = $_POST['inputTimeEnd'] ?: $g->getTime();
 
-			$inputCallsign = (empty($_POST['inputCallsign'])) ? 'N/A' : strtoupper($_POST['inputCallsign']);
+			$inputCallsign = $_POST['inputCallsign'] ?: 'N/A';
 			setcookie("callSign",$inputCallsign,time()+21960, "/");
 
-			$inputPartner = (empty($_POST['inputPartner'])) ? "" : $_POST['inputPartner'];
-			$inputRank = (empty($_POST['inputRank'])) ? 0 : $_POST['inputRank'];
-			$inputNotes = (empty($_POST['inputNotes'])) ? "[list][*]No additional notes." : "<b><u>Additional Notes</b>: [list][*]".$_POST['inputNotes'];
+			$inputPartner = $_POST['inputPartner'] ?: "";
+			$inputRank = $_POST['inputRank'] ?: 0;
+			$inputNotes = $_POST['inputNotes'] ?: "";
 
-			$type = (empty($_POST['type'])) ? array() : $_POST['type'];
+			$type = $_POST['type'] ?: array();
 			$type = array_map(function($value) {
 				return $value === "" ? "0" : $value;
 			}, $type);
 
-			$inputTimeEvent = (empty($_POST['inputTimeEvent'])) ? array() : $_POST['inputTimeEvent'];
+			$inputTimeEvent = $_POST['inputTimeEvent'] ?: array();
 			$inputTimeEvent = array_map(function($value) {
 				return $value === "" ? "??:??" : $value;
 			}, $inputTimeEvent);
 
-			$inputReasonInfo = (empty($_POST['inputReasonInfo'])) ? array() : $_POST['inputReasonInfo'];
+			$inputReasonInfo = $_POST['inputReasonInfo'] ?: array();
 			$inputReasonInfo = array_map(function($value) {
 				return $value === "" ? "UNKNOWN GENERIC EVENT" : $value;
 			}, $inputReasonInfo);
 
-			$inputVeh = (empty($_POST['inputVeh'])) ? array() : $_POST['inputVeh'];
+			$inputVeh = $_POST['inputVeh'] ?: array();
 			$inputVeh = array_map(function($value) {
 				return $value === "" ? "UNKNOWN VEHICLE" : $value;
 			}, $inputVeh);
 
-			$inputVehPlate = (empty($_POST['inputVehPlate'])) ? array() : $_POST['inputVehPlate'];
+			$inputVehPlate = $_POST['inputVehPlate'] ?: array();
 			$inputVehPlate = array_map(function($value) {
 				return $value === "" ? "" : $value;
 			}, $inputVehPlate);
 
-			$inputDistrict = (empty($_POST['inputDistrict'])) ? array() : $_POST['inputDistrict'];
+			$inputDistrict = $_POST['inputDistrict'] ?: array();
 			$inputDistrict = array_map(function($value) {
 				return $value === "" ? "UNKNOWN DISTRICT" : $value;
 			}, $inputDistrict);
 			
-			$inputStreet = (empty($_POST['inputStreet'])) ? array() : $_POST['inputStreet'];
+			$inputStreet = $_POST['inputStreet'] ?: array();
 			$inputStreet = array_map(function($value) {
 				return $value === "" ? "UNKNOWN STREET" : $value;
 			}, $inputStreet);
 
-			$inputReasonTS = (empty($_POST['inputReasonTS'])) ? array() : $_POST['inputReasonTS'];
+			$inputReasonTS = $_POST['inputReasonTS'] ?: array();
 			$inputReasonTS = array_map(function($value) {
 				return $value === "" ? "UNKNOWN REASON" : $value;
 			}, $inputReasonTS);
 
-			$inputArrestee = (empty($_POST['inputArrestee'])) ? array() : $_POST['inputArrestee'];
+			$inputArrestee = $_POST['inputArrestee'] ?: array();
 			$inputArrestee = array_map(function($value) {
 				return $value === "" ? "UNKNOWN ARRESTEE" : $value;
 			}, $inputArrestee);
 
-			$inputArrestID = (empty($_POST['inputArrestID'])) ? array() : $_POST['inputArrestID'];
+			$inputArrestID = $_POST['inputArrestID'] ?: array();
 			$inputArrestID = array_map(function($value) {
 				return $value === "" ? "UNKNOWN ARREST REPORT ID" : $value;
 			}, $inputArrestID);
+
+
+			// Notes Resolver
+			$notes = '[list][*]No additional notes.';
+			if (empty($inputNotes) == false) {
+				$notes = '<b><u>Additional Notes</b>: [list][*]'.$inputNotes;
+			}
 
 		
 			// Partner Resolver
@@ -577,7 +589,7 @@
 				[b]Start time:[/b] ".$inputTime."
 				[b]End time:[/b] ".$inputTimeEnd."
 				[color=white]...[/color]
-				[b]Callsign:[/b] ".$inputCallsign."
+				[b]Callsign:[/b] ".strtoupper($inputCallsign)."
 				[b]Partner:[/b] ".$partner."
 				[color=white]...[/color]
 				[hr][/hr]
@@ -586,7 +598,7 @@
 				[list]
 				".$events."
 				[/list]
-				".$inputNotes."
+				".$notes."
 				[/list]
 				[/divbox2]";
 			$generatedReport = str_replace("				", "", $generatedReport);
@@ -783,28 +795,29 @@
 
 			// Variables
 			$redirectPath = "report";
-			$inputDate = (empty($_POST['inputDate'])) ? $g->getDate() : $_POST['inputDate'];
-			$inputTime = (empty($_POST['inputTime'])) ? $g->getTime() : $_POST['inputTime'];
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
 
-			$inputName = (empty($_POST['inputName'])) ? "UNKNOWN NAME" : $_POST['inputName'];
+			$inputName = $_POST['inputName'] ?: "UNKNOWN NAME";
 			setcookie("officerName",$inputName,2147483647,"/");
-			$inputRank = (empty($_POST['inputRank'])) ? 0 : $_POST['inputRank'];
+			$inputRank = $_POST['inputRank'] ?: 0;
 			setcookie("officerRank",$inputRank,2147483647,"/");
-			$inputBadge = (empty($_POST['inputBadge'])) ? "UNKNOWN BADGE" : $_POST['inputBadge'];
+			$inputBadge = $_POST['inputBadge'] ?: "UNKNOWN BADGE";
 			setcookie("officerBadge",$inputBadge,2147483647,"/");
 
-			$inputEvidenceImage = (empty($_POST['inputEvidenceImage'])) ? '' : array_values(array_filter($_POST['inputEvidenceImage']));
+			$inputEvidenceImage = $_POST['inputEvidenceImage'] ?: array();
+			$inputEvidenceImage = array_values(array_filter($inputEvidenceImage));
 
-			$inputVehRO = (empty($_POST['inputVehRO'])) ? 'UNKNOWN REGISTERED OWNER' : $_POST['inputVehRO'];
+			$inputVehRO = $_POST['inputVehRO'] ?: 'UNKNOWN REGISTERED OWNER';
 			setcookie("defName",$inputVehRO,time()+3660,"/");
-			$inputVeh = (empty($_POST['inputVeh'])) ? "UNKNOWN VEHICLE" : $_POST['inputVeh'];
-			$inputVehPlate = (empty($_POST['inputVehPlate'])) ? "" : $_POST['inputVehPlate'];
+			$inputVeh = $_POST['inputVeh'] ?: "UNKNOWN VEHICLE";
+			$inputVehPlate = $_POST['inputVehPlate'] ?: "";
 
-			$inputDistrict = (empty($_POST['inputDistrict'])) ? "UNKNOWN DISTRICT" : $_POST['inputDistrict'];
-			$inputStreet = (empty($_POST['inputStreet'])) ? "UNKNOWN STREET" : $_POST['inputStreet'];
+			$inputDistrict = $_POST['inputDistrict'] ?: "UNKNOWN DISTRICT";
+			$inputStreet = $_POST['inputStreet'] ?: "UNKNOWN STREET";
 
-			$inputReason = (empty($_POST['inputReason'])) ? 0 : $_POST['inputReason'];
-			$inputFine = (empty($_POST['inputFine'])) ? 0 : $_POST['inputFine'];
+			$inputReason = $_POST['inputReason'] ?: 0;
+			$inputFine = $_POST['inputFine'] ?: 0;
 
 
 			// Evidence Resolver

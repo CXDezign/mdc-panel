@@ -8,7 +8,7 @@
 			"3": "General - Session variables optimisation.",
 			"4": "General - Cookie variables optimisation.",
 			"5": "Parking Ticket Generator - Title icon and evidence hint fixes.",
-			"6": "Paperwork Generators - Small backend code optimisations."
+			"6": "Paperwork Generators - Large backend update regarding processing and defaulting variables."
 		}
 	},
 	"1.9.4": {
@@ -241,6 +241,5 @@
 			"1": "Initial release."
 		}
 	}
-
 
 }
