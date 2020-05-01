@@ -19,7 +19,7 @@
 					id="inputDate"
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
-					value="<?php echo $g->getDate();?>"
+					value="<?= $g->getDate() ?>"
 					style="text-transform: uppercase;"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
@@ -37,7 +37,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00"
-					value="<?php echo $g->getTime();?>"
+					value="<?= $g->getTime() ?>"
 					required
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
@@ -50,7 +50,7 @@
 				id="inputName"
 				name="inputName"
 				placeholder="Firstname Lastname"
-				value="<?php echo $g->cookieName();?>"
+				value="<?= $g->cookieName() ?>"
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>

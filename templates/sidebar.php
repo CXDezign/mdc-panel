@@ -1,7 +1,7 @@
 <nav id="sidebar">
 	<div class="text-center my-3">
 		<a class="d-block" href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
-		<a href="/changelogs#<?php echo $g->getVersion(); ?>"><span class="badge badge-light"><?php echo $g->getVersion(); ?></span></a>
+		<a href="/changelogs#<?= $g->getVersion() ?>"><span class="badge badge-light"><?= $g->getVersion() ?></span></a>
 	</div>
 	<?php
 		if ($g->cookieToggleClock() == false) {

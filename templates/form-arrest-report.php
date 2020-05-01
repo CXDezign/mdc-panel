@@ -22,7 +22,7 @@
 					id="inputDate"
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
-					value="<?php echo $g->getDate(); ?>"
+					value="<?= $g->getDate() ?>"
 					style="text-transform: uppercase;"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
@@ -40,7 +40,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00 - 24:00"
-					value="<?php echo $g->getTime(); ?>"
+					value="<?= $g->getTime(); ?>"
 					required
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
@@ -53,7 +53,7 @@
 				id="inputCallsign"
 				name="inputCallsign"
 				placeholder="Call Sign"
-				value="<?php echo $g->cookieCallSign(); ?>"
+				value="<?= $g->cookieCallSign() ?>"
 				required
 				data-placement="bottom" title="Example: 2-ADAM-1, 2A1">
 			</div>
@@ -69,7 +69,7 @@
 				id="inputName"
 				name="inputName[]"
 				placeholder="Firstname Lastname"
-				value="<?php echo $g->cookieName(); ?>"
+				value="<?= $g->cookieName() ?>"
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>
@@ -102,7 +102,7 @@
 					id="inputBadge"
 					name="inputBadge[]"
 					placeholder="####"
-					value="<?php echo $g->cookieBadge(); ?>"
+					value="<?= $g->cookieBadge() ?>"
 					required
 					data-placement="bottom" title="Officer - Badge">
 				</div>

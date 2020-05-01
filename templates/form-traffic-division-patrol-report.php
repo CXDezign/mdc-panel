@@ -16,7 +16,7 @@
 					name="inputDateFrom"
 					placeholder="DD/MMM/YYYY"
 					style="text-transform: uppercase;"
-					value="<?php echo $g->getDate()?>"
+					value="<?= $g->getDate() ?>"
 					required>
 					<div class="input-group-midpend">
 						<span class="input-group-text" id="basic-addon1">-</span>
@@ -40,7 +40,7 @@
 					id="inputTimeFrom"
 					name="inputTimeFrom"
 					placeholder="00:00"
-					value="<?php echo $g->getTime()?>"
+					value="<?= $g->getTime() ?>"
 					required>
 					<div class="input-group-midpend">
 						<span class="input-group-text" id="basic-addon1">-</span>
@@ -124,7 +124,7 @@
 				type="text"
 				id="inputTDPatrolReportURL"
 				name="inputTDPatrolReportURL"
-				value="<?php echo $g->cookieTrafficPatrolURL(); ?>"
+				value="<?= $g->cookieTrafficPatrolURL() ?>"
 				placeholder="Direct URL to your personal Patrol Report thread.">
 			</div>
 		</div>

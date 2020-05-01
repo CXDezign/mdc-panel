@@ -205,7 +205,7 @@
 				id="inputName"
 				name="inputName"
 				placeholder="Firstname Lastname"
-				value="<?php echo $g->cookieName(); ?>">
+				value="<?= $g->cookieName() ?>">
 			</div>
 			<div class="form-group col-xl-4">
 				<center><label>Rank</label></center>
@@ -235,7 +235,7 @@
 					id="inputBadge"
 					name="inputBadge"
 					placeholder="####"
-					value="<?php echo $g->cookieBadge(); ?>">
+					value="<?= $g->cookieBadge() ?>">
 				</div>
 			</div>
 			<div class="container my-5 text-center">

@@ -45,11 +45,7 @@
 	<h1><i class="fas fa-fw fa-plug mr-2"></i></i>Changelogs</h1>
 	<hr>
 		Select a version to jump to:<br><br>
-		<?php
-			echo $changelogVersions;
-		?>
+		<?= $changelogVersions ?>
 	<hr>
-	<?php
-		echo $changelog;
-	?>
+	<?= $changelog ?>
 </div>

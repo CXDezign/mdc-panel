@@ -20,7 +20,7 @@
 		<a tabindex="0" class="btn btn-primary px-5" onclick="copy()" data-toggle="tooltip" title="Copied!"><i class="fas fa-copy fa-fw mr-2"></i>Copy <?= $type ?></a>
 	</div>
 	<div class="container mt-2 mb-5 text-center">
-		<a class="btn btn-info px-5" target="_blank" href="https://mdc.gta.world/record/<?php echo $g->cookieDefNameURL(); ?>" role="button"><i class="fas fa-archive fa-fw mr-2"></i>Create Record: <?php echo $g->cookieDefName(); ?></a>
+		<a class="btn btn-info px-5" target="_blank" href="https://mdc.gta.world/record/<?= $g->cookieDefNameURL() ?>" role="button"><i class="fas fa-archive fa-fw mr-2"></i>Create Record: <?= $g->cookieDefName() ?></a>
 	</div>
 </div>
 

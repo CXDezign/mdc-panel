@@ -6,13 +6,9 @@
 	echo '</pre>';
 	*/
 
-	$ip = "192.168.1.1";
+	$var = "Success!";
 
-	$int = ip2long($ip);
-	$str = long2ip($int);
-
-	echo $int;
-	echo "<br>";
-	echo $str;
+	$message = $var ?: "Empty!";
+	echo $message;
 
 ?>

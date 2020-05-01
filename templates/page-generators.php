@@ -36,17 +36,13 @@
 	<h1><i class="fas fa-fw fa-archive mr-2"></i></i>Paperwork Generators</h1>
 	<hr>
 	<div class="row">
-
-		<?php
-			echo $generators;
-		?>
-
+		<?= $generators ?>
 	</div>
 </div>
 
 <script type="text/javascript">
-	
+
 	// Tooltips
 		$('a').tooltip();
-
+		
 </script>
