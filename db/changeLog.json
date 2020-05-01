@@ -6,8 +6,9 @@
 			"1": "General - Backend styling code optimisation.",
 			"2": "General - Animation delay changes.",
 			"3": "General - Session variables optimisation.",
-			"4": "Parking Ticket Generator - Title icon and evidence hint fixes.",
-			"5": "Paperwork Generators - Small backend code optimisations."
+			"4": "General - Cookie variables optimisation.",
+			"5": "Parking Ticket Generator - Title icon and evidence hint fixes.",
+			"6": "Paperwork Generators - Small backend code optimisations."
 		}
 	},
 	"1.9.4": {

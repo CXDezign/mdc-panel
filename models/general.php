@@ -56,140 +56,87 @@ class General {
 
 	public function cookieToggleMode() {
 
-		if (isset($_COOKIE['toggleMode'])) {
-			return $_COOKIE['toggleMode'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleMode'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieToggleClock() {
 
-		if (isset($_COOKIE['toggleClock'])) {
-			return $_COOKIE['toggleClock'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleClock'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieToggleBreadcrumb() {
 
-		if (isset($_COOKIE['toggleBreadcrumb'])) {
-			return $_COOKIE['toggleBreadcrumb'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleBreadcrumb'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieToggleBackgroundLogo() {
 
-		if (isset($_COOKIE['toggleBackgroundLogo'])) {
-			return $_COOKIE['toggleBackgroundLogo'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleBackgroundLogo'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieToggleHints() {
 
-		if (isset($_COOKIE['toggleHints'])) {
-			return $_COOKIE['toggleHints'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleHints'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieToggleFooter() {
 
-		if (isset($_COOKIE['toggleFooter'])) {
-			return $_COOKIE['toggleFooter'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleFooter'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieToggleLiveVisitorCounter() {
 
-		if (isset($_COOKIE['toggleLiveVisitorCounter'])) {
-			return $_COOKIE['toggleLiveVisitorCounter'];
-		} else {
-			return false;
-		}
-
+		$cookie = $_COOKIE['toggleLiveVisitorCounter'] ?? false;
+		return $cookie;
 	}
 
 	public function cookieName() {
 
-		if (isset($_COOKIE['officerName'])) {
-			return $_COOKIE['officerName'];
-		} else {
-			return "";
-		}		
-
+		$cookie = $_COOKIE['officerName'] ?? "";
+		return $cookie;
 	}
 
 	public function cookieRank() {
 
-		if (isset($_COOKIE['officerRank'])) {
-			return $_COOKIE['officerRank'];
-		} else {
-			return "";
-		}
+		$cookie = $_COOKIE['officerRank'] ?? "";
+		return $cookie;
 	}
 
 	public function cookieBadge() {
 
-		if (isset($_COOKIE['officerBadge'])) {
-			return $_COOKIE['officerBadge'];
-		} else {
-			return "";
-		}		
+		$cookie = $_COOKIE['officerBadge'] ?? "";
+		return $cookie;
 	}
 
 	public function cookieCallSign() {
 
-		if (isset($_COOKIE['callSign'])) {
-			return $_COOKIE['callSign'];
-		} else {
-			return "";
-		}
-
+		$cookie = $_COOKIE['callSign'] ?? "";
+		return $cookie;
 	}
 
 	public function cookieDefName() {
 
-		if (isset($_COOKIE['defName'])) {
-			return $_COOKIE['defName'];
-		} else {
-			return "";
-		}		
-
+		$cookie = $_COOKIE['defName'] ?? "";
+		return $cookie;
 	}
 
 	public function cookieDefNameURL() {
 
-		if (isset($_COOKIE['defName'])) {
-			$nameURL = $_COOKIE['defName'];
-			$nameURL = str_replace(" ", "_", $nameURL);
-			return $nameURL;
-		} else {
-			return "";
-		}		
+		$cookie = $_COOKIE['defName'] ?? "";
+		$cookie = str_replace(" ", "_", $cookie);
+		return $cookie;
 	}
 
 	public function cookieTrafficPatrolURL() {
 
-		if (isset($_COOKIE['inputTDPatrolReportURL'])) {
-			return $_COOKIE['inputTDPatrolReportURL'];
-		} else {
-			return "";
-		}
+		$cookie = $_COOKIE['inputTDPatrolReportURL'] ?? "";
+		return $cookie;
 	}
 
 }
