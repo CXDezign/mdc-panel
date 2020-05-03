@@ -385,6 +385,15 @@ optgroup {
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
+#card-generators-impound:hover {
+	box-shadow: <?= $cImpound ?> 0 1px 0px;
+}
+
+#card-generators-impound:hover i {
+	color: <?= $cArrest ?>!important;
+	text-shadow: <?= $cImpound ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
 /*/////////////////////////////////////////////////////////////////////*/
 /* DARKMODE */
 

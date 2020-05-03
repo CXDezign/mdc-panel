@@ -42,6 +42,13 @@
 		"icon": "car-crash"
 	},
 	"6": {
+		"title": "Impound Report",
+		"link": "/paperwork-generators/impound-report",
+		"tooltip": "Generate a impound report.",
+		"card": "card-generators-impound",
+		"icon": "lock"
+	},
+	"7": {
 		"title": "Death Report",
 		"link": "/paperwork-generators/death-report",
 		"tooltip": "Generate a death report.",

@@ -63,6 +63,11 @@
 					</a>
 				</li>
 				<li>
+					<a class="nav-link" href="/paperwork-generators/impound-report">
+						<i class="fas fa-fw fa-lock mr-2"></i>Impound Report
+					</a>
+				</li>
+				<li>
 					<a class="nav-link" href="/paperwork-generators/death-report">
 						<i class="fas fa-fw fa-skull mr-2"></i>Death Report
 					</a>
