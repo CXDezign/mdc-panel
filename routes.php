@@ -54,6 +54,9 @@
 		case '/paperwork-generators/generated-report':
 			require __DIR__ . "/templates/generated-report.php";
 			break;
+		case '/paperwork-generators/impound-report':
+			require __DIR__. "/templates/form-impound-report.php";
+			break;
 		default:
 			http_response_code(404);
 			require __DIR__ . "/templates/page-dashboard.php";

@@ -863,6 +863,88 @@
 				<b>Evidence:</b><br>".$evidence;
 		}
 
+		if ($generatorType == "ImpoundReport") {
+
+			// Variables
+			$redirectPath = "report";
+			$inputDate = $_POST['inputDate'] ?: $g->getDate();
+			$inputTime = $_POST['inputTime'] ?: $g->getTime();
+			$inputDuration = $_POST['inputDuration'];
+
+			$inputVeh = $_POST['inputVeh'] ?: "UNKNOWN VEHICLE";
+			$inputVehPlate = $_POST['inputVehPlate'] ?: "";
+
+			$inputDistrict = $_POST['inputDistrict'] ?: "UNKNOWN DISTRICT";
+			$inputStreet = $_POST['inputStreet'] ?: "UNKNOWN STREET";
+
+			$inputReason = $_POST['inputReason'] ?: 0;
+			$inputFine = $_POST['inputFine'] ?: 0;
+
+			$inputROName = $_POST['inputVehRO'];
+			setcookie("defName",$inputROName,time()+3660,"/");
+
+
+			//Charges
+			$charges = $_POST['inputCrime'];
+
+			// Charge List Builder
+			foreach ($charges as $iCharge => $charge) {
+
+				// Charge Base
+				$charge = $penal[$charge];
+				$chargeID = $charge['id'];
+				$chargeName = $charge['charge'];
+				$chargeOffence = $_POST['inputCrimeOffence'][$iCharge];
+				$chargeFine[] = $charge['fine'][$chargeOffence];
+
+
+				// Charge Classification Builder
+				$chargeClassification = $charge['classification'];
+
+				// Charge Type Builder
+				$chargeType = $_POST['inputCrimeType'][$iCharge];
+				switch ($chargeType) {
+					case 1:
+						$chargeType = "C";
+						break;
+					case 2:
+						$chargeType = "B";
+						break;
+					case 3:
+						$chargeType = "A";
+						break;
+					default:
+						$chargeType = "?";
+						break;
+				}
+
+				// Finalisation Builders
+				$chargeTitle[] = $chargeClassification.$chargeType.' '.$chargeID.'. '.$chargeName;
+
+			}
+
+			if(count($chargeTitle) > 1)
+			{
+				$plural = "(s)";
+			}
+
+			// Charge Resolver
+			$charges = "";
+			foreach ($chargeTitle as $chargeName) {
+				$charges .= $chargeName."<br>";
+			}
+			$inputCrimeFine = $_POST['inputCrimeFine'];
+			$chargeFineTotal = "$".number_format(array_sum($inputCrimeFine));
+
+
+			// Report Builder
+
+			$generatedReportType = "Impound Report";
+			$generatedReport = $generatedReport = "<b><u>Vehicle Information</b></u><br> <b>Make & Model:</b> ".$inputVeh."<br><b>Identification Plate:</b> "
+			.$inputVehPlate."<br><br><b><u>Impound Information </u></b><br><b>Reason".$plural.":</b><br>".$charges."<b>Accumulated Fines:</b> ".$chargeFineTotal."<br><b>Duration of Impound:</b> 
+			".$inputDuration." Days<br> <b>Date and Time:</b> ".strtoupper($inputDate)." at ".$inputTime;
+		}
+
 
 		// Generator Finalisation
 		$_SESSION['generatedReport'] = $generatedReport;
