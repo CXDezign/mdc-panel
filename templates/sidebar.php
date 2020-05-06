@@ -43,6 +43,11 @@
 					</a>
 				</li>
 				<li>
+					<a class="nav-link" href="/paperwork-generators/impound-report">
+						<i class="fas fa-fw fa-truck-pickup mr-2"></i>Impound Report
+					</a>
+				</li>
+				<li>
 					<a class="nav-link" href="/paperwork-generators/parking-ticket">
 						<i class="fas fa-fw fa-parking mr-2"></i>Parking Ticket
 					</a>
@@ -60,11 +65,6 @@
 				<li>
 					<a class="nav-link" href="/paperwork-generators/traffic-division-patrol-report">
 						<i class="fas fa-fw fa-car-crash mr-2"></i>TD: Patrol Report
-					</a>
-				</li>
-				<li>
-					<a class="nav-link" href="/paperwork-generators/impound-report">
-						<i class="fas fa-fw fa-lock mr-2"></i>Impound Report
 					</a>
 				</li>
 				<li>

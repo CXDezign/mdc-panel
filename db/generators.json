@@ -14,39 +14,39 @@
 		"icon": "car"
 	},
 	"2": {
+		"title": "Impound Report",
+		"link": "/paperwork-generators/impound-report",
+		"tooltip": "Generate an impound report.",
+		"card": "card-generators-impound",
+		"icon": "truck-pickup"
+	},
+	"3": {
 		"title": "Parking Ticket",
 		"link": "/paperwork-generators/parking-ticket",
 		"tooltip": "Generate a parking ticket.",
 		"card": "card-generators-parking",
 		"icon": "parking"
 	},
-	"3": {
+	"4": {
 		"title": "Evidence Registration Log",
 		"link": "/paperwork-generators/evidence-registration-log",
 		"tooltip": "Generate an evidence registration log.",
 		"card": "card-generators-evidence",
 		"icon": "cannabis"
 	},
-	"4": {
+	"5": {
 		"title": "Patrol Log",
 		"link": "/paperwork-generators/patrol-log",
 		"tooltip": "Generate a patrol log.",
 		"card": "card-generators-patrol",
 		"icon": "clipboard-list"
 	},
-	"5": {
+	"6": {
 		"title": "TD: Patrol Report",
 		"link": "/paperwork-generators/traffic-division-patrol-report",
 		"tooltip": "Generate a traffic division patrol report.",
 		"card": "card-generators-tdpatrol",
 		"icon": "car-crash"
-	},
-	"6": {
-		"title": "Impound Report",
-		"link": "/paperwork-generators/impound-report",
-		"tooltip": "Generate a impound report.",
-		"card": "card-generators-impound",
-		"icon": "lock"
 	},
 	"7": {
 		"title": "Death Report",

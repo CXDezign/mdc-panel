@@ -869,80 +869,36 @@
 			$redirectPath = "report";
 			$inputDate = $_POST['inputDate'] ?: $g->getDate();
 			$inputTime = $_POST['inputTime'] ?: $g->getTime();
-			$inputDuration = $_POST['inputDuration'];
 
+			$inputName = $_POST['inputName'] ?: "UNKNOWN NAME";
+			setcookie("officerName",$inputName,2147483647,"/");
+			$inputRank = $_POST['inputRank'] ?: 0;
+			setcookie("officerRank",$inputRank,2147483647,"/");
+			$inputBadge = $_POST['inputBadge'] ?: "UNKNOWN BADGE";
+			setcookie("officerBadge",$inputBadge,2147483647,"/");
+
+			$inputVehRO = $_POST['inputVehRO' ?: "UNKNOWN REGISTERED OWNER"];
+			setcookie("defName",$inputVehRO,time()+3660,"/");
 			$inputVeh = $_POST['inputVeh'] ?: "UNKNOWN VEHICLE";
-			$inputVehPlate = $_POST['inputVehPlate'] ?: "";
+			$inputVehPlate = $_POST['inputVehPlate'] ?: "UNKNOWN PLATE";
+			$inputDuration = $_POST['inputDuration'] ?: 0;
 
 			$inputDistrict = $_POST['inputDistrict'] ?: "UNKNOWN DISTRICT";
 			$inputStreet = $_POST['inputStreet'] ?: "UNKNOWN STREET";
 
-			$inputReason = $_POST['inputReason'] ?: 0;
-			$inputFine = $_POST['inputFine'] ?: 0;
-
-			$inputROName = $_POST['inputVehRO'];
-			setcookie("defName",$inputROName,time()+3660,"/");
+			$inputReason = $_POST['inputReason'] ?: "UNKNOWN REASON";
 
 
-			//Charges
-			$charges = $_POST['inputCrime'];
-
-			// Charge List Builder
-			foreach ($charges as $iCharge => $charge) {
-
-				// Charge Base
-				$charge = $penal[$charge];
-				$chargeID = $charge['id'];
-				$chargeName = $charge['charge'];
-				$chargeOffence = $_POST['inputCrimeOffence'][$iCharge];
-				$chargeFine[] = $charge['fine'][$chargeOffence];
-
-
-				// Charge Classification Builder
-				$chargeClassification = $charge['classification'];
-
-				// Charge Type Builder
-				$chargeType = $_POST['inputCrimeType'][$iCharge];
-				switch ($chargeType) {
-					case 1:
-						$chargeType = "C";
-						break;
-					case 2:
-						$chargeType = "B";
-						break;
-					case 3:
-						$chargeType = "A";
-						break;
-					default:
-						$chargeType = "?";
-						break;
-				}
-
-				// Finalisation Builders
-				$chargeTitle[] = $chargeClassification.$chargeType.' '.$chargeID.'. '.$chargeName;
-
-			}
-
-			if(count($chargeTitle) > 1)
-			{
-				$plural = "(s)";
-			}
-
-			// Charge Resolver
-			$charges = "";
-			foreach ($chargeTitle as $chargeName) {
-				$charges .= $chargeName."<br>";
-			}
-			$inputCrimeFine = $_POST['inputCrimeFine'];
-			$chargeFineTotal = "$".number_format(array_sum($inputCrimeFine));
+			// Officer Resolver
+			$officers = "<b>".$pg->getRank($inputRank,1)." ".$inputName."</b> (<b>#".$inputBadge."</b>), ";
 
 
 			// Report Builder
-
 			$generatedReportType = "Impound Report";
-			$generatedReport = $generatedReport = "<b><u>Vehicle Information</b></u><br> <b>Make & Model:</b> ".$inputVeh."<br><b>Identification Plate:</b> "
-			.$inputVehPlate."<br><br><b><u>Impound Information </u></b><br><b>Reason".$plural.":</b><br>".$charges."<b>Accumulated Fines:</b> ".$chargeFineTotal."<br><b>Duration of Impound:</b> 
-			".$inputDuration." Days<br> <b>Date and Time:</b> ".strtoupper($inputDate)." at ".$inputTime;
+			$generatedReport = $officers.' on the <b>'.strtoupper($inputDate).'</b>, <b>'.$inputTime.'</b>.<br>Impounded a <b>'.$inputVeh.'</b>, '.$pg->getVehiclePlates($inputVehPlate,0).', for '.$inputDuration.' days, '.$pg->getVehicleRO($inputVehRO).', on <b>'.$inputStreet.'</b>, <b>'.$inputDistrict.'</b>.<br>
+
+				<b>Impound Reason:</b>
+				<ul><li>'.$inputReason.'</li></ul>';
 		}
 
 

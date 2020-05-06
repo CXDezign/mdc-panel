@@ -28,11 +28,12 @@
 	$cResources = "#8764d7";
 	$cArrest = "#cbc2c5";
 	$cTraffic = "#c9222e";
+	$cImpound = "#fedd3c";
 	$cParking = "#0066b2";
 	$cEvidence = "#7da522";
-	$cDeath = "#8e8449";
-	$cTDpatrol = "#e36528";
 	$cPatrol = "#11cab9";
+	$cTDpatrol = "#e36528";
+	$cDeath = "#8e8449";
 
 ?>
 
@@ -340,6 +341,15 @@ optgroup {
 	text-shadow: <?= $cTraffic ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
+#card-generators-impound:hover {
+	box-shadow: <?= $cImpound ?> 0 1px 0px;
+}
+
+#card-generators-impound:hover i {
+	color: <?= $cImpound ?>!important;
+	text-shadow: <?= $cImpound ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
 #card-generators-parking:hover {
 	box-shadow: <?= $cParking ?> 0 1px 0px;
 }
@@ -383,15 +393,6 @@ optgroup {
 #card-generators-patrol:hover i {
 	color: <?= $cPatrol ?>!important;
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
-}
-
-#card-generators-impound:hover {
-	box-shadow: <?= $cImpound ?> 0 1px 0px;
-}
-
-#card-generators-impound:hover i {
-	color: <?= $cArrest ?>!important;
-	text-shadow: <?= $cImpound ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
 /*/////////////////////////////////////////////////////////////////////*/
@@ -629,6 +630,14 @@ small.text-muted {
 
 #card-generators-traffic:hover i {
 	text-shadow: <?= $cTraffic ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-impound:hover {
+	box-shadow: <?= $cImpound ?>80 0 -1px 0px;
+}
+
+#card-generators-impound:hover i {
+	text-shadow: <?= $cImpound ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
 }
 
 #card-generators-parking:hover {
