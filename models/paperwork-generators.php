@@ -265,7 +265,7 @@ class PaperworkGenerators {
 
 		foreach ($tints as $tint) {
 
-			$statement = '<option value=".$tintCount.">'.$tint.'</option>';
+			$statement = '<option value="'.$tintCount.'">'.$tint.'</option>';
 
 			if (in_array($tint, $legalTintLevels)) {
 				$groupTintLegal .= $statement;

@@ -189,6 +189,11 @@ optgroup {
 	min-width: 260px;
 	max-width: 260px;
 	background-color: #282828;
+	overflow-y: auto;
+}
+
+#sidebar ul {
+	margin-bottom: 75px;
 }
 
 #sidebar a {

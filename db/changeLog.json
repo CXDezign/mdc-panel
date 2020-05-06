@@ -1,4 +1,16 @@
 {
+	"1.9.6": {
+		"id": "1.9.6",
+		"date": "06/MAY/2020",
+		"changes": {
+			"1": "General - OpenGraph details updated. (Logo and URL fixes for when linking the site in Discord to display short previews.)",
+			"2": "Sidebar - The sidebar is now scrollable if content is overflown.",
+			"3": "Sidebar - Current version of the MDC Panel is now displayed on the Changelog link instead of underneath the logo.",
+			"4": "Traffic Report Generator - Tint level fix. (Credit: Humour for finding the bug.)",
+			"5": "Impound Report Generator - Initial commit. (Credit: Skent)",
+			"6": "Impound Report Generator - Form and report structure adjustments and multiple small fixes and tweaks in both back-end and visual code."
+		}
+	},
 	"1.9.5": {
 		"id": "1.9.5",
 		"date": "01/MAY/2020",

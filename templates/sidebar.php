@@ -1,7 +1,6 @@
 <nav id="sidebar">
 	<div class="text-center my-3">
 		<a class="d-block" href="/"><img src="/images/Logo-MDC.png" width="175px"></a>
-		<a href="/changelogs#<?= $g->getVersion() ?>"><span class="badge badge-light"><?= $g->getVersion() ?></span></a>
 	</div>
 	<?php
 		if ($g->cookieToggleClock() == false) {
@@ -136,8 +135,8 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/changelogs">
-				<i class="fas fa-fw fa-plug mr-2"></i>Changelogs
+			<a class="nav-link" href="/changelogs#<?= $g->getVersion() ?>">
+				<i class="fas fa-fw fa-plug mr-2"></i>Changelogs<span class="badge badge-danger ml-3"><?= $g->getVersion() ?></span>
 			</a>
 		</li>
 	</ul>
