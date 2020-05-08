@@ -172,6 +172,10 @@ optgroup {
 	text-shadow: 0 1px 2px #00000040!important;
 }
 
+#breadcrumb li {
+	margin-bottom: 10px;
+}
+
 #breadcrumb li a {
 	background-color: rgba(255,255,255,1);
 	padding: 4px 16px;
@@ -192,7 +196,7 @@ optgroup {
 	overflow-y: auto;
 }
 
-#sidebar ul {
+#sidebar, ul {
 	margin-bottom: 75px;
 }
 

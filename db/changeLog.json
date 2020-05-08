@@ -1,4 +1,11 @@
 {
+	"1.9.7": {
+		"id": "1.9.7",
+		"date": "08/MAY/2020",
+		"changes": {
+			"1": "Sidebar - Fixed bottom margin on toggle-able menus."
+		}
+	},
 	"1.9.6": {
 		"id": "1.9.6",
 		"date": "06/MAY/2020",

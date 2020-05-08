@@ -78,7 +78,7 @@
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/">
-				<i class="fas fa-fw fa-balance-scale mr-2"></i>San Andreas Penal Code<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i>
+				<i class="fas fa-fw fa-balance-scale mr-2"></i>Penal Code<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i>
 			</a>
 		</li>
 		<li class="nav-item">

@@ -42,7 +42,7 @@
 				<div class="card card-panel bg-dark text-white" id="card-main-penal">
 					<div class="card-body shadow">
 						<p class="card-text text-right float-right"><i class="fas fa-fw fa-7x fa-balance-scale text-muted"></i></p>
-						<h5 class="card-title">San Andreas Penal Code</h5>
+						<h5 class="card-title">Penal Code</h5>
 						<p class="card-text">Access the San Andreas Penal Code.</p>
 					</div>
 				</div>
