@@ -1,63 +1,107 @@
+<br>
 <p align="center">
   <img src="https://xanx.co.uk/images/Logo-MDC.png">
 </p>
 
 # MDC Panel
-
-Multi-functional tools, generators, and resources for official government use. (GTA V - RageMP - GTA World).
-
-<a href="https://gta.world/">RageMP - GTA:V Community Multiplayer Platform</a><br>
-<a href="https://gta.world/">GTA World - Roleplay Community</a>
+<dl>
+  <dd>Multi-functional tools, generators, and resources for official government use. (GTA V - RageMP - GTA World).</dd>
+  <dd>
+    <a href="https://gta.world/">RageMP - GTA:V Community Multiplayer Platform</a><br>
+    <a href="https://gta.world/">GTA World - Roleplay Community</a>
+  </dd>
+</dl>
 
 ## Getting Started
 
-These instructions will explain on how to obtain a working copy of the project up and running onto your local machine.
+<dl>
+  <dd>These instructions will explain on how to obtain a working copy of the project up and running onto your local machine.</dd>
+  <dd>See the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.</dd>
+</dl>
 
-See the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.
+---
 
 ### Prerequisites & Requirements
 
-Web-development platforms (such as <b>WAMP</b>, <b>XAMP</b>) which include the following software is required in order to run the project on a local machine.
-```
- Apache2
- PHP 7+
-```
+<dl>
+  <dd>Web-development platforms (such as <b>WAMP</b>, <b>XAMP</b>) which include the following software is required in order to run the project on a local machine.</dd>
+<dd>
+<pre>Apache2
+PHP 7+</pre>
+</dd>
+</dl>
+
+---
 
 ### Deployment
 
-The following steps will, in brief, explain how to setup your project up and running onto your local machine for development and testing purposes.
+<dl>
+  <dd>The following steps will, in brief, explain how to setup your project up and running onto your local machine for development and testing purposes.</dd>
+
+<dd>
 
 #### 1. Local Respository
-Download the project repository to your local machine under any development path. (e.g. <i>X:/Your/Path/To/MDC-Panel</i>)
+
+<dl>
+  <dd>Download the project repository to your local machine under any development path. (e.g. <i>X:/Your/Path/To/MDC</i></dd>
+</dl>
+
 #### 2. Virtual Hosts
-Using your web-development platform of choice, create a new <b>VirtualHost</b>. This is usually the `httpd-vhosts.conf` file, however, filenames may vary on development platform basis and therefore you should research on how to accesss such a file if not knowledgable in this area.
+
+<dl>
+  <dd>Using your web-development platform of choice, create a new <b>VirtualHost</b>. This is usually the <code>httpd-vhosts.conf</code> file, however, filenames may vary on development platform basis and therefore you should research on how to accesss such a file if not knowledgable in this area.</dd>
+<dd>
+	
 ```
 <VirtualHost *:80>
-  ServerName MDC
-  DocumentRoot "X:/Your/Path/To/MDC-Panel"
-  <Directory  "X:/Your/Path/To/MDC-Panel/">
-    Options +Indexes +Includes +FollowSymLinks +MultiViews
-    AllowOverride All
-    Require local
-  </Directory>
+	ServerName MDC
+	DocumentRoot "X:/Your/Path/To/MDC"
+	<Directory  "X:/Your/Path/To/MDC/">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require local
+	</Directory>
 </VirtualHost>
 ```
+	
+</dd>
+</dl>
+
 #### 3. Local Machine Hosts File
-Access your machine's hosts file to override the <b>Domain Name System</b> (<b>DNS</b>) for a local machine domain to gain easier access to the website.
 
-  ##### Windows<br>
-  <i>a.</i> Open Command Prompt with Administrator Privileges<br>
-  <i>b.</i> Enter the following: `notepad C:\Windows\System32\drivers\etc\hosts`<br>
-  
-  ##### Linux<br>
-  <i>a.</i> Open Terminal<br>
-  <i>b.</i> Enter the following: `sudo nano /etc/hosts`<br>
+<dl>
+	<dd>Access your machine's hosts file to override the <b>Domain Name System</b> (<b>DNS</b>) for a local machine domain to gain easier access to the website.</dd>
 
-Add the following line at the bottom of the hosts file: `127.0.0.1 MDC.dev`<br>
-Save the hosts file.
+<dd>
+
+##### Windows
+
+<b>a.</b> Open Command Prompt with Administrator Privileges<br>
+<b>b.</b> Enter the following: <code>notepad C:\Windows\System32\drivers\etc\hosts</code>
+</dd>
+
+<dd>
+
+##### Linux
+
+<b>a.</b> Open Terminal<br>
+<b>b.</b> Enter the following: <code>sudo nano /etc/hosts</code>
+</dd>
+
+<dd>Add the following line at the bottom of the hosts file: <code>127.0.0.1 MDC.dev</code>
+Save the hosts file.</dd>
+</dl>
 
 #### 4. Local Website Access
-Turn on your web-development platform and access the local website for development/testing purposes. <a href="http://MDC.dev">http://MDC.dev</a>
+
+<dl>
+	<dd>Turn on your web-development platform and access the local website for development/testing purposes.</dd>
+	<dd><a href="http://MDC.dev">http://MDC.dev</a></dd>
+</dl>
+</dd>
+</dl>
+
+---
 
 ## Built With
 
