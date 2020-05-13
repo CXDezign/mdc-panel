@@ -3,7 +3,9 @@
 		"id": "1.9.7",
 		"date": "08/MAY/2020",
 		"changes": {
-			"1": "Sidebar - Fixed bottom margin on toggle-able menus."
+			"1": "General - MDC Panel Project has been made open-source. <a href='https://github.com/xanxTV/MDC-Panel'>GitHub - MDC Panel</a>",
+			"2": "Sidebar - Fixed bottom margin on toggle-able menus.",
+			"3": "General - San Andreas Penal Code references changed to just Penal Code."
 		}
 	},
 	"1.9.6": {
