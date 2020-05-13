@@ -19,8 +19,7 @@
   <dd>See the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.</dd>
 </dl>
 
----
-
+#
 ### Prerequisites & Requirements
 
 <dl>
@@ -31,8 +30,7 @@ PHP 7+</pre>
 </dd>
 </dl>
 
----
-
+#
 ### Deployment
 
 <dl>
@@ -43,7 +41,7 @@ PHP 7+</pre>
 #### 1. Local Respository
 
 <dl>
-  <dd>Download the project repository to your local machine under any development path. (e.g. <i>X:/Your/Path/To/MDC</i></dd>
+  <dd>Download the project repository to your local machine under any development path. e.g. <i>X:/Your/Path/To/MDC</i></dd>
 </dl>
 
 #### 2. Virtual Hosts
@@ -54,13 +52,16 @@ PHP 7+</pre>
 	
 ```
 <VirtualHost *:80>
+
 	ServerName MDC
 	DocumentRoot "X:/Your/Path/To/MDC"
+	
 	<Directory  "X:/Your/Path/To/MDC/">
 		Options +Indexes +Includes +FollowSymLinks +MultiViews
 		AllowOverride All
 		Require local
 	</Directory>
+	
 </VirtualHost>
 ```
 	
@@ -76,16 +77,16 @@ PHP 7+</pre>
 
 ##### Windows
 
-<b>a.</b> Open Command Prompt with Administrator Privileges<br>
-<b>b.</b> Enter the following: <code>notepad C:\Windows\System32\drivers\etc\hosts</code>
+* Open Command Prompt with Administrator Privileges
+* Enter the following: <code>notepad C:\Windows\System32\drivers\etc\hosts</code>
 </dd>
 
 <dd>
 
 ##### Linux
 
-<b>a.</b> Open Terminal<br>
-<b>b.</b> Enter the following: <code>sudo nano /etc/hosts</code>
+* Open Terminal
+* Enter the following: <code>sudo nano /etc/hosts</code>
 </dd>
 
 <dd>Add the following line at the bottom of the hosts file: <code>127.0.0.1 MDC.dev</code>
@@ -95,13 +96,13 @@ Save the hosts file.</dd>
 #### 4. Local Website Access
 
 <dl>
-	<dd>Turn on your web-development platform and access the local website for development/testing purposes.</dd>
-	<dd><a href="http://MDC.dev">http://MDC.dev</a></dd>
+<dd>Turn on your web-development platform and access the local website for development/testing purposes.</dd>
+<dd><a href="http://MDC.dev">http://MDC.dev</a></dd>
 </dl>
 </dd>
 </dl>
 
----
+#
 
 ## Built With
 
