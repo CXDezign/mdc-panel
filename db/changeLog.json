@@ -1,7 +1,7 @@
 {
 	"1.9.7": {
 		"id": "1.9.7",
-		"date": "08/MAY/2020",
+		"date": "13/MAY/2020",
 		"changes": {
 			"1": "General - MDC Panel Project has been made open-source. <a href='https://github.com/xanxTV/MDC-Panel'>GitHub - MDC Panel</a>",
 			"2": "Sidebar - Fixed bottom margin on toggle-able menus.",
