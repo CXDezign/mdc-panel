@@ -4,40 +4,34 @@
 </p>
 
 # MDC Panel
-<dl>
-  <dd>Multi-functional tools, generators, and resources for official government use. (GTA V - RageMP - GTA World).</dd>
-  <dd>
-    <a href="https://gta.world/">RageMP - GTA:V Community Multiplayer Platform</a><br>
-    <a href="https://gta.world/">GTA World - Roleplay Community</a>
-  </dd>
-</dl>
+The following web-application is a hub for links, multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing the paperwork for official GTA World government agencies such as the LSPD, LSSD, LSFD. (GTA V - RageMP - GTA World)
+* <a href="https://gta.world/">RageMP - GTA:V Multiplayer Platform</a>
+* <a href="https://gta.world/">GTA World - Roleplay Community</a>
+
+#### Features
+* Simple and fast form fill-out process for reports, threads, general paperwork.
+* Dynamic site elements. (Live clock, Breadcrumb, Day & Night Mode)
+* Cookies saving user details upon submission. (Officer Name, Rank, Badge, Call Signs)
+* Dynamic input fields, slots, and forms.
+* Automatic HTML code or BBCode generation.
+* Friendly copy and paste procedure.
 
 ## Getting Started
+These instructions will explain on how to obtain a working copy of the project up and running onto your local machine.
 
-<dl>
-  <dd>These instructions will explain on how to obtain a working copy of the project up and running onto your local machine.</dd>
-  <dd>See the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.</dd>
-</dl>
+See the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.
 
 #
 ### Prerequisites & Requirements
-
-<dl>
-  <dd>Web-development platforms (such as <b>WAMP</b>, <b>XAMP</b>) which include the following software is required in order to run the project on a local machine.</dd>
-<dd>
+Web-development platforms (such as <b>WAMP</b>, <b>XAMP</b>) which include the following software is required in order to run the project on a local machine.
 <pre>Apache2
 PHP 7+</pre>
-</dd>
-</dl>
 
 #
 ### Deployment
-
-<dl>
-  <dd>The following steps will, in brief, explain how to setup your project up and running onto your local machine for development and testing purposes.</dd>
-
-<dd>
-
+The following steps will, in brief, explain how to setup your project up and running onto your local machine for development and testing purposes.
+<dl><dd>
+	
 #### 1. Local Respository
 
 <dl>
@@ -116,8 +110,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Contributors
 
-* **xanxTV** - *Creator*. - [xanxTV](https://github.com/xanxTV)
-* **Skenticus** - *Arrest Report, Patrol Log, Impound Report Generators*. - [Skenticus](https://github.com/Skenticus)
-* **Callump01** - *Contributor*. - [Callump01](https://github.com/Callump01)
+* **xanxTV** - *Creator* - [xanxTV](https://github.com/xanxTV)
+* **Skenticus** - *Arrest Report, Patrol Log, Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
+* **Callump01** - *Contributor* - [Callump01](https://github.com/Callump01)
 * **Cascade** - *Base Leaflet code*.
 * **Spartan** - *Constant suggestions and interest in the project*.
