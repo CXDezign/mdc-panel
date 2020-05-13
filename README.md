@@ -5,6 +5,7 @@
 
 # MDC Panel
 The following web-application is a hub for links, multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing the paperwork for official GTA World government agencies such as the LSPD, LSSD, LSFD. (GTA V - RageMP - GTA World)
+* <a href="https://xanx.co.uk/">MDC Panel</a>
 * <a href="https://gta.world/">RageMP - GTA:V Multiplayer Platform</a>
 * <a href="https://gta.world/">GTA World - Roleplay Community</a>
 
@@ -46,16 +47,13 @@ The following steps will, in brief, explain how to setup your project up and run
 	
 ```
 <VirtualHost *:80>
-
 	ServerName MDC
 	DocumentRoot "X:/Your/Path/To/MDC"
-	
 	<Directory  "X:/Your/Path/To/MDC/">
 		Options +Indexes +Includes +FollowSymLinks +MultiViews
 		AllowOverride All
 		Require local
 	</Directory>
-	
 </VirtualHost>
 ```
 	
@@ -104,14 +102,18 @@ Save the hosts file.</dd>
 * [FontAwesome](https://fontawesome.com/) - Font Icon Toolkit
 * [Leaflet](https://leafletjs.com/) - Web Mapping Application
 
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/xanxTV/MDC-Panel/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/xanxTV/MDC-Panel/tags). 
 
 ## Contributors
 
-* **xanxTV** - *Creator* - [xanxTV](https://github.com/xanxTV)
-* **Skenticus** - *Arrest Report, Patrol Log, Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
-* **Callump01** - *Contributor* - [Callump01](https://github.com/Callump01)
-* **Cascade** - *Base Leaflet code*.
+* **xanx** - *Creator* - [xanxTV](https://github.com/xanxTV)
+* **Skent** - *Arrest Report, Patrol Log, Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
+* **Callum** - *Contributor* - [Callump01](https://github.com/Callump01)
+* **Cascade** - *Base Leaflet code* - [Cascadee88](https://github.com/Cascadee88)
 * **Spartan** - *Constant suggestions and interest in the project*.
