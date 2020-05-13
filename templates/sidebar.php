@@ -139,5 +139,10 @@
 				<i class="fas fa-fw fa-plug mr-2"></i>Changelogs<span class="badge badge-danger ml-3"><?= $g->getVersion() ?></span>
 			</a>
 		</li>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" href="https://github.com/xanxTV/MDC-Panel/">
+				<i class="fab fa-fw fa-github mr-2"></i>GitHub Project<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i>
+			</a>
+		</li>
 	</ul>
 </nav>
