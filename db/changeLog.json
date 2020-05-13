@@ -1,4 +1,16 @@
 {
+	"1.9.8": {
+		"id": "1.9.8",
+		"date": "13/MAY/2020",
+		"changes": {
+			"1": "General - Improve mobile device user-experience with appropriate scalings to content throughout the website.",
+			"2": "General - Small dark mode input field fixes.",
+			"3": "Sidebar - The sidebar now collapses on mobile devices.",
+			"4": "Sidebar - Updated menu item icons for LSPD, LSSD, and LSFD to their respective logos.",
+			"5": "Sidebar - Removed MDC Panel LSPD thread link.",
+			"6": "Footer - Updated the footer position and fixed visual bugs."
+		}
+	},
 	"1.9.7": {
 		"id": "1.9.7",
 		"date": "13/MAY/2020",
