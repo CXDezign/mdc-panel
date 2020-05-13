@@ -11,7 +11,9 @@ Multi-functional tools, generators, and resources for official government use. (
 
 ## Getting Started
 
-These instructions will explain on how to obtain a working copy of the project up and running onto your local machine. See  the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.
+These instructions will explain on how to obtain a working copy of the project up and running onto your local machine.
+
+See the <b>Deployment</b> section for further instructions on how to setup the project after going through the <b>Prerequisites & Requirements</b> section.
 
 ### Prerequisites & Requirements
 
@@ -29,7 +31,6 @@ The following steps will, in brief, explain how to setup your project up and run
 Download the project repository to your local machine under any development path. (e.g. <i>X:/Your/Path/To/MDC-Panel</i>)
 #### 2. Virtual Hosts
 Using your web-development platform of choice, create a new <b>VirtualHost</b>. This is usually the `httpd-vhosts.conf` file, however, filenames may vary on development platform basis and therefore you should research on how to accesss such a file if not knowledgable in this area.
-
 ```
 <VirtualHost *:80>
   ServerName MDC
@@ -52,10 +53,11 @@ Access your machine's hosts file to override the <b>Domain Name System</b> (<b>D
   <i>a.</i> Open Terminal<br>
   <i>b.</i> Enter the following: `sudo nano /etc/hosts`<br>
 
-Add the following line at the bottom of the hosts file and save: `127.0.0.1 MDC.dev`
-<br>
-#### 4. Local Website
-Access the local website for development/testing purposes. <a href="http://MDC.dev">http://MDC.dev</a>
+Add the following line at the bottom of the hosts file: `127.0.0.1 MDC.dev`<br>
+Save the hosts file.
+
+#### 4. Local Website Access
+Turn on your web-development platform and access the local website for development/testing purposes. <a href="http://MDC.dev">http://MDC.dev</a>
 
 ## Built With
 
