@@ -142,9 +142,15 @@ optgroup {
 // FOOTER //
 //////////*/
 
-.footerContainer {
-	position: relative;
+.footer-container {
+	position: fixed;
 	z-index: -1000;
+	left: 0;
+	bottom: 0;
+	width: calc(100vw - 260px);
+	margin-left: 260px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	background-color: #eeeeee;
 }
 
 #footer {
@@ -173,7 +179,7 @@ optgroup {
 }
 
 #breadcrumb li {
-	margin-bottom: 10px;
+
 }
 
 #breadcrumb li a {
@@ -194,6 +200,20 @@ optgroup {
 	max-width: 260px;
 	background-color: #282828;
 	overflow-y: auto;
+}
+
+#sidebar-logo {
+	background: url("/images/Logo-MDC.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 200px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+#sidebar-logo img {
+	display: none;
 }
 
 #sidebar, ul {
@@ -233,12 +253,126 @@ optgroup {
 	border-radius: 5px;
 }
 
+#sidebar li img {
+	transform: scale(1.1);
+}
+
 #timestamp {
 	color: #FFF;
 	font-size: 18px;
 	letter-spacing: 2px;
 	font-weight: 600;
 	text-shadow: 0 2px 4px #000000!important;
+}
+
+@media (max-width: 768px) {
+
+	body #container {
+		background-size: 250px 250px;
+		background-position: calc(50% + 50px) 50%;
+	}
+
+	#sidebar {
+		min-width: 100px;
+		max-width: 100px;
+	}
+
+	#sidebar-logo {
+		background: url("/favicon.png");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+	}
+
+	#container {
+		display: block;
+		width: calc(100vw - 100px);
+		margin-left: 100px;
+	}
+
+	#map {
+		width: calc(100% - 100px)!important;
+		left: 100px!important;
+	}
+
+	#sidebar .icon-text {
+		display: none;
+	}
+
+	#sidebar a {
+		text-align: center;
+	}
+
+	#sidebar i, #sidebar img {
+		margin-right: 0!important;
+		font-size: 16px;
+	}
+
+	#sidebar img {
+		transform: scale(1.4)!important;
+	}
+
+	.dropdown-toggle::after {
+		content: unset;
+	}
+
+	.container-time {
+		padding: 0 0!important;
+	}
+
+	.sidebar-visitor-text {
+		display: none;
+	}
+
+	.footer-container {
+		width: calc(100vw - 100px);
+		margin-left: 100px;
+	}
+
+	#sidebar #timestamp {
+		background-color: unset;
+		font-size: 14px;
+	}
+
+	.container h1 {
+		font-size: 1.5rem!important;
+	}
+
+	.card .card-description {
+		display: none;
+	}
+
+	.card .card-icon {
+		float: unset!important;
+		text-align: center!important;
+	}
+
+	.card .card-title {
+		text-align: center;
+	}
+
+}
+
+@media (max-width: 991px) {
+
+	.breadcrumb-item {
+		display: block!important;
+		padding-left: unset!important;
+		padding-bottom: 10px;
+	}
+
+	.breadcrumb-item::before {
+		padding-right: unset!important;
+		content: ""!important;
+	}
+
+	.breadcrumb-item:last-of-type {
+		padding-bottom: 0px;
+	}
+
 }
 
 /*//////////////
@@ -272,6 +406,11 @@ optgroup {
 
 .card {
 	border: unset!important;
+}
+
+.card-icon {
+	text-align: right;
+	float: right;
 }
 
 .card.text-white {
@@ -452,9 +591,9 @@ small.text-muted {
 	font-weight: 400;
 	line-height: 1.5;
 	color: #ffffff;
-	background-color: #313131;
+	background-color: #282828;
 	background-clip: padding-box;
-	border: 1px solid #313131;
+	border: 1px solid #282828;
 	border-radius: .25rem;
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
@@ -496,15 +635,15 @@ small.text-muted {
 }
 
 .input-group .bootstrap-select.form-control .dropdown-toggle {
-	background: #313131;
+	background: #282828;
 	color: #fff;
 	border: 1px solid transparent;
 }
 
 .dropdown-toggle.btn-light {
 	color: #fff;
-	background-color: #313131;
-	border-color: #313131;
+	background-color: #282828;
+	border-color: #282828;
 }
 
 .btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
@@ -566,6 +705,15 @@ small.text-muted {
 
 #breadcrumb {
 	border-bottom: 1px solid rgba(0,0,0,.2)!important;
+}
+
+/*//////////
+// FOOTER //
+//////////*/
+
+.footer-container {
+	border-top: 1px solid rgba(0,0,0,.1);
+	background-color: #1f1f1f;
 }
 
 /*/////////
