@@ -1,6 +1,6 @@
 {
-	"1.9.9": {
-		"id": "1.9.9",
+	"1.10.0": {
+		"id": "1.10.0",
 		"date": "26/MAY/2020",
 		"changes": {
 			"1": "General - Deprecated files, HTML & JS code removal/fixups.",

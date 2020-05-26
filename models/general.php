@@ -12,11 +12,11 @@ class General {
 			case 'site-name':
 				return "MDC Panel";
 			case 'site-version':
-				return "1.9.9";
+				return "1.10.0";
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
-				return "mdc.xanx.co.uk/images/Logo-MDC.png";
+				return "http://mdc.xanx.co.uk/images/Logo-MDC.png";
 			case 'site-description':
 				return "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
 			case 'url-penal-code':
