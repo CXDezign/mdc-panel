@@ -1,6 +1,13 @@
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=security_rating)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=alert_status)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=code_smells)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=bugs)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
 <br>
 <p align="center">
-  <img src="https://xanx.co.uk/images/Logo-MDC.png">
+  <img src="https://mdc.xanx.co.uk/images/Logo-MDC.png">
 </p>
 
 # MDC Panel
