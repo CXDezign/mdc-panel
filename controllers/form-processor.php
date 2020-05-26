@@ -8,6 +8,7 @@
 	require '../models/paperwork-generators.php';
 	$g = new General();
 	$pg = new PaperworkGenerators();
+	$ar = new ArrestReportGenerator();
 	$er = new EvidenceRegistrationLogGenerator();
 	$pt = new ParkingTicketGenerator();
 
@@ -189,7 +190,7 @@
 			// Wristband & Bracelet Resolver
 			$wristbandBracelet = "";
 			if ($inputWristband != 0 || $inputBracelet != 0) {
-				$wristbandBracelet = "<strong>".$pg->getBracelet($inputBracelet)." & ".$pg->getWristband($inputWristband)."</strong>.";
+				$wristbandBracelet = "<strong>".$ar->getBracelet($inputBracelet)." & ".$ar->getWristband($inputWristband)."</strong>.";
 			}
 
 
@@ -206,7 +207,7 @@
 			 conducted an arrest on <strong>".$postInputDefName."</strong>
 			 on the <strong>".strtoupper($postInputDate)."</strong>, <strong>".$postInputTime."</strong>.
 			 The suspect apprehension took place on <strong>".$postInputStreet.", ".$postInputDistrict."</strong>.<br>"
-			 .$wristbandBracelet."<br>".$pg->getPlea($inputPlea, $postInputDefName)."<br><br>"
+			 .$wristbandBracelet."<br>".$ar->getPlea($inputPlea, $postInputDefName)."<br><br>"
 			 .nl2br($inputNarrative).$evidence."<br><br>".$pg->getDashboardCamera($inputDashcam);
 			$showGeneratedArrestChargeTables = $_SESSION['showGeneratedArrestChargeTables'];
 			$generatedArrestChargeList = $_SESSION['generatedArrestChargeList'];
