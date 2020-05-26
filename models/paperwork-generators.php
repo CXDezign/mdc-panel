@@ -213,25 +213,6 @@ class PaperworkGenerators {
 		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
 	}	
 
-	public function itemCategoryChooser() {
-
-		$items = file('resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
-		$itemCount = 0;
-
-		foreach ($items as $item) {
-			echo "<option value=".$itemCount.">".$item."</option>";
-			$itemCount++;
-		}
-
-	}
-
-	public function getItemCategory($input) {
-
-		$items = file('../resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
-		return $items[$input];
-
-	}
-
 	public function licenseChooser() {
 
 		$licenses = file('resources/licensesList.txt');
@@ -280,67 +261,6 @@ class PaperworkGenerators {
 		}
 
 		echo '<optgroup label="Legal">'.$groupTintLegal.'</optgroup> <optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
-
-	}
-
-	public function illegalParkingChooser() {
-
-		$illegalParkingReasons = file ('resources/illegalParkingList.txt');
-		$illegalParkingReasonsCount = 0;
-
-		$groupTrafficRelated = "";
-		$groupParkingRelated = "";
-		$groupTransportRelated = "";
-		$groupPropertyRelated = "";
-		$groupPedestrianTraffic = "";
-
-		$reasonsTR = array(1,2,3,4);
-		$reasonsPR = array(5,6,7);
-		$reasonsTrR = array(8,9,10);
-		$reasonsPrR = array(11,12,13);
-		$reasonsPT = array(14,15,16);
-
-		foreach ($illegalParkingReasons as $illegalParkingReason) {
-
-			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
-
-			if ($illegalParkingReasonsCount == 0) {
-				$groupDisabled = '<option value="" selected disbaled>'.$illegalParkingReason.'</option>';
-			}
-
-			if (in_array($illegalParkingReasonsCount, $reasonsTR)) {
-				$groupTrafficRelated .= $statement;
-			}
-			if (in_array($illegalParkingReasonsCount, $reasonsPR)) {
-				$groupParkingRelated .= $statement;
-			}
-			if (in_array($illegalParkingReasonsCount, $reasonsTrR)) {
-				$groupTransportRelated .= $statement;
-			}
-			if (in_array($illegalParkingReasonsCount, $reasonsPrR)) {
-				$groupPropertyRelated .= $statement;
-			}
-			if (in_array($illegalParkingReasonsCount, $reasonsPT)) {
-				$groupPedestrianTraffic .= $statement;
-			}
-
-			$illegalParkingReasonsCount++;
-		}
-
-		echo $groupDisabled.'
-		<optgroup label="Traffic Related">'.$groupTrafficRelated.'</optgroup>
-		<optgroup label="Parking Related">'.$groupParkingRelated.'</optgroup>
-		<optgroup label="Transport Related">'.$groupTransportRelated.'</optgroup>
-		<optgroup label="Property Related">'.$groupPropertyRelated.'</optgroup>
-		<optgroup label="Pedestrian Traffic">'.$groupPedestrianTraffic.'</optgroup>';
-
-	}
-	
-	public function getIllegalParking($input) {
-
-		$illegalParkingReasons = file('../resources/illegalParkingList.txt', FILE_IGNORE_NEW_LINES);
-
-		return $illegalParkingReasons[$input];
 
 	}
 
@@ -429,6 +349,10 @@ class PaperworkGenerators {
 		}
 
 	}
+
+}
+
+Class ArrestReportGenerator extends PaperworkGenerators {
 
 	public function braceletChooser() {
 
@@ -522,6 +446,95 @@ class PaperworkGenerators {
 				break;
 		}
 		return '<b>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</b>';
+	}
+
+}
+
+
+class EvidenceRegistrationLogGenerator extends PaperworkGenerators {
+
+	public function itemCategoryChooser() {
+
+		$items = file('resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
+		$itemCount = 0;
+
+		foreach ($items as $item) {
+			echo "<option value=".$itemCount.">".$item."</option>";
+			$itemCount++;
+		}
+
+	}
+
+	public function getItemCategory($input) {
+
+		$items = file('../resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
+		return $items[$input];
+
+	}
+
+}
+
+class ParkingTicketGenerator extends PaperworkGenerators {
+
+	public function illegalParkingChooser() {
+
+		$illegalParkingReasons = file ('resources/illegalParkingList.txt');
+		$illegalParkingReasonsCount = 0;
+
+		$groupTrafficRelated = "";
+		$groupParkingRelated = "";
+		$groupTransportRelated = "";
+		$groupPropertyRelated = "";
+		$groupPedestrianTraffic = "";
+
+		$reasonsTR = array(1,2,3,4);
+		$reasonsPR = array(5,6,7);
+		$reasonsTrR = array(8,9,10);
+		$reasonsPrR = array(11,12,13);
+		$reasonsPT = array(14,15,16);
+
+		foreach ($illegalParkingReasons as $illegalParkingReason) {
+
+			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
+
+			if ($illegalParkingReasonsCount == 0) {
+				$groupDisabled = '<option value="" selected disbaled>'.$illegalParkingReason.'</option>';
+			}
+
+			if (in_array($illegalParkingReasonsCount, $reasonsTR)) {
+				$groupTrafficRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsPR)) {
+				$groupParkingRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsTrR)) {
+				$groupTransportRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsPrR)) {
+				$groupPropertyRelated .= $statement;
+			}
+			if (in_array($illegalParkingReasonsCount, $reasonsPT)) {
+				$groupPedestrianTraffic .= $statement;
+			}
+
+			$illegalParkingReasonsCount++;
+		}
+
+		echo $groupDisabled.'
+		<optgroup label="Traffic Related">'.$groupTrafficRelated.'</optgroup>
+		<optgroup label="Parking Related">'.$groupParkingRelated.'</optgroup>
+		<optgroup label="Transport Related">'.$groupTransportRelated.'</optgroup>
+		<optgroup label="Property Related">'.$groupPropertyRelated.'</optgroup>
+		<optgroup label="Pedestrian Traffic">'.$groupPedestrianTraffic.'</optgroup>';
+
+	}
+	
+	public function getIllegalParking($input) {
+
+		$illegalParkingReasons = file('../resources/illegalParkingList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $illegalParkingReasons[$input];
+
 	}
 
 }

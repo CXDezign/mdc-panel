@@ -230,7 +230,7 @@
 					name="inputReason"
 					required>
 					<?php
-						$pg->illegalParkingChooser();
+						$pt->illegalParkingChooser();
 					?>
 					</select>
 				</div>

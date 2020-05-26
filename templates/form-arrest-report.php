@@ -242,7 +242,7 @@ The suspect was found to be X."
 					required>
 					<option value="0" selected>N/A</option>
 					<?php
-						$pg->wristbandChooser();
+						$ar->wristbandChooser();
 					?>
 					</select>
 				</div>
@@ -267,7 +267,7 @@ The suspect was found to be X."
 					required>
 					<option value="0" selected>N/A</option>
 					<?php
-						$pg->braceletChooser();
+						$ar->braceletChooser();
 					?>
 					</select>
 				</div>
@@ -290,7 +290,7 @@ The suspect was found to be X."
 					name="inputPlea"
 					required>
 					<?php
-						$pg->pleaChooser();
+						$ar->pleaChooser();
 					?>
 					</select>
 				</div>

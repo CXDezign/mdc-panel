@@ -8,6 +8,8 @@
 	require '../models/paperwork-generators.php';
 	$g = new General();
 	$pg = new PaperworkGenerators();
+	$er = new EvidenceRegistrationLogGenerator();
+	$pt = new ParkingTicketGenerator();
 
 	// Generator Types
 
@@ -363,7 +365,7 @@
 			$generatedReportType = "Evidence Registration Log";
 			$showGeneratedThreadTitle = true;
 			$generatedThreadURL = "https://lspd.gta.world/posting.php?mode=post&f=388";
-			$generatedThreadTitle = "[".$pg->getItemCategory($inputItemCategory)."] ".$inputSuspectName." [".strtoupper($postInputDate)."]";
+			$generatedThreadTitle = "[".$er->getItemCategory($inputItemCategory)."] ".$inputSuspectName." [".strtoupper($postInputDate)."]";
 			$generatedReport = "
 				[divbox2=#fff]
 				[center][lspdlogo=150][/lspdlogo]
@@ -824,7 +826,7 @@
 			$officers = "<strong>".$pg->getRank($postInputRank,1)." ".$postInputName."</strong> (<strong>#".$postInputBadge."</strong>), ";
 
 			// Parking Ticket Resolver
-			$reason = $pg->getIllegalParking($inputReason);
+			$reason = $pt->getIllegalParking($inputReason);
 			$statement = "";
 
 			// Report Builder
@@ -832,7 +834,7 @@
 			$generatedReport = $generatedReport = $officers." on the <strong>".strtoupper($postInputDate)."</strong>, <strong>".$postInputTime."</strong>.<br>Cited a <strong>".$postInputVeh."</strong>, ".$pg->getVehiclePlates($postInputVehPlate,0).", ".$pg->getVehicleRO($postInputVehRO).", on <strong>".$postInputStreet."</strong>, <strong>".$postInputDistrict."</strong>.<br>
 
 				<strong>Citation Reason:</strong>
-				<ul><li><span style='color: #27ae60'>IC 406. Illegal Parking</span> - <strong style='color: green;'>$".$inputFine."</strong> - ".$pg->getIllegalParking($inputReason)."</li></ul>
+				<ul><li><span style='color: #27ae60'>IC 406. Illegal Parking</span> - <strong style='color: green;'>$".$inputFine."</strong> - ".$pt->getIllegalParking($inputReason)."</li></ul>
 				<strong>Evidence:</strong><br>".$evidence;
 		}
 

@@ -103,7 +103,7 @@
 					name="inputItemCategory"
 					required>
 					<?php
-						$pg->itemCategoryChooser();
+						$er->itemCategoryChooser();
 					?>
 					</select>
 				</div>
