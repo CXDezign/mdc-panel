@@ -415,7 +415,7 @@
 
 			$inputNotes = $_POST['inputNotes'] ?: 'N/A';
 			$inputTDPatrolReportURL = $_POST['inputTDPatrolReportURL'] ?: "https://lspd.gta.world/viewforum.php?f=101";
-			setcookie("inputTDPatrolReportURL",$inputTDPatrolReportURL,2147483647, "/");
+			setCookiePost('inputTDPatrolReportURL');
 
 
 			// Traffic Stop Resolver
@@ -442,7 +442,7 @@
 
 			// Report Builder
 			$generatedReportType = "Traffic Division: Patrol Report";
-			$generatedThreadURL = $g->findCookie('inputTDPatrolReportURL');
+			$generatedThreadURL = $inputTDPatrolReportURL;
 			$generatedReport = "
 				[divbox2=#f7f7f7]
 				[center][tedlogo=175][/tedlogo]
@@ -894,7 +894,6 @@
 
 		// Redirect to error page
 		header('Location: /paperwork-generators/error');
-		exit();
 
 	}
 
@@ -924,7 +923,8 @@
 
 	function setCookiePost($input) {
 
-		global	$postInputCallsign,
+		global	$g,
+				$postInputCallsign,
 				$postInputName,
 				$postInputNameArray,
 				$postInputRank,
@@ -932,7 +932,8 @@
 				$postInputBadge,
 				$postInputBadgeArray,
 				$postInputDefName,
-				$postInputVehRO;
+				$postInputVehRO,
+				$inputTDPatrolReportURL;
 
 		$cPath = "/";
 		$iTime = 2147483647;
@@ -941,37 +942,63 @@
 
 		switch($input) {
 			case 'callSign':
-				setcookie("callSign",$postInputCallsign,$tTime,$cPath);
+				$cookie = 'callSign';
+				$inputVar = $postInputCallsign;
+				$time = $tTime;
 				break;
 			case 'officerName':
-				setcookie("officerName",$postInputName,$iTime,$cPath);
+				$cookie = 'officerName';
+				$inputVar = $postInputName;
+				$time = $iTime;
 				break;
 			case 'officerNameArray':
-				setcookie("officerName",$postInputNameArray[0],$iTime,$cPath);
+				$cookie = 'officerName';
+				$inputVar = $postInputNameArray[0];
+				$time = $iTime;
 				break;
 			case 'officerRank':
-				setcookie("officerRank",$postInputRank,$iTime,$cPath);
+				$cookie = 'officerRank';
+				$inputVar = $postInputRank;
+				$time = $iTime;
 				break;
 			case 'officerRankArray':
-				setcookie("officerRank",$postInputRankArray[0],$iTime,$cPath);
+				$cookie = 'officerRank';
+				$inputVar = $postInputRankArray[0];
+				$time = $iTime;
 				break;
 			case 'officerBadge':
-				setcookie("officerBadge",$postInputBadge,$iTime,$cPath);
+				$cookie = 'officerBadge';
+				$inputVar = $postInputBadge;
+				$time = $iTime;
 				break;
 			case 'officerBadgeArray':
-				setcookie("officerBadge",$postInputBadgeArray[0],$iTime,$cPath);
+				$cookie = 'officerBadge';
+				$inputVar = $postInputBadgeArray[0];
+				$time = $iTime;
 				break;
 			case 'defName':
-				setcookie("defName",$postInputDefName,$dTime,$cPath);
+				$cookie = 'defName';
+				$inputVar = $postInputDefName;
+				$time = $dTime;
 				break;
 			case 'defNameURL':
-				setcookie("defNameURL",$postInputDefName,$dTime,$cPath);
+				$cookie = 'defNameURL';
+				$inputVar = $postInputDefName;
+				$time = $dTime;
 				break;
 			case 'defNameVehRO':
-				setcookie("defName",$postInputVehRO,$dTime,$cPath);
+				$cookie = 'defName';
+				$inputVar = $postInputVehRO;
+				$time = $dTime;
 				break;
+			case 'inputTDPatrolReportURL':
+				$cookie = 'inputTDPatrolReportURL';
+				$inputVar = $inputTDPatrolReportURL;
+				$time = $iTime;
 			default:
 				break;
 		}
+
+		return setcookie($cookie,$inputVar,$time,$cPath,$g->getSettings('site-url'),$g->getSettings('site-live'));
 
 	}
