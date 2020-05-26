@@ -124,7 +124,7 @@
 				type="text"
 				id="inputTDPatrolReportURL"
 				name="inputTDPatrolReportURL"
-				value="<?= $g->cookieTrafficPatrolURL() ?>"
+				value="<?= $g->findCookie('inputTDPatrolReportURL') ?>"
 				placeholder="Direct URL to your personal Patrol Report thread.">
 			</div>
 		</div>

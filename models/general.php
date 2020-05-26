@@ -139,6 +139,9 @@ class General {
 				$output = $_COOKIE['defName'] ?? "";
 				$output = str_replace(" ", "_", $output);
 				break;
+			case 'inputTDPatrolReportURL':
+				$output = $_COOKIE['inputTDPatrolReportURL'] ?? "https://lspd.gta.world/viewforum.php?f=101";
+				break;
 			default:
 				$output = "UNKNOWN FIND COOKIE";
 				break;
@@ -146,12 +149,6 @@ class General {
 
 		return $output;
 
-	}
-
-	public function cookieTrafficPatrolURL() {
-
-		$cookie = $_COOKIE['inputTDPatrolReportURL'] ?? "";
-		return $cookie;
 	}
 
 }
