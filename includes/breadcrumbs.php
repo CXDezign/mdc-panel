@@ -1,5 +1,5 @@
 <?php
-	if ($g->cookieToggleBreadcrumb() == false) {
+	if ($g->findCookie('toggleBreadcrumb') == false) {
 ?>
 <nav>
 	<ol class="breadcrumb" id="breadcrumb">

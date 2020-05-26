@@ -3,8 +3,7 @@
 $evidenceLog = "[divbox2=#FFF]
 [center][lspdlogo=150][/lspdlogo]
 
-[size=120][b]Los Santos Police Department
-Mission Row Station[/b][/size]
+[size=120][b]Los Santos Police Department[/b][/size]
 [i]Evidence Registration Log[/i][/center]
 [hr][/hr]
 [b]1. GENERAL INFORMATION[/b]

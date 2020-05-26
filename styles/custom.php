@@ -6,17 +6,17 @@
 	header("Content-type: text/css; charset: UTF-8");
 
 	// Toggle Hints
-	if ($g->cookieToggleHints() == true) {
+	if ($g->findCookie('toggleHints') == true) {
 		echo '.form-group small { display: none!important; }';
 	}
 
 	// Toggle Footer
-	if ($g->cookieToggleFooter() == true) {
+	if ($g->findCookie('toggleFooter') == true) {
 		echo '#footer {	display: none!important; }';
 	}
 
 	// Toggle Background
-	if ($g->cookieToggleBackgroundLogo() == false) {
+	if ($g->findCookie('toggleBackgroundLogo') == false) {
 		echo '#container { background-image: url(../images/Logo-SanAndreasSealTransparent.png)!important; }';
 	}
 
@@ -548,7 +548,7 @@ optgroup {
 
 <?php
 
-if ($g->cookieToggleMode() == true) {
+if ($g->findCookie('toggleMode') == true) {
 
 ?>
 

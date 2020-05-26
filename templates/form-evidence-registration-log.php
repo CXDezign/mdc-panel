@@ -19,7 +19,7 @@
 					id="inputDate"
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
-					value="<?= $g->getDate() ?>"
+					value="<?= $g->getUNIX('date') ?>"
 					style="text-transform: uppercase;"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
@@ -37,7 +37,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00"
-					value="<?= $g->getTime() ?>"
+					value="<?= $g->getUNIX('time') ?>"
 					required
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
@@ -50,7 +50,7 @@
 				id="inputName"
 				name="inputName"
 				placeholder="Firstname Lastname"
-				value="<?= $g->cookieName() ?>"
+				value="<?= $g->findCookie('officerName') ?>"
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>
@@ -158,7 +158,9 @@
 				name="inputEvidenceImage[]"
 				placeholder="https://imgur.com"
 				data-placement="bottom" title="Leave empty if none.">
-				<small class="form-text text-muted"><center>Optional evidence field. Only provide direct URLs to images.</center></small>
+				<small class="form-text text-muted text-center">
+					Optional evidence field. Only provide direct URLs to images.
+				</small>
 			</div>
 			<div class="form-group col-xl-2">
 				<div class="input-group-addon"> 

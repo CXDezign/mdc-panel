@@ -1,12 +1,12 @@
 <nav id="sidebar">
 	<div class="text-center my-3">
-		<a class="d-block" id="sidebar-logo" href="/"><img src="/images/Logo-MDC.png"/></a>
+		<a class="d-block" id="sidebar-logo" href="/"><img src="/images/Logo-MDC.png" alt="MDC Panel Logo"/></a>
 	</div>
 	<?php
-		if ($g->cookieToggleClock() == false) {
+		if ($g->findCookie('toggleClock') == false) {
 			require 'includes/clock.php';
 		}
-		if ($g->cookieToggleLiveVisitorCounter() == false) {
+		if ($g->findCookie('toggleLiveVisitorCounter') == false) {
 			require 'includes/visitors.php';
 		}
 	?>
@@ -79,13 +79,13 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/">
+			<a class="nav-link" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>">
 				<i class="fas fa-fw fa-balance-scale mr-2"></i><span class="icon-text">Penal Code<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link dropdown-toggle" href="#lspdSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-				<img class="mr-2" src="/images/Logo-LSPD.png" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD</span>
+				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD</span>
 			</a>
 			<ul class="collapse list-unstyled" id="lspdSubmenu">
 				<li>
@@ -117,12 +117,12 @@
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" href="https://lssd.gta.world">
-				<img class="mr-2" src="/images/Logo-LSSD.png" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSSD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+				<img class="mr-2" src="/images/Logo-LSSD.png" alt="LSSD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSSD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" href="https://lsfd.gta.world">
-				<img class="mr-2" src="/images/Logo-LSFD.png" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+				<img class="mr-2" src="/images/Logo-LSFD.png" alt="LSFD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<hr class="my-3">
@@ -132,8 +132,8 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/changelogs#<?= $g->getVersion() ?>">
-				<i class="fas fa-fw fa-plug mr-2"></i><span class="icon-text">Changelogs<span class="badge badge-danger ml-3"><?= $g->getVersion() ?></span></span>
+			<a class="nav-link" href="/changelogs#<?= $g->getSettings('site-version') ?>">
+				<i class="fas fa-fw fa-plug mr-2"></i><span class="icon-text">Changelogs<span class="badge badge-danger ml-3"><?= $g->getSettings('site-version') ?></span></span>
 			</a>
 		</li>
 		<li class="nav-item">

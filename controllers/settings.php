@@ -15,7 +15,7 @@
 
 	if ($formType == "settingsToggleMode") {
 
-		$toggleMode = $g->cookieToggleMode();
+		$toggleMode = $g->findCookie('toggleMode');
 
 		if ($toggleMode == false) {
 			$toggleMode = true;
@@ -29,7 +29,7 @@
 
 	if ($formType == "settingsToggleClock") {
 
-		$toggleClock = $g->cookieToggleClock();
+		$toggleClock = $g->findCookie('toggleClock');
 
 		if ($toggleClock == false) {
 			$toggleClock = true;
@@ -42,7 +42,7 @@
 
 	if ($formType == "settingsToggleBreadcrumb") {
 
-		$toggleBreadcrumb = $g->cookieToggleBreadcrumb();
+		$toggleBreadcrumb = $g->findCookie('toggleBreadcrumb');
 
 		if ($toggleBreadcrumb == false) {
 			$toggleBreadcrumb = true;
@@ -55,7 +55,7 @@
 
 	if ($formType == "settingsToggleBackgroundLogo") {
 
-		$toggleBackgroundLogo = $g->cookieToggleBackgroundLogo();
+		$toggleBackgroundLogo = $g->findCookie('toggleBackgroundLogo');
 
 		if ($toggleBackgroundLogo == false) {
 			$toggleBackgroundLogo = true;
@@ -68,7 +68,7 @@
 
 	if ($formType == "settingsToggleHints") {
 
-		$toggleHints = $g->cookieToggleHints();
+		$toggleHints = $g->findCookie('toggleHints');
 
 		if ($toggleHints == false) {
 			$toggleHints = true;
@@ -81,7 +81,7 @@
 
 	if ($formType == "settingsToggleFooter") {
 
-		$toggleFooter = $g->cookieToggleFooter();
+		$toggleFooter = $g->findCookie('toggleFooter');
 
 		if ($toggleFooter == false) {
 			$toggleFooter = true;
@@ -94,7 +94,7 @@
 
 	if ($formType == "settingsToggleLiveVisitorCounter") {
 
-		$toggleLiveVisitorCounter = $g->cookieToggleLiveVisitorCounter();
+		$toggleLiveVisitorCounter = $g->findCookie('toggleLiveVisitorCounter');
 
 		if ($toggleLiveVisitorCounter == false) {
 			$toggleLiveVisitorCounter = true;

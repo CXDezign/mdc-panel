@@ -15,7 +15,7 @@
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
 					style="text-transform: uppercase;"
-					value="<?= $g->getDate() ?>"
+					value="<?= $g->getUNIX('date') ?>"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
 				</div>
@@ -29,7 +29,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00"
-					value="<?= $g->getTime() ?>"
+					value="<?= $g->getUNIX('time') ?>"
 					required
 					data-placement="bottom" title="24-Hour Format">
 				</div>	
@@ -56,7 +56,7 @@
 				id="inputCallsign"
 				name="inputCallsign"
 				placeholder="Call Sign"
-				value="<?= $g->cookieCallSign() ?>"
+				value="<?= $g->findCookie('callSign') ?>"
 				required
 				data-placement="bottom" title="Example: 2-ADAM-1, 2A1">
 			</div>

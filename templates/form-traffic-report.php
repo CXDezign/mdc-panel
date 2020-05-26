@@ -18,7 +18,7 @@
 					id="inputDate"
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
-					value="<?= $g->getDate() ?>"
+					value="<?= $g->getUNIX('date') ?>"
 					style="text-transform: uppercase;"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
@@ -36,7 +36,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00 - 24:00"
-					value="<?= $g->getTime() ?>"
+					value="<?= $g->getUNIX('time') ?>"
 					required
 					data-placement="bottom" title="24-Hour Format">
 				</div>
@@ -49,7 +49,7 @@
 				id="inputCallsign"
 				name="inputCallsign"
 				placeholder="Call Sign"
-				value="<?= $g->cookieCallSign() ?>"
+				value="<?= $g->findCookie('callSign') ?>"
 				required
 				data-placement="bottom" title="Example: 2-ADAM-1, 2A1">
 			</div>
@@ -65,7 +65,7 @@
 				id="inputName"
 				name="inputName[]"
 				placeholder="Firstname Lastname"
-				value="<?= $g->cookieName() ?>"
+				value="<?= $g->findCookie('officerName') ?>"
 				required
 				data-placement="bottom" title="Officer - Full Name">
 			</div>
@@ -98,7 +98,7 @@
 					id="inputBadge"
 					name="inputBadge[]"
 					placeholder="####"
-					value="<?= $g->cookieBadge() ?>"
+					value="<?= $g->findCookie('officerBadge') ?>"
 					required
 					data-placement="bottom" title="Officer - Badge">
 				</div>
@@ -164,7 +164,7 @@ The defendant was found to be X."
 				name="inputDashcam"
 				rows="4"
 				placeholder="The dashboard camera would pick up on the defendant to be X on the X street."></textarea>
-				<small class="form-text text-muted">(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <b style="color: darkred;">Lying in this section will lead to punishments</b>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</small>
+				<small class="form-text text-muted">(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <strong style="color: darkred;">Lying in this section will lead to punishments</strong>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</small>
 			</div>
 		</div>
 

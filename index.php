@@ -7,15 +7,15 @@
 <html lang="en">
 <head>
 	<link rel="icon" type="image/png" href="favicon.png">
-	<title>MDC Panel</title>
+	<title><?= $g->getSettings('site-name') ?></title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta property="og:title" content="MDC Panel">
+	<meta property="og:title" content="<?= $g->getSettings('site-name') ?>">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="http://xanx.co.uk">
-	<meta property="og:image" content="http://xanx.co.uk/images/Logo-MDC.png">
-	<meta property="og:description" content="MDC Panel - Multi-functional tools, generators, and resources for official government use.">
+	<meta property="og:url" content="<?= $g->getSettings('site-url') ?>">
+	<meta property="og:image" content="<?= $g->getSettings('site-logo') ?>">
+	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,7 +24,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getVersion() ?>">
+	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getSettings('site-version') ?>">
 
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/129680e694.js" crossorigin="anonymous"></script>

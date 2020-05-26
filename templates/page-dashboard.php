@@ -38,7 +38,7 @@
 			</a>
 		</div>
 		<div class="col-xl-6 mb-4">
-			<a target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/">
+			<a target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>">
 				<div class="card card-panel bg-dark text-white" id="card-main-penal">
 					<div class="card-body shadow">
 						<p class="card-text card-icon"><i class="fas fa-fw fa-7x fa-balance-scale text-muted"></i></p>

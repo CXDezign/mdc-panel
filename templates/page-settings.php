@@ -1,214 +1,212 @@
 <div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-cog mr-2"></i></i>Settings</h1>
 	<hr>
-	<center><h4><i class="fas fa-globe fa-fw mr-2"></i>Site Preferences</h4></center>
+	<h4 class="text-center mb-3"><i class="fas fa-globe fa-fw mr-2"></i>Site Preferences</h4>
 	<form>
 		<div class="row">
 			<div class="form-group col-xl-12">
-				<center>
-				<label>Clear Site Cookies</label><br>
-					<div class="container my-2 text-center">
-						<button type="submit" id="clearCookies" name="clearCookies" class="btn btn-danger px-5">
-							<i class="fas fa-cookie-bite fa-fw mr-1"></i>Clear Site Cookies
-						</button>
-					</div>
-				</center>
+				<label class="text-center d-block">Clear Site Cookies</label>
+				<div class="container my-2 text-center">
+					<button type="submit" id="clearCookies" name="clearCookies" class="btn btn-danger px-5">
+						<i class="fas fa-cookie-bite fa-fw mr-1"></i>Clear Site Cookies
+					</button>
+				</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Day/Night Mode</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Day/Night Mode</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleMode"
-					name="settingsToggleMode"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-sun'></i>"
-					data-on="<i class='fas fa-fw fa-moon'></i>"
-					data-onstyle="dark"
-					data-offstyle="light"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleMode = $g->cookieToggleMode();
-						if ($toggleMode == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleMode"
+						name="settingsToggleMode"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-sun'></i>"
+						data-on="<i class='fas fa-fw fa-moon'></i>"
+						data-onstyle="dark"
+						data-offstyle="light"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleMode = $g->findCookie('toggleMode');
+							if ($toggleMode == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Live Clock</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Live Clock</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleClock"
-					name="settingsToggleClock"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-hourglass-half'></i>"
-					data-on="<i class='fas fa-fw fa-ban'></i>"
-					data-onstyle="danger"
-					data-offstyle="success"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleClock = $g->cookieToggleClock();
-						if ($toggleClock == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleClock"
+						name="settingsToggleClock"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-hourglass-half'></i>"
+						data-on="<i class='fas fa-fw fa-ban'></i>"
+						data-onstyle="danger"
+						data-offstyle="success"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleClock = $g->findCookie('toggleClock');
+							if ($toggleClock == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Breadcrumb</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Breadcrumb</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleBreadcrumb"
-					name="settingsToggleBreadcrumb"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-home'></i>"
-					data-on="<i class='fas fa-fw fa-ban'></i>"
-					data-onstyle="danger"
-					data-offstyle="success"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleBreadcrumb = $g->cookieToggleBreadcrumb();
-						if ($toggleBreadcrumb == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleBreadcrumb"
+						name="settingsToggleBreadcrumb"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-home'></i>"
+						data-on="<i class='fas fa-fw fa-ban'></i>"
+						data-onstyle="danger"
+						data-offstyle="success"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleBreadcrumb = $g->findCookie('toggleBreadcrumb');
+							if ($toggleBreadcrumb == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Background Logo</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Background Logo</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleBackgroundLogo"
-					name="settingsToggleBackgroundLogo"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-image'></i>"
-					data-on="<i class='fas fa-fw fa-ban'></i>"
-					data-onstyle="danger"
-					data-offstyle="success"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleBackgroundLogo = $g->cookieToggleBackgroundLogo();
-						if ($toggleBackgroundLogo == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleBackgroundLogo"
+						name="settingsToggleBackgroundLogo"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-image'></i>"
+						data-on="<i class='fas fa-fw fa-ban'></i>"
+						data-onstyle="danger"
+						data-offstyle="success"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleBackgroundLogo = $g->findCookie('toggleBackgroundLogo');
+							if ($toggleBackgroundLogo == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Hints</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Hints</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleHints"
-					name="settingsToggleHints"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-lightbulb'></i>"
-					data-on="<i class='fas fa-fw fa-ban'></i>"
-					data-onstyle="danger"
-					data-offstyle="success"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleHints = $g->cookieToggleHints();
-						if ($toggleHints == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleHints"
+						name="settingsToggleHints"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-lightbulb'></i>"
+						data-on="<i class='fas fa-fw fa-ban'></i>"
+						data-onstyle="danger"
+						data-offstyle="success"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleHints = $g->findCookie('toggleHints');
+							if ($toggleHints == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Footer</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Footer</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleFooter"
-					name="settingsToggleFooter"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-grip-lines'></i>"
-					data-on="<i class='fas fa-fw fa-ban'></i>"
-					data-onstyle="danger"
-					data-offstyle="success"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleFooter = $g->cookieToggleFooter();
-						if ($toggleFooter == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleFooter"
+						name="settingsToggleFooter"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-grip-lines'></i>"
+						data-on="<i class='fas fa-fw fa-ban'></i>"
+						data-onstyle="danger"
+						data-offstyle="success"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleFooter = $g->findCookie('toggleFooter');
+							if ($toggleFooter == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
-			<div class="form-group col-xl-4">
-				<center>
-				<label>Toggle Live Visitor Counter</label><br>
+			<div class="col-xl-4 d-flex flex-column mb-3">
+				<label class="d-block text-center">Toggle Live Visitor Counter</label>
+				<div class="mx-auto">
 					<input
-					id="settingsToggleLiveVisitorCounter"
-					name="settingsToggleLiveVisitorCounter"
-					type="checkbox"
-					data-toggle="toggle"
-					data-off="<i class='fas fa-fw fa-users'></i>"
-					data-on="<i class='fas fa-fw fa-ban'></i>"
-					data-onstyle="danger"
-					data-offstyle="success"
-					data-width="120"
-					data-height="20"
-					<?php
-						$toggleLiveVisitorCounter = $g->cookieToggleLiveVisitorCounter();
-						if ($toggleLiveVisitorCounter == false) {
-							echo '';
-						} else {
-							echo 'checked';
-						}
-					?>
+						id="settingsToggleLiveVisitorCounter"
+						name="settingsToggleLiveVisitorCounter"
+						type="checkbox"
+						data-toggle="toggle"
+						data-off="<i class='fas fa-fw fa-users'></i>"
+						data-on="<i class='fas fa-fw fa-ban'></i>"
+						data-onstyle="danger"
+						data-offstyle="success"
+						data-width="120"
+						data-height="20"
+						<?php
+							$toggleLiveVisitorCounter = $g->findCookie('toggleLiveVisitorCounter');
+							if ($toggleLiveVisitorCounter == false) {
+								echo '';
+							} else {
+								echo 'checked';
+							}
+						?>
 					>
-				</center>
+				</div>
 			</div>
 		</div>
 	</form>
 	<hr class="my-3"></h1>
-	<center><h4><i class="fas fa-user-cog fa-fw mr-2"></i>Character Settings</h4></center>
+	<h4 class="d-block text-center mb-3"><i class="fas fa-user-cog fa-fw mr-2"></i>Character Settings</h4>
 	<form>
 		<div class="row">
 			<div class="form-group col-xl-6">
-				<center><label>Full Name</label></center>
+				<label class="d-block text-center">Full Name</label>
 				<input
 				class="form-control"
 				type="text"
 				id="inputName"
 				name="inputName"
 				placeholder="Firstname Lastname"
-				value="<?= $g->cookieName() ?>">
+				value="<?= $g->findCookie('officerName') ?>">
 			</div>
 			<div class="form-group col-xl-4">
-				<center><label>Rank</label></center>
+				<label class="d-block text-center">Rank</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
@@ -224,7 +222,7 @@
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
-				<center><label>Badge</label></center>
+				<label class="d-block text-center">Badge</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
@@ -235,7 +233,7 @@
 					id="inputBadge"
 					name="inputBadge"
 					placeholder="####"
-					value="<?= $g->cookieBadge() ?>">
+					value="<?= $g->findCookie('officerBadge') ?>">
 				</div>
 			</div>
 			<div class="container my-5 text-center">

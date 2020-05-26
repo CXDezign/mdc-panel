@@ -59,7 +59,7 @@
 		</div>
 		
 		<div class="container mt-2 text-center">
-			<a class="btn btn-info px-5" target="_blank" href="https://forum.gta.world/en/index.php?/topic/20053-san-andreas-penal-code/" role="button">
+			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>" role="button">
 				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
 			</a>
 		</div>

@@ -2,23 +2,59 @@
 
 class General {
 
-	public function getVersion() {
-
-		return '1.9.8';
-	}
-
-	public function getDate() {
+	public function getUNIX($format) {
 
 		$unix = time();
-		$date = date("d/M/Y", $unix);
-		return $date;
+		$output = $unix;
+
+		switch($format) {
+
+			case 'year':
+				$output = date("Y", $unix);
+				break;
+			case 'date':
+				$output = date("d/M/Y", $unix);
+				break;
+			case 'time':
+				$output = date("H:i", $unix);
+				break;
+		}
+
+		return $output;
+
 	}
 
-	public function getTime() {
+	// PAGE SETTINGS
 
-		$unix = time();
-		$time = date("H:i", $unix);
-		return $time;
+	public function getSettings($setting) {
+
+		$output = '';
+
+		switch ($setting) {
+
+			case 'site-name':
+				$output = "MDC Panel";
+				break;
+			case 'site-url':
+				$output = "http://mdc.xanx.co.uk";
+				break;
+			case 'site-logo':
+				$output = "http://xanx.co.uk/images/Logo-MDC.png";
+				break;
+			case 'site-version':
+				$output = "1.9.9";
+				break;
+			case 'site-description':
+				$output = "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
+				break;
+			case 'url-penal-code':
+				$output = "https://forum.gta.world/en/index.php?/topic/25393-san-andreas-penal-code/";
+				break;
+
+		}
+
+		return $output;
+
 	}
 
 	// COOKIES
@@ -54,70 +90,46 @@ class General {
 
 	}
 
-	public function cookieToggleMode() {
+	public function findCookie($cookie) {
 
-		$cookie = $_COOKIE['toggleMode'] ?? false;
-		return $cookie;
-	}
+		$output = false;
 
-	public function cookieToggleClock() {
+		switch($cookie) {
 
-		$cookie = $_COOKIE['toggleClock'] ?? false;
-		return $cookie;
-	}
+			case 'toggleMode':
+				$output = $_COOKIE['toggleMode'] ?? false;
+				break;
+			case 'toggleClock':
+				$output = $_COOKIE['toggleClock'] ?? false;
+				break;
+			case 'toggleBreadcrumb':
+				$output = $_COOKIE['toggleBreadcrumb'] ?? false;
+				break;
+			case 'toggleBackgroundLogo':
+				$output = $_COOKIE['toggleBackgroundLogo'] ?? false;
+				break;
+			case 'toggleHints':
+				$output = $_COOKIE['toggleHints'] ?? false;
+				break;
+			case 'toggleFooter':
+				$output = $_COOKIE['toggleFooter'] ?? false;
+				break;
+			case 'toggleLiveVisitorCounter':
+				$output = $_COOKIE['toggleLiveVisitorCounter'] ?? false;
+				break;
+			case 'officerName':
+				$output = $_COOKIE['officerName'] ?? "";
+				break;
+			case 'officerBadge':
+				$output = $_COOKIE['officerBadge'] ?? "";
+				break;
+			case 'callSign':
+				$output = $_COOKIE['callSign'] ?? "";
+				break;
+		}
 
-	public function cookieToggleBreadcrumb() {
+		return $output;
 
-		$cookie = $_COOKIE['toggleBreadcrumb'] ?? false;
-		return $cookie;
-	}
-
-	public function cookieToggleBackgroundLogo() {
-
-		$cookie = $_COOKIE['toggleBackgroundLogo'] ?? false;
-		return $cookie;
-	}
-
-	public function cookieToggleHints() {
-
-		$cookie = $_COOKIE['toggleHints'] ?? false;
-		return $cookie;
-	}
-
-	public function cookieToggleFooter() {
-
-		$cookie = $_COOKIE['toggleFooter'] ?? false;
-		return $cookie;
-	}
-
-	public function cookieToggleLiveVisitorCounter() {
-
-		$cookie = $_COOKIE['toggleLiveVisitorCounter'] ?? false;
-		return $cookie;
-	}
-
-	public function cookieName() {
-
-		$cookie = $_COOKIE['officerName'] ?? "";
-		return $cookie;
-	}
-
-	public function cookieRank() {
-
-		$cookie = $_COOKIE['officerRank'] ?? "";
-		return $cookie;
-	}
-
-	public function cookieBadge() {
-
-		$cookie = $_COOKIE['officerBadge'] ?? "";
-		return $cookie;
-	}
-
-	public function cookieCallSign() {
-
-		$cookie = $_COOKIE['callSign'] ?? "";
-		return $cookie;
 	}
 
 	public function cookieDefName() {

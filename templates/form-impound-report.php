@@ -18,7 +18,7 @@
 					id="inputDate"
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
-					value="<?= $g->getDate() ?>"
+					value="<?= $g->getUNIX('date') ?>"
 					style="text-transform: uppercase;"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
@@ -36,7 +36,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00 - 24:00"
-					value="<?= $g->getTime() ?>"
+					value="<?= $g->getUNIX('time') ?>"
 					required
 					data-placement="bottom" title="24-Hour Format">
 				</div>
@@ -53,7 +53,7 @@
 				id="inputName"
 				name="inputName"
 				placeholder="Firstname Lastname"
-				value="<?= $g->cookieName() ?>"
+				value="<?= $g->findCookie('officerName') ?>"
 				data-placement="bottom" title="Officer - Full Name"
 				required>
 			</div>
@@ -86,7 +86,7 @@
 					id="inputBadge"
 					name="inputBadge"
 					placeholder="####"
-					value="<?= $g->cookieBadge() ?>"
+					value="<?= $g->findCookie('officerBadge') ?>"
 					data-placement="bottom" title="Officer - Badge"
 					required>
 				</div>

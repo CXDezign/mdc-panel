@@ -16,7 +16,7 @@
 					name="inputDateFrom"
 					placeholder="DD/MMM/YYYY"
 					style="text-transform: uppercase;"
-					value="<?= $g->getDate() ?>"
+					value="<?= $g->getUNIX('date') ?>"
 					required>
 					<div class="input-group-midpend">
 						<span class="input-group-text" id="basic-addon1">-</span>
@@ -29,7 +29,7 @@
 					placeholder="DD/MMM/YYYY"
 					style="text-transform: uppercase;">
 				</div>
-				<center><small id="helpDate" class="form-text text-muted">DD/MMM/YYYY Format</small></center>
+				<small id="helpDate" class="form-text text-muted text-center">DD/MMM/YYYY Format</small>
 			</div>
 			<div class="form-group col-xl-3">
 				<label>Time</label>
@@ -40,7 +40,7 @@
 					id="inputTimeFrom"
 					name="inputTimeFrom"
 					placeholder="00:00"
-					value="<?= $g->getTime() ?>"
+					value="<?= $g->getUNIX('time') ?>"
 					required>
 					<div class="input-group-midpend">
 						<span class="input-group-text" id="basic-addon1">-</span>
@@ -53,7 +53,7 @@
 					placeholder="24:00"
 					required>
 				</div>
-				<center><small id="helpTime" class="form-text text-muted">24-Hour Format</small></center>	
+				<small id="helpTime" class="form-text text-muted text-center">24-Hour Format</small>	
 			</div>
 		</div>
 
@@ -154,7 +154,7 @@
 			id="inputCitationsTS[]"
 			name="inputCitationsTS[]"
 			placeholder="#">
-			<small id="helpDashcam" class="form-text text-muted"><center>Citations</center></small>
+			<small id="helpDashcam" class="form-text text-muted text-center">Citations</small>
 		</div>
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon"> 

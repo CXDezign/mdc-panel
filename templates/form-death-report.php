@@ -19,7 +19,7 @@
 					id="inputDate"
 					name="inputDate"
 					placeholder="DD/MMM/YYYY"
-					value="<?= $g->getDate() ?>"
+					value="<?= $g->getUNIX('date') ?>"
 					style="text-transform: uppercase;"
 					required
 					data-placement="bottom" title="DD/MMM/YYYY Format">
@@ -37,7 +37,7 @@
 					id="inputTime"
 					name="inputTime"
 					placeholder="00:00"
-					value="<?= $g->getTime() ?>"
+					value="<?= $g->getUNIX('time') ?>"
 					required
 					data-placement="bottom" title="24-Hour Format - 00:00">
 				</div>
