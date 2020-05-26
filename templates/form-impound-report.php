@@ -135,7 +135,7 @@
 				id="inputVehPlate"
 				name="inputVehPlate"
 				placeholder="Identification Plate"
-				data-placement="bottom" title="Leave empty if unregistered."
+				data-placement="bottom" title="If unregistered, no paperwork must be filled out."
 				required>
 			</div>
 		</div>
