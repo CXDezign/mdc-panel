@@ -2,31 +2,6 @@
 
 class General {
 
-	public function getUNIX($format) {
-
-		$unix = time();
-		$output = $unix;
-
-		switch($format) {
-
-			case 'year':
-				$output = date("Y", $unix);
-				break;
-			case 'date':
-				$output = date("d/M/Y", $unix);
-				break;
-			case 'time':
-				$output = date("H:i", $unix);
-				break;
-			default:
-				$output = date("d/M/Y", $unix);
-				break;
-		}
-
-		return $output;
-
-	}
-
 	// PAGE SETTINGS
 
 	public function getSettings($setting) {
@@ -57,6 +32,30 @@ class General {
 				$output = "UNKNOWN SITE SETTING";
 				break;
 
+		}
+
+		return $output;
+
+	}
+
+	public function getUNIX($format) {
+
+		$unix = time();
+
+		switch($format) {
+
+			case 'year':
+				$output = date("Y", $unix);
+				break;
+			case 'date':
+				$output = date("d/M/Y", $unix);
+				break;
+			case 'time':
+				$output = date("H:i", $unix);
+				break;
+			default:
+				$output = $unix;
+				break;
 		}
 
 		return $output;

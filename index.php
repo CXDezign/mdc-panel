@@ -49,7 +49,6 @@
 	<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
 
 	<!-- Leaflet Search -->
-	<!--<link rel="stylesheet" type="text/css" href="/map/src/leaflet-search.css">-->
 	<script src="/map/src/leaflet-search.js"></script>
 
 	<!-- Leaflet Font Awesome Icons -->
