@@ -1,8 +1,8 @@
 <?php
 
 	$request = rtrim($_SERVER['REQUEST_URI'], "/");
+
 	switch ($request) {
-		
 		case '/paperwork-generators/error':
 			require __DIR__ . "/templates/error.php";
 			break;
@@ -60,5 +60,4 @@
 		default:
 			require __DIR__ . "/templates/page-dashboard.php";
 			break;
-
 	}

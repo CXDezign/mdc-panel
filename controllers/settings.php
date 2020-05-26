@@ -118,7 +118,8 @@
 
 	function setCookiePost($input) {
 
-		global	$toggleMode,
+		global	$g,
+				$toggleMode,
 				$toggleClock,
 				$toggleBreadcrumb,
 				$toggleBackgroundLogo,
@@ -168,7 +169,7 @@
 
 		}
 
-		return setcookie($input,$cookie,$iTime,$cPath);
+		return setcookie($input,$cookie,$iTime,$cPath,$g->getSettings('site-url'),$g->getSettings('site-live'));
 
 	}
 

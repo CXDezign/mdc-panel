@@ -91,9 +91,7 @@ class General {
 			case 'defName':
 				return $_COOKIE['defName'] ?? "";
 			case 'defNameURL':
-				$output = $_COOKIE['defName'] ?? "";
-				$output = str_replace(" ", "_", $output);
-				return $output;
+				return str_replace(" ", "_", $_COOKIE['defName'] ?? "");
 			case 'inputTDPatrolReportURL':
 				return $_COOKIE['inputTDPatrolReportURL'] ?? "https://lspd.gta.world/viewforum.php?f=101";
 			default:
