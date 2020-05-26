@@ -64,6 +64,7 @@
 			$redirectPath = redirectPath(1);
 
 			$postInputNameArray = array_map(function($value) {
+				global $defaultName;
 				return $value === "" ? $defaultName : $value;
 			}, $postInputNameArray);
 
@@ -144,6 +145,7 @@
 			$redirectPath = redirectPath(1);
 
 			$postInputNameArray = array_map(function($value) {
+				global $defaultName;
 				return $value === "" ? $defaultName : $value;
 			}, $postInputNameArray);
 
@@ -398,6 +400,7 @@
 
 			$inputNameTS = $_POST['inputNameTS'] ?? array();
 			$inputNameTS = array_map(function($value) {
+				global $defaultName;
 				return $value === "" ? $defaultName : $value;
 			}, $inputNameTS);
 
@@ -490,6 +493,7 @@
 			}, $inputReasonInfo);
 
 			$postInputVehArray = array_map(function($value) {
+				global $defaultVehicle;
 				return $value === "" ? $defaultVehicle : $value;
 			}, $postInputVehArray);
 
@@ -498,10 +502,12 @@
 			}, $postInputVehPlateArray);
 
 			$postInputDistrictArray = array_map(function($value) {
+				global $defaultDistrict;
 				return $value === "" ? $defaultDistrict : $value;
 			}, $postInputDistrictArray);
 			
 			$postInputStreetArray = array_map(function($value) {
+				global $defaultStreet;
 				return $value === "" ? $defaultStreet : $value;
 			}, $postInputStreetArray);
 
@@ -885,6 +891,7 @@
 			case "arrest":
 				header('Location: /paperwork-generators/arrest-report');
 				break;
+			case "error":
 			default:
 				header('Location: /paperwork-generators/error');
 				break;
@@ -914,6 +921,8 @@
 			case 3:
 				$output = "arrest";
 				break;
+			default:
+				$output = "error";
 		}
 
 		return $output;
@@ -967,6 +976,8 @@
 				break;
 			case 'defNameVehRO':
 				setcookie("defName",$postInputVehRO,$dTime,$cPath);
+				break;
+			default:
 				break;
 		}
 

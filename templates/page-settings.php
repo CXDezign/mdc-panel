@@ -28,14 +28,7 @@
 						data-offstyle="light"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleMode = $g->findCookie('toggleMode');
-							if ($toggleMode == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleMode') ?>
 					>
 				</div>
 			</div>
@@ -53,14 +46,7 @@
 						data-offstyle="success"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleClock = $g->findCookie('toggleClock');
-							if ($toggleClock == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleClock') ?>
 					>
 				</div>
 			</div>
@@ -78,14 +64,7 @@
 						data-offstyle="success"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleBreadcrumb = $g->findCookie('toggleBreadcrumb');
-							if ($toggleBreadcrumb == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleBreadcrumb') ?>
 					>
 				</div>
 			</div>
@@ -103,14 +82,7 @@
 						data-offstyle="success"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleBackgroundLogo = $g->findCookie('toggleBackgroundLogo');
-							if ($toggleBackgroundLogo == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleBackgroundLogo') ?>
 					>
 				</div>
 			</div>
@@ -128,14 +100,7 @@
 						data-offstyle="success"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleHints = $g->findCookie('toggleHints');
-							if ($toggleHints == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleHints') ?>
 					>
 				</div>
 			</div>
@@ -153,14 +118,7 @@
 						data-offstyle="success"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleFooter = $g->findCookie('toggleFooter');
-							if ($toggleFooter == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleFooter') ?>
 					>
 				</div>
 			</div>
@@ -178,14 +136,7 @@
 						data-offstyle="success"
 						data-width="120"
 						data-height="20"
-						<?php
-							$toggleLiveVisitorCounter = $g->findCookie('toggleLiveVisitorCounter');
-							if ($toggleLiveVisitorCounter == false) {
-								echo '';
-							} else {
-								echo 'checked';
-							}
-						?>
+						<?= getToggle('toggleLiveVisitorCounter') ?>
 					>
 				</div>
 			</div>
@@ -244,8 +195,21 @@
 		</div>
 	</form>
 </div>
+<?php
+	function getToggle($input) {
 
+		global $g;
 
+		$toggle = $g->findCookie($input);
+
+		if ($toggle == false) {
+			return '';
+		} else {
+			return 'checked';
+		}
+
+	}
+?>
 <script>
 
 	$(function () {

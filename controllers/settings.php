@@ -163,6 +163,8 @@
 			case 'officerBadge':
 				$cookie = $badge;
 				break;
+			default:
+				break;
 
 		}
 
