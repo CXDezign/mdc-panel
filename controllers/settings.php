@@ -19,10 +19,10 @@
 
 		if ($toggleMode == false) {
 			$toggleMode = true;
-			setcookie("toggleMode",$toggleMode,2147483647,"/");
+			setCookiePost('toggleMode');
 		} else {
 			$toggleMode = false;
-			setcookie("toggleMode",$toggleMode,2147483647,"/");
+			setCookiePost('toggleMode');
 		}
 
 	}
@@ -33,10 +33,10 @@
 
 		if ($toggleClock == false) {
 			$toggleClock = true;
-			setcookie("toggleClock",$toggleClock,2147483647,"/");
+			setCookiePost('toggleClock');
 		} else {
 			$toggleClock = false;
-			setcookie("toggleClock",$toggleClock,2147483647,"/");
+			setCookiePost('toggleClock');
 		}
 	}
 
@@ -46,10 +46,10 @@
 
 		if ($toggleBreadcrumb == false) {
 			$toggleBreadcrumb = true;
-			setcookie("toggleBreadcrumb",$toggleBreadcrumb,2147483647,"/");
+			setCookiePost('toggleBreadcrumb');
 		} else {
 			$toggleBreadcrumb = false;
-			setcookie("toggleBreadcrumb",$toggleBreadcrumb,2147483647,"/");
+			setCookiePost('toggleBreadcrumb');
 		}
 	}
 
@@ -59,10 +59,10 @@
 
 		if ($toggleBackgroundLogo == false) {
 			$toggleBackgroundLogo = true;
-			setcookie("toggleBackgroundLogo",$toggleBackgroundLogo,2147483647,"/");
+			setCookiePost('toggleBackgroundLogo');
 		} else {
 			$toggleBackgroundLogo = false;
-			setcookie("toggleBackgroundLogo",$toggleBackgroundLogo,2147483647,"/");
+			setCookiePost('toggleBackgroundLogo');
 		}
 	}
 
@@ -72,10 +72,10 @@
 
 		if ($toggleHints == false) {
 			$toggleHints = true;
-			setcookie("toggleHints",$toggleHints,2147483647,"/");
+			setCookiePost('toggleHints');
 		} else {
 			$toggleHints = false;
-			setcookie("toggleHints",$toggleHints,2147483647,"/");
+			setCookiePost('toggleHints');
 		}
 	}
 
@@ -85,10 +85,10 @@
 
 		if ($toggleFooter == false) {
 			$toggleFooter = true;
-			setcookie("toggleFooter",$toggleFooter,2147483647,"/");
+			setCookiePost('toggleFooter');
 		} else {
 			$toggleFooter = false;
-			setcookie("toggleFooter",$toggleFooter,2147483647,"/");
+			setCookiePost('toggleFooter');
 		}
 	}
 
@@ -98,10 +98,10 @@
 
 		if ($toggleLiveVisitorCounter == false) {
 			$toggleLiveVisitorCounter = true;
-			setcookie("toggleLiveVisitorCounter",$toggleLiveVisitorCounter,2147483647,"/");
+			setCookiePost('toggleLiveVisitorCounter');
 		} else {
 			$toggleLiveVisitorCounter = false;
-			setcookie("toggleLiveVisitorCounter",$toggleLiveVisitorCounter,2147483647,"/");
+			setCookiePost('toggleLiveVisitorCounter');
 		}
 	}
 
@@ -110,10 +110,71 @@
 		$name = $_POST['name'];
 		$rank = $_POST['rank'];
 		$badge = $_POST['badge'];
-		setcookie("officerName",$name,2147483647,"/");
-		setcookie("officerRank",$rank,2147483647,"/");
-		setcookie("officerBadge",$badge,2147483647,"/");
+		setCookiePost('officerName');
+		setCookiePost('officerRank');
+		setCookiePost('officerBadge');
 
 	}
+
+	function setCookiePost($input) {
+
+		global	$toggleMode,
+				$toggleClock,
+				$toggleBreadcrumb,
+				$toggleBackgroundLogo,
+				$toggleHints,
+				$toggleFooter,
+				$toggleLiveVisitorCounter,
+				$name,
+				$rank,
+				$badge;
+
+		$cPath = "/";
+		$iTime = 2147483647;
+
+		switch($input) {
+			case 'toggleMode':
+				$cookie = $toggleMode;
+				break;
+			case 'toggleClock':
+				$cookie = $toggleClock;
+				break;
+			case 'toggleBreadcrumb':
+				$cookie = $toggleBreadcrumb;
+				break;
+			case 'toggleBackgroundLogo':
+				$cookie = $toggleBackgroundLogo;;
+				break;
+			case 'toggleHints':
+				$cookie = $toggleHints;
+				break;
+			case 'toggleFooter':
+				$cookie = $toggleFooter;
+				break;
+			case 'toggleLiveVisitorCounter':
+				$cookie = $toggleLiveVisitorCounter;
+				break;
+			case 'officerName':
+				$cookie = $name;
+				break;
+			case 'officerRank':
+				$cookie = $rank;
+				break;
+			case 'officerBadge':
+				$cookie = $badge;
+				break;
+
+		}
+
+		$statement = setcookie($input,$cookie,$iTime,$cPath);
+		return $statement;
+
+	}
+
+
+
+
+
+
 
 ?>
