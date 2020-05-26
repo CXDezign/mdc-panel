@@ -1,9 +1,22 @@
 {
+	"1.9.9": {
+		"id": "1.9.9",
+		"date": "26/MAY/2020",
+		"changes": {
+			"1": "General - Deprecated files, HTML & JS code removal/fixups.",
+			"2": "General - Added localisation of site details for better site-wide maintainability.",
+			"3": "General - Numerous security & performance patches to help improve site responsiveness and safety.",
+			"4": "General - Cookie handling improved.",
+			"5": "General - Source code has once again been cleaned up and reduced in size.",
+			"6": "General - San Andreas Penal Code links fixed, pointing to the correct thread.",
+			"7": "Impound Report Generator - Fixed vehicle plate hint to display correct message."
+		}
+	},
 	"1.9.8": {
 		"id": "1.9.8",
 		"date": "13/MAY/2020",
 		"changes": {
-			"1": "General - Improve mobile device user-experience with appropriate scalings to content throughout the website.",
+			"1": "General - Improved mobile device user-experience with appropriate scalings to content throughout the website.",
 			"2": "General - Small dark mode input field fixes.",
 			"3": "Sidebar - The sidebar now collapses on mobile devices.",
 			"4": "Sidebar - Updated menu item icons for LSPD, LSSD, and LSFD to their respective logos.",
