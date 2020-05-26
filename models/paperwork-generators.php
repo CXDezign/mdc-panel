@@ -69,7 +69,11 @@ class PaperworkGenerators {
 			case 1:
 				$path = "../";
 				break;
+			default:
+				$path = "";
+				break;
 		}
+
 		$ranks = file($path.'resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $ranks[$input];
@@ -127,6 +131,9 @@ class PaperworkGenerators {
 					case "I":
 						$chargeContent = "<span class='badge badge-success'>";
 						break;
+					default:
+						$chargeContent = "<span class='badge badge-danger'> ?";
+						break;
 				}
 				echo '<option
 						data-content="'.$chargeContent.$charge['id'].'</span> '.$charge['charge'].'"
@@ -172,6 +179,9 @@ class PaperworkGenerators {
 				break;
 			case 3:
 				$type = 'A';
+				break;
+			default:
+				$type = '?';
 				break;
 		}
 		return $type;
@@ -345,8 +355,6 @@ class PaperworkGenerators {
 
 	public function getDefLicense($input) {
 
-		$defLicense = 'an <b>UNKNOWN DRIVERS LICENSE STATUS</b>.';
-
 		switch ($input) {
 			case 1:
 				$defLicense = 'a <b>valid drivers license</b>.';
@@ -363,6 +371,9 @@ class PaperworkGenerators {
 			case 5:
 				$defLicense = 'a <b>revoked drivers license</b>.';
 				break;
+			default:
+				$defLicense = 'a <b>valid drivers license</b>.';
+				break;
 		}
 
 		return $defLicense;
@@ -370,8 +381,6 @@ class PaperworkGenerators {
 	}
 
 	public function getVehicleTint($input) {
-
-		$vehicleTint = "";
 
 		switch ($input) {
 			case 0:
@@ -478,9 +487,6 @@ class PaperworkGenerators {
 
 	public function getBracelet($input) {
 
-		$bracelet = 'UNKNOWN BRACELET';
-		$color = 'inherit';
-
 		switch ($input) {
 			case 1:
 				$bracelet = 'White Bracelet';
@@ -490,14 +496,15 @@ class PaperworkGenerators {
 				$bracelet = 'Orange Bracelet';
 				$color = '#FF8000';
 				break;
+			default:
+				$bracelet = 'UNKNOWN BRACELET';
+				$color = 'inherit';
+				break;
 		}
 		return '<span style="color: '.$color.';">'.$bracelet.'</span>';
 	}
 
 	public function getWristband($input) {
-
-		$wristband = 'UNKNOWN WRISTBAND';
-		$color = 'inherit';
 
 		switch ($input) {
 			case 1:
@@ -512,13 +519,15 @@ class PaperworkGenerators {
 				$wristband = 'Yellow Wristband';
 				$color = '#ffbf40';
 				break;
+			default:
+				$wristband = 'UNKNOWN WRISTBAND';
+				$color = 'inherit';
+				break;
 		}
 		return '<span style="color: '.$color.';">'.$wristband.'</span>';
 	}
 
 	public function getPlea($input, $suspect) {
-
-		$plead = "UNKNOWN PLEA";
 
 		switch ($input) {
 			case 1:
@@ -529,6 +538,9 @@ class PaperworkGenerators {
 				break;
 			case 3:
 				$plead = 'No Contest';
+				break;
+			default:
+				$plead = "UNKNOWN PLEA";
 				break;
 		}
 		return '<b>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</b>';
