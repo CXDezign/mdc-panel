@@ -26,11 +26,13 @@ class PaperworkGenerators {
 
 		if ($cookie === 1) {
 			if (isset($_COOKIE['officerRank'])) {
-				$groupCookie .= '<optgroup label="Saved Cookie">
-									<option selected value="'.$_COOKIE['officerRank'].'">
-									'.$this->getRank($_COOKIE['officerRank'],0).'
-									</option>
-								</optgroup>';
+				$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
+				$groupCookie .= '
+				<optgroup label="Saved Cookie">
+					<option selected value="'.$officerCookie.'">
+						'.$this->getRank($officerCookie,0).'
+					</option>
+				</optgroup>';
 			}
 		}
 
