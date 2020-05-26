@@ -849,17 +849,19 @@ L.Control.Search = L.Control.extend({
 
 	_getLocation: function(key) {	//extract latlng from _recordsCache
 
-		if( this._recordsCache.hasOwnProperty(key) )
+		if (this._recordsCache.hasOwnProperty(key)) {
 			return this._recordsCache[key];//then after use .loc attribute
-		else
+		} else {
 			return false;
+		}
 	},
 
 	_defaultMoveToLocation: function(latlng, title, map) {
-		if(this.options.zoom)
+		if (this.options.zoom) {
  			this._map.setView(latlng, this.options.zoom);
- 		else
-			this._map.panTo(latlng);
+		} else {
+ 			this._map.panTo(latlng);
+ 		}
 	},
 
 	showLocation: function(latlng, title) {	//set location on map from _recordsCache
@@ -867,7 +869,7 @@ L.Control.Search = L.Control.extend({
 
 		self._map.once('moveend zoomend', function(e) {
 
-			if(self._markerSearch) {
+			if (self._markerSearch) {
 				self._markerSearch.addTo(self._map).setLatLng(latlng);
 			}
 			
