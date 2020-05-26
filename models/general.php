@@ -18,6 +18,9 @@ class General {
 			case 'time':
 				$output = date("H:i", $unix);
 				break;
+			default:
+				$output = date("d/M/Y", $unix);
+				break;
 		}
 
 		return $output;
@@ -49,6 +52,9 @@ class General {
 				break;
 			case 'url-penal-code':
 				$output = "https://forum.gta.world/en/index.php?/topic/25393-san-andreas-penal-code/";
+				break;
+			default:
+				$output = "UNKNOWN SITE SETTING";
 				break;
 
 		}
@@ -126,23 +132,20 @@ class General {
 			case 'callSign':
 				$output = $_COOKIE['callSign'] ?? "";
 				break;
+			case 'defName':
+				$output = $_COOKIE['defName'] ?? "";
+				break;
+			case 'defNameURL':
+				$output = $_COOKIE['defName'] ?? "";
+				$output = str_replace(" ", "_", $output);
+				break;
+			default:
+				$output = "UNKNOWN FIND COOKIE";
+				break;
 		}
 
 		return $output;
 
-	}
-
-	public function cookieDefName() {
-
-		$cookie = $_COOKIE['defName'] ?? "";
-		return $cookie;
-	}
-
-	public function cookieDefNameURL() {
-
-		$cookie = $_COOKIE['defName'] ?? "";
-		$cookie = str_replace(" ", "_", $cookie);
-		return $cookie;
 	}
 
 	public function cookieTrafficPatrolURL() {
