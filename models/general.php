@@ -6,36 +6,24 @@ class General {
 
 	public function getSettings($setting) {
 
-		$output = '';
-
 		switch ($setting) {
-
+			case 'site-live':
+				return false;
 			case 'site-name':
-				$output = "MDC Panel";
-				break;
-			case 'site-url':
-				$output = "http://mdc.xanx.co.uk";
-				break;
-			case 'site-logo':
-				$output = "http://xanx.co.uk/images/Logo-MDC.png";
-				break;
+				return "MDC Panel";
 			case 'site-version':
-				$output = "1.9.9";
-				break;
+				return "1.9.9";
+			case 'site-url':
+				return "mdc.xanx.co.uk";
+			case 'site-logo':
+				return "mdc.xanx.co.uk/images/Logo-MDC.png";
 			case 'site-description':
-				$output = "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
-				break;
+				return "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
 			case 'url-penal-code':
-				$output = "https://forum.gta.world/en/index.php?/topic/25393-san-andreas-penal-code/";
-				break;
+				return "https://forum.gta.world/en/index.php?/topic/25393-san-andreas-penal-code/";
 			default:
-				$output = "UNKNOWN SITE SETTING";
 				break;
-
 		}
-
-		return $output;
-
 	}
 
 	public function getUNIX($format) {
@@ -43,113 +31,74 @@ class General {
 		$unix = time();
 
 		switch($format) {
-
 			case 'year':
-				$output = date("Y", $unix);
-				break;
+				return date("Y", $unix);
 			case 'date':
-				$output = date("d/M/Y", $unix);
-				break;
+				return date("d/M/Y", $unix);
 			case 'time':
-				$output = date("H:i", $unix);
-				break;
+				return date("H:i", $unix);
 			default:
-				$output = $unix;
-				break;
+				return $unix;
 		}
-
-		return $output;
-
 	}
 
 	// COOKIES
 
 	public function clearCookies() {
 
-		unset($_COOKIE['toggleMode']);
-		unset($_COOKIE['toggleClock']);
-		unset($_COOKIE['toggleBreadcrumb']);
-		unset($_COOKIE['toggleBackgroundLogo']);
-		unset($_COOKIE['toggleHints']);
-		unset($_COOKIE['toggleFooter']);
-		unset($_COOKIE['toggleLiveVisitorCounter']);
-		unset($_COOKIE['officerName']);
-		unset($_COOKIE['officerRank']);
-		unset($_COOKIE['officerBadge']);
-		unset($_COOKIE['callSign']);
-		unset($_COOKIE['defName']);
-		unset($_COOKIE['inputTDPatrolReportURL']);
-		setcookie('toggleMode', false, -1, '/');
-		setcookie('toggleClock', false, -1, '/');
-		setcookie('toggleBreadcrumb', false, -1, '/');
-		setcookie('toggleBackgroundLogo', false, -1, '/');
-		setcookie('toggleHints', false, -1, '/');
-		setcookie('toggleFooter', false, -1, '/');
-		setcookie('toggleLiveVisitorCounter', false, -1, '/');
-		setcookie('officerName', null, -1, '/');
-		setcookie('officerRank', null, -1, '/');
-		setcookie('officerBadge', null, -1, '/');
-		setcookie('callSign', null, -1, '/');
-		setcookie('defName', null, -1, '/');
-		setcookie('inputTDPatrolReportURL', null, -1, '/');
+		$cookieToggles = array("toggleMode", "toggleClock", "toggleBreadcrumb", "toggleBackgroundLogo", "toggleHints", "toggleFooter", "toggleLiveVisitorCounter");
+		$cookieUserDetails = array("officerName", "officerRank", "officerBadge", "callSign", "defName", "inputTDPatrolReportURL");
 
+		$cookiesAll = array_merge($cookieToggles, $cookieUserDetails);
+
+		foreach ($cookiesAll as $cookie) {
+			unset($_COOKIE[$cookie]);
+		}
+
+		foreach ($cookieToggles as $cookie) {
+			setcookie($cookie, false, -1, '/', $this->getSettings('site-url'), $this->getSettings('site-live'));
+		}
+
+		foreach ($cookieUserDetails as $cookie) {
+			setcookie($cookie, null, -1, '/', $this->getSettings('site-url'), $this->getSettings('site-live'));
+		}
+		
 	}
 
 	public function findCookie($cookie) {
 
-		$output = false;
-
 		switch($cookie) {
-
 			case 'toggleMode':
-				$output = $_COOKIE['toggleMode'] ?? false;
-				break;
+				return $_COOKIE['toggleMode'] ?? false;
 			case 'toggleClock':
-				$output = $_COOKIE['toggleClock'] ?? false;
-				break;
+				return $_COOKIE['toggleClock'] ?? false;
 			case 'toggleBreadcrumb':
-				$output = $_COOKIE['toggleBreadcrumb'] ?? false;
-				break;
+				return $_COOKIE['toggleBreadcrumb'] ?? false;
 			case 'toggleBackgroundLogo':
-				$output = $_COOKIE['toggleBackgroundLogo'] ?? false;
-				break;
+				return $_COOKIE['toggleBackgroundLogo'] ?? false;
 			case 'toggleHints':
-				$output = $_COOKIE['toggleHints'] ?? false;
-				break;
+				return $_COOKIE['toggleHints'] ?? false;
 			case 'toggleFooter':
-				$output = $_COOKIE['toggleFooter'] ?? false;
-				break;
+				return $_COOKIE['toggleFooter'] ?? false;
 			case 'toggleLiveVisitorCounter':
-				$output = $_COOKIE['toggleLiveVisitorCounter'] ?? false;
-				break;
+				return $_COOKIE['toggleLiveVisitorCounter'] ?? false;
 			case 'officerName':
-				$output = $_COOKIE['officerName'] ?? "";
-				break;
+				return $_COOKIE['officerName'] ?? "";
 			case 'officerBadge':
-				$output = $_COOKIE['officerBadge'] ?? "";
-				break;
+				return $_COOKIE['officerBadge'] ?? "";
 			case 'callSign':
-				$output = $_COOKIE['callSign'] ?? "";
-				break;
+				return $_COOKIE['callSign'] ?? "";
 			case 'defName':
-				$output = $_COOKIE['defName'] ?? "";
-				break;
+				return $_COOKIE['defName'] ?? "";
 			case 'defNameURL':
 				$output = $_COOKIE['defName'] ?? "";
 				$output = str_replace(" ", "_", $output);
-				break;
+				return $output;
 			case 'inputTDPatrolReportURL':
-				$output = $_COOKIE['inputTDPatrolReportURL'] ?? "https://lspd.gta.world/viewforum.php?f=101";
-				break;
+				return $_COOKIE['inputTDPatrolReportURL'] ?? "https://lspd.gta.world/viewforum.php?f=101";
 			default:
-				$output = "UNKNOWN FIND COOKIE";
 				break;
 		}
-
-		return $output;
-
 	}
 
 }
-
-?>
