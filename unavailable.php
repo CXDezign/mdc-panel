@@ -24,11 +24,13 @@
 	<div class="wrapper">
 		<div class="container mt-5 p-5">
 			<div class="text-center">
-				<h1 style="font-size: 200px;"><i class="fas fa-fw fa-sad-tear"></i></h1>
-				<h3>
-				WEBSITE TEMPORARILY UNAVAILABLE - MAINTENANCE</h3>
-				<p>The MDC Panel is currently under maintenance and will be unavailable until further notice.<br><br><br>
-				Questions? Message <strong>xanx#0001</strong> on Discord.</p>
+				<h1><i class="fas fa-fw fx-x7 fa-code-branch"></i></h1>
+				<h3>WEBSITE TEMPORARILY UNAVAILABLE - MAINTENANCE</h3>
+				<div class="container my-5">
+					The MDC Panel is currently under maintenance and will be unavailable until further notice.
+					<hr>
+					Questions? Message <strong>xanx#0001</strong> on Discord.
+				</div>
 			</div>
 		</div>
 	</div>

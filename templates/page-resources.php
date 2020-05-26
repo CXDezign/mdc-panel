@@ -1,5 +1,5 @@
 <div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-book mr-2"></i></i>Useful Resources</h1>
+	<h1><i class="fas fa-fw fa-book mr-2"></i>Useful Resources</h1>
 	<hr>
 	<div class="row">
 		<div class="col-xl-6">
