@@ -109,7 +109,7 @@
 			$officers = "";
 			foreach ($postInputNameArray as $iOfficer => $officer) {
 				$officerRank = $pg->getRank(0,1);
-				if (empty($postInputRankArray[$iOfficer]) == false) {
+				if (!empty($postInputRankArray[$iOfficer])) {
 					$officerRank = $pg->getRank($postInputRankArray[$iOfficer],1);
 				}
 				$officers .= "<strong>".$officerRank." ".$officer."</strong> (<strong>#".$postInputBadgeArray[$iOfficer]."</strong>), ";
@@ -123,7 +123,7 @@
 				$chargeTitle = $charge['charge'];
 				$chargeClassification = $charge['classification'];
 				$chargeType = "?";
-				if (empty($inputCrimeType[$iCrime]) == false) {
+				if (!empty($inputCrimeType[$iCrime])) {
 					$chargeType = $pg->getCrimeType($inputCrimeType[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
@@ -177,7 +177,7 @@
 			$officers = "";
 			foreach ($postInputNameArray as $iOfficer => $officer) {
 				$officerRank = $pg->getRank(0,1);
-				if (empty($postInputRankArray[$iOfficer]) == false) {
+				if (!empty($postInputRankArray[$iOfficer])) {
 					$officerRank = $pg->getRank($postInputRankArray[$iOfficer],1);
 				}
 				$officers .= "<strong>".$officerRank." ".$officer."</strong> (<strong>#".$postInputBadgeArray[$iOfficer]."</strong>), ";
@@ -193,7 +193,7 @@
 
 			// Evidence Resolver
 			$evidence = "";
-			if (empty($inputEvidence) == false) {
+			if (!empty($inputEvidence)) {
 				$evidence = '<br><br><strong>Evidence:</strong><br>'.nl2br($inputEvidence);
 			}
 
@@ -238,7 +238,7 @@
 
 			// Witness Resolver
 			$witnesses = "N/A";
-			if (empty($inputWitnessName) == false) {
+			if (!empty($inputWitnessName)) {
 
 				$witnesses = "";
 				$iWitnesses = count($inputWitnessName);
@@ -259,7 +259,7 @@
 
 			// Evidence Resolver
 			$evidenceImage = "";
-			if (empty($postInputEvidenceImageArray) == false) {
+			if (!empty($postInputEvidenceImageArray)) {
 
 				$evidenceImage = "";
 				foreach ($postInputEvidenceImageArray as $eImgID => $image) {
@@ -269,7 +269,7 @@
 			}
 
 			$evidenceBox = "";
-			if (empty($inputEvidenceBox) == false) {
+			if (!empty($inputEvidenceBox)) {
 
 				$evidenceBox = "";
 				foreach ($inputEvidenceBox as $eBoxID => $box) {
@@ -342,7 +342,7 @@
 
 			// Evidence Resolver
 			$evidence = "N/A";
-			if (empty($postInputEvidenceImageArray) == false) {
+			if (!empty($postInputEvidenceImageArray)) {
 
 				$evidence = "";
 				foreach ($postInputEvidenceImageArray as $eID => $image) {
@@ -419,7 +419,7 @@
 
 
 			// Traffic Stop Resolver
-			if (empty($inputNameTS) == false) {
+			if (!empty($inputNameTS)) {
 
 				$iTS = count($inputNameTS);
 				$iCitations = array_sum($inputCitationsTS);
@@ -529,13 +529,13 @@
 
 			// Notes Resolver
 			$notes = '[list][*]No additional notes.';
-			if (empty($inputNotes) == false) {
+			if (!empty($inputNotes)) {
 				$notes = '[b]Additional Notes[/b]: [list][*]'.$inputNotes;
 			}
 
 		
 			// Partner Resolver
-			if (empty($inputPartner) == false) {
+			if (!empty($inputPartner)) {
 				$partner = $pg->getRank($postInputRank,1)." ".$inputPartner;
 			} else {
 				$partner = "N/A";
@@ -544,7 +544,7 @@
 
 			// Events Resolver
 			$events = "[*] No patrol events occurred.";
-			if (empty($type) == false) {
+			if (!empty($type)) {
 
 				$events = "";
 				$info = 0;
@@ -694,7 +694,7 @@
 
 				// Court Builder
 				$chargeCourt[] = $charge['court'];
-				if ($chargeCourt[$iCharge] == true) {
+				if ($chargeCourt[$iCharge]) {
 					$chargeCourtColour = "success";
 					$chargeCourtIcon = "check-circle";
 				} else {
@@ -812,7 +812,7 @@
 
 			// Evidence Resolver
 			$evidence = "N/A";
-			if (empty($postInputEvidenceImageArray) == false) {
+			if (!empty($postInputEvidenceImageArray)) {
 
 				$evidence = "";
 				foreach ($postInputEvidenceImageArray as $image) {
@@ -828,13 +828,6 @@
 			$statement = "";
 
 			// Report Builder
-
-			// $uniqueID = "parkingTicket".uniqid();
-			// $data = [$generatedReportType, $generatedReport];
-			// return $data
-			// redirect
-			// generated-report change how it processes values, instead of sessions, use $data returned to view
-
 			$generatedReportType = "Parking Ticket";
 			$generatedReport = $generatedReport = $officers." on the <strong>".strtoupper($postInputDate)."</strong>, <strong>".$postInputTime."</strong>.<br>Cited a <strong>".$postInputVeh."</strong>, ".$pg->getVehiclePlates($postInputVehPlate,0).", ".$pg->getVehicleRO($postInputVehRO).", on <strong>".$postInputStreet."</strong>, <strong>".$postInputDistrict."</strong>.<br>
 

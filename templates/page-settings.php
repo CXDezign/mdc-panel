@@ -202,7 +202,7 @@
 
 		$toggle = $g->findCookie($input);
 
-		if ($toggle == false) {
+		if (!$toggle) {
 			return '';
 		} else {
 			return 'checked';

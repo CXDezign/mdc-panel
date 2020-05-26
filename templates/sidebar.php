@@ -3,10 +3,10 @@
 		<a class="d-block" id="sidebar-logo" href="/"><img src="/images/Logo-MDC.png" alt="MDC Panel Logo"/></a>
 	</div>
 	<?php
-		if ($g->findCookie('toggleClock') == false) {
+		if (!$g->findCookie('toggleClock')) {
 			require 'includes/clock.php';
 		}
-		if ($g->findCookie('toggleLiveVisitorCounter') == false) {
+		if (!$g->findCookie('toggleLiveVisitorCounter')) {
 			require 'includes/visitors.php';
 		}
 	?>

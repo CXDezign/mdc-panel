@@ -29,7 +29,7 @@
 
 		$visitors = json_decode(file_get_contents($dbfile), true);
 
-		if (empty($visitors) == false) {
+		if (!empty($visitors)) {
 
 			foreach ($visitors as $iVisitor => $visitor) {
 				$sameVisitorKey[] = implode(array_keys($visitor));
@@ -57,15 +57,13 @@
 			$visitors = array_values($visitors);
 			// JSON encode and return output
 			file_put_contents($dbfile, json_encode($visitors));
-			$output = count($visitors);
-			return $output;
+			return count($visitors);
 		} else {
 			$visistorsNew = array();
 			$newVisitor = array($currentIP => $currentTime);
 			array_push($visistorsNew, $newVisitor);
 			file_put_contents($dbfile, json_encode($visistorsNew));
-			$output = count($visistorsNew);
-			return $output;
+			return count($visistorsNew);
 		}
 	}
 

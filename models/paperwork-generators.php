@@ -24,16 +24,14 @@ class PaperworkGenerators {
 		$groupLSPD = "";
 		$groupLSSD = "";
 
-		if ($cookie === 1) {
-			if (isset($_COOKIE['officerRank'])) {
-				$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
-				$groupCookie .= '
-				<optgroup label="Saved Cookie">
-					<option selected value="'.$officerCookie.'">
-						'.$this->getRank($officerCookie,0).'
-					</option>
-				</optgroup>';
-			}
+		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
+			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
+			$groupCookie .= '
+			<optgroup label="Saved Cookie">
+				<option selected value="'.$officerCookie.'">
+					'.$this->getRank($officerCookie,0).'
+				</option>
+			</optgroup>';
 		}
 
 		$ranksLSPD = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18);
@@ -168,8 +166,6 @@ class PaperworkGenerators {
 
 	public function getCrimeType($input) {
 
-		$type = "?";
-
 		switch ($input) {
 			case 1:
 				$type = 'C';
@@ -209,15 +205,10 @@ class PaperworkGenerators {
 
 	public function getDashboardCamera($input) {
 
-		$dashboardCamera = "";
-
-		switch ($input) {
-			case '':
-				$dashboardCamera = 'No dashboard camera video or audio footage attached.';
-				break;
-			default:
-				$dashboardCamera = $input;
-				break;
+		if (empty($input)) {
+			$dashboardCamera = 'No dashboard camera video or audio footage attached.';
+		} else {
+			$dashboardCamera = $input;
 		}
 		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
 	}	
@@ -406,18 +397,11 @@ class PaperworkGenerators {
 
 	public function getVehicleRO($input) {
 
-		$RO = "";
-
-		switch ($input) {
-			case '':
-				$RO = '<b>unknown registered owner</b>';
-				break;
-			default:
-				$RO = 'registered to <b>'.$input.'</b>';
-				break;
+		if (empty($input)) {
+			return '<b>unknown registered owner</b>';
+		} else {
+			return 'registered to <b>'.$input.'</b>';
 		}
-
-		return $RO;
 
 	}
 
@@ -439,16 +423,11 @@ class PaperworkGenerators {
 			$bb = "[/b]";
 		}
 
-		switch ($input) {
-			case '':
-				$plates = $b.'unregistered'.$bb;
-				break;
-			default:
-				$plates = 'identification plate reading '.$b.$input.$bb;
-				break;
+		if (empty($input)) {
+			return $b.'unregistered'.$bb;
+		} else {
+			return 'identification plate reading '.$b.$input.$bb;
 		}
-
-		return $plates;
 
 	}
 

@@ -17,7 +17,7 @@
 
 		$toggleMode = $g->findCookie('toggleMode');
 
-		if ($toggleMode == false) {
+		if (!$toggleMode) {
 			$toggleMode = true;
 			setCookiePost('toggleMode');
 		} else {
@@ -31,7 +31,7 @@
 
 		$toggleClock = $g->findCookie('toggleClock');
 
-		if ($toggleClock == false) {
+		if (!$toggleClock) {
 			$toggleClock = true;
 			setCookiePost('toggleClock');
 		} else {
@@ -44,7 +44,7 @@
 
 		$toggleBreadcrumb = $g->findCookie('toggleBreadcrumb');
 
-		if ($toggleBreadcrumb == false) {
+		if (!$toggleBreadcrumb) {
 			$toggleBreadcrumb = true;
 			setCookiePost('toggleBreadcrumb');
 		} else {
@@ -57,7 +57,7 @@
 
 		$toggleBackgroundLogo = $g->findCookie('toggleBackgroundLogo');
 
-		if ($toggleBackgroundLogo == false) {
+		if (!$toggleBackgroundLogo) {
 			$toggleBackgroundLogo = true;
 			setCookiePost('toggleBackgroundLogo');
 		} else {
@@ -70,7 +70,7 @@
 
 		$toggleHints = $g->findCookie('toggleHints');
 
-		if ($toggleHints == false) {
+		if (!$toggleHints) {
 			$toggleHints = true;
 			setCookiePost('toggleHints');
 		} else {
@@ -83,7 +83,7 @@
 
 		$toggleFooter = $g->findCookie('toggleFooter');
 
-		if ($toggleFooter == false) {
+		if (!$toggleFooter) {
 			$toggleFooter = true;
 			setCookiePost('toggleFooter');
 		} else {
@@ -96,7 +96,7 @@
 
 		$toggleLiveVisitorCounter = $g->findCookie('toggleLiveVisitorCounter');
 
-		if ($toggleLiveVisitorCounter == false) {
+		if (!$toggleLiveVisitorCounter) {
 			$toggleLiveVisitorCounter = true;
 			setCookiePost('toggleLiveVisitorCounter');
 		} else {
@@ -143,7 +143,7 @@
 				$cookie = $toggleBreadcrumb;
 				break;
 			case 'toggleBackgroundLogo':
-				$cookie = $toggleBackgroundLogo;;
+				$cookie = $toggleBackgroundLogo;
 				break;
 			case 'toggleHints':
 				$cookie = $toggleHints;
@@ -168,8 +168,7 @@
 
 		}
 
-		$statement = setcookie($input,$cookie,$iTime,$cPath);
-		return $statement;
+		return setcookie($input,$cookie,$iTime,$cPath);
 
 	}
 
