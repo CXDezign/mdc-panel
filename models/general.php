@@ -14,7 +14,7 @@ class General {
 			case 'site-version':
 				return "1.9.9";
 			case 'site-url':
-				return "mdc.xanx.co.uk";
+				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
 				return "mdc.xanx.co.uk/images/Logo-MDC.png";
 			case 'site-description':
@@ -62,7 +62,7 @@ class General {
 		foreach ($cookieUserDetails as $cookie) {
 			setcookie($cookie, null, -1, '/', $this->getSettings('site-url'), $this->getSettings('site-live'));
 		}
-		
+
 	}
 
 	public function findCookie($cookie) {
