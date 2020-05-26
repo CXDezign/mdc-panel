@@ -1,11 +1,8 @@
 <?php
+
 	$request = rtrim($_SERVER['REQUEST_URI'], "/");
 	switch ($request) {
-		case '':
-		case '/':
-		case '/dashboard':
-			require __DIR__ . "/templates/page-dashboard.php";
-			break;
+		
 		case '/paperwork-generators/error':
 			require __DIR__ . "/templates/error.php";
 			break;
@@ -57,9 +54,11 @@
 		case '/paperwork-generators/impound-report':
 			require __DIR__. "/templates/form-impound-report.php";
 			break;
+		case '':
+		case '/':
+		case '/dashboard':
 		default:
-			http_response_code(404);
 			require __DIR__ . "/templates/page-dashboard.php";
 			break;
+
 	}
-?>

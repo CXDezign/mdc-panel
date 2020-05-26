@@ -407,7 +407,6 @@ class PaperworkGenerators {
 
 	public function getVehiclePlates($input, $type) {
 
-		$plates = "";
 		$b = "";
 		$bb = "";
 
