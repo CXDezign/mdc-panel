@@ -1,4 +1,12 @@
 {
+	"1.10.1": {
+		"id": "1.10.1",
+		"date": "27/MAY/2020",
+		"changes": {
+			"1": "Paperwork Generators - Fixed incorrect times on paperwork generators. Credit: Spartan",
+			"2": "Arrest Report Generator - Fixed arrest report generator not generating reports. Credit: Spartan"
+		}
+	},
 	"1.10.0": {
 		"id": "1.10.0",
 		"date": "26/MAY/2020",
