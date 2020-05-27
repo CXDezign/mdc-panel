@@ -28,6 +28,7 @@ class General {
 
 	public function getUNIX($format) {
 
+		date_default_timezone_set('GMT');
 		$unix = time();
 
 		switch($format) {

@@ -24,7 +24,7 @@
 	<div class="wrapper">
 		<div class="container mt-5 p-5">
 			<div class="text-center">
-				<h1><i class="fas fa-fw fx-x7 fa-code-branch"></i></h1>
+				<h1><i class="fas fa-fw fa-5x fa-code-branch"></i></h1>
 				<h3>WEBSITE TEMPORARILY UNAVAILABLE - MAINTENANCE</h3>
 				<div class="container my-5">
 					The MDC Panel is currently under maintenance and will be unavailable until further notice.
