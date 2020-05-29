@@ -1,4 +1,11 @@
 {
+	"1.10.2": {
+		"id": "1.10.2",
+		"date": "29/MAY/2020",
+		"changes": {
+			"1": "Site - Logo has been reworked to an SVG (Scalable Vector Graphic).<br><img width='200px' src='/images/MDC-Panel.svg'>"
+		}
+	},
 	"1.10.1": {
 		"id": "1.10.1",
 		"date": "27/MAY/2020",

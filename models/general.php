@@ -12,7 +12,7 @@ class General {
 			case 'site-name':
 				return "MDC Panel";
 			case 'site-version':
-				return "1.10.1";
+				return "1.10.2";
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
