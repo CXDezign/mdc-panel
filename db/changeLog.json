@@ -3,7 +3,8 @@
 		"id": "1.10.2",
 		"date": "29/MAY/2020",
 		"changes": {
-			"1": "Site - Logo has been reworked to an SVG (Scalable Vector Graphic).<br><img width='200px' src='/images/MDC-Panel.svg'>"
+			"1": "Site - Logo has been reworked to an SVG (Scalable Vector Graphic).<br><img width='200px' src='/images/MDC-Panel.svg'>",
+			"2": "Site - OpenGraph Meta tags have been updated according with the new logo."
 		}
 	},
 	"1.10.1": {
@@ -18,12 +19,12 @@
 		"id": "1.10.0",
 		"date": "26/MAY/2020",
 		"changes": {
-			"1": "General - Deprecated files, HTML & JS code removal/fixups.",
-			"2": "General - Added localisation of site details for better site-wide maintainability.",
-			"3": "General - Numerous security & performance patches to help improve site responsiveness and safety.",
-			"4": "General - Cookie handling improved.",
-			"5": "General - Source code has once again been cleaned up and reduced in size.",
-			"6": "General - San Andreas Penal Code links fixed, pointing to the correct thread.",
+			"1": "Site - Deprecated files, HTML & JS code removal/fixups.",
+			"2": "Site - Added localisation of site details for better site-wide maintainability.",
+			"3": "Site - Numerous security & performance patches to help improve site responsiveness and safety.",
+			"4": "Site - Cookie handling improved.",
+			"5": "Site - Source code has once again been cleaned up and reduced in size.",
+			"6": "Site - San Andreas Penal Code links fixed, pointing to the correct thread.",
 			"7": "Impound Report Generator - Fixed vehicle plate hint to display correct message."
 		}
 	},
@@ -31,8 +32,8 @@
 		"id": "1.9.8",
 		"date": "13/MAY/2020",
 		"changes": {
-			"1": "General - Improved mobile device user-experience with appropriate scalings to content throughout the website.",
-			"2": "General - Small dark mode input field fixes.",
+			"1": "Site - Improved mobile device user-experience with appropriate scalings to content throughout the website.",
+			"2": "Site - Small dark mode input field fixes.",
 			"3": "Sidebar - The sidebar now collapses on mobile devices.",
 			"4": "Sidebar - Updated menu item icons for LSPD, LSSD, and LSFD to their respective logos.",
 			"5": "Sidebar - Removed MDC Panel LSPD thread link.",
@@ -43,16 +44,16 @@
 		"id": "1.9.7",
 		"date": "13/MAY/2020",
 		"changes": {
-			"1": "General - MDC Panel Project has been made open-source. <a href='https://github.com/xanxTV/MDC-Panel'>GitHub - MDC Panel</a>",
+			"1": "Site - MDC Panel Project has been made open-source. <a href='https://github.com/xanxTV/MDC-Panel'>GitHub - MDC Panel</a>",
 			"2": "Sidebar - Fixed bottom margin on toggle-able menus.",
-			"3": "General - San Andreas Penal Code references changed to just Penal Code."
+			"3": "Site - San Andreas Penal Code references changed to just Penal Code."
 		}
 	},
 	"1.9.6": {
 		"id": "1.9.6",
 		"date": "06/MAY/2020",
 		"changes": {
-			"1": "General - OpenGraph details updated. (Logo and URL fixes for when linking the site in Discord to display short previews.)",
+			"1": "Site - OpenGraph details updated. (Logo and URL fixes for when linking the site in Discord to display short previews.)",
 			"2": "Sidebar - The sidebar is now scrollable if content is overflown.",
 			"3": "Sidebar - Current version of the MDC Panel is now displayed on the Changelog link instead of underneath the logo.",
 			"4": "Traffic Report Generator - Tint level fix. (Credit: Humour for finding the bug.)",
@@ -64,10 +65,10 @@
 		"id": "1.9.5",
 		"date": "01/MAY/2020",
 		"changes": {
-			"1": "General - Backend styling code optimisation.",
-			"2": "General - Animation delay changes.",
-			"3": "General - Session variables optimisation.",
-			"4": "General - Cookie variables optimisation.",
+			"1": "Site - Backend styling code optimisation.",
+			"2": "Site - Animation delay changes.",
+			"3": "Site - Session variables optimisation.",
+			"4": "Site - Cookie variables optimisation.",
 			"5": "Parking Ticket Generator - Title icon and evidence hint fixes.",
 			"6": "Paperwork Generators - Large backend update regarding processing and defaulting variables."
 		}
@@ -87,14 +88,14 @@
 		"id": "1.9.3",
 		"date": "30/APR/2020",
 		"changes": {
-			"1": "General - Live visitor counter."
+			"1": "Site - Live visitor counter."
 		}
 	},
 	"1.9.2": {
 		"id": "1.9.2",
 		"date": "30/APR/2020",
 		"changes": {
-			"1": "General - All select inputs have been updated visually and certain menus also now support search boxes.",
+			"1": "Site - All select inputs have been updated visually and certain menus also now support search boxes.",
 			"2": "Paperwork Generators - Further backend code improvements to select menus."
 		}
 	},
@@ -102,23 +103,23 @@
 		"id": "1.9.1",
 		"date": "28/APR/2020",
 		"changes": {
-			"1": "General - All form fill out pages are now secured with alert messages to prevent accidental tab closure.",
-			"2": "General - Fixed highlighting text whilst using Day Mode.",
-			"3": "General - Fixed Clock & Breadcrumb animations to be more consistent."
+			"1": "Site - All form fill out pages are now secured with alert messages to prevent accidental tab closure.",
+			"2": "Site - Fixed highlighting text whilst using Day Mode.",
+			"3": "Site - Fixed Clock & Breadcrumb animations to be more consistent."
 		}
 	},
 	"1.9.0": {
 		"id": "1.9.0",
 		"date": "27/APR/2020",
 		"changes": {
-			"1": "General - Updated MDC Panel Logo.",
-			"2": "General - Added a Favicon.",
-			"3": "General - Site-wide visual overhaul.",
-			"4": "General - Reworked entire URL Routing system for neater links.",
-			"5": "General - Breadcrumb Navigation added.",
-			"6": "General - Live Sidebar Clock added.",
-			"7": "General - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, Footer toggles & Clear Cookies.).",
-			"8": "General - Changelog system added.",
+			"1": "Site - Updated MDC Panel Logo.",
+			"2": "Site - Added a Favicon.",
+			"3": "Site - Site-wide visual overhaul.",
+			"4": "Site - Reworked entire URL Routing system for neater links.",
+			"5": "Site - Breadcrumb Navigation added.",
+			"6": "Site - Live Sidebar Clock added.",
+			"7": "Site - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, Footer toggles & Clear Cookies.).",
+			"8": "Site - Changelog system added.",
 			"9": "Paperwork Generators - Reworked from the ground-up for code efficiency, error checking, variable defaulting, clutter reduction, and optimisation for upcoming projects.",
 			"10": "Arrest Report Generators - Reworked entire backend code regarding the arrest charges table. The table will now display on the generated arrest report page.",
 			"11": "Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
@@ -148,7 +149,7 @@
 		"id": "1.8.3",
 		"date": "05/MAR/2020",
 		"changes": {
-			"1": "General - Error tracker fixed.",
+			"1": "Site - Error tracker fixed.",
 			"2": "Charges - Fixed times for charge 120. depending on offence count."
 		}
 	},
@@ -165,9 +166,9 @@
 		"id": "1.8.1",
 		"date": "23/FEB/2020",
 		"changes": {
-			"1": "General - Renamed MDC Paperwork Generators to MDC Panel.",
-			"2": "General - Panel icons now light up when hovering your mouse over them.",
-			"3": "General - Mobile adjustments for better device scalability.",
+			"1": "Site - Renamed MDC Paperwork Generators to MDC Panel.",
+			"2": "Site - Panel icons now light up when hovering your mouse over them.",
+			"3": "Site - Mobile adjustments for better device scalability.",
 			"4": "Dashboard - Added a main dashboard hub for all the MDC Panel's features.",
 			"5": "Sidebar - Renamed numerous amounts of links and added the following: Dashboard, LSSD, LSFD, MDC Panel - Thread."
 		}
@@ -188,8 +189,8 @@
 		"id": "1.7.0",
 		"date": "14/FEB/2020",
 		"changes": {
-			"1": "General - Logo for the MDC has been updated.",
-			"2": "General - The background of the site has changed from the LSPD logo to the San Andreas Seal.",
+			"1": "Site - Logo for the MDC has been updated.",
+			"2": "Site - The background of the site has changed from the LSPD logo to the San Andreas Seal.",
 			"3": "Traffic Division Patrol Report Generator - Initial release.",
 			"4": "Traffic Report Generator - Fixed the text colouring issues when copying reports and using Dark/Day mode on the actual MDC."
 		}
@@ -198,8 +199,8 @@
 		"id": "1.6.1",
 		"date": "22/JAN/2020",
 		"changes": {
-			"1": "General - Added LSSD ranks.",
-			"2": "General - Added many missing vehicles from the automatic completion dropdown.",
+			"1": "Site - Added LSSD ranks.",
+			"2": "Site - Added many missing vehicles from the automatic completion dropdown.",
 			"3": "Added Vehicles - Albany Virgo Classic, Albany V-STR, Annis Kawaii, Benefactor Streiter (Sedan), Benefactor Streiter (SUV), Dinka Blista Kanjo, Dinka Flash, Dinka Sugoi, Karin Everon, Karin Sultan Classic, Lampadati Komoda, Maxwell Asbo, Maxwell Vagrant, Vapid Dominator Classic, Vapid Retinue MK II, Vapid Scout, Vapid Torrence, Överflöd Imorgon, Übermacht Rebla GTS.",
 			"4": "Traffic Report - Added level 5 tint option.",
 			"5": "Traffic Report - Fixed a spelling mistake."
@@ -210,8 +211,8 @@
 		"date": "22/JAN/2020",
 		"changes": {
 			"1": "Evidence Registration Log - Initial release (old format).",
-			"2": "General - Background opacity fixed across browsers.",
-			"3": "General - Fixed San Andreas Penal Code related links.",
+			"2": "Site - Background opacity fixed across browsers.",
+			"3": "Site - Fixed San Andreas Penal Code related links.",
 			"4": "Resources - Added a new submenu Resources. Contains quick resources.",
 			"5": "Traffic Report - Fixed copy and paste code for the generator for new MDC.",
 			"6": "Traffic Report - Fixed Create Record link for new MDC."
@@ -235,8 +236,8 @@
 		"id": "1.4.1",
 		"date": "11/DEC/2019",
 		"changes": {
-			"1": "General - Added META tags for previewing purposes such as when posting Discord links.",
-			"2": "General - Added an N/A, Forensic Analyst, and Crime Scene Investigator ranks to the rank chooser.",
+			"1": "Site - Added META tags for previewing purposes such as when posting Discord links.",
+			"2": "Site - Added an N/A, Forensic Analyst, and Crime Scene Investigator ranks to the rank chooser.",
 			"3": "Navigation Bar - Fixed a bug where the results page navigation bar would not work correctly when clicking on menus."
 		}
 	},
@@ -244,9 +245,9 @@
 		"id": "1.4.0",
 		"date": "11/DEC/2019",
 		"changes": {
-			"1": "General - Website branding and name change to MDC.",
-			"2": "General - Website has been adjusted and accommodated for future projects and generators.",
-			"3": "General - Temporary switch to lightmode until a toggle is created.",
+			"1": "Site - Website branding and name change to MDC.",
+			"2": "Site - Website has been adjusted and accommodated for future projects and generators.",
+			"3": "Site - Temporary switch to lightmode until a toggle is created.",
 			"4": "Death Report Generator - Initial release.",
 			"5": "Paperwork Generators - Added prepending icons to many input fields for form fill outs.",
 			"6": "Paperwork Generators - Addition of tooltips on hover or on focus to replace small help texts to remove visible clutter.",
@@ -282,9 +283,9 @@
 		"id": "1.1.0",
 		"date": "23/NOV/2019",
 		"changes": {
-			"1": "General - Website now supports HTTPS SSL/TLS encryption.",
-			"2": "General - Dark mode has been activated.",
-			"3": "General - Small visual details have been adjusted.",
+			"1": "Site - Website now supports HTTPS SSL/TLS encryption.",
+			"2": "Site - Dark mode has been activated.",
+			"3": "Site - Small visual details have been adjusted.",
 			"4": "Generated Report - Added Create Record: Defendant Name button.",
 			"5": "Traffic Report Generator - Input fields now highlight when in use.",
 			"6": "Traffic Report Generator - Added Dashboard Camera section.",
