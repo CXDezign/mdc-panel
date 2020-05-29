@@ -203,7 +203,7 @@ optgroup {
 }
 
 #sidebar-logo {
-	background: url("/images/Logo-MDC.png");
+	background: url("<?= $g->getSettings('site-logo') ?>");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;

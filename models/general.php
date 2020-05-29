@@ -16,7 +16,9 @@ class General {
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
-				return "http://mdc.xanx.co.uk/images/Logo-MDC.png";
+				return "/images/MDC-Panel.svg";
+			case 'site-image':
+				return "/images/MDC-Panel-OG.png";
 			case 'site-description':
 				return "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
 			case 'url-penal-code':

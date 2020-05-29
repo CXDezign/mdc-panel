@@ -14,7 +14,7 @@
 	<meta property="og:title" content="<?= $g->getSettings('site-name') ?>">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="<?= $g->getSettings('site-url') ?>">
-	<meta property="og:image" content="<?= $g->getSettings('site-logo') ?>">
+	<meta property="og:image" content="<?= $g->getSettings('site-image') ?>">
 	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
 
 	<!-- Bootstrap -->

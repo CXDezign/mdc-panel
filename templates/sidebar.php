@@ -1,6 +1,6 @@
 <nav id="sidebar">
 	<div class="text-center my-3">
-		<a class="d-block" id="sidebar-logo" href="/"><img src="/images/Logo-MDC.png" alt="MDC Panel Logo"/></a>
+		<a class="d-block" id="sidebar-logo" href="/"><img alt="MDC Panel Logo"/></a>
 	</div>
 	<?php
 		if (!$g->findCookie('toggleClock')) {
