@@ -121,6 +121,5 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **xanx** - *Creator* - [xanxTV](https://github.com/xanxTV)
 * **Skent** - *Arrest Report, Patrol Log, Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
-* **Callum** - *Contributor* - [Callump01](https://github.com/Callump01)
 * **Cascade** - *Base Leaflet code* - [Cascadee88](https://github.com/Cascadee88)
 * **Spartan** - *Constant suggestions and interest in the project*.
