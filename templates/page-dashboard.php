@@ -37,16 +37,5 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-xl-6 mb-4">
-			<a target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>">
-				<div class="card card-panel bg-dark text-white" id="card-main-penal">
-					<div class="card-body shadow">
-						<p class="card-text card-icon"><i class="fas fa-fw fa-7x fa-balance-scale text-muted"></i></p>
-						<h5 class="card-title">Penal Code</h5>
-						<p class="card-text card-description">Access the San Andreas Penal Code.</p>
-					</div>
-				</div>
-			</a>
-		</div>
 	</div>
 </div>

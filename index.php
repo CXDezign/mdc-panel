@@ -41,7 +41,11 @@
 	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
-	<!-- Map -->
+	<!-- Bricklayer.js -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>
+
+	<!-- Map Style -->
 	<link rel="stylesheet" type="text/css" href="/map/style.css">
 
 	<!-- Leaflet -->
@@ -70,11 +74,14 @@
 	</div>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script type="text/javascript">
+
+		// Animate on Scroll Initiation
+		AOS.init();
+
+		// Bricklayer.js Initiation
+		var bricklayerResources = new Bricklayer(document.querySelector('.bricklayer-resources'));
+
 		$(document).ready(function(){
-
-			// Animate on Scroll Initiation
-			AOS.init();
-
 			// Select Picker Initiation
 			$('.selectpicker').selectpicker();
 

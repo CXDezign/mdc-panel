@@ -79,11 +79,6 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>">
-				<i class="fas fa-fw fa-balance-scale mr-2"></i><span class="icon-text">Penal Code<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-			</a>
-		</li>
-		<li class="nav-item">
 			<a class="nav-link dropdown-toggle" href="#lspdSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD</span>
 			</a>
@@ -101,16 +96,6 @@
 				<li>
 					<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewforum.php?f=434">
 						<i class="fas fa-fw fa-database mr-2"></i><span class="icon-text">Reports & Records<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1KsdZ5NkI-GC6uI30LlWYOjnF-7_B02CKYx9Z6BcKhrA/edit#gid=380203790">
-						<i class="fas fa-fw fa-warehouse mr-2"></i><span class="icon-text">Motorpool<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722">
-						<i class="fas fa-fw fa-landmark mr-2"></i><span class="icon-text">Court Laws<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 					</a>
 				</li>
 			</ul>

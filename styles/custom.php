@@ -100,6 +100,26 @@ optgroup {
 	color: <?= $golden ?>;
 }
 
+
+/*////////
+// BRICKLAYER //
+////////*/
+
+.bricklayer-column {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.bricklayer-resources .bricklayer-column-sizer {
+	width: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+	.bricklayer-resources .bricklayer-column-sizer {
+		width: 100%;
+	}
+}
+
 /*///////////
 // GENERAL //
 ///////////*/
@@ -435,6 +455,17 @@ optgroup {
 	transition: all .1s ease-in-out!important;
 }
 
+.card-resource {
+	margin-bottom: 10px;
+	box-shadow: 0px 1px 0 rgba(0, 0, 0, .5);
+	transition: all .1s ease-in-out!important;
+}
+
+.card-resource i {
+	text-shadow: 0px 1px 0 rgba(0, 0, 0, .25);
+	transition: all .1s ease-in-out!important;
+}
+
 #card-main-map:hover {
 	box-shadow: <?= $cMap ?> 0 1px 0px;
 }
@@ -727,6 +758,16 @@ small.text-muted {
 .card-panel:hover {
 	box-shadow: 0px -1px 0 rgba(255, 255, 255, .5);
 }
+
+.card-resource {
+	box-shadow: 0px -1px 0 rgba(255, 255, 255, .1);
+}
+
+.card-resource:hover {
+	box-shadow: 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+
 
 .card.text-white {
 	color: #fff!important;
