@@ -1,16 +1,6 @@
 <?php
 
-	// Initialise
-	session_start();
-
-	// Required Models
-	require '../models/general.php';
-	require '../models/paperwork-generators.php';
-	$g = new General();
-	$pg = new PaperworkGenerators();
-	$ar = new ArrestReportGenerator();
-	$er = new EvidenceRegistrationLogGenerator();
-	$pt = new ParkingTicketGenerator();
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/initialise.php';
 
 	// Generator Types
 
