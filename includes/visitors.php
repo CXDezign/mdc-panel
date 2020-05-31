@@ -1,7 +1,7 @@
 <?php
 	 
 	$dbfile = "db/visitors.json";
-	$expire = 300;
+	$expire = 3600;
 
 	if (!file_exists($dbfile)) {
 		die("Error: Data file " . $dbfile . " NOT FOUND!");
