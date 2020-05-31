@@ -7,7 +7,7 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=bugs)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
 <br>
 <p align="center">
-  <img src="https://mdc.xanx.co.uk/images/Logo-MDC.png">
+  <img width="400px" src="https://mdc.xanx.co.uk/images/MDC-Panel.svg">
 </p>
 
 # MDC Panel
