@@ -2,7 +2,7 @@
 	<h1 class="my-3"><i class="fas fa-fw fa-bug mr-2"></i>Fatal Error!</h1>
 	<div class="container p-0">
 		<h4>Whoops! Looks like you encountered a fatal error.</h4>
-		Please contact <span class="text-golden" id="username">xanx#0001</span> on <span class="text-golden">Discord</span> and describe the events leading up prior to this message.
+		Please contact <span class="text-golden" id="username"><?= $g->getSettings('site-discord-contact') ?></span> on <span class="text-golden">Discord</span> and describe the events leading up prior to this message.
 	</div>
 	<div class="container mt-5 text-center">
 		<a tabindex="0" class="btn btn-primary px-5" onclick="copy()" data-toggle="tooltip" title="Copied!">

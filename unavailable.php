@@ -1,11 +1,21 @@
+<?php
+
+	require 'includes/initialise.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="icon" type="image/png" href="favicon.png">
-	<title>MDC Panel - MAINTENANCE</title>
+	<title><?= $g->getSettings('site-name') ?> - MAINTENANCE</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta property="og:title" content="<?= $g->getSettings('site-name') ?>">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="<?= $g->getSettings('site-url') ?>">
+	<meta property="og:image" content="<?= $g->getSettings('site-image') ?>">
+	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -29,7 +39,7 @@
 				<div class="container my-5">
 					The MDC Panel is currently under maintenance and will be unavailable until further notice.
 					<hr>
-					Questions? Message <strong>xanx#0001</strong> on Discord.
+					Questions? Message <strong><?= $g->getSettings('site-discord-contact') ?></strong> on Discord.
 				</div>
 			</div>
 		</div>
