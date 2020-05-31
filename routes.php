@@ -4,60 +4,42 @@
 
 	switch ($request) {
 		case '/paperwork-generators/error':
-			require __DIR__ . "/templates/error.php";
-			break;
+			return require __DIR__ . "/templates/error.php";
 		case '/settings':
-			require __DIR__ . "/templates/page-settings.php";
-			break;
+			return require __DIR__ . "/templates/page-settings.php";
 		case '/changelogs':
-			require __DIR__ . "/templates/page-changelogs.php";
-			break;
+			return require __DIR__ . "/templates/page-changelogs.php";
 		case '/street-guide':
-			require __DIR__ . "/map/index.php";
-			break;
+			return require __DIR__ . "/map/index.php";
 		case '/paperwork-generators':
-			require __DIR__ . "/templates/page-generators.php";
-			break;
+			return require __DIR__ . "/templates/page-generators.php";
 		case '/useful-resources':
-			require __DIR__ . "/templates/page-resources.php";
-			break;
+			return require __DIR__ . "/templates/page-resources.php";
 		case '/paperwork-generators/arrest-charges':
-			require __DIR__ . "/templates/form-arrest-charges.php";
-			break;
+			return require __DIR__ . "/templates/form-arrest-charges.php";
 		case '/paperwork-generators/arrest-report':
-			require __DIR__ . "/templates/form-arrest-report.php";
-			break;
+			return require __DIR__ . "/templates/form-arrest-report.php";
 		case '/paperwork-generators/traffic-report':
-			require __DIR__ . "/templates/form-traffic-report.php";
-			break;
+			return require __DIR__ . "/templates/form-traffic-report.php";
 		case '/paperwork-generators/evidence-registration-log':
-			require __DIR__ . "/templates/form-evidence-registration-log.php";
-			break;
+			return require __DIR__ . "/templates/form-evidence-registration-log.php";
 		case '/paperwork-generators/death-report':
-			require __DIR__ . "/templates/form-death-report.php";
-			break;
+			return require __DIR__ . "/templates/form-death-report.php";
 		case '/paperwork-generators/traffic-division-patrol-report':
-			require __DIR__ . "/templates/form-traffic-division-patrol-report.php";
-			break;
+			return require __DIR__ . "/templates/form-traffic-division-patrol-report.php";
 		case '/paperwork-generators/patrol-log':
-			require __DIR__ . "/templates/form-patrol-log.php";
-			break;
+			return require __DIR__ . "/templates/form-patrol-log.php";
 		case '/paperwork-generators/parking-ticket':
-			require __DIR__ . "/templates/form-parking-ticket.php";
-			break;
+			return require __DIR__ . "/templates/form-parking-ticket.php";
 		case '/paperwork-generators/generated-thread':
-			require __DIR__ . "/templates/generated-thread.php";
-			break;
+			return require __DIR__ . "/templates/generated-thread.php";
 		case '/paperwork-generators/generated-report':
-			require __DIR__ . "/templates/generated-report.php";
-			break;
+			return require __DIR__ . "/templates/generated-report.php";
 		case '/paperwork-generators/impound-report':
-			require __DIR__. "/templates/form-impound-report.php";
-			break;
+			return require __DIR__. "/templates/form-impound-report.php";
 		case '':
 		case '/':
 		case '/dashboard':
 		default:
-			require __DIR__ . "/templates/page-dashboard.php";
-			break;
+			return require __DIR__ . "/templates/page-dashboard.php";
 	}
