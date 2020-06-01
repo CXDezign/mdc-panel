@@ -1,4 +1,19 @@
 {
+	"1.10.3": {
+		"id": "1.10.3",
+		"date": "01/JUN/2020",
+		"changes": {
+			"1": "GitHub - Removed inactive contributors.",
+			"2": "GitHub - Updated logo in documentation to be using the new .svg version.",
+			"3": "Site - Increased concurrent visitor count expiration to 1 hour from 5 minutes.",
+			"4": "Site - Removed duplicate initialisation code.",
+			"5": "Site - Added new site settings for greater site-wide consistency.",
+			"6": "Site - Added Bricklayer.js, pages with repeatable cards now dynamically display in appropriate columns dependent on width and height.",
+			"7": "Site - Improved URL routing system with the removal of duplicate code.",
+			"8": "Sidebar - Removed link stack animation.",
+			"9": "Site - "
+		}
+	},
 	"1.10.2": {
 		"id": "1.10.2",
 		"date": "29/MAY/2020",

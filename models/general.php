@@ -12,7 +12,7 @@ class General {
 			case 'site-name':
 				return "MDC Panel";
 			case 'site-version':
-				return "1.10.2";
+				return "1.10.3";
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
@@ -21,8 +21,12 @@ class General {
 				return "/images/MDC-Panel-OG.png";
 			case 'site-description':
 				return "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
+			case 'site-discord-contact':
+				return "xanx#0001";
 			case 'url-penal-code':
 				return "https://forum.gta.world/en/index.php?/topic/25393-san-andreas-penal-code/";
+			case 'url-court-laws':
+				return "https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722";
 			default:
 				break;
 		}
