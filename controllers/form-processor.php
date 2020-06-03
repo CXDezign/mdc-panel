@@ -24,7 +24,7 @@
 
 			$input = $pg->getCrimeClass2(array_reverse($output));
 
-			echo($input);
+			echo $input;
 
 		}
 
