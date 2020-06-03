@@ -929,39 +929,27 @@
 				$time = $tTime;
 				break;
 			case 'officerName':
-				$cookie = 'officerName';
-				$time = $iTime;
-				break;
 			case 'officerNameArray':
 				$cookie = 'officerName';
 				$time = $iTime;
 				break;
 			case 'officerRank':
-				$cookie = 'officerRank';
-				$time = $iTime;
-				break;
 			case 'officerRankArray':
 				$cookie = 'officerRank';
 				$time = $iTime;
 				break;
 			case 'officerBadge':
-				$cookie = 'officerBadge';
-				$time = $iTime;
-				break;
 			case 'officerBadgeArray':
 				$cookie = 'officerBadge';
 				$time = $iTime;
 				break;
 			case 'defName':
+			case 'defNameVehRO':
 				$cookie = 'defName';
 				$time = $dTime;
 				break;
 			case 'defNameURL':
 				$cookie = 'defNameURL';
-				$time = $dTime;
-				break;
-			case 'defNameVehRO':
-				$cookie = 'defName';
 				$time = $dTime;
 				break;
 			case 'inputTDPatrolReportURL':
