@@ -1,0 +1,23 @@
+{
+	"0": {
+		"title": "Street Guide",
+		"description": "Explore the various locations of the San Andreas state.",
+		"link": "/street-guide",
+		"ID": "card-main-map",
+		"icon": "map-marker-alt"
+	},
+	"1": {
+		"title": "Paperwork Generators",
+		"description": "Generate paperwork reports to assist your work process.",
+		"link": "/paperwork-generators",
+		"ID": "card-main-generators",
+		"icon": "archive"
+	},
+	"2": {
+		"title": "Useful Resources",
+		"description": "Access some quick and handy resources.",
+		"link": "/useful-resources",
+		"ID": "card-main-resources",
+		"icon": "book"
+	}
+}

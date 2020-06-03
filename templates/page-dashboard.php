@@ -1,41 +1,46 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+<?php
+
+	$json = json_decode(file_get_contents("db/dashboard.json"), true);
+
+	$cards = "";
+
+	foreach ($json as $card) {
+
+		$cardTitle = $card['title'];
+		$cardDescription = $card['description'];
+		$cardLink = $card['link'];
+		$cardID = $card['ID'];
+		$cardIcon = $card['icon'];
+
+		$cards .= '<div class="grid-item">
+			<div class="card card-panel" id="'.$cardID.'">
+				<a href="'.$cardLink.'" class="d-block">
+					<div class="card-body text-center">
+						<p><i class="fas fa-fw fa-7x fa-'.$cardIcon.' text-muted"></i></p>
+						<h5 class="card-title">'.$cardTitle.'</h5>
+						<p class="card-text card-description">'.$cardDescription.'</p>
+					</div>
+				</a>
+			</div>
+		</div>';
+	}
+
+?>
+
+<div class="container mx-auto" data-aos="fade-out" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-th-large mr-2"></i></i>Dashboard</h1>
 	<hr>
-	<div class="row">
-		<div class="col-xl-6 mb-4">
-			<a href="/street-guide">
-				<div class="card card-panel bg-dark text-white" id="card-main-map">
-					<div class="card-body shadow">
-						<p class="card-text card-icon"><i class="fas fa-fw fa-7x fa-map-marker-alt text-muted"></i></p>
-						<h5 class="card-title">Street Guide</h5>
-						<p class="card-text card-description">Find street locations, locate official government buildings, explore the various districts of the San Andreas state.</p>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="col-xl-6 mb-4">
-			<a href="/paperwork-generators">
-				<div class="card card-panel bg-dark text-white" id="card-main-generators">
-					<div class="card-body shadow">
-						<p class="card-text card-icon"><i class="fas fa-fw fa-7x fa-archive text-muted"></i></p>
-						<h5 class="card-title">Paperwork Generators</h5>
-						<p class="card-text card-description">Generate a multitude different types of paperwork reports, logs, and more to assist your process.</p>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xl-6 mb-4">
-			<a href="/useful-resources">
-				<div class="card card-panel bg-dark text-white" id="card-main-resources">
-					<div class="card-body shadow">
-						<p class="card-text card-icon"><i class="fas fa-fw fa-7x fa-book text-muted"></i></p>
-						<h5 class="card-title">Useful Resources</h5>
-						<p class="card-text card-description">Access some quick and handy resources.</p>
-					</div>
-				</div>
-			</a>
-		</div>
+	<div class="grid" id="dashboard">
+		<div class="grid-col grid-col--1"></div>
+		<div class="grid-col grid-col--2"></div>
+		<?= $cards ?>
 	</div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.grid').colcade({
+			columns: '.grid-col',
+			items: '.grid-item'
+		});
+	});
+</script>
