@@ -648,23 +648,15 @@
 				// Charge Type Builder
 				$chargeType = $charge['type'];
 				$chargeTypeFull = "";
-				switch ($chargeType) {
-					case "F":
-						$chargeTypeFull = '<strong class="text-danger">Felony</strong>';
-						break;
-					case "M":
-						$chargeTypeFull = '<strong class="text-warning">Misdemeanor</strong>';
-						break;
-					case "I":
-						$chargeTypeFull = '<strong class="text-success">Infraction</strong>';
-						break;
-					default:
-						$chargeTypeFull = '<strong class="text-danger">UNKNOWN</strong>';
-						break;
+
+				// 412 Charge
+				if ($chargeID == 412 && $chargeOffence == 3 ) {
+					$chargeType = "F";
 				}
 
 				// Charge Class Builder
 				$chargeClass = $_POST['inputCrimeClass'][$iCharge];
+
 				switch ($chargeClass) {
 					case 1:
 						$chargeClass = "C";
@@ -677,6 +669,26 @@
 						break;
 					default:
 						$chargeClass = "?";
+						break;
+				}
+
+				// 402 Charge
+				if (($chargeID == 402) && ($chargeClass == "B" || $chargeClass == "A")) {
+					$chargeType = "F";
+				}
+
+				switch ($chargeType) {
+					case "F":
+						$chargeTypeFull = '<strong class="text-danger">Felony</strong>';
+						break;
+					case "M":
+						$chargeTypeFull = '<strong class="text-warning">Misdemeanor</strong>';
+						break;
+					case "I":
+						$chargeTypeFull = '<strong class="text-success">Infraction</strong>';
+						break;
+					default:
+						$chargeTypeFull = '<strong class="text-danger">UNKNOWN</strong>';
 						break;
 				}
 
@@ -721,8 +733,8 @@
 				$chargeCourtFull = '<span class="badge badge-'.$chargeCourtColour.'"><i class="fas fa-fw fa-'.$chargeCourtIcon.'"></i></span>';
 
 				// Time Builder
-				$multiDimensionalCrimeTimes = array(412);
-				if (in_array($charge, $multiDimensionalCrimeTimes)) {
+				$multiDimensionalCrimeTimes = array("412");
+				if (in_array($chargeID, $multiDimensionalCrimeTimes)) {
 					$days[] = $charge['time'][$chargeOffence]['days'];
 					$hours[] = $charge['time'][$chargeOffence]['hours'];
 					$mins[] = $charge['time'][$chargeOffence]['min'];
@@ -757,13 +769,14 @@
 				$rowBuilder .= '
 					<tr>
 						<td>'.$chargeTitle[$iCharge].'</td>
+						<td class="text-center">'.$chargeOffence.'</td>
 						<td>'.$chargeTypeFull.'</td>
 						<td>'.$chargeTimeFull.'</td>
-						<td>'.$chargePoints[$iCharge].'</td>
+						<td class="text-center">'.$chargePoints[$iCharge].'</td>
 						<td>'.$chargeFineFull.'</td>
-						<td>'.$chargeImpoundFull.'</td>
-						<td>'.$chargeSuspensionFull.'</td>
-						<td>'.$chargeCourtFull.'</td>
+						<td class="text-center">'.$chargeImpoundFull.'</td>
+						<td class="text-center">'.$chargeSuspensionFull.'</td>
+						<td class="text-center">'.$chargeCourtFull.'</td>
 					</tr>';
 
 			}
