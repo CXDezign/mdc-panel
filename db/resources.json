@@ -1,0 +1,48 @@
+{
+	"0": {
+		"type": "link",
+		"link": "url-penal-code",
+		"id": "card-main-penal",
+		"title": "San Andreas Penal Code",
+		"icon": "balance-scale",
+		"description": "Access the San Andreas Penal Code."
+	},
+	"1": {
+		"type": "link",
+		"link": "url-court-laws",
+		"id": "card-main-penal",
+		"title": "Court Laws",
+		"icon": "university",
+		"description": "U.S. Supreme court laws."
+	},
+	"2": {
+		"type": "link",
+		"link": "url-lspd-manual",
+		"id": "card-main-penal",
+		"title": "LSPD - Manual",
+		"icon": "book",
+		"description": "Access the Los Santos Police Department Manual."
+	},
+	"3": {
+		"type": "link",
+		"link": "url-lspd-handbook",
+		"id": "card-main-penal",
+		"title": "LSPD - Handbook",
+		"icon": "lightbulb",
+		"description": "Access the Los Santos Police Department Handbook."
+	},
+	"4": {
+		"type": "link",
+		"link": "url-lspd-reports-records",
+		"id": "card-main-penal",
+		"title": "LSPD - Reports & Records",
+		"icon": "database",
+		"description": "Access the Los Santos Police Department Reports & Records."
+	},
+	"5": {
+		"type": "copy",
+		"id": "mirandaRights",
+		"title": "Miranda Rights",
+		"text": "You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?"
+	}
+}

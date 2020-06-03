@@ -1,45 +1,64 @@
+<?php
+
+	$json = json_decode(file_get_contents("db/resources.json"), true);
+
+	$resources = "";
+
+	foreach ($json as $resource) {
+
+		$resourceType = $resource['type'];
+		$resourceTitle = $resource['title'];
+		$resourceID = $resource['id'];
+
+		if ($resourceType == "link") {
+
+			$resourceLink = $resource['link'];
+			$resourceIcon = $resource['icon'];
+			$resourceDescription = $resource['description'];
+
+			$resources .= '<div class="grid-item shadow-lg">
+				<a target="_blank" rel="noopener noreferrer" href="'.$g->getSettings($resourceLink).'">
+					<div class="card card-resource" id="'.$resourceID.'">
+						<div class="card-body">
+							<p class="card-text card-icon"><i class="fas fa-fw fa-3x fa-'.$resourceIcon.' text-muted"></i></p>
+							<h5 class="card-title">'.$resourceTitle.'<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></h5>
+							<p class="card-text card-description">'.$resourceDescription.'</p>
+						</div>
+					</div>
+				</a>
+			</div>';
+		} elseif ($resourceType == "copy") {
+
+			$resourceText = $resource['text'];
+
+			$resources .= '<div class="grid-item">
+				<div class="card card-resource">
+					<div class="card-body">
+						<h5 class="card-title">'.$resourceTitle.'</h5>
+						<textarea
+						class="form-control shadow mb-3"
+						id="'.$resourceID.'"
+						name="'.$resourceID.'"
+						rows="4"
+						readonly>'.$resourceText.'</textarea>
+						<a class="btn btn-primary text-white" onclick="copy()" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.'</a>
+					</div>
+				</div>
+			</div>';
+
+		}
+
+	}
+
+?>
+
 <div class="container" data-aos="fade-out" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-book mr-2"></i>Useful Resources</h1>
 	<hr>
 	<div class="grid" id="resources">
 		<div class="grid-col grid-col--1"></div>
 		<div class="grid-col grid-col--2"></div>
-		<div class="grid-item">
-			<div class="card card-resource">
-				<div class="card-body">
-					<h5 class="card-title">Miranda Rights</h5>
-					<textarea
-					class="form-control shadow mb-3"
-					id="mirandaRights"
-					name="mirandaRights"
-					rows="4"
-					readonly>You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?</textarea>
-					<a class="btn btn-primary text-white" onclick="copy()" data-toggle="tooltip" title="Copied!">Copy Miranda Rights</a>
-				</div>
-			</div>
-		</div>
-		<div class="grid-item">
-			<a target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-penal-code'); ?>">
-				<div class="card card-resource" id="card-main-penal">
-					<div class="card-body shadow">
-						<p class="card-text card-icon"><i class="fas fa-fw fa-3x fa-balance-scale text-muted"></i></p>
-						<h5 class="card-title">Penal Code<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></h5>
-						<p class="card-text card-description">Access the San Andreas Penal Code.</p>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="grid-item">
-			<a target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-court-laws'); ?>">
-				<div class="card card-resource" id="card-main-penal">
-					<div class="card-body shadow">
-						<p class="card-text card-icon"><i class="fas fa-fw fa-3x fa-university text-muted"></i></p>
-						<h5 class="card-title">Court Laws<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></h5>
-						<p class="card-text card-description">U.S. Supreme court laws.</p>
-					</div>
-				</div>
-			</a>
-		</div>
+		<?= $resources ?>
 	</div>
 </div>
 <script>

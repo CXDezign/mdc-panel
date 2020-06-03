@@ -17,7 +17,7 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://mdc.gta.world">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-mdc') ?>">
 				<i class="fas fa-fw fa-desktop mr-2"></i><span class="icon-text">Mobile Data Computer<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
@@ -79,34 +79,17 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link dropdown-toggle" href="#lspdSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD</span>
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lspd') ?>">
+				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
-			<ul class="collapse list-unstyled" id="lspdSubmenu">
-				<li>
-					<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world">
-						<i class="fas fa-fw fa-columns mr-2"></i><span class="icon-text">Forums<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewtopic.php?f=20&t=1171">
-						<i class="fas fa-fw fa-book mr-2"></i><span class="icon-text">Manual<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-					</a>
-				</li>
-				<li>
-					<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewforum.php?f=434">
-						<i class="fas fa-fw fa-database mr-2"></i><span class="icon-text">Reports & Records<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-					</a>
-				</li>
-			</ul>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lssd.gta.world">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lssd') ?>">
 				<img class="mr-2" src="/images/Logo-LSSD.png" alt="LSSD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSSD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://lsfd.gta.world">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lsfd') ?>">
 				<img class="mr-2" src="/images/Logo-LSFD.png" alt="LSFD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
@@ -122,7 +105,7 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/xanxTV/MDC-Panel/">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-github') ?>">
 				<i class="fab fa-fw fa-github mr-2"></i><span class="icon-text">GitHub Project<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
