@@ -7,7 +7,7 @@
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
 		<div class="form-row chargeGroup">
 			<div class="form-group col-xl-6">
-				<label>Crime ID, Title, & Classification</label>
+				<label>Crime ID, Title, & Type</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
@@ -25,14 +25,14 @@
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
-				<label>Crime Type</label>
+				<label>Crime Class</label>
 				<select
 				class="form-control selectpicker"
-				id="inputCrimeType"
-				name="inputCrimeType[]"
+				id="inputCrimeClass"
+				name="inputCrimeClass[]"
 				required>
 				<?php
-					$pg->crimeTypeChooser();
+					$pg->crimeClassChooser();
 				?>
 				</select>
 			</div>
@@ -92,11 +92,11 @@
 		<div class="form-group col-xl-2">
 			<select
 			class="form-control select-picker-copy"
-			id="inputCrimeType"
-			name="inputCrimeType[]"
+			id="inputCrimeClass"
+			name="inputCrimeClass[]"
 			required>
 			<?php
-				$pg->crimeTypeChooser();
+				$pg->crimeClassChooser();
 			?>
 			</select>
 		</div>

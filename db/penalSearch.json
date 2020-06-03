@@ -2,8 +2,8 @@
 	"000": {
 		"id": "000",
 		"charge": "UNKNOWN CHARGE",
-		"classification": "?",
-		"types": {
+		"type": "?",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": false
@@ -12,6 +12,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -33,8 +38,8 @@
 	"001": {
 		"id": "001",
 		"charge": "Treason",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": true
@@ -43,6 +48,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -64,11 +74,16 @@
 	"002": {
 		"id": "002",
 		"charge": "Espionage",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": true
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"time": {
 			"days": "9999",
@@ -95,8 +110,8 @@
 	"003": {
 		"id": "003",
 		"charge": "Capital Murder",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": true
@@ -105,6 +120,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -126,8 +146,8 @@
 	"004": {
 		"id": "004",
 		"charge": "Domestic Terrorism",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": true
@@ -136,6 +156,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -157,8 +182,8 @@
 	"101": {
 		"id": "101",
 		"charge": "Tax Evasion",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -167,6 +192,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 1
 		},
 		"fine": {
 			"1": "2500",
@@ -188,8 +218,8 @@
 	"102": {
 		"id": "102",
 		"charge": "Voter Fraud / Voter Pandering",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -198,6 +228,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 1
 		},
 		"fine": {
 			"1": "0",
@@ -219,8 +254,8 @@
 	"103": {
 		"id": "103",
 		"charge": "Corruption of Public Office",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -229,6 +264,11 @@
 			"days": "4",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -250,8 +290,8 @@
 	"104": {
 		"id": "104",
 		"charge": "Incitement To Riot",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -260,6 +300,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -281,8 +326,8 @@
 	"105": {
 		"id": "105",
 		"charge": "Unlawful Assembly",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -291,6 +336,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -312,8 +362,8 @@
 	"106": {
 		"id": "106",
 		"charge": "Neglect of Public Duty",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": true
@@ -322,6 +372,11 @@
 			"days": "3",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 2,
+			"C": 1
 		},
 		"fine": {
 			"1": "0",
@@ -343,8 +398,8 @@
 	"107": {
 		"id": "107",
 		"charge": "Bribery of a Public Official",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -353,6 +408,11 @@
 			"days": "3",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -374,8 +434,8 @@
 	"108": {
 		"id": "108",
 		"charge": "Tampering with Evidence",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -384,6 +444,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 4
 		},
 		"fine": {
 			"1": "0",
@@ -405,8 +470,8 @@
 	"109": {
 		"id": "109",
 		"charge": "Witness Intimidation",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": true
@@ -415,6 +480,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 4,
+			"C": 2
 		},
 		"fine": {
 			"1": "0",
@@ -436,8 +506,8 @@
 	"110": {
 		"id": "110",
 		"charge": "Contempt of Court",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -446,6 +516,11 @@
 			"days": "4",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -467,16 +542,21 @@
 	"111": {
 		"id": "111",
 		"charge": "Perjury",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
-			"B": false,
+			"B": true,
 			"C": true
 		},
 		"time": {
 			"days": "0",
 			"hours": "4",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 4,
+			"C": 2
 		},
 		"fine": {
 			"1": "0",
@@ -498,16 +578,21 @@
 	"112": {
 		"id": "112",
 		"charge": "Obstruction of Public Duty",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
-			"B": false,
+			"B": true,
 			"C": true
 		},
 		"time": {
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 3,
+			"C": 1
 		},
 		"fine": {
 			"1": "0",
@@ -529,8 +614,8 @@
 	"113": {
 		"id": "113",
 		"charge": "Misuse of an Emergency Hotline",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -539,6 +624,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "5000",
@@ -560,8 +650,8 @@
 	"114": {
 		"id": "114",
 		"charge": "Resisting Arrest",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -570,6 +660,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -591,11 +686,16 @@
 	"115": {
 		"id": "115",
 		"charge": "Impersonation of a Individual/Government Official",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"time": {
 			"days": "0",
@@ -622,8 +722,8 @@
 	"116": {
 		"id": "116",
 		"charge": "Failure to Pay a Fine",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -632,6 +732,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -653,8 +758,8 @@
 	"117": {
 		"id": "117",
 		"charge": "Subpoena Violation / Failure to Abide by State Orders",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -663,6 +768,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2000",
@@ -684,8 +794,8 @@
 	"118": {
 		"id": "118",
 		"charge": "Assault & Battery on a Government Worker",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": false
@@ -694,6 +804,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 4,
+			"B": 3,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -715,8 +830,8 @@
 	"119": {
 		"id": "119",
 		"charge": "Evading a Peace Officer",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -725,6 +840,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 2
 		},
 		"fine": {
 			"1": "5000",
@@ -746,8 +866,8 @@
 	"201": {
 		"id": "201",
 		"charge": "Assault",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -756,6 +876,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -777,8 +902,8 @@
 	"202": {
 		"id": "202",
 		"charge": "Assault with a Deadly Weapon",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -787,6 +912,11 @@
 			"days": "0",
 			"hours": "12",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 2,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -808,8 +938,8 @@
 	"203": {
 		"id": "203",
 		"charge": "Attempted Murder",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": false
@@ -818,6 +948,11 @@
 			"days": "10",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 7,
+			"B": 5,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -839,8 +974,8 @@
 	"204": {
 		"id": "204",
 		"charge": "Battery",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -849,6 +984,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -870,8 +1010,8 @@
 	"205": {
 		"id": "205",
 		"charge": "Criminal Threats",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -880,6 +1020,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -901,8 +1046,8 @@
 	"206": {
 		"id": "206",
 		"charge": "Manslaughter",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -911,6 +1056,11 @@
 			"days": "5",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 5,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -932,8 +1082,8 @@
 	"207": {
 		"id": "207",
 		"charge": "Kidnapping",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -942,6 +1092,11 @@
 			"days": "5",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 5,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -963,8 +1118,8 @@
 	"208": {
 		"id": "208",
 		"charge": "First Degree Murder",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": false,
 			"C": false
@@ -973,6 +1128,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -994,8 +1154,8 @@
 	"209": {
 		"id": "209",
 		"charge": "Second Degree Murder",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": false
@@ -1004,6 +1164,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1025,8 +1190,8 @@
 	"210": {
 		"id": "210",
 		"charge": "Aggravated Battery",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -1035,6 +1200,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 6,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1056,8 +1226,8 @@
 	"211": {
 		"id": "211",
 		"charge": "Torture",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": false,
 			"C": false
@@ -1066,6 +1236,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1087,8 +1262,8 @@
 	"212": {
 		"id": "212",
 		"charge": "Extortion",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1097,6 +1272,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -1118,8 +1298,8 @@
 	"213": {
 		"id": "213",
 		"charge": "Racketeering",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": false,
 			"C": false
@@ -1128,6 +1308,11 @@
 			"days": "4",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 4,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1149,8 +1334,8 @@
 	"214": {
 		"id": "214",
 		"charge": "Forgery",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1159,6 +1344,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1180,8 +1370,8 @@
 	"215": {
 		"id": "215",
 		"charge": "Fraud",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1190,6 +1380,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1211,8 +1406,8 @@
 	"216": {
 		"id": "216",
 		"charge": "Human Trafficking",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": false,
 			"C": false
@@ -1221,6 +1416,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1242,8 +1442,8 @@
 	"217": {
 		"id": "217",
 		"charge": "Robbery",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -1252,6 +1452,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 3,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1273,8 +1478,8 @@
 	"218": {
 		"id": "218",
 		"charge": "Armed Robbery",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -1283,6 +1488,11 @@
 			"days": "4",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 4,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1304,8 +1514,8 @@
 	"219": {
 		"id": "219",
 		"charge": "Rape",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": false,
 			"C": false
@@ -1314,6 +1524,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1335,8 +1550,8 @@
 	"220": {
 		"id": "220",
 		"charge": "Sexual Battery",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -1345,6 +1560,11 @@
 			"days": "9999",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1366,11 +1586,16 @@
 	"221": {
 		"id": "221",
 		"charge": "Sexual Assault",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"time": {
 			"days": "3",
@@ -1397,8 +1622,8 @@
 	"222": {
 		"id": "222",
 		"charge": "Stalking",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -1407,6 +1632,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1428,11 +1658,16 @@
 	"223": {
 		"id": "223",
 		"charge": "Statutory Rape",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"time": {
 			"days": "9999",
@@ -1459,8 +1694,8 @@
 	"224": {
 		"id": "224",
 		"charge": "Vigilantism",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1469,6 +1704,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "5000",
@@ -1490,8 +1730,8 @@
 	"225": {
 		"id": "225",
 		"charge": "Escape from Lawful Custody",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1500,6 +1740,11 @@
 			"days": "7",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -1521,8 +1766,8 @@
 	"226": {
 		"id": "226",
 		"charge": "Harassment",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1531,6 +1776,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1552,8 +1802,8 @@
 	"301": {
 		"id": "301",
 		"charge": "Arson",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": false,
 			"C": false
@@ -1562,6 +1812,11 @@
 			"days": "7",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 4,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1583,8 +1838,8 @@
 	"302": {
 		"id": "302",
 		"charge": "Burglary",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1593,6 +1848,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 2
 		},
 		"fine": {
 			"1": "0",
@@ -1614,8 +1874,8 @@
 	"303": {
 		"id": "303",
 		"charge": "Grand Theft",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -1624,6 +1884,11 @@
 			"days": "0",
 			"hours": "4",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 1,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1645,8 +1910,8 @@
 	"304": {
 		"id": "304",
 		"charge": "Petty Theft",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1655,6 +1920,11 @@
 			"days": "0",
 			"hours": "2",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1676,8 +1946,8 @@
 	"305": {
 		"id": "305",
 		"charge": "Grand Theft Auto",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1686,6 +1956,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -1707,8 +1982,8 @@
 	"306": {
 		"id": "306",
 		"charge": "Grand Theft Of A Firearm",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1717,6 +1992,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 2
 		},
 		"fine": {
 			"1": "0",
@@ -1738,8 +2018,8 @@
 	"307": {
 		"id": "307",
 		"charge": "Possession of Burglary Tools",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1748,6 +2028,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1769,8 +2054,8 @@
 	"308": {
 		"id": "308",
 		"charge": "Receiving Stolen Property",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1779,6 +2064,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1800,8 +2090,8 @@
 	"309": {
 		"id": "309",
 		"charge": "Trespassing",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1810,6 +2100,11 @@
 			"days": "0",
 			"hours": "1",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1831,8 +2126,8 @@
 	"310": {
 		"id": "310",
 		"charge": "Vandalism",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1841,6 +2136,11 @@
 			"days": "0",
 			"hours": "1",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1862,8 +2162,8 @@
 	"311": {
 		"id": "311",
 		"charge": "Home Invasion",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1872,6 +2172,11 @@
 			"days": "4",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -1893,8 +2198,8 @@
 	"401": {
 		"id": "401",
 		"charge": "Driving On A Suspended License",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1903,6 +2208,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "45"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "5000",
@@ -1924,8 +2234,8 @@
 	"402": {
 		"id": "402",
 		"charge": "Hit and Run",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": false
@@ -1934,6 +2244,11 @@
 			"days": "0",
 			"hours": "12",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -1955,8 +2270,8 @@
 	"403": {
 		"id": "403",
 		"charge": "Reckless Operation Of an Off-Road or Naval Vehicle",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1965,6 +2280,11 @@
 			"days": "0",
 			"hours": "1",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -1986,8 +2306,8 @@
 	"404": {
 		"id": "404",
 		"charge": "Speeding",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -1996,6 +2316,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2017,8 +2342,8 @@
 	"405": {
 		"id": "405",
 		"charge": "Failure to Yield/Stop to a Traffic Control Device",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2027,6 +2352,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -2048,8 +2378,8 @@
 	"406": {
 		"id": "406",
 		"charge": "Illegal Parking",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2058,6 +2388,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2079,8 +2414,8 @@
 	"407": {
 		"id": "407",
 		"charge": "Reckless Driving",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2089,6 +2424,11 @@
 			"days": "0",
 			"hours": "1",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2110,8 +2450,8 @@
 	"408": {
 		"id": "408",
 		"charge": "Vehicular Noise Violation",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2120,6 +2460,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -2141,8 +2486,8 @@
 	"409": {
 		"id": "409",
 		"charge": "Negligent Operation of a Vehicle",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2151,6 +2496,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2172,8 +2522,8 @@
 	"410": {
 		"id": "410",
 		"charge": "Illegal Usage of Hydraulics",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2182,6 +2532,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2203,8 +2558,8 @@
 	"411": {
 		"id": "411",
 		"charge": "Tinted Windows",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2213,6 +2568,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -2234,8 +2594,8 @@
 	"412": {
 		"id": "412",
 		"charge": "Driving under the Influence of Alcohol or Narcotics [DUI]",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2257,6 +2617,11 @@
 				"min": "0"
 			}
 		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
+		},
 		"fine": {
 			"1": "0",
 			"2": "7500",
@@ -2277,8 +2642,8 @@
 	"413": {
 		"id": "413",
 		"charge": "Motor Vehicle Contest",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2287,6 +2652,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "45"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "5000",
@@ -2308,8 +2678,8 @@
 	"414": {
 		"id": "414",
 		"charge": "Vehicular Endangerment",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": true
@@ -2318,6 +2688,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 3,
+			"C": 2
 		},
 		"fine": {
 			"1": "10000",
@@ -2339,8 +2714,8 @@
 	"415": {
 		"id": "415",
 		"charge": "Driving Without a Valid License",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2349,6 +2724,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2370,8 +2750,8 @@
 	"416": {
 		"id": "416",
 		"charge": "Jaywalking",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2380,6 +2760,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1500",
@@ -2401,8 +2786,8 @@
 	"417": {
 		"id": "417",
 		"charge": "Possession of Open Container",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2411,6 +2796,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -2432,8 +2822,8 @@
 	"418": {
 		"id": "418",
 		"charge": "Failure to Wear a Seatbelt/Safety Equipment",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2442,6 +2832,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -2463,8 +2858,8 @@
 	"419": {
 		"id": "419",
 		"charge": "Operation of a Unsafe Motor Vehicle",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2473,6 +2868,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "5000",
@@ -2494,8 +2894,8 @@
 	"420": {
 		"id": "420",
 		"charge": "Vehicle Registration Violation",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2504,6 +2904,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "5000",
@@ -2525,8 +2930,8 @@
 	"421": {
 		"id": "421",
 		"charge": "Operating an Aircraft Without A License",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2535,6 +2940,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "25000",
@@ -2556,8 +2966,8 @@
 	"422": {
 		"id": "422",
 		"charge": "Reckless Operation Of An Aircraft",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2566,6 +2976,11 @@
 			"days": "0",
 			"hours": "2",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "50000",
@@ -2587,8 +3002,8 @@
 	"423": {
 		"id": "423",
 		"charge": "Failure To Adhere To ATC",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2597,6 +3012,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "50000",
@@ -2618,8 +3038,8 @@
 	"424": {
 		"id": "424",
 		"charge": "Aerial Evasion",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2628,6 +3048,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 4
 		},
 		"fine": {
 			"1": "100000",
@@ -2649,8 +3074,8 @@
 	"425": {
 		"id": "425",
 		"charge": "Negligent Operation of Bicycle",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2659,6 +3084,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "2500",
@@ -2680,8 +3110,8 @@
 	"501": {
 		"id": "501",
 		"charge": "Indecent Exposure",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2690,6 +3120,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -2711,11 +3146,16 @@
 	"502": {
 		"id": "502",
 		"charge": "Lewd or Dissolute Conduct in Public",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"time": {
 			"days": "0",
@@ -2742,8 +3182,8 @@
 	"503": {
 		"id": "503",
 		"charge": "Prostitution",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2752,6 +3192,11 @@
 			"days": "0",
 			"hours": "6",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -2773,8 +3218,8 @@
 	"504": {
 		"id": "504",
 		"charge": "Pandering/Pimping",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2783,6 +3228,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 1
 		},
 		"fine": {
 			"1": "0",
@@ -2804,8 +3254,8 @@
 	"505": {
 		"id": "505",
 		"charge": "Manufacturing A Controlled Substance",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2814,6 +3264,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -2835,8 +3290,8 @@
 	"506": {
 		"id": "506",
 		"charge": "Possession Of A Controlled Substance",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2845,6 +3300,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "20"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "500",
@@ -2866,8 +3326,8 @@
 	"507": {
 		"id": "507",
 		"charge": "Possession Of A Controlled Substance with Intent to Distribute",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2876,6 +3336,11 @@
 			"days": "0",
 			"hours": "2",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -2897,8 +3362,8 @@
 	"508": {
 		"id": "508",
 		"charge": "Drug Smuggling",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2907,6 +3372,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 2
 		},
 		"fine": {
 			"1": "10000",
@@ -2928,8 +3398,8 @@
 	"509": {
 		"id": "509",
 		"charge": "Drug Trafficking",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2938,6 +3408,11 @@
 			"days": "6",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 4
 		},
 		"fine": {
 			"1": "40000",
@@ -2959,8 +3434,8 @@
 	"510": {
 		"id": "510",
 		"charge": "Facial Obstruction",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -2969,6 +3444,11 @@
 			"days": "0",
 			"hours": "1",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -2990,8 +3470,8 @@
 	"511": {
 		"id": "511",
 		"charge": "Animal Abuse / Cruelty",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": false
@@ -3000,6 +3480,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 3,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3021,8 +3506,8 @@
 	"512": {
 		"id": "512",
 		"charge": "Child Abuse / Endangerment",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": false
@@ -3031,6 +3516,11 @@
 			"days": "4",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 5,
+			"B": 4,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3052,8 +3542,8 @@
 	"513": {
 		"id": "513",
 		"charge": "Sale of Alcohol / Tobacco to a Minor",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3062,6 +3552,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3083,8 +3578,8 @@
 	"514": {
 		"id": "514",
 		"charge": "Minor Alcohol / Tobacco Violation",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3093,6 +3588,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "30"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3114,8 +3614,8 @@
 	"515": {
 		"id": "515",
 		"charge": "Fire Code Violation",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3124,6 +3624,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "3000",
@@ -3145,8 +3650,8 @@
 	"516": {
 		"id": "516",
 		"charge": "Littering",
-		"classification": "I",
-		"types": {
+		"type": "I",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3155,6 +3660,11 @@
 			"days": "0",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "1000",
@@ -3176,8 +3686,8 @@
 	"517": {
 		"id": "517",
 		"charge": "Child Neglect",
-		"classification": "M",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": false
@@ -3186,6 +3696,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 3,
+			"B": 2,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3207,8 +3722,8 @@
 	"518": {
 		"id": "518",
 		"charge": "Disturbing the Peace",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3218,8 +3733,13 @@
 			"hours": "0",
 			"min": "30"
 		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
+		},
 		"fine": {
-			"1": "0",
+			"1": "2500",
 			"2": "0",
 			"3": "0"
 		},
@@ -3238,8 +3758,8 @@
 	"601": {
 		"id": "601",
 		"charge": "Discharging A Firearm From A Motor Vehicle",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": true
@@ -3248,6 +3768,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 5,
+			"B": 4,
+			"C": 2
 		},
 		"fine": {
 			"1": "0",
@@ -3269,8 +3794,8 @@
 	"602": {
 		"id": "602",
 		"charge": "Carrying an Unlicensed Firearm",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3279,6 +3804,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3300,8 +3830,8 @@
 	"603": {
 		"id": "603",
 		"charge": "Possession Of A Prohibited Firearm or Explosive Device",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3310,6 +3840,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -3331,8 +3866,8 @@
 	"604": {
 		"id": "604",
 		"charge": "Unlicensed Sale of Firearms/Explosives",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3341,6 +3876,11 @@
 			"days": "2",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 3
 		},
 		"fine": {
 			"1": "0",
@@ -3362,8 +3902,8 @@
 	"605": {
 		"id": "605",
 		"charge": "Brandishing a Firearm",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": true,
 			"C": true
@@ -3372,6 +3912,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 2,
+			"C": 1
 		},
 		"fine": {
 			"1": "0",
@@ -3393,8 +3938,8 @@
 	"606": {
 		"id": "606",
 		"charge": "Discharging a Firearm in Public",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": true,
 			"B": true,
 			"C": true
@@ -3403,6 +3948,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 4,
+			"B": 3,
+			"C": 2
 		},
 		"fine": {
 			"1": "0",
@@ -3424,8 +3974,8 @@
 	"607": {
 		"id": "607",
 		"charge": "SHAFT Code Violation",
-		"classification": "M",
-		"types": {
+		"type": "M",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3434,6 +3984,11 @@
 			"days": "0",
 			"hours": "3",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 0
 		},
 		"fine": {
 			"1": "0",
@@ -3455,8 +4010,8 @@
 	"608": {
 		"id": "608",
 		"charge": "Possession of a Firearm by Convicted Felon",
-		"classification": "F",
-		"types": {
+		"type": "F",
+		"class": {
 			"A": false,
 			"B": false,
 			"C": true
@@ -3465,6 +4020,11 @@
 			"days": "1",
 			"hours": "0",
 			"min": "0"
+		},
+		"points": {
+			"A": 0,
+			"B": 0,
+			"C": 4
 		},
 		"fine": {
 			"1": "0",

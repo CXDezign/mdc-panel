@@ -118,8 +118,8 @@ class PaperworkGenerators {
 
 		foreach ($charges as $charge) {
 			if ($chargeCount != 0) {
-				$chargeClassification = $charge['classification'];
-				switch ($chargeClassification) {
+				$chargeType = $charge['type'];
+				switch ($chargeType) {
 					case "F":
 						$chargeContent = "<span class='badge badge-danger'>";
 						break;
@@ -142,14 +142,14 @@ class PaperworkGenerators {
 		}
 	}
 
-	public function crimeTypeChooser() {
+	public function crimeClassChooser() {
 
-		$crimeTypes = file('resources/crimeTypeList.txt');
-		$crimeTypeCount = 1;
+		$crimeClasses = file('resources/crimeClassList.txt');
+		$crimeClassCount = 1;
 
-		foreach ($crimeTypes as $crimeType) {
-			echo "<option value=".$crimeTypeCount.">".$crimeType."</option>";
-			$crimeTypeCount++;
+		foreach ($crimeClasses as $crimeClass) {
+			echo "<option value=".$crimeClassCount.">".$crimeClass."</option>";
+			$crimeClassCount++;
 		}
 	}
 	
@@ -164,7 +164,7 @@ class PaperworkGenerators {
 		}
 	}
 
-	public function getCrimeType($input) {
+	public function getCrimeClass($input) {
 
 		switch ($input) {
 			case 1:

@@ -9,6 +9,7 @@
 		<th scope="col">Title</th>
 		<th scope="col">Classification</th>
 		<th scope="col">Time</th>
+		<th scope="col">Points</th>
 		<th scope="col">Fine</th>
 		<th scope="col">Impound</th>
 		<th scope="col">License Suspension</th>
@@ -22,6 +23,7 @@
 <table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
 		<th>Total Time</th>
+		<th>Total Points</th>
 		<th>Total Fines</th>
 		<th>Total Impound Time</th>
 		<th>Total Suspension Time</th>
