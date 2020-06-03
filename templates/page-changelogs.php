@@ -19,7 +19,7 @@
 
 		$changelog .= '
 			<div class="changelog-spacing" id="'.$changeID.'"></div>
-			<div class="card card-panel card-change bg-dark text-white mb-4">
+			<div class="card card-panel card-change mb-4">
 				<div class="card-body shadow">
 					<div class="card-title">
 						<h4 class="row">
