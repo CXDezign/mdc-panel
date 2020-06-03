@@ -1,8 +1,6 @@
 <?php
 	
-	session_start();
-	require '../models/general.php';
-	$g = new General();
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/initialise.php';
 
 	// Initialise Variables
 	$formType = $_POST['type'];
@@ -19,11 +17,11 @@
 
 		if (!$toggleMode) {
 			$toggleMode = true;
-			setCookiePost('toggleMode');
 		} else {
 			$toggleMode = false;
-			setCookiePost('toggleMode');
 		}
+
+		setCookiePost('toggleMode', $toggleMode);
 
 	}
 
@@ -33,11 +31,12 @@
 
 		if (!$toggleClock) {
 			$toggleClock = true;
-			setCookiePost('toggleClock');
 		} else {
 			$toggleClock = false;
-			setCookiePost('toggleClock');
 		}
+
+		setCookiePost('toggleClock', $toggleClock);
+
 	}
 
 	if ($formType == "settingsToggleBreadcrumb") {
@@ -46,11 +45,12 @@
 
 		if (!$toggleBreadcrumb) {
 			$toggleBreadcrumb = true;
-			setCookiePost('toggleBreadcrumb');
 		} else {
 			$toggleBreadcrumb = false;
-			setCookiePost('toggleBreadcrumb');
 		}
+
+		setCookiePost('toggleBreadcrumb', $toggleBreadcrumb);
+
 	}
 
 	if ($formType == "settingsToggleBackgroundLogo") {
@@ -59,11 +59,12 @@
 
 		if (!$toggleBackgroundLogo) {
 			$toggleBackgroundLogo = true;
-			setCookiePost('toggleBackgroundLogo');
 		} else {
 			$toggleBackgroundLogo = false;
-			setCookiePost('toggleBackgroundLogo');
 		}
+
+		setCookiePost('toggleBackgroundLogo', $toggleBackgroundLogo);
+
 	}
 
 	if ($formType == "settingsToggleHints") {
@@ -72,11 +73,12 @@
 
 		if (!$toggleHints) {
 			$toggleHints = true;
-			setCookiePost('toggleHints');
 		} else {
 			$toggleHints = false;
-			setCookiePost('toggleHints');
 		}
+
+		setCookiePost('toggleHints', $toggleHints);
+
 	}
 
 	if ($formType == "settingsToggleFooter") {
@@ -85,11 +87,12 @@
 
 		if (!$toggleFooter) {
 			$toggleFooter = true;
-			setCookiePost('toggleFooter');
 		} else {
 			$toggleFooter = false;
-			setCookiePost('toggleFooter');
 		}
+
+		setCookiePost('toggleFooter', $toggleFooter);
+
 	}
 
 	if ($formType == "settingsToggleLiveVisitorCounter") {
@@ -98,85 +101,28 @@
 
 		if (!$toggleLiveVisitorCounter) {
 			$toggleLiveVisitorCounter = true;
-			setCookiePost('toggleLiveVisitorCounter');
 		} else {
 			$toggleLiveVisitorCounter = false;
-			setCookiePost('toggleLiveVisitorCounter');
 		}
+
+		setCookiePost('toggleLiveVisitorCounter', $toggleLiveVisitorCounter);
+
 	}
 
 	if ($formType == "settingsCharacter") {
 
-		$name = $_POST['name'];
-		$rank = $_POST['rank'];
-		$badge = $_POST['badge'];
-		setCookiePost('officerName');
-		setCookiePost('officerRank');
-		setCookiePost('officerBadge');
+		setCookiePost('officerName', $_POST['name']);
+		setCookiePost('officerRank', $_POST['rank']);
+		setCookiePost('officerBadge', $_POST['badge']);
 
 	}
 
-	function setCookiePost($input) {
+	function setCookiePost($inputCookie, $inputVariable) {
 
-		global	$g,
-				$toggleMode,
-				$toggleClock,
-				$toggleBreadcrumb,
-				$toggleBackgroundLogo,
-				$toggleHints,
-				$toggleFooter,
-				$toggleLiveVisitorCounter,
-				$name,
-				$rank,
-				$badge;
+		global	$g;
 
-		$cPath = "/";
-		$iTime = 2147483647;
-
-		switch($input) {
-			case 'toggleMode':
-				$cookie = $toggleMode;
-				break;
-			case 'toggleClock':
-				$cookie = $toggleClock;
-				break;
-			case 'toggleBreadcrumb':
-				$cookie = $toggleBreadcrumb;
-				break;
-			case 'toggleBackgroundLogo':
-				$cookie = $toggleBackgroundLogo;
-				break;
-			case 'toggleHints':
-				$cookie = $toggleHints;
-				break;
-			case 'toggleFooter':
-				$cookie = $toggleFooter;
-				break;
-			case 'toggleLiveVisitorCounter':
-				$cookie = $toggleLiveVisitorCounter;
-				break;
-			case 'officerName':
-				$cookie = $name;
-				break;
-			case 'officerRank':
-				$cookie = $rank;
-				break;
-			case 'officerBadge':
-				$cookie = $badge;
-				break;
-			default:
-				break;
-
-		}
-
-		return setcookie($input,$cookie,$iTime,$cPath,$g->getSettings('site-url'),$g->getSettings('site-live'));
+		return setcookie($inputCookie,$inputVariable,2147483647,"/",$g->getSettings('site-url'),$g->getSettings('site-live'));
 
 	}
-
-
-
-
-
-
 
 ?>
