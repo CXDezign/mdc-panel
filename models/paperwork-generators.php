@@ -352,7 +352,7 @@ class PaperworkGenerators {
 
 }
 
-Class ArrestReportGenerator extends PaperworkGenerators {
+class ArrestReportGenerator extends PaperworkGenerators {
 
 	public function braceletChooser() {
 
