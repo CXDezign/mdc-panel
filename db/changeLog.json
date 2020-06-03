@@ -5,14 +5,26 @@
 		"changes": {
 			"1": "GitHub - Removed inactive contributors.",
 			"2": "GitHub - Updated logo in documentation to be using the new .svg version.",
-			"3": "Site - CDN Resources reshuffled to fix errors caused by unloaded resources.",
-			"4": "Site - Increased concurrent visitor count expiration to 1 hour from 5 minutes.",
-			"5": "Site - Removed duplicate initialisation code.",
+			"3": "Site - Favicon now also updated to .svg format. <br><img width='100px' src='/images/MDC-Panel-Favicon.svg'>",
+			"4": "Site - CDN Resources updated & reshuffled to fix errors caused by unloaded resources.",
+			"5": "Site - Increased concurrent visitor count expiration to 1 hour from 5 minutes.",
+			"6": "Site - Removed duplicate initialisation code.",
 			"7": "Site - Added new site settings for greater site-wide consistency.",
-			"8": "Site - Added Colcade, pages with cards elements now dynamically display in columns which automatically collapse dependent on width and height of browser window.",
+			"8": "Site - Added Colcade, revamped pages with card elements now dynamically display in columns which automatically collapse dependent on size of browser window. <br><div style='width: 100%; height: 0px; position: relative; padding-bottom: 47.890%;'><iframe src='https://streamable.com/e/ox3kbe' frameborder='0' width='100%' height='100%' allowfullscreen style='width: 100%; height: 100%; position: absolute;'></iframe></div>",
 			"9": "Site - Improved URL routing system with the removal of duplicate code.",
-			"10": "Sidebar - Removed link stack animation.",
-			"11": "Street Guide - Removal of unused map styles and coordinate debugger console tool."
+			"10": "Site - San Andreas Penal Code link updated... again.",
+			"11": "Site - Further backend code reworks and improvements for better stability, security, code-readability, and performance.",
+			"12": "Site - Blown off the virtual dust and removed unused files.",
+			"13": "Dashboard - Added card link to the MDC.",
+			"14": "Sidebar - Removed link stack animation.",
+			"15": "Sidebar - Removed unused links and relocated most to Useful Resources.",
+			"16": "Street Guide - Removal of unused map styles and coordinate debugger console tool. 2733 files removed.",
+			"17": "Useful Resources - Page revamped with various links from sidebar.",
+			"18": "Paperwork Generators - Now updated to work with the latest <a href='https://forum.gta.world/en/index.php?/topic/9421-san-andreas-penal-code-changelog/&do=findComment&comment=219657'>Penal Code</a> update (02/JAN/2020, New Point System, Classification + Types swap, Charge Updates)",
+			"19": "Paperwork Generators - Now dynamically show which classes (A, B, C) may be applied to the selected crime.",
+			"20": "Paperwork Generators - Updated charges .402 & .412 to automatically detect upgrades from Misdemeanour to Felony types of crimes based on user input. <br><img width='800px' src='https://i.imgur.com/LFJYIW6.png'>",
+			"21": "Paperwork Generators - Table styling updated to accomodate new columns and information. (Points + Offence #)"
+
 		}
 	},
 	"1.10.2": {

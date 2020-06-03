@@ -387,7 +387,7 @@ optgroup {
 	}
 
 	#sidebar-logo {
-		background: url("/favicon.png");
+		background: url("<?= $g->getSettings('site-favicon') ?>");
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: center;
