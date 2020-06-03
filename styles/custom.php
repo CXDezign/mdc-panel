@@ -536,6 +536,8 @@ optgroup {
 
 .card-resource {
 	margin-bottom: 10px;
+	background-color: #fff;
+	color: #212529;
 	box-shadow: 0px 1px 0 rgba(0, 0, 0, .5);
 	transition: all .1s ease-in-out!important;
 }
@@ -841,6 +843,8 @@ small.text-muted {
 }
 
 .card-resource {
+	background-color: #151515;
+	color: #fff;
 	box-shadow: 0px -1px 0 rgba(255, 255, 255, .1);
 }
 

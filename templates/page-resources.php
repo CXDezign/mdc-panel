@@ -5,7 +5,7 @@
 		<div class="grid-col grid-col--1"></div>
 		<div class="grid-col grid-col--2"></div>
 		<div class="grid-item">
-			<div class="card card-resource bg-dark text-white">
+			<div class="card card-resource">
 				<div class="card-body">
 					<h5 class="card-title">Miranda Rights</h5>
 					<textarea
@@ -20,7 +20,7 @@
 		</div>
 		<div class="grid-item">
 			<a target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-penal-code'); ?>">
-				<div class="card card-resource bg-dark text-white" id="card-main-penal">
+				<div class="card card-resource" id="card-main-penal">
 					<div class="card-body shadow">
 						<p class="card-text card-icon"><i class="fas fa-fw fa-3x fa-balance-scale text-muted"></i></p>
 						<h5 class="card-title">Penal Code<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></h5>
@@ -31,7 +31,7 @@
 		</div>
 		<div class="grid-item">
 			<a target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-court-laws'); ?>">
-				<div class="card card-resource bg-dark text-white" id="card-main-penal">
+				<div class="card card-resource" id="card-main-penal">
 					<div class="card-body shadow">
 						<p class="card-text card-icon"><i class="fas fa-fw fa-3x fa-university text-muted"></i></p>
 						<h5 class="card-title">Court Laws<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></h5>
