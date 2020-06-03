@@ -27,7 +27,9 @@
 	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getSettings('site-version') ?>">
 
 	<!-- FontAwesome -->
-	<script src="https://kit.fontawesome.com/129680e694.js" crossorigin="anonymous"></script>
+	<link href="/styles/fontawesome.css" rel="stylesheet">
+	<link href="/styles/brands.css" rel="stylesheet">
+	<link href="/styles/solid.css" rel="stylesheet">
 </head>
 <body>
 	<div class="wrapper">
