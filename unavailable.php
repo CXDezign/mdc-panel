@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="icon" type="image/png" href="<?= $g->getSettings('site-favicon') ?>">
 	<title><?= $g->getSettings('site-name') ?> - MAINTENANCE</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -24,11 +24,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/styles/custom.php">
+	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getSettings('site-version') ?>">
 
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/129680e694.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
 	<div class="wrapper">
@@ -46,6 +45,5 @@
 	</div>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 </body>
 </html>
