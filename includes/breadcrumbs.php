@@ -1,9 +1,8 @@
 <?php
 	if (!$g->findCookie('toggleBreadcrumb')) {
 ?>
-<nav>
-	<ol class="breadcrumb" id="breadcrumb">
-		<div data-aos="flip-up" data-aos-duration="25" data-aos-delay="100">
+<nav class="breadcrumb" id="breadcrumb">
+	<ol class="p-0 m-0">
 		<li class="breadcrumb-item d-inline-block">
 			<a href="/">
 				<i class="fa fa-fw fa-th-large mr-1"></i>Dashboard
@@ -20,14 +19,18 @@
 				foreach ($breadcrumbs as $crumb) {
 					$link = ucwords(str_replace(array(".php","-","_"), array(""," "," "), $crumb));
 					$root_domain .= $crumb.'/';
-					$breadcrumb .= '<li class="breadcrumb-item d-inline-block" data-aos="fade-in" data-aos-duration="25" data-aos-delay="100"><a href="'. $root_domain .'">' . $link . '</a></li>';
+					$breadcrumb .= '<li class="breadcrumb-item d-inline-block">
+						<a href="'. $root_domain .'">' . $link . '</a>
+					</li>';
 				}
 
 				return $breadcrumb;
+
 			}
+
 			echo breadcrumbs();
-			echo "</div>";
-			?>
+
+		?>
 	</ol>
 </nav>
 

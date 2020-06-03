@@ -102,9 +102,7 @@
 					id="inputItemCategory"
 					name="inputItemCategory"
 					required>
-					<?php
-						$er->itemCategoryChooser();
-					?>
+					<?= $ar->listChooser('itemCategoryList') ?>
 					</select>
 				</div>
 			</div>

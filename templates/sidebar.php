@@ -78,20 +78,20 @@
 				<i class="fas fa-fw fa-book mr-2"></i><span class="icon-text">Useful Resources</span>
 			</a>
 		</li>
-		<hr class="my-3"></hr>
+		<hr class="my-3">
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lspd') ?>">
-				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSPD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lssd') ?>">
-				<img class="mr-2" src="/images/Logo-LSSD.png" alt="LSSD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSSD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+				<img class="mr-2" src="/images/Logo-LSSD.png" alt="LSSD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSSD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lsfd') ?>">
-				<img class="mr-2" src="/images/Logo-LSFD.png" alt="LSFD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+				<img class="mr-2" src="/images/Logo-LSFD.png" alt="LSFD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<hr class="my-3">
@@ -107,7 +107,8 @@
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-github') ?>">
-				<i class="fab fa-fw fa-github mr-2"></i><span class="icon-text">GitHub Project<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+				<i class="fab fa-fw fa-github mr-2"></i>
+				<span class="icon-text">GitHub Project<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 	</ul>

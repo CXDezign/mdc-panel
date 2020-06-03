@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Sentencing Charges</h1>
 	<?php
 		require_once('form-arrest-charge-table.php');
@@ -148,9 +148,7 @@
 					required
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
-					<?php
-						$pg->districtChooser();
-					?>
+					<?= $ar->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -170,9 +168,7 @@
 					required
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
-					<?php
-						$pg->streetChooser();
-					?>
+					<?= $ar->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -228,7 +224,6 @@ The suspect was found to be X."
 		
 		<h4><i class="fas fa-fw fa-landmark mr-2"></i>Processing Details</h4>
 		<div class="form-row">
-			
 			<div class="form-group col-xl-4">
 				<label>Wristband</label>
 				<div class="input-group">
@@ -240,10 +235,7 @@ The suspect was found to be X."
 					id="inputWristband"
 					name="inputWristband"
 					required>
-					<option value="0" selected>N/A</option>
-					<?php
-						$ar->wristbandChooser();
-					?>
+					<?=	$ar->listChooser('wristbandList'); ?>
 					</select>
 				</div>
 				<small class="form-text text-muted">
@@ -265,10 +257,7 @@ The suspect was found to be X."
 					id="inputBracelet"
 					name="inputBracelet"
 					required>
-					<option value="0" selected>N/A</option>
-					<?php
-						$ar->braceletChooser();
-					?>
+					<?=	$ar->listChooser('braceletList'); ?>
 					</select>
 				</div>
 				<small class="form-text text-muted">
@@ -289,9 +278,7 @@ The suspect was found to be X."
 					id="inputPlea"
 					name="inputPlea"
 					required>
-					<?php
-						$ar->pleaChooser();
-					?>
+					<?=	$ar->listChooser('pleaList'); ?>
 					</select>
 				</div>
 				<small class="form-text text-muted">
@@ -301,10 +288,10 @@ The suspect was found to be X."
 		</div>
 		
 		<div class="container my-5 text-center">
-		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
-			<i class="fas fa-fw fa-plus-square mr-1"></i>Submit
-		</button>
-	</div>
+			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+				<i class="fas fa-fw fa-plus-square mr-1"></i>Submit
+			</button>
+		</div>
 	</form>
 
 	<div class="container fieldGroupCopy" style="display: none;">
@@ -358,5 +345,7 @@ The suspect was found to be X."
 </div>
 
 <?php
-	require_once("form-footer.php");
+
+	require_once 'form-footer.php';
+
 ?>

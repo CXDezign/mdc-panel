@@ -1,8 +1,3 @@
-<?php
-	
-	require_once("includes/session-variables.php");
-
-?>
 <hr>
 <table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
@@ -13,7 +8,7 @@
 		<th scope="col" class="text-center">Points</th>
 		<th scope="col">Fine</th>
 		<th scope="col" class="text-center">Impound</th>
-		<th scope="col" class="text-center">License Suspension</th>
+		<th scope="col" class="text-center">Suspension</th>
 		<th scope="col" class="text-center">Court</th>
 	</thead>
 	<tbody style="font-size: 80%!important">

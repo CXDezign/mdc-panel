@@ -41,11 +41,11 @@
 	}
 
 ?>
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-plug mr-2"></i></i>Changelogs</h1>
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+	<h1><i class="fas fa-fw fa-plug mr-2"></i>Changelogs</h1>
 	<hr>
-		Select a version to jump to:<br><br>
-		<?= $changelogVersions ?>
+	Select a version to jump to:<br><br>
+	<?= $changelogVersions ?>
 	<hr>
 	<?= $changelog ?>
 </div>

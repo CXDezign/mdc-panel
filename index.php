@@ -35,14 +35,12 @@
 
 	<!-- Animate on Scroll 2.3.4 -->
 	<link href="/css/aos.css" rel="stylesheet">
-	<script src="/js/aos.js"></script>
 
 	<!-- Bootstrap Select Picker 1.13.14 -->
-	<link href="/css/bootstrap-select.min.css" rel="stylesheet" >
+	<link href="/css/bootstrap-select.min.css" rel="stylesheet">
 
 	<!-- Bootstrap Switch Button 3.6.1 -->
 	<link href="/css/bootstrap4-toggle.min.css" rel="stylesheet">
-	<script src="/js/bootstrap4-toggle.min.js"></script>
 
 	<!-- Colcade 0.2.0 -->
 	<script src="/js/colcade.js"></script>
@@ -58,7 +56,7 @@
 	<script src="/map/src/leaflet-search.js"></script>
 
 	<!-- Leaflet Font Awesome Icons -->
-	<link href="/map/src/leaflet.awesome-markers.css" rel="stylesheet" type="text/css" >
+	<link href="/map/src/leaflet.awesome-markers.css" rel="stylesheet" type="text/css">
 	<script src="/map/src/leaflet.awesome-markers.js"></script>
 </head>
 <body id="top">
@@ -67,14 +65,23 @@
 		require_once("templates/sidebar.php");
 		echo '<div id="container">';
 			require_once("includes/breadcrumbs.php");
-			echo '<div class="container-page d-flex align-items-center">';
+			echo '<div class="container-page">';
 				require_once("routes.php");
+			echo '</div>';
 			require_once("templates/footer.php");
+		echo '</div>';
 	?>
-			</div>
-		</div>
 	</div>
+<script src="/js/aos.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/bootstrap-select.min.js"></script>
+<script src="/js/bootstrap4-toggle.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		AOS.init();
+		// Select Picker Initialisation
+		$('.selectpicker').selectpicker();
+	});
+</script>
 </body>
 </html>

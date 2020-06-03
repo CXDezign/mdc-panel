@@ -10,7 +10,7 @@ body {
 /* Map */
 #map {
 	background: #0fa8d2;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	width: calc(100% - 260px);

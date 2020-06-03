@@ -94,6 +94,7 @@ optgroup {
 }
 
 .container-page {
+	position: relative;
 	padding: 5rem 0;
 }
 
@@ -252,27 +253,13 @@ optgroup {
 //////////*/
 
 .footer-container {
+	text-align: center;
+	padding: .1em 0;
 	position: fixed;
-	z-index: -1000;
-	left: 0;
 	bottom: 0;
-	width: calc(100vw - 260px);
-	margin-left: 260px;
+	width: calc(100vw - 280px);
 	border-top: 1px solid rgba(0,0,0,.1);
 	background-color: #eeeeee;
-}
-
-#footer {
-	opacity: 0.25;
-	transition: all .5s linear;
-}
-
-#footer:hover {
-	opacity: 1;
-}
-
-#logo-footer {
-	opacity: 0.1;
 }
 
 /*//////////////
@@ -280,11 +267,15 @@ optgroup {
 //////////////*/
 
 #breadcrumb {
-	background: unset!important;
-	border-bottom: 1px solid rgba(0,0,0,.1)!important;
-	border-radius: 0!important;
+	background: #eee;
+	border-bottom: 1px solid rgba(0,0,0,.1) !important;
+	border-radius: 0 !important;
 	font-weight: 600;
-	text-shadow: 0 1px 2px #00000040!important;
+	text-shadow: 0 1px 2px #00000040 !important;
+	position: fixed;
+	width: 100%;
+	z-index: 600;
+	top: 0;
 }
 
 #breadcrumb li {
@@ -391,8 +382,8 @@ optgroup {
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: center;
-		width: 60px;
-		height: 60px;
+		width: 80px;
+		height: 80px;
 		margin: 0 auto;
 	}
 
@@ -438,7 +429,6 @@ optgroup {
 
 	.footer-container {
 		width: calc(100vw - 100px);
-		margin-left: 100px;
 	}
 
 	#sidebar #timestamp {
@@ -454,6 +444,10 @@ optgroup {
 
 @media (max-width: 991px) {
 
+	.container-page {
+		padding-top: 8em;
+	}
+
 	.breadcrumb-item {
 		display: block!important;
 		padding-left: unset!important;
@@ -461,6 +455,7 @@ optgroup {
 	}
 
 	.breadcrumb-item::before {
+		display: none!important;
 		padding-right: unset!important;
 		content: ""!important;
 	}
@@ -825,6 +820,7 @@ small.text-muted {
 }
 
 #breadcrumb {
+	background: #1f1f1f;
 	border-bottom: 1px solid rgba(0,0,0,.2)!important;
 }
 

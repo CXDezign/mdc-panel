@@ -57,9 +57,7 @@
 					list="district_list"
 					required>
 					<datalist id="district_list">
-					<?php
-						$pg->districtChooser();
-					?>
+					<?= $ar->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -78,9 +76,7 @@
 					list="street_list"
 					required>
 					<datalist id="street_list">
-					<?php
-						$pg->streetChooser();
-					?>
+					<?= $ar->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>

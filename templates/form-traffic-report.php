@@ -136,9 +136,7 @@
 					id="inputDefLicense"
 					name="inputDefLicense"
 					required>
-					<?php
-						$pg->licenseChooser();
-					?>
+					<?= $ar->listChooser('licensesList') ?>
 					</select>
 				</div>
 			</div>
@@ -186,9 +184,7 @@ The defendant was found to be X."
 					required
 					data-placement="bottom" title="Example: Benefactor Schwartzer">
 					<datalist id="vehicle_list">
-					<?php
-						$pg->vehicleChooser();
-					?>
+					<?= $ar->listChooser('vehiclesList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -255,9 +251,7 @@ The defendant was found to be X."
 					required
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
-					<?php
-						$pg->districtChooser();
-					?>
+					<?= $ar->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -277,9 +271,7 @@ The defendant was found to be X."
 					required
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
-					<?php
-						$pg->streetChooser();
-					?>
+					<?= $ar->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -312,9 +304,7 @@ The defendant was found to be X."
 				id="inputCrimeClass-1"
 				name="inputCrimeClass[]"
 				required>
-				<?php
-					$pg->crimeClassChooser();
-				?>
+				<?= $ar->listChooser('crimeClassList') ?>
 				</select>
 			</div>
 			<div class="form-group col-xl-2">
@@ -418,9 +408,7 @@ The defendant was found to be X."
 			id="inputCrimeClass-"
 			name="inputCrimeClass[]"
 			required>
-			<?php
-				$pg->crimeClassChooser();
-			?>
+			<?= $ar->listChooser('crimeClassList') ?>
 			</select>
 		</div>
 		<div class="form-group col-xl-2">

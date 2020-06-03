@@ -78,39 +78,6 @@ class PaperworkGenerators {
 
 	}
 
-	public function streetChooser() {
-
-		$streets = file ('resources/streetsList.txt');
-		$streetCount = 1;
-
-		foreach ($streets as $street) {
-			echo "<option>".$street."</option>";
-			$streetCount++;
-		}
-	}
-
-	public function districtChooser() {
-
-		$districts = file ('resources/districtsList.txt');
-		$districtCount = 1;
-
-		foreach ($districts as $district) {
-			echo "<option>".$district."</option>";
-			$districtCount++;
-		}
-	}
-
-	public function vehicleChooser() {
-
-		$vehicles = file ('resources/vehiclesList.txt');
-		$vehicleCount = 1;
-
-		foreach ($vehicles as $vehicle) {
-			echo "<option>".$vehicle."</option>";
-			$vehicleCount++;
-		}
-	}
-
 	public function chargeChooser() {
 
 		$charges = json_decode(file_get_contents("db/penalSearch.json"), true);
@@ -139,28 +106,6 @@ class PaperworkGenerators {
 						</option>';
 			}
 			$chargeCount++;
-		}
-	}
-
-	public function crimeClassChooser() {
-
-		$crimeClasses = file('resources/crimeClassList.txt');
-		$crimeClassCount = 1;
-
-		foreach ($crimeClasses as $crimeClass) {
-			echo "<option value=".$crimeClassCount.">".$crimeClass."</option>";
-			$crimeClassCount++;
-		}
-	}
-	
-	public function offenceChooser() {
-
-		$crimeOffence = file('resources/offenceList.txt');
-		$crimeOffenceCount = 1;
-
-		foreach ($crimeOffence as $offence) {
-			echo "<option value=".$crimeOffenceCount.">".$offence."</option>";
-			$crimeOffenceCount++;
 		}
 	}
 
@@ -229,30 +174,6 @@ class PaperworkGenerators {
 			$dashboardCamera = $input;
 		}
 		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
-	}	
-
-	public function licenseChooser() {
-
-		$licenses = file('resources/licensesList.txt');
-		$licenseCount = 1;
-
-		foreach ($licenses as $license) {
-			echo "<option value=".$licenseCount.">".$license."</option>";
-			$licenseCount++;
-		}
-
-	}
-
-	public function paintChooser() {
-
-		$paints = file('resources/paintsList.txt');
-		$paintCount = 1;
-
-		foreach ($paints as $paint) {
-			echo "<option value=".$paintCount.">".$paint."</option>";
-			$paintCount++;
-		}
-
 	}
 
 	public function tintChooser() {
@@ -372,37 +293,41 @@ class PaperworkGenerators {
 
 class ArrestReportGenerator extends PaperworkGenerators {
 
-	public function braceletChooser() {
+	public function listChooser($list) {
 
-		$bracelets = file ('resources/braceletList.txt');
-		$braceletCount = 1;
+		$listEntries = file('resources/'.$list.'.txt');
+		$entriesCount = 1;
+		$optionValue = true;
 
-		foreach ($bracelets as $bracelet) {
-			echo "<option value=".$braceletCount.">".$bracelet."</option>";
-			$braceletCount++;
+		switch($list) {
+			case 'braceletList':
+			case 'wristbandList':
+				$output = '<option value="0" selected>N/A</option>';
+				break;
+			case 'itemCategoryList':
+				$output = '';
+				$entriesCount = 0;
+				break;
+			case 'vehiclesList':
+			case 'districtsList':
+			case 'streetsList':
+				$optionValue = false;
+				break;
+			default:
+				$output = '';
 		}
-	}
 
-	public function wristbandChooser() {
-
-		$wristbands = file ('resources/wristbandList.txt');
-		$wristbandCount = 1;
-
-		foreach ($wristbands as $wristband) {
-			echo "<option value=".$wristbandCount.">".$wristband."</option>";
-			$wristbandCount++;
+		foreach ($listEntries as $listItem) {
+			if ($optionValue) {
+				$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
+			} elseif (!$optionValue) {
+				$output .= '<option>'.$listItem.'</option>';
+			}
+			$entriesCount++;
 		}
-	}
 
-	public function pleaChooser() {
+		return $output;
 
-		$pleas = file ('resources/pleaList.txt');
-		$pleaCount = 1;
-
-		foreach ($pleas as $plea) {
-			echo "<option value=".$pleaCount.">".$plea."</option>";
-			$pleaCount++;
-		}
 	}
 
 	public function getBracelet($input) {
@@ -470,18 +395,6 @@ class ArrestReportGenerator extends PaperworkGenerators {
 
 
 class EvidenceRegistrationLogGenerator extends PaperworkGenerators {
-
-	public function itemCategoryChooser() {
-
-		$items = file('resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
-		$itemCount = 0;
-
-		foreach ($items as $item) {
-			echo "<option value=".$itemCount.">".$item."</option>";
-			$itemCount++;
-		}
-
-	}
 
 	public function getItemCategory($input) {
 

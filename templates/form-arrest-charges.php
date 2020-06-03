@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Charges</h1>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
@@ -31,9 +31,7 @@
 				id="inputCrimeClass-1"
 				name="inputCrimeClass[]"
 				required>
-				<?php
-					$pg->crimeClassChooser();
-				?>
+				<?= $ar->listChooser('crimeClassList') ?>
 				</select>
 			</div>
 			<div class="form-group col-xl-2">
@@ -43,9 +41,7 @@
 				id="inputCrimeOffence"
 				name="inputCrimeOffence[]"
 				required>
-				<?php
-					$pg->offenceChooser();
-				?>
+				<?= $ar->listChooser('offenceList') ?>
 				</select>
 			</div>
 			<div class="form-group col-xl-2">
@@ -65,12 +61,11 @@
 		</div>
 		
 		<div class="container my-5 text-center">
-		<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
-			<i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest
-		</button>
-	</div>
+			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
+				<i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest
+			</button>
+		</div>
 	</form>
-
 	<div class="container fieldChargeCopy" style="display: none;">
 		<div class="form-group col-xl-6">
 			<div class="input-group">
@@ -95,9 +90,7 @@
 			id="inputCrimeClass-"
 			name="inputCrimeClass[]"
 			required>
-			<?php
-				$pg->crimeClassChooser();
-			?>
+			<?= $ar->listChooser('crimeClassList') ?>
 			</select>
 		</div>
 		<div class="form-group col-xl-2">
@@ -106,9 +99,7 @@
 			id="inputCrimeOffence"
 			name="inputCrimeOffence[]"
 			required>
-			<?php
-				$pg->offenceChooser();
-			?>
+			<?= $ar->listChooser('offenceList') ?>
 			</select>
 		</div>
 		<div class="form-group col-xl-2">
@@ -122,5 +113,5 @@
 </div>
 
 <?php
-	require_once("form-footer.php");
+	require_once 'form-footer.php';
 ?>

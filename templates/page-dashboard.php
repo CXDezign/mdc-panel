@@ -37,8 +37,8 @@
 
 ?>
 
-<div class="container mx-auto" data-aos="fade-out" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-th-large mr-2"></i></i>Dashboard</h1>
+<div class="container" data-aos="fade-out" data-aos-duration="500" data-aos-delay="250">
+	<h1><i class="fas fa-fw fa-th-large mr-2"></i>Dashboard</h1>
 	<hr>
 	<div class="grid" id="dashboard">
 		<div class="grid-col grid-col--1"></div>

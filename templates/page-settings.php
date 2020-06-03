@@ -1,5 +1,5 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-cog mr-2"></i></i>Settings</h1>
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+	<h1><i class="fas fa-fw fa-cog mr-2"></i>Settings</h1>
 	<hr>
 	<h4 class="text-center mb-3"><i class="fas fa-globe fa-fw mr-2"></i>Site Preferences</h4>
 	<form>
@@ -142,7 +142,7 @@
 			</div>
 		</div>
 	</form>
-	<hr class="my-3"></h1>
+	<hr class="my-3">
 	<h4 class="d-block text-center mb-3"><i class="fas fa-user-cog fa-fw mr-2"></i>Character Settings</h4>
 	<form>
 		<div class="row">

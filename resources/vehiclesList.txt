@@ -366,6 +366,8 @@ Vapid Towtruck (Slamvan)
 Vapid Towtruck (Truck)
 Vapid Trophy Truck
 Vapid Utility Truck (Van)
+Vapid Victor
+Vapid Victor Taxi
 Vulcar Fagaloa
 Vulcar Ingot
 Vulcar Nebula Turbo
