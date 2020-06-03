@@ -23,6 +23,7 @@
 	// Variables
 
 	$golden = "#e2b055";
+	$cMDC = "#005db8";
 	$cMap = "#e74c3c";
 	$cGenerators = "#ca9159";
 	$cResources = "#8764d7";
@@ -547,6 +548,15 @@ optgroup {
 	transition: all .1s ease-in-out!important;
 }
 
+#card-main-mdc:hover {
+	box-shadow: <?= $cMDC ?> 0 1px 0px;
+}
+
+#card-main-mdc:hover i {
+	color: <?= $cMDC ?>!important;
+	text-shadow: <?= $cMDC ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
 #card-main-map:hover {
 	box-shadow: <?= $cMap ?> 0 1px 0px;
 }
@@ -863,6 +873,14 @@ small.text-muted {
 .card .text-muted {
 	text-shadow: 0px -1px 0 rgba(255, 255, 255, 0.2);
 	color: #2f2f2f!important;
+}
+
+#card-main-mdc:hover {
+	box-shadow: <?= $cMDC ?>80 0 -1px 0px;
+}
+
+#card-main-mdc:hover i {
+	text-shadow: <?= $cMDC ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
 }
 
 #card-main-map:hover {
