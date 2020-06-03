@@ -382,15 +382,11 @@ var popupOptions = {
 }
 
 // Map Style Settings
-var mbAttr = 'Emergency Street Guide - MDC',
-	mbUrlStreet = 'map/mapStyles/styleStreet/{z}/{x}/{y}.jpg',
-	mbUrlSatelite = 'map/mapStyles/styleSatelite/{z}/{x}/{y}.jpg',
-	mbUrlGrid = 'map/mapStyles/styleGrid/{z}/{x}/{y}.png';
+var mbAttr = 'San Andreas Street Guide - MDC',
+	mbUrlStreet = 'map/mapStyles/styleStreet/{z}/{x}/{y}.jpg';
 
 // Map Styles
-var streets = L.tileLayer(mbUrlStreet, {id: 'mapbox.streets', attribution: mbAttr, noWrap: true, continuousWorld: false, bounds: [[-90, -180],[90, 180]]}),
-	satellite = L.tileLayer(mbUrlSatelite, {id: 'mapbox.light', attribution: mbAttr, noWrap: true, continuousWorld: false, bounds: [[-90, -180],[90, 180]]}),
-	grid = L.tileLayer(mbUrlGrid, {id: 'mapbox.grid', attribution: mbAttr, noWrap: true, continuousWorld: false, bounds: [[-90, -180],[90, 180]]});
+var streets = L.tileLayer(mbUrlStreet, {id: 'mapbox.streets', attribution: mbAttr, noWrap: true, continuousWorld: false, bounds: [[-90, -180],[90, 180]]});
 
 // Map Settings
 var map = L.map('map', {
@@ -406,9 +402,7 @@ var map = L.map('map', {
 
 // Base Maps
 var baseLayers = {
-	"Streets": streets,
-	"Satellite": satellite,
-	"Grid": grid,
+	"Streets": streets
 };
 
 // Overlays
@@ -456,6 +450,7 @@ var controlLayers = new L.control.layers(
 map.addControl( controlLayers );
 
 // Coordinates Debugger
+/*
 map.on('click', function(e){
 	var coord = e.latlng;
 	var lat = coord.lat.toFixed(1);
@@ -468,6 +463,7 @@ map.on('click', function(e){
 	document.execCommand("copy");
 	document.body.removeChild(coords);
 });
+*/
 
 window.FontAwesomeConfig = {
 	searchPseudoElements: true
