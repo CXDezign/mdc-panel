@@ -24,7 +24,7 @@ class General {
 			case 'site-discord-contact':
 				return "xanx#0001";
 			case 'url-penal-code':
-				return "https://forum.gta.world/en/index.php?/topic/25393-san-andreas-penal-code/";
+				return "https://forum.gta.world/en/index.php?/topic/26513-san-andreas-penal-code/";
 			case 'url-court-laws':
 				return "https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722";
 			default:
