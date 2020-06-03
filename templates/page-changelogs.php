@@ -23,7 +23,7 @@
 				<div class="card-body shadow">
 					<div class="card-title">
 						<h4 class="row">
-							<div class="col-xl-6">
+							<div class="col-xl-6 text-left">
 								<span class="badge badge-dark">'.$changeID.'</span> - '.$changeDate.'</span>
 							</div>
 							<div class="col-xl-6 text-right">
