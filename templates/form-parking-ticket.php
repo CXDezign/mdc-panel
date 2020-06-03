@@ -281,5 +281,5 @@
 </div>
 
 <?php
-	require "form-footer.php";
+	require_once("form-footer.php");
 ?>

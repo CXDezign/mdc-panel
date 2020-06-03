@@ -1,6 +1,6 @@
 <?php
 	
-	require("includes/session-variables.php");
+	require_once("includes/session-variables.php");
 
 ?>
 <hr>

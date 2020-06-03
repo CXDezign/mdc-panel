@@ -1,7 +1,7 @@
 <div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Sentencing Charges</h1>
 	<?php
-		require 'form-arrest-charge-table.php';
+		require_once('form-arrest-charge-table.php');
 	?>
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Form</h1>
 	<hr>
@@ -358,5 +358,5 @@ The suspect was found to be X."
 </div>
 
 <?php
-	require "form-footer.php";
+	require_once("form-footer.php");
 ?>

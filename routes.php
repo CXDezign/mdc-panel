@@ -60,4 +60,4 @@
 			$url = "/templates/page-dashboard.php";
 	}
 
-	return require __DIR__ . $url;
+	return require_once __DIR__ . $url;

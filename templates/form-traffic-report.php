@@ -446,5 +446,5 @@ The defendant was found to be X."
 </div>
 
 <?php
-	require "form-footer.php";
+	require_once("form-footer.php");
 ?>

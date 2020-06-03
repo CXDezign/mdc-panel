@@ -1,6 +1,6 @@
 <?php
 
-	require 'includes/initialise.php';
+	require_once('includes/initialise.php');
 
 ?>
 <!DOCTYPE html>
@@ -60,12 +60,12 @@
 <body id="top">
 	<div class="wrapper">
 	<?php
-		require("templates/sidebar.php");
+		require_once("templates/sidebar.php");
 		echo '<div id="container">';
-			require("includes/breadcrumbs.php");
+			require_once("includes/breadcrumbs.php");
 			echo '<div class="container-page d-flex align-items-center">';
-				require("routes.php");
-			require("templates/footer.php");
+				require_once("routes.php");
+			require_once("templates/footer.php");
 	?>
 			</div>
 		</div>

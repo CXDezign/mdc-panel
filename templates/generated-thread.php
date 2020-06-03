@@ -1,6 +1,6 @@
 <?php
 	
-	require("includes/session-variables.php");
+	require_once("includes/session-variables.php");
 
 ?>
 <div class="container mb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">

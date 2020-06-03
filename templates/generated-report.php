@@ -1,13 +1,13 @@
 <?php
 	
-	require("includes/session-variables.php");
+	require_once("includes/session-variables.php");
 
 ?>
 <div class="container mb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1 class="my-3">Generated <?= $type ?></h1>
 	<?php
 		if ($showChargeTable) {
-			require 'form-arrest-charge-table.php';
+			require_once('form-arrest-charge-table.php');
 		}
 	?>
 	<h4><i class="fas fa-eye fa-fw mr-2"></i>Preview</h4>

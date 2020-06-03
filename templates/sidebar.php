@@ -4,10 +4,10 @@
 	</div>
 	<?php
 		if (!$g->findCookie('toggleClock')) {
-			require 'includes/clock.php';
+			require_once('includes/clock.php');
 		}
 		if (!$g->findCookie('toggleLiveVisitorCounter')) {
-			require 'includes/visitors.php';
+			require_once('includes/visitors.php');
 		}
 	?>
 	<ul class="list-unstyled components px-3">
@@ -78,6 +78,7 @@
 				<i class="fas fa-fw fa-book mr-2"></i><span class="icon-text">Useful Resources</span>
 			</a>
 		</li>
+		<hr class="my-3"></hr>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lspd') ?>">
 				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px"></i><span class="icon-text">LSPD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>

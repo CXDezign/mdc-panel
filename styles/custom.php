@@ -1,7 +1,6 @@
 <?php
 
-	require '../models/general.php';
-	$g = new General();
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/initialise.php';
 
 	header("Content-type: text/css; charset: UTF-8");
 
