@@ -5,7 +5,7 @@
 		"changes": {
 			"0": "Site - Swapped all CDN hosted resources to local for better performance.",
 			"1": "Impound Report Generator - Fixed inaccessible generator. (Credit: Chris Farmer / Disretired)",
-			"2": "Charges Table - Fixed the table header 'Classification' to be 'Type' instead",
+			"2": "Charges Table - Fixed the table header 'Classification' to be 'Type' instead.",
 			"3": "Charges Table - Fixed table headers to be centered with their respective centered table detail fields.",
 			"4": "Changelog - Fixed style to be showing the correct style for the page background."
 		}
