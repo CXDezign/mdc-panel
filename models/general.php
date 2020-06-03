@@ -17,6 +17,8 @@ class General {
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
 				return "/images/MDC-Panel.svg";
+			case 'site-favicon':
+				return "/images/MDC-Panel-Favicon.svg";
 			case 'site-image':
 				return "/images/MDC-Panel-OG.png";
 			case 'site-description':

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="icon" type="image/png" href="<?= $g->getSettings('site-favicon') ?>">
 	<title><?= $g->getSettings('site-name') ?></title>
 	<!-- Meta -->
 	<meta charset="utf-8">
