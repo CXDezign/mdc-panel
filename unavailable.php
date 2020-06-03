@@ -17,18 +17,18 @@
 	<meta property="og:image" content="<?= $g->getSettings('site-image') ?>">
 	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
 
-	<!-- jQuery -->
+	<!-- jQuery 3.5.1 -->
 	<script src="/js/jquery-3.5.1.min.js"></script>
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap-reboot.min.css">
+	<!-- Bootstrap 4.5.0 -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/bootstrap-reboot.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/css/custom.php?v=<?= $g->getSettings('site-version') ?>">
+	<!-- Custom Styles -->
+	<link href="/css/custom.php?v=<?= $g->getSettings('site-version') ?>" rel="stylesheet" type="text/css">
 
-	<!-- FontAwesome -->
+	<!-- FontAwesome 5.13.0  -->
 	<link href="/css/fontawesome.min.css" rel="stylesheet">
 	<link href="/css/brands.min.css" rel="stylesheet">
 	<link href="/css/solid.min.css" rel="stylesheet">
