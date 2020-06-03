@@ -183,6 +183,24 @@ class PaperworkGenerators {
 		return $type;
 	}
 
+	public function getCrimeClass2($input) {
+
+		$options = '';
+
+		foreach ($input as $crimeClass => $bool) {
+
+			if ($bool) {
+				$crimeClass++;
+				$class = $this->getCrimeClass($crimeClass);
+				$options .= "<option value=".$crimeClass.">Class ".$class."</option>";
+			}
+
+		}
+
+		return $options;
+
+	}
+
 	public function getCrimeColour($input) {
 
 		switch ($input) {

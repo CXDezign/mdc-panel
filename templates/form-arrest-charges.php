@@ -5,7 +5,7 @@
 		<input type="hidden" id="generatorType" name="generatorType" value="ArrestCharges">
 
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
-		<div class="form-row chargeGroup">
+		<div class="form-row chargeGroup crimeSelectorGroup">
 			<div class="form-group col-xl-6">
 				<label>Crime ID, Title, & Type</label>
 				<div class="input-group">
@@ -13,9 +13,9 @@
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
 					</div>
 					<select
-					class="form-control selectpicker"
+					class="form-control selectpicker inputCrimeSelector"
 					data-live-search="true"
-					id="inputCrime"
+					id="inputCrime-1"
 					name="inputCrime[]"
 					required>
 					<?php
@@ -27,8 +27,8 @@
 			<div class="form-group col-xl-2">
 				<label>Crime Class</label>
 				<select
-				class="form-control selectpicker"
-				id="inputCrimeClass"
+				class="form-control selectpicker inputCrimeClassSelector"
+				id="inputCrimeClass-1"
 				name="inputCrimeClass[]"
 				required>
 				<?php
@@ -78,9 +78,9 @@
 					<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
 				</div>
 				<select
-				class="form-control select-picker-copy"
+				class="form-control select-picker-copy inputCrimeSelector"
 				data-live-search="true"
-				id="inputCrime"
+				id="inputCrime-"
 				name="inputCrime[]"
 				required>
 				<?php
@@ -91,8 +91,8 @@
 		</div>
 		<div class="form-group col-xl-2">
 			<select
-			class="form-control select-picker-copy"
-			id="inputCrimeClass"
+			class="form-control select-picker-copy inputCrimeClassSelector"
+			id="inputCrimeClass-"
 			name="inputCrimeClass[]"
 			required>
 			<?php

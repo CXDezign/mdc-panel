@@ -2,13 +2,40 @@
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/initialise.php';
 
+	$penal = json_decode(file_get_contents("../db/penalSearch.json"), true);
+
+	// GET Types
+
+	if (isset($_REQUEST['getType'])) {
+
+		$getType = $_REQUEST['getType'];
+
+		if ($getType == "getCrimeClass") {
+
+			$crimeID = $_REQUEST['crimeID'];
+
+			$crime = $penal[$crimeID];
+			$crimeClasses = $crime['class'];
+			$output = array();
+
+			foreach ($crimeClasses as $crimeClass => $crimeBool) {
+				$output[] .= $crimeBool;
+			}
+
+			$input = $pg->getCrimeClass2(array_reverse($output));
+
+			echo($input);
+
+		}
+
+	}
+
 	// Generator Types
 
 	if (isset($_POST['generatorType'])) {
 
 		// Initialise Constant Variables
 		$generatorType = $_POST['generatorType'];
-		$penal = json_decode(file_get_contents("../db/penalSearch.json"), true);
 
 		// Default Values
 		$defaultName = "UNKNOWN NAME";
@@ -876,11 +903,6 @@
 				header('Location: /paperwork-generators/error');
 				break;
 		}
-
-	} else {
-
-		// Redirect to error page
-		header('Location: /paperwork-generators/error');
 
 	}
 

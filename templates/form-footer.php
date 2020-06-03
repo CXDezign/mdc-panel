@@ -18,6 +18,38 @@
 		// Tooltips
 		$('input').tooltip();
 
+
+		// Crime Selector - Dynamic Crime Classes
+		$("body").on("change", ".inputCrimeSelector.bootstrap-select", function (e) {
+
+			e.preventDefault();
+
+			var clickedElementID = e.target.id;
+			var clickedIDFix = '#'+clickedElementID;
+			var crimeClassSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeClassSelector select").attr('id');
+
+			$.ajax({
+				url: "/controllers/form-processor.php",
+				type: "POST",
+				data: {
+					crimeID: $(clickedIDFix).val(),
+					getType: 'getCrimeClass'
+				},
+				success: function (response) {
+					var final = '#'+crimeClassSelector;
+					$(final).find('option').remove();
+					$(final).append(response);
+					$(final).selectpicker('refresh');
+					$(final).selectpicker('render');
+				},
+				error: function (e) {
+					
+				}
+			});
+
+		});
+
+
 		// Traffic Division: Patrol Report
 
 			// Traffic Stops
@@ -53,13 +85,18 @@
 				$(this).parents(".officerGroup").remove();
 			});
 
+			var citationCount = 2;
+
 			// Citations
 			var maxCitations = 10;
-			$(".addCitation").click(function(){
-				if($('body').find('.citationGroup').length < maxCitations){
-					var fieldHTML = '<div class="form-row citationGroup">'+$(".fieldCitationCopy").html()+'</div>';
+			$(".addCitation").click(function() {
+				if($('body').find('.citationGroup').length < maxCitations) {
+					var fieldHTML = '<div class="form-row citationGroup crimeSelectorGroup">'+$(".fieldCitationCopy").html()+'</div>';
 					$('body').find('.citationGroup:last').after(fieldHTML);
 					var Last = $('body').find('.citationGroup:last');
+					Last.find("#inputCrime-").attr("id", "inputCrime-"+citationCount);
+					Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+citationCount);
+					citationCount++;
 					Last.find('.select-picker-copy').addClass("selectpicker");
 					$(".selectpicker").selectpicker('refresh');
 				} else {
@@ -70,20 +107,25 @@
 				$(this).parents(".citationGroup").remove();
 			});
 
+			var chargeCount = 2;
+
 			// Charges
 			var maxCharges = 30;
-			$(".addCharge").click(function(){
-				if($('body').find('.chargeGroup').length < maxCharges){
-					var fieldHTML = '<div class="form-row chargeGroup">'+$(".fieldChargeCopy").html()+'</div>';
+			$(".addCharge").click(function() {
+				if ($('body').find('.chargeGroup').length < maxCharges) {
+					var fieldHTML = '<div class="form-row chargeGroup crimeSelectorGroup">'+$(".fieldChargeCopy").html()+'</div>';
 					$('body').find('.chargeGroup:last').after(fieldHTML);
 					var Last = $('body').find('.chargeGroup:last');
+					Last.find("#inputCrime-").attr("id", "inputCrime-"+chargeCount);
+					Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+chargeCount);
+					chargeCount++;
 					Last.find('.select-picker-copy').addClass("selectpicker");
 					$(".selectpicker").selectpicker('refresh');
 				} else {
 					alert('Maximum '+maxCharges+' charges are allowed.');
 				}
 			});
-			$("body").on("click",".removeCharge",function(){ 
+			$("body").on("click",".removeCharge",function() {
 				$(this).parents(".chargeGroup").remove();
 			});
 
