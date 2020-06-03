@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="icon" type="image/png" href="<?= $g->getSettings('site-favicon') ?>">
+	<link rel="icon" type="image/svg" href="<?= $g->getSettings('site-favicon') ?>">
 	<title><?= $g->getSettings('site-name') ?></title>
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -17,46 +17,48 @@
 	<meta property="og:image" content="<?= $g->getSettings('site-image') ?>">
 	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
 
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<!-- jQuery 3.5.1 -->
+	<script src="/js/jquery-3.5.1.min.js"></script>
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<!-- Bootstrap 4.5.0 -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/bootstrap-reboot.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getSettings('site-version') ?>">
+	<!-- Custom Styles -->
+	<link href="/css/custom.php?v=<?= $g->getSettings('site-version') ?>" rel="stylesheet" type="text/css">
 
-	<!-- FontAwesome -->
-	<link href="/styles/fontawesome.css" rel="stylesheet">
-	<link href="/styles/brands.css" rel="stylesheet">
-	<link href="/styles/solid.css" rel="stylesheet">
+	<!-- FontAwesome 5.13.0  -->
+	<link href="/css/fontawesome.min.css" rel="stylesheet">
+	<link href="/css/brands.min.css" rel="stylesheet">
+	<link href="/css/solid.min.css" rel="stylesheet">
 
-	<!-- Animate on Scroll -->
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<!-- Animate on Scroll 2.3.4 -->
+	<link href="/css/aos.css" rel="stylesheet">
+	<script src="/js/aos.js"></script>
 
-	<!-- Bootstrap Select Picker -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+	<!-- Bootstrap Select Picker 1.13.14 -->
+	<link href="/css/bootstrap-select.min.css" rel="stylesheet" >
 
-	<!-- Bootstrap Switch Button -->
-	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+	<!-- Bootstrap Switch Button 3.6.1 -->
+	<link href="/css/bootstrap4-toggle.min.css" rel="stylesheet">
+	<script src="/js/bootstrap4-toggle.min.js"></script>
 
-	<!-- Colcade -->
-	<script src="https://unpkg.com/colcade@0/colcade.js"></script>
+	<!-- Colcade 0.2.0 -->
+	<script src="/js/colcade.js"></script>
 
-	<!-- Map Style -->
-	<link rel="stylesheet" type="text/css" href="/map/style.css">
+	<!-- Map Styles -->
+	<link href="/map/style.css" rel="stylesheet">
 
-	<!-- Leaflet -->
-	<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
-	<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+	<!-- Leaflet 1.6.0 -->
+	<link href="/css/leaflet.css" rel="stylesheet">
+	<script src="/js/leaflet.js"></script>
 
 	<!-- Leaflet Search -->
 	<script src="/map/src/leaflet-search.js"></script>
 
 	<!-- Leaflet Font Awesome Icons -->
-	<link rel="stylesheet" type="text/css" href="/map/src/leaflet.awesome-markers.css">
+	<link href="/map/src/leaflet.awesome-markers.css" rel="stylesheet" type="text/css" >
 	<script src="/map/src/leaflet.awesome-markers.js"></script>
 </head>
 <body id="top">
@@ -72,8 +74,7 @@
 			</div>
 		</div>
 	</div>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/bootstrap-select.min.js"></script>
 </body>
 </html>

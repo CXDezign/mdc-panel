@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="icon" type="image/png" href="<?= $g->getSettings('site-favicon') ?>">
+	<link rel="icon" type="image/svg" href="<?= $g->getSettings('site-favicon') ?>">
 	<title><?= $g->getSettings('site-name') ?> - MAINTENANCE</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -18,18 +18,20 @@
 	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
 
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="/js/jquery-3.5.1.min.js"></script>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-reboot.min.css">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="/styles/custom.php?v=<?= $g->getSettings('site-version') ?>">
+	<link rel="stylesheet" type="text/css" href="/css/custom.php?v=<?= $g->getSettings('site-version') ?>">
 
 	<!-- FontAwesome -->
-	<link href="/styles/fontawesome.css" rel="stylesheet">
-	<link href="/styles/brands.css" rel="stylesheet">
-	<link href="/styles/solid.css" rel="stylesheet">
+	<link href="/css/fontawesome.min.css" rel="stylesheet">
+	<link href="/css/brands.min.css" rel="stylesheet">
+	<link href="/css/solid.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="wrapper">
@@ -45,7 +47,6 @@
 			</div>
 		</div>
 	</div>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
