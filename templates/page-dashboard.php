@@ -6,23 +6,31 @@
 
 	foreach ($json as $card) {
 
+		$cardType = $card['type'];
 		$cardTitle = $card['title'];
 		$cardDescription = $card['description'];
 		$cardLink = $card['link'];
 		$cardID = $card['ID'];
 		$cardIcon = $card['icon'];
+		$cardTitleIcon = '';
+
+		if ($cardType == "external") {
+			$cardLink = $g->getSettings($cardLink);
+			$cardTitleIcon = '<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i>';
+		}
 
 		$cards .= '<div class="grid-item">
 			<div class="card card-panel" id="'.$cardID.'">
 				<a href="'.$cardLink.'" class="d-block">
 					<div class="card-body text-center">
 						<p><i class="fas fa-fw fa-7x fa-'.$cardIcon.' text-muted"></i></p>
-						<h5 class="card-title">'.$cardTitle.'</h5>
+						<h5 class="card-title">'.$cardTitle.$cardTitleIcon.'</h5>
 						<p class="card-text card-description">'.$cardDescription.'</p>
 					</div>
 				</a>
 			</div>
 		</div>';
+
 	}
 
 ?>

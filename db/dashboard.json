@@ -1,19 +1,30 @@
 {
 	"0": {
+		"type": "external",
+		"title": "Mobile Data Computer",
+		"description": "Access the Mobile Data Computer.",
+		"link": "url-mdc",
+		"ID": "card-main-mdc",
+		"icon": "desktop"
+	},
+	"1": {
+		"type": "internal",
 		"title": "Street Guide",
 		"description": "Explore the various locations of the San Andreas state.",
 		"link": "/street-guide",
 		"ID": "card-main-map",
 		"icon": "map-marker-alt"
 	},
-	"1": {
+	"2": {
+		"type": "internal",
 		"title": "Paperwork Generators",
 		"description": "Generate paperwork reports to assist your work process.",
 		"link": "/paperwork-generators",
 		"ID": "card-main-generators",
 		"icon": "archive"
 	},
-	"2": {
+	"3": {
+		"type": "internal",
 		"title": "Useful Resources",
 		"description": "Access some quick and handy resources.",
 		"link": "/useful-resources",
