@@ -12,7 +12,7 @@ class General {
 			case 'site-name':
 				return "MDC Panel";
 			case 'site-version':
-				return "1.10.3";
+				return "1.11.0";
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
@@ -23,10 +23,26 @@ class General {
 				return "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
 			case 'site-discord-contact':
 				return "xanx#0001";
+			case 'url-github':
+				return "https://github.com/xanxTV/MDC-Panel/";
+			case 'url-mdc':
+				return "https://mdc.gta.world";
+			case 'url-lspd':
+				return "https://lspd.gta.world";
+			case 'url-lssd':
+				return "https://lssd.gta.world";
+			case 'url-lsfd':
+				return "https://lsfd.gta.world";
 			case 'url-penal-code':
 				return "https://forum.gta.world/en/index.php?/topic/26513-san-andreas-penal-code/";
 			case 'url-court-laws':
 				return "https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722";
+			case 'url-lspd-handbook':
+				return "https://lspd.gta.world/viewforum.php?f=433";
+			case 'url-lspd-manual':
+				return "https://lspd.gta.world/viewtopic.php?f=20&t=1171";
+			case 'url-lspd-reports-records':
+				return "https://lspd.gta.world/viewforum.php?f=434";
 			default:
 				break;
 		}
