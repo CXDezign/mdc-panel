@@ -4,11 +4,11 @@
 	$expire = 3600;
 
 	if (!file_exists($dbfile)) {
-		die("Error: Data file " . $dbfile . " NOT FOUND!");
+		throw new Exception("Error: Data file " . $dbfile . " NOT FOUND!");
 	}
 
 	if (!is_writable($dbfile)) {
-		die("Error: Data file " . $dbfile . " is NOT writable! Please CHMOD it to 666!");
+		throw new Exception("Error: Data file " . $dbfile . " is NOT writable! Please CHMOD it to 666!");
 	}
 
 	function in_array_r($needle, $haystack, $strict = false) {
