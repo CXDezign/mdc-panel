@@ -1,13 +1,13 @@
 <nav id="sidebar">
 	<div class="text-center my-3">
-		<a class="d-block" id="sidebar-logo" href="/"><img alt="MDC Panel Logo"/></a>
+		<a class="d-block" id="sidebar-logo" href="/"><img alt="MDC Panel"/></a>
 	</div>
 	<?php
 		if (!$g->findCookie('toggleClock')) {
-			require_once('includes/clock.php');
+			require_once('templates/content-clock.php');
 		}
 		if (!$g->findCookie('toggleLiveVisitorCounter')) {
-			require_once('includes/visitors.php');
+			require_once('templates/content-visitors.php');
 		}
 	?>
 	<ul class="list-unstyled components px-3">

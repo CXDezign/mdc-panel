@@ -60,24 +60,24 @@
 	<script src="/map/src/leaflet.awesome-markers.js"></script>
 </head>
 <body id="top">
-	<div class="wrapper">
+	<div id="wrapper">
 	<?php
-		require_once("templates/sidebar.php");
-		echo '<div id="container">';
-			require_once("includes/breadcrumbs.php");
-			echo '<div class="container-page">';
-				require_once("routes.php");
-			echo '</div>';
-			require_once("templates/footer.php");
-		echo '</div>';
+		require_once("templates/content-sidebar.php");
 	?>
+		<div id="container">
+			<?php require_once("templates/content-breadcrumbs.php"); ?>
+			<div class="container-page">
+				<?php require_once("routes.php"); ?>
+			</div>
+			<?php require_once("templates/content-footer.php"); ?>
+		</div>
 	</div>
 <script src="/js/aos.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/bootstrap-select.min.js"></script>
 <script src="/js/bootstrap4-toggle.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function() {
 		AOS.init();
 		// Select Picker Initialisation
 		$('.selectpicker').selectpicker();
