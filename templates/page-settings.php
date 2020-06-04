@@ -154,7 +154,8 @@
 				id="inputName"
 				name="inputName"
 				placeholder="Firstname Lastname"
-				value="<?= $g->findCookie('officerName') ?>">
+				value="<?= $g->findCookie('officerName') ?>"
+				required>
 			</div>
 			<div class="form-group col-xl-4">
 				<label class="d-block text-center">Rank</label>
@@ -165,7 +166,8 @@
 					<select
 					class="form-control selectpicker"
 					id="inputRank"
-					name="inputRank">
+					name="inputRank"
+					required>
 					<?php
 						$pg->rankChooser(1);
 					?>
@@ -184,7 +186,8 @@
 					id="inputBadge"
 					name="inputBadge"
 					placeholder="####"
-					value="<?= $g->findCookie('officerBadge') ?>">
+					value="<?= $g->findCookie('officerBadge') ?>"
+					required>
 				</div>
 			</div>
 			<div class="container my-5 text-center">
@@ -212,7 +215,7 @@
 ?>
 <script>
 
-	$(function () {
+	$(document).ready(function() {
 
 		$('#clearCookies').click(function(e) {
 			e.preventDefault();
@@ -337,21 +340,46 @@
 
 		$('#submit').click(function(e) {
 			e.preventDefault();
-			$.ajax({
-				type: 'POST',
-				url: 'controllers/settings.php',
-				data: {
-					type: "settingsCharacter",
-					name: $("#inputName").val(),
-					rank: $("#inputRank").val(),
-					badge: $("#inputBadge").val()
-				},
-				success: function () {
-					setTimeout(function() {
-						location.reload();
-					}, 400);
-				},
-			});
+
+			name = $.trim($("#inputName").val());
+			rank = $.trim($("#inputRank").val());
+			badge = $.trim($("#inputBadge").val());
+
+			if (name === "" || rank === "" || badge === "") {
+
+				$('#submit').tooltip({
+					trigger : 'click',
+					placement : 'bottom',
+					title : '<i class="mr-1 fas fa-fw fa-exclamation-triangle"></i>Empty Fields!',
+					html : true
+				});
+
+				$('#submit').tooltip('show');
+
+				setTimeout(function() {
+					$('#submit').tooltip('hide');
+				}, 800);
+
+			} else {
+
+				$.ajax({
+					type: 'POST',
+					url: 'controllers/settings.php',
+					data: {
+						type: "settingsCharacter",
+						name: $("#inputName").val(),
+						rank: $("#inputRank").val(),
+						badge: $("#inputBadge").val()
+					},
+					success: function () {
+						setTimeout(function() {
+							location.reload();
+						}, 400);
+					},
+				});
+
+			}
+
 		});
 
 	});
