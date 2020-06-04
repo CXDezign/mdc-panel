@@ -19,7 +19,6 @@ class PaperworkGenerators {
 		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
 
-		$groupNA = "";
 		$groupCookie = "";
 		$groupLSPD = "";
 		$groupLSSD = "";
@@ -34,16 +33,12 @@ class PaperworkGenerators {
 			</optgroup>';
 		}
 
-		$ranksLSPD = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18);
-		$ranksLSSD = array(19,20,21,22,23,24,25,26,27);
+		$ranksLSPD = array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17);
+		$ranksLSSD = array(18,19,20,21,22,23,24,25,26);
 
 		foreach ($ranks as $rank) {
 
 			$statement = '<option value="'.$rankCount.'">'.$rank.'</option>';
-
-			if ($rankCount === 0) {
-				$groupNA .= $statement;
-			}
 
 			if (in_array($rankCount, $ranksLSPD)) {
 				$groupLSPD .= $statement;
@@ -55,7 +50,7 @@ class PaperworkGenerators {
 			$rankCount++;
 		}
 
-		echo $groupNA.$groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup><optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
+		echo '<option value="" selected disabled>Select Rank</option>'.$groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup><optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
 	}
 
 	public function getRank($input, $path) {
@@ -80,33 +75,48 @@ class PaperworkGenerators {
 
 	public function chargeChooser() {
 
-		$charges = json_decode(file_get_contents("db/penalSearch.json"), true);
-		$chargeCount = 0;
+		$chargeEntries = json_decode(file_get_contents("db/penalSearch.json"), true);
+		$disabledCharges = array(000,423);
 
-		foreach ($charges as $charge) {
-			if ($chargeCount != 0) {
-				$chargeType = $charge['type'];
-				switch ($chargeType) {
-					case "F":
-						$chargeContent = "<span class='badge badge-danger'>";
-						break;
-					case "M":
-						$chargeContent = "<span class='badge badge-warning'>";
-						break;
-					case "I":
-						$chargeContent = "<span class='badge badge-success'>";
-						break;
-					default:
-						$chargeContent = "<span class='badge badge-danger'> ?";
-						break;
-				}
-				echo '<option
-						data-content="'.$chargeContent.$charge['id'].'</span> '.$charge['charge'].'"
-						value="'.$charge['id'].'">
-						</option>';
+		$charges = '<option value="" selected disabled>Select Charge</option>';
+
+		foreach ($chargeEntries as $charge) {
+
+			$chargeType = $charge['type'];
+			$chargeID = $charge['id'];
+			$charge = $charge['charge'];
+			$chargeDisabled = '';
+
+			switch ($chargeType) {
+				case "F":
+					$chargeColor = 'danger';
+					break;
+				case "M":
+					$chargeColor = 'warning';
+					break;
+				case "I":
+					$chargeColor = 'success';
+					break;
+				default:
+					$chargeColor = 'dark';
 			}
-			$chargeCount++;
+
+			if (in_array($chargeID, $disabledCharges)) {
+				$chargeDisabled = 'disabled';
+				$chargeColor = 'dark';
+			}
+
+			$chargeContent = "<span class='mr-2 badge badge-".$chargeColor."'>".$chargeID."</span>".$charge;
+			$charges .= '<option
+				data-content="'.$chargeContent.'"
+				value="'.$chargeID.'"
+				'.$chargeDisabled.'>
+			</option>';
+
 		}
+
+		return $charges;
+
 	}
 
 	public function getCrimeClass($input) {
@@ -137,7 +147,26 @@ class PaperworkGenerators {
 			if ($bool) {
 				$crimeClass++;
 				$class = $this->getCrimeClass($crimeClass);
-				$options .= "<option value=".$crimeClass.">Class ".$class."</option>";
+				$options .= '<option value="'.$crimeClass.'">Class '.$class.'</option>';
+			}
+
+		}
+
+		return $options;
+
+	}
+
+	public function getCrimeOffence($input) {
+
+		$options = '';
+
+		foreach ($input as $crimeOffence => $bool) {
+
+			if ($bool) {
+
+				$crimeOffence++;
+				$options .= '<option value="'.$crimeOffence.'">Offence #'.$crimeOffence.'</option>';
+
 			}
 
 		}
@@ -164,6 +193,43 @@ class PaperworkGenerators {
 				break;
 		}
 		return '<span style="color: '.$colour.';">';
+	}
+
+	public function listChooser($list) {
+
+		$listEntries = file('resources/'.$list.'.txt');
+		$entriesCount = 1;
+		$optionValue = true;
+
+		switch($list) {
+			case 'braceletList':
+			case 'wristbandList':
+				$output = '<option value="0" selected>N/A</option>';
+				break;
+			case 'itemCategoryList':
+				$output = '';
+				$entriesCount = 0;
+				break;
+			case 'vehiclesList':
+			case 'districtsList':
+			case 'streetsList':
+				$optionValue = false;
+				break;
+			default:
+				$output = '';
+		}
+
+		foreach ($listEntries as $listItem) {
+			if ($optionValue) {
+				$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
+			} elseif (!$optionValue) {
+				$output .= '<option>'.$listItem.'</option>';
+			}
+			$entriesCount++;
+		}
+
+		return $output;
+
 	}
 
 	public function getDashboardCamera($input) {
@@ -293,43 +359,6 @@ class PaperworkGenerators {
 
 class ArrestReportGenerator extends PaperworkGenerators {
 
-	public function listChooser($list) {
-
-		$listEntries = file('resources/'.$list.'.txt');
-		$entriesCount = 1;
-		$optionValue = true;
-
-		switch($list) {
-			case 'braceletList':
-			case 'wristbandList':
-				$output = '<option value="0" selected>N/A</option>';
-				break;
-			case 'itemCategoryList':
-				$output = '';
-				$entriesCount = 0;
-				break;
-			case 'vehiclesList':
-			case 'districtsList':
-			case 'streetsList':
-				$optionValue = false;
-				break;
-			default:
-				$output = '';
-		}
-
-		foreach ($listEntries as $listItem) {
-			if ($optionValue) {
-				$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
-			} elseif (!$optionValue) {
-				$output .= '<option>'.$listItem.'</option>';
-			}
-			$entriesCount++;
-		}
-
-		return $output;
-
-	}
-
 	public function getBracelet($input) {
 
 		switch ($input) {
@@ -429,7 +458,7 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
 
 			if ($illegalParkingReasonsCount == 0) {
-				$groupDisabled = '<option value="" selected disbaled>'.$illegalParkingReason.'</option>';
+				$groupDisabled = '<option value="" selected disabled>'.$illegalParkingReason.'</option>';
 			}
 
 			if (in_array($illegalParkingReasonsCount, $reasonsTR)) {

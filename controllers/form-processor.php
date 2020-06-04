@@ -10,21 +10,28 @@
 
 		$getType = $_REQUEST['getType'];
 
-		if ($getType == "getCrimeClass") {
+		if ($getType == "getCrime") {
 
 			$crimeID = $_REQUEST['crimeID'];
 
 			$crime = $penal[$crimeID];
 			$crimeClasses = $crime['class'];
-			$output = array();
+			$crimeOffences = $crime['offence'];
+			$outputClass = array();
+			$outputOffence = array();
 
-			foreach ($crimeClasses as $crimeClass => $crimeBool) {
-				$output[] .= $crimeBool;
+			foreach ($crimeClasses as $crimeClass => $crimeClassBool) {
+				$outputClass[] .= $crimeClassBool;
 			}
 
-			$input = $pg->getCrimeClass2(array_reverse($output));
+			foreach ($crimeOffences as $crimeOffence => $crimeOffenceBool) {
+				$outputOffence[] .= $crimeOffenceBool;
+			}
 
-			echo $input;
+			$classes = $pg->getCrimeClass2(array_reverse($outputClass));
+			$offences = $pg->getCrimeOffence($outputOffence);
+
+			echo json_encode(array($classes, $offences));
 
 		}
 

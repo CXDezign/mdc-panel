@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-truck-pickup mr-2"></i>Impound Report - Form</h1>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
@@ -121,7 +121,7 @@
 					data-placement="bottom" title="Example: Benefactor Schwartzer"
 					required>
 					<datalist id="vehicle_list">
-					<?= $ar->listChooser('vehiclesList') ?>
+					<?= $pg->listChooser('vehiclesList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -156,7 +156,7 @@
 					required
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
-					<?= $ar->listChooser('districtsList') ?>
+					<?= $pg->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -176,7 +176,7 @@
 					data-placement="bottom" title="Location - Street Name"
 					required>
 					<datalist id="street_list">
-					<?= $ar->listChooser('streetsList') ?>
+					<?= $pg->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>

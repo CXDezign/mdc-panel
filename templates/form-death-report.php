@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-skull mr-2"></i>Death Report - Form</h1>
 	<h6><a target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewtopic.php?f=1356&t=25509">Death Reports - Thread<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></a></h6>
 	<hr>
@@ -57,7 +57,7 @@
 					list="district_list"
 					required>
 					<datalist id="district_list">
-					<?= $ar->listChooser('districtsList') ?>
+					<?= $pg->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 					list="street_list"
 					required>
 					<datalist id="street_list">
-					<?= $ar->listChooser('streetsList') ?>
+					<?= $pg->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>

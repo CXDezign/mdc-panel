@@ -7,7 +7,7 @@
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
 		<div class="form-row chargeGroup crimeSelectorGroup">
 			<div class="form-group col-xl-6">
-				<label>Crime ID, Title, & Type</label>
+				<label>Charge</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
@@ -18,30 +18,26 @@
 					id="inputCrime-1"
 					name="inputCrime[]"
 					required>
-					<?php
-						$pg->chargeChooser();
-					?>
+					<?= $pg->chargeChooser(); ?>
 					</select>
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
-				<label>Crime Class</label>
+				<label>Class</label>
 				<select
 				class="form-control selectpicker inputCrimeClassSelector"
 				id="inputCrimeClass-1"
 				name="inputCrimeClass[]"
 				required>
-				<?= $ar->listChooser('crimeClassList') ?>
 				</select>
 			</div>
 			<div class="form-group col-xl-2">
-				<label>Crime Offence</label>
+				<label>Offence</label>
 				<select
-				class="form-control selectpicker"
-				id="inputCrimeOffence"
+				class="form-control selectpicker inputCrimeOffenceSelector"
+				id="inputCrimeOffence-1"
 				name="inputCrimeOffence[]"
 				required>
-				<?= $ar->listChooser('offenceList') ?>
 				</select>
 			</div>
 			<div class="form-group col-xl-2">
@@ -78,9 +74,7 @@
 				id="inputCrime-"
 				name="inputCrime[]"
 				required>
-				<?php
-					$pg->chargeChooser();
-				?>
+				<?= $pg->chargeChooser(); ?>
 				</select>
 			</div>
 		</div>
@@ -90,16 +84,14 @@
 			id="inputCrimeClass-"
 			name="inputCrimeClass[]"
 			required>
-			<?= $ar->listChooser('crimeClassList') ?>
 			</select>
 		</div>
 		<div class="form-group col-xl-2">
 			<select
-			class="form-control select-picker-copy"
-			id="inputCrimeOffence"
+			class="form-control select-picker-copy inputCrimeOffenceSelector"
+			id="inputCrimeOffence-"
 			name="inputCrimeOffence[]"
 			required>
-			<?= $ar->listChooser('offenceList') ?>
 			</select>
 		</div>
 		<div class="form-group col-xl-2">

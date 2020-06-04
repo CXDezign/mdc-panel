@@ -148,7 +148,7 @@
 					required
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
-					<?= $ar->listChooser('districtsList') ?>
+					<?= $pg->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -168,7 +168,7 @@
 					required
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
-					<?= $ar->listChooser('streetsList') ?>
+					<?= $pg->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -235,7 +235,7 @@ The suspect was found to be X."
 					id="inputWristband"
 					name="inputWristband"
 					required>
-					<?=	$ar->listChooser('wristbandList'); ?>
+					<?=	$pg->listChooser('wristbandList'); ?>
 					</select>
 				</div>
 				<small class="form-text text-muted">
@@ -257,7 +257,7 @@ The suspect was found to be X."
 					id="inputBracelet"
 					name="inputBracelet"
 					required>
-					<?=	$ar->listChooser('braceletList'); ?>
+					<?=	$pg->listChooser('braceletList'); ?>
 					</select>
 				</div>
 				<small class="form-text text-muted">
@@ -278,7 +278,7 @@ The suspect was found to be X."
 					id="inputPlea"
 					name="inputPlea"
 					required>
-					<?=	$ar->listChooser('pleaList'); ?>
+					<?=	$pg->listChooser('pleaList'); ?>
 					</select>
 				</div>
 				<small class="form-text text-muted">

@@ -1,4 +1,4 @@
-<div class="container mb-5 pb-5" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
+<div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-car mr-2"></i>Traffic Report - Form</h1>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
@@ -136,7 +136,7 @@
 					id="inputDefLicense"
 					name="inputDefLicense"
 					required>
-					<?= $ar->listChooser('licensesList') ?>
+					<?= $pg->listChooser('licensesList') ?>
 					</select>
 				</div>
 			</div>
@@ -184,7 +184,7 @@ The defendant was found to be X."
 					required
 					data-placement="bottom" title="Example: Benefactor Schwartzer">
 					<datalist id="vehicle_list">
-					<?= $ar->listChooser('vehiclesList') ?>
+					<?= $pg->listChooser('vehiclesList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -251,7 +251,7 @@ The defendant was found to be X."
 					required
 					data-placement="bottom" title="Location - District">
 					<datalist id="district_list">
-					<?= $ar->listChooser('districtsList') ?>
+					<?= $pg->listChooser('districtsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -271,7 +271,7 @@ The defendant was found to be X."
 					required
 					data-placement="bottom" title="Location - Street Name">
 					<datalist id="street_list">
-					<?= $ar->listChooser('streetsList') ?>
+					<?= $pg->listChooser('streetsList') ?>
 					</datalist>
 				</div>
 			</div>
@@ -280,7 +280,7 @@ The defendant was found to be X."
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
 		<div class="form-row citationGroup crimeSelectorGroup">
 			<div class="form-group col-xl-6">
-				<label>Crime ID, Title, & Type</label>
+				<label>Charge</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"><i class="fas fa-fw fa-gavel"></i></span>
@@ -291,20 +291,17 @@ The defendant was found to be X."
 					id="inputCrime-1"
 					name="inputCrime[]"
 					required>
-					<?php
-						$pg->chargeChooser();
-					?>
+					<?= $pg->chargeChooser(); ?>
 					</select>
 				</div>
 			</div>
 			<div class="form-group col-xl-2">
-				<label>Crime Class</label>
+				<label>Class</label>
 				<select
 				class="form-control selectpicker inputCrimeClassSelector"
 				id="inputCrimeClass-1"
 				name="inputCrimeClass[]"
 				required>
-				<?= $ar->listChooser('crimeClassList') ?>
 				</select>
 			</div>
 			<div class="form-group col-xl-2">
@@ -396,9 +393,7 @@ The defendant was found to be X."
 				id="inputCrime-"
 				name="inputCrime[]"
 				required>
-				<?php
-					$pg->chargeChooser();
-				?>
+				<?= $pg->chargeChooser(); ?>
 				</select>
 			</div>
 		</div>
@@ -408,7 +403,6 @@ The defendant was found to be X."
 			id="inputCrimeClass-"
 			name="inputCrimeClass[]"
 			required>
-			<?= $ar->listChooser('crimeClassList') ?>
 			</select>
 		</div>
 		<div class="form-group col-xl-2">

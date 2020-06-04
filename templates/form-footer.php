@@ -27,20 +27,31 @@
 			var clickedElementID = e.target.id;
 			var clickedIDFix = '#'+clickedElementID;
 			var crimeClassSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeClassSelector select").attr('id');
+			var crimeOffenceSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeOffenceSelector select").attr('id');
 
 			$.ajax({
 				url: "/controllers/form-processor.php",
 				type: "POST",
+				dataType: 'text',
 				data: {
 					crimeID: $(clickedIDFix).val(),
-					getType: 'getCrimeClass'
+					getType: 'getCrime'
 				},
 				success: function (response) {
-					var final = '#'+crimeClassSelector;
-					$(final).find('option').remove();
-					$(final).append(response);
-					$(final).selectpicker('refresh');
-					$(final).selectpicker('render');
+					var classSelector = '#'+crimeClassSelector;
+					var offenceSelector = '#'+crimeOffenceSelector;
+
+					var response = $.parseJSON(response);
+
+					$(classSelector).find('option').remove();
+					$(classSelector).append(response[0]);
+					$(classSelector).selectpicker('refresh');
+					$(classSelector).selectpicker('render');
+
+					$(offenceSelector).find('option').remove();
+					$(offenceSelector).append(response[1]);
+					$(offenceSelector).selectpicker('refresh');
+					$(offenceSelector).selectpicker('render');
 				},
 				error: function (e) {
 					
@@ -118,6 +129,7 @@
 					var Last = $('body').find('.chargeGroup:last');
 					Last.find("#inputCrime-").attr("id", "inputCrime-"+chargeCount);
 					Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+chargeCount);
+					Last.find("#inputCrimeOffence-").attr("id", "inputCrimeOffence-"+chargeCount);
 					chargeCount++;
 					Last.find('.select-picker-copy').addClass("selectpicker");
 					$(".selectpicker").selectpicker('refresh');
