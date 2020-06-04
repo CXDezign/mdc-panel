@@ -325,9 +325,10 @@ var iconLifeguard = L.AwesomeMarkers.icon({
 // Bubble Popups
 var governmentLoc01 = "<b>Mission Row Police Station</b>";
 var governmentLoc02 = "<b>Vespucci Police Headquarters</b>";
-var governmentLoc03 = "<b>Twin Tower Correctional Facility</b>";
+var governmentLoc03 = "<b>Twin Towers Correctional Facility</b>";
 var governmentLoc04 = "<b>LSPD Impound Lot</b>";
 var governmentLoc05 = "<b>Sandy Shores Sheriff's Station</b>";
+var governmentLoc06 = "<b>Rockford Hills Police Station</b>";
 var fireStation01 = "<b>Station 1 - Paleto Bay Fire Station</b>";
 var fireStation02 = "<b>Station 1 - Paleto Bay Fire Station</b>";
 var fireStation03 = "<b>Station 3 - Davis Fire Station</b>";
@@ -351,6 +352,7 @@ L.marker([-65.5,-46.3],{icon: iconGovernmentBuilding}).bindPopup(governmentLoc02
 L.marker([-59.3,57.9],{icon: iconJail}).bindPopup(governmentLoc03,popupOptions).addTo(governmentLoc);
 L.marker([-73.4,-3.0],{icon: iconImpoundLot}).bindPopup(governmentLoc04,popupOptions).addTo(governmentLoc);
 L.marker([39.95,37.75],{icon: iconGovernmentBuilding}).bindPopup(governmentLoc05,popupOptions).addTo(governmentLoc);
+L.marker([-55.6,-31.4],{icon: iconGovernmentBuilding}).bindPopup(governmentLoc06,popupOptions).addTo(governmentLoc);
 
 // Fire Stations
 var fireStations = L.layerGroup();
@@ -450,7 +452,7 @@ var controlLayers = new L.control.layers(
 map.addControl( controlLayers );
 
 // Coordinates Debugger
-/*
+
 map.on('click', function(e){
 	var coord = e.latlng;
 	var lat = coord.lat.toFixed(1);
@@ -463,7 +465,7 @@ map.on('click', function(e){
 	document.execCommand("copy");
 	document.body.removeChild(coords);
 });
-*/
+
 
 window.FontAwesomeConfig = {
 	searchPseudoElements: true
