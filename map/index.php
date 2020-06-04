@@ -323,12 +323,12 @@ var iconLifeguard = L.AwesomeMarkers.icon({
 });
 
 // Bubble Popups
-var governmentLoc01 = "<b>Mission Row Police Station</b>";
+var governmentLoc01 = "<b>Mission Row Station</b>";
 var governmentLoc02 = "<b>Vespucci Police Headquarters</b>";
 var governmentLoc03 = "<b>Twin Towers Correctional Facility</b>";
 var governmentLoc04 = "<b>LSPD Impound Lot</b>";
 var governmentLoc05 = "<b>Sandy Shores Sheriff's Station</b>";
-var governmentLoc06 = "<b>Rockford Hills Police Station</b>";
+var governmentLoc06 = "<b>Rockford Hills Station</b>";
 var fireStation01 = "<b>Station 1 - Paleto Bay Fire Station</b>";
 var fireStation02 = "<b>Station 1 - Paleto Bay Fire Station</b>";
 var fireStation03 = "<b>Station 3 - Davis Fire Station</b>";
