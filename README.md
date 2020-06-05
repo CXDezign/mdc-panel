@@ -119,7 +119,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Contributors
 
-* **xanx** - *Creator* - [xanxTV](https://github.com/xanxTV)
-* **Skent** - *Arrest Report, Patrol Log, Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
+* **xanx** - *Creator & Project Manager* - [xanxTV](https://github.com/xanxTV)
+* **Skent** - *Initial Arrest Report, Patrol Log, and Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
 * **Cascade** - *Base Leaflet code* - [Cascadee88](https://github.com/Cascadee88)
 * **Spartan** - *Constant suggestions and interest in the project*.
+* **Brett** - *For making my life harder with each Penal Code update :)*.
