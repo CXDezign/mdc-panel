@@ -1,54 +1,61 @@
 {
 	"0": {
-		"title": "Arrest Report",
+		"title": "Arrest Charges Calculator",
 		"link": "/paperwork-generators/arrest-charges",
 		"tooltip": "Calculate sentences and generate an arrest report.",
+		"card": "card-generators-charges",
+		"icon": "gavel"
+	},
+	"1": {
+		"title": "Arrest Report",
+		"link": "/paperwork-generators/arrest-report",
+		"tooltip": "Generate an arrest report.",
 		"card": "card-generators-arrest",
 		"icon": "landmark"
 	},
-	"1": {
+	"2": {
 		"title": "Traffic Report",
 		"link": "/paperwork-generators/traffic-report",
 		"tooltip": "Generate a traffic report.",
 		"card": "card-generators-traffic",
 		"icon": "car"
 	},
-	"2": {
+	"3": {
 		"title": "Impound Report",
 		"link": "/paperwork-generators/impound-report",
 		"tooltip": "Generate an impound report.",
 		"card": "card-generators-impound",
 		"icon": "truck-pickup"
 	},
-	"3": {
+	"4": {
 		"title": "Parking Ticket",
 		"link": "/paperwork-generators/parking-ticket",
 		"tooltip": "Generate a parking ticket.",
 		"card": "card-generators-parking",
 		"icon": "parking"
 	},
-	"4": {
+	"5": {
 		"title": "Evidence Registration Log",
 		"link": "/paperwork-generators/evidence-registration-log",
 		"tooltip": "Generate an evidence registration log.",
 		"card": "card-generators-evidence",
 		"icon": "cannabis"
 	},
-	"5": {
+	"6": {
 		"title": "Patrol Log",
 		"link": "/paperwork-generators/patrol-log",
 		"tooltip": "Generate a patrol log.",
 		"card": "card-generators-patrol",
 		"icon": "clipboard-list"
 	},
-	"6": {
+	"7": {
 		"title": "TD: Patrol Report",
 		"link": "/paperwork-generators/traffic-division-patrol-report",
 		"tooltip": "Generate a traffic division patrol report.",
 		"card": "card-generators-tdpatrol",
 		"icon": "car-crash"
 	},
-	"7": {
+	"8": {
 		"title": "Death Report",
 		"link": "/paperwork-generators/death-report",
 		"tooltip": "Generate a death report.",

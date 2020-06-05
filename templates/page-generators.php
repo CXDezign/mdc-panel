@@ -52,5 +52,23 @@
 		// Tooltips
 		$('a').tooltip();
 
+		// Hide Charges Table if Accessing Arrest Report Link Directly
+		$("body").on("click", "#card-generators-arrest a", function (e) {
+
+			e.preventDefault();
+
+			$.ajax({
+				url: '/controllers/form-processor.php',
+				type: 'POST',
+				data: {
+					getType: 'setChargeTable'
+				},
+				success: function(response) {
+					window.location.href = '/paperwork-generators/arrest-report';
+				},
+			});
+
+		});
+
 	});
 </script>

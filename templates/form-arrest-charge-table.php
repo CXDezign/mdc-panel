@@ -2,6 +2,7 @@
 <table class="table table-striped table-light table-hover table-sm table-borderless">
 	<thead>
 		<th scope="col">Title</th>
+		<th scope="col" class="text-center">Sentencing</th>
 		<th scope="col" class="text-center">Offence</th>
 		<th scope="col">Type</th>
 		<th scope="col">Time</th>
@@ -11,7 +12,7 @@
 		<th scope="col" class="text-center">Suspension</th>
 		<th scope="col" class="text-center">Court</th>
 	</thead>
-	<tbody style="font-size: 80%!important">
+	<tbody style="font-size: 75%!important">
 		<?= $chargeTable ?>
 	</tbody>
 </table>

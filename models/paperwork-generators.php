@@ -14,6 +14,50 @@ class PaperworkGenerators {
 
 	}
 
+	public function calculateCrimeTime($iDays, $iHours, $iMinutes) {
+
+		$inputTime = ($iDays+($iHours/24+($iMinutes/60/24)));
+
+		$seconds = intval(ceil(86400 * $inputTime));
+
+		$days = floor($seconds / 86400);
+		$seconds %= 86400;
+
+		$hours = floor($seconds / 3600);
+		$seconds %= 3600;
+
+		$minutes = floor($seconds / 60);
+		$seconds %= 60;
+
+		if ($days != 0) {
+			$days .= $days == 1 ? " Day" : " Days";
+		} else {
+			$days = '';
+		}
+
+		if ($hours != 0) {
+			$hours = ' '.$hours.' Hours';
+		} else {
+			$hours = '';
+		}
+
+		if ($minutes != 0) {
+			$minutes = ' '.$minutes.' Minutes';
+		} else {
+			$minutes = '';
+		}
+
+		$input = array($days, $hours, $minutes);
+		$output = "";
+
+		foreach ($input as $timeElement) {
+			$output .= $timeElement;
+		}
+
+		return $output;
+
+	}
+
 	public function rankChooser($cookie) {
 
 		$ranks = file('resources/ranksList.txt');
@@ -172,6 +216,14 @@ class PaperworkGenerators {
 		}
 
 		return $options;
+
+	}
+
+	public function getCrimeSentencing($input) {
+
+		$sentences = file($_SERVER['DOCUMENT_ROOT'] . '/resources/sentencingAdditionsList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $sentences[$input-1];
 
 	}
 
