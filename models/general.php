@@ -5,14 +5,14 @@ class General {
 	// PAGE SETTINGS
 
 	public function getSettings($setting) {
-
+		
 		switch ($setting) {
 			case 'site-live':
 				return false;
 			case 'site-name':
 				return "MDC Panel";
 			case 'site-version':
-				return "1.11.1";
+				return "1.12.0";
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
@@ -65,6 +65,7 @@ class General {
 			default:
 				return $unix;
 		}
+
 	}
 
 	// COOKIES

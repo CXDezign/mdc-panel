@@ -1,4 +1,20 @@
 {
+	"1.12.0": {
+		"id": "1.12.0",
+		"date": "05/JUN/2020",
+		"changes": {
+			"0": "Arrest Charges Calculator - Extensive backend code rework and update, the code is much more versatile and dynamic for limitless input variations.<br><img width='100%' src='https://i.imgur.com/ZyqNTPz.png'/>",
+			"1": "Arrest Charges Calculator - Sentencing Enhancements input are now applicable to charges to promote its usage, reducing both the sentence times and arrest points. (Reductions: Offender 0%, Accomplice 0%, Accessory 50%, Conspiracy 75%)<br><img width='auto' src='https://i.imgur.com/S8O62Sy.png'/>",
+			"2": "Arrest Charges Calculator - Arrest Charges now dynamically display which offences (1st, 2nd, 3rd) may be applied to the selected crime.<br><img width='auto' src='https://i.imgur.com/E2Uf6xz.png'/><img width='auto' src='https://i.imgur.com/9f4mR0R.png'/>",
+			"3": "Arrest Charges Calculator - Crime time calculation rework, now works with the most optimal time-based units splitting. (If time totals are 60 minutes or above, change to hours and minutes instead, if 24 hours or above, change to days and hours, etc)",
+			"4": "Paperwork Generators - Small rank chooser optimisations and code fixes.",
+			"5": "Paperwork Generators - More backend code updates and optimisations.",
+			"6": "Site - Site-wide visual updates and element fixes.",
+			"7": "Site - Backend files reshuffled to appropriate locations, split actual page structure and functional code into separate files. (No more procedural coding.)",
+			"8": "Street Guide - Added missing station 'Rockford Hills Community Police Station'.<br><img width='auto' src='https://i.imgur.com/JlQFfSM.png'/>",
+			"9": "Street Guide - Fixed the spelling of the Twin Towers building. (Credit: Tseard)<br><img width='auto' src='https://i.imgur.com/3A5wCrz.png'/>"
+		}
+	},
 	"1.11.1": {
 		"id": "1.11.1",
 		"date": "03/JUN/2020",
@@ -32,7 +48,7 @@
 			"16": "Street Guide - Removal of unused map styles and coordinate debugger console tool. 2733 files removed.",
 			"17": "Useful Resources - Page revamped with various links from sidebar.",
 			"18": "Paperwork Generators - Now updated to work with the latest <a href='https://forum.gta.world/en/index.php?/topic/9421-san-andreas-penal-code-changelog/&do=findComment&comment=219657'>Penal Code</a> update (02/JAN/2020, New Point System, Classification + Types swap, Charge Updates)",
-			"19": "Paperwork Generators - Now dynamically show which classes (A, B, C) may be applied to the selected crime.",
+			"19": "Paperwork Generators - Now dynamically display which classes (A, B, C) may be applied to the selected crime.",
 			"20": "Paperwork Generators - Updated charges .402 & .412 to automatically detect upgrades from Misdemeanour to Felony types of crimes based on user input. <br><img width='800px' src='https://i.imgur.com/LFJYIW6.png'>",
 			"21": "Paperwork Generators - Table styling updated to accomodate new columns and information. (Points + Offence #)"
 		}
