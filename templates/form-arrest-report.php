@@ -1,7 +1,9 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Sentencing Charges</h1>
 	<?php
-		require_once('form-arrest-charge-table.php');
+		if ($showChargeTable) {
+			echo '<h1><i class="fas fa-fw fa-landmark mr-2"></i>Sentencing Charges</h1>';
+			require_once('form-arrest-charge-table.php');
+		}
 	?>
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report - Form</h1>
 	<hr>

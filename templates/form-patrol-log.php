@@ -131,6 +131,7 @@
 				<i class="fas fa-fw fa-plus-square mr-1"></i>End Patrol
 			</button>
 		</div>
+		
 	</form>
 
 	<!-- COPY SLOTS -->
@@ -139,12 +140,8 @@
 		<div class="col-xl-12">
 			<label class="font-weight-bold">Generic Event</label>
 		</div>
-		<input
-		style="display: none;"
-		type="text"
-		id="type"
-		name="type[]"
-		value="1">
+		<input type="hidden" id="type" name="type[]" value="1">
+
 		<div class="form-group col-xl-1">
 			<input
 			class="form-control timeSlot"
@@ -152,6 +149,7 @@
 			id="inputTimeEvent"
 			name="inputTimeEvent[]"
 			placeholder="00:00"
+			value=""
 			required>
 		</div>
 		<div class="form-group col-xl-9">
@@ -177,12 +175,8 @@
 		<div class="col-xl-12">
 			<label class="font-weight-bold">Traffic Stop</label>
 		</div>
-		<input
-		style="display: none;"
-		type="text"
-		id="type[]"
-		name="type[]"
-		value="2">
+		<input type="hidden" id="type" name="type[]" value="2">
+
 		<div class="form-group col-xl-1">
 			<input
 			class="form-control timeSlot"
@@ -190,6 +184,7 @@
 			id="inputTimeEvent"
 			name="inputTimeEvent[]"
 			placeholder="00:00"
+			value=""
 			required>
 		</div>
 		<div class="form-group col-xl-9">
@@ -204,7 +199,8 @@
 		<div class="form-group col-xl-2">
 			<div class="input-group-addon">
 				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2">
-					<i class="fas fa-fw fa-minus-square mr-1"></i>Event</button>
+					<i class="fas fa-fw fa-minus-square mr-1"></i>Event
+				</button>
 			</div>
 		</div>
 		<div class="form-row col-xl-12">
@@ -286,12 +282,8 @@
 		<div class="col-xl-12">
 			<label class="font-weight-bold">Arrest</label>
 		</div>
-		<input
-		style="display: none;"
-		type="text"
-		id="type[]"
-		name="type[]"
-		value="3">
+		<input type="hidden" id="type" name="type[]" value="3">
+
 		<div class="form-group col-xl-1">
 			<input
 			class="form-control timeSlot"
@@ -299,6 +291,7 @@
 			id="inputTimeEvent"
 			name="inputTimeEvent[]"
 			placeholder="00:00"
+			value=""
 			required>
 		</div>
 		<div class="form-group col-xl-4">

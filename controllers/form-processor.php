@@ -10,7 +10,7 @@
 
 		$getType = $_REQUEST['getType'];
 
-		if ($getType == "getCrime") {
+		if ($getType == 'getCrime') {
 
 			$crimeID = $_REQUEST['crimeID'];
 
@@ -35,7 +35,17 @@
 
 		}
 
+		if ($getType == 'getUNIX') {
+
+			$typeUNIX = $_REQUEST['typeUNIX'];
+
+			echo $g->getUNIX($typeUNIX);
+
+		}
+
 	}
+
+
 
 	// Generator Types
 
@@ -641,193 +651,212 @@
 			$rowBuilderTotals = "";
 			$charges = $_POST['inputCrime'];
 
-			// Charge List Builder
-			foreach ($charges as $iCharge => $charge) {
+			if (!empty($charges)) {
 
-				// Charge Base
-				$charge = $penal[$charge];
-				$chargeID = $charge['id'];
-				$chargeName = $charge['charge'];
-				$chargeOffence = $_POST['inputCrimeOffence'][$iCharge];
-				$chargeFine[] = $charge['fine'][$chargeOffence];
-				$chargeFineFull = "$".number_format($chargeFine[$iCharge]);
+				// Charge List Builder
+				foreach ($charges as $iCharge => $charge) {
 
-				// Charge Type Builder
-				$chargeType = $charge['type'];
-				$chargeTypeFull = "";
+					// Charge Base
+					$charge = $penal[$charge];
+					$chargeID = $charge['id'];
+					$chargeName = $charge['charge'];
+					$chargeOffence = $_POST['inputCrimeOffence'][$iCharge];
+					$chargeAddition = $_POST['inputCrimeAddition'][$iCharge];
+					$chargeFine[] = $charge['fine'][$chargeOffence];
+					$chargeFineFull = "$".number_format($chargeFine[$iCharge]);
 
-				// 412 Charge
-				if ($chargeID == 412 && $chargeOffence == 3 ) {
-					$chargeType = "F";
+					// Charge Sentencing Additions
+					switch ($chargeAddition) {
+						case 3:
+							$chargeReduction = 2;
+							break;
+						case 4:
+							$chargeReduction = 4;
+							break;
+						default:
+							$chargeReduction = 1;
+						}
+
+					// Charge Type Builder
+					$chargeType = $charge['type'];
+					$chargeTypeFull = "";
+
+					// 412 Charge
+					if ($chargeID == 412 && $chargeOffence == 3 ) {
+						$chargeType = "F";
+					}
+
+					// Charge Class Builder
+					$chargeClass = $_POST['inputCrimeClass'][$iCharge];
+
+					switch ($chargeClass) {
+						case 1:
+							$chargeClass = "C";
+							break;
+						case 2:
+							$chargeClass = "B";
+							break;
+						case 3:
+							$chargeClass = "A";
+							break;
+						default:
+							$chargeClass = "?";
+							break;
+					}
+
+					// 402 Charge
+					if (($chargeID == 402) && ($chargeClass == "B" || $chargeClass == "A")) {
+						$chargeType = "F";
+					}
+
+					switch ($chargeType) {
+						case "F":
+							$chargeTypeFull = '<strong class="text-danger">Felony</strong>';
+							break;
+						case "M":
+							$chargeTypeFull = '<strong class="text-warning">Misdemeanor</strong>';
+							break;
+						case "I":
+							$chargeTypeFull = '<strong class="text-success">Infraction</strong>';
+							break;
+						default:
+							$chargeTypeFull = '<strong class="text-danger">UNKNOWN</strong>';
+							break;
+					}
+
+					// Points Builder
+					$chargePoints[] = $charge['points'][$chargeClass];
+
+					// Impound Builder
+					$chargeImpound[] = $charge['impound'][$chargeOffence];
+					if ($chargeImpound[$iCharge] == 0) {
+						$chargeImpoundColour = "dark";
+						$chargeImpoundQuestion = "No";
+						$chargeImpoundTime = "";
+					} else {
+						$chargeImpoundColour = "success";
+						$chargeImpoundQuestion = "Yes";
+						$chargeImpoundTime = " | ".$chargeImpound[$iCharge]." Day(s)";
+					}
+					$chargeImpoundFull = '<span class="badge badge-'.$chargeImpoundColour.'">'.$chargeImpoundQuestion.$chargeImpoundTime.'</span>';
+
+					// Suspension Builder
+					$chargeSuspension[] = $charge['suspension'][$chargeOffence];
+					if ($chargeSuspension[$iCharge] == 0) {
+						$chargeSuspensionColour = "dark";
+						$chargeSuspensionQuestion = "No";
+						$chargeSuspensionTime = "";
+					} else {
+						$chargeSuspensionColour = "success";
+						$chargeSuspensionQuestion = "Yes";
+						$chargeSuspensionTime = " | ".$chargeSuspension[$iCharge]." Day(s)";
+					}
+					$chargeSuspensionFull = '<span class="badge badge-'.$chargeSuspensionColour.'">'.$chargeSuspensionQuestion.$chargeSuspensionTime.'</span>';
+
+					// Court Builder
+					$chargeCourt[] = $charge['court'];
+					if ($chargeCourt[$iCharge]) {
+						$chargeCourtColour = "success";
+						$chargeCourtIcon = "check-circle";
+					} else {
+						$chargeCourtColour = "dark";
+						$chargeCourtIcon = "times-circle";
+					}
+					$chargeCourtFull = '<span class="badge badge-'.$chargeCourtColour.'"><i class="fas fa-fw fa-'.$chargeCourtIcon.'"></i></span>';
+
+					// Time Builder
+					$multiDimensionalCrimeTimes = array("412");
+					if (in_array($chargeID, $multiDimensionalCrimeTimes)) {
+						$days[] = $charge['time'][$chargeOffence]['days'];
+						$hours[] = $charge['time'][$chargeOffence]['hours'];
+						$mins[] = $charge['time'][$chargeOffence]['min'];
+					} else {
+						$days[] = ($charge['time']['days'] / $chargeReduction);
+						$hours[] = ($charge['time']['hours'] / $chargeReduction);
+						$mins[] = ($charge['time']['min'] / $chargeReduction);
+					}
+
+					if ($days[$iCharge] == 0) {
+						$chargeDays = '';
+					} else {
+						$chargeDays = $days[$iCharge].' Day(s)';
+					}
+					if ($hours[$iCharge] == 0) {
+						$chargeHours = '';
+					} else {
+						$chargeHours = $hours[$iCharge]. ' Hour(s)';
+					}
+					if ($mins[$iCharge] == 0) {
+						$chargeMinutes = '';
+					} else {
+						$chargeMinutes = $mins[$iCharge].' Minute(s)';
+					}
+
+					$chargeTimeFull = $chargeDays.$chargeHours.$chargeMinutes;
+
+					// Finalisation Builders
+					$chargeTitle[] = $chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName;
+
+					// Rows Builder
+					$rowBuilder .= '
+						<tr>
+							<td>'.$chargeTitle[$iCharge].'</td>
+							<td class="text-center">'.$chargeOffence.'</td>
+							<td>'.$chargeTypeFull.'</td>
+							<td>'.$chargeTimeFull.'</td>
+							<td class="text-center">'.$chargePoints[$iCharge].'</td>
+							<td>'.$chargeFineFull.'</td>
+							<td class="text-center">'.$chargeImpoundFull.'</td>
+							<td class="text-center">'.$chargeSuspensionFull.'</td>
+							<td class="text-center">'.$chargeCourtFull.'</td>
+						</tr>';
+
 				}
 
-				// Charge Class Builder
-				$chargeClass = $_POST['inputCrimeClass'][$iCharge];
+				// Total Time
+				$chargeTimeTotalDays = array_sum($days).' Day(s) ';
+				$chargeTimeTotalHours = array_sum($hours).' Hour(s) ';
+				$chargeTimeTotalMinutes = array_sum($mins).' Minute(s) ';
+				$chargeTimeTotal = $chargeTimeTotalDays.$chargeTimeTotalHours.$chargeTimeTotalMinutes;
 
-				switch ($chargeClass) {
-					case 1:
-						$chargeClass = "C";
-						break;
-					case 2:
-						$chargeClass = "B";
-						break;
-					case 3:
-						$chargeClass = "A";
-						break;
-					default:
-						$chargeClass = "?";
-						break;
-				}
+				// Total Points
+				$chargePointsTotal = array_sum($chargePoints). ' Point(s)';
 
-				// 402 Charge
-				if (($chargeID == 402) && ($chargeClass == "B" || $chargeClass == "A")) {
-					$chargeType = "F";
-				}
+				// Total Fines
+				$chargeFineTotal = "$".number_format(array_sum($chargeFine));
 
-				switch ($chargeType) {
-					case "F":
-						$chargeTypeFull = '<strong class="text-danger">Felony</strong>';
-						break;
-					case "M":
-						$chargeTypeFull = '<strong class="text-warning">Misdemeanor</strong>';
-						break;
-					case "I":
-						$chargeTypeFull = '<strong class="text-success">Infraction</strong>';
-						break;
-					default:
-						$chargeTypeFull = '<strong class="text-danger">UNKNOWN</strong>';
-						break;
-				}
-
-				// Points Builder
-				$chargePoints[] = $charge['points'][$chargeClass];
-
-				// Impound Builder
-				$chargeImpound[] = $charge['impound'][$chargeOffence];
-				if ($chargeImpound[$iCharge] == 0) {
-					$chargeImpoundColour = "dark";
-					$chargeImpoundQuestion = "No";
-					$chargeImpoundTime = "";
+				// Total Impound Time
+				if (array_sum($chargeImpound) != 0) {
+					$chargeImpoundTotal = number_format(array_sum($chargeImpound))." Day(s)";
 				} else {
-					$chargeImpoundColour = "success";
-					$chargeImpoundQuestion = "Yes";
-					$chargeImpoundTime = " | ".$chargeImpound[$iCharge]." Day(s)";
+					$chargeImpoundTotal = "No Impounds";
 				}
-				$chargeImpoundFull = '<span class="badge badge-'.$chargeImpoundColour.'">'.$chargeImpoundQuestion.$chargeImpoundTime.'</span>';
 
-				// Suspension Builder
-				$chargeSuspension[] = $charge['suspension'][$chargeOffence];
-				if ($chargeSuspension[$iCharge] == 0) {
-					$chargeSuspensionColour = "dark";
-					$chargeSuspensionQuestion = "No";
-					$chargeSuspensionTime = "";
+				// Total Suspension Time
+				if (array_sum($chargeSuspension) != 0) {
+					$chargeSuspensionTotal = number_format(array_sum($chargeSuspension))." Day(s)";
 				} else {
-					$chargeSuspensionColour = "success";
-					$chargeSuspensionQuestion = "Yes";
-					$chargeSuspensionTime = " | ".$chargeSuspension[$iCharge]." Day(s)";
-				}
-				$chargeSuspensionFull = '<span class="badge badge-'.$chargeSuspensionColour.'">'.$chargeSuspensionQuestion.$chargeSuspensionTime.'</span>';
-
-				// Court Builder
-				$chargeCourt[] = $charge['court'];
-				if ($chargeCourt[$iCharge]) {
-					$chargeCourtColour = "success";
-					$chargeCourtIcon = "check-circle";
-				} else {
-					$chargeCourtColour = "dark";
-					$chargeCourtIcon = "times-circle";
-				}
-				$chargeCourtFull = '<span class="badge badge-'.$chargeCourtColour.'"><i class="fas fa-fw fa-'.$chargeCourtIcon.'"></i></span>';
-
-				// Time Builder
-				$multiDimensionalCrimeTimes = array("412");
-				if (in_array($chargeID, $multiDimensionalCrimeTimes)) {
-					$days[] = $charge['time'][$chargeOffence]['days'];
-					$hours[] = $charge['time'][$chargeOffence]['hours'];
-					$mins[] = $charge['time'][$chargeOffence]['min'];
-				} else {
-					$days[] = $charge['time']['days'];
-					$hours[] = $charge['time']['hours'];
-					$mins[] = $charge['time']['min'];
+					$chargeSuspensionTotal = "No Suspensions";
 				}
 
-				if ($days[$iCharge] == 0) {
-					$chargeDays = '';
-				} else {
-					$chargeDays = number_format($days[$iCharge]).' Day(s)';
-				}
-				if ($hours[$iCharge] == 0) {
-					$chargeHours = '';
-				} else {
-					$chargeHours = $hours[$iCharge]. ' Hour(s)';
-				}
-				if ($mins[$iCharge] == 0) {
-					$chargeMinutes = '';
-				} else {
-					$chargeMinutes = $mins[$iCharge].' Minute(s)';
-				}
-
-				$chargeTimeFull = $chargeDays.$chargeHours.$chargeMinutes;
-
-				// Finalisation Builders
-				$chargeTitle[] = $chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName;
-
-				// Rows Builder
-				$rowBuilder .= '
+				// Totals Row Builder
+				$rowBuilderTotals = '
 					<tr>
-						<td>'.$chargeTitle[$iCharge].'</td>
-						<td class="text-center">'.$chargeOffence.'</td>
-						<td>'.$chargeTypeFull.'</td>
-						<td>'.$chargeTimeFull.'</td>
-						<td class="text-center">'.$chargePoints[$iCharge].'</td>
-						<td>'.$chargeFineFull.'</td>
-						<td class="text-center">'.$chargeImpoundFull.'</td>
-						<td class="text-center">'.$chargeSuspensionFull.'</td>
-						<td class="text-center">'.$chargeCourtFull.'</td>
+						<td>'.$chargeTimeTotal.'</td>
+						<td>'.$chargePointsTotal.'</td>
+						<td>'.$chargeFineTotal.'</td>
+						<td>'.$chargeImpoundTotal.'</td>
+						<td>'.$chargeSuspensionTotal.'</td>
 					</tr>';
 
-			}
+				// Session Builder
+				$showGeneratedArrestChargeTables = true;
+				$generatedArrestChargeList = $rowBuilder;
+				$generatedArrestChargeTotals = $rowBuilderTotals;
 
-			// Total Time
-			$chargeTimeTotalDays = number_format(array_sum($days)).' Day(s) ';
-			$chargeTimeTotalHours = array_sum($hours).' Hour(s) ';
-			$chargeTimeTotalMinutes = array_sum($mins).' Minute(s) ';
-			$chargeTimeTotal = $chargeTimeTotalDays.$chargeTimeTotalHours.$chargeTimeTotalMinutes;
-
-			// Total Points
-			$chargePointsTotal = array_sum($chargePoints). ' Point(s)';
-
-			// Total Fines
-			$chargeFineTotal = "$".number_format(array_sum($chargeFine));
-
-			// Total Impound Time
-			if (array_sum($chargeImpound) != 0) {
-				$chargeImpoundTotal = number_format(array_sum($chargeImpound))." Day(s)";
 			} else {
-				$chargeImpoundTotal = "No Impounds";
+				$showGeneratedArrestChargeTables = false;
 			}
-
-			// Total Suspension Time
-			if (array_sum($chargeSuspension) != 0) {
-				$chargeSuspensionTotal = number_format(array_sum($chargeSuspension))." Day(s)";
-			} else {
-				$chargeSuspensionTotal = "No Suspensions";
-			}
-
-			// Totals Row Builder
-			$rowBuilderTotals = '
-				<tr>
-					<td>'.$chargeTimeTotal.'</td>
-					<td>'.$chargePointsTotal.'</td>
-					<td>'.$chargeFineTotal.'</td>
-					<td>'.$chargeImpoundTotal.'</td>
-					<td>'.$chargeSuspensionTotal.'</td>
-				</tr>';
-
-			// Session Builder
-			$showGeneratedArrestChargeTables = true;
-			$generatedArrestChargeList = $rowBuilder;
-			$generatedArrestChargeTotals = $rowBuilderTotals;
 		}
 
 		if ($generatorType == "ParkingTicket") {

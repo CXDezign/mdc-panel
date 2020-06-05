@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-	// Alert prior to closing tab/window
+	// Alert Prior to Closing Tab/Window
 	window.onbeforeunload = function(e) {
 		return "Woah! Slow down there cowboy, are you sure you want to lose that report?";
 	};
@@ -18,71 +18,66 @@
 		// Tooltips
 		$('input').tooltip();
 
+		// Traffic Division: Patrol Report Generator
 
-		// Crime Selector - Dynamic Crime Classes
-		$("body").on("change", ".inputCrimeSelector.bootstrap-select", function (e) {
-
-			e.preventDefault();
-
-			var clickedElementID = e.target.id;
-			var clickedIDFix = '#'+clickedElementID;
-			var crimeClassSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeClassSelector select").attr('id');
-			var crimeOffenceSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeOffenceSelector select").attr('id');
-
-			$.ajax({
-				url: "/controllers/form-processor.php",
-				type: "POST",
-				dataType: 'text',
-				data: {
-					crimeID: $(clickedIDFix).val(),
-					getType: 'getCrime'
-				},
-				success: function (response) {
-					var classSelector = '#'+crimeClassSelector;
-					var offenceSelector = '#'+crimeOffenceSelector;
-
-					var response = $.parseJSON(response);
-
-					$(classSelector).find('option').remove();
-					$(classSelector).append(response[0]);
-					$(classSelector).selectpicker('refresh');
-					$(classSelector).selectpicker('render');
-
-					$(offenceSelector).find('option').remove();
-					$(offenceSelector).append(response[1]);
-					$(offenceSelector).selectpicker('refresh');
-					$(offenceSelector).selectpicker('render');
-				},
-				error: function (e) {
-					
-				}
-			});
-
-		});
-
-
-		// Traffic Division: Patrol Report
-
-			// Traffic Stops
+			// Traffic Stops - Traffic Division: Patrol Report Generator
 			var maxSlotTS = 30;
-			$(".addSlotTS").click(function(){
-				if($('body').find('.groupSlotTS').length < maxSlotTS){
+
+			$(".addSlotTS").click(function() {
+				if ($('body').find('.groupSlotTS').length < maxSlotTS) {
 					var fieldHTML = '<div class="form-row groupSlotTS">'+$(".groupCopySlotTS").html()+'</div>';
 					$('body').find('.groupSlotTS:last').after(fieldHTML);
 				} else {
 					alert('Maximum '+maxSlotTS+' traffic stop slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeSlotTS",function(){ 
+			$("body").on("click",".removeSlotTS",function() { 
 				$(this).parents(".groupSlotTS").remove();
 			});
 
-		// Traffic Report & Arrest Report
+		// Traffic Report & Arrest Report Generators
 
-			// Officers
+			// Dynamic Crime Selector - Traffic Report & Arrest Report Generators
+			$("body").on("change", ".inputCrimeSelector.bootstrap-select", function (e) {
+
+				e.preventDefault();
+
+				var clickedElementID = e.target.id;
+				var clickedIDFix = '#'+clickedElementID;
+				var crimeClassSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeClassSelector select").attr('id');
+				var crimeOffenceSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeOffenceSelector select").attr('id');
+
+				$.ajax({
+					url: '/controllers/form-processor.php',
+					type: 'POST',
+					dataType: 'text',
+					data: {
+						crimeID: $(clickedIDFix).val(),
+						getType: 'getCrime'
+					},
+					success: function(response) {
+						var classSelector = '#'+crimeClassSelector;
+						var offenceSelector = '#'+crimeOffenceSelector;
+						var response = $.parseJSON(response);
+
+						$(classSelector).find('option').remove();
+						$(classSelector).append(response[0]);
+						$(classSelector).selectpicker('refresh');
+						$(classSelector).selectpicker('render');
+
+						$(offenceSelector).find('option').remove();
+						$(offenceSelector).append(response[1]);
+						$(offenceSelector).selectpicker('refresh');
+						$(offenceSelector).selectpicker('render');
+					},
+				});
+
+			});
+
+			// Officers Slots - Traffic Report & Arrest Report Generators
 			var maxSlots = 4;
-			$(".addOfficer").click(function(){
-				if($('body').find('.officerGroup').length < maxSlots){
+			$(".addOfficer").click(function() {
+				if ($('body').find('.officerGroup').length < maxSlots) {
 					var fieldHTML = '<div class="form-row officerGroup">'+$(".fieldGroupCopy").html()+'</div>';
 					$('body').find('.officerGroup:last').after(fieldHTML);
 					var Last = $('body').find('.officerGroup:last');
@@ -92,16 +87,16 @@
 					alert('Maximum '+maxSlots+' officer slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeOfficer",function(){ 
+			$("body").on("click",".removeOfficer",function() { 
 				$(this).parents(".officerGroup").remove();
 			});
 
-			var citationCount = 2;
 
-			// Citations
+			// Citations Slots - Traffic Report Generator
 			var maxCitations = 10;
+			var citationCount = 2;
 			$(".addCitation").click(function() {
-				if($('body').find('.citationGroup').length < maxCitations) {
+				if ($('body').find('.citationGroup').length < maxCitations) {
 					var fieldHTML = '<div class="form-row citationGroup crimeSelectorGroup">'+$(".fieldCitationCopy").html()+'</div>';
 					$('body').find('.citationGroup:last').after(fieldHTML);
 					var Last = $('body').find('.citationGroup:last');
@@ -114,14 +109,13 @@
 					alert('Maximum '+maxCitations+' citation slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeCitation",function(){ 
+			$("body").on("click",".removeCitation",function() { 
 				$(this).parents(".citationGroup").remove();
 			});
 
-			var chargeCount = 2;
-
-			// Charges
+			// Charge Slots - Arrest Report Generator
 			var maxCharges = 30;
+			var chargeCount = 2;
 			$(".addCharge").click(function() {
 				if ($('body').find('.chargeGroup').length < maxCharges) {
 					var fieldHTML = '<div class="form-row chargeGroup crimeSelectorGroup">'+$(".fieldChargeCopy").html()+'</div>';
@@ -130,6 +124,7 @@
 					Last.find("#inputCrime-").attr("id", "inputCrime-"+chargeCount);
 					Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+chargeCount);
 					Last.find("#inputCrimeOffence-").attr("id", "inputCrimeOffence-"+chargeCount);
+					Last.find("#inputCrimeAddition-").attr("id", "inputCrimeAddition-"+chargeCount);
 					chargeCount++;
 					Last.find('.select-picker-copy').addClass("selectpicker");
 					$(".selectpicker").selectpicker('refresh');
@@ -143,45 +138,48 @@
 
 		// Patrol Log
 
-			// Initial Time + Function
+			// Update Time Function - Called On Add Slot Button
 			function updateTime() {
+
 				$.ajax({
-					url: '/resources/time.php',
+					url: '/controllers/form-processor.php',
+					type: 'POST',
+					data: {
+						typeUNIX: 'time',
+						getType: 'getUNIX'
+					},
 					success: function(time) {
-					$('.groupCopySlotInfo').find('.timeSlot').attr("value", time);
-					$('.groupCopySlotTraffic').find('.timeSlot').attr("value", time);
-					$('.groupCopySlotArrest').find('.timeSlot').attr("value", time);
+						$('.groupSlotEvent:Last').find('.timeSlot').attr("value", time);
 					},
 				});
+
 			}
-			updateTime();
-			// Update Time every 30 seconds
-			setInterval(updateTime, 30000);
 		
-			var event = 1;
 			// Maximum Slots
 			var maxSlotGeneric = 50;
+			var event = 1;
 
-			// Event - Generic
-			$(".addSlotInfo").click(function(){
-				if($('body').find('.groupSlotEvent').length < maxSlotGeneric){
+			// Event - Generic - Patrol Log
+			$(".addSlotInfo").click(function() {
+				if ($('body').find('.groupSlotEvent').length < maxSlotGeneric) {
 					$('.groupCopySlotInfo label').text('Generic Event');
 					var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotInfo").html()+'</div>';
 					$('body').find('.groupSlotEvent:last').after(fieldHTML);
 					event++;
+					updateTime();
 				} else {
 					alert('Maximum '+maxSlotGeneric+' Info slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeSlotInfo",function(){ 
+			$("body").on("click",".removeSlotInfo",function() { 
 				$(this).parents(".groupSlotEvent").remove();
 				event--;
 			});
 
-
-			// Event - Traffic Stop
-			$(".addSlotEventTS").click(function(){
-				if($('body').find('.groupSlotEvent').length < maxSlotGeneric){
+			// Event - Traffic Stop - Patrol Log
+			$(".addSlotEventTS").click(function() {
+				if ($('body').find('.groupSlotEvent').length < maxSlotGeneric) {
+					updateTime();
 					$('.groupCopySlotTraffic label').text('Traffic Stop');
 					var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotTraffic").html()+'</div>';
 					$('body').find('.groupSlotEvent:last').after(fieldHTML);
@@ -190,14 +188,15 @@
 					alert('Maximum '+maxSlotGeneric+' Traffic Stop slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeSlotTS",function(){ 
+			$("body").on("click",".removeSlotTS",function() { 
 				$(this).parents(".groupSlotEvent").remove();
 				event--;
 			});
 
-			// Event - Arrest
-			$(".addSlotArrest").click(function(){
-				if($('body').find('.groupSlotEvent').length < maxSlotGeneric){
+			// Event - Arrest - Patrol Log
+			$(".addSlotArrest").click(function() {
+				if ($('body').find('.groupSlotEvent').length < maxSlotGeneric) {
+					updateTime();
 					$('.groupCopySlotArrest label').text('Arrest');
 					var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotArrest").html()+'</div>';
 					$('body').find('.groupSlotEvent:last').after(fieldHTML);
@@ -213,10 +212,10 @@
 
 		// Evidence Registration Log
 
-			// Items
+			// Items - Evidence Registration Log
 			var maxItems = 5;
-			$(".addItemRegistry").click(function(){
-				if($('body').find('.groupItemRegistry').length < maxItems){
+			$(".addItemRegistry").click(function() {
+				if ($('body').find('.groupItemRegistry').length < maxItems) {
 					var fieldHTML = '<div class="form-row groupItemRegistry">'+$(".groupCopyItemRegistry").html()+'</div>';
 					$('body').find('.groupItemRegistry:last').after(fieldHTML);
 				} else {
@@ -227,23 +226,23 @@
 				$(this).parents(".groupItemRegistry").remove();
 			});
 
-			// Evidence
+			// Evidence - Evidence Registration Log
 			var maxEvidence = 5;
-			$(".addImage").click(function(){
-				if($('body').find('.groupEvidence').length < maxEvidence){
+			$(".addImage").click(function() {
+				if ($('body').find('.groupEvidence').length < maxEvidence) {
 					var fieldHTML = '<div class="form-row groupEvidence">'+$(".groupCopyImage").html()+'</div>';
 					$('body').find('.groupEvidence:last').after(fieldHTML);
 				} else {
 					alert('Maximum '+maxEvidence+' evidence slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeImage",function(){ 
+			$("body").on("click",".removeImage",function() { 
 				$(this).parents(".groupEvidence").remove();
 			});
 
 		// Death Report
 
-			// Witnesses
+			// Witnesses - Death Report
 			var maxWitness = 5;
 			$(".addWitness").click(function(){
 				if($('body').find('.groupWitness').length < maxWitness){
@@ -257,7 +256,7 @@
 				$(this).parents(".groupWitness").remove();
 			});
 
-			// Evidence - Images
+			// Evidence - Images - Death Report
 			var maxEvidence = 5;
 			$(".addEvidenceImage").click(function(){
 				if($('body').find('.groupEvidence').length < maxEvidence){
@@ -271,7 +270,7 @@
 				$(this).parents(".groupEvidence").remove();
 			});
 
-			// Evidence - Descriptions
+			// Evidence - Descriptions - Death Report
 			$(".addEvidenceBox").click(function(){
 				if($('body').find('.groupEvidence').length < maxEvidence){
 					var fieldHTML = '<div class="form-row groupEvidence">'+$(".groupCopyBox").html()+'</div>';
