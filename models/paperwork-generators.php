@@ -201,7 +201,7 @@ class PaperworkGenerators {
 		$entriesCount = 1;
 		$optionValue = true;
 
-		switch($list) {
+		switch ($list) {
 			case 'braceletList':
 			case 'wristbandList':
 				$output = '<option value="0" selected>N/A</option>';
@@ -213,6 +213,7 @@ class PaperworkGenerators {
 			case 'vehiclesList':
 			case 'districtsList':
 			case 'streetsList':
+				$output = '';
 				$optionValue = false;
 				break;
 			default:
