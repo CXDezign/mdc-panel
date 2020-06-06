@@ -558,6 +558,14 @@ optgroup {
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
+#card-generators-mddeployment img {
+	filter: grayscale(100%);
+	transition: filter .1s linear;
+}
+
+#card-generators-mddeployment:hover img {
+	filter: grayscale(0%);
+}
 
 /*///////////////////////////////////////////////////////////////////////////////////////////
 // MOBILE DEVICES //

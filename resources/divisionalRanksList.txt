@@ -1,0 +1,14 @@
+Officer-in-Charge
+Section Leader
+Element Leader
+SWAT Officer
+Probationary SWAT Officer
+Officer-in-Charge
+Assistant Team Leader
+Tactical Support Officer
+Probationary Tactical Support Officer
+Officer-in-Charge
+Chief Supervisor
+Canine Supervisor
+Canine Handler
+Probationary Canine Handler

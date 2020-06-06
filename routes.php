@@ -54,6 +54,9 @@
 		case '/paperwork-generators/impound-report':
 			$url = "/templates/form-impound-report.php";
 			break;
+		case '/paperwork-generators/metropolitan-division-deployment-log':
+			$url = "/templates/form-metropolitan-division-deployment-log.php";
+			break;
 		case '':
 		case '/':
 		case '/dashboard':

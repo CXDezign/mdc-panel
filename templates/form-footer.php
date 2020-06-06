@@ -157,15 +157,12 @@
 		
 			// Maximum Slots
 			var maxSlotGeneric = 50;
-			var event = 1;
 
 			// Event - Generic - Patrol Log
 			$(".addSlotInfo").click(function() {
 				if ($('body').find('.groupSlotEvent').length < maxSlotGeneric) {
-					$('.groupCopySlotInfo label').text('Generic Event');
 					var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotInfo").html()+'</div>';
 					$('body').find('.groupSlotEvent:last').after(fieldHTML);
-					event++;
 					updateTime();
 				} else {
 					alert('Maximum '+maxSlotGeneric+' Info slots are allowed.');
@@ -173,41 +170,34 @@
 			});
 			$("body").on("click",".removeSlotInfo",function() { 
 				$(this).parents(".groupSlotEvent").remove();
-				event--;
 			});
 
 			// Event - Traffic Stop - Patrol Log
 			$(".addSlotEventTS").click(function() {
 				if ($('body').find('.groupSlotEvent').length < maxSlotGeneric) {
 					updateTime();
-					$('.groupCopySlotTraffic label').text('Traffic Stop');
 					var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotTraffic").html()+'</div>';
 					$('body').find('.groupSlotEvent:last').after(fieldHTML);
-					event++;
 				} else {
 					alert('Maximum '+maxSlotGeneric+' Traffic Stop slots are allowed.');
 				}
 			});
 			$("body").on("click",".removeSlotTS",function() { 
 				$(this).parents(".groupSlotEvent").remove();
-				event--;
 			});
 
 			// Event - Arrest - Patrol Log
 			$(".addSlotArrest").click(function() {
 				if ($('body').find('.groupSlotEvent').length < maxSlotGeneric) {
 					updateTime();
-					$('.groupCopySlotArrest label').text('Arrest');
 					var fieldHTML = '<div class="form-row groupSlotEvent">'+$(".groupCopySlotArrest").html()+'</div>';
 					$('body').find('.groupSlotEvent:last').after(fieldHTML);
-					event++;
 				} else {
 					alert('Maximum '+maxSlotGeneric+' Arrest slots are allowed.');
 				}
 			});	
 			$("body").on("click",".removeSlotArrest",function(){ 
 				$(this).parents(".groupSlotEvent").remove();
-				event--;
 			});
 
 		// Evidence Registration Log
@@ -281,6 +271,57 @@
 			});
 			$("body").on("click",".removeBox",function(){ 
 				$(this).parents(".groupEvidence").remove();
+			});
+
+
+		// Metro Deployment Log - Generator
+
+			// Team Leader Slots - Metro Deployment Log - Generator
+			var maxMDTLSlots = 3;
+			$(".addPlatoonTeamLeader").click(function() {
+				if ($('body').find('.teamLeaderGroup').length < maxMDTLSlots) {
+					var fieldHTML = '<div class="form-row teamLeaderGroup">'+$(".teamLeaderGroupCopy").html()+'</div>';
+					$('body').find('.teamLeaderGroup:last').after(fieldHTML);
+					var Last = $('body').find('.teamLeaderGroup:last');
+					Last.find('.select-picker-copy').addClass("selectpicker");
+					$(".selectpicker").selectpicker('refresh');
+				} else {
+					alert('Maximum '+maxMDTLSlots+' team leader slots are allowed.');
+				}
+			});
+			$("body").on("click",".removePlatoonTeamLeader",function() { 
+				$(this).parents(".teamLeaderGroup").remove();
+			});
+
+			// Deployment Event - Metro Deployment Log - Generator
+			var maxSlotMDDeploymentEvent = 20;
+			$(".addMDDeploymentEvent").click(function() {
+				if ($('body').find('.groupMDDeploymentEvent').length < maxSlotMDDeploymentEvent) {
+					var fieldHTML = '<div class="form-row groupMDDeploymentEvent">'+$(".groupCopyMDDeploymentEvent").html()+'</div>';
+					$('body').find('.groupMDDeploymentEvent:last').after(fieldHTML);
+				} else {
+					alert('Maximum '+maxSlotMDDeploymentEvent+' deployment event slots are allowed.');
+				}
+			});
+			$("body").on("click",".removeMDDeploymentEvent",function() { 
+				$(this).parents(".groupMDDeploymentEvent").remove();
+			});
+
+			// Deployment Event - Metro Deployment Log - Generator
+			var maxSlotMDInjuredTeamMembers = 10;
+			$(".addInjuredTeamMember").click(function() {
+				if ($('body').find('.groupInjuredTeamMember').length < maxSlotMDInjuredTeamMembers) {
+					var fieldHTML = '<div class="form-row groupInjuredTeamMember">'+$(".copyGroupInjuredTeamMember").html()+'</div>';
+					$('body').find('.groupInjuredTeamMember:last').after(fieldHTML);
+					var Last = $('body').find('.groupInjuredTeamMember:last');
+					Last.find('.select-picker-copy').addClass("selectpicker");
+					$(".selectpicker").selectpicker('refresh');
+				} else {
+					alert('Maximum '+maxSlotMDInjuredTeamMembers+' deployment event slots are allowed.');
+				}
+			});
+			$("body").on("click",".removeInjuredTeamMember",function() { 
+				$(this).parents(".groupInjuredTeamMember").remove();
 			});
 
 	});

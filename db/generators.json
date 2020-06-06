@@ -4,6 +4,7 @@
 		"link": "/paperwork-generators/arrest-charges",
 		"tooltip": "Calculate sentences and generate an arrest report.",
 		"card": "card-generators-charges",
+		"iconType": "icon",
 		"icon": "gavel"
 	},
 	"1": {
@@ -11,6 +12,7 @@
 		"link": "/paperwork-generators/arrest-report",
 		"tooltip": "Generate an arrest report.",
 		"card": "card-generators-arrest",
+		"iconType": "icon",
 		"icon": "landmark"
 	},
 	"2": {
@@ -18,6 +20,7 @@
 		"link": "/paperwork-generators/traffic-report",
 		"tooltip": "Generate a traffic report.",
 		"card": "card-generators-traffic",
+		"iconType": "icon",
 		"icon": "car"
 	},
 	"3": {
@@ -25,6 +28,7 @@
 		"link": "/paperwork-generators/impound-report",
 		"tooltip": "Generate an impound report.",
 		"card": "card-generators-impound",
+		"iconType": "icon",
 		"icon": "truck-pickup"
 	},
 	"4": {
@@ -32,6 +36,7 @@
 		"link": "/paperwork-generators/parking-ticket",
 		"tooltip": "Generate a parking ticket.",
 		"card": "card-generators-parking",
+		"iconType": "icon",
 		"icon": "parking"
 	},
 	"5": {
@@ -39,6 +44,7 @@
 		"link": "/paperwork-generators/evidence-registration-log",
 		"tooltip": "Generate an evidence registration log.",
 		"card": "card-generators-evidence",
+		"iconType": "icon",
 		"icon": "cannabis"
 	},
 	"6": {
@@ -46,13 +52,15 @@
 		"link": "/paperwork-generators/patrol-log",
 		"tooltip": "Generate a patrol log.",
 		"card": "card-generators-patrol",
+		"iconType": "icon",
 		"icon": "clipboard-list"
 	},
 	"7": {
 		"title": "TD: Patrol Report",
 		"link": "/paperwork-generators/traffic-division-patrol-report",
-		"tooltip": "Generate a traffic division patrol report.",
+		"tooltip": "Generate a Traffic Division patrol report.",
 		"card": "card-generators-tdpatrol",
+		"iconType": "icon",
 		"icon": "car-crash"
 	},
 	"8": {
@@ -60,6 +68,15 @@
 		"link": "/paperwork-generators/death-report",
 		"tooltip": "Generate a death report.",
 		"card": "card-generators-death",
+		"iconType": "icon",
 		"icon": "skull"
+	},
+	"9": {
+		"title": "MD: Deployment Log",
+		"link": "/paperwork-generators/metropolitan-division-deployment-log",
+		"tooltip": "Generate a Metropolitan Division deployment log.",
+		"card": "card-generators-mddeployment",
+		"iconType": "image",
+		"icon": "/images/divisions/metro.png"
 	}
 }

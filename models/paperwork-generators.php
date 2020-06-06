@@ -94,8 +94,44 @@ class PaperworkGenerators {
 			$rankCount++;
 		}
 
-		echo '<option value="" selected disabled>Select Rank</option>'.$groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup><optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
+		echo $groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup><optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
 	}
+	
+	public function divisionalRankChooser() {
+
+		$ranks = file('resources/divisionalRanksList.txt');
+		$rankCount = 0;
+
+		$groupD = "";
+		$groupC = "";
+		$groupK9 = "";
+
+		$ranksD = array(0,1,2,3,4);
+		$ranksC = array(5,6,7,8);
+		$ranksK9 = array(9,10,11,12,13);
+
+		foreach ($ranks as $rank) {
+
+			$statement = '<option value="'.$rankCount.'">'.$rank.'</option>';
+
+			if (in_array($rankCount, $ranksD)) {
+				$groupD .= $statement;
+			}
+			if (in_array($rankCount, $ranksC)) {
+				$groupC .= $statement;
+			}
+			if (in_array($rankCount, $ranksK9)) {
+				$groupK9 .= $statement;
+			}
+
+			$rankCount++;
+		}
+
+		return '<optgroup label="D Platoon">'.$groupD.'</optgroup>
+				<optgroup label="C Platoon">'.$groupC.'</optgroup>
+				<optgroup label="K9 Platoon">'.$groupK9.'</optgroup>';
+	}
+
 
 	public function getRank($input, $path) {
 

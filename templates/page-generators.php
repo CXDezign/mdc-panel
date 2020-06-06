@@ -10,7 +10,14 @@
 		$generatorLink = $generator['link'];
 		$generatorTooltip = $generator['tooltip'];
 		$generatorCard = $generator['card'];
+		$generatorIconType = $generator['iconType'];
 		$generatorIcon = $generator['icon'];
+
+		if ($generatorIconType == "icon") {
+			$generatorIcon = '<i class="fas fa-fw fa-7x fa-'.$generatorIcon.' text-muted"></i>';
+		} else if ($generatorIconType == "image") {
+			$generatorIcon = '<img src="'.$generatorIcon.'" width="112px"/>';
+		}
 
 		$generators .= '<div class="grid-item">
 			<div class="card card-panel" id="'.$generatorCard.'">
@@ -20,7 +27,7 @@
 					data-placement="bottom"
 					title="'.$generatorTooltip.'">
 					<div class="card-body text-center">
-						<p class="card-text"><i class="fas fa-fw fa-7x fa-'.$generatorIcon.' text-muted"></i></p>
+						<p class="card-text">'.$generatorIcon.'</p>
 						<h6 class="card-title">'.$generatorTitle.'</h6>
 					</div>
 				</a>
