@@ -1378,7 +1378,7 @@
 		},
 		"points": {
 			"A": 0,
-			"B": 6,
+			"B": 3,
 			"C": 0
 		},
 		"fine": {
@@ -2139,7 +2139,7 @@
 	"303": {
 		"id": "303",
 		"charge": "Grand Theft",
-		"type": "M",
+		"type": "F",
 		"class": {
 			"A": false,
 			"B": true,
