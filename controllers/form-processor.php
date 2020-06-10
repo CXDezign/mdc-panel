@@ -127,7 +127,7 @@
 			$inputNarrative = $_POST['inputNarrative'] ?: "";
 			$inputDashcam = $_POST['inputDashcam'] ?: "";
 
-			$inputVehPaint = $_POST['inputVehPaint'] ?: "UNKNOWN PAINT";
+			$inputVehRO = $_POST['inputVehRO'] ?: $postInputDefName;
 			$inputVehTint = $_POST['inputVehTint'] ?: "";
 
 			$inputCrime = $_POST['inputCrime'] ?? array();
@@ -174,7 +174,7 @@
 
 			// Report Builder
 			$generatedReportType = "Traffic Report";
-			$generatedReport = $officers."under the call sign <strong>".strtoupper($postInputCallsign)."</strong> on the <strong>".strtoupper($postInputDate)."</strong>, <strong>".$postInputTime."</strong>.<br>Conducted a traffic stop on a <strong>".$inputVehPaint." ".$postInputVeh."</strong>, ".$pg->getVehiclePlates($postInputVehPlate,0).", on <strong>".$postInputStreet."</strong>, <strong>".$postInputDistrict."</strong>.<br>".$pg->getVehicleTint($inputVehTint)."<br>The defendant was identified as <strong>".$postInputDefName."</strong>, possessing ".$pg->getDefLicense($inputDefLicense)."<br>".$inputNarrative."<br><br>Following charge(s) were issued:<br>".$fines."<br>".$pg->getDashboardCamera($inputDashcam);
+			$generatedReport = $officers."under the call sign <strong>".strtoupper($postInputCallsign)."</strong> on the <strong>".strtoupper($postInputDate)."</strong>, <strong>".$postInputTime."</strong>.<br>Conducted a traffic stop on a <strong>".$postInputVeh."</strong>, ".$pg->getVehiclePlates($postInputVehPlate,0).", registered to <strong>".$inputVehRO."</strong>, on <strong>".$postInputStreet."</strong>, <strong>".$postInputDistrict."</strong>.<br>".$pg->getVehicleTint($inputVehTint)."<br>The defendant was identified as <strong>".$postInputDefName."</strong>, possessing ".$pg->getDefLicense($inputDefLicense)."<br>".$inputNarrative."<br><br>Following charge(s) were issued:<br>".$fines."<br>".$pg->getDashboardCamera($inputDashcam);
 		}
 
 		if ($generatorType == "ArrestReport") {

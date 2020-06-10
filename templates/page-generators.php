@@ -15,7 +15,7 @@
 
 		if ($generatorIconType == "icon") {
 			$generatorIcon = '<i class="fas fa-fw fa-7x fa-'.$generatorIcon.' text-muted"></i>';
-		} else if ($generatorIconType == "image") {
+		} elseif ($generatorIconType == "image") {
 			$generatorIcon = '<img src="'.$generatorIcon.'" width="112px"/>';
 		}
 

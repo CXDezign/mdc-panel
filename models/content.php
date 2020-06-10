@@ -2,6 +2,42 @@
 
 class Content {
 
+	// FORMS
+
+	function form($file, $directory, $variables = array(), $print = true) {
+
+		$output = NULL;
+		$root = $_SERVER['DOCUMENT_ROOT'];
+
+		switch ($directory) {
+			case 'forms':
+				$directory = '/templates/forms/';
+				break;
+			case 'sections':
+				$directory = '/templates/sections/';
+				break;
+		}
+
+		if (file_exists($root.$directory.$file.'.php')) {
+			// Extract the variables to a local namespace
+			extract($variables);
+
+			// Start output buffering
+			ob_start();
+
+			// Include the template file
+			include $root.$directory.$file.'.php';
+
+			// End buffering and return its contents
+			$output = ob_get_clean();
+		}
+		if ($print) {
+			print $output;
+		}
+		return $output;
+
+	}
+
 	// BREADCRUMBS
 
 	public function breadcrumbs() {

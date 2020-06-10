@@ -94,7 +94,8 @@ class PaperworkGenerators {
 			$rankCount++;
 		}
 
-		echo $groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup><optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
+		return $groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup>
+							<optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
 	}
 	
 	public function divisionalRankChooser() {
@@ -158,7 +159,7 @@ class PaperworkGenerators {
 		$chargeEntries = json_decode(file_get_contents("db/penalSearch.json"), true);
 		$disabledCharges = array(000,423);
 
-		$charges = '<option value="" selected disabled>Select Charge</option>';
+		$charges = '';
 
 		foreach ($chargeEntries as $charge) {
 
@@ -292,7 +293,8 @@ class PaperworkGenerators {
 		switch ($list) {
 			case 'braceletList':
 			case 'wristbandList':
-				$output = '<option value="0" selected>N/A</option>';
+				$output = '';
+				$entriesCount = 0;
 				break;
 			case 'itemCategoryList':
 				$output = '';
@@ -354,7 +356,7 @@ class PaperworkGenerators {
 
 		}
 
-		echo '<optgroup label="Legal">'.$groupTintLegal.'</optgroup> <optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
+		return '<optgroup label="Legal">'.$groupTintLegal.'</optgroup> <optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
 
 	}
 
@@ -546,10 +548,6 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 
 			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
 
-			if ($illegalParkingReasonsCount == 0) {
-				$groupDisabled = '<option value="" selected disabled>'.$illegalParkingReason.'</option>';
-			}
-
 			if (in_array($illegalParkingReasonsCount, $reasonsTR)) {
 				$groupTrafficRelated .= $statement;
 			}
@@ -569,8 +567,7 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 			$illegalParkingReasonsCount++;
 		}
 
-		echo $groupDisabled.'
-		<optgroup label="Traffic Related">'.$groupTrafficRelated.'</optgroup>
+		return '<optgroup label="Traffic Related">'.$groupTrafficRelated.'</optgroup>
 		<optgroup label="Parking Related">'.$groupParkingRelated.'</optgroup>
 		<optgroup label="Transport Related">'.$groupTransportRelated.'</optgroup>
 		<optgroup label="Property Related">'.$groupPropertyRelated.'</optgroup>

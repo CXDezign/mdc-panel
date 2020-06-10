@@ -5,7 +5,7 @@
 		return "Woah! Slow down there cowboy, are you sure you want to lose that report?";
 	};
 
-	$(document).ready(function(){
+	$(document).ready(function() {
 
 		// Allow redirects without alerts
 		$('a').click(function () {
@@ -38,21 +38,23 @@
 		// Traffic Report & Arrest Report Generators
 
 			// Dynamic Crime Selector - Traffic Report & Arrest Report Generators
-			$("body").on("change", ".inputCrimeSelector.bootstrap-select", function (e) {
+			$(document).on('change', 'select.inputCrimeSelector', function (e) {
+
+				console.log(e);
 
 				e.preventDefault();
 
-				var clickedElementID = e.target.id;
-				var clickedIDFix = '#'+clickedElementID;
-				var crimeClassSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeClassSelector select").attr('id');
-				var crimeOffenceSelector = $(clickedIDFix).parents(".crimeSelectorGroup").find(".inputCrimeOffenceSelector select").attr('id');
+				var clickedElementID = '#'+e.target.id;
+				console.log(clickedElementID);
+				var crimeClassSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeClassSelector select').attr('id');
+				var crimeOffenceSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeOffenceSelector select').attr('id');
 
 				$.ajax({
 					url: '/controllers/form-processor.php',
 					type: 'POST',
 					dataType: 'text',
 					data: {
-						crimeID: $(clickedIDFix).val(),
+						crimeID: $(clickedElementID).val(),
 						getType: 'getCrime'
 					},
 					success: function(response) {
@@ -62,56 +64,78 @@
 
 						$(classSelector).find('option').remove();
 						$(classSelector).append(response[0]);
-						$(classSelector).selectpicker('refresh');
-						$(classSelector).selectpicker('render');
+						$(classSelector).attr('required', true).trigger('change').selectpicker('refresh').selectpicker('render');
 
 						$(offenceSelector).find('option').remove();
 						$(offenceSelector).append(response[1]);
-						$(offenceSelector).selectpicker('refresh');
-						$(offenceSelector).selectpicker('render');
+						$(offenceSelector).attr('required', true).trigger('change').selectpicker('refresh').selectpicker('render');
 					},
 				});
 
 			});
 
+			function copySlotSelectPicker($input) {
+				$input.find('.select-picker-copy').addClass('selectpicker');
+				$('.selectpicker').selectpicker('refresh');
+			};
+
+			function maxSlots($maxSlots) {
+				alert('Maximum '+$maxSlots+' slots are allowed.');
+			}
+
 			// Officers Slots - Traffic Report & Arrest Report Generators
-			var maxSlots = 4;
-			$(".addOfficer").click(function() {
-				if ($('body').find('.officerGroup').length < maxSlots) {
-					var fieldHTML = '<div class="form-row officerGroup">'+$(".fieldGroupCopy").html()+'</div>';
-					$('body').find('.officerGroup:last').after(fieldHTML);
-					var Last = $('body').find('.officerGroup:last');
-					Last.find('.select-picker-copy').addClass("selectpicker");
-					$(".selectpicker").selectpicker('refresh');
-				} else {
-					alert('Maximum '+maxSlots+' officer slots are allowed.');
-				}
-			});
-			$("body").on("click",".removeOfficer",function() { 
-				$(this).parents(".officerGroup").remove();
-			});
+			(function() {
+				
+				let $maxSlots = 4;
+				let $group = '.groupSlotOfficer';
+				let $class = $group.replace('.', '');
+				let $add = '.addOfficer';
+				let $remove = '.removeOfficer';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotOfficer').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length < $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						copySlotSelectPicker($('body').find($group+':last'));
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
 
 
 			// Citations Slots - Traffic Report Generator
-			var maxCitations = 10;
-			var citationCount = 2;
-			$(".addCitation").click(function() {
-				if ($('body').find('.citationGroup').length < maxCitations) {
-					var fieldHTML = '<div class="form-row citationGroup crimeSelectorGroup">'+$(".fieldCitationCopy").html()+'</div>';
-					$('body').find('.citationGroup:last').after(fieldHTML);
-					var Last = $('body').find('.citationGroup:last');
-					Last.find("#inputCrime-").attr("id", "inputCrime-"+citationCount);
-					Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+citationCount);
-					citationCount++;
-					Last.find('.select-picker-copy').addClass("selectpicker");
-					$(".selectpicker").selectpicker('refresh');
-				} else {
-					alert('Maximum '+maxCitations+' citation slots are allowed.');
-				}
-			});
-			$("body").on("click",".removeCitation",function() { 
-				$(this).parents(".citationGroup").remove();
-			});
+			(function() {
+
+				let $maxSlots = 10;
+				let $group = '.groupSlotCitation';
+				let $class = $group.replace('.', '');
+				let $add = '.addCitation';
+				let $remove = '.removeCitation';
+				let $copyGroup = '<div class="form-row '+$class+' crimeSelectorGroup">'+$('.copyGroupSlotCitation').html()+'</div>';
+				let $count = 2;
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length < $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						var Last = $('body').find($group+':last');
+						Last.find("#inputCrime-").attr("id", "inputCrime-"+$count);
+						Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+$count);
+						$count++;
+						copySlotSelectPicker(Last);
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
 
 			// Charge Slots - Arrest Report Generator
 			var maxCharges = 30;
@@ -273,7 +297,6 @@
 				$(this).parents(".groupEvidence").remove();
 			});
 
-
 		// Metro Deployment Log - Generator
 
 			// Team Leader Slots - Metro Deployment Log - Generator
@@ -320,9 +343,10 @@
 					alert('Maximum '+maxSlotMDInjuredTeamMembers+' deployment event slots are allowed.');
 				}
 			});
-			$("body").on("click",".removeInjuredTeamMember",function() { 
+			$("body").on("click",".removeInjuredTeamMember",function() {
 				$(this).parents(".groupInjuredTeamMember").remove();
 			});
 
 	});
+
 </script>

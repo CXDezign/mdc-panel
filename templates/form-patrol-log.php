@@ -1,335 +1,336 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-clipboard-list mr-2"></i>Patrol Log - Form</h1>
-	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="PatrolLog">
-		<h4><i class="fas fa-fw fa-archive mr-2"></i>General Details</h4>
+		<?php
+			// Section - General
+			$c->form('general', 'sections', array(
+				'g' => $g,
+				'c' => $c,
+				'time' => false,
+				'patrol' => true,
+				'callsign' => true
+			));
+		?>
+		<hr>
+		<h4><i class="fas fa-fw fa-user-friends mr-2"></i>Partner Details</h4>
 		<div class="form-row">
-			<div class="form-group col-xl-2">
-				<label>Date</label>
-				<div class="input-group">
-					<input
-					class="form-control"
-					type="text"
-					id="inputDate"
-					name="inputDate"
-					placeholder="DD/MMM/YYYY"
-					style="text-transform: uppercase;"
-					value="<?= $g->getUNIX('date') ?>"
-					required
-					data-placement="bottom" title="DD/MMM/YYYY Format">
-				</div>
-			</div>
-			<div class="form-group col-xl-2">
-				<label>Patrol Start Time</label>
-				<div class="input-group">
-					<input
-					class="form-control"
-					type="text"
-					id="inputTime"
-					name="inputTime"
-					placeholder="00:00"
-					value="<?= $g->getUNIX('time') ?>"
-					required
-					data-placement="bottom" title="24-Hour Format">
-				</div>	
-			</div>
-			<div class="form-group col-xl-2">
-				<label>Patrol End Time</label>
-				<div class="input-group">
-					<input
-					class="form-control"
-					type="text"
-					id="inputTimeEnd"
-					name="inputTimeEnd"
-					placeholder="24:00"
-					value=""
-					required
-					data-placement="bottom" title="24-Hour Format">
-				</div>	
-			</div>
-			<div class="form-group col-xl-3">
-				<label>Call Sign</label>
-				<input
-				class="form-control"
-				type="text"
-				id="inputCallsign"
-				name="inputCallsign"
-				placeholder="Call Sign"
-				value="<?= $g->findCookie('callSign') ?>"
-				required
-				data-placement="bottom" title="Example: 2-ADAM-1, 2A1">
-			</div>
+			<?php
+				// Form - Textfield - Partner's Name
+				$c->form('textfield', 'forms', array(
+					'size' => '4',
+					'type' => 'text',
+					'label' => '<label>Partner&#39;s Full Name</label>',
+					'icon' => 'id-card',
+					'class' => '',
+					'id' => 'inputPartner',
+					'name' => 'inputPartner',
+					'value' => '',
+					'placeholder' => 'Firstname Lastname',
+					'tooltip' => 'Leave empty if on solo patrol.',
+					'attributes' => '',
+					'style' => ''
+				));
+				// Form - List - Partner's Rank
+				$c->form('list', 'forms', array(
+					'size' => '3',
+					'label' => '<label>Partner&#39;s Rank</label>',
+					'icon' => 'user-shield',
+					'class' => 'selectpicker',
+					'id' => 'inputRank',
+					'name' => 'inputRank',
+					'attributes' => 'required',
+					'title' => 'Select Rank',
+					'list' => $pg->rankChooser(0),
+					'hint' => '',
+					'hintClass' => ''
+				));
+			?>
 		</div>
-		<div class="form-row">
-			<div class="form-group col-xl-3">
-				<label>Partner</label>
-				<input
-				class="form-control"
-				type="text"
-				id="inputPartner"
-				name="inputPartner"
-				placeholder="Firstname Lastname"
-				data-placement="bottom" title="Leave empty if on solo patrol.">
-			</div>
-			<div class="form-group col-xl-3">
-				<label>Partner Rank</label>
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
-					</div>
-					<select
-					class="form-control selectpicker"
-					id="inputRank"
-					name="inputRank"
-					>
-					<?php
-						$pg->rankChooser(0);
-					?>
-					</select>
-				</div>
-			</div>
-		</div>
-
-		<h4><i class="fas fa-fw fa-car mr-2"></i>Add Events</h4>
+		<hr>
+		<h4><i class="fas fa-fw fa-calendar-plus mr-2"></i>Add Events</h4>
 		<div class="form-row groupSlotEvent">
-			<div class="form-group col-xl-12">
-				<label>Event Options</label>
-				<div class="form-row">
-					<div class="col-xl-3">
-						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotInfo">
-							<i class="fas fa-fw fa-plus-square mr-1"></i>Add Generic Event
-						</a>
-					</div>
-					<div class="col-xl-2">
-						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotEventTS">
-							<i class="fas fa-fw fa-plus-square mr-1"></i>Add Traffic Stop
-						</a>
-					</div>
-					<div class="col-xl-2">
-						<a href="javascript:void(0)" class="btn btn-success w-100 addSlotArrest">
-							<i class="fas fa-fw fa-plus-square mr-1"></i>Add Arrest
-						</a>
-					</div>
-				</div>
-			</div>
+			<?php
+				// Form - Options Add - Event - Generic
+				$c->form('options', 'forms', array(
+					'size' => '3',
+					'label' => '',
+					'action' => 'addSlotInfo',
+					'colour' => 'success',
+					'icon' => 'fa-plus-square',
+					'text' => 'Add Generic Event'
+				));
+				// Form - Options Add - Event - Traffic Stop
+				$c->form('options', 'forms', array(
+					'size' => '3',
+					'label' => '',
+					'action' => 'addSlotEventTS',
+					'colour' => 'success',
+					'icon' => 'fa-plus-square',
+					'text' => 'Add Traffic Event'
+				));
+				// Form - Options Add - Event - Arrest
+				$c->form('options', 'forms', array(
+					'size' => '3',
+					'label' => '',
+					'action' => 'addSlotArrest',
+					'colour' => 'success',
+					'icon' => 'fa-plus-square',
+					'text' => 'Add Arrest Event'
+				));
+			?>
 		</div>
-
-		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Notes & Other Details</h4>
+		<hr>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Notes Section</h4>
 		<div class="form-row">
-			<div class="form-group col-xl-12">
-				<textarea
-				class="form-control"
-				id="inputNotes"
-				name="inputNotes"
-				rows="2"
-				placeholder="Any optional and extra notes regarding the patrol."></textarea>
-			</div>
+			<?php
+				// Form - Textbox - Notes
+				$c->form('textbox', 'forms', array(
+					'size' => '12',
+					'label' => '<label>Notes</label>',
+					'icon' => 'clipboard',
+					'id' => 'inputNotes',
+					'name' => 'inputNotes',
+					'rows' => '2',
+					'placeholder' => 'Any optional and extra notes regarding the patrol.',
+					'attributes' => '',
+					'hint' => ''
+				));
+			?>
 		</div>
-		<div class="container my-5 text-center">
-			<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
-				<i class="fas fa-fw fa-plus-square mr-1"></i>End Patrol
-			</button>
-		</div>
-		
+		<?php
+			// Form - Submit
+			$c->form('submit', 'forms', array());
+		?>
 	</form>
-
-	<!-- COPY SLOTS -->
-
-	<div class="container bg-dark groupCopySlotInfo" style="display: none;">
-		<div class="col-xl-12">
-			<label class="font-weight-bold">Generic Event</label>
-		</div>
-		<input type="hidden" id="type" name="type[]" value="1">
-
-		<div class="form-group col-xl-1">
-			<input
-			class="form-control timeSlot"
-			type="text"
-			id="inputTimeEvent"
-			name="inputTimeEvent[]"
-			placeholder="00:00"
-			value=""
-			required>
-		</div>
-		<div class="form-group col-xl-9">
-			<input
-			class="form-control"
-			type="text"
-			id="inputReasonInfo"
-			name="inputReasonInfo[]"
-			placeholder="Examples: Code 6 at X location, Handled emergency call ID ####, Provided perimeter on X scene."
-			required>
-		</div>
-		<div class="form-group col-xl-2">
-			<button class="btn btn-danger w-100 removeSlotInfo" type="button" id="button-addon2">
-				<i class="fas fa-fw fa-minus-square mr-1"></i>Event
-			</button>
-		</div>
-		<div class="col-xl-12">
-			<hr/>
-		</div>
-	</div>
-	
-	<div class="container groupCopySlotTraffic" style="display: none;">
-		<div class="col-xl-12">
-			<label class="font-weight-bold">Traffic Stop</label>
-		</div>
-		<input type="hidden" id="type" name="type[]" value="2">
-
-		<div class="form-group col-xl-1">
-			<input
-			class="form-control timeSlot"
-			type="text"
-			id="inputTimeEvent"
-			name="inputTimeEvent[]"
-			placeholder="00:00"
-			value=""
-			required>
-		</div>
-		<div class="form-group col-xl-9">
-			<input
-			class="form-control"
-			type="text"
-			id="inputReasonTS"
-			name="inputReasonTS[]"
-			placeholder="Traffic Stop Reasoning"
-			required>
-		</div>
-		<div class="form-group col-xl-2">
-			<div class="input-group-addon">
-				<button class="btn btn-danger w-100 removeSlotTS" type="button" id="button-addon2">
-					<i class="fas fa-fw fa-minus-square mr-1"></i>Event
-				</button>
-			</div>
-		</div>
-		<div class="form-row col-xl-12">
-			<div class="form-group col-xl-4">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-car"></i></span>
-					</div>
-					<input
-					class="form-control"
-					type="text"
-					id="inputVeh"
-					name="inputVeh[]"
-					placeholder="Make & Model"
-					list="vehicle_list"
-					required
-					data-placement="bottom" title="Example: Benefactor Schwartzer">
-					<datalist id="vehicle_list">
-					<?= $pg->listChooser('vehiclesList') ?>
-					</datalist>
-				</div>
-			</div>
-			<div class="form-group col-xl-4">
-				<input
-				type="text"
-				class="form-control"
-				id="inputVehPlate"
-				name="inputVehPlate[]"
-				placeholder="Identification Plate"
-				data-placement="bottom" title="Leave empty if unregistered.">
-			</div>
-		</div>
-		<div class="form-row col-xl-12">
-			<div class="form-group col-xl-4">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-map-marked-alt"></i></span>
-					</div>
-					<input
-					class="form-control"
-					type="text"
-					id="inputDistrict"
-					name="inputDistrict[]"
-					placeholder="District"
-					list="district_list"
-					required
-					data-placement="bottom" title="Location - District">
-					<datalist id="district_list">
-					<?= $pg->listChooser('districtsList') ?>
-					</datalist>
-				</div>
-			</div>
-			<div class="form-group col-xl-4">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-fw fa-road"></i></span>
-					</div>
-					<input
-					class="form-control"
-					type="text"
-					id="inputStreet"
-					name="inputStreet[]"
-					placeholder="Street Name"
-					list="street_list"
-					required
-					data-placement="bottom" title="Location - Street Name">
-					<datalist id="street_list">
-					<?= $pg->listChooser('streetsList') ?>
-					</datalist>
-				</div>
-			</div>
-		</div>
-		<div class="col-xl-12">
-			<hr/>
-		</div>
-	</div>
-	
-	<div class="container groupCopySlotArrest" style="display: none;">
-		<div class="col-xl-12">
-			<label class="font-weight-bold">Arrest</label>
-		</div>
-		<input type="hidden" id="type" name="type[]" value="3">
-
-		<div class="form-group col-xl-1">
-			<input
-			class="form-control timeSlot"
-			type="text"
-			id="inputTimeEvent"
-			name="inputTimeEvent[]"
-			placeholder="00:00"
-			value=""
-			required>
-		</div>
-		<div class="form-group col-xl-4">
-			<input
-			class="form-control"
-			type="text"
-			id="inputArrestee"
-			name="inputArrestee[]"
-			placeholder="Firstname Lastname"
-			required>
-		</div>
-		<div class="form-group col-xl-4">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
-				</div>
-				<input
-				class="form-control"
-				type="number"
-				id="inputArrestID"
-				name="inputArrestID[]"
-				placeholder="Arrest Report ID"
-				required>
-			</div>
-		</div>
-		<div class="form-group col-xl-2">
-			<div class="input-group-addon"> 
-				<button class="btn btn-danger w-100 removeSlotArrest" type="button" id="button-addon2">
-					<i class="fas fa-fw fa-minus-square mr-1"></i>Event
-				</button>
-			</div>
-		</div>
-		<div class="col-xl-12">
-			<hr/>
-		</div>
-	</div>
 </div>
 
-<?php
-	require_once("form-footer.php");
-?>
+<!-- COPY SLOTS -->
+
+<!-- SLOT - GENERAL EVENT -->
+<div class="container groupCopySlotInfo" style="display: none;">
+	<div class="col-xl-12 text-center">
+		<hr>
+		<input type="hidden" id="type" name="type[]" value="1">
+		<label class="font-weight-bold">Generic Event</label>
+	</div>
+	<?php
+		// Form - Textfield - Time - Generic Event
+		$c->form('textfield', 'forms', array(
+			'size' => '2',
+			'type' => 'text',
+			'label' => '',
+			'icon' => 'clock',
+			'class' => 'timeSlot',
+			'id' => 'inputTimeEvent',
+			'name' => 'inputTimeEvent[]',
+			'value' => '',
+			'placeholder' => '00:00',
+			'tooltip' => '00:00 Format',
+			'attributes' => 'required',
+			'style' => 'text-transform: uppercase;'
+		));
+		// Form - Textfield - Generic Event
+		$c->form('textfield', 'forms', array(
+			'size' => '8',
+			'type' => 'text',
+			'label' => '',
+			'icon' => 'clipboard',
+			'class' => '',
+			'id' => 'inputReasonInfo',
+			'name' => 'inputReasonInfo[]',
+			'value' => '',
+			'placeholder' => 'Examples: Handled emergency call ID ####, Provided perimeter on X scene.',
+			'tooltip' => 'Generic Event',
+			'attributes' => 'required',
+			'style' => ''
+		));
+		// Form - Options Remove - Generic Event
+		$c->form('options', 'forms', array(
+			'size' => '2',
+			'label' => '',
+			'action' => 'removeSlotInfo',
+			'colour' => 'danger',
+			'icon' => 'fa-minus-square',
+			'text' => 'Event'
+		));
+	?>
+</div>
+<!-- SLOT - TRAFFIC EVENT -->
+<div class="container groupCopySlotTraffic" style="display: none;">
+	<div class="col-xl-12 text-center">
+		<hr>
+		<input type="hidden" id="type" name="type[]" value="2">
+		<label class="font-weight-bold">Traffic Event</label>
+	</div>
+	<div class="form-row col-xl-12">
+		<?php
+			// Form - Textfield - Time - Traffic Event
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'text',
+				'label' => '',
+				'icon' => 'clock',
+				'class' => 'timeSlot',
+				'id' => 'inputTimeEvent',
+				'name' => 'inputTimeEvent[]',
+				'value' => '',
+				'placeholder' => '00:00',
+				'tooltip' => '00:00 Format',
+				'attributes' => 'required',
+				'style' => 'text-transform: uppercase;'
+			));
+			// Form - Textfield - Traffic Event
+			$c->form('textfield', 'forms', array(
+				'size' => '8',
+				'type' => 'text',
+				'label' => '',
+				'icon' => 'clipboard',
+				'class' => '',
+				'id' => 'inputReasonTS',
+				'name' => 'inputReasonTS[]',
+				'value' => '',
+				'placeholder' => 'Traffic Stop Reasoning.',
+				'tooltip' => 'Traffic Event',
+				'attributes' => 'required',
+				'style' => ''
+			));
+			// Form - Options Remove - Traffic Event
+			$c->form('options', 'forms', array(
+				'size' => '2',
+				'label' => '',
+				'action' => 'removeSlotTS',
+				'colour' => 'danger',
+				'icon' => 'fa-minus-square',
+				'text' => 'Event'
+			));
+		?>
+	</div>
+	<div class="form-row col-xl-12">
+		<?php
+			// Form - Datalist - Vehicle's Make & Model
+			$c->form('datalist', 'forms', array(
+				'size' => '3',
+				'label' => '<label>Make & Model</label>',
+				'icon' => 'car',
+				'id' => 'inputVeh',
+				'name' => 'inputVeh[]',
+				'placeholder' => 'Make & Model',
+				'tooltip' => '(E.g: Benefactor Dubsta)',
+				'attributes' => 'required',
+				'list' => 'vehicle_list',
+				'listChooser' => $pg->listChooser('vehiclesList')
+			));
+			// Form - Textfield - Vehicle's Identification Plate
+			$c->form('textfield', 'forms', array(
+				'size' => '3',
+				'type' => 'text',
+				'label' => '<label>Identification Plate</label>',
+				'icon' => 'ticket-alt',
+				'class' => '',
+				'id' => 'inputVehPlate',
+				'name' => 'inputVehPlate[]',
+				'value' => '',
+				'placeholder' => '###XXX',
+				'tooltip' => '(E.g: 987XYZ or Empty if unregistered)',
+				'attributes' => '',
+				'style' => 'text-transform: uppercase;'
+			));
+		?>
+	</div>
+	<div class="form-row col-xl-12">
+		<?php
+			// Form - Datalist - Location District
+			$c->form('datalist', 'forms', array(
+				'size' => '4',
+				'label' => '<label>District</label>',
+				'icon' => 'map-marked-alt',
+				'id' => 'inputDistrict',
+				'name' => 'inputDistrict[]',
+				'placeholder' => 'District',
+				'tooltip' => 'Location - District',
+				'attributes' => 'required',
+				'list' => 'district_list',
+				'listChooser' => $pg->listChooser('districtsList')
+			));
+			// Form - Datalist - Location Street Name
+			$c->form('datalist', 'forms', array(
+				'size' => '4',
+				'label' => '<label>Street Name</label>',
+				'icon' => 'road',
+				'id' => 'inputStreet',
+				'name' => 'inputStreet[]',
+				'placeholder' => 'Street Name',
+				'tooltip' => 'Location - Street Name',
+				'attributes' => 'required',
+				'list' => 'street_list',
+				'listChooser' => $pg->listChooser('streetsList')
+			));
+		?>
+	</div>
+</div>
+<!-- SLOT - ARREST EVENT -->
+<div class="container groupCopySlotArrest" style="display: none;">
+	<div class="col-xl-12 text-center">
+		<hr>
+		<input type="hidden" id="type" name="type[]" value="3">
+		<label class="font-weight-bold">Arrest Event</label>
+	</div>
+	<?php
+		// Form - Textfield - Time - Arrest Event
+		$c->form('textfield', 'forms', array(
+			'size' => '2',
+			'type' => 'text',
+			'label' => '',
+			'icon' => 'clock',
+			'class' => 'timeSlot',
+			'id' => 'inputTimeEvent',
+			'name' => 'inputTimeEvent[]',
+			'value' => '',
+			'placeholder' => '00:00',
+			'tooltip' => '00:00 Format',
+			'attributes' => 'required',
+			'style' => 'text-transform: uppercase;'
+		));
+		// Form - Textfield - Arrest Event
+		$c->form('textfield', 'forms', array(
+			'size' => '4',
+			'type' => 'text',
+			'label' => '',
+			'icon' => 'id-card',
+			'class' => '',
+			'id' => 'inputArrestee',
+			'name' => 'inputArrestee[]',
+			'value' => '',
+			'placeholder' => 'Firstname Lastname',
+			'tooltip' => 'Arrestee - Firstname Lastname',
+			'attributes' => 'required',
+			'style' => ''
+		));
+		// Form - Textfield - Arrest ID
+		$c->form('textfield', 'forms', array(
+			'size' => '4',
+			'type' => 'number',
+			'label' => '',
+			'icon' => 'hashtag',
+			'class' => '',
+			'id' => 'inputArrestID',
+			'name' => 'inputArrestID[]',
+			'value' => '',
+			'placeholder' => 'Arrest Report ID',
+			'tooltip' => 'Arrest Report ID',
+			'attributes' => 'required',
+			'style' => ''
+		));
+		// Form - Options Remove - Arrest Event
+		$c->form('options', 'forms', array(
+			'size' => '2',
+			'label' => '',
+			'action' => 'removeSlotArrest',
+			'colour' => 'danger',
+			'icon' => 'fa-minus-square',
+			'text' => 'Event'
+		));
+	?>
+</div>
+<?php require_once 'form-footer.php'; ?>
