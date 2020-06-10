@@ -11,6 +11,10 @@
 			var m = d.getMinutes();
 			var h = d.getHours();
 
+			if (h < 10) {
+				var h = '0'+h;
+			}
+
 			if (m < 10) {
 				var m = '0'+m;
 			}

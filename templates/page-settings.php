@@ -22,10 +22,10 @@
 						name="settingsToggleMode"
 						type="checkbox"
 						data-toggle="toggle"
-						data-off="<i class='fas fa-fw fa-sun'></i>"
-						data-on="<i class='fas fa-fw fa-moon'></i>"
-						data-onstyle="dark"
-						data-offstyle="light"
+						data-off="<i class='fas fa-fw fa-moon'></i>"
+						data-on="<i class='fas fa-fw fa-sun'></i>"
+						data-onstyle="light"
+						data-offstyle="dark"
 						data-width="120"
 						data-height="20"
 						<?= getToggle('toggleMode') ?>
@@ -167,10 +167,9 @@
 					class="form-control selectpicker"
 					id="inputRank"
 					name="inputRank"
+					title="Select Rank"
 					required>
-					<?php
-						$pg->rankChooser(1);
-					?>
+					<?= $pg->rankChooser(1) ?>
 					</select>
 				</div>
 			</div>

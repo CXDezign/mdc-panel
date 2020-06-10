@@ -232,7 +232,6 @@ optgroup {
 /* PAPERWORK GENERATORS */
 
 #generators.grid {
-
 	display: flex;
 }
 
@@ -674,7 +673,7 @@ optgroup {
 
 <?php
 
-if ($g->findCookie('toggleMode')) {
+if (!$g->findCookie('toggleMode')) {
 
 ?>
 
@@ -702,11 +701,6 @@ small.text-muted {
 /*////////////////
 // INPUT FIELDS //
 ////////////////*/
-
-.input-group-midpend {
-	margin-left: -1px;
-	margin-right: -1px;
-}
 
 .form-control {
 	display: block;
