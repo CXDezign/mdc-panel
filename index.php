@@ -1,6 +1,6 @@
 <?php
 
-	require_once('includes/initialise.php');
+	require_once 'includes/initialise.php';
 
 ?>
 <!DOCTYPE html>
