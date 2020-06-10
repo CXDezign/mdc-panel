@@ -323,7 +323,7 @@ var iconLifeguard = L.AwesomeMarkers.icon({
 });
 
 // Bubble Popups
-var governmentLoc01 = "<b>Mission Row Police Station</b>";
+var governmentLoc01 = "<b>Mission Row Community Police Station</b>";
 var governmentLoc02 = "<b>Vespucci Police Headquarters</b>";
 var governmentLoc03 = "<b>Twin Towers Correctional Facility</b>";
 var governmentLoc04 = "<b>Los Santos Police Department Impound Lot</b>";

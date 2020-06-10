@@ -1,4 +1,12 @@
 {
+	"1.13.1": {
+		"id": "1.13.1",
+		"date": "11/JUN/2020",
+		"changes": {
+			"0": "Paperwork Generators - Disabled option for the upcoming Metro Deployment Log Generator.",
+			"1": "Street Guide - Renamed the 'Mission Row Police Station' to 'Mission Row Community Police Station'. (Credit: Flash/McClaren)"
+		}
+	},
 	"1.13.0": {
 		"id": "1.13.0",
 		"date": "11/JUN/2020",
