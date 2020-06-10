@@ -6,7 +6,7 @@ class Content {
 
 	function form($file, $directory, $variables = array(), $print = true) {
 
-		$output = NULL;
+		$output = null;
 		$root = $_SERVER['DOCUMENT_ROOT'];
 
 		switch ($directory) {
@@ -15,6 +15,8 @@ class Content {
 				break;
 			case 'sections':
 				$directory = '/templates/sections/';
+				break;
+			default:
 				break;
 		}
 
@@ -26,7 +28,7 @@ class Content {
 			ob_start();
 
 			// Include the template file
-			include $root.$directory.$file.'.php';
+			include_once $root.$directory.$file.'.php';
 
 			// End buffering and return its contents
 			$output = ob_get_clean();

@@ -293,9 +293,6 @@ class PaperworkGenerators {
 		switch ($list) {
 			case 'braceletList':
 			case 'wristbandList':
-				$output = '';
-				$entriesCount = 0;
-				break;
 			case 'itemCategoryList':
 				$output = '';
 				$entriesCount = 0;
