@@ -16,8 +16,6 @@ class Content {
 			case 'sections':
 				$directory = '/templates/sections/';
 				break;
-			default:
-				break;
 		}
 
 		if (file_exists($root.$directory.$file.'.php')) {
@@ -28,7 +26,7 @@ class Content {
 			ob_start();
 
 			// Include the template file
-			include_once $root.$directory.$file.'.php';
+			include $root.$directory.$file.'.php';
 
 			// End buffering and return its contents
 			$output = ob_get_clean();
