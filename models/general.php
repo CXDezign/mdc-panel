@@ -72,7 +72,7 @@ class General {
 
 	public function clearCookies() {
 
-		$cookieToggles = array('toggleMode', 'toggleClock', 'toggleBreadcrumb', 'toggleBackgroundLogo', 'toggleHints', 'toggleFooter', 'toggleLiveVisitorCounter');
+		$cookieToggles = array('toggleMode', 'toggleClock', 'toggleBreadcrumb', 'toggleBackgroundLogo', 'toggleHints', 'toggleFooter', 'toggleLiveVisitorCounter', 'notificationVersion');
 		$cookieUserDetails = array('officerName', 'officerRank', 'officerBadge', 'callSign', 'defName', 'inputTDPatrolReportURL');
 
 		$cookiesAll = array_merge($cookieToggles, $cookieUserDetails);
@@ -94,6 +94,8 @@ class General {
 	public function findCookie($cookie) {
 
 		switch ($cookie) {
+			case 'notificationVersion':
+				return $_COOKIE['notificationVersion'] ?? false;
 			case 'toggleMode':
 				return $_COOKIE['toggleMode'] ?? false;
 			case 'toggleClock':

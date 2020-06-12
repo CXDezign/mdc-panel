@@ -62,14 +62,17 @@
 <body id="top">
 	<div id="wrapper">
 	<?php
-		require_once("templates/content-sidebar.php");
+		require_once 'templates/content-sidebar.php';
 	?>
 		<div id="container">
-			<?php require_once("templates/content-breadcrumbs.php"); ?>
+			<?php
+				require_once 'templates/notification.php';
+				require_once 'templates/content-breadcrumbs.php';
+			?>
 			<div class="container-page">
-				<?php require_once("routes.php"); ?>
+				<?php require_once 'routes.php'; ?>
 			</div>
-			<?php require_once("templates/content-footer.php"); ?>
+			<?php require_once 'templates/content-footer.php'; ?>
 		</div>
 	</div>
 <script src="/js/aos.js"></script>

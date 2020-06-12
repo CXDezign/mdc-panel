@@ -37,9 +37,13 @@
 
 		if ($getType == 'getUNIX') {
 
-			$typeUNIX = $_REQUEST['typeUNIX'];
+			echo $g->getUNIX($_REQUEST['typeUNIX']);
 
-			echo $g->getUNIX($typeUNIX);
+		}
+
+		if ($getType == 'setNotificationVersion') {
+
+			setCookiePost('notificationVersion', $g->getSettings('site-version'));
 
 		}
 
@@ -1138,6 +1142,10 @@
 		$dTime = time()+3660;
 
 		switch($inputCookie) {
+			case 'notificationVersion':
+				$cookie = 'notificationVersion';
+				$time = $iTime;
+				break;
 			case 'callSign':
 				$cookie = 'callSign';
 				$time = $tTime;

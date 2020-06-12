@@ -101,6 +101,7 @@ optgroup {
 	position: relative;
 	padding: 4rem 0;
 	min-height: 70vh;
+	transition: transform .25s linear;
 }
 
 #breadcrumb {
@@ -112,6 +113,7 @@ optgroup {
 	border-radius: 0 !important;
 	font-weight: 600;
 	text-shadow: 0 1px 2px #00000040 !important;
+	transition: transform .25s linear;
 }
 
 #breadcrumb .breadcrumb-item {
@@ -129,6 +131,7 @@ optgroup {
 	border-top: 1px solid rgba(0,0,0,.1);
 	text-align: center;
 	z-index: -1;
+	transition: transform .25s linear;
 }
 
 /*///////////
@@ -206,6 +209,23 @@ optgroup {
 	letter-spacing: 2px;
 	font-weight: 600;
 	text-shadow: 0 2px 4px #000000!important;
+}
+
+#notification {
+	display: block;
+	background-color: #dc3545; 
+	padding: 10px;
+	text-align: center;
+	transition: transform .25s linear;
+}
+
+#notification .badge-trans {
+	background-color: rgba(0,0,0,.2);
+	transition: background-color .15s linear;
+}
+
+#notification .badge-trans:hover {
+	background-color: rgba(0,0,0,.4);
 }
 
 /*///////////
