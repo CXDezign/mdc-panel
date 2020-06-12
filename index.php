@@ -46,17 +46,17 @@
 	<script src="/js/colcade.js"></script>
 
 	<!-- Map Styles -->
-	<link href="/map/style.css" rel="stylesheet">
+	<link href="/map/style.css?v=<?= $g->getSettings('site-version') ?>" rel="stylesheet">
 
 	<!-- Leaflet 1.6.0 -->
-	<link href="/css/leaflet.css" rel="stylesheet">
+	<link href="/css/leaflet.css?v=<?= $g->getSettings('site-version') ?>" rel="stylesheet">
 	<script src="/js/leaflet.js"></script>
 
 	<!-- Leaflet Search -->
 	<script src="/map/src/leaflet-search.js"></script>
 
 	<!-- Leaflet Font Awesome Icons -->
-	<link href="/map/src/leaflet.awesome-markers.css" rel="stylesheet" type="text/css">
+	<link href="/map/src/leaflet.awesome-markers.css?v=<?= $g->getSettings('site-version') ?>" rel="stylesheet" type="text/css">
 	<script src="/map/src/leaflet.awesome-markers.js"></script>
 </head>
 <body id="top">

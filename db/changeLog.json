@@ -1,10 +1,20 @@
 {
+	"1.14.0": {
+		"id": "1.14.0",
+		"date": "12/JUN/2020",
+		"changes": {
+			"0": "Site - Site-wide notification displays whenever a website update is released.",
+			"1": "Breadcrumb - Displays character information if set.",
+			"2": "Metropolitan Division: Deployment Log Generator - Initial commit. (<span class='cl-general'>Thanks to Humour & Marty for providing information assistance</span>)",
+			"3": "Traffic Report Generator - Tint input menu and generated report messages reworked. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)"
+		}
+	},
 	"1.13.1": {
 		"id": "1.13.1",
 		"date": "11/JUN/2020",
 		"changes": {
 			"0": "Paperwork Generators - Disabled option for the upcoming Metro Deployment Log Generator.",
-			"1": "Street Guide - Renamed the 'Mission Row Police Station' to 'Mission Row Community Police Station'. (Credit: Flash/McClaren)",
+			"1": "Street Guide - Renamed the 'Mission Row Police Station' to 'Mission Row Community Police Station'. (<span class='cl-general'>Credit: Flash/McClaren</span>)",
 			"2": "Paperwork Generators - Fixed all generator inputs not showing."
 		}
 	},
@@ -12,7 +22,7 @@
 		"id": "1.13.0",
 		"date": "11/JUN/2020",
 		"changes": {
-			"0": "Site - Dark mode is now the default option, if cookies are cleared or never set. (Credit: Coakley, for forcing me to make this change)",
+			"0": "Site - Dark mode is now the default option, if cookies are cleared or never set. (<span class='cl-general'>Credit: Coakley, for forcing me to make this change</span>)",
 			"1": "Paperwork Generators - Front End Code Complete Rework, All generators have been updated to be using the new code.",
 			"2": "Site - Small Backend code fixes.",
 			"3": "Sidebar - The clock now displays a leading '0' for the hours. After: 01:00, before: 1:00"
