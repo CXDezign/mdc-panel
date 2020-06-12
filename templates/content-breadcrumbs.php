@@ -21,7 +21,7 @@
 				}
 				echo ' ';
 				if ($g->findCookie('officerBadge')) {
-					echo $g->findCookie('officerName');
+					echo '(#'.$g->findCookie('officerBadge').')';
 				}
 			?>
 		</div>

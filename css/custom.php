@@ -215,6 +215,7 @@ optgroup {
 	display: block;
 	background-color: #dc3545; 
 	padding: 10px;
+	color: #fff;
 	text-align: center;
 	transition: transform .25s linear;
 }
