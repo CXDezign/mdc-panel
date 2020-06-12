@@ -11,7 +11,19 @@
 		</ol>
 		</div>
 		<div class="col-sm-4 text-right user">
-			<?= $pg->getRank($g->findCookie('officerRank')).' '.$g->findCookie('officerName') ?> (<?= $g->findCookie('officerBadge') ?>)
+			<?php
+				if ($g->findCookie('officerRank')) {
+					echo $pg->getRank($g->findCookie('officerRank'));
+				}
+				echo ' ';
+				if ($g->findCookie('officerName')) {
+					echo $g->findCookie('officerName');
+				}
+				echo ' ';
+				if ($g->findCookie('officerBadge')) {
+					echo $g->findCookie('officerName');
+				}
+			?>
 		</div>
 	</div>
 </nav>
