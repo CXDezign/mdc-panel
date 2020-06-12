@@ -55,7 +55,7 @@
 				'id' => 'inputVehTint',
 				'name' => 'inputVehTint',
 				'attributes' => 'required',
-				'title' => 'Select Tint',
+				'title' => '',
 				'list' => $pg->tintChooser(),
 				'hint' => '',
 				'hintClass' => ''

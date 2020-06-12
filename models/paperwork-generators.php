@@ -334,33 +334,35 @@ class PaperworkGenerators {
 		} else {
 			$dashboardCamera = $input;
 		}
-		return '<b style="color: #9944dd;">* '.$dashboardCamera.' *</b>';
+		return '<strong style="color: #9944dd;">* '.$dashboardCamera.' *</strong>';
 	}
 
 	public function tintChooser() {
 
 		$tints = file('resources/tintsList.txt');
-		$tintCount = 0;
 
-		$groupTintLegal = "";
-		$groupTintIllegal = "";
+		$groupTintLegal = '';
+		$groupTintIllegal = '';
 
 		$legalTintLevels = array(0,3,4,5);
+		$illegalTintLevels = array(1,2);
 
-		foreach ($tints as $tint) {
+		foreach ($tints as $iTint => $tint) {
 
-			$statement = '<option value="'.$tintCount.'">'.$tint.'</option>';
+			$statement = '<option value="'.$iTint.'">'.$tint.'</option>';
 
-			if (in_array($tint, $legalTintLevels)) {
+			if (in_array($iTint, $legalTintLevels)) {
 				$groupTintLegal .= $statement;
-			} else {
+			}
+			if (in_array($iTint, $illegalTintLevels)) {
 				$groupTintIllegal .= $statement;
 			}
-			$tintCount++;
 
 		}
 
-		return '<optgroup label="Legal">'.$groupTintLegal.'</optgroup> <optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
+		return '<option value="10">Uninspected</option>
+		<optgroup label="Legal">'.$groupTintLegal.'</optgroup>
+		<optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
 
 	}
 
@@ -368,22 +370,22 @@ class PaperworkGenerators {
 
 		switch ($input) {
 			case 1:
-				$defLicense = 'a <b>valid drivers license</b>.';
+				$defLicense = 'a <strong>valid drivers license</strong>.';
 				break;
 			case 2:
-				$defLicense = '<b>no drivers license</b>.';
+				$defLicense = '<strong>no drivers license</strong>.';
 				break;
 			case 3:
-				$defLicense = 'an <b>expired drivers license</b>.';
+				$defLicense = 'an <strong>expired drivers license</strong>.';
 				break;
 			case 4:
-				$defLicense = 'a <b>suspended drivers license</b>.';
+				$defLicense = 'a <strong>suspended drivers license</strong>.';
 				break;
 			case 5:
-				$defLicense = 'a <b>revoked drivers license</b>.';
+				$defLicense = 'a <strong>revoked drivers license</strong>.';
 				break;
 			default:
-				$defLicense = 'a <b>valid drivers license</b>.';
+				$defLicense = 'a <strong>valid drivers license</strong>.';
 				break;
 		}
 
@@ -393,34 +395,33 @@ class PaperworkGenerators {
 
 	public function getVehicleTint($input) {
 
+		$string = '';
+
 		switch ($input) {
-			case 0:
-				$vehicleTint = 'a legal tint level after visual inspection.';
+			case '1':
+			case '2':
+				$string = ' an illegal ';
 				break;
-			case 1:
-			case 2:
-				$vehicleTint = 'an illegal tint level (<b>'.$input.'</b>) after inspection with the tint meter device.';
-				break;
-			case 3:
-			case 4:
-			case 5:
-				$vehicleTint = 'a legal tint level (<b>'.$input.'</b>) after inspection with the tint meter device.';
+			case '0':
+			case '3':
+			case '4':
+			case '5':
+				$string = ' a legal ';
 				break;
 			default:
-				$vehicleTint = 'a legal tint level after a visual inspection.';
-				break;
+				return 'The vehicle was not inspected with the tint meter device.';
 		}
 
-		return 'The vehicle had '.$vehicleTint;
+		return 'The vehicle was inspected with the tint meter device, resulting with '.$string.' tint level (<strong>Level '.$input.'</strong>).';
 
 	}
 
 	public function getVehicleRO($input) {
 
 		if (empty($input)) {
-			return '<b>unknown registered owner</b>';
+			return '<strong>unknown registered owner</strong>';
 		} else {
-			return 'registered to <b>'.$input.'</b>';
+			return 'registered to <strong>'.$input.'</strong>';
 		}
 
 	}
@@ -432,8 +433,8 @@ class PaperworkGenerators {
 
 		// HTML
 		if ($type == 0) {
-			$b = "<b>";
-			$bb = "</b>";
+			$b = "<strong>";
+			$bb = "</strong>";
 		}
 
 		// BBCode
@@ -512,7 +513,7 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$plead = "UNKNOWN PLEA";
 				break;
 		}
-		return '<b>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</b>';
+		return '<strong>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</strong>';
 	}
 
 }

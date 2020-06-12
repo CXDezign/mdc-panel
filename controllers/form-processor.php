@@ -128,7 +128,7 @@
 			$inputDashcam = $_POST['inputDashcam'] ?: '';
 
 			$inputVehRO = $_POST['inputVehRO'] ?: $postInputDefName;
-			$inputVehTint = $_POST['inputVehTint'] ?: '';
+			$inputVehTint = $_POST['inputVehTint'] ?? -1;
 
 			$inputCrime = $_POST['inputCrime'] ?? array();
 			$inputCrime = array_map(function($value) {
