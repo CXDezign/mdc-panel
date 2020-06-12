@@ -106,12 +106,20 @@ optgroup {
 #breadcrumb {
 	position: static;
 	margin: 0;
-	padding: .75rem 1rem;
+	padding: 0 .75rem .75rem .75rem;
 	background: #eee;
 	border-bottom: 1px solid rgba(0,0,0,.1) !important;
 	border-radius: 0 !important;
 	font-weight: 600;
 	text-shadow: 0 1px 2px #00000040 !important;
+}
+
+#breadcrumb .breadcrumb-item {
+	margin: .75rem 0 0 0;
+}
+
+#breadcrumb .user {
+	margin-top: .75rem;
 }
 
 #footer {
@@ -577,9 +585,32 @@ optgroup {
 		background-position: calc(50% + 50px) 50%;
 	}
 
+	#container {
+		display: block;
+		width: calc(100vw - 60px);
+		margin-left: 60px;
+	}
+
+	#map {
+		width: calc(100% - 60px)!important;
+		left: 100px!important;
+	}
+
+	#breadcrumb {
+		display: none;
+	}
+
 	#sidebar {
-		min-width: 100px;
-		max-width: 100px;
+		min-width: 60px;
+		max-width: 60px;
+	}
+
+	#sidebar ul {
+		padding: 8px!important;
+	}
+
+	#sidebar .nav-link {
+		padding: .2rem .5rem;
 	}
 
 	#sidebar-logo {
@@ -587,20 +618,9 @@ optgroup {
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: center;
-		width: 80px;
-		height: 80px;
+		width: 50px;
+		height: 50px;
 		margin: 0 auto;
-	}
-
-	#container {
-		display: block;
-		width: calc(100vw - 100px);
-		margin-left: 100px;
-	}
-
-	#map {
-		width: calc(100% - 100px)!important;
-		left: 100px!important;
 	}
 
 	#sidebar .icon-text {
@@ -634,7 +654,7 @@ optgroup {
 
 	#sidebar #timestamp {
 		background-color: unset;
-		font-size: 14px;
+		font-size: 10px;
 	}
 
 	.container h1 {
@@ -652,17 +672,12 @@ optgroup {
 	.breadcrumb-item {
 		display: block!important;
 		padding-left: unset!important;
-		padding-bottom: 10px;
 	}
 
 	.breadcrumb-item::before {
 		display: none!important;
 		padding-right: unset!important;
 		content: ""!important;
-	}
-
-	.breadcrumb-item:last-of-type {
-		padding-bottom: 0px;
 	}
 
 }
