@@ -148,9 +148,9 @@
 			// Officer Resolver
 			$officers = '';
 			foreach ($postInputNameArray as $iOfficer => $officer) {
-				$officerRank = $pg->getRank(0,1);
+				$officerRank = $pg->getRank(0);
 				if (!empty($postInputRankArray[$iOfficer])) {
-					$officerRank = $pg->getRank($postInputRankArray[$iOfficer],1);
+					$officerRank = $pg->getRank($postInputRankArray[$iOfficer]);
 				}
 				$officers .= '<strong>'.$officerRank.' '.$officer.'</strong> (<strong>#'.$postInputBadgeArray[$iOfficer].'</strong>), ';
 			}
@@ -214,9 +214,9 @@
 			// Officer Resolver
 			$officers = '';
 			foreach ($postInputNameArray as $iOfficer => $officer) {
-				$officerRank = $pg->getRank(0,1);
+				$officerRank = $pg->getRank(0);
 				if (!empty($postInputRankArray[$iOfficer])) {
-					$officerRank = $pg->getRank($postInputRankArray[$iOfficer],1);
+					$officerRank = $pg->getRank($postInputRankArray[$iOfficer]);
 				}
 				$officers .= '<strong>'.$officerRank.' '.$officer.'</strong> (<strong>#'.$postInputBadgeArray[$iOfficer].'</strong>), ';
 			}
@@ -337,8 +337,8 @@
 				[b]WITNESSES:[/b] '.$witnesses.'[/list]
 				[b]2. ADMINISTRATIVE INFORMATION[/b]
 				[hr][/hr]
-				[list=none][b]FIRST RESPONDING OFFICER:[/b] '.$pg->getRank($inputRespondingRank,1).' '.$inputRespondingName.'
-				[b]HANDLING DETECTIVE/FORENSIC ANALYST:[/b] '.$pg->getRank($inputHandlingRank,1).' '.$inputHandlingName.'
+				[list=none][b]FIRST RESPONDING OFFICER:[/b] '.$pg->getRank($inputRespondingRank).' '.$inputRespondingName.'
+				[b]HANDLING DETECTIVE/FORENSIC ANALYST:[/b] '.$pg->getRank($inputHandlingRank).' '.$inputHandlingName.'
 				[b]HANDLING CORONER:[/b] '.$inputCoronerName.'
 				[b]CORONER CASE NUMBER:[/b] '.$inputCaseNumber.'
 				[b]RELEVANT MDC RECORDS:[/b] [url='.$inputRecord.']LINK[/url][/list]
@@ -405,7 +405,7 @@
 				[hr][/hr]
 				[color=white]...[/color]
 				[b]Name:[/b] '.$postInputName.'
-				[b]Rank:[/b] '.$pg->getRank($postInputRank,1).'
+				[b]Rank:[/b] '.$pg->getRank($postInputRank).'
 				[b]Date & Time:[/b] '.strtoupper($postInputDate).' - '.$postInputTime.'
 
 				[b]Suspect Name:[/b] '.$inputSuspectName.'
@@ -562,7 +562,7 @@
 		
 			// Partner Resolver
 			if (!empty($inputPartner)) {
-				$partner = $pg->getRank($postInputRank,1).' '.$inputPartner;
+				$partner = $pg->getRank($postInputRank).' '.$inputPartner;
 			} else {
 				$partner = 'N/A';
 			}
@@ -862,7 +862,7 @@
 			}
 
 			// Officer Resolver
-			$officers = '<strong>'.$pg->getRank($postInputRank,1).' '.$postInputName.'</strong> (<strong>#'.$postInputBadge.'</strong>), ';
+			$officers = '<strong>'.$pg->getRank($postInputRank).' '.$postInputName.'</strong> (<strong>#'.$postInputBadge.'</strong>), ';
 
 			// Parking Ticket Resolver
 			$reason = $pt->getIllegalParking($inputReason);
@@ -892,7 +892,7 @@
 			setCookiePost('defNameVehRO', $postInputVehRO);
 
 			// Officer Resolver
-			$officers = '<strong>'.$pg->getRank($postInputRank,1).' '.$postInputName.'</strong> (<strong>#'.$postInputBadge.'</strong>), ';
+			$officers = '<strong>'.$pg->getRank($postInputRank).' '.$postInputName.'</strong> (<strong>#'.$postInputBadge.'</strong>), ';
 
 
 			// Report Builder
@@ -983,7 +983,7 @@
 			if ($inputIncidentCommander == '' || $inputIncidentCommanderRank == '') {
 				$incidentCommanderFull = 'N/A';
 			} else {
-				$incidentCommanderFull = $pg->getRank($inputIncidentCommanderRank, 1).' '.$inputIncidentCommander;
+				$incidentCommanderFull = $pg->getRank($inputIncidentCommanderRank).' '.$inputIncidentCommander;
 			}
 
 			// Crisis Negotiator Resolver
@@ -991,7 +991,7 @@
 			if ($inputCrisisNegotiator == '' || $inputCrisisNegotiatorRank == '') {
 				$crisisNegotiatorFull = 'N/A';
 			} else {
-				$crisisNegotiatorFull = $pg->getRank($inputCrisisNegotiatorRank, 1).' '.$inputCrisisNegotiator;
+				$crisisNegotiatorFull = $pg->getRank($inputCrisisNegotiatorRank).' '.$inputCrisisNegotiator;
 			}
 			
 			// Team Leader Resolver

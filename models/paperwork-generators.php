@@ -30,7 +30,7 @@ class PaperworkGenerators {
 		$seconds %= 60;
 
 		if ($days != 0) {
-			$days .= $days == 1 ? " Day" : " Days";
+			$days .= $days == 1 ? ' Day' : ' Days';
 		} else {
 			$days = '';
 		}
@@ -48,7 +48,7 @@ class PaperworkGenerators {
 		}
 
 		$input = array($days, $hours, $minutes);
-		$output = "";
+		$output = '';
 
 		foreach ($input as $timeElement) {
 			$output .= $timeElement;
@@ -63,16 +63,16 @@ class PaperworkGenerators {
 		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
 
-		$groupCookie = "";
-		$groupLSPD = "";
-		$groupLSSD = "";
+		$groupCookie = '';
+		$groupLSPD = '';
+		$groupLSSD = '';
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
 			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
 			$groupCookie .= '
 			<optgroup label="Saved Cookie">
 				<option selected value="'.$officerCookie.'">
-					'.$this->getRank($officerCookie,0).'
+					'.$this->getRank($officerCookie).'
 				</option>
 			</optgroup>';
 		}
@@ -103,10 +103,10 @@ class PaperworkGenerators {
 		$ranks = file('resources/divisionalRanksList.txt');
 		$rankCount = 0;
 
-		$groupB = "";
-		$groupC = "";
-		$groupD = "";
-		$groupK9 = "";
+		$groupB = '';
+		$groupC = '';
+		$groupD = '';
+		$groupK9 = '';
 
 		$ranksB = array(0,1,2,3,4);
 		$ranksC = array(5,6,7,8,9);
@@ -140,21 +140,9 @@ class PaperworkGenerators {
 	}
 
 
-	public function getRank($input, $path) {
+	public function getRank($input) {
 
-		switch ($path) {
-			case 0:
-				$path = "";
-				break;
-			case 1:
-				$path = "../";
-				break;
-			default:
-				$path = "";
-				break;
-		}
-
-		$ranks = file($path.'resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
+		$ranks = file($_SERVER['DOCUMENT_ROOT'].'/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $ranks[$input];
 
@@ -162,7 +150,7 @@ class PaperworkGenerators {
 
 	public function chargeChooser() {
 
-		$chargeEntries = json_decode(file_get_contents("db/penalSearch.json"), true);
+		$chargeEntries = json_decode(file_get_contents('db/penalSearch.json'), true);
 		$disabledCharges = array(000,423);
 
 		$charges = '';
@@ -175,13 +163,13 @@ class PaperworkGenerators {
 			$chargeDisabled = '';
 
 			switch ($chargeType) {
-				case "F":
+				case 'F':
 					$chargeColor = 'danger';
 					break;
-				case "M":
+				case 'M':
 					$chargeColor = 'warning';
 					break;
-				case "I":
+				case 'I':
 					$chargeColor = 'success';
 					break;
 				default:
@@ -273,18 +261,18 @@ class PaperworkGenerators {
 	public function getCrimeColour($input) {
 
 		switch ($input) {
-			case "I":
-				$colour = "#27ae60";
+			case 'I':
+				$colour = '#27ae60';
 				break;
-			case "M":
-				$colour = "#f39c12";
+			case 'M':
+				$colour = '#f39c12';
 				break;
-			case "F":
-				$colour = "#e74c3c";
+			case 'F':
+				$colour = '#e74c3c';
 				break;
-			case "":
+			case '':
 			default:
-				$colour = "#000";
+				$colour = '#000';
 				break;
 		}
 		return '<span style="color: '.$colour.';">';
@@ -428,19 +416,19 @@ class PaperworkGenerators {
 
 	public function getVehiclePlates($input, $type) {
 
-		$b = "";
-		$bb = "";
+		$b = '';
+		$bb = '';
 
 		// HTML
 		if ($type == 0) {
-			$b = "<strong>";
-			$bb = "</strong>";
+			$b = '<strong>';
+			$bb = '</strong>';
 		}
 
 		// BBCode
 		if ($type == 1) {
-			$b = "[b]";
-			$bb = "[/b]";
+			$b = '[b]';
+			$bb = '[/b]';
 		}
 
 		if (empty($input)) {
@@ -510,7 +498,7 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$plead = 'No Contest';
 				break;
 			default:
-				$plead = "UNKNOWN PLEA";
+				$plead = 'UNKNOWN PLEA';
 				break;
 		}
 		return '<strong>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</strong>';
@@ -537,11 +525,11 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 		$illegalParkingReasons = file ('resources/illegalParkingList.txt');
 		$illegalParkingReasonsCount = 0;
 
-		$groupTrafficRelated = "";
-		$groupParkingRelated = "";
-		$groupTransportRelated = "";
-		$groupPropertyRelated = "";
-		$groupPedestrianTraffic = "";
+		$groupTrafficRelated = '';
+		$groupParkingRelated = '';
+		$groupTransportRelated = '';
+		$groupPropertyRelated = '';
+		$groupPedestrianTraffic = '';
 
 		$reasonsTR = array(1,2,3,4);
 		$reasonsPR = array(5,6,7);

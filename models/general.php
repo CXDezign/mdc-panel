@@ -10,41 +10,41 @@ class General {
 			case 'site-live':
 				return false;
 			case 'site-name':
-				return "MDC Panel";
+				return 'MDC Panel';
 			case 'site-version':
-				return "1.13.1";
+				return '1.13.1';
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
-				return "/images/MDC-Panel.svg";
+				return '/images/MDC-Panel.svg';
 			case 'site-favicon':
-				return "/images/MDC-Panel-Favicon.svg";
+				return '/images/MDC-Panel-Favicon.svg';
 			case 'site-image':
-				return "/images/MDC-Panel-OG.png";
+				return '/images/MDC-Panel-OG.png';
 			case 'site-description':
-				return "MDC Panel - Multi-functional tools, generators, and resources for official government use.";
+				return 'MDC Panel - Multi-functional tools, generators, and resources for official government use.';
 			case 'site-discord-contact':
-				return "xanx#0001";
+				return 'xanx#0001';
 			case 'url-github':
-				return "https://github.com/xanxTV/MDC-Panel/";
+				return 'https://github.com/xanxTV/MDC-Panel/';
 			case 'url-mdc':
-				return "https://mdc.gta.world";
+				return 'https://mdc.gta.world';
 			case 'url-lspd':
-				return "https://lspd.gta.world";
+				return 'https://lspd.gta.world';
 			case 'url-lssd':
-				return "https://lssd.gta.world";
+				return 'https://lssd.gta.world';
 			case 'url-lsfd':
-				return "https://lsfd.gta.world";
+				return 'https://lsfd.gta.world';
 			case 'url-penal-code':
-				return "https://forum.gta.world/en/index.php?/topic/26513-san-andreas-penal-code/";
+				return 'https://forum.gta.world/en/index.php?/topic/26513-san-andreas-penal-code/';
 			case 'url-court-laws':
-				return "https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722";
+				return 'https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722';
 			case 'url-lspd-handbook':
-				return "https://lspd.gta.world/viewforum.php?f=433";
+				return 'https://lspd.gta.world/viewforum.php?f=433';
 			case 'url-lspd-manual':
-				return "https://lspd.gta.world/viewtopic.php?f=20&t=1171";
+				return 'https://lspd.gta.world/viewtopic.php?f=20&t=1171';
 			case 'url-lspd-reports-records':
-				return "https://lspd.gta.world/viewforum.php?f=434";
+				return 'https://lspd.gta.world/viewforum.php?f=434';
 			default:
 				break;
 		}
@@ -57,11 +57,11 @@ class General {
 
 		switch($format) {
 			case 'year':
-				return date("Y", $unix);
+				return date('Y', $unix);
 			case 'date':
-				return date("d/M/Y", $unix);
+				return date('d/M/Y', $unix);
 			case 'time':
-				return date("H:i", $unix);
+				return date('H:i', $unix);
 			default:
 				return $unix;
 		}
@@ -72,8 +72,8 @@ class General {
 
 	public function clearCookies() {
 
-		$cookieToggles = array("toggleMode", "toggleClock", "toggleBreadcrumb", "toggleBackgroundLogo", "toggleHints", "toggleFooter", "toggleLiveVisitorCounter");
-		$cookieUserDetails = array("officerName", "officerRank", "officerBadge", "callSign", "defName", "inputTDPatrolReportURL");
+		$cookieToggles = array('toggleMode', 'toggleClock', 'toggleBreadcrumb', 'toggleBackgroundLogo', 'toggleHints', 'toggleFooter', 'toggleLiveVisitorCounter');
+		$cookieUserDetails = array('officerName', 'officerRank', 'officerBadge', 'callSign', 'defName', 'inputTDPatrolReportURL');
 
 		$cookiesAll = array_merge($cookieToggles, $cookieUserDetails);
 
@@ -93,7 +93,7 @@ class General {
 
 	public function findCookie($cookie) {
 
-		switch($cookie) {
+		switch ($cookie) {
 			case 'toggleMode':
 				return $_COOKIE['toggleMode'] ?? false;
 			case 'toggleClock':
@@ -109,17 +109,19 @@ class General {
 			case 'toggleLiveVisitorCounter':
 				return $_COOKIE['toggleLiveVisitorCounter'] ?? false;
 			case 'officerName':
-				return $_COOKIE['officerName'] ?? "";
+				return $_COOKIE['officerName'] ?? '';
+			case 'officerRank':
+				return $_COOKIE['officerRank'] ?? '';
 			case 'officerBadge':
-				return $_COOKIE['officerBadge'] ?? "";
+				return $_COOKIE['officerBadge'] ?? '';
 			case 'callSign':
-				return $_COOKIE['callSign'] ?? "";
+				return $_COOKIE['callSign'] ?? '';
 			case 'defName':
-				return $_COOKIE['defName'] ?? "";
+				return $_COOKIE['defName'] ?? '';
 			case 'defNameURL':
-				return str_replace(" ", "_", $_COOKIE['defName'] ?? "");
+				return str_replace(' ', '_', $_COOKIE['defName'] ?? '');
 			case 'inputTDPatrolReportURL':
-				return $_COOKIE['inputTDPatrolReportURL'] ?? "https://lspd.gta.world/viewforum.php?f=101";
+				return $_COOKIE['inputTDPatrolReportURL'] ?? 'https://lspd.gta.world/viewforum.php?f=101';
 			default:
 				break;
 		}
