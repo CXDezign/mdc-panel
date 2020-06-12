@@ -297,55 +297,105 @@
 				$(this).parents(".groupEvidence").remove();
 			});
 
-		// Metro Deployment Log - Generator
+		// Metropolitan Division: Deployment Log - Generator
 
-			// Team Leader Slots - Metro Deployment Log - Generator
-			var maxMDTLSlots = 3;
-			$(".addPlatoonTeamLeader").click(function() {
-				if ($('body').find('.teamLeaderGroup').length < maxMDTLSlots) {
-					var fieldHTML = '<div class="form-row teamLeaderGroup">'+$(".teamLeaderGroupCopy").html()+'</div>';
-					$('body').find('.teamLeaderGroup:last').after(fieldHTML);
-					var Last = $('body').find('.teamLeaderGroup:last');
-					Last.find('.select-picker-copy').addClass("selectpicker");
-					$(".selectpicker").selectpicker('refresh');
-				} else {
-					alert('Maximum '+maxMDTLSlots+' team leader slots are allowed.');
-				}
-			});
-			$("body").on("click",".removePlatoonTeamLeader",function() { 
-				$(this).parents(".teamLeaderGroup").remove();
-			});
+			// Team Leader Slots - Metropolitan Division: Deployment Log - Generator
+			(function() {
 
-			// Deployment Event - Metro Deployment Log - Generator
-			var maxSlotMDDeploymentEvent = 20;
-			$(".addMDDeploymentEvent").click(function() {
-				if ($('body').find('.groupMDDeploymentEvent').length < maxSlotMDDeploymentEvent) {
-					var fieldHTML = '<div class="form-row groupMDDeploymentEvent">'+$(".groupCopyMDDeploymentEvent").html()+'</div>';
-					$('body').find('.groupMDDeploymentEvent:last').after(fieldHTML);
-				} else {
-					alert('Maximum '+maxSlotMDDeploymentEvent+' deployment event slots are allowed.');
-				}
-			});
-			$("body").on("click",".removeMDDeploymentEvent",function() { 
-				$(this).parents(".groupMDDeploymentEvent").remove();
-			});
+				let $maxSlots = 4;
+				let $group = '.groupSlotPlatoonTeamLeader';
+				let $class = $group.replace('.', '');
+				let $add = '.addPlatoonTeamLeader';
+				let $remove = '.removePlatoonTeamLeader';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotPlatoonTeamLeader').html()+'</div>';
 
-			// Deployment Event - Metro Deployment Log - Generator
-			var maxSlotMDInjuredTeamMembers = 10;
-			$(".addInjuredTeamMember").click(function() {
-				if ($('body').find('.groupInjuredTeamMember').length < maxSlotMDInjuredTeamMembers) {
-					var fieldHTML = '<div class="form-row groupInjuredTeamMember">'+$(".copyGroupInjuredTeamMember").html()+'</div>';
-					$('body').find('.groupInjuredTeamMember:last').after(fieldHTML);
-					var Last = $('body').find('.groupInjuredTeamMember:last');
-					Last.find('.select-picker-copy').addClass("selectpicker");
-					$(".selectpicker").selectpicker('refresh');
-				} else {
-					alert('Maximum '+maxSlotMDInjuredTeamMembers+' deployment event slots are allowed.');
-				}
-			});
-			$("body").on("click",".removeInjuredTeamMember",function() {
-				$(this).parents(".groupInjuredTeamMember").remove();
-			});
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length < $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						var Last = $('body').find($group+':last');
+						copySlotSelectPicker(Last);
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Metropolitan Members Slots - Metropolitan Division: Deployment Log - Generator
+			(function() {
+
+				let $maxSlots = 30;
+				let $group = '.groupSlotMetropolitanMembers';
+				let $class = $group.replace('.', '');
+				let $add = '.addMetropolitanMember';
+				let $remove = '.removeMetropolitanMember';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotMetropolitanMembers').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length < $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						var Last = $('body').find($group+':last');
+						copySlotSelectPicker(Last);
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Deployment Event Slots - Metropolitan Division: Deployment Log - Generator
+			(function() {
+
+				let $maxSlots = 20;
+				let $group = '.groupDeploymentEvent';
+				let $class = $group.replace('.', '');
+				let $add = '.addDeploymentEvent';
+				let $remove = '.removeDeploymentEvent';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupDeploymentEvent').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length < $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Injured Member Slots - Metropolitan Division: Deployment Log - Generator
+			(function() {
+
+				let $maxSlots = 30;
+				let $group = '.groupSlotInjuredTeamMember';
+				let $class = $group.replace('.', '');
+				let $add = '.addInjuredTeamMember';
+				let $remove = '.removeInjuredTeamMember';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotInjuredTeamMember').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length < $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						var Last = $('body').find($group+':last');
+						copySlotSelectPicker(Last);
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
 
 	});
 

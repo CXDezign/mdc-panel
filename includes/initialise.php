@@ -19,3 +19,4 @@
 	$ar = new ArrestReportGenerator();
 	$er = new EvidenceRegistrationLogGenerator();
 	$pt = new ParkingTicketGenerator();
+	$md = new MetroGenerator();
