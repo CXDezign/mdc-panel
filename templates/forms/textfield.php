@@ -12,6 +12,7 @@
 			value="<?= $value ?>"
 			placeholder="<?= $placeholder ?>"
 			data-placement="bottom" title="<?= $tooltip ?>"
+			data-html="true"
 			<?= $attributes ?>
 			style="<?= $style ?>"
 		>
