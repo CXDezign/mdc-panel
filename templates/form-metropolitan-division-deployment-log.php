@@ -1,6 +1,6 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><img class="mr-2 align-bottom" src="/images/divisions/metro.png" height="40px">Metro Deployment Log - Form</h1>
-	<h6><a target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewforum.php?f=646">Metro Division: Deployment Records - Category<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></a></h6>
+	<h1><img class="mr-2 align-bottom" src="/images/divisions/metro.png" height="40px">Metropolitan Division: Deployment Log</h1>
+	<h6><a target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewforum.php?f=646">Metropolitan Division: Deployment Records - Category<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></a></h6>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="MetroDeploymentLog">
 		<hr>
