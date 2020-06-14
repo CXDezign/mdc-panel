@@ -80,6 +80,14 @@ a:hover {
 	text-decoration: none;
 }
 
+a:not([href]) {
+	color: #fff;
+}
+a:not([href]):hover {
+	color: #fff;
+	text-decoration: none;
+}
+
 optgroup {
 	font-style: unset;
 }
@@ -163,7 +171,7 @@ optgroup {
 	display: none;
 }
 
-#sidebar, ul {
+#sidebar ul {
 	margin-bottom: 75px;
 }
 
