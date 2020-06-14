@@ -557,7 +557,8 @@
 
 			$inputDriverName = $_POST['inputDriverName'] ?? array();
 			$inputDriverName = array_map(function($value) {
-				return $value === '' ? $defaultVehicle : $value;
+				global $defaultName;
+				return $value === '' ? $defaultName : $value;
 			}, $inputDriverName);
 
 			$inputTrafficID = $_POST['inputTrafficID'] ?? array();
