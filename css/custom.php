@@ -419,6 +419,14 @@ optgroup {
 	color: rgba(0,0,0,0.5);
 }
 
+.bootstrap-select .dropdown-menu li a {
+	color: #333;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+	color: #fff !important;
+}
+
 /*//////////////
 // CHANGELOGS //
 //////////////*/
