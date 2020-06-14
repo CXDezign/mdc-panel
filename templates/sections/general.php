@@ -78,7 +78,7 @@
 				'name' => 'inputCallsign',
 				'value' => $g->findCookie('callSign'),
 				'placeholder' => 'Call Sign',
-				'tooltip' => 'Example: 2-ADAM-1, 2A1',
+				'tooltip' => 'E.g: 2-ADAM-1, 2A1',
 				'attributes' => 'required',
 				'style' => 'text-transform: uppercase;'
 			));
