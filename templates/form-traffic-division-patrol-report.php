@@ -1,5 +1,6 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-car-crash mr-2"></i>Traffic Division: Patrol Report - Form</h1>
+	<h1><img class="mr-2 align-bottom" src="/images/divisions/traffic.png" height="40px">Traffic Division: Patrol Report</h1>
+	<h6><a target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewforum.php?f=101">Traffic Division: Patrol Reports - Category<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></a></h6>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="TrafficDivisionPatrolReport">
@@ -19,20 +20,22 @@
 		</div>
 		<hr>
 		<h4><i class="fas fa-fw fa-car mr-2"></i>Patrol Details</h4>
-		<div class="form-row">
+		<div class="form-row groupSlotTDPatrolDetails">
 		<?php
 			// Form - Toggle - Traffic Patrol Vehicle
 			$c->form('toggle', 'forms', array(
-				'size' => '4',
+				'size' => '2',
 				'label' => 'Toggle Patrol Vehicle',
+				'class' => '',
+				'attributes' => '',
 				'id' => 'inputPatrolVehicle',
 				'name' => 'inputPatrolVehicle',
-				'dataOff' => 'Marked',
-				'dataOn' => 'Unmarked',
+				'dataOff' => "<i class='mr-1 fas fa-fw fa-adjust'></i>Marked",
+				'dataOn' => "<i class='mr-1 fas fa-fw fa-adjust'></i>Unmarked",
 				'dataOffStyle' => 'light',
 				'dataOnStyle' => 'dark',
-				'dataWidth' => '120',
-				'dataHeight' => '20',
+				'dataWidth' => '160',
+				'dataHeight' => '38',
 			));
 		?>
 		</div>
@@ -142,6 +145,24 @@
 </div>
 
 <!-- COPY SLOTS -->
+<div class="form-row copyGroupSlotModel" style="display: none;">
+<?php
+	// Form - Datalist - Vehicle Model
+	$c->form('datalist', 'forms', array(
+		'size' => '3 slotTDPatrolVehicle',
+		'label' => '<label>Vehicle Make & Model</label>',
+		'icon' => 'car',
+		'id' => 'inputVehicleModel',
+		'name' => 'inputVehicleModel',
+		'placeholder' => 'Make & Model',
+		'tooltip' => '(E.g: Unmarked Vapid Torrence)',
+		'attributes' => 'required',
+		'list' => 'vehicle_list',
+		'listChooser' => $pg->listChooser('vehiclesList')
+	));
+?>
+</div>
+<!-- COPY SLOT - TRAFFIC STOP -->
 <div class="container groupCopySlotTS" style="display: none;">
 <?php
 	// Form - Textfield - Defendant's Name
