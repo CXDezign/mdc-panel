@@ -36,8 +36,8 @@
 	$cParking = "#0066b2";
 	$cEvidence = "#7da522";
 	$cPatrol = "#11cab9";
-	$cTDpatrol = "#e36528";
 	$cDeath = "#8e8449";
+	$cTDpatrol = "#5b1d16";
 	$cMDDeployment = "#ff1e31";
 
 ?>
