@@ -3,7 +3,7 @@
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="ArrestCharges">
-		<div class="form-row chargeGroup">
+		<div class="form-row groupSlotCharge">
 		<?php
 			// Form - Options Add - Charge
 			$c->form('options', 'forms', array(
@@ -32,7 +32,7 @@
 <!-- COPY SLOTS -->
 
 <!-- CHARGE SLOT -->
-<div class="container fieldChargeCopy" style="display: none;">
+<div class="container copyGroupSlotCharge" style="display: none;">
 <?php
 	// Form - List - Charge
 	$c->form('list', 'forms', array(
@@ -66,7 +66,7 @@
 	$c->form('list', 'forms', array(
 		'size' => 'auto',
 		'label' => '',
-		'icon' => 'ellipsis-v',
+		'icon' => 'hashtag',
 		'class' => 'select-picker-copy inputCrimeOffenceSelector',
 		'id' => 'inputCrimeOffence-',
 		'name' => 'inputCrimeOffence[]',
@@ -80,8 +80,8 @@
 	$c->form('list', 'forms', array(
 		'size' => 'auto',
 		'label' => '',
-		'icon' => 'ellipsis-v',
-		'class' => 'select-picker-copy',
+		'icon' => 'exclamation-triangle',
+		'class' => 'select-picker-copy inputCrimeAdditionSelector',
 		'id' => 'inputCrimeAddition-',
 		'name' => 'inputCrimeAddition[]',
 		'attributes' => 'required',

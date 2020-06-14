@@ -229,7 +229,7 @@
 <!-- COPY SLOTS -->
 
 <!-- Witness -->
-<div class="container groupCopyWitness" style="display: none;">
+<div class="container copyGroupWitness" style="display: none;">
 <?php
 	// Form - Textfield - Witness's Name
 	$c->form('textfield', 'forms', array(

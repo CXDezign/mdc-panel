@@ -41,7 +41,7 @@
 		</div>
 		<hr>
 		<h4><i class="fas fa-fw fa-car mr-2"></i>Traffic Stops</h4>
-		<div class="form-row groupSlotTS">
+		<div class="form-row groupSlotTDTrafficStop">
 		<?php
 			// Form - Options Add - Traffic Stop Slot
 			$c->form('options', 'forms', array(
@@ -50,7 +50,7 @@
 				'action' => 'addSlotTS',
 				'colour' => 'success',
 				'icon' => 'fa-plus-square',
-				'text' => 'Traffic Stop Slot'
+				'text' => 'Traffic Stop'
 			));
 		?>
 		</div>
@@ -155,7 +155,7 @@
 		'id' => 'inputVehicleModel',
 		'name' => 'inputVehicleModel',
 		'placeholder' => 'Make & Model',
-		'tooltip' => '(E.g: Unmarked Vapid Torrence)',
+		'tooltip' => 'E.g: Unmarked Vapid Torrence',
 		'attributes' => 'required',
 		'list' => 'vehicle_list',
 		'listChooser' => $pg->listChooser('vehiclesList')
@@ -163,7 +163,7 @@
 ?>
 </div>
 <!-- COPY SLOT - TRAFFIC STOP -->
-<div class="container groupCopySlotTS" style="display: none;">
+<div class="container copyGroupSlotTDTrafficStop" style="display: none;">
 <?php
 	// Form - Textfield - Defendant's Name
 	$c->form('textfield', 'forms', array(
@@ -202,7 +202,7 @@
 		'action' => 'removeSlotTS',
 		'colour' => 'danger',
 		'icon' => 'fa-minus-square',
-		'text' => 'Traffic Stop Slot'
+		'text' => 'Traffic Stop'
 	));
 ?>
 </div>

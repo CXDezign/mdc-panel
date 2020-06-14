@@ -81,9 +81,12 @@
 <script src="/js/bootstrap4-toggle.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		// Animate on Scroll Initialisation
 		AOS.init();
 		// Select Picker Initialisation
 		$('.selectpicker').selectpicker();
+		// Tooltip Initialisation
+		$('input').tooltip();
 	});
 </script>
 </body>

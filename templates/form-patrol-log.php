@@ -55,7 +55,7 @@
 				$c->form('options', 'forms', array(
 					'size' => '3',
 					'label' => '',
-					'action' => 'addSlotInfo',
+					'action' => 'addSlotEventGeneric',
 					'colour' => 'success',
 					'icon' => 'fa-plus-square',
 					'text' => 'Add Generic Event'
@@ -64,7 +64,7 @@
 				$c->form('options', 'forms', array(
 					'size' => '3',
 					'label' => '',
-					'action' => 'addSlotEventTS',
+					'action' => 'addSlotEventTraffic',
 					'colour' => 'success',
 					'icon' => 'fa-plus-square',
 					'text' => 'Add Traffic Event'
@@ -73,7 +73,7 @@
 				$c->form('options', 'forms', array(
 					'size' => '3',
 					'label' => '',
-					'action' => 'addSlotArrest',
+					'action' => 'addSlotEventArrest',
 					'colour' => 'success',
 					'icon' => 'fa-plus-square',
 					'text' => 'Add Arrest Event'
@@ -107,8 +107,8 @@
 
 <!-- COPY SLOTS -->
 
-<!-- SLOT - GENERAL EVENT -->
-<div class="container groupCopySlotInfo" style="display: none;">
+<!-- COPY SLOT - GENERAL EVENT -->
+<div class="container copyGroupSlotEventGeneric" style="display: none;">
 	<div class="col-xl-12 text-center">
 		<hr>
 		<input type="hidden" id="type" name="type[]" value="1">
@@ -140,8 +140,8 @@
 			'id' => 'inputReasonInfo',
 			'name' => 'inputReasonInfo[]',
 			'value' => '',
-			'placeholder' => 'Examples: Handled emergency call ID ####, Provided perimeter on X scene.',
-			'tooltip' => 'Generic Event',
+			'placeholder' => 'Generic Event Details',
+			'tooltip' => 'E.g: Handled emergency call ID ####<br>E.g: Provided perimeter on X scene.',
 			'attributes' => 'required',
 			'style' => ''
 		));
@@ -149,15 +149,15 @@
 		$c->form('options', 'forms', array(
 			'size' => '2',
 			'label' => '',
-			'action' => 'removeSlotInfo',
+			'action' => 'removeSlotEventGeneric',
 			'colour' => 'danger',
 			'icon' => 'fa-minus-square',
 			'text' => 'Event'
 		));
 	?>
 </div>
-<!-- SLOT - TRAFFIC EVENT -->
-<div class="container groupCopySlotTraffic" style="display: none;">
+<!-- COPY SLOT - EVENT TRAFFIC -->
+<div class="container copyGroupSlotEventTraffic" style="display: none;">
 	<div class="col-xl-12 text-center">
 		<hr>
 		<input type="hidden" id="type" name="type[]" value="2">
@@ -214,7 +214,7 @@
 			$c->form('options', 'forms', array(
 				'size' => '2',
 				'label' => '',
-				'action' => 'removeSlotTS',
+				'action' => 'removeSlotEventTraffic',
 				'colour' => 'danger',
 				'icon' => 'fa-minus-square',
 				'text' => 'Event'
@@ -222,8 +222,8 @@
 		?>
 	</div>
 </div>
-<!-- SLOT - ARREST EVENT -->
-<div class="container groupCopySlotArrest" style="display: none;">
+<!-- COPY SLOT - EVENT ARREST -->
+<div class="container copyGroupSlotEventArrest" style="display: none;">
 	<div class="col-xl-12 text-center">
 		<hr>
 		<input type="hidden" id="type" name="type[]" value="3">
@@ -279,7 +279,7 @@
 		$c->form('options', 'forms', array(
 			'size' => '2',
 			'label' => '',
-			'action' => 'removeSlotArrest',
+			'action' => 'removeSlotEventArrest',
 			'colour' => 'danger',
 			'icon' => 'fa-minus-square',
 			'text' => 'Event'
