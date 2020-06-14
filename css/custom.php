@@ -42,6 +42,28 @@
 
 ?>
 
+/*//////////////////
+// PSEUDO CLASSES //
+//////////////////*/
+
+input:required,
+textarea:required,
+select:required ~ .dropdown-toggle {
+	border: 1px solid rgba(0,200,50,0.4)!important;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid ~ .dropdown-toggle {
+    box-shadow: none;
+    border: 1px solid rgba(255,0,0,0.4)!important;
+}
+
+::selection {
+	background: rgba(200,200,200,.5);
+	border-radius: 5px;
+}
+
 /*/////////////////
 // HTML ELEMENTS //
 /////////////////*/
@@ -50,11 +72,6 @@ html {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
-}
-
-::selection {
-	background: rgba(200,200,200,.5);
-	border-radius: 5px;
 }
 
 body {
@@ -110,7 +127,7 @@ optgroup {
 	position: relative;
 	padding: 4rem 0;
 	min-height: 70vh;
-	transition: transform .25s linear;
+	transition: transform .5s linear;
 }
 
 #breadcrumb {
@@ -122,7 +139,7 @@ optgroup {
 	border-radius: 0 !important;
 	font-weight: 600;
 	text-shadow: 0 1px 2px #00000040 !important;
-	transition: transform .25s linear;
+	transition: transform .5s linear;
 }
 
 #breadcrumb .breadcrumb-item {
@@ -140,7 +157,7 @@ optgroup {
 	border-top: 1px solid rgba(0,0,0,.1);
 	text-align: center;
 	z-index: -1;
-	transition: transform .25s linear;
+	transition: transform .5s linear;
 }
 
 /*///////////
@@ -226,7 +243,7 @@ optgroup {
 	padding: 10px;
 	color: #fff;
 	text-align: center;
-	transition: transform .25s linear;
+	transition: transform .5s linear, opacity .5s linear;
 }
 
 #notification .badge-trans {
@@ -804,7 +821,7 @@ small.text-muted {
 }
 
 .form-control::placeholder {
-	color: #9a9ea2;
+	color: #515151;
 }
 
 .input-group .bootstrap-select.form-control .dropdown-toggle {

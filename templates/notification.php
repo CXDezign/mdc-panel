@@ -3,7 +3,7 @@ if ($g->findCookie('notificationVersion') != $g->getSettings('site-version')) {
 ?>
 <div id="notification">
 	<div class="container">
-		<i class="mr-1 fas fa-fw fa-plug"></i>The latest update
+		<i class="mr-1 fas fa-fw fa-plug"></i>Update
 		<a class="mx-1" href="/changelogs#<?= $g->getSettings('site-version') ?>">
 			<span class="badge badge-dark"><?= $g->getSettings('site-version') ?></span>
 		</a>
@@ -29,6 +29,7 @@ if ($g->findCookie('notificationVersion') != $g->getSettings('site-version')) {
 				},
 				success: function(response) {
 					$('#notification').css('transform', 'translateY(-48.5px)');
+					$('#notification').css('opacity', '0');
 					$('#breadcrumb').css('transform', 'translateY(-48.5px)');
 					$('.container-page').css('transform', 'translateY(-48.5px)');
 					$('#footer').css('transform', 'translateY(-48.5px)');
