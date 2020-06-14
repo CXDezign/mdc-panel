@@ -16,6 +16,8 @@ class Content {
 			case 'sections':
 				$directory = '/templates/sections/';
 				break;
+			default:
+				break;
 		}
 
 		if (file_exists($root.$directory.$file.'.php')) {
