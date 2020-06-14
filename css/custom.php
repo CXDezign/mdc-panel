@@ -38,6 +38,7 @@
 	$cPatrol = "#11cab9";
 	$cTDpatrol = "#e36528";
 	$cDeath = "#8e8449";
+	$cMDDeployment = "#ff1e31";
 
 ?>
 
@@ -568,15 +569,6 @@ optgroup {
 	text-shadow: <?= $cDeath ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
-#card-generators-tdpatrol:hover {
-	box-shadow: <?= $cTDpatrol ?> 0 1px 0px;
-}
-
-#card-generators-tdpatrol:hover i {
-	color: <?= $cTDpatrol ?>!important;
-	text-shadow: <?= $cTDpatrol ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
-}
-
 #card-generators-patrol:hover {
 	box-shadow: <?= $cPatrol ?> 0 1px 0px;
 }
@@ -584,6 +576,23 @@ optgroup {
 #card-generators-patrol:hover i {
 	color: <?= $cPatrol ?>!important;
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
+#card-generators-tdpatrol:hover {
+	box-shadow: <?= $cTDpatrol ?> 0 1px 0px;
+}
+
+#card-generators-tdpatrol img {
+	filter: grayscale(100%);
+	transition: filter .1s linear;
+}
+
+#card-generators-tdpatrol:hover img {
+	filter: grayscale(0%);
+}
+
+#card-generators-mddeployment:hover {
+	box-shadow: <?= $cMDDeployment ?> 0 1px 0px;
 }
 
 #card-generators-mddeployment img {
@@ -1016,6 +1025,10 @@ small.text-muted {
 
 #card-generators-patrol:hover i {
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-mddeployment:hover {
+	box-shadow: <?= $cMDDeployment ?>80 0 -1px 0px;
 }
 
 <?php

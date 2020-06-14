@@ -56,20 +56,20 @@
 		"icon": "clipboard-list"
 	},
 	"7": {
-		"title": "TD: Patrol Report",
-		"link": "/paperwork-generators/traffic-division-patrol-report",
-		"tooltip": "Generate a Traffic Division patrol report.",
-		"card": "card-generators-tdpatrol",
-		"iconType": "icon",
-		"icon": "car-crash"
-	},
-	"8": {
 		"title": "Death Report",
 		"link": "/paperwork-generators/death-report",
 		"tooltip": "Generate a death report.",
 		"card": "card-generators-death",
 		"iconType": "icon",
 		"icon": "skull"
+	},
+	"8": {
+		"title": "TD: Patrol Report",
+		"link": "/paperwork-generators/traffic-division-patrol-report",
+		"tooltip": "Generate a Traffic Division patrol report.",
+		"card": "card-generators-tdpatrol",
+		"iconType": "image",
+		"icon": "/images/divisions/traffic.png"
 	},
 	"9": {
 		"title": "MD: Deployment Log",
