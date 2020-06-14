@@ -39,7 +39,7 @@
 					'class' => 'selectpicker',
 					'id' => 'inputRank',
 					'name' => 'inputRank',
-					'attributes' => 'required',
+					'attributes' => '',
 					'title' => 'Select Rank',
 					'list' => $pg->rankChooser(0),
 					'hint' => '',
@@ -180,18 +180,33 @@
 				'attributes' => 'required',
 				'style' => 'text-transform: uppercase;'
 			));
-			// Form - Textfield - Traffic Event
+			// Form - Textfield - Name - Traffic Event 
 			$c->form('textfield', 'forms', array(
-				'size' => '8',
+				'size' => '4',
 				'type' => 'text',
 				'label' => '',
-				'icon' => 'clipboard',
+				'icon' => 'id-card',
 				'class' => '',
-				'id' => 'inputReasonTS',
-				'name' => 'inputReasonTS[]',
+				'id' => 'inputDriverName',
+				'name' => 'inputDriverName[]',
 				'value' => '',
-				'placeholder' => 'Traffic Stop Reasoning.',
-				'tooltip' => 'Traffic Event',
+				'placeholder' => 'Firstname Lastname',
+				'tooltip' => 'Driver - Firstname Lastname',
+				'attributes' => 'required',
+				'style' => ''
+			));
+			// Form - Textfield - Traffic Stop ID - Traffic Event 
+			$c->form('textfield', 'forms', array(
+				'size' => '4',
+				'type' => 'number',
+				'label' => '',
+				'icon' => 'hashtag',
+				'class' => '',
+				'id' => 'inputTrafficID',
+				'name' => 'inputTrafficID[]',
+				'value' => '',
+				'placeholder' => 'Traffic Report ID',
+				'tooltip' => 'Traffic Report ID',
 				'attributes' => 'required',
 				'style' => ''
 			));
@@ -203,68 +218,6 @@
 				'colour' => 'danger',
 				'icon' => 'fa-minus-square',
 				'text' => 'Event'
-			));
-		?>
-	</div>
-	<div class="form-row col-xl-12">
-		<?php
-			// Form - Datalist - Vehicle's Make & Model
-			$c->form('datalist', 'forms', array(
-				'size' => '3',
-				'label' => '<label>Make & Model</label>',
-				'icon' => 'car',
-				'id' => 'inputVeh',
-				'name' => 'inputVeh[]',
-				'placeholder' => 'Make & Model',
-				'tooltip' => '(E.g: Benefactor Dubsta)',
-				'attributes' => 'required',
-				'list' => 'vehicle_list',
-				'listChooser' => $pg->listChooser('vehiclesList')
-			));
-			// Form - Textfield - Vehicle's Identification Plate
-			$c->form('textfield', 'forms', array(
-				'size' => '3',
-				'type' => 'text',
-				'label' => '<label>Identification Plate</label>',
-				'icon' => 'ticket-alt',
-				'class' => '',
-				'id' => 'inputVehPlate',
-				'name' => 'inputVehPlate[]',
-				'value' => '',
-				'placeholder' => '###XXX',
-				'tooltip' => '(E.g: 987XYZ or Empty if unregistered)',
-				'attributes' => '',
-				'style' => 'text-transform: uppercase;'
-			));
-		?>
-	</div>
-	<div class="form-row col-xl-12">
-		<?php
-			// Form - Datalist - Location District
-			$c->form('datalist', 'forms', array(
-				'size' => '4',
-				'label' => '<label>District</label>',
-				'icon' => 'map-marked-alt',
-				'id' => 'inputDistrict',
-				'name' => 'inputDistrict[]',
-				'placeholder' => 'District',
-				'tooltip' => 'Location - District',
-				'attributes' => 'required',
-				'list' => 'district_list',
-				'listChooser' => $pg->listChooser('districtsList')
-			));
-			// Form - Datalist - Location Street Name
-			$c->form('datalist', 'forms', array(
-				'size' => '4',
-				'label' => '<label>Street Name</label>',
-				'icon' => 'road',
-				'id' => 'inputStreet',
-				'name' => 'inputStreet[]',
-				'placeholder' => 'Street Name',
-				'tooltip' => 'Location - Street Name',
-				'attributes' => 'required',
-				'list' => 'street_list',
-				'listChooser' => $pg->listChooser('streetsList')
 			));
 		?>
 	</div>
@@ -292,7 +245,7 @@
 			'attributes' => 'required',
 			'style' => 'text-transform: uppercase;'
 		));
-		// Form - Textfield - Arrest Event
+		// Form - Textfield - Name - Arrest Event
 		$c->form('textfield', 'forms', array(
 			'size' => '4',
 			'type' => 'text',
@@ -307,7 +260,7 @@
 			'attributes' => 'required',
 			'style' => ''
 		));
-		// Form - Textfield - Arrest ID
+		// Form - Textfield - Arrest Report ID - Arrest Event
 		$c->form('textfield', 'forms', array(
 			'size' => '4',
 			'type' => 'number',
