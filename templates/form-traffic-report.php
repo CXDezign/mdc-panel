@@ -89,9 +89,10 @@
 				'g' => $g,
 				'pg' => $pg,
 				'c' => $c,
-				'tints' => true,
-				'vehROTooltip' => 'Leave empty if the R.O is the defendant.',
-				'vehROAttributes' => ''
+				'registered' => true,
+				'registeredAttributes' => '',
+				'insurance' => true,
+				'tints' => true
 			));
 			// Section - Location
 			require_once 'sections/location.php';
@@ -159,68 +160,72 @@
 			$c->form('submit', 'forms', array());
 		?>
 	</form>
-	<?php
-		// COPY SLOTS
-
-		// OFFICER SLOT
-		require_once 'copy-slots/officer.php';
-	?>
-	<div class="container copyGroupSlotCitation" style="display: none;">
-	<?php
-		// Form - List - Citation
-		$c->form('list', 'forms', array(
-			'size' => '6',
-			'label' => '',
-			'icon' => 'gavel',
-			'class' => 'select-picker-copy inputCrimeSelector',
-			'id' => 'inputCrime-',
-			'name' => 'inputCrime[]',
-			'attributes' => 'required data-live-search="true"',
-			'title' => 'Select Charge',
-			'list' => $pg->chargeChooser(),
-			'hint' => '',
-			'hintClass' => ''
-		));
-		// Form - List - Citation Class
-		$c->form('list', 'forms', array(
-			'size' => '2',
-			'label' => '',
-			'icon' => 'ellipsis-v',
-			'class' => 'select-picker-copy inputCrimeClassSelector',
-			'id' => 'inputCrimeClass-',
-			'name' => 'inputCrimeClass[]',
-			'attributes' => 'required',
-			'title' => 'Select Class',
-			'list' => '',
-			'hint' => '',
-			'hintClass' => ''
-		));
-		// Form - Textfield - Citation Fine
-		$c->form('textfield', 'forms', array(
-			'size' => '2',
-			'type' => 'number',
-			'label' => '',
-			'icon' => 'dollar-sign',
-			'class' => '',
-			'id' => 'inputCrimeFine',
-			'name' => 'inputCrimeFine[]',
-			'value' => '',
-			'placeholder' => '####',
-			'tooltip' => 'Leave empty if no fine.',
-			'attributes' => '',
-			'style' => 'text-transform: uppercase;'
-		));
-		// Form - Options Remove - Citation
-		$c->form('options', 'forms', array(
-			'size' => '2',
-			'label' => '',
-			'action' => 'removeCitation',
-			'colour' => 'danger',
-			'icon' => 'fa-minus-square',
-			'text' => 'Citation'
-		));
-	?>
-	</div>
+</div>
+<!-- COPY SLOTS -->
+<?php
+	// COPY SLOT - OFFICER
+	require_once 'copy-slots/officer.php';
+	// COPY SLOT - VEHICLE REGISTERED DETAILS
+	require_once 'copy-slots/vehicle-registered.php';
+	// COPY SLOT - VEHICLE INSURANCE EXPIRED DATE
+	require_once 'copy-slots/vehicle-insurance-date.php';
+?>
+<!-- COPY SLOT - CITATION -->
+<div class="container copyGroupSlotCitation" style="display: none;">
+<?php
+	// Form - List - Citation
+	$c->form('list', 'forms', array(
+		'size' => '6',
+		'label' => '',
+		'icon' => 'gavel',
+		'class' => 'select-picker-copy inputCrimeSelector',
+		'id' => 'inputCrime-',
+		'name' => 'inputCrime[]',
+		'attributes' => 'required data-live-search="true"',
+		'title' => 'Select Charge',
+		'list' => $pg->chargeChooser(),
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - List - Citation Class
+	$c->form('list', 'forms', array(
+		'size' => '2',
+		'label' => '',
+		'icon' => 'ellipsis-v',
+		'class' => 'select-picker-copy inputCrimeClassSelector',
+		'id' => 'inputCrimeClass-',
+		'name' => 'inputCrimeClass[]',
+		'attributes' => 'required',
+		'title' => 'Select Class',
+		'list' => '',
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - Textfield - Citation Fine
+	$c->form('textfield', 'forms', array(
+		'size' => '2',
+		'type' => 'number',
+		'label' => '',
+		'icon' => 'dollar-sign',
+		'class' => '',
+		'id' => 'inputCrimeFine',
+		'name' => 'inputCrimeFine[]',
+		'value' => '',
+		'placeholder' => '####',
+		'tooltip' => 'Leave empty if no fine.',
+		'attributes' => '',
+		'style' => 'text-transform: uppercase;'
+	));
+	// Form - Options Remove - Citation
+	$c->form('options', 'forms', array(
+		'size' => '2',
+		'label' => '',
+		'action' => 'removeCitation',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square',
+		'text' => 'Citation'
+	));
+?>
 </div>
 
 <?php require_once 'form-footer.php'; ?>

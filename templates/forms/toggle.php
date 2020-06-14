@@ -1,8 +1,8 @@
-<div class="col-xl-<?= $size ?>">
-	<label class=""><?= $label ?></label>
-	<div class="">
+<div class="form-group col-xl-<?= $size ?> <?= $class ?>">
+	<label><?= $label ?></label>
+	<div>
 		<input
-			id="formToggle"
+			id="<?= $id ?>"
 			type="checkbox"
 			data-toggle="toggle"
 			data-off="<?= $dataOff ?>"
@@ -11,10 +11,11 @@
 			data-onstyle="<?= $dataOnStyle ?>"
 			data-width="<?= $dataWidth ?>"
 			data-height="<?= $dataHeight ?>"
+			<?= $attributes ?>
 		>
 		<input
 			type="hidden"
-			id="formToggleHidden"
+			id="<?= $id ?>Hidden"
 			name="<?= $name ?>"
 			value="0"
 		>
@@ -23,18 +24,25 @@
 <script>
 	$(document).ready(function() {
 
-		$('#formToggle').change(function() {
+		(function() {
 
-			var checkChecked = document.getElementById('formToggle').checked;
+			let toggleID = '#<?= $id ?>';
+			let toggleIDHidden = toggleID+'Hidden';
 
-			if (checkChecked == false) {
-				$('#formToggleHidden').val(0);
-			}
-			if (checkChecked == true) {
-				$('#formToggleHidden').val(1);
-			}
+			$(toggleID).change(function() {
 
-		});
+				let checkChecked = $(toggleID).is(':checked');
+
+				if (checkChecked == false) {
+					$(toggleIDHidden).val(0);
+				}
+				if (checkChecked == true) {
+					$(toggleIDHidden).val(1);
+				}
+
+			});
+
+		})();
 
 	});
 </script>

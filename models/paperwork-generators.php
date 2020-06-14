@@ -388,13 +388,13 @@ class PaperworkGenerators {
 		switch ($input) {
 			case '1':
 			case '2':
-				$string = ' an illegal ';
+				$string = ' an <strong>illegal</strong> ';
 				break;
 			case '0':
 			case '3':
 			case '4':
 			case '5':
-				$string = ' a legal ';
+				$string = ' a <strong>legal</strong> ';
 				break;
 			default:
 				return 'The vehicle was not inspected with the tint meter device.';

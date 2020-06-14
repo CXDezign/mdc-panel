@@ -15,37 +15,36 @@
 			window.onbeforeunload = null;
 		});
 
-		// Tooltips
+		// Initialise Tooltips
 		$('input').tooltip();
 
-		// Traffic Division: Patrol Report Generator
+		// Functions
 
-			// Traffic Stops - Traffic Division: Patrol Report Generator
-			var maxSlotTS = 30;
+		// Initialise tooltips on copy slots
+		function initialiseTooltips() {
+			$('input').tooltip();
+		}
 
-			$(".addSlotTS").click(function() {
-				if ($('body').find('.groupSlotTS').length < maxSlotTS) {
-					var fieldHTML = '<div class="form-row groupSlotTS">'+$(".groupCopySlotTS").html()+'</div>';
-					$('body').find('.groupSlotTS:last').after(fieldHTML);
-				} else {
-					alert('Maximum '+maxSlotTS+' traffic stop slots are allowed.');
-				}
-			});
-			$("body").on("click",".removeSlotTS",function() { 
-				$(this).parents(".groupSlotTS").remove();
-			});
+		// Initialise select picker on copy slots
+		function copySlotSelectPicker($input) {
+			$input.find('.select-picker-copy').addClass('selectpicker');
+			$('.selectpicker').selectpicker('refresh');
+		};
+
+		// Popup message when max slots is reached for slot section
+		function maxSlots($maxSlots) {
+			alert('Maximum '+$maxSlots+' slots are allowed.');
+		}
+
 
 		// Traffic Report & Arrest Report Generators
 
 			// Dynamic Crime Selector - Traffic Report & Arrest Report Generators
 			$(document).on('change', 'select.inputCrimeSelector', function (e) {
 
-				console.log(e);
-
 				e.preventDefault();
 
 				var clickedElementID = '#'+e.target.id;
-				console.log(clickedElementID);
 				var crimeClassSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeClassSelector select').attr('id');
 				var crimeOffenceSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeOffenceSelector select').attr('id');
 
@@ -74,15 +73,6 @@
 
 			});
 
-			function copySlotSelectPicker($input) {
-				$input.find('.select-picker-copy').addClass('selectpicker');
-				$('.selectpicker').selectpicker('refresh');
-			};
-
-			function maxSlots($maxSlots) {
-				alert('Maximum '+$maxSlots+' slots are allowed.');
-			}
-
 			// Officers Slots - Traffic Report & Arrest Report Generators
 			(function() {
 				
@@ -97,6 +87,7 @@
 					if ($('body').find($group).length < $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						copySlotSelectPicker($('body').find($group+':last'));
+						initialiseTooltips();
 					} else {
 						maxSlots($maxSlots);
 					}
@@ -106,7 +97,6 @@
 				});
 
 			})();
-
 
 			// Citations Slots - Traffic Report Generator
 			(function() {
@@ -127,12 +117,82 @@
 						Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+$count);
 						$count++;
 						copySlotSelectPicker(Last);
+						initialiseTooltips();
 					} else {
 						maxSlots($maxSlots);
 					}
 				});
 				$('body').on('click', $remove, function() { 
 					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Registration & Insurance Toggle Logic - Traffic Report Generator
+			(function() {
+
+				let $copyGroupRegistered = $('.copyGroupSlotRegistered').html();
+				let $copyGroupInsurance = $('.copyGroupSlotInsurance').html();
+				let $idRegistered = '#inputVehRegistered';
+				let $idInsurance = '#inputVehInsurance';
+				let $checkRegistered = $($idRegistered).is(':checked');
+				let $checkInsurance = $($idInsurance).is(':checked');
+
+				// Append Registered Detail Fields
+				if ($checkRegistered == false) {
+					$('body').find('.groupSlotRegistered').append($copyGroupRegistered);
+					initialiseTooltips();
+				}
+
+				// Registered Toggle
+				$($idRegistered).change(function() {
+
+					let $checkRegistered = $($idRegistered).is(':checked');
+
+					// Registered Status
+					if ($checkRegistered == false) {
+						// Append Registered Detail Fields
+						$('body').find('.groupSlotRegistered').append($copyGroupRegistered);
+						initialiseTooltips();
+						// Show Insurance Row
+						$('.groupSlotInsurance').css('display', 'flex');
+						// Check if Insurance Was Checked
+						if ($($idInsurance).is(':checked')) {
+							// Append Insurance Date Field
+							$('body').find('.groupSlotInsurance').append($copyGroupInsurance);
+							initialiseTooltips();
+						}
+					}
+					// Unregistered Status
+					if ($checkRegistered == true) {
+						// Remove Registered Detail Fields
+						$('.slotVehRO').remove();
+						$('.slotVehPlate').remove();
+						// Remove Insurance Date Field
+						$('.slotInsuranceDate').remove();
+						$('.slotInsuranceTime').remove();
+						// Set Insurance Toggle to Insured
+						$($idInsurance).bootstrapToggle('off');
+						// Hide Insurance Row
+						$('.groupSlotInsurance').css('display', 'none');
+					}
+
+				});
+
+				// Insurance Toggle
+				$($idInsurance).change(function() {
+
+					let $checkInsurance = $($idInsurance).is(':checked');
+
+					if ($checkInsurance == false) {
+						$('body').find('.groupSlotInsurance').children('.slotInsuranceDate:last').remove();
+						$('body').find('.groupSlotInsurance').children('.slotInsuranceTime:last').remove();
+					}
+					if ($checkInsurance == true) {
+						$('body').find('.groupSlotInsurance').append($copyGroupInsurance);
+						initialiseTooltips();
+					}
+
 				});
 
 			})();
@@ -296,6 +356,47 @@
 			$("body").on("click",".removeBox",function(){ 
 				$(this).parents(".groupEvidence").remove();
 			});
+
+		// Traffic Division: Patrol Report Generator
+
+			// Traffic Stops - Traffic Division: Patrol Report Generator
+			var maxSlotTS = 30;
+
+			$(".addSlotTS").click(function() {
+				if ($('body').find('.groupSlotTS').length < maxSlotTS) {
+					var fieldHTML = '<div class="form-row groupSlotTS">'+$(".groupCopySlotTS").html()+'</div>';
+					$('body').find('.groupSlotTS:last').after(fieldHTML);
+				} else {
+					alert('Maximum '+maxSlotTS+' traffic stop slots are allowed.');
+				}
+			});
+			$("body").on("click",".removeSlotTS",function() { 
+				$(this).parents(".groupSlotTS").remove();
+			});
+
+			(function() {
+
+				let $copyGroupModel = $('.copyGroupSlotModel').html();
+				let $id = '#inputPatrolVehicle';
+				let $checkModel = $($id).is(':checked');
+
+				// Unmarked/Marked Patrol Vehicle Toggle
+				$($id).change(function() {
+
+					let $checkModel = $($id).is(':checked');
+
+					console.log($checkModel);
+
+					if ($checkModel == false) {
+						$('body').find('.groupSlotTDPatrolDetails').children('.slotTDPatrolVehicle:last').remove();
+					}
+					if ($checkModel == true) {
+						$('body').find('.groupSlotTDPatrolDetails').append($copyGroupModel);
+					}
+
+				});
+
+			})();
 
 		// Metropolitan Division: Deployment Log - Generator
 

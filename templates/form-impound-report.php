@@ -24,9 +24,10 @@
 				'g' => $g,
 				'pg' => $pg,
 				'c' => $c,
+				'registered' => true,
+				'registeredAttributes' => 'disabled',
+				'insurance' => false,
 				'tints' => false,
-				'vehROTooltip' => 'Vehicle&#39;s Registered Owner - Fullname',
-				'vehROAttributes' => 'required'
 			));
 			// Section - Location
 			require_once 'sections/location.php';
@@ -44,7 +45,7 @@
 				'class' => '',
 				'id' => 'inputDuration',
 				'name' => 'inputDuration',
-				'value' => $g->findCookie('officerBadge'),
+				'value' => '',
 				'placeholder' => '#',
 				'tooltip' => 'Duration of the impound in days.',
 				'attributes' => 'required',
@@ -70,4 +71,10 @@
 		?>
 	</form>
 </div>
-<?php require_once 'form-footer.php'; ?>
+<?php
+// COPY SLOTS
+
+// COPY SLOT - VEHICLE REGISTERED DETAILS
+require_once 'copy-slots/vehicle-registered.php';
+require_once 'form-footer.php';
+?>

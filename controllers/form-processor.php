@@ -68,6 +68,7 @@
 		$defaultDistrict = 'UNKNOWN DISTRICT';
 		$defaultStreet = 'UNKNOWN STREET';
 		$defaultVehicle = 'UNKNOWN VEHICLE';
+		$defaultVehiclePlate = 'UNKNOWN VEHICLE IDENTIFICATION PLATE';
 		$defaultRegisteredOwner = 'UNKNOWN REGISTERED OWNER';
 
 		// Common Post Values
@@ -82,13 +83,9 @@
 		$postInputBadgeArray = $_POST['inputBadge'] ?? array();
 		$postInputDefName = $_POST['inputDefName'] ?? $defaultSuspectName;
 		$postInputDistrict = $_POST['inputDistrict'] ?? $defaultDistrict;
-		$postInputDistrictArray = $_POST['inputDistrict'] ?? array();
 		$postInputStreet = $_POST['inputStreet'] ?? $defaultStreet;
-		$postInputStreetArray = $_POST['inputStreet'] ?? array();
 		$postInputVeh = $_POST['inputVeh'] ?? $defaultVehicle;
-		$postInputVehArray = $_POST['inputVeh'] ?? array();
-		$postInputVehPlate = $_POST['inputVehPlate'] ?? '';
-		$postInputVehPlateArray = $_POST['inputVehPlate'] ?? array();
+		$postInputVehPlate = $_POST['inputVehPlate'] ?? $defaultVehiclePlate;
 		$postInputEvidenceImageArray = $_POST['inputEvidenceImage'] ?? array();
 		$postInputEvidenceImageArray = array_values(array_filter($postInputEvidenceImageArray));
 		$postInputVehRO = $_POST['inputVehRO'] ?? $defaultRegisteredOwner;
@@ -131,7 +128,13 @@
 			$inputNarrative = $_POST['inputNarrative'] ?: '';
 			$inputDashcam = $_POST['inputDashcam'] ?: '';
 
+			$inputVehRegistered = $_POST['inputVehRegistered'] ?: false;
 			$inputVehRO = $_POST['inputVehRO'] ?: $postInputDefName;
+
+			$inputVehInsurance = $_POST['inputVehInsurance'] ?: false;
+			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?: $g->getUNIX('date');
+			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?: $g->getUNIX('time');
+
 			$inputVehTint = $_POST['inputVehTint'] ?? -1;
 
 			$inputCrime = $_POST['inputCrime'] ?? array();
@@ -159,6 +162,20 @@
 				$officers .= '<strong>'.$officerRank.' '.$officer.'</strong> (<strong>#'.$postInputBadgeArray[$iOfficer].'</strong>), ';
 			}
 
+			// Vehicle Registered Resolver
+			$registered = '';
+			if (!$inputVehRegistered) {
+				$registered = 'The vehicle was <strong>registered</strong> to <strong>'.$inputVehRO.'</strong>, with the identification plate reading <strong>'.$postInputVehPlate.'</strong>.<br>';
+			} else {
+				$registered = 'The vehicle was <strong>unregistered</strong> at the time of the traffic stop.<br>';
+			}
+
+			// Vehicle Insurance Resolver
+			$insurance = '';
+			if ($inputVehInsurance) {
+				$insurance = 'The vehicle was uninsured at the time of the conducted traffic stop, having expired on the <strong>'.strtoupper($inputVehInsuranceDate).'</strong>, <strong>'.$inputVehInsuranceTime.'</strong>.<br>';
+			}
+
 			// Crime Resolver
 			$fines = '';
 			foreach ($inputCrime as $iCrime => $crime) {
@@ -178,7 +195,7 @@
 
 			// Report Builder
 			$generatedReportType = 'Traffic Report';
-			$generatedReport = $officers.'under the call sign <strong>'.strtoupper($postInputCallsign).'</strong> on the <strong>'.strtoupper($postInputDate).'</strong>, <strong>'.$postInputTime.'</strong>.<br>Conducted a traffic stop on a <strong>'.$postInputVeh.'</strong>, '.$pg->getVehiclePlates($postInputVehPlate,0).', registered to <strong>'.$inputVehRO.'</strong>, on <strong>'.$postInputStreet.'</strong>, <strong>'.$postInputDistrict.'</strong>.<br>'.$pg->getVehicleTint($inputVehTint).'<br>The defendant was identified as <strong>'.$postInputDefName.'</strong>, possessing '.$pg->getDefLicense($inputDefLicense).'<br>'.$inputNarrative.'<br><br>Following charge(s) were issued:<br>'.$fines.'<br>'.$pg->getDashboardCamera($inputDashcam);
+			$generatedReport = $officers.'under the call sign <strong>'.strtoupper($postInputCallsign).'</strong> on the <strong>'.strtoupper($postInputDate).'</strong>, <strong>'.$postInputTime.'</strong>.<br>Conducted a traffic stop on a <strong>'.$postInputVeh.'</strong>, on <strong>'.$postInputStreet.'</strong>, <strong>'.$postInputDistrict.'</strong>.<br>'.$registered.$insurance.$pg->getVehicleTint($inputVehTint).'<br>The driver was identified as <strong>'.$postInputDefName.'</strong>, possessing '.$pg->getDefLicense($inputDefLicense).'<br>'.$inputNarrative.'<br><br>Following charge(s) were issued:<br>'.$fines.'<br>'.$pg->getDashboardCamera($inputDashcam);
 		}
 
 		if ($generatorType == 'ArrestReport') {
@@ -433,6 +450,7 @@
 			$inputTimeTo = $_POST['inputTimeTo'] ?: $g->getUNIX('time');
 
 			$inputPatrolVehicle = $_POST['inputPatrolVehicle'] ?: false;
+			$inputVehicleModel = $_POST['inputVehicleModel'] ?: $defaultVehicle;
 
 			$inputNameTS = $_POST['inputNameTS'] ?? array();
 			$inputNameTS = array_map(function($value) {
@@ -455,12 +473,10 @@
 
 			// Patrol Vehicle Resolver
 			$patrolVehicle = '';
-			if (empty($inputPatrolVehicle)) {
-				$patrolVehicle = '[*]Marked: [cbc][/cbc]
-				[*]Unmarked: [cb][/cb]';
+			if (!$inputPatrolVehicle) {
+				$patrolVehicle = '[*]Marked: [cbc][/cbc]';
 			} else {
-				$patrolVehicle = '[*]Marked: [cb][/cb]
-				[*]Unmarked: [cbc][/cbc]';
+				$patrolVehicle = '[*]Unmarked: [cbc][/cbc] - Model: '.$inputVehicleModel;
 			}
 
 			// Traffic Stop Resolver
@@ -539,29 +555,15 @@
 				return $value === '' ? 'UNKNOWN GENERIC EVENT' : $value;
 			}, $inputReasonInfo);
 
-			$postInputVehArray = array_map(function($value) {
-				global $defaultVehicle;
+			$inputDriverName = $_POST['inputDriverName'] ?? array();
+			$inputDriverName = array_map(function($value) {
 				return $value === '' ? $defaultVehicle : $value;
-			}, $postInputVehArray);
+			}, $inputDriverName);
 
-			$postInputVehPlateArray = array_map(function($value) {
-				return $value === '' ? '' : $value;
-			}, $postInputVehPlateArray);
-
-			$postInputDistrictArray = array_map(function($value) {
-				global $defaultDistrict;
-				return $value === '' ? $defaultDistrict : $value;
-			}, $postInputDistrictArray);
-			
-			$postInputStreetArray = array_map(function($value) {
-				global $defaultStreet;
-				return $value === '' ? $defaultStreet : $value;
-			}, $postInputStreetArray);
-
-			$inputReasonTS = $_POST['inputReasonTS'] ?? array();
-			$inputReasonTS = array_map(function($value) {
-				return $value === '' ? 'UNKNOWN REASON' : $value;
-			}, $inputReasonTS);
+			$inputTrafficID = $_POST['inputTrafficID'] ?? array();
+			$inputTrafficID = array_map(function($value) {
+				return $value === '' ? 'UNKNOWN TRAFFIC REPORT ID' : $value;
+			}, $inputTrafficID);
 
 			$inputArrestee = $_POST['inputArrestee'] ?? array();
 			$inputArrestee = array_map(function($value) {
@@ -603,12 +605,12 @@
 					}
 
 					if ($eventType == '2') {
-						$events .= '[*] [b]'.$inputTimeEvent[$iEvent].'[/b] - Conducted a [b]Traffic Stop[/b] on a [b]'.$postInputVehArray[$traffic].'[/b], '.$pg->getVehiclePlates($postInputVehPlateArray[$traffic],1).'. Located on [b]'.$postInputStreetArray[$traffic].', '.$postInputDistrictArray[$traffic].'[/b] - '.$inputReasonTS[$traffic];
+						$events .= '[*] [b]'.$inputTimeEvent[$iEvent].'[/b] - Conducted a [b]Traffic Stop[/b] on [url=https://mdc.gta.world/record/'.str_replace(' ', '_', $inputDriverName[$traffic]).']'.$inputDriverName[$traffic].'[/url] (Traffic Report: [b]#'.$inputTrafficID[$traffic].'[/b])';
 						$traffic++;
 					}
 
 					if ($eventType == '3') {
-						$events .= '[*] [b]'.$inputTimeEvent[$iEvent].'[/b] - Conducted an [b]arrest[/b] on [url=https://mdc.gta.world/record/'.str_replace(' ', '_', $inputArrestee[$arrest]).']'.$inputArrestee[$arrest].'[/url] (Arrest Report: [b]#'.$inputArrestID[$arrest].'[/b])';
+						$events .= '[*] [b]'.$inputTimeEvent[$iEvent].'[/b] - Conducted an [b]Arrest[/b] on [url=https://mdc.gta.world/record/'.str_replace(' ', '_', $inputArrestee[$arrest]).']'.$inputArrestee[$arrest].'[/url] (Arrest Report: [b]#'.$inputArrestID[$arrest].'[/b])';
 						$arrest++;
 					}
 
@@ -861,6 +863,9 @@
 			// Variables
 			$redirectPath = redirectPath(1);
 
+			$inputVehInsurance = $_POST['inputVehInsurance'] ?: false;
+			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?: $g->getUNIX('date');
+
 			$inputReason = $_POST['inputReason'] ?: 0;
 			$inputFine = $_POST['inputFine'] ?: 0;
 
@@ -869,6 +874,12 @@
 			setCookiePost('officerRank', $postInputRank);
 			setCookiePost('officerBadge', $postInputBadge);
 			setCookiePost('defNameVehRO', $postInputVehRO);
+
+			// Vehicle Insurance Resolver
+			$insurance = '';
+			if ($inputVehInsurance) {
+				$insurance = 'The vehicle was uninsured at the time of writing the parking ticket, having expired on the <strong>'.strtoupper($inputVehInsuranceDate).'</strong>.<br>';
+			}
 
 			// Evidence Resolver
 			$evidence = 'N/A';
@@ -889,8 +900,8 @@
 
 			// Report Builder
 			$generatedReportType = 'Parking Ticket';
-			$generatedReport = $generatedReport = $officers.' on the <strong>'.strtoupper($postInputDate).'</strong>, <strong>'.$postInputTime.'</strong>.<br>Cited a <strong>'.$postInputVeh.'</strong>, '.$pg->getVehiclePlates($postInputVehPlate,0).', '.$pg->getVehicleRO($postInputVehRO).', on <strong>'.$postInputStreet.'</strong>, <strong>'.$postInputDistrict.'</strong>.<br>
-
+			$generatedReport = $generatedReport = $officers.' on the <strong>'.strtoupper($postInputDate).'</strong>, <strong>'.$postInputTime.'</strong>.<br>Cited a <strong>'.$postInputVeh.'</strong>, '.$pg->getVehiclePlates($postInputVehPlate,0).', '.$pg->getVehicleRO($postInputVehRO).', on <strong>'.$postInputStreet.'</strong>, <strong>'.$postInputDistrict.'</strong>.<br>'.$insurance.'
+				<br>
 				<strong>Citation Reason:</strong>
 				<ul><li><span style="color: #27ae60">IC 406. Illegal Parking</span> - <strong style="color: green;">$'.$inputFine.'</strong> - '.$pt->getIllegalParking($inputReason).'</li></ul>
 				<strong>Evidence:</strong><br>'.$evidence;

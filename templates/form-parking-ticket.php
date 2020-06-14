@@ -1,5 +1,5 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-parking mr-2"></i>Parking Ticket - Form</h1>
+	<h1><i class="fas fa-fw fa-parking mr-2"></i>Parking Ticket</h1>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="ParkingTicket">
 		<?php
@@ -24,9 +24,10 @@
 				'g' => $g,
 				'pg' => $pg,
 				'c' => $c,
+				'registered' => true,
+				'registeredAttributes' => 'disabled',
+				'insurance' => true,
 				'tints' => false,
-				'vehROTooltip' => 'Vehicle&#39;s Registered Owner - Fullname',
-				'vehROAttributes' => 'required'
 			));
 			// Section - Location
 			require_once 'sections/location.php';
@@ -101,35 +102,41 @@
 			$c->form('submit', 'forms', array());
 		?>
 	</form>
-	<!-- COPY SLOTS -->
-	<!-- PHOTOGRAPH SLOT -->
-	<div class="container groupCopyImage" style="display: none;">
-		<?php
-			// Form - Textfield - Photograph
-			$c->form('textfield', 'forms', array(
-				'size' => '10',
-				'type' => 'text',
-				'label' => '',
-				'icon' => 'camera',
-				'class' => '',
-				'id' => 'inputEvidenceImage',
-				'name' => 'inputEvidenceImage[]',
-				'value' => '',
-				'placeholder' => 'https://imgur.com',
-				'tooltip' => 'Enter the direct URL to the photograph.',
-				'attributes' => 'required',
-				'style' => ''
-			));
-			// Form - Options Add - Image
-			$c->form('options', 'forms', array(
-				'size' => '2',
-				'label' => '',
-				'action' => 'removeImage',
-				'colour' => 'danger',
-				'icon' => 'fa-minus-square',
-				'text' => 'Photograph'
-			));
-		?>
-	</div>
+</div>
+<!-- COPY SLOTS -->
+<?php
+	// COPY SLOT - VEHICLE REGISTERED DETAILS
+	require_once 'copy-slots/vehicle-registered.php';
+	// COPY SLOT - VEHICLE INSURANCE EXPIRED DATE
+	require_once 'copy-slots/vehicle-insurance-date.php';
+?>
+<!-- COPY SLOT - PHOTOGRAPH -->
+<div class="container groupCopyImage" style="display: none;">
+<?php
+	// Form - Textfield - Photograph
+	$c->form('textfield', 'forms', array(
+		'size' => '10',
+		'type' => 'text',
+		'label' => '',
+		'icon' => 'camera',
+		'class' => '',
+		'id' => 'inputEvidenceImage',
+		'name' => 'inputEvidenceImage[]',
+		'value' => '',
+		'placeholder' => 'https://imgur.com',
+		'tooltip' => 'Enter the direct URL to the photograph.',
+		'attributes' => 'required',
+		'style' => ''
+	));
+	// Form - Options Add - Image
+	$c->form('options', 'forms', array(
+		'size' => '2',
+		'label' => '',
+		'action' => 'removeImage',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square',
+		'text' => 'Photograph'
+	));
+?>
 </div>
 <?php require_once 'form-footer.php'; ?>
