@@ -60,7 +60,7 @@
 				'id' => 'inputTimeEnd',
 				'name' => 'inputTimeEnd',
 				'value' => '',
-				'placeholder' => '00:00',
+				'placeholder' => '24:00',
 				'tooltip' => '00:00 Format',
 				'attributes' => 'required',
 				'style' => 'text-transform: uppercase;'
