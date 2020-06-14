@@ -18,6 +18,25 @@
 		?>
 		</div>
 		<hr>
+		<h4><i class="fas fa-fw fa-car mr-2"></i>Patrol Details</h4>
+		<div class="form-row">
+		<?php
+			// Form - Toggle - Traffic Patrol Vehicle
+			$c->form('toggle', 'forms', array(
+				'size' => '4',
+				'label' => 'Toggle Patrol Vehicle',
+				'id' => 'inputPatrolVehicle',
+				'name' => 'inputPatrolVehicle',
+				'dataOff' => 'Marked',
+				'dataOn' => 'Unmarked',
+				'dataOffStyle' => 'light',
+				'dataOnStyle' => 'dark',
+				'dataWidth' => '120',
+				'dataHeight' => '20',
+			));
+		?>
+		</div>
+		<hr>
 		<h4><i class="fas fa-fw fa-car mr-2"></i>Traffic Stops</h4>
 		<div class="form-row groupSlotTS">
 		<?php

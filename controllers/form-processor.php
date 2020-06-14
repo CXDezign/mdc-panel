@@ -432,6 +432,8 @@
 			$inputTimeFrom = $_POST['inputTimeFrom'] ?: $g->getUNIX('time');
 			$inputTimeTo = $_POST['inputTimeTo'] ?: $g->getUNIX('time');
 
+			$inputPatrolVehicle = $_POST['inputPatrolVehicle'] ?: false;
+
 			$inputNameTS = $_POST['inputNameTS'] ?? array();
 			$inputNameTS = array_map(function($value) {
 				global $defaultName;
@@ -450,6 +452,16 @@
 			$inputNotes = $_POST['inputNotes'] ?: 'N/A';
 			$inputTDPatrolReportURL = $_POST['inputTDPatrolReportURL'] ?: 'https://lspd.gta.world/viewforum.php?f=101';
 			setCookiePost('inputTDPatrolReportURL', $inputTDPatrolReportURL);
+
+			// Patrol Vehicle Resolver
+			$patrolVehicle = '';
+			if (empty($inputPatrolVehicle)) {
+				$patrolVehicle = '[*]Marked: [cbc][/cbc]
+				[*]Unmarked: [cb][/cb]';
+			} else {
+				$patrolVehicle = '[*]Marked: [cb][/cb]
+				[*]Unmarked: [cbc][/cbc]';
+			}
 
 			// Traffic Stop Resolver
 			if (!empty($inputNameTS)) {
@@ -485,6 +497,9 @@
 				[hr][/hr]
 				[b]Date:[/b] '.strtoupper($pg->dateResolver($inputDateFrom, $inputDateTo)).'
 				[b]Time:[/b] '.$inputTimeFrom.' - '.$inputTimeTo.'
+
+				[b]Type of patrol vehicle:[/b]
+				[list=circle]'.$patrolVehicle.'[/list]
 
 				'.$trafficStopText.'
 				[b]Citations Issued:[/b] '.$iCitations.'
