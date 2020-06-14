@@ -1,4 +1,25 @@
 {
+	"1.15.0": {
+		"id": "1.15.0",
+		"date": "14/JUN/2020",
+		"changes": {
+			"0": "Site - All required input fields are now highlighted as red if empty, green if filled, any fields without borders are optional/if applicable.<br><img style='max-width: 100%' src='https://i.imgur.com/9hPUCV7.png'/>",
+			"1": "Site - Fixed links text on buttons being the incorrect colour on light mode.",
+			"2": "Paperwork Generators - Most front-end jQuery code for all paperwork generators was re-written for clarity sake.",
+			"3": "Paperwork Generators - Added tooltip functionalities on all dynamic slots which support tooltips.<br><img style='max-width: 100%' src='https://i.imgur.com/xTQy7T6.png'/>",
+			"4": "Paperwork Generators - Updated generator titles to exclude ' - Form' from their titles, deeming them as redundant.",
+			"5": "Arresst Charges Calculator - Charge selector now auto selects charge class, charge offence, and charge addition.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-ChargeAutoSelect.mp4' type='video/mp4'><source src='/showcase/previews/1.15-ChargeAutoSelect.webm' type='video/webm'></video>",
+			"6": "Traffic Division: Patrol Report Generator - Icon changed to the Traffic Division logo.<br><img style='max-width: 100%' src='https://i.imgur.com/kGn83V1.png'/>",
+			"7": "Traffic Division: Patrol Report Generator - Updated the report template to the latest changes regarding marked/unmarked vehicles. (<span class='cl-general'>Courtesy of Donally&#39;s request</span>)<br><img style='max-width: 100%' src='https://i.imgur.com/VpYuI7w.png'/>",
+			"8": "Traffic Report Generator - New Registration & Insurance logic added. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-VehicleDetailsLogic.mp4' type='video/mp4'><source src='/showcase/previews/1.15-VehicleDetailsLogic.webm' type='video/webm'></video>",
+			"9": "Traffic Report Generator - Charge selector now auto selects charge class.",
+			"10": "Parking Ticket Generator - Updated vehicle details section to match the update regarding the Traffic Report Generator.",
+			"11": "Impound Report Generator - Updated vehicle details section to match the update regarding the Traffic Report Generator.",
+			"12": "Impound Report Generator - Fixed a bug where the duration of impound field would automatically default to your badge number.",
+			"13": "Patrol Log Generator - Traffic Events are now only required if a traffic report was written, removing the unnecessary duplication of information and directly pointing to the traffic report ID.<br><img style='max-width: 100%' src='https://i.imgur.com/8AFx4jq.png'/>",
+			"14": "Patrol Log Generator - Fixed a bug where the partner rank was a required field."
+		}
+	},
 	"1.14.0": {
 		"id": "1.14.0",
 		"date": "12/JUN/2020",
@@ -32,16 +53,16 @@
 		"id": "1.12.0",
 		"date": "05/JUN/2020",
 		"changes": {
-			"0": "Arrest Charges Calculator - Extensive backend code rework and update, the code is much more versatile and dynamic for limitless input variations.<br><img width='100%' src='https://i.imgur.com/ZyqNTPz.png'/>",
-			"1": "Arrest Charges Calculator - Sentencing Enhancements input are now applicable to charges to promote its usage, reducing both the sentence times and arrest points. (Reductions: Offender 0%, Accomplice 0%, Accessory 50%, Conspiracy 75%)<br><img width='auto' src='https://i.imgur.com/S8O62Sy.png'/>",
-			"2": "Arrest Charges Calculator - Arrest Charges now dynamically display which offences (1st, 2nd, 3rd) may be applied to the selected crime.<br><img width='auto' src='https://i.imgur.com/E2Uf6xz.png'/><img width='auto' src='https://i.imgur.com/9f4mR0R.png'/>",
+			"0": "Arrest Charges Calculator - Extensive backend code rework and update, the code is much more versatile and dynamic for limitless input variations.<br><img style='max-width: 100%' src='https://i.imgur.com/ZyqNTPz.png'/>",
+			"1": "Arrest Charges Calculator - Sentencing Enhancements input are now applicable to charges to promote its usage, reducing both the sentence times and arrest points. (Reductions: Offender 0%, Accomplice 0%, Accessory 50%, Conspiracy 75%)<br><img style='max-width: 100%' src='https://i.imgur.com/S8O62Sy.png'/>",
+			"2": "Arrest Charges Calculator - Arrest Charges now dynamically display which offences (1st, 2nd, 3rd) may be applied to the selected crime.<br><img style='max-width: 100%' src='https://i.imgur.com/E2Uf6xz.png'/><img style='max-width: 100%' src='https://i.imgur.com/9f4mR0R.png'/>",
 			"3": "Arrest Charges Calculator - Crime time calculation rework, now works with the most optimal time-based units splitting. (If time totals are 60 minutes or above, change to hours and minutes instead, if 24 hours or above, change to days and hours, etc)",
 			"4": "Paperwork Generators - Small rank chooser optimisations and code fixes.",
 			"5": "Paperwork Generators - More backend code updates and optimisations.",
 			"6": "Site - Site-wide visual updates and element fixes.",
 			"7": "Site - Backend files reshuffled to appropriate locations, split actual page structure and functional code into separate files. (No more procedural coding.)",
-			"8": "Street Guide - Added missing station 'Rockford Hills Community Police Station'.<br><img width='auto' src='https://i.imgur.com/JlQFfSM.png'/>",
-			"9": "Street Guide - Fixed the spelling of the Twin Towers building. (Credit: Tseard)<br><img width='auto' src='https://i.imgur.com/3A5wCrz.png'/>"
+			"8": "Street Guide - Added missing station 'Rockford Hills Community Police Station'.<br><img style='max-width: 100%' src='https://i.imgur.com/JlQFfSM.png'/>",
+			"9": "Street Guide - Fixed the spelling of the Twin Towers building. (Credit: Tseard)<br><img style='max-width: 100%' src='https://i.imgur.com/3A5wCrz.png'/>"
 		}
 	},
 	"1.11.1": {
@@ -78,7 +99,7 @@
 			"17": "Useful Resources - Page revamped with various links from sidebar.",
 			"18": "Paperwork Generators - Now updated to work with the latest <a href='https://forum.gta.world/en/index.php?/topic/9421-san-andreas-penal-code-changelog/&do=findComment&comment=219657'>Penal Code</a> update (02/JAN/2020, New Point System, Classification + Types swap, Charge Updates)",
 			"19": "Paperwork Generators - Now dynamically display which classes (A, B, C) may be applied to the selected crime.",
-			"20": "Paperwork Generators - Updated charges .402 & .412 to automatically detect upgrades from Misdemeanour to Felony types of crimes based on user input. <br><img width='800px' src='https://i.imgur.com/LFJYIW6.png'>",
+			"20": "Paperwork Generators - Updated charges .402 & .412 to automatically detect upgrades from Misdemeanour to Felony types of crimes based on user input. <br><img style='max-width: 100%' src='https://i.imgur.com/LFJYIW6.png'>",
 			"21": "Paperwork Generators - Table styling updated to accomodate new columns and information. (Points + Offence #)"
 		}
 	},
