@@ -1,4 +1,13 @@
 {
+	"1.15.1": {
+		"id": "1.15.1",
+		"date": "15/JUN/2020",
+		"changes": {
+			"0": "Traffic Report Generator - Fixed the vehicle registered owner field being required, if left empty, will use the Defendant's name. (<span class='cl-general'>Thanks to Spartan for finding the bug</span>)",
+			"1": "Parking Ticket Generator - Fixed the provided insurance expired time not showing up in the final generated report. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
+			"2": "Parking Ticket Generator - Fixed the add photograph button not adding a new photograph slot. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)"
+		}
+	},
 	"1.15.0": {
 		"id": "1.15.0",
 		"date": "14/JUN/2020",
