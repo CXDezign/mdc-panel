@@ -879,7 +879,7 @@
 			// Vehicle Insurance Resolver
 			$insurance = '';
 			if ($inputVehInsurance) {
-				$insurance = 'The vehicle was uninsured at the time of writing the parking ticket, having expired on the <strong>'.strtoupper($inputVehInsuranceDate).'</strong>.<br>';
+				$insurance = 'The vehicle was uninsured at the time of writing the parking ticket, having expired on the <strong>'.strtoupper($inputVehInsuranceDate).'</strong>, <strong>'.$inputVehInsuranceTime.'</strong>.<br>';
 			}
 
 			// Evidence Resolver
