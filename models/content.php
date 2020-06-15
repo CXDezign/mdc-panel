@@ -16,6 +16,9 @@ class Content {
 			case 'sections':
 				$directory = '/templates/sections/';
 				break;
+			case 'copy-slots':
+				$directory = '/templates/copy-slots/';
+				break;
 			default:
 				break;
 		}

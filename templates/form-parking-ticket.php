@@ -106,7 +106,12 @@
 <!-- COPY SLOTS -->
 <?php
 	// COPY SLOT - VEHICLE REGISTERED DETAILS
-	require_once 'copy-slots/vehicle-registered.php';
+	$c->form('vehicle-registered', 'copy-slots', array(
+		'g' => $g,
+		'c' => $c,
+		'attributesRO' => 'required',
+		'tooltipRO' => 'Registered Owner - Firstname Lastname',
+	));
 	// COPY SLOT - VEHICLE INSURANCE EXPIRED DATE
 	require_once 'copy-slots/vehicle-insurance-date.php';
 ?>

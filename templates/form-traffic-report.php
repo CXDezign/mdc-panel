@@ -166,7 +166,12 @@
 	// COPY SLOT - OFFICER
 	require_once 'copy-slots/officer.php';
 	// COPY SLOT - VEHICLE REGISTERED DETAILS
-	require_once 'copy-slots/vehicle-registered.php';
+	$c->form('vehicle-registered', 'copy-slots', array(
+		'g' => $g,
+		'c' => $c,
+		'attributesRO' => '',
+		'tooltipRO' => 'Leave empty if the same as Defendant.',
+	));
 	// COPY SLOT - VEHICLE INSURANCE EXPIRED DATE
 	require_once 'copy-slots/vehicle-insurance-date.php';
 ?>

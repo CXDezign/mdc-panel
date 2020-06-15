@@ -75,6 +75,12 @@
 // COPY SLOTS
 
 // COPY SLOT - VEHICLE REGISTERED DETAILS
-require_once 'copy-slots/vehicle-registered.php';
+$c->form('vehicle-registered', 'copy-slots', array(
+	'g' => $g,
+	'c' => $c,
+	'attributesRO' => 'required',
+	'tooltipRO' => 'Registered Owner - Firstname Lastname',
+));
+
 require_once 'form-footer.php';
 ?>

@@ -11,8 +11,8 @@
 		'name' => 'inputVehRO',
 		'value' => '',
 		'placeholder' => 'Firstname Lastname',
-		'tooltip' => 'Registered Owner - Firstname Lastname',
-		'attributes' => 'required',
+		'tooltip' => $tooltipRO,
+		'attributes' => $attributesRO,
 		'style' => ''
 	));
 	// Form - Textfield - Vehicle's Identification Plate
