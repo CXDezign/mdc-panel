@@ -256,6 +256,7 @@
 
 			})();
 
+
 		// Patrol Log Generator
 		
 			// Patrol Log Generator - Event Slots
@@ -318,7 +319,7 @@
 
 			})();
 
-		// Evidence Registration Log
+		// Parking Ticket Generator + Evidence Registration Log Generator
 
 			// Evidence Registration Log - Item Registry
 			(function() {
@@ -344,7 +345,7 @@
 
 			})();
 
-			// Evidence Registration Log Generator - Evidence
+			// Parking Ticket Generator + Evidence Registration Log Generator - Evidence Photograph
 			(function() {
 				
 				let $maxSlots = 5;

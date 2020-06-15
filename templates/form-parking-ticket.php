@@ -34,7 +34,7 @@
 		?>
 		<hr>
 		<h4><i class="fas fa-fw fa-fingerprint mr-2"></i>Evidence Section</h4>
-		<div class="form-row groupEvidence">
+		<div class="form-row groupEvidencePhotograph">
 			<?php
 				// Form - Textfield - Photograph
 				$c->form('textfield', 'forms', array(
@@ -55,7 +55,7 @@
 				$c->form('options', 'forms', array(
 					'size' => '2',
 					'label' => '<label>Options</label>',
-					'action' => 'addImage',
+					'action' => 'addEvidencePhotogrtaph',
 					'colour' => 'success',
 					'icon' => 'fa-plus-square',
 					'text' => 'Photograph'
@@ -111,7 +111,7 @@
 	require_once 'copy-slots/vehicle-insurance-date.php';
 ?>
 <!-- COPY SLOT - PHOTOGRAPH -->
-<div class="container groupCopyImage" style="display: none;">
+<div class="container copyGroupEvidencePhotograph" style="display: none;">
 <?php
 	// Form - Textfield - Photograph
 	$c->form('textfield', 'forms', array(
@@ -132,7 +132,7 @@
 	$c->form('options', 'forms', array(
 		'size' => '2',
 		'label' => '',
-		'action' => 'removeImage',
+		'action' => 'removeEvidencePhotogrtaph',
 		'colour' => 'danger',
 		'icon' => 'fa-minus-square',
 		'text' => 'Photograph'
