@@ -1,4 +1,13 @@
 {
+	"1.15.2": {
+		"id": "1.15.2",
+		"date": "20/JUN/2020",
+		"changes": {
+			"0": "Sidebar - Added the missing Metropolitan Division: Deployment Log link. (<span class='cl-general'>Thanks to Humour & Spartan for finding the missing feature</span>)",
+			"1": "Sidebar - Fixed the margin for the dropdown menu not inheriting a different style which overwritten the smaller margin.",
+			"2": "Sidebar - Swapped out the generators under specific division to their respective logos instead of using icons."
+		}
+	},
 	"1.15.1": {
 		"id": "1.15.1",
 		"date": "15/JUN/2020",
