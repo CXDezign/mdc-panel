@@ -188,8 +188,12 @@ optgroup {
 	display: none;
 }
 
-#sidebar ul {
+#sidebar > ul {
 	margin-bottom: 75px;
+}
+
+#sidebar #generatorSubmenu {
+	margin: 15px 0;
 }
 
 #sidebar a {

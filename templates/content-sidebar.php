@@ -62,13 +62,18 @@
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" href="/paperwork-generators/traffic-division-patrol-report">
-						<i class="fas fa-fw fa-car-crash mr-2"></i><span class="icon-text">TD: Patrol Report</span>
+					<a class="nav-link" href="/paperwork-generators/death-report">
+						<i class="fas fa-fw fa-skull mr-2"></i><span class="icon-text">Death Report</span>
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" href="/paperwork-generators/death-report">
-						<i class="fas fa-fw fa-skull mr-2"></i><span class="icon-text">Death Report</span>
+					<a class="nav-link" href="/paperwork-generators/traffic-division-patrol-report">
+						<img class="mr-2" src="/images/divisions/Traffic.png" alt="LSSD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">TD: Patrol Report</span>
+					</a>
+				</li>
+				<li>
+					<a class="nav-link" href="/paperwork-generators/metropolitan-division-deployment-log">
+						<img class="mr-2" src="/images/divisions/Metro.png" alt="LSSD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">MD: Deployment Log</span>
 					</a>
 				</li>
 			</ul>
