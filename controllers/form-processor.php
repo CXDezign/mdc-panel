@@ -866,6 +866,7 @@
 
 			$inputVehInsurance = $_POST['inputVehInsurance'] ?: false;
 			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?: $g->getUNIX('date');
+			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?: $g->getUNIX('time');
 
 			$inputReason = $_POST['inputReason'] ?: 0;
 			$inputFine = $_POST['inputFine'] ?: 0;
@@ -901,7 +902,7 @@
 
 			// Report Builder
 			$generatedReportType = 'Parking Ticket';
-			$generatedReport = $generatedReport = $officers.' on the <strong>'.strtoupper($postInputDate).'</strong>, <strong>'.$postInputTime.'</strong>.<br>Cited a <strong>'.$postInputVeh.'</strong>, '.$pg->getVehiclePlates($postInputVehPlate,0).', '.$pg->getVehicleRO($postInputVehRO).', on <strong>'.$postInputStreet.'</strong>, <strong>'.$postInputDistrict.'</strong>.<br>'.$insurance.'
+			$generatedReport = $generatedReport = $officers.' on the <strong>'.strtoupper($postInputDate).'</strong>, <strong>'.$postInputTime.'</strong>.<br>Cited a <strong>'.$postInputVeh.'</strong>, '.strtoupper($pg->getVehiclePlates($postInputVehPlate,0)).', '.$pg->getVehicleRO($postInputVehRO).', on <strong>'.$postInputStreet.'</strong>, <strong>'.$postInputDistrict.'</strong>.<br>'.$insurance.'
 				<br>
 				<strong>Citation Reason:</strong>
 				<ul><li><span style="color: #27ae60">IC 406. Illegal Parking</span> - <strong style="color: green;">$'.$inputFine.'</strong> - '.$pt->getIllegalParking($inputReason).'</li></ul>
