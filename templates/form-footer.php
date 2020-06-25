@@ -103,7 +103,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotOfficer').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						copySlotSelectPicker($('body').find($group+':last'));
 						initialiseTooltips();
@@ -131,7 +131,7 @@
 				let $count = 2;
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						var Last = $('body').find($group+':last');
 						Last.find("#inputCrime-").attr("id", "inputCrime-"+$count);
@@ -236,7 +236,7 @@
 				let $count = 0;
 
 				$($add).click(function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						var Last = $('body').find($group+':last');
 						Last.find("#inputCrime-").attr("id", "inputCrime-"+$count);
@@ -277,7 +277,7 @@
 
 				// Event - Generic
 				$($addGeneric).click(function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroupGeneric);
 						updateTime();
 						initialiseTooltips();
@@ -291,7 +291,7 @@
 
 				// Event - Traffic
 				$($addTraffic).click(function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroupTraffic);
 						updateTime();
 						initialiseTooltips();
@@ -305,7 +305,7 @@
 
 				// Event - Arrest
 				$($addArrest).click(function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroupArrest);
 						updateTime();
 						initialiseTooltips();
@@ -332,7 +332,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupItemRegistry').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						initialiseTooltips();
 					} else {
@@ -356,7 +356,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupEvidencePhotograph').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						initialiseTooltips();
 					} else {
@@ -382,7 +382,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupWitness').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length-1 < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						initialiseTooltips();
 					} else {
@@ -409,7 +409,7 @@
 				let $copyGroupBox = '<div class="form-row '+$class+'">'+$('.groupCopyBox').html()+'</div>';
 
 				$('body').on('click', $addImage, function() {
-					if ($('body').find($group).length-1 < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroupImage);
 						initialiseTooltips();
 					} else {
@@ -421,7 +421,7 @@
 				});
 
 				$('body').on('click', $addBox, function() {
-					if ($('body').find($group).length-1 < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroupBox);
 						initialiseTooltips();
 					} else {
@@ -439,7 +439,7 @@
 			// Traffic Division: Patrol Report Generator - Traffic Stops
 			(function() {
 				
-				let $maxSlots = 30;
+				let $maxSlots = 100;
 				let $group = '.groupSlotTDTrafficStop';
 				let $class = $group.replace('.', '');
 				let $add = '.addSlotTS';
@@ -447,7 +447,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotTDTrafficStop').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						initialiseTooltips();
 					} else {
@@ -499,7 +499,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotPlatoonTeamLeader').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						var Last = $('body').find($group+':last');
 						copySlotSelectPicker(Last);
@@ -525,7 +525,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotMetropolitanMembers').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						var Last = $('body').find($group+':last');
 						copySlotSelectPicker(Last);
@@ -551,7 +551,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupDeploymentEvent').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						initialiseTooltips();
 					} else {
@@ -575,7 +575,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotInjuredTeamMember').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length < $maxSlots) {
+					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						var Last = $('body').find($group+':last');
 						copySlotSelectPicker(Last);
