@@ -82,7 +82,7 @@
 					'rows' => '4',
 					'placeholder' => 'Videos, Photographs, Links, Audio Recordings / Transcripts, Witness Statements & Testimony',
 					'attributes' => '',
-					'hint' => '<strong>Required if suspect pleads No Contest or Not Guilty.</strong>'
+					'hint' => '<strong>Please provide any of the possible supporting evidence to assist the report. Videos, Photographs, Links, Audio Recordings / Transcripts, Witness Statements & Testimony</strong>'
 				));
 				// Form - Textbox - Dashboard Camera
 				$c->form('textbox', 'forms', array(
@@ -93,8 +93,8 @@
 					'name' => 'inputDashcam',
 					'rows' => '4',
 					'placeholder' => 'The dashboard camera captures audio and video footage showcasing...',
-					'attributes' => '',
-					'hint' => '<strong>Required if suspect pleads No Contest or Not Guilty and if dashboard camera recording is not available in the evidence section.</strong><hr>(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <strong style="color: darkred;">Lying in this section will lead to punishments</strong>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))'
+					'attributes' => 'required',
+					'hint' => '(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <strong style="color: darkred;">Lying in this section will lead to punishments</strong>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))'
 				));
 			?>
 		</div>
