@@ -7,7 +7,7 @@
 			"1": "Paperwork Generators - Added a missing district name from the district datalist. 'Vespucci' (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
 			"2": "Parking Ticket Generator - Fixed - FOR REAL NOW (no jokes) - the provided insurance expired time not showing up in the final generated report. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
 			"3": "Parking Ticket Generator - Vehicle plates will now automatically change to uppercase upon the generated report.",
-			"4": "Traffic Division: Patrol Report Generator - Increased limit from 30 to 100 after hitting XX traffic stops in one patrol.",
+			"4": "Traffic Division: Patrol Report Generator - Increased limit from 30 to 100 after hitting over 30 traffic stops in one patrol. (Credit: myself)",
 			"5": "Arrest Report Generator - The dashboard camera section is now required. No matter the plea of the suspect."
 		}
 	},
