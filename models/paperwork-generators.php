@@ -295,6 +295,7 @@ class PaperworkGenerators {
 			case 'vehiclesList':
 			case 'districtsList':
 			case 'streetsList':
+			case 'buildingsList':
 				$output = '';
 				$optionValue = false;
 				break;
@@ -322,7 +323,7 @@ class PaperworkGenerators {
 		} else {
 			$dashboardCamera = $input;
 		}
-		return '<strong style="color: #9944dd;">* '.$dashboardCamera.' *</strong>';
+		return '<strong style="color: #9944dd;">*</strong> '.$dashboardCamera.' <strong style="color: #9944dd;">*</strong>';
 	}
 
 	public function tintChooser() {
@@ -447,42 +448,42 @@ class ArrestReportGenerator extends PaperworkGenerators {
 
 		switch ($input) {
 			case 1:
-				$bracelet = 'White Bracelet';
+				$bracelet = 'White';
 				$color = '#808080';
 				break;
 			case 2:
-				$bracelet = 'Orange Bracelet';
+				$bracelet = 'Orange';
 				$color = '#FF8000';
 				break;
 			default:
-				$bracelet = 'UNKNOWN BRACELET';
+				$bracelet = 'UNKNOWN';
 				$color = 'inherit';
 				break;
 		}
-		return '<span style="color: '.$color.';">'.$bracelet.'</span>';
+		return '<span style="color: '.$color.';">'.$bracelet.'</span> Bracelet';
 	}
 
 	public function getWristband($input) {
 
 		switch ($input) {
 			case 1:
-				$wristband = 'Red Wristband';
+				$wristband = 'Red';
 				$color = '#C80000';
 				break;
 			case 2:
-				$wristband = 'Blue Wristband';
+				$wristband = 'Blue';
 				$color = '#0000C8';
 				break;
 			case 3:
-				$wristband = 'Yellow Wristband';
+				$wristband = 'Yellow';
 				$color = '#ffbf40';
 				break;
 			default:
-				$wristband = 'UNKNOWN WRISTBAND';
+				$wristband = 'UNKNOWN';
 				$color = 'inherit';
 				break;
 		}
-		return '<span style="color: '.$color.';">'.$wristband.'</span>';
+		return '<span style="color: '.$color.';">'.$wristband.'</span> Wristband';
 	}
 
 	public function getPlea($input, $suspect) {
@@ -497,11 +498,13 @@ class ArrestReportGenerator extends PaperworkGenerators {
 			case 3:
 				$plead = 'No Contest';
 				break;
+			case 4:
+				return '<strong>(( <span style="color: #9944dd;">* '.$suspect.' - Required Case *</span> ))</strong>';
 			default:
 				$plead = 'UNKNOWN PLEA';
 				break;
 		}
-		return '<strong>(( <span style="color: #9944dd;">* '.$suspect.' pleads '.$plead.' *</span> ))</strong>';
+		return '<strong style="color: #9944dd;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> at the district attorney office. <strong style="color: #9944dd;">* ))</strong>';
 	}
 
 }
