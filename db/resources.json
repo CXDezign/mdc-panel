@@ -40,9 +40,41 @@
 		"description": "Access the Los Santos Police Department Reports & Records."
 	},
 	"5": {
+		"type": "link",
+		"link": "url-post-arrest-submission",
+		"id": "card-main-penal",
+		"title": "Post-Arrest Submission Information",
+		"icon": "gavel",
+		"description": "Access the District Attorney's Office Post-Arrest Submission Information."
+	},
+	"6": {
+		"type": "link",
+		"link": "url-warrant-service",
+		"id": "card-main-penal",
+		"title": "Warrant Service",
+		"icon": "id-badge",
+		"description": "Access the Warrant Service section."
+	},
+	"7": {
 		"type": "copy",
 		"id": "mirandaRights",
 		"title": "Miranda Rights",
 		"text": "You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?"
+	},
+	"8": {
+		"type": "copy",
+		"id": "citationAppeal",
+		"title": "Citation Appeal",
+		"text": "Taking citations is not an admission of guilt, it is only an acknowledgement that they have been received. You have 72 hours to appeal the citation in traffic court or to pay the fine amount through the LSPD online portal."
+	},
+	"9": {
+		"type": "roleplay",
+		"id": "roleplayTowHook",
+		"title": "Tow Hook Roleplay",
+		"text": {
+			"0": "/me operates the lever on the rear-quarter panel of the tow truck, dropping the hook to the ground.",
+			"1": "/me collects the hook, crouching on the ground, attaching the hook to the undercarriage mounting point of the vehicle, checking the connection.",
+			"2": "/me pushes themself back up, operating the lever on the rear-quarter panel of the tow truck again, raising the hooked vehicle up."
+		}
 	}
 }

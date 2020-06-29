@@ -1,8 +1,8 @@
 <?php
 
-	$json = json_decode(file_get_contents("db/resources.json"), true);
+	$json = json_decode(file_get_contents('db/resources.json'), true);
 
-	$resources = "";
+	$resources = '';
 
 	foreach ($json as $resource) {
 
@@ -10,7 +10,7 @@
 		$resourceTitle = $resource['title'];
 		$resourceID = $resource['id'];
 
-		if ($resourceType == "link") {
+		if ($resourceType == 'link') {
 
 			$resourceLink = $resource['link'];
 			$resourceIcon = $resource['icon'];
@@ -27,7 +27,9 @@
 					</div>
 				</a>
 			</div>';
-		} elseif ($resourceType == "copy") {
+		}
+
+		if ($resourceType == 'copy') {
 
 			$resourceText = $resource['text'];
 
@@ -42,6 +44,26 @@
 						rows="4"
 						readonly>'.$resourceText.'</textarea>
 						<a class="btn btn-primary text-white" onclick="copy()" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.'</a>
+					</div>
+				</div>
+			</div>';
+
+		}
+
+		if ($resourceType == 'roleplay') {
+
+			$resourceText = $resource['text'];
+
+			$roleplayLines = '';
+			foreach ($resourceText as $roleplayLine) {
+				$roleplayLines .= '<textarea class="form-control textboxRP" readonly>'.$roleplayLine.'</textarea>';
+			}
+
+			$resources .= '<div class="grid-item">
+				<div class="card card-resource">
+					<div class="card-body">
+						<h5 class="card-title">'.$resourceTitle.'</h5>
+						'.$roleplayLines.'
 					</div>
 				</div>
 			</div>';

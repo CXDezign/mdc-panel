@@ -431,6 +431,10 @@ optgroup {
 	color: #fff !important;
 }
 
+.textboxRP {
+	margin-bottom: 10px;
+}
+
 /*//////////////
 // CHANGELOGS //
 //////////////*/
