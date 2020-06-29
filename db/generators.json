@@ -1,5 +1,13 @@
 {
 	"0": {
+		"title": "Profiling Samples",
+		"link": "/paperwork-generators/profiling-samples",
+		"tooltip": "Generate Profiling Samples (DNA & Fingerprints) records.",
+		"card": "card-generators-samples",
+		"iconType": "icon",
+		"icon": "dna"
+	},
+	"1": {
 		"title": "Arrest Charges Calculator",
 		"link": "/paperwork-generators/arrest-charges",
 		"tooltip": "Calculate sentences and generate an arrest report.",
@@ -7,7 +15,7 @@
 		"iconType": "icon",
 		"icon": "gavel"
 	},
-	"1": {
+	"2": {
 		"title": "Arrest Report",
 		"link": "/paperwork-generators/arrest-report",
 		"tooltip": "Generate an arrest report.",
@@ -15,7 +23,7 @@
 		"iconType": "icon",
 		"icon": "landmark"
 	},
-	"2": {
+	"3": {
 		"title": "Traffic Report",
 		"link": "/paperwork-generators/traffic-report",
 		"tooltip": "Generate a traffic report.",
@@ -23,7 +31,7 @@
 		"iconType": "icon",
 		"icon": "car"
 	},
-	"3": {
+	"4": {
 		"title": "Impound Report",
 		"link": "/paperwork-generators/impound-report",
 		"tooltip": "Generate an impound report.",
@@ -31,7 +39,7 @@
 		"iconType": "icon",
 		"icon": "truck-pickup"
 	},
-	"4": {
+	"5": {
 		"title": "Parking Ticket",
 		"link": "/paperwork-generators/parking-ticket",
 		"tooltip": "Generate a parking ticket.",
@@ -39,7 +47,7 @@
 		"iconType": "icon",
 		"icon": "parking"
 	},
-	"5": {
+	"6": {
 		"title": "Evidence Registration Log",
 		"link": "/paperwork-generators/evidence-registration-log",
 		"tooltip": "Generate an evidence registration log.",
@@ -47,7 +55,7 @@
 		"iconType": "icon",
 		"icon": "cannabis"
 	},
-	"6": {
+	"7": {
 		"title": "Patrol Log",
 		"link": "/paperwork-generators/patrol-log",
 		"tooltip": "Generate a patrol log.",
@@ -55,7 +63,7 @@
 		"iconType": "icon",
 		"icon": "clipboard-list"
 	},
-	"7": {
+	"8": {
 		"title": "Death Report",
 		"link": "/paperwork-generators/death-report",
 		"tooltip": "Generate a death report.",
@@ -63,7 +71,7 @@
 		"iconType": "icon",
 		"icon": "skull"
 	},
-	"8": {
+	"9": {
 		"title": "TD: Patrol Report",
 		"link": "/paperwork-generators/traffic-division-patrol-report",
 		"tooltip": "Generate a Traffic Division patrol report.",
@@ -71,20 +79,12 @@
 		"iconType": "image",
 		"icon": "/images/divisions/traffic.png"
 	},
-	"9": {
+	"10": {
 		"title": "MD: Deployment Log",
 		"link": "/paperwork-generators/metropolitan-division-deployment-log",
 		"tooltip": "Generate a Metropolitan Division deployment log.",
 		"card": "card-generators-mddeployment",
 		"iconType": "image",
 		"icon": "/images/divisions/metro.png"
-	},
-	"10": {
-		"title": "Profiling Samples",
-		"link": "/paperwork-generators/profiling-samples",
-		"tooltip": "Generate Profiling Samples (DNA & Fingerprints) records.",
-		"card": "card-generators-samples",
-		"iconType": "icon",
-		"icon": "dna"
 	}
 }
