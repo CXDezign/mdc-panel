@@ -165,7 +165,7 @@
 			// Vehicle Registered Resolver
 			$registered = '';
 			if (!$inputVehRegistered) {
-				$registered = 'The vehicle was <strong>registered</strong> to '.textBold(1, $inputVehRO).', with the identification plate reading '.textBold(1, $postInputVehPlate).'.<br>';
+				$registered = 'The vehicle was <strong>registered</strong> to '.textBold(1, $inputVehRO).', with the identification plate reading '.textBold(2, $postInputVehPlate).'.<br>';
 			} else {
 				$registered = 'The vehicle was <strong>unregistered</strong> at the time of the traffic stop.<br>';
 			}
