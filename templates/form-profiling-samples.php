@@ -46,7 +46,7 @@
 				'icon' => 'building',
 				'id' => 'inputBuilding',
 				'name' => 'inputBuilding',
-				'placeholder' => 'Twin-Tower Correctional Facility',
+				'placeholder' => 'Full Building Name',
 				'tooltip' => 'Location - Processing Police Building',
 				'attributes' => 'required',
 				'list' => 'building_list',
