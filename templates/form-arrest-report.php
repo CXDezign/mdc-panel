@@ -49,17 +49,17 @@
 		</div>
 		<div class="form-row">
 			<?php
-				// Form - Textbox - Narrative & Notes
+				// Form - Textbox - Arrest Narrative
 				$c->form('textbox', 'forms', array(
 					'size' => '12',
-					'label' => '<label>Narrative & Notes</label>',
+					'label' => '<label>Arrest Narrative</label>',
 					'icon' => 'clipboard',
 					'id' => 'inputNarrative',
 					'name' => 'inputNarrative',
 					'rows' => '4',
-					'placeholder' => 'Witnessed the suspect to be...',
+					'placeholder' => 'Arrest Narrative',
 					'attributes' => 'required',
-					'hint' => '<strong>Enter as much detail as possible in regards to the arrest, explaining all charges, and chronologically describing the situation events.</strong>'
+					'hint' => '<strong>Describe the events leading up to the arrest in third person and in chronological order, explaining all charges.</strong>'
 				));
 			?>
 		</div>
@@ -75,14 +75,14 @@
 				// Form - Textbox - Evidence
 				$c->form('textbox', 'forms', array(
 					'size' => '6',
-					'label' => '<label>Supporting Data</label>',
+					'label' => '<label>Supporting Evidence</label>',
 					'icon' => 'photo-video',
 					'id' => 'inputEvidence',
 					'name' => 'inputEvidence',
 					'rows' => '4',
 					'placeholder' => 'Videos, Photographs, Links, Audio Recordings / Transcripts, Witness Statements & Testimony',
 					'attributes' => '',
-					'hint' => '<strong>Please provide any of the possible supporting evidence to assist the report. Videos, Photographs, Links, Audio Recordings / Transcripts, Witness Statements & Testimony</strong>'
+					'hint' => '<strong>Provide supporting evidence to aid the arrest report.</strong>'
 				));
 				// Form - Textbox - Dashboard Camera
 				$c->form('textbox', 'forms', array(
@@ -94,7 +94,7 @@
 					'rows' => '4',
 					'placeholder' => 'The dashboard camera captures audio and video footage showcasing...',
 					'attributes' => 'required',
-					'hint' => '(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <strong style="color: darkred;">Lying in this section will lead to punishments</strong>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))'
+					'hint' => '<strong>Roleplay what the dashboard camera captures OR provide Streamable/YouTube links.<br>(( <strong style="color: darkred;">Lying in this section will lead to OOC punishments</strong> ))</strong>'
 				));
 			?>
 		</div>
@@ -115,9 +115,9 @@
 					'list' => $pg->listChooser('wristbandList'),
 					'hint' => '<span class="d-block text-center"><strong>N/A</strong>: Only when arresting at Level I Lockups.</span>
 					<hr>
-					<strong><span style="color: rgba(200,0,0,255)">Red Wristband</span></strong>: Any and all violent charges.<br>
-					<strong><span style="color: rgba(0,0,200,255)">Blue Wristband</span></strong>: Any and all non-violent charges.<br>
-					<strong><span style="color: #FFBF40;">Yellow Wristband</span></strong>: Any and all medical related concerns. (Terminally Ill, Contageous Disease, etc).',
+					<strong><span style="color: rgba(200,0,0,255)">Red Wristband</span></strong>: Violent charges.<br>
+					<strong><span style="color: rgba(0,0,200,255)">Blue Wristband</span></strong>: Non-violent charges.<br>
+					<strong><span style="color: #FFBF40;">Yellow Wristband</span></strong>: Medical related concerns. (Terminally Ill, Contageous Disease, etc).',
 					'hintClass' => 'text-left'
 				));
 				// Form - List - Bracelet
@@ -148,7 +148,7 @@
 					'attributes' => 'required',
 					'title' => 'Select Plea',
 					'list' => $pg->listChooser('pleaList'),
-					'hint' => 'Please remember to ask for the suspect&#39;s GTA:W forum name if pleading <strong>Not Guilty</strong> or <strong>No Contest</strong>.',
+					'hint' => 'Please remember to ask for the suspect&#39;s <strong>GTA:W</strong> forum name if pleading <strong>Not Guilty</strong>, <strong>No Contest</strong>, or <strong>Required Case</strong>.',
 					'hintClass' => 'text-center'
 				));
 			?>

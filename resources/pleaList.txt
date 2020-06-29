@@ -1,3 +1,4 @@
 Guilty
 Not Guilty
 No Contest
+Required Case
