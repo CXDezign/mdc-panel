@@ -60,14 +60,14 @@
 				// Form - Textbox - Narrative & Notes
 				$c->form('textbox', 'forms', array(
 					'size' => '6',
-					'label' => '<label>Narrative & Notes</label>',
+					'label' => '<label>Traffic Stop Narrative</label>',
 					'icon' => 'clipboard',
 					'id' => 'inputNarrative',
 					'name' => 'inputNarrative',
 					'rows' => '4',
 					'placeholder' => 'Witnessed the defendant to be...',
 					'attributes' => 'required',
-					'hint' => '<strong>Enter as much detail as possible in regards to the traffic stop, any particular events of interest which were witnessed, whether the defendant complied and was respectful.</strong>'
+					'hint' => '<strong>Describe the events leading up to the traffic stop in third person and in chronological order, explaining all charges.</strong>'
 				));
 				// Form - Textbox - Dashboard Camera
 				$c->form('textbox', 'forms', array(
@@ -77,9 +77,9 @@
 					'id' => 'inputDashcam',
 					'name' => 'inputDashcam',
 					'rows' => '4',
-					'placeholder' => 'The dashboard camera captures audio and video footage showcasing the defendant to be...',
+					'placeholder' => 'The dashboard camera captures audio and video footage showcasing...',
 					'attributes' => '',
-					'hint' => '<strong>(( Dashboard camera roleplay. - Do not include "/do" or " * ". - <strong style="color: darkred;">Lying in this section will lead to punishments</strong>. Enter as much detail as possible in regards to what the dashboard camera would capture on video and audio. ))</strong>'
+					'hint' => '<strong>Roleplay what the dashboard camera captures OR provide Streamable/YouTube links.<br>(( <strong style="color: darkred;">Lying in this section will lead to OOC punishments</strong> ))</strong>'
 				));
 			?>
 		</div>
