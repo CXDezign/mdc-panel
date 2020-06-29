@@ -78,5 +78,13 @@
 		"card": "card-generators-mddeployment",
 		"iconType": "image",
 		"icon": "/images/divisions/metro.png"
+	},
+	"10": {
+		"title": "Profiling Samples",
+		"link": "/paperwork-generators/profiling-samples",
+		"tooltip": "Generate Profiling Samples (DNA & Fingerprints) records.",
+		"card": "card-generators-samples",
+		"iconType": "icon",
+		"icon": "dna"
 	}
 }
