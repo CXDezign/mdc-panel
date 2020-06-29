@@ -169,6 +169,7 @@ var dataStreets = [
 	{"loc":[-62.2,-9.7], "title":"Swiss Street"},
 	{"loc":[-70.2,-36.5], "title":"Tackle Street"},
 	{"loc":[-56.5,11.6], "title":"Tangerine Street"},
+	{"loc":[-18.5,-57.8], "title":"Tongva Drive"},
 	{"loc":[-74.8,16.8], "title":"Tower Way"},
 	{"loc":[-71.8,-45.2], "title":"Tug Street"},
 	{"loc":[-64.0,23.7], "title":"Utopia Gardens"},
