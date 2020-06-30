@@ -61,7 +61,6 @@ select:invalid ~ .dropdown-toggle {
 
 ::selection {
 	background: rgba(200,200,200,.5);
-	border-radius: 5px;
 }
 
 /*/////////////////
