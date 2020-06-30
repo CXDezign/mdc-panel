@@ -1014,7 +1014,6 @@
 		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
 
 		// Redirect
-		
 		switch ($redirectPath) {
 			case 'report':
 				header('Location: /paperwork-generators/generated-report');
@@ -1034,7 +1033,6 @@
 	}
 
 	// Functions
-
 	function redirectPath($input) {
 
 		$output = '';
