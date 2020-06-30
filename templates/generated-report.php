@@ -25,7 +25,6 @@
 		<a class="btn btn-info px-5" target="_blank" href="https://mdc.gta.world/record/<?= $g->findCookie('defNameURL') ?>" role="button"><i class="fas fa-archive fa-fw mr-2"></i>Create Record: <?= $g->findCookie('defName') ?></a>
 	</div>
 </div>
-
 <script src="/js/clipboard.js"></script>
 <script>
 	var clipboard = new ClipboardJS('a');
@@ -54,12 +53,4 @@
 			}, 500);
 		});
 	});
-	function copy($input) {
-		var range = document.createRange();
-		range.selectNode(document.getElementById($input));
-		window.getSelection().removeAllRanges();
-		window.getSelection().addRange(range);
-		document.execCommand('copy');
-		window.getSelection().removeAllRanges();
-	}
 </script>

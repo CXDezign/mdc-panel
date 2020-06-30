@@ -17,13 +17,13 @@
 	<hr class="my-5">
 	<?php if ($title) { ?>
 	<div class="container mt-2 text-center">
-		<a tabindex="0" class="btn btn-primary px-5" onclick="copyThreadTitle()" data-toggle="tooltip" title="Copied!">
+		<a class="btn btn-primary px-5" data-clipboard-target="#generatedThreadTitle" data-toggle="tooltip" title="Copied!">
 			<i class="fas fa-copy fa-fw mr-2"></i>Copy <?= $type ?> Title
 		</a>
 	</div>
 	<?php } ?>
 	<div class="container mt-2 text-center">
-		<a tabindex="0" class="btn btn-primary px-5" onclick="copyThread()" data-toggle="tooltip" title="Copied!">
+		<a class="btn btn-primary px-5" data-clipboard-target="#generatedThread" data-toggle="tooltip" title="Copied!">
 			<i class="fas fa-copy fa-fw mr-2"></i>Copy <?= $type ?>
 		</a>
 	</div>
@@ -40,7 +40,18 @@
 		</a>
 	</div>
 </div>
+<script src="/js/clipboard.js"></script>
+<script>
+	var clipboard = new ClipboardJS('a');
 
+	clipboard.on('success', function(e) {
+	console.log(e);
+	});
+
+	clipboard.on('error', function(e) {
+	console.log(e);
+	});
+</script>
 <script>
 	$(document).ready(function(){
 		$('a[data-toggle="tooltip"]').tooltip({
@@ -57,12 +68,4 @@
 			}, 500);
 		});
 	});
-	function copyThreadTitle() {
-		document.getElementById("generatedThreadTitle").select();
-		document.execCommand("copy");
-	}
-	function copyThread() {
-		document.getElementById("generatedThread").select();
-		document.execCommand("copy");
-	}
 </script>

@@ -10,12 +10,13 @@
 			"4": "Traffic Report Generator - Reworked all hint messages for concise clarity.",
 			"5": "Traffic Report Generator - License plates will now display as uppercase letters once generated.",
 			"6": "Impound Report Generator - Added a generated title for the generated report screen. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)",
-			"11": "Paperwork Generators - Reordered the paperwork generator tabs.",
-			"12": "Generated Report Page - Cleaned up the page by removing unnecessary jargon, changed text boxes to be singular fields for titles only.",
-			"7": "Useful Resources - Added 'Post-Arrest Submission Information' & 'Warrant Service' link cards.",
-			"8": "Useful Resources - Added 'Citation Appeal' when handing out citations.",
-			"9": "Useful Resources - Added 'Tow Hook Roleplay' lines for quality of life.",
-			"10": "Street Guide - Added missing street to search 'Tongva Drive'."
+			"7": "Paperwork Generators - Reordered the paperwork generator tabs.",
+			"8": "Generated Report Page - Cleaned up the page by removing unnecessary jargon, changed text boxes to be singular fields for titles only.",
+			"9": "Generated Report & Thread Page - Changed copy functions.",
+			"10": "Useful Resources - Added 'Post-Arrest Submission Information' & 'Warrant Service' link cards.",
+			"11": "Useful Resources - Added 'Citation Appeal' when handing out citations.",
+			"12": "Useful Resources - Added 'Tow Hook Roleplay' lines for quality of life.",
+			"13": "Street Guide - Added missing street to search 'Tongva Drive'."
 		}
 	},
 	"1.15.3": {
