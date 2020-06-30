@@ -12,7 +12,7 @@ class General {
 			case 'site-name':
 				return 'MDC Panel';
 			case 'site-version':
-				return '1.15.3';
+				return '1.16.0';
 			case 'site-url':
 				return $_SERVER['SERVER_NAME'];
 			case 'site-logo':
@@ -45,6 +45,10 @@ class General {
 				return 'https://lspd.gta.world/viewtopic.php?f=20&t=1171';
 			case 'url-lspd-reports-records':
 				return 'https://lspd.gta.world/viewforum.php?f=434';
+			case 'url-post-arrest-submission':
+				return 'https://lspd.gta.world/viewtopic.php?f=1228&t=22822';
+			case 'url-warrant-service':
+				return 'https://lspd.gta.world/viewforum.php?f=806';
 			default:
 				break;
 		}

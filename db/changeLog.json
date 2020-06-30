@@ -1,4 +1,23 @@
 {
+	"1.16.0": {
+		"id": "1.16.0",
+		"date": "30/JUN/2020",
+		"changes": {
+			"0": "Sidebar - Added missing option 'Arrest Charges Calculator', added 'Profiling Samples Generator'.",
+			"1": "Profiling Samples Generator - Initial commit",
+			"2": "Arrest Report Generator - Added 'Required Case' plea for charges which require court cases.",
+			"3": "Arrest Report Generator - Reworked all hint messages for concise clarity.",
+			"4": "Traffic Report Generator - Reworked all hint messages for concise clarity.",
+			"5": "Traffic Report Generator - License plates will now display as uppercase letters once generated.",
+			"6": "Impound Report Generator - Added a generated title for the generated report screen. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)",
+			"11": "Paperwork Generators - Reordered the paperwork generator tabs.",
+			"12": "Generated Report Page - Cleaned up the page by removing unnecessary jargon, changed text boxes to be singular fields for titles only.",
+			"7": "Useful Resources - Added 'Post-Arrest Submission Information' & 'Warrant Service' link cards.",
+			"8": "Useful Resources - Added 'Citation Appeal' when handing out citations.",
+			"9": "Useful Resources - Added 'Tow Hook Roleplay' lines for quality of life.",
+			"10": "Street Guide - Added missing street to search 'Tongva Drive'."
+		}
+	},
 	"1.15.3": {
 		"id": "1.15.3",
 		"date": "25/JUN/2020",
