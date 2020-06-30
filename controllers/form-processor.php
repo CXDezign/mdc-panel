@@ -97,7 +97,6 @@
 		$generatedReport = '';
 		$generatedThreadURL = '';
 		$generatedThreadTitle = '';
-		$showGeneratedThreadTitle = false;
 		$showGeneratedArrestChargeTables = false;
 		$generatedArrestChargeList = '';
 		$generatedArrestChargeTotals = '';
@@ -322,7 +321,6 @@
 			// Report Builder
 			$redirectPath = redirectPath(2);
 			$generatedReportType = 'Death Report';
-			$showGeneratedThreadTitle = true;
 			$generatedThreadURL = 'https://lspd.gta.world/posting.php?mode=post&f=1356';
 			$generatedThreadTitle = $inputDeathName.' - '.strtoupper($postInputDate).' - '.$postInputStreet.', '.$postInputDistrict;
 			$generatedReport = '
@@ -394,7 +392,6 @@
 			// Report Builder
 			$redirectPath = redirectPath(2);
 			$generatedReportType = 'Evidence Registration Log';
-			$showGeneratedThreadTitle = true;
 			$generatedThreadURL = 'https://lspd.gta.world/posting.php?mode=post&f=388';
 			$generatedThreadTitle = '['.$er->getItemCategory($inputItemCategory).'] '.$inputSuspectName.' ['.strtoupper($postInputDate).']';
 			$generatedReport = '
@@ -873,6 +870,7 @@
 
 			// Report Builder
 			$redirectPath = redirectPath(1);
+			$generatedThreadTitle = $postInputVeh.' - '.$postInputVehPlate;
 			$generatedReportType = 'Impound Report';
 			$generatedReport = $officers.' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Impounded a '.textBold(1, $postInputVeh).', '.$pg->getVehiclePlates($postInputVehPlate,0).', for '.textBold(1, $inputDuration).' days, '.$pg->getVehicleRO($postInputVehRO).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>
 
@@ -956,7 +954,6 @@
 			// Report Builder
 			$redirectPath = redirectPath(2);
 			$generatedReportType = 'Metropolitan Division: Deployment Log';
-			$showGeneratedThreadTitle = true;
 			$generatedThreadURL = 'https://lspd.gta.world/viewforum.php?f=646';
 			$generatedThreadTitle = strtoupper($postInputDate);
 			$generatedReport = '[divbox2=white][center]
@@ -1011,7 +1008,6 @@
 		$_SESSION['generatedReport'] = $generatedReport;
 		$_SESSION['generatedReportType'] = $generatedReportType;
 		$_SESSION['generatedThreadTitle'] = $generatedThreadTitle;
-		$_SESSION['showGeneratedThreadTitle'] = $showGeneratedThreadTitle;
 		$_SESSION['generatedThreadURL'] = $generatedThreadURL;
 		$_SESSION['showGeneratedArrestChargeTables'] = $showGeneratedArrestChargeTables;
 		$_SESSION['generatedArrestChargeList'] = $generatedArrestChargeList;

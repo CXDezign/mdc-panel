@@ -1,13 +1,12 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1 class="my-3">Generated <?= $type ?></h1>
-	<h4><i class="fas fa-code fa-fw mr-2"></i>BBCode</h4>
-	<?php if ($showTitle) { ?>
-		<textarea
+	<?php if ($title) { ?>
+		<input
 			class="form-control shadow mb-3"
 			id="generatedThreadTitle"
 			name="generatedThreadTitle"
-			rows="1"
-			readonly><?= $title ?></textarea>
+			value="<?= $title ?>"
+			readonly>
 	<?php } ?>
 	<textarea
 		class="form-control shadow mb-5"
@@ -16,7 +15,7 @@
 		rows="15"
 		readonly><?= $report ?></textarea>
 	<hr class="my-5">
-	<?php if ($showTitle) { ?>
+	<?php if ($title) { ?>
 	<div class="container mt-2 text-center">
 		<a tabindex="0" class="btn btn-primary px-5" onclick="copyThreadTitle()" data-toggle="tooltip" title="Copied!">
 			<i class="fas fa-copy fa-fw mr-2"></i>Copy <?= $type ?> Title
@@ -32,7 +31,7 @@
 		<a class="btn btn-info px-5" target="_blank" href="<?= $threadURL ?>" role="button">
 			<i class="fas fa-archive fa-fw mr-2"></i>
 			<?php
-				if ($showTitle == 1) {
+				if ($title == 1) {
 					echo 'Create '.$type.' Thread';
 				} else {
 				 	echo 'Post '.$type;
