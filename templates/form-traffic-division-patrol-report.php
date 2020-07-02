@@ -105,6 +105,105 @@
 		?>
 		</div>
 		<hr>
+		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Targeted Enforcement</h4>
+		<div class="form-row groupSlotTDEnforcementSpeed">
+		<?php
+			// Form - Datalist - Speed Enforcement
+			$c->form('datalist', 'forms', array(
+				'size' => '4',
+				'label' => '<label>Speed Enforcement</label>',
+				'icon' => 'tachometer-alt',
+				'id' => 'inputEnforcementSpeed',
+				'name' => 'inputEnforcementSpeed[]',
+				'placeholder' => 'Street, Cross-Street',
+				'tooltip' => 'E.g. Popular Street',
+				'attributes' => '',
+				'list' => 'street_list',
+				'listChooser' => $pg->listChooser('streetsList')
+			));
+			// Form - Options Add - Speed Enforcement Slot
+			$c->form('options', 'forms', array(
+				'size' => '3',
+				'label' => '<label>Options</label>',
+				'action' => 'addEnforcementSpeed',
+				'colour' => 'success',
+				'icon' => 'fa-plus-square',
+				'text' => 'Speed Enforcement'
+			));
+		?>
+		</div>
+		<div class="form-row groupSlotTDEnforcementParking">
+		<?php
+			// Form - Datalist - Parking Enforcement
+			$c->form('datalist', 'forms', array(
+				'size' => '4',
+				'label' => '<label>Parking Enforcement</label>',
+				'icon' => 'parking',
+				'id' => 'inputEnforcementParking',
+				'name' => 'inputEnforcementParking[]',
+				'placeholder' => 'Street, Cross-Street',
+				'tooltip' => 'E.g. Popular Street',
+				'attributes' => '',
+				'list' => 'street_list',
+				'listChooser' => $pg->listChooser('streetsList')
+			));
+			// Form - Options Add - Parking Enforcement Slot
+			$c->form('options', 'forms', array(
+				'size' => '3',
+				'label' => '<label>Options</label>',
+				'action' => 'addEnforcementParking',
+				'colour' => 'success',
+				'icon' => 'fa-plus-square',
+				'text' => 'Parking Enforcement'
+			));
+		?>
+		</div>
+		<div class="form-row groupSlotTDEnforcementYielding">
+		<?php
+			// Form - Datalist - Yielding Enforcement
+			$c->form('datalist', 'forms', array(
+				'size' => '4',
+				'label' => '<label>Yielding Enforcement</label>',
+				'icon' => 'traffic-light',
+				'id' => 'inputEnforcementYielding',
+				'name' => 'inputEnforcementYielding[]',
+				'placeholder' => 'Street, Cross-Street',
+				'tooltip' => 'E.g. Popular Street',
+				'attributes' => '',
+				'list' => 'street_list',
+				'listChooser' => $pg->listChooser('streetsList')
+			));
+			// Form - Options Add - Yielding Enforcement Slot
+			$c->form('options', 'forms', array(
+				'size' => '3',
+				'label' => '<label>Options</label>',
+				'action' => 'addEnforcementYield',
+				'colour' => 'success',
+				'icon' => 'fa-plus-square',
+				'text' => 'Yielding Enforcement'
+			));
+		?>
+		</div>
+		<div class="form-row">
+		<?php
+			// Form - Textfield - Group Operation
+			$c->form('textfield', 'forms', array(
+				'size' => '12',
+				'type' => 'text',
+				'label' => '<label>Group Operation URL</label>',
+				'icon' => 'users',
+				'class' => '',
+				'id' => 'inputGroupOperationURL',
+				'name' => 'inputGroupOperationURL',
+				'value' => '',
+				'placeholder' => 'Direct URL to the group operation thread.',
+				'tooltip' => 'URL',
+				'attributes' => '',
+				'style' => ''
+			));
+		?>
+		</div>
+		<hr>
 		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Notes & Other Details</h4>
 		<div class="form-row">
 		<?php
@@ -143,7 +242,6 @@
 		?>
 	</form>
 </div>
-
 <!-- COPY SLOTS -->
 <div class="form-row copyGroupSlotModel" style="display: none;">
 <?php
@@ -203,6 +301,87 @@
 		'colour' => 'danger',
 		'icon' => 'fa-minus-square',
 		'text' => 'Traffic Stop'
+	));
+?>
+</div>
+<!-- COPY SLOT - ENFORCEMENT SPEED -->
+<div class="container copyGroupSlotEnforcementSpeed" style="display: none;">
+<?php
+	// Form - Datalist - Speed Enforcement
+	$c->form('datalist', 'forms', array(
+		'size' => '4',
+		'label' => '',
+		'icon' => 'tachometer-alt',
+		'id' => 'inputEnforcementSpeed',
+		'name' => 'inputEnforcementSpeed[]',
+		'placeholder' => 'Street, Cross-Street',
+		'tooltip' => 'E.g. Popular Street',
+		'attributes' => '',
+		'list' => 'street_list',
+		'listChooser' => $pg->listChooser('streetsList')
+	));
+	// Form - Options Remove - Speed Enforcement Slot
+	$c->form('options', 'forms', array(
+		'size' => '3',
+		'label' => '',
+		'action' => 'removeEnforcementSpeed',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square',
+		'text' => 'Speed Enforcement'
+	));
+?>
+</div>
+<!-- COPY SLOT - ENFORCEMENT PARKING -->
+<div class="container copyGroupSlotEnforcementParking" style="display: none;">
+<?php
+	// Form - Datalist - Parking Enforcement
+	$c->form('datalist', 'forms', array(
+		'size' => '4',
+		'label' => '',
+		'icon' => 'parking',
+		'id' => 'inputEnforcementParking',
+		'name' => 'inputEnforcementParking[]',
+		'placeholder' => 'Street, Cross-Street',
+		'tooltip' => 'E.g. Popular Street',
+		'attributes' => '',
+		'list' => 'street_list',
+		'listChooser' => $pg->listChooser('streetsList')
+	));
+	// Form - Options Remove - Parking Enforcement Slot
+	$c->form('options', 'forms', array(
+		'size' => '3',
+		'label' => '',
+		'action' => 'removeEnforcementParking',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square',
+		'text' => 'Parking Enforcement'
+	));
+?>
+</div>
+<!-- COPY SLOT - ENFORCEMENT YIELDING -->
+<div class="container copyGroupSlotEnforcementYielding" style="display: none;">
+<?php
+	// Form - Datalist - Yielding Enforcement
+	$c->form('datalist', 'forms', array(
+		'size' => '4',
+		'label' => '',
+		'icon' => 'traffic-light',
+		'id' => 'inputEnforcementYielding',
+		'name' => 'inputEnforcementYielding[]',
+		'placeholder' => 'Street, Cross-Street',
+		'tooltip' => 'E.g. Popular Street',
+		'attributes' => '',
+		'list' => 'street_list',
+		'listChooser' => $pg->listChooser('streetsList')
+	));
+	// Form - Options Remove - Yielding Enforcement Slot
+	$c->form('options', 'forms', array(
+		'size' => '3',
+		'label' => '',
+		'action' => 'removeEnforcementYield',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square',
+		'text' => 'Yielding Enforcement'
 	));
 ?>
 </div>

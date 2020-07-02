@@ -422,8 +422,11 @@
 		if ($generatorType == 'TrafficDivisionPatrolReport') {
 
 			// Array Maps
-			$inputNameTS = arrayMap($_POST['inputNameTS'], $defaultName);
-			$inputCitationsTS = arrayMap($_POST['inputCitationsTS'], 0);
+			$inputNameTS = arrayMap($_POST['inputNameTS'] ?? array(), $defaultName);
+			$inputCitationsTS = arrayMap($_POST['inputCitationsTS'] ?? array(), 0);
+			$inputEnforcementSpeed = array_filter($_POST['inputEnforcementSpeed']);
+			$inputEnforcementParking = array_filter($_POST['inputEnforcementParking']);
+			$inputEnforcementYielding = array_filter($_POST['inputEnforcementYielding']);
 
 			// Variables
 			$inputDateFrom = $_POST['inputDateFrom'] ?: $g->getUNIX('date');
@@ -431,10 +434,11 @@
 			$inputTimeFrom = $_POST['inputTimeFrom'] ?: $g->getUNIX('time');
 			$inputTimeTo = $_POST['inputTimeTo'] ?: $g->getUNIX('time');
 			$inputPatrolVehicle = $_POST['inputPatrolVehicle'] ?: false;
-			$inputVehicleModel = $_POST['inputVehicleModel'] ?: $defaultVehicle;
+			$inputVehicleModel = $_POST['inputVehicleModel'] ?? $defaultVehicle;
 			$inputVehicleImpounds = $_POST['inputVehicleImpounds'] ?: '0';
 			$inputTrafficAssists = $_POST['inputTrafficAssists'] ?: '0';
 			$inputTrafficInvestigations = $_POST['inputTrafficInvestigations'] ?: '0';
+			$inputGroupOperationURL = $_POST['inputGroupOperationURL'] ?: '';
 			$inputNotes = $_POST['inputNotes'] ?: 'N/A';
 			$inputTDPatrolReportURL = $_POST['inputTDPatrolReportURL'] ?: 'https://lspd.gta.world/viewforum.php?f=101';
 
@@ -470,6 +474,39 @@
 
 			}
 
+			// Enforcement Resolver
+			$enforcementSpeed = '';
+			if ($inputEnforcementSpeed) {
+				$enforcementSpeedEntries = '';
+				foreach ($inputEnforcementSpeed as $enforcementSpeedEntry) {
+					$enforcementSpeedEntries .= '[*]'.$enforcementSpeedEntry;
+				}
+				$enforcementSpeed = '[*][cbc]Speed Enforcement[list=circle]'.$enforcementSpeedEntries.'[/list]';
+			}
+
+			$enforcementParking = '';
+			if ($inputEnforcementParking) {
+				$enforcementParkingEntries = '';
+				foreach ($inputEnforcementParking as $enforcementParkingEntry) {
+					$enforcementParkingEntries .= '[*]'.$enforcementParkingEntry;
+				}
+				$enforcementParking = '[*][cbc]Parking Enforcement[list=circle]'.$enforcementParkingEntries.'[/list]';
+			}
+
+			$enforcementYielding = '';
+			if ($inputEnforcementYielding) {
+				$enforcementYieldingEntries = '';
+				foreach ($inputEnforcementYielding as $enforcementYieldingEntry) {
+					$enforcementYieldingEntries .= '[*]'.$enforcementYieldingEntry;
+				}
+				$enforcementYielding = '[*][cbc]Failure to Yield Enforcement[list=circle]'.$enforcementYieldingEntries.'[/list]';
+			}
+
+			$groupOperationURL = '';
+			if ($inputGroupOperationURL) {
+				$groupOperationURL = '[*][cbc]Group Operation: [url='.$inputGroupOperationURL.']REPORT[/url]';
+			}
+
 			// Report Builder
 			$redirectPath = redirectPath(2);
 			$generatedReportType = 'Traffic Division: Patrol Report';
@@ -493,6 +530,14 @@
 				[b]Vehicles Impounded:[/b] '.$inputVehicleImpounds.'
 				[b]Traffic Assists:[/b] '.$inputTrafficAssists.'
 				[b]Traffic Investigations:[/b] '.$inputTrafficInvestigations.'
+
+				[b]Targeted Enforcement Undertaken:[/b]
+				[list=circle]
+				'.$enforcementSpeed.'
+				'.$enforcementParking.'
+				'.$enforcementYielding.'
+				'.$groupOperationURL.'
+				[/list]
 
 				[b]Notes (Optional):[/b] ' . $inputNotes . '
 				[/divbox2]';

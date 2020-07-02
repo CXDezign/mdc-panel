@@ -486,6 +486,79 @@
 
 			})();
 
+			// Traffic Division: Patrol Report Generator - Enforcement Speed
+			(function() {
+				
+				let $maxSlots = 15;
+				let $group = '.groupSlotTDEnforcementSpeed';
+				let $class = $group.replace('.', '');
+				let $add = '.addEnforcementSpeed';
+				let $remove = '.removeEnforcementSpeed';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotEnforcementSpeed').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Traffic Division: Patrol Report Generator - Enforcement Parking
+			(function() {
+				
+				let $maxSlots = 15;
+				let $group = '.groupSlotTDEnforcementParking';
+				let $class = $group.replace('.', '');
+				let $add = '.addEnforcementParking';
+				let $remove = '.removeEnforcementParking';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotEnforcementParking').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Traffic Division: Patrol Report Generator - Enforcement Yielding
+			(function() {
+				
+				let $maxSlots = 15;
+				let $group = '.groupSlotTDEnforcementYielding';
+				let $class = $group.replace('.', '');
+				let $add = '.addEnforcementYield';
+				let $remove = '.removeEnforcementYield';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotEnforcementYielding').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+
 		// Metropolitan Division: Deployment Log Generator
 
 			// Metropolitan Division: Deployment Log Generator - Team Leader Slots
