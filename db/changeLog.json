@@ -3,8 +3,8 @@
 		"id": "1.16.2",
 		"date": "03/JUL/2020",
 		"changes": {
-			"1": "Parking Ticket Generator - ",
-			"13": "Street Guide - Added missing district to search 'Legion Square'.",
+			"1": "Parking Ticket Generator - Added the ability to select multiple reasons for illegal parking.",
+			"2": "Street Guide - Added missing district to search 'Legion Square'."
 		}
 	},
 	"1.16.1": {
