@@ -1,4 +1,12 @@
 {
+	"1.16.2": {
+		"id": "1.16.2",
+		"date": "03/JUL/2020",
+		"changes": {
+			"1": "Parking Ticket Generator - ",
+			"13": "Street Guide - Added missing district to search 'Legion Square'.",
+		}
+	},
 	"1.16.1": {
 		"id": "1.16.1",
 		"date": "02/JUL/2020",
