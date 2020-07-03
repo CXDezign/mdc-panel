@@ -853,9 +853,10 @@
 
 			// Variables
 			$inputVehInsurance = $_POST['inputVehInsurance'] ?: false;
-			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?: $g->getUNIX('date');
-			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?: $g->getUNIX('time');
-			$inputReason = $_POST['inputReason'] ?: 0;
+			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?? $g->getUNIX('date');
+			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?? $g->getUNIX('time');
+			$inputReason = $_POST['inputReason'] ?? array();
+			$inputReason = array_values(array_filter($inputReason));
 			$inputFine = $_POST['inputFine'] ?: 0;
 
 			// Set Cookies
@@ -884,16 +885,18 @@
 			$officers = resolverOfficer($postInputName, $postInputRank, $postInputBadge);
 
 			// Parking Ticket Resolver
-			$reason = $pt->getIllegalParking($inputReason);
-			$statement = '';
+			$statementReason = '';
+			foreach ($inputReason as $reason) {
+				$statementReason .= '<li>'.$pt->getIllegalParking($reason).'</li>';
+			}
 
 			// Report Builder
 			$redirectPath = redirectPath(1);
 			$generatedReportType = 'Parking Ticket';
 			$generatedReport = $generatedReport = $officers.' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Cited a '.textBold(1, $postInputVeh).', '.$pg->getVehiclePlates($postInputVehPlate,0).', '.$pg->getVehicleRO($postInputVehRO).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>'.$insurance.'
 				<br>
-				<strong>Citation Reason:</strong>
-				<ul><li><span style="color: #27ae60">IC 406. Illegal Parking</span> - <strong style="color: green;">$'.$inputFine.'</strong> - '.$pt->getIllegalParking($inputReason).'</li></ul>
+				<strong>Citation Reason:</strong> <span style="color: #27ae60">IC 406. Illegal Parking</span> - <strong style="color: green;">$'.$inputFine.'</strong>
+				<ul>'.$statementReason.'</ul>
 				<strong>Evidence:</strong><br>'.$evidence;
 
 		}
