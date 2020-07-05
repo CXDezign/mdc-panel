@@ -856,7 +856,7 @@
 			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?? $g->getUNIX('date');
 			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?? $g->getUNIX('time');
 			$inputReason = $_POST['inputReason'] ?? array();
-			$inputReason = array_values(array_filter($inputReason));
+			$inputReason = array_values($inputReason);
 			$inputCrime = arrayMap($_POST['inputCrime'], 'UNKNOWN CHARGE');
 			$inputCrimeClass = arrayMap($_POST['inputCrimeClass'], 0);
 			$inputCrimeFine = arrayMap($_POST['inputCrimeFine'], 0);
@@ -1083,6 +1083,7 @@
 		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
 
 		// Redirect
+		
 		switch ($redirectPath) {
 			case 'report':
 				header('Location: /paperwork-generators/generated-report');
