@@ -6,7 +6,7 @@
 			"0": "Paperwork Generators - Penal code changes 'Vandalism' now has a $2,500 fine.",
 			"1": "Parking Ticket Generator - Added citations section for selecting multiple citations (Specifically to allow both 406 & 420 charges).",
 			"2": "Parking Ticket Generator - Changed the grouping and order of the listed reasons for parking ticket reasonings.",
-			"2": "Traffic Report Generator - Updated hint message stylings."
+			"3": "Traffic Report Generator - Updated hint message stylings."
 		}
 	},
 	"1.16.2": {
