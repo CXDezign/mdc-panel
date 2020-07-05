@@ -67,7 +67,7 @@
 					'rows' => '4',
 					'placeholder' => 'Witnessed the defendant to be...',
 					'attributes' => 'required',
-					'hint' => '<strong>Describe the events leading up to the traffic stop in third person and in chronological order, explaining all charges.</strong>'
+					'hint' => '<small>Describe the events leading up to the traffic stop in third person and in chronological order, explaining all charges.</small>'
 				));
 				// Form - Textbox - Dashboard Camera
 				$c->form('textbox', 'forms', array(
@@ -79,7 +79,7 @@
 					'rows' => '4',
 					'placeholder' => 'The dashboard camera captures audio and video footage showcasing...',
 					'attributes' => '',
-					'hint' => '<strong>Roleplay what the dashboard camera captures OR provide Streamable/YouTube links.<br>(( <strong style="color: darkred;">Lying in this section will lead to OOC punishments</strong> ))</strong>'
+					'hint' => '<small>Roleplay what the dashboard camera captures OR provide Streamable/YouTube links.<br>(( <strong style="color: darkred;">Lying in this section will lead to OOC punishments</strong> ))</small>'
 				));
 			?>
 		</div>
