@@ -1,17 +1,17 @@
-Select Reason
+Failed to pay vehicular insurance within the time required by law on any public road.
+Next to a fire hydrant, and/or on a firelane marked by red lines.
 Facing opposing traffic.
+Inside any tunnel.
+On any freeway.
+On a bridge outside of the City of Los Santos.
 In a fashion which blocks the flow of traffic.
 In a manner that obstructs a lane of traffic and prevents traffic from properly flowing.
 In a manner that obstructs an alleyway used by traffic and prevents traffic from entering and/or exiting the alleyway.
-No insurance on public property.
 In a manner that obstructs a parking lot and prevents vehicles from leaving or entering the lot.
-Next to a fire hydrant, and/or on a firelane marked by red lines.
-On a bridge outside of the City of Los Santos or inside of any tunnel.
-On any freeway.
-On or within range of railroad tracks, where such a range poses the risk of the vehicle being struck by any railroad cars.
-In the immediate ambulatory parking or bay area of a hospital or clinic.
-In the immediate vicinity of the Bank's entrance, including the sidewalk adjacent to the metal barriers.
 In front of or obstructing a private driveway or an entrance or exit to a private road or path.
-On any sidewalk that completely obstructs pedestrian foot traffic, or on any median.
+In the immediate ambulatory parking or bay area of a hospital or clinic.
+On or within range of railroad tracks, where such a range poses the risk of the vehicle being struck by any railroad cars.
 Within a marked crosswalk.
 On any part of a sidewalk.
+On any sidewalk that completely obstructs pedestrian foot traffic, or on any median.
+In the immediate vicinity of the Bank's entrance, including the sidewalk adjacent to the metal barriers.

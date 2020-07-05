@@ -356,7 +356,7 @@
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupEvidencePhotograph').html()+'</div>';
 
 				$('body').on('click', $add, function() {
-					if ($('body').find($group).length <= $maxSlots) {
+					if ($('body').find($group).length < $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						initialiseTooltips();
 					} else {

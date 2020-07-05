@@ -63,39 +63,82 @@
 			?>
 		</div>
 		<hr>
-		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Citation Details</h4>
+		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
+		<div class="form-row groupSlotCitation crimeSelectorGroup">
+		<?php
+			// Form - List - Citation
+			$c->form('list', 'forms', array(
+				'size' => '6',
+				'label' => '<label>Charge</label>',
+				'icon' => 'gavel',
+				'class' => 'selectpicker inputCrimeSelector',
+				'id' => 'inputCrime-1',
+				'name' => 'inputCrime[]',
+				'attributes' => 'required data-live-search="true"',
+				'title' => 'Select Charge',
+				'list' => $pg->chargeChooser(),
+				'hint' => '',
+				'hintClass' => ''
+			));
+			// Form - List - Citation Class
+			$c->form('list', 'forms', array(
+				'size' => '2',
+				'label' => '<label>Class</label>',
+				'icon' => 'ellipsis-v',
+				'class' => 'selectpicker inputCrimeClassSelector',
+				'id' => 'inputCrimeClass-1',
+				'name' => 'inputCrimeClass[]',
+				'attributes' => 'required',
+				'title' => 'Select Class',
+				'list' => '',
+				'hint' => '',
+				'hintClass' => ''
+			));
+			// Form - Textfield - Citation Fine
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'number',
+				'label' => '<label>Fine</label>',
+				'icon' => 'dollar-sign',
+				'class' => '',
+				'id' => 'inputCrimeFine',
+				'name' => 'inputCrimeFine[]',
+				'value' => '',
+				'placeholder' => '####',
+				'tooltip' => 'Leave empty if no fine.',
+				'attributes' => '',
+				'style' => 'text-transform: uppercase;'
+			));
+			// Form - Options Add - Citation
+			$c->form('options', 'forms', array(
+				'size' => '2',
+				'label' => '<label>Options</label>',
+				'action' => 'addCitation',
+				'colour' => 'success',
+				'icon' => 'fa-plus-square',
+				'text' => 'Citation'
+			));
+		?>
+		</div>
+		<hr>
+		<h4><i class="fas fa-fw fa-parking mr-2"></i>Parking Ticket Details</h4>
 		<div class="form-row">
-			<?php
-				// Form - List - Citation Reason
-				$c->form('list', 'forms', array(
-					'size' => '10',
-					'label' => '<label>Reason</label>',
-					'icon' => 'gavel',
-					'class' => 'selectpicker',
-					'id' => 'inputReason',
-					'name' => 'inputReason[]',
-					'attributes' => 'required multiple data-live-search="true"',
-					'title' => 'Select Parking Ticket Reason',
-					'list' => $pt->illegalParkingChooser(),
-					'hint' => '',
-					'hintClass' => ''
-				));
-				// Form - Textfield - Citation Fine
-				$c->form('textfield', 'forms', array(
-					'size' => '2',
-					'type' => 'number',
-					'label' => '<label>Fine</label>',
-					'icon' => 'dollar-sign',
-					'class' => '',
-					'id' => 'inputFine',
-					'name' => 'inputFine',
-					'value' => '',
-					'placeholder' => '####',
-					'tooltip' => '$2,500 limit.',
-					'attributes' => 'required',
-					'style' => 'text-transform: uppercase;'
-				));
-			?>
+		<?php
+			// Form - List - Citation Reason
+			$c->form('list', 'forms', array(
+				'size' => '12',
+				'label' => '<label>Parking Ticket Reason(s)</label>',
+				'icon' => 'gavel',
+				'class' => 'selectpicker',
+				'id' => 'inputReason',
+				'name' => 'inputReason[]',
+				'attributes' => 'required multiple data-live-search="true"',
+				'title' => 'Select Parking Ticket Reason',
+				'list' => $pt->illegalParkingChooser(),
+				'hint' => '<small>Select multiple if applicable.</small>',
+				'hintClass' => ''
+			));
+		?>
 		</div>
 		<?php
 			// Form - Submit
@@ -128,7 +171,7 @@
 		'id' => 'inputEvidenceImage',
 		'name' => 'inputEvidenceImage[]',
 		'value' => '',
-		'placeholder' => 'https://imgur.com',
+		'placeholder' => 'https://i.imgur.com/example.png',
 		'tooltip' => 'Enter the direct URL to the photograph.',
 		'attributes' => 'required',
 		'style' => ''
@@ -141,6 +184,63 @@
 		'colour' => 'danger',
 		'icon' => 'fa-minus-square',
 		'text' => 'Photograph'
+	));
+?>
+</div>
+<!-- COPY SLOT - CITATION -->
+<div class="container copyGroupSlotCitation" style="display: none;">
+<?php
+	// Form - List - Citation
+	$c->form('list', 'forms', array(
+		'size' => '6',
+		'label' => '',
+		'icon' => 'gavel',
+		'class' => 'select-picker-copy inputCrimeSelector',
+		'id' => 'inputCrime-',
+		'name' => 'inputCrime[]',
+		'attributes' => 'required data-live-search="true"',
+		'title' => 'Select Charge',
+		'list' => $pg->chargeChooser(),
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - List - Citation Class
+	$c->form('list', 'forms', array(
+		'size' => '2',
+		'label' => '',
+		'icon' => 'ellipsis-v',
+		'class' => 'select-picker-copy inputCrimeClassSelector',
+		'id' => 'inputCrimeClass-',
+		'name' => 'inputCrimeClass[]',
+		'attributes' => 'required',
+		'title' => 'Select Class',
+		'list' => '',
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - Textfield - Citation Fine
+	$c->form('textfield', 'forms', array(
+		'size' => '2',
+		'type' => 'number',
+		'label' => '',
+		'icon' => 'dollar-sign',
+		'class' => '',
+		'id' => 'inputCrimeFine',
+		'name' => 'inputCrimeFine[]',
+		'value' => '',
+		'placeholder' => '####',
+		'tooltip' => 'Leave empty if no fine.',
+		'attributes' => '',
+		'style' => 'text-transform: uppercase;'
+	));
+	// Form - Options Remove - Citation
+	$c->form('options', 'forms', array(
+		'size' => '2',
+		'label' => '',
+		'action' => 'removeCitation',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square',
+		'text' => 'Citation'
 	));
 ?>
 </div>

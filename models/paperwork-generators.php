@@ -528,46 +528,40 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 		$illegalParkingReasons = file ('resources/illegalParkingList.txt');
 		$illegalParkingReasonsCount = 0;
 
-		$groupTrafficRelated = '';
+		$groupVehicleStatus = '';
 		$groupParkingRelated = '';
-		$groupTransportRelated = '';
-		$groupPropertyRelated = '';
-		$groupPedestrianTraffic = '';
+		$groupObstruction = '';
+		$groupSidewalk = '';
 
-		$reasonsTR = array(1,2,3,4);
-		$reasonsPR = array(5,6,7);
-		$reasonsTrR = array(8,9,10);
-		$reasonsPrR = array(11,12,13);
-		$reasonsPT = array(14,15,16);
+		$reasonsVS = array(0);
+		$reasonsPR = array(1,2,3,4,5);
+		$reasonsOS = array(6,7,8,9,10,11,12);
+		$reasonsSW = array(13,14,15,16);
 
 		foreach ($illegalParkingReasons as $illegalParkingReason) {
 
 			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
 
-			if (in_array($illegalParkingReasonsCount, $reasonsTR)) {
-				$groupTrafficRelated .= $statement;
+			if (in_array($illegalParkingReasonsCount, $reasonsVS)) {
+				$groupVehicleStatus .= $statement;
 			}
 			if (in_array($illegalParkingReasonsCount, $reasonsPR)) {
 				$groupParkingRelated .= $statement;
 			}
-			if (in_array($illegalParkingReasonsCount, $reasonsTrR)) {
-				$groupTransportRelated .= $statement;
+			if (in_array($illegalParkingReasonsCount, $reasonsOS)) {
+				$groupObstruction .= $statement;
 			}
-			if (in_array($illegalParkingReasonsCount, $reasonsPrR)) {
-				$groupPropertyRelated .= $statement;
-			}
-			if (in_array($illegalParkingReasonsCount, $reasonsPT)) {
-				$groupPedestrianTraffic .= $statement;
+			if (in_array($illegalParkingReasonsCount, $reasonsSW)) {
+				$groupSidewalk .= $statement;
 			}
 
 			$illegalParkingReasonsCount++;
 		}
 
-		return '<optgroup label="Traffic Related">'.$groupTrafficRelated.'</optgroup>
-		<optgroup label="Parking Related">'.$groupParkingRelated.'</optgroup>
-		<optgroup label="Transport Related">'.$groupTransportRelated.'</optgroup>
-		<optgroup label="Property Related">'.$groupPropertyRelated.'</optgroup>
-		<optgroup label="Pedestrian Traffic">'.$groupPedestrianTraffic.'</optgroup>';
+		return '<optgroup label="Vehicle Status">'.$groupVehicleStatus.'</optgroup>
+		<optgroup label="Parking">'.$groupParkingRelated.'</optgroup>
+		<optgroup label="Obstruction">'.$groupObstruction.'</optgroup>
+		<optgroup label="Pedestrian">'.$groupSidewalk.'</optgroup>';
 
 	}
 	

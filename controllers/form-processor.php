@@ -186,16 +186,16 @@
 					$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
-					$fines .= '- <strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong>.<br>';
+					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong>.</li>';
 				} else {
-					$fines .= '- <strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.<br>';
+					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
 				}
 			}
 
 			// Report Builder
 			$redirectPath = redirectPath(1);
 			$generatedReportType = 'Traffic Report';
-			$generatedReport = $officers.'under the call sign '.textBold(2, $postInputCallsign).' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Conducted a traffic stop on a '.textBold(1, $postInputVeh).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>'.$registered.$insurance.$pg->getVehicleTint($inputVehTint).'<br>The driver was identified as '.textBold(1, $postInputDefName).', possessing '.$pg->getDefLicense($inputDefLicense).'<br>'.$inputNarrative.'<br><br>Following charge(s) were issued:<br>'.$fines.'<br>'.$pg->getDashboardCamera($inputDashcam);
+			$generatedReport = $officers.'under the call sign '.textBold(2, $postInputCallsign).' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Conducted a traffic stop on a '.textBold(1, $postInputVeh).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>'.$registered.$insurance.$pg->getVehicleTint($inputVehTint).'<br>The driver was identified as '.textBold(1, $postInputDefName).', possessing '.$pg->getDefLicense($inputDefLicense).'<br>'.$inputNarrative.'<br><br>Following charge(s) were issued:<br><ul>'.$fines.'</ul>'.$pg->getDashboardCamera($inputDashcam);
 
 		}
 
@@ -857,7 +857,9 @@
 			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?? $g->getUNIX('time');
 			$inputReason = $_POST['inputReason'] ?? array();
 			$inputReason = array_values(array_filter($inputReason));
-			$inputFine = $_POST['inputFine'] ?: 0;
+			$inputCrime = arrayMap($_POST['inputCrime'], 'UNKNOWN CHARGE');
+			$inputCrimeClass = arrayMap($_POST['inputCrimeClass'], 0);
+			$inputCrimeFine = arrayMap($_POST['inputCrimeFine'], 0);
 
 			// Set Cookies
 			setCookiePost('officerName', $postInputName);
@@ -884,6 +886,23 @@
 			// Officer Resolver
 			$officers = resolverOfficer($postInputName, $postInputRank, $postInputBadge);
 
+			// Crime Resolver
+			$fines = '';
+			foreach ($inputCrime as $iCrime => $crime) {
+				$charge = $penal[$crime];
+				$chargeTitle = $charge['charge'];
+				$chargeType = $charge['type'];
+				$chargeClass = '?';
+				if (!empty($inputCrimeClass[$iCrime])) {
+					$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
+				}
+				if ($inputCrimeFine[$iCrime] == 0) {
+					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong>.</li>';
+				} else {
+					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
+				}
+			}
+
 			// Parking Ticket Resolver
 			$statementReason = '';
 			foreach ($inputReason as $reason) {
@@ -895,7 +914,9 @@
 			$generatedReportType = 'Parking Ticket';
 			$generatedReport = $generatedReport = $officers.' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Cited a '.textBold(1, $postInputVeh).', '.$pg->getVehiclePlates($postInputVehPlate,0).', '.$pg->getVehicleRO($postInputVehRO).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>'.$insurance.'
 				<br>
-				<strong>Citation Reason:</strong> <span style="color: #27ae60">IC 406. Illegal Parking</span> - <strong style="color: green;">$'.$inputFine.'</strong>
+				<strong>Citation(s):</strong>
+				<ul>'.$fines.'</ul>
+				<strong>Citation Reason(s):</strong>
 				<ul>'.$statementReason.'</ul>
 				<strong>Evidence:</strong><br>'.$evidence;
 
