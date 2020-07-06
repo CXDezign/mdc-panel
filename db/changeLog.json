@@ -1,4 +1,11 @@
 {
+	"1.16.4": {
+		"id": "1.16.4",
+		"date": "06/JUL/2020",
+		"changes": {
+			"0": "Parking Ticket Generator - Added new illegal parking reason 'At or near a helipad or an aircraft landing zone, if in control of a non-aerial vehicle.'. (<span class='cl-general'>St3fanNL</span>)"
+		}
+	},
 	"1.16.3": {
 		"id": "1.16.3",
 		"date": "05/JUL/2020",
