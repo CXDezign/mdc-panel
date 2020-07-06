@@ -535,7 +535,7 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 
 		$reasonsVS = array(0);
 		$reasonsPR = array(1,2,3,4,5);
-		$reasonsOS = array(6,7,8,9,10,11,12);
+		$reasonsOS = array(6,7,8,9,10,11,12,17);
 		$reasonsSW = array(13,14,15,16);
 
 		foreach ($illegalParkingReasons as $illegalParkingReason) {
