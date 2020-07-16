@@ -2,8 +2,6 @@
 
 class General {
 
-	// PAGE SETTINGS
-
 	public function getSettings($setting) {
 		
 		switch ($setting) {
