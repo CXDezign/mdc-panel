@@ -43,7 +43,7 @@
 						name="'.$resourceID.'"
 						rows="4"
 						readonly>'.$resourceText.'</textarea>
-						<a class="btn btn-primary text-white" onclick="copy()" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.'</a>
+						<a class="btn btn-primary text-white" data-clipboard-target="#'.$resourceID.'" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.'</a>
 					</div>
 				</div>
 			</div>';
@@ -55,8 +55,9 @@
 			$resourceText = $resource['text'];
 
 			$roleplayLines = '';
-			foreach ($resourceText as $roleplayLine) {
-				$roleplayLines .= '<textarea class="form-control textboxRP" readonly>'.$roleplayLine.'</textarea>';
+			foreach ($resourceText as $roleplayLineCount => $roleplayLine) {
+				$roleplayLines .= '<textarea class="form-control textboxRP" id="'.$resourceID.$roleplayLineCount.'" readonly>'.$roleplayLine.'</textarea>
+				<a class="btn btn-primary text-white mb-3" data-clipboard-target="#'.$resourceID.$roleplayLineCount.'" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.' - Line '.$roleplayLineCount.'</a>';
 			}
 
 			$resources .= '<div class="grid-item">
@@ -83,6 +84,18 @@
 		<?= $resources ?>
 	</div>
 </div>
+<script src="/js/clipboard.js"></script>
+<script>
+	var clipboard = new ClipboardJS('a');
+
+	clipboard.on('success', function(e) {
+	console.log(e);
+	});
+
+	clipboard.on('error', function(e) {
+	console.log(e);
+	});
+</script>
 <script>
 	$(document).ready(function(){
 		$('a[data-toggle="tooltip"]').tooltip({
