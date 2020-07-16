@@ -1,4 +1,14 @@
 {
+	"1.16.5": {
+		"id": "1.16.5",
+		"date": "16/JUL/2020",
+		"changes": {
+			"0": "GitHub - Fixed GitHub repository with missing file preventing forks from working.",
+			"1": "Useful Resources - Fixed copy button for Citation Appeals text.",
+			"2": "Useful Resources - Reworked copy function for better future-proofing.",
+			"3": "Death Report Generator - Fixed spelling 'Forensic'. (<span class='cl-general'>Credit to Alphabyte59</span>)"
+		}
+	},
 	"1.16.4": {
 		"id": "1.16.4",
 		"date": "06/JUL/2020",
