@@ -115,11 +115,11 @@
 		</div>
 		<div class="form-row">
 		<?php
-			// Form - Textfield - Handling Detective / Foresnsic Analyst's Name
+			// Form - Textfield - Handling Detective / Forensic Analyst's Name
 			$c->form('textfield', 'forms', array(
 				'size' => '4',
 				'type' => 'text',
-				'label' => '<label>Handling Detective / Foresnsic Analyst</label>',
+				'label' => '<label>Handling Detective / Forensic Analyst</label>',
 				'icon' => 'id-card',
 				'class' => '',
 				'id' => 'inputHandlingName',
