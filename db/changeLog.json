@@ -1,4 +1,15 @@
 {
+	"1.17.0": {
+		"id": "1.17.0",
+		"date": "18/JUL/2020",
+		"changes": {
+			"0": "Site - Updated Favicons for all possible browsers and best cross-compatibility.",
+			"1": "Site - Updated META tags for better website presentation across platforms and search engine optimisation.",
+			"2": "Paperwork Generators Page - Added hover effects to the Arrest Charges Calculator & Profiling Samples Generator icons.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.17-GeneratorHovers.mp4' type='video/mp4'><source src='/showcase/previews/1.17-GeneratorHovers.webm' type='video/webm'></video>",
+			"3": "Arrest Charges Calculator - All charges have been updated with the latest points update regarding the penal code. <a class='text-primary' target='_blank' href='https://forum.gta.world/en/index.php?/topic/26508-revamping-arrests-points-based-system/'>Points System Update 17/JUL/2020</a>",
+			"4": "Arrest Charges Calculator - Added Important Court Notice regarding maximum sentencing, impounding, and suspension lengths. <img style='max-width: 100%;' src='https://i.imgur.com/j0a494J.png'/>"
+		}
+	},
 	"1.16.5": {
 		"id": "1.16.5",
 		"date": "16/JUL/2020",
@@ -101,7 +112,7 @@
 			"2": "Paperwork Generators - Most front-end jQuery code for all paperwork generators was re-written for clarity sake.",
 			"3": "Paperwork Generators - Added tooltip functionalities on all dynamic slots which support tooltips.<br><img style='max-width: 100%' src='https://i.imgur.com/xTQy7T6.png'/>",
 			"4": "Paperwork Generators - Updated generator titles to exclude ' - Form' from their titles, deeming them as redundant.",
-			"5": "Arresst Charges Calculator - Charge selector now auto selects charge class, charge offence, and charge addition.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-ChargeAutoSelect.mp4' type='video/mp4'><source src='/showcase/previews/1.15-ChargeAutoSelect.webm' type='video/webm'></video>",
+			"5": "Arrest Charges Calculator - Charge selector now auto selects charge class, charge offence, and charge addition.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-ChargeAutoSelect.mp4' type='video/mp4'><source src='/showcase/previews/1.15-ChargeAutoSelect.webm' type='video/webm'></video>",
 			"6": "Traffic Division: Patrol Report Generator - Icon changed to the Traffic Division logo.<br><img style='max-width: 100%' src='https://i.imgur.com/kGn83V1.png'/>",
 			"7": "Traffic Division: Patrol Report Generator - Updated the report template to the latest changes regarding marked/unmarked vehicles. (<span class='cl-general'>Courtesy of Donally&#39;s request</span>)<br><img style='max-width: 100%' src='https://i.imgur.com/VpYuI7w.png'/>",
 			"8": "Traffic Report Generator - New Registration & Insurance logic added. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-VehicleDetailsLogic.mp4' type='video/mp4'><source src='/showcase/previews/1.15-VehicleDetailsLogic.webm' type='video/webm'></video>",
