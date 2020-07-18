@@ -1,21 +1,56 @@
 <?php
 
+	// Variables
+	$root = $_SERVER['DOCUMENT_ROOT'];
+	$server = $_SERVER['SERVER_NAME'];
 	require_once 'includes/initialise.php';
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="icon" type="image/svg" href="<?= $g->getSettings('site-favicon') ?>">
-	<title><?= $g->getSettings('site-name') ?></title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta property="og:title" content="<?= $g->getSettings('site-name') ?>">
+	<meta name="title" content="<?= $g->getSettings('site-name') ?>">
+	<meta name="description" content="<?= $g->getSettings('site-description') ?>">
+	<meta name="author" content="<?= $g->getSettings('site-name') ?>">
+	<meta name="keywords" content="xanx, xanxTV, xanax, xanaxTV, MDC, MDC Panel, Mobile, Data, Computer, Panel, GTA5, GTAV, GTAO, GTA RP, Roleplay, RP, GTA World, GTAW, GTA:World, GTA:W, LSPD, LSSD, LSFD, Government, Penal Code, Los Santos Police Department, Los Santos Fires Department, Los Santos Sheriff's Department, Los Santos, Department, Agencies, Agency, Factions">
+	<meta name="robots" content="index">
+	<meta name="googlebot" content="all">
+	<meta name="googlebot-news" content="all">
+
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="<?= $g->getSettings('site-url') ?>">
-	<meta property="og:image" content="<?= $g->getSettings('site-image') ?>">
+	<meta property="og:url" content="https://<?= $g->getSettings('site-url') ?>">
+	<meta property="og:title" content="<?= $g->getSettings('site-name') ?>">
 	<meta property="og:description" content="<?= $g->getSettings('site-description') ?>">
+	<meta property="og:image" content="http://<?= $server.$g->getSettings('site-image') ?>">
+	<meta property="og:image:secure_url" content="https://<?= $server.$g->getSettings('site-image') ?>">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="MDC Panel">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://<?= $g->getSettings('site-url') ?>">
+	<meta property="twitter:title" content="<?= $g->getSettings('site-name') ?>">
+	<meta property="twitter:image" content="<?= $server.$g->getSettings('site-image') ?>">
+	<meta property="twitter:description" content="<?= $g->getSettings('site-description') ?>">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#e2b055">
+	<link rel="shortcut icon" href="/images/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#131313">
+	<meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#131313">
+
+	<!-- Title -->
+	<title><?= $g->getSettings('site-name') ?></title>
 
 	<!-- jQuery 3.5.1 -->
 	<script src="/js/jquery-3.5.1.min.js"></script>
