@@ -1,4 +1,11 @@
 {
+	"1.17.1": {
+		"id": "1.17.1",
+		"date": "25/JUL/2020",
+		"changes": {
+			"0": "Paperwork Generators - Added missing vehicles to the vehicle list:<ul><li>Annis ZR-380s</li><li>BMX Bike (Bicycle)</li><li>Bravado Bison Ambulance</li><li>Bravado Gresley Hellhound</li><li>Buckingham Maverick</li><li>Buckingham Nimbus</li><li>Buckingham SuperVolito</li><li>Buckingham Tugboat</li><li>Bürgerfahrzeug (BF) Club GTR</li><li>Cruiser Bike (Bicycle)</li><li>Declasse Yosemite (SUV)</li><li>Dinka Double T Custom</li><li>Dinka Marquis</li><li>Endurex Race Bike (Bicycle)</li><li>Grotti Furia</li><li>HVY Airtug</li><li>JoBuilt Hauler Custom</li><li>JoBuilt Phantom Wedge</li><li>Karin Technical</li><li>MTL Brickade</li><li>Nagasaki Dinghy</li><li>Nagasaki Outlaw</li><li>Principe Faggio Mod</li><li>Principe Faggio Sport</li><li>Scorcher Bike</li><li>Shitzu Squalo</li><li>Shitzu Suntrap</li><li>Speedophile Seashark</li><li>Stanley Tractor</li><li>Tri-Cycles Race Bike</li><li>Vapid Caracara 6x6</li><li>Vapid Sadler Retro</li><li>Vapid Sadler Retro Cabin</li><li>Vapid Sadler Retro Cabin Crew</li><li>Whippet Race Bike</li><li>Übermacht Seraph</li></ul>"
+		}
+	},
 	"1.17.0": {
 		"id": "1.17.0",
 		"date": "18/JUL/2020",
