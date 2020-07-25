@@ -13,9 +13,9 @@ Albany Primo Custom
 Albany Roosevelt
 Albany Roosevelt Valor
 Albany Stretch
+Albany V-STR
 Albany Virgo
 Albany Virgo Classic
-Albany V-STR
 Albany Washington
 Annis Elegy Retro Custom
 Annis Elegy RH8
@@ -24,6 +24,7 @@ Annis Kawaii
 Annis RE-7B
 Annis S80RR
 Annis Savestra
+Annis ZR-380s
 Benefactor Dubsta
 Benefactor Dubsta 6x6
 Benefactor Dubsta Sport
@@ -42,10 +43,12 @@ Benefactor Streiter (Sedan)
 Benefactor Streiter (SUV)
 Benefactor Surano
 Benefactor XLS
+BMX Bike (Bicycle)
 Bollokan Prairie
 Bravado Banshee
 Bravado Banshee 900R
 Bravado Bison
+Bravado Bison Ambulance
 Bravado Buffalo
 Bravado Buffalo S
 Bravado Duneloader
@@ -53,6 +56,7 @@ Bravado Gauntlet
 Bravado Gauntlet Classic
 Bravado Gauntlet Hellfire
 Bravado Gresley
+Bravado Gresley Hellhound
 Bravado Paradise
 Bravado Rat-Loader
 Bravado Rat-Truck
@@ -65,7 +69,7 @@ Brute Airport Bus
 Brute Boxville
 Brute Bus
 Brute Camper
-Brute Dashound
+Brute Dashound Coach
 Brute Pony
 Brute Rental Shuttle Bus
 Brute Stockade
@@ -75,13 +79,18 @@ Brute Tipper (Second Generation)
 Brute Tourbus
 Brute Utility Truck (Box)
 Brute Utility Truck (Crane)
-Bürgerfahrzeug Bifta
-Bürgerfahrzeug Dune Buggy
-Bürgerfahrzeug Dune FAV
-Bürgerfahrzeug Injection
-Bürgerfahrzeug Raptor
-Bürgerfahrzeug Space Docker
-Bürgerfahrzeug Surfer
+Buckingham Maverick
+Buckingham Nimbus
+Buckingham SuperVolito
+Buckingham Tugboat
+Bürgerfahrzeug (BF) Bifta
+Bürgerfahrzeug (BF) Club GTR
+Bürgerfahrzeug (BF) Dune Buggy
+Bürgerfahrzeug (BF) Dune FAV
+Bürgerfahrzeug (BF) Injection
+Bürgerfahrzeug (BF) Raptor
+Bürgerfahrzeug (BF) Space Docker
+Bürgerfahrzeug (BF) Surfer
 Canis Bodhi
 Canis Crusader
 Canis Freecrawler
@@ -99,6 +108,7 @@ Coil Brawler
 Coil Cyclone
 Coil Raiden
 Coil Voltic
+Cruiser Bike (Bicycle)
 Declasse Asea
 Declasse Burrito
 Declasse Drift Tampa
@@ -125,11 +135,13 @@ Declasse Vigero
 Declasse Voodoo
 Declasse Voodoo Custom
 Declasse Yosemite
+Declasse Yosemite (SUV)
 Dewbauchee Exemplar
 Dewbauchee JB 700
 Dewbauchee Massacro
 Dewbauchee Massacro (Racecar)
 Dewbauchee Rapid GT
+Dewbauchee Rapid GT (Convertible)
 Dewbauchee Rapid GT Classic
 Dewbauchee Seven-70
 Dewbauchee Specter
@@ -140,11 +152,13 @@ Dinka Blista
 Dinka Blista Compact
 Dinka Blista Kanjo
 Dinka Double T
+Dinka Double T Custom
 Dinka Enduro
 Dinka Flash
 Dinka Jester
 Dinka Jester (Racecar)
 Dinka Jester Classic
+Dinka Marquis
 Dinka Sugoi
 Dinka Thrust
 Dinka Vindicator
@@ -154,6 +168,7 @@ Dundreary Virgo Classic
 Dundreary Virgo Classic Custom
 Emperor ETR1
 Emperor Habanero
+Endurex Race Bike (Bicycle)
 Enus Cognoscenti
 Enus Cognoscenti 55
 Enus Cognoscenti Cabrio
@@ -164,7 +179,7 @@ Enus Super Diamond
 Enus Windsor
 Enus Windsor Drop
 Fathom FQ 2
-Gallivanter Baller
+Gallivanter Baller (First Generation)
 Gallivanter Baller (Second Generation)
 Gallivanter Baller LE
 Gallivanter Baller LE LWB
@@ -173,6 +188,7 @@ Grotti Brioso R/A
 Grotti Carbonizzare
 Grotti Cheetah
 Grotti Cheetah Classic
+Grotti Furia
 Grotti GT500
 Grotti Itali GTO
 Grotti Stinger
@@ -183,6 +199,7 @@ Grotti Visione
 Grotti X80 Proto
 Hijak Khamelion
 Hijak Ruston
+HVY Airtug
 HVY Biff
 HVY Mixer (First Generation)
 HVY Mixer (Second Generation)
@@ -195,11 +212,13 @@ Invetero Coquette
 Invetero Coquette BlackFin
 Invetero Coquette Classic
 JoBuilt Hauler
+JoBuilt Hauler Custom
 JoBuilt Phantom
 JoBuilt Phantom Custom
+JoBuilt Phantom Wedge
 JoBuilt Rubble
 JoBuilt Trashmaster
-Karin 190z
+Karin 190z (Z190)
 Karin Asterope
 Karin BeeJay XL
 Karin Dilettante
@@ -212,6 +231,7 @@ Karin Rusty Rebel
 Karin Sultan
 Karin Sultan Classic
 Karin Sultan RS
+Karin Technical
 Lampadati Casco
 Lampadati Felon
 Lampadati Felon GT
@@ -235,6 +255,7 @@ Mammoth Patriot
 Mammoth Patriot Stretch
 Maxwell Asbo
 Maxwell Vagrant
+MTL Brickade
 MTL Dune
 MTL Flatbed
 MTL Packer
@@ -245,11 +266,13 @@ Nagasaki Blazer
 Nagasaki Caddy
 Nagasaki Carbon RS
 Nagasaki Chimera
+Nagasaki Dinghy
 Nagasaki Hot Rod Blazer
+Nagasaki Outlaw
 Nagasaki Street Blazer
-Obey 8F Drafter
-Obey 9F
-Obey 9F Cabrio
+Obey 8F (EightF) Drafter
+Obey 9F (NineF)
+Obey 9F (NineF) Cabrio
 Obey Omnis
 Obey Rocoto
 Obey Tailgater
@@ -271,12 +294,10 @@ Pegassi FCR 1000
 Pegassi FCR 1000 Custom
 Pegassi Infernus
 Pegassi Infernus Classic
-Pegassi Mod
 Pegassi Monroe
 Pegassi Osiris
 Pegassi Reaper
 Pegassi Ruffian
-Pegassi Sport
 Pegassi Tempesta
 Pegassi Tezeract
 Pegassi Torero
@@ -295,6 +316,8 @@ Principe Deveste Eight
 Principe Diabolus
 Principe Diabolus Custom
 Principe Faggio
+Principe Faggio Mod
+Principe Faggio Sport
 Principe Lectro
 Principe Nemesis
 Progen Emerus
@@ -306,12 +329,18 @@ Progen Tyrus
 RUNE Cheburek
 Schyster Deviant
 Schyster Fusilade
-Shitzu Hakuchou
+Scorcher Bike
 Shitzu Defiler
+Shitzu Hakuchou
 Shitzu Hakuchou Drag
 Shitzu PCJ 600
+Shitzu Squalo
+Shitzu Suntrap
 Shitzu Vader
+Speedophile Seashark
 Stanley Fieldmaster
+Stanley Tractor
+Tri-Cycles Race Bike
 Truffade Adder
 Truffade Nero
 Truffade Nero Custom
@@ -323,6 +352,7 @@ Vapid Bobcat XL
 Vapid Bullet
 Vapid Caracara
 Vapid Caracara 4x4
+Vapid Caracara 6x6
 Vapid Chino
 Vapid Chino Custom
 Vapid Clique
@@ -351,6 +381,9 @@ Vapid Retinue
 Vapid Retinue MK II
 Vapid Riata
 Vapid Sadler
+Vapid Sadler Retro
+Vapid Sadler Retro Cabin
+Vapid Sadler Retro Cabin Crew
 Vapid Sandking SWB
 Vapid Sandking XL
 Vapid Scout
@@ -360,7 +393,7 @@ Vapid Slamvan Custom
 Vapid Speedo
 Vapid Speedo Custom
 Vapid Stanier
-Vapid Taxi
+Vapid Stanier Taxi
 Vapid Torrence
 Vapid Towtruck (Slamvan)
 Vapid Towtruck (Truck)
@@ -388,10 +421,11 @@ Western Motorcycle Company Sovereign
 Western Motorcycle Company Wolfsbane
 Western Motorcycle Company Zombie Bobber
 Western Motorcycle Company Zombie Chopper
+Whippet Race Bike
 Willard Faction
 Willard Faction Custom
 Willard Faction Custom Donk
-Zirconium Journey
+Zirconium Journey (RV)
 Zirconium Stratum
 Överflöd Autarch
 Överflöd Entity XF
@@ -406,6 +440,7 @@ Zirconium Stratum
 Übermacht Sentinel
 Übermacht Sentinel Classic
 Übermacht Sentinel XS
+Übermacht Seraph
 Übermacht Zion
 Übermacht Zion Cabrio
 Übermacht Zion Classic
