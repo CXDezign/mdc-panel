@@ -1,4 +1,11 @@
 {
+	"1.17.2": {
+		"id": "1.17.2",
+		"date": "27/JUL/2020",
+		"changes": {
+			"0": "Paperwork Generators - Clicking charges automatically copies to clipboard. There is no need to select them manually any longer."
+		}
+	},
 	"1.17.1": {
 		"id": "1.17.1",
 		"date": "25/JUL/2020",
