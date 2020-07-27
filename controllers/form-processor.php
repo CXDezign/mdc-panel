@@ -145,8 +145,8 @@
 			$inputVehRO = $_POST['inputVehRO'] ?: $postInputDefName;
 			$inputVehTint = $_POST['inputVehTint'] ?? -1;
 			$inputVehInsurance = $_POST['inputVehInsurance'] ?: false;
-			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?: $g->getUNIX('date');
-			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?: $g->getUNIX('time');
+			$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?? $g->getUNIX('date');
+			$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?? $g->getUNIX('time');
 
 			// Cookies
 			setCookiePost('callSign', $postInputCallsign);
@@ -186,9 +186,9 @@
 					$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
-					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong>.</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong></li>';
 				} else {
-					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation</li>';
 				}
 			}
 
@@ -782,7 +782,7 @@
 					$chargeTimeFull = $pg->calculateCrimeTime($days[$iCharge], $hours[$iCharge], $mins[$iCharge]);
 
 					// Finalisation Builders
-					$chargeTitle[] = $chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName;
+					$chargeTitle[] = '<span class="style-underline chargeCopy" data-clipboard-target="#charge-'.$chargeID.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$chargeID.'">'.$chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName.'</span></span>';
 
 					// Rows Builder
 					$rowBuilder .= '<tr>
@@ -897,9 +897,9 @@
 					$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
-					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong>.</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong>.</li>';
 				} else {
-					$fines .= '<li><strong>'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
 				}
 			}
 

@@ -114,6 +114,19 @@
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/bootstrap-select.min.js"></script>
 <script src="/js/bootstrap4-toggle.min.js"></script>
+<script src="/js/clipboard.js"></script>
+<script>
+	var clipboard = new ClipboardJS('a');
+	var clipboard2 = new ClipboardJS('.chargeCopy');
+
+	clipboard2.on('success', function(e) {
+		console.log(e);
+	});
+
+	clipboard2.on('error', function(e) {
+		console.log(e);
+	});
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		// Animate on Scroll Initialisation
@@ -122,6 +135,23 @@
 		$('.selectpicker').selectpicker();
 		// Tooltip Initialisation
 		$('input').tooltip();
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip({
+			delay: { "show": 100, "hide": 100 },
+			animated: 'fade',
+			placement: 'top',
+			trigger: 'click'
+		});
+	});
+	$(function () {
+		$(document).on('shown.bs.tooltip', function (e) {
+			setTimeout(function () {
+				$(e.target).tooltip('hide');
+			}, 500);
+		});
 	});
 </script>
 </body>

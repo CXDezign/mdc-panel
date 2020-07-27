@@ -367,6 +367,15 @@ optgroup {
 // GENERAL //
 ///////////*/
 
+.style-underline span {
+	border-bottom: 1px solid rgba(255,255,255,0);
+	transition: .15s border-bottom linear, .15s color linear!important;
+	cursor: pointer;
+}
+.style-underline:hover span {
+	border-bottom: 1px solid rgba(255,255,255,1);
+}
+
 #breadcrumb li a {
 	background-color: rgba(255,255,255,1);
 	padding: 4px 16px;

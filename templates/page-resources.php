@@ -84,18 +84,6 @@
 		<?= $resources ?>
 	</div>
 </div>
-<script src="/js/clipboard.js"></script>
-<script>
-	var clipboard = new ClipboardJS('a');
-
-	clipboard.on('success', function(e) {
-	console.log(e);
-	});
-
-	clipboard.on('error', function(e) {
-	console.log(e);
-	});
-</script>
 <script>
 	$(document).ready(function(){
 		$('a[data-toggle="tooltip"]').tooltip({
@@ -117,8 +105,4 @@
 			}, 500);
 		});
 	});
-	function copy() {
-		document.getElementById("mirandaRights").select();
-		document.execCommand("copy");
-	}
 </script>
