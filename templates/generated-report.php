@@ -16,9 +16,7 @@
 		}
 
 		if ($report) {
-			echo '<div class="container p-0 bg-transparent" id="generatedReport">
-				<div>'.$report.'</div>
-			</div>';
+			echo '<div class="container p-0 bg-transparent" contenteditable="true" id="generatedReport">'.$report.'</div>';
 		}
 		
 	?>

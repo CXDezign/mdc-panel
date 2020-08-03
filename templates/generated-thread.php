@@ -5,15 +5,13 @@
 			class="form-control shadow mb-3"
 			id="generatedThreadTitle"
 			name="generatedThreadTitle"
-			value="<?= $title ?>"
-			readonly>
+			value="<?= $title ?>">
 	<?php } ?>
 	<textarea
 		class="form-control shadow mb-5"
 		id="generatedThread"
 		name="generatedThread"
-		rows="15"
-		readonly><?= $report ?></textarea>
+		rows="15"><?= $report ?></textarea>
 	<hr class="my-5">
 	<?php if ($title) { ?>
 	<div class="container mt-2 text-center">
