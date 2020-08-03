@@ -82,11 +82,13 @@ Brute Utility Truck (Crane)
 Buckingham Maverick
 Buckingham Nimbus
 Buckingham SuperVolito
+Buckingham Swift
 Buckingham Tugboat
 Bürgerfahrzeug (BF) Bifta
 Bürgerfahrzeug (BF) Club GTR
 Bürgerfahrzeug (BF) Dune Buggy
 Bürgerfahrzeug (BF) Dune FAV
+Bürgerfahrzeug (BF) Furzen
 Bürgerfahrzeug (BF) Injection
 Bürgerfahrzeug (BF) Raptor
 Bürgerfahrzeug (BF) Space Docker
@@ -100,6 +102,7 @@ Canis Mesa
 Canis Seminole
 Chariot Romero Hearse
 Cheval Fugitive
+Cheval Fugitive (Gruppe6)
 Cheval Marshall
 Cheval Picador
 Cheval Surge
@@ -107,12 +110,19 @@ Cheval Taipan
 Coil Brawler
 Coil Cyclone
 Coil Raiden
+Coil Taranis
 Coil Voltic
 Cruiser Bike (Bicycle)
 Declasse Asea
 Declasse Burrito
+Declasse Burrito (Bugstars)
+Declasse Burrito (McGill-Olsen)
+Declasse Burrito (Second Generation)
+Declasse Burrito (Snow)
+Declasse Burrito Roof Rack (First Generation)
 Declasse Drift Tampa
 Declasse Gang Burrito
+Declasse Gang Burrito (Lost MC)
 Declasse Granger
 Declasse Hotring Sabre
 Declasse Impaler
@@ -122,6 +132,7 @@ Declasse Moonbeam Custom
 Declasse Premier
 Declasse Rancher XL
 Declasse Rhapsody
+Declasse Sabre
 Declasse Sabre Turbo
 Declasse Sabre Turbo Custom
 Declasse Stallion
@@ -201,6 +212,10 @@ Hijak Khamelion
 Hijak Ruston
 HVY Airtug
 HVY Biff
+HVY Bulldozer
+HVY Forklift
+HVY Insurgent
+HVY Insurgent Police
 HVY Mixer (First Generation)
 HVY Mixer (Second Generation)
 Imponte Deluxo
@@ -208,16 +223,20 @@ Imponte Dukes
 Imponte Nightshade
 Imponte Phoenix
 Imponte Ruiner
+Imponte Ruiner (Wrecked)
 Invetero Coquette
 Invetero Coquette BlackFin
 Invetero Coquette Classic
+Jack Sheepe Lawn Mower
 JoBuilt Hauler
 JoBuilt Hauler Custom
+JoBuilt Mammatus
 JoBuilt Phantom
 JoBuilt Phantom Custom
 JoBuilt Phantom Wedge
 JoBuilt Rubble
 JoBuilt Trashmaster
+Jobuilt Velum (5-Seater)
 Karin 190z (Z190)
 Karin Asterope
 Karin BeeJay XL
@@ -246,11 +265,13 @@ Liberty City Cycles Avarus
 Liberty City Cycles Hexer
 Liberty City Cycles Innovation
 Liberty City Cycles Sanctus
+Maibatsu Frogger
 Maibatsu Manchez
 Maibatsu Mule
 Maibatsu Mule Custom
 Maibatsu Penumbra
 Maibatsu Sanchez
+Mammoth Dodo
 Mammoth Patriot
 Mammoth Patriot Stretch
 Maxwell Asbo
@@ -263,17 +284,23 @@ MTL Pounder
 MTL Pounder Custom
 Nagasaki BF400
 Nagasaki Blazer
+Nagasaki Buzzard
 Nagasaki Caddy
 Nagasaki Carbon RS
 Nagasaki Chimera
 Nagasaki Dinghy
+Nagasaki Dinghy (2-Seater)
+Nagasaki Dinghy (4-Seater)
+Nagasaki Dinghy (Yacht)
 Nagasaki Hot Rod Blazer
 Nagasaki Outlaw
 Nagasaki Street Blazer
 Obey 8F (EightF) Drafter
 Obey 9F (NineF)
 Obey 9F (NineF) Cabrio
+Obey Argento
 Obey Omnis
+Obey Omnis (Rally)
 Obey Rocoto
 Obey Tailgater
 Ocelot Ardent
@@ -284,6 +311,7 @@ Ocelot Locust
 Ocelot Lynx
 Ocelot Pariah
 Ocelot Penetrator
+Ocelot R88 (Formula Car)
 Ocelot Stromberg
 Ocelot Swinger
 Ocelot XA-21
@@ -298,6 +326,7 @@ Pegassi Monroe
 Pegassi Osiris
 Pegassi Reaper
 Pegassi Ruffian
+Pegassi Speeder
 Pegassi Tempesta
 Pegassi Tezeract
 Pegassi Torero
@@ -312,6 +341,7 @@ Pfister Comet Retro Custom
 Pfister Comet Safari
 Pfister Comet SR
 Pfister Neon
+Police Predator
 Principe Deveste Eight
 Principe Diabolus
 Principe Diabolus Custom
@@ -326,7 +356,9 @@ Progen Itali GTB
 Progen Itali GTB Custom
 Progen T20
 Progen Tyrus
+Riot Control Vehicle
 RUNE Cheburek
+RUNE Zhaba
 Schyster Deviant
 Schyster Fusilade
 Scorcher Bike
@@ -336,6 +368,7 @@ Shitzu Hakuchou Drag
 Shitzu PCJ 600
 Shitzu Squalo
 Shitzu Suntrap
+Shitzu Tropic
 Shitzu Vader
 Speedophile Seashark
 Stanley Fieldmaster
@@ -377,6 +410,7 @@ Vapid Minivan Custom
 Vapid Peyote
 Vapid Peyote Gasser
 Vapid Radius
+Vapid Razor
 Vapid Retinue
 Vapid Retinue MK II
 Vapid Riata
@@ -392,12 +426,14 @@ Vapid Slamvan
 Vapid Slamvan Custom
 Vapid Speedo
 Vapid Speedo Custom
+Vapid Speedo Express
 Vapid Stanier
 Vapid Stanier Taxi
 Vapid Torrence
 Vapid Towtruck (Slamvan)
 Vapid Towtruck (Truck)
 Vapid Trophy Truck
+Vapid Uranus
 Vapid Utility Truck (Van)
 Vapid Victor
 Vapid Victor Taxi
@@ -411,6 +447,9 @@ Weeny Dynasty
 Weeny Issi
 Weeny Issi Classic
 Weeny Issi Sport
+Western Company Cargobob
+Western Company Duster
+Western Motorcycle Company Apocalypse Deathbike
 Western Motorcycle Company Bagger
 Western Motorcycle Company Cliffhanger
 Western Motorcycle Company Daemon
