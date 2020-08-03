@@ -760,6 +760,8 @@
 					if ($chargeCourt[$iCharge]) {
 						$chargeCourtColour = 'success';
 						$chargeCourtIcon = 'check-circle';
+						$chargeExtraColour = 'muted';
+						$chargeExtraIcon = 'minus-circle';
 					} else {
 						$chargeCourtColour = 'dark';
 						$chargeCourtIcon = 'times-circle';
