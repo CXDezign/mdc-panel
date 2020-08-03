@@ -275,7 +275,7 @@ class PaperworkGenerators {
 				$colour = '#000';
 				break;
 		}
-		return '<span style="color: '.$colour.';">';
+		return '<strong style="color: '.$colour.'!important;">';
 	}
 
 	public function listChooser($list) {
@@ -323,7 +323,7 @@ class PaperworkGenerators {
 		} else {
 			$dashboardCamera = $input;
 		}
-		return '<strong style="color: #9944dd;">*</strong> '.$dashboardCamera.' <strong style="color: #9944dd;">*</strong>';
+		return '<strong style="color: #9944dd!important;">*</strong> '.$dashboardCamera.' <strong style="color: #9944dd!important;">*</strong>';
 	}
 
 	public function tintChooser() {
@@ -460,7 +460,7 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$color = 'inherit';
 				break;
 		}
-		return '<span style="color: '.$color.';">'.$bracelet.'</span> Bracelet';
+		return '<span style="color: '.$color.'!important;">'.$bracelet.'</span> Bracelet';
 	}
 
 	public function getWristband($input) {
@@ -483,7 +483,7 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$color = 'inherit';
 				break;
 		}
-		return '<span style="color: '.$color.';">'.$wristband.'</span> Wristband';
+		return '<span style="color: '.$color.'!important;">'.$wristband.'</span> Wristband';
 	}
 
 	public function getPlea($input, $suspect) {
@@ -499,12 +499,12 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$plead = 'No Contest';
 				break;
 			case 4:
-				return '<strong>(( <span style="color: #9944dd;">* '.$suspect.' - Required Case *</span> ))</strong>';
+				return '<strong>(( <span style="color: #9944dd!important;">* '.$suspect.' - Required Case *</span> ))</strong>';
 			default:
 				$plead = 'UNKNOWN PLEA';
 				break;
 		}
-		return '<strong style="color: #9944dd;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> at the district attorney office. <strong style="color: #9944dd;">* ))</strong>';
+		return '<strong style="color: #9944dd!important;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> at the district attorney office. <strong style="color: #9944dd!important;">* ))</strong>';
 	}
 
 }

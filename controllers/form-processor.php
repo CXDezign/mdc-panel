@@ -186,9 +186,9 @@
 					$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
-					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong></li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</strong></span></strong></li>';
 				} else {
-					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</strong></span></strong> - <strong style="color: green!important;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation</li>';
 				}
 			}
 
@@ -196,6 +196,9 @@
 			$redirectPath = redirectPath(1);
 			$generatedReportType = 'Traffic Report';
 			$generatedReport = $officers.'under the call sign '.textBold(2, $postInputCallsign).' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Conducted a traffic stop on a '.textBold(1, $postInputVeh).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>'.$registered.$insurance.$pg->getVehicleTint($inputVehTint).'<br>The driver was identified as '.textBold(1, $postInputDefName).', possessing '.$pg->getDefLicense($inputDefLicense).'<br>'.$inputNarrative.'<br><br>Following charge(s) were issued:<br><ul>'.$fines.'</ul>'.$pg->getDashboardCamera($inputDashcam);
+
+			echo '<div class="container p-0 bg-transparent" contenteditable="true" id="generatedReport">'.$generatedReport.'</div>';
+			echo '<textarea class="form-control">'.$generatedReport.'</textarea>';
 
 		}
 
@@ -226,7 +229,7 @@
 			$callsign = textBold(2, $postInputCallsign);
 			$datetime = textBold(2, $postInputDate).', '.textBold(1, $postInputTime);
 			$suspect = textBold(1, $postInputDefName);
-			$location = textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict);
+			$location = textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.';
 
 			// Officer Resolver
 			$officers = '';
@@ -755,18 +758,16 @@
 					}
 					$chargeSuspensionFull = '<span class="badge badge-'.$chargeSuspensionColour.'">'.$chargeSuspensionQuestion.$chargeSuspensionTime.'</span>';
 
-					// Court Builder
-					$chargeCourt[] = $charge['court'];
-					if ($chargeCourt[$iCharge]) {
-						$chargeCourtColour = 'success';
-						$chargeCourtIcon = 'check-circle';
+					// Extra Builder
+					$chargeExtra[] = $charge['extra'];
+					if ($chargeExtra[$iCharge] == 'N/A') {
 						$chargeExtraColour = 'muted';
 						$chargeExtraIcon = 'minus-circle';
 					} else {
-						$chargeCourtColour = 'dark';
-						$chargeCourtIcon = 'times-circle';
+						$chargeExtraColour = 'success';
+						$chargeExtraIcon = 'check-circle';
 					}
-					$chargeCourtFull = '<span class="badge badge-'.$chargeCourtColour.'"><i class="fas fa-fw fa-'.$chargeCourtIcon.'"></i></span>';
+					$chargeExtraFull = '<span class="badge badge-'.$chargeExtraColour.'"><i class="fas fa-fw fa-'.$chargeExtraIcon.' mr-1"></i>'.$chargeExtra[$iCharge].'</span>';
 
 					// Time Builder
 					$multiDimensionalCrimeTimes = array('412');
@@ -797,7 +798,7 @@
 						<td>'.$chargeFineFull.'</td>
 						<td class="text-center">'.$chargeImpoundFull.'</td>
 						<td class="text-center">'.$chargeSuspensionFull.'</td>
-						<td class="text-center">'.$chargeCourtFull.'</td>
+						<td class="text-center">'.$chargeExtraFull.'</td>
 					</tr>';
 
 				}
@@ -899,9 +900,9 @@
 					$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
 				}
 				if ($inputCrimeFine[$iCrime] == 0) {
-					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong>.</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</strong></span></strong>.</li>';
 				} else {
-					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</span></span></strong> - <strong style="color: green;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
+					$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-'.$crime.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$crime.'">'.$pg->getCrimeColour($chargeType).$chargeType.$chargeClass.' '.$crime.'. '.$chargeTitle.'</strong></span></strong> - <strong style="color: green!important;">$'.number_format($inputCrimeFine[$iCrime]).'</strong> Citation.</li>';
 				}
 			}
 
@@ -1085,7 +1086,6 @@
 		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
 
 		// Redirect
-		
 		switch ($redirectPath) {
 			case 'report':
 				header('Location: /paperwork-generators/generated-report');
@@ -1183,7 +1183,8 @@
 	function arrayMap($input, $default) {
 
 		$input = $input ?? array();
-		$input = array_map(function($value) {
+		$input = array_map(function($value) use($default) {
+			//global $default;
 			return $value === '' ? $default : $value;
 		}, $input);
 		return $input;
@@ -1208,11 +1209,11 @@
 
 		switch ($option) {
 			case 1:
-				return '<strong style="color: #9944dd;">*</strong>';
+				return '<strong style="color: #9944dd!important;">*</strong>';
 			case 2:
 				break;
 			default:
-				return '<strong style="color: #9944dd;">?</strong>';
+				return '<strong style="color: #9944dd!important;">?</strong>';
 		}
 
 	}

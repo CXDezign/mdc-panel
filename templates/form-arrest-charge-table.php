@@ -10,7 +10,7 @@
 		<th scope="col">Fine</th>
 		<th scope="col" class="text-center">Impound</th>
 		<th scope="col" class="text-center">Suspension</th>
-		<th scope="col" class="text-center">Court</th>
+		<th scope="col" class="text-center">Extra</th>
 	</thead>
 	<tbody style="font-size: 75%!important">
 		<?= $chargeTable ?>
