@@ -1,4 +1,19 @@
 {
+	"1.17.3": {
+		"id": "1.17.3",
+		"date": "04/AUG/2020",
+		"changes": {
+			"0": "Arrest Charges Table - Updated column 'Court' to 'Extra' to support wider and more abstract additions to charges.",
+			"1": "Penal Code - Updated charges 208 and 209 as part of the Penal Code update found here: <a target='_blank' href='https://forum.gta.world/en/index.php?/topic/9421-san-andreas-penal-code-changelog/&do=findComment&comment=251421'>22/JUL/2020 - Penal Code Update</a>",
+			"2": "Paperwork Generators - Generated reports are now also editable once submitted within their respective textboxes to allow fixing of any user-made mistakes.",
+			"3": "Paperwork Generators - Removed 'Banham Canyon Drive' from the district list.",
+			"4": "Paperwork Generators - Removed duplicate entry for 'Baytree Canyon Road' from the street list.",
+			"5": "Paperwork Generators - Added missing vehicles to the vehicle list: <ul><li>Buckingham Swift</li><li>Bürgerfahrzeug (BF) Furzen</li><li>Cheval Fugitive (Gruppe6)</li><li>Coil Taranis</li><li>Declasse Burrito (Bugstars)</li><li>Declasse Burrito (McGill-Olsen)</li><li>Declasse Burrito (Second Generation)</li><li>Declasse Burrito (Snow)</li><li>Declasse Burrito Roof Rack (First Generation)</li><li>Declasse Gang Burrito (Lost MC)</li><li>Declasse Sabre</li><li>HVY Bulldozer</li><li>HVY Forklift</li><li>HVY Insurgent</li><li>HVY Insurgent Police</li><li>Imponte Ruiner (Wrecked)</li><li>Jack Sheepe Lawn Mower</li><li>JoBuilt Mammatus</li><li>Jobuilt Velum (5-Seater)</li><li>Maibatsu Frogger</li><li>Mammoth Dodo</li><li>Nagasaki Buzzard</li><li>Nagasaki Dinghy (2-Seater)</li><li>Nagasaki Dinghy (4-Seater)</li><li>Nagasaki Dinghy (Yacht)</li><li>Obey Argento</li><li>Obey Omnis (Rally)</li><li>Ocelot R88 (Formula Car)</li><li>Pegassi Speeder</li><li>Police Predator</li><li>Riot Control Vehicle</li><li>RUNE Zhaba</li><li>Shitzu Tropic</li><li>Vapid Razor</li><li>Vapid Speedo Express</li><li>Vapid Uranus</li><li>Western Company Cargobob</li><li>Western Company Duster</li><li>Western Motorcycle Company Apocalypse Deathbike</li></ul>",
+			"6": "Paperwork Generators - Generated reports now have different HTML tags around coloured text as the 1st part update in preparation for the Copy and Paste issue fix on Chrome. (Issue will not be fixed until the 2nd part of this update is rolled out.)",
+			"7": "Arrest Report Generator - Added missing fullstop at the end of the generated report headline.",
+			"8": "Traffic Division: Patrol Report Generator - Updated to the latest format."
+		}
+	},
 	"1.17.2": {
 		"id": "1.17.2",
 		"date": "27/JUL/2020",
