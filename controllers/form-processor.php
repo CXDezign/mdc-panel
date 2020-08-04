@@ -61,6 +61,8 @@
 
 		// Initialise Constant Variables
 		$generatorType = $_POST['generatorType'];
+		$checked = '[cbc][/cbc]';
+		$unchecked = '[cb][/cb]';
 
 		// Default Values
 		$defaultName = 'UNKNOWN NAME';
@@ -83,7 +85,7 @@
 		$postInputBadge = $_POST['inputBadge'] ?? 0;
 		$postInputBadgeArray = $_POST['inputBadge'] ?? array();
 		$postInputDefName = $_POST['inputDefName'] ?? $defaultSuspectName;
-		$postInputDistrict = $_POST['inputDistrict'] ?? $defaultDistrict;
+		$postInputDistrict = $_POST['inputDistrict'] ?: $defaultDistrict;
 		$postInputStreet = $_POST['inputStreet'] ?? $defaultStreet;
 		$postInputBuilding = $_POST['inputBuilding'] ?? $defaultBuilding;
 		$postInputVeh = $_POST['inputVeh'] ?? $defaultVehicle;
@@ -196,9 +198,6 @@
 			$redirectPath = redirectPath(1);
 			$generatedReportType = 'Traffic Report';
 			$generatedReport = $officers.'under the call sign '.textBold(2, $postInputCallsign).' on the '.textBold(2, $postInputDate).', '.textBold(1, $postInputTime).'.<br>Conducted a traffic stop on a '.textBold(1, $postInputVeh).', on '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>'.$registered.$insurance.$pg->getVehicleTint($inputVehTint).'<br>The driver was identified as '.textBold(1, $postInputDefName).', possessing '.$pg->getDefLicense($inputDefLicense).'<br>'.$inputNarrative.'<br><br>Following charge(s) were issued:<br><ul>'.$fines.'</ul>'.$pg->getDashboardCamera($inputDashcam);
-
-			echo '<div class="container p-0 bg-transparent" contenteditable="true" id="generatedReport">'.$generatedReport.'</div>';
-			echo '<textarea class="form-control">'.$generatedReport.'</textarea>';
 
 		}
 
@@ -424,13 +423,6 @@
 
 		if ($generatorType == 'TrafficDivisionPatrolReport') {
 
-			// Array Maps
-			$inputNameTS = arrayMap($_POST['inputNameTS'] ?? array(), $defaultName);
-			$inputCitationsTS = arrayMap($_POST['inputCitationsTS'] ?? array(), 0);
-			$inputEnforcementSpeed = array_filter($_POST['inputEnforcementSpeed']);
-			$inputEnforcementParking = array_filter($_POST['inputEnforcementParking']);
-			$inputEnforcementYielding = array_filter($_POST['inputEnforcementYielding']);
-
 			// Variables
 			$inputDateFrom = $_POST['inputDateFrom'] ?: $g->getUNIX('date');
 			$inputDateTo = $_POST['inputDateTo'] ?: $g->getUNIX('date');
@@ -438,10 +430,16 @@
 			$inputTimeTo = $_POST['inputTimeTo'] ?: $g->getUNIX('time');
 			$inputPatrolVehicle = $_POST['inputPatrolVehicle'] ?: false;
 			$inputVehicleModel = $_POST['inputVehicleModel'] ?? $defaultVehicle;
+			$inputTrafficStops = $_POST['inputTrafficStops'] ?: '0';
+			$inputCitations = $_POST['inputCitations'] ?: '0';
 			$inputVehicleImpounds = $_POST['inputVehicleImpounds'] ?: '0';
 			$inputTrafficAssists = $_POST['inputTrafficAssists'] ?: '0';
 			$inputTrafficInvestigations = $_POST['inputTrafficInvestigations'] ?: '0';
-			$inputGroupOperationURL = $_POST['inputGroupOperationURL'] ?: '';
+			$inputEnforcementSpeed = $_POST['inputEnforcementSpeed'] ?: false;
+			$inputEnforcementParking = $_POST['inputEnforcementParking'] ?: false;
+			$inputEnforcementRegistration = $_POST['inputEnforcementRegistration'] ?: false;
+			$inputEnforcementMoving = $_POST['inputEnforcementMoving'] ?: false;
+
 			$inputNotes = $_POST['inputNotes'] ?: 'N/A';
 			$inputTDPatrolReportURL = $_POST['inputTDPatrolReportURL'] ?: 'https://lspd.gta.world/viewforum.php?f=101';
 
@@ -456,59 +454,15 @@
 				$patrolVehicle = '[*]Unmarked: [cbc][/cbc] - Model: '.$inputVehicleModel;
 			}
 
-			// Traffic Stop Resolver
-			if (!empty($inputNameTS)) {
-
-				$iTS = count($inputNameTS);
-				$iCitations = array_sum($inputCitationsTS);
-				$trafficStops = '';
-
-				foreach ($inputNameTS as $TSID => $name) {
-					$trafficStops .= '[*]' . $name;
-				}
-
-				$trafficStopText = '[b]Traffic Stops:[/b] ' . $iTS . '[list=circle]' . $trafficStops . '[/list]';
-
-			} else {
-
-				$iTS = 0;
-				$iCitations = 0;
-				$trafficStopText = '[b]Traffic Stops:[/b] ' . $iTS;
-
-			}
+			// Counts Resolver
+			$trafficStopCount = (empty($inputTrafficStops)) ? 0 : $inputTrafficStops;
+			$citationCount = (empty($inputCitations)) ? 0 : $inputCitations;
 
 			// Enforcement Resolver
-			$enforcementSpeed = '';
-			if ($inputEnforcementSpeed) {
-				$enforcementSpeedEntries = '';
-				foreach ($inputEnforcementSpeed as $enforcementSpeedEntry) {
-					$enforcementSpeedEntries .= '[*]'.$enforcementSpeedEntry;
-				}
-				$enforcementSpeed = '[*][cbc]Speed Enforcement[list=circle]'.$enforcementSpeedEntries.'[/list]';
-			}
-
-			$enforcementParking = '';
-			if ($inputEnforcementParking) {
-				$enforcementParkingEntries = '';
-				foreach ($inputEnforcementParking as $enforcementParkingEntry) {
-					$enforcementParkingEntries .= '[*]'.$enforcementParkingEntry;
-				}
-				$enforcementParking = '[*][cbc]Parking Enforcement[list=circle]'.$enforcementParkingEntries.'[/list]';
-			}
-
-			$enforcementYielding = '';
-			if ($inputEnforcementYielding) {
-				$enforcementYieldingEntries = '';
-				foreach ($inputEnforcementYielding as $enforcementYieldingEntry) {
-					$enforcementYieldingEntries .= '[*]'.$enforcementYieldingEntry;
-				}
-				$enforcementYielding = '[*][cbc]Failure to Yield Enforcement[list=circle]'.$enforcementYieldingEntries.'[/list]';
-			}
-
-			$groupOperationURL = '';
-			if ($inputGroupOperationURL) {
-				$groupOperationURL = '[*][cbc]Group Operation: [url='.$inputGroupOperationURL.']REPORT[/url]';
-			}
+			$enforcementSpeed = (empty($inputEnforcementSpeed)) ? $unchecked : $checked;
+			$enforcementParking = (empty($inputEnforcementParking)) ? $unchecked : $checked;
+			$enforcementMoving = (empty($inputEnforcementMoving)) ? $unchecked : $checked;
+			$enforcementRegistration = (empty($inputEnforcementRegistration)) ? $unchecked : $checked;
 
 			// Report Builder
 			$redirectPath = redirectPath(2);
@@ -528,23 +482,23 @@
 				[b]Type of patrol vehicle:[/b]
 				[list=circle]'.$patrolVehicle.'[/list]
 
-				'.$trafficStopText.'
-				[b]Citations Issued:[/b] '.$iCitations.'
+				[b]Traffic Stops:[/b] '.$trafficStopCount.'
+				[b]Citations Issued:[/b] '.$citationCount.'
 				[b]Vehicles Impounded:[/b] '.$inputVehicleImpounds.'
 				[b]Traffic Assists:[/b] '.$inputTrafficAssists.'
 				[b]Traffic Investigations:[/b] '.$inputTrafficInvestigations.'
 
-				[b]Targeted Enforcement Undertaken:[/b]
-				[list=circle]
-				'.$enforcementSpeed.'
-				'.$enforcementParking.'
-				'.$enforcementYielding.'
-				'.$groupOperationURL.'
-				[/list]
+				[b]Targeted Enforcement Undertaken:[/b][list][*]'.$enforcementSpeed.' SPEED
+				[*]'.$enforcementParking.' PARKING
+				[*]'.$enforcementMoving.' MOVING VIOLATIONS
+				[*]'.$enforcementRegistration.' REGISTRATION[/list]
+				[b]Location Enforcement Undertaken[/b]: '.$postInputDistrict.'
 
 				[b]Notes (Optional):[/b] ' . $inputNotes . '
 				[/divbox2]';
 			$generatedReport = str_replace('				', '', $generatedReport);
+
+			echo '<textarea>'.$generatedReport.'</textarea>';
 
 		}
 
@@ -1086,7 +1040,7 @@
 		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
 
 		// Redirect
-		switch ($redirectPath) {
+		/*switch ($redirectPath) {
 			case 'report':
 				header('Location: /paperwork-generators/generated-report');
 				break;

@@ -40,26 +40,42 @@
 		?>
 		</div>
 		<hr>
-		<h4><i class="fas fa-fw fa-car mr-2"></i>Traffic Stops</h4>
-		<div class="form-row groupSlotTDTrafficStop">
-		<?php
-			// Form - Options Add - Traffic Stop Slot
-			$c->form('options', 'forms', array(
-				'size' => '2',
-				'label' => '',
-				'action' => 'addSlotTS',
-				'colour' => 'success',
-				'icon' => 'fa-plus-square',
-				'text' => 'Traffic Stop'
-			));
-		?>
-		</div>
-		<hr>
+		<h4><i class="fas fa-fw fa-chart-pie mr-2"></i>Statistics Details</h4>
 		<div class="form-row">
 		<?php
+			// Form - Textfield - Traffic Stops
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'number',
+				'label' => '<label>Traffic Stops</label>',
+				'icon' => 'car',
+				'class' => '',
+				'id' => 'inputTrafficStops',
+				'name' => 'inputTrafficStops',
+				'value' => '',
+				'placeholder' => '#',
+				'tooltip' => 'Citations Count',
+				'attributes' => '',
+				'style' => ''
+			));
+			// Form - Textfield - Citations
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'number',
+				'label' => '<label>Citations</label>',
+				'icon' => 'receipt',
+				'class' => '',
+				'id' => 'inputCitations',
+				'name' => 'inputCitations',
+				'value' => '',
+				'placeholder' => '#',
+				'tooltip' => 'Traffic Stops Count',
+				'attributes' => '',
+				'style' => ''
+			));
 			// Form - Textfield - Vehicle Impounds
 			$c->form('textfield', 'forms', array(
-				'size' => '4',
+				'size' => '2',
 				'type' => 'number',
 				'label' => '<label>Vehicle Impounds</label>',
 				'icon' => 'truck-pickup',
@@ -74,7 +90,7 @@
 			));
 			// Form - Textfield - Traffic Assists
 			$c->form('textfield', 'forms', array(
-				'size' => '4',
+				'size' => '2',
 				'type' => 'number',
 				'label' => '<label>Traffic Assists</label>',
 				'icon' => 'hands-helping',
@@ -89,7 +105,7 @@
 			));
 			// Form - Textfield - Traffic Investigations
 			$c->form('textfield', 'forms', array(
-				'size' => '4',
+				'size' => '2',
 				'type' => 'number',
 				'label' => '<label>Traffic Investigations</label>',
 				'icon' => 'car-crash',
@@ -106,100 +122,84 @@
 		</div>
 		<hr>
 		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Targeted Enforcement</h4>
-		<div class="form-row groupSlotTDEnforcementSpeed">
+		<div class="row">
 		<?php
-			// Form - Datalist - Speed Enforcement
-			$c->form('datalist', 'forms', array(
-				'size' => '4',
-				'label' => '<label>Speed Enforcement</label>',
-				'icon' => 'tachometer-alt',
-				'id' => 'inputEnforcementSpeed',
-				'name' => 'inputEnforcementSpeed[]',
-				'placeholder' => 'Street, Cross-Street',
-				'tooltip' => 'E.g. Popular Street',
-				'attributes' => '',
-				'list' => 'street_list',
-				'listChooser' => $pg->listChooser('streetsList')
-			));
-			// Form - Options Add - Speed Enforcement Slot
-			$c->form('options', 'forms', array(
-				'size' => '3',
-				'label' => '<label>Options</label>',
-				'action' => 'addEnforcementSpeed',
-				'colour' => 'success',
-				'icon' => 'fa-plus-square',
-				'text' => 'Speed Enforcement'
-			));
-		?>
-		</div>
-		<div class="form-row groupSlotTDEnforcementParking">
-		<?php
-			// Form - Datalist - Parking Enforcement
-			$c->form('datalist', 'forms', array(
-				'size' => '4',
-				'label' => '<label>Parking Enforcement</label>',
-				'icon' => 'parking',
-				'id' => 'inputEnforcementParking',
-				'name' => 'inputEnforcementParking[]',
-				'placeholder' => 'Street, Cross-Street',
-				'tooltip' => 'E.g. Popular Street',
-				'attributes' => '',
-				'list' => 'street_list',
-				'listChooser' => $pg->listChooser('streetsList')
-			));
-			// Form - Options Add - Parking Enforcement Slot
-			$c->form('options', 'forms', array(
-				'size' => '3',
-				'label' => '<label>Options</label>',
-				'action' => 'addEnforcementParking',
-				'colour' => 'success',
-				'icon' => 'fa-plus-square',
-				'text' => 'Parking Enforcement'
-			));
-		?>
-		</div>
-		<div class="form-row groupSlotTDEnforcementYielding">
-		<?php
-			// Form - Datalist - Yielding Enforcement
-			$c->form('datalist', 'forms', array(
-				'size' => '4',
-				'label' => '<label>Yielding Enforcement</label>',
-				'icon' => 'traffic-light',
-				'id' => 'inputEnforcementYielding',
-				'name' => 'inputEnforcementYielding[]',
-				'placeholder' => 'Street, Cross-Street',
-				'tooltip' => 'E.g. Popular Street',
-				'attributes' => '',
-				'list' => 'street_list',
-				'listChooser' => $pg->listChooser('streetsList')
-			));
-			// Form - Options Add - Yielding Enforcement Slot
-			$c->form('options', 'forms', array(
-				'size' => '3',
-				'label' => '<label>Options</label>',
-				'action' => 'addEnforcementYield',
-				'colour' => 'success',
-				'icon' => 'fa-plus-square',
-				'text' => 'Yielding Enforcement'
-			));
-		?>
-		</div>
-		<div class="form-row">
-		<?php
-			// Form - Textfield - Group Operation
-			$c->form('textfield', 'forms', array(
-				'size' => '12',
-				'type' => 'text',
-				'label' => '<label>Group Operation URL</label>',
-				'icon' => 'users',
+			// Form - Toggle - Speed Enforcement
+			$c->form('toggle', 'forms', array(
+				'size' => '2',
+				'label' => 'Toggle Speed',
 				'class' => '',
-				'id' => 'inputGroupOperationURL',
-				'name' => 'inputGroupOperationURL',
-				'value' => '',
-				'placeholder' => 'Direct URL to the group operation thread.',
-				'tooltip' => 'URL',
 				'attributes' => '',
-				'style' => ''
+				'id' => 'inputEnforcementSpeed',
+				'name' => 'inputEnforcementSpeed',
+				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
+				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOffStyle' => 'danger',
+				'dataOnStyle' => 'success',
+				'dataWidth' => '160',
+				'dataHeight' => '38',
+			));
+			// Form - Toggle - Parking Enforcement
+			$c->form('toggle', 'forms', array(
+				'size' => '2',
+				'label' => 'Toggle Parking',
+				'class' => '',
+				'attributes' => '',
+				'id' => 'inputEnforcementParking',
+				'name' => 'inputEnforcementParking',
+				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
+				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOffStyle' => 'danger',
+				'dataOnStyle' => 'success',
+				'dataWidth' => '160',
+				'dataHeight' => '38',
+			));
+			// Form - Toggle - Registration Enforcement
+			$c->form('toggle', 'forms', array(
+				'size' => '2',
+				'label' => 'Toggle Registration',
+				'class' => '',
+				'attributes' => '',
+				'id' => 'inputEnforcementRegistration',
+				'name' => 'inputEnforcementRegistration',
+				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
+				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOffStyle' => 'danger',
+				'dataOnStyle' => 'success',
+				'dataWidth' => '160',
+				'dataHeight' => '38',
+			));
+			// Form - Toggle - Moving Violation Enforcement
+			$c->form('toggle', 'forms', array(
+				'size' => '3',
+				'label' => 'Toggle Moving Violation',
+				'class' => '',
+				'attributes' => '',
+				'id' => 'inputEnforcementMoving',
+				'name' => 'inputEnforcementMoving',
+				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
+				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOffStyle' => 'danger',
+				'dataOnStyle' => 'success',
+				'dataWidth' => '160',
+				'dataHeight' => '38',
+			));
+		?>
+		</div>
+		<div class="row">
+		<?php
+			// Form - Datalist - District
+			$c->form('datalist', 'forms', array(
+				'size' => '4',
+				'label' => '',
+				'icon' => 'map-marked-alt',
+				'id' => 'inputDistrict',
+				'name' => 'inputDistrict',
+				'placeholder' => 'District',
+				'tooltip' => 'Location - District',
+				'attributes' => '',
+				'list' => 'district_list',
+				'listChooser' => $pg->listChooser('districtsList')
 			));
 		?>
 		</div>
@@ -257,50 +257,6 @@
 		'attributes' => 'required',
 		'list' => 'vehicle_list',
 		'listChooser' => $pg->listChooser('vehiclesList')
-	));
-?>
-</div>
-<!-- COPY SLOT - TRAFFIC STOP -->
-<div class="container copyGroupSlotTDTrafficStop" style="display: none;">
-<?php
-	// Form - Textfield - Defendant's Name
-	$c->form('textfield', 'forms', array(
-		'size' => '3',
-		'type' => 'text',
-		'label' => '',
-		'icon' => 'id-card',
-		'class' => '',
-		'id' => 'inputNameTS',
-		'name' => 'inputNameTS[]',
-		'value' => '',
-		'placeholder' => 'Firstname Lastname',
-		'tooltip' => 'Defendant - Firstname Lastname',
-		'attributes' => 'required',
-		'style' => ''
-	));
-	// Form - Textfield - Citations
-	$c->form('textfield', 'forms', array(
-		'size' => '2',
-		'type' => 'number',
-		'label' => '',
-		'icon' => 'receipt',
-		'class' => '',
-		'id' => 'inputCitationsTS',
-		'name' => 'inputCitationsTS[]',
-		'value' => '',
-		'placeholder' => '#',
-		'tooltip' => 'Citation Count',
-		'attributes' => '',
-		'style' => ''
-	));
-	// Form - Options Remove - Traffic Stop Slot
-	$c->form('options', 'forms', array(
-		'size' => '2',
-		'label' => '',
-		'action' => 'removeSlotTS',
-		'colour' => 'danger',
-		'icon' => 'fa-minus-square',
-		'text' => 'Traffic Stop'
 	));
 ?>
 </div>
