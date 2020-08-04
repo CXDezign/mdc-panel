@@ -498,8 +498,6 @@
 				[/divbox2]';
 			$generatedReport = str_replace('				', '', $generatedReport);
 
-			echo '<textarea>'.$generatedReport.'</textarea>';
-
 		}
 
 		if ($generatorType == 'PatrolLog') {
@@ -1040,7 +1038,7 @@
 		$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
 
 		// Redirect
-		/*switch ($redirectPath) {
+		switch ($redirectPath) {
 			case 'report':
 				header('Location: /paperwork-generators/generated-report');
 				break;
