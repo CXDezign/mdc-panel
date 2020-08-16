@@ -8,6 +8,7 @@ Albany Fränken Stange
 Albany Hermes
 Albany Lurcher
 Albany Manana
+Albany Manana Custom
 Albany Primo
 Albany Primo Custom
 Albany Roosevelt
@@ -25,11 +26,13 @@ Annis RE-7B
 Annis S80RR
 Annis Savestra
 Annis ZR-380s
+Benefactor BR8 (Formula Car)
 Benefactor Dubsta
 Benefactor Dubsta 6x6
 Benefactor Dubsta Sport
 Benefactor Feltzer
 Benefactor Glendale
+Benefactor Glendale Custom
 Benefactor Krieger
 Benefactor Panto
 Benefactor Schafter
@@ -43,6 +46,7 @@ Benefactor Streiter (Sedan)
 Benefactor Streiter (SUV)
 Benefactor Surano
 Benefactor XLS
+Benefactor XLS (Armored)
 BMX Bike (Bicycle)
 Bollokan Prairie
 Bravado Banshee
@@ -54,6 +58,7 @@ Bravado Buffalo S
 Bravado Duneloader
 Bravado Gauntlet
 Bravado Gauntlet Classic
+Bravado Gauntlet Classic Custom
 Bravado Gauntlet Hellfire
 Bravado Gresley
 Bravado Gresley Hellhound
@@ -65,6 +70,7 @@ Bravado Rumpo Custom
 Bravado Verlierer
 Bravado Youga
 Bravado Youga Classic
+Bravado Youga Classic 4x4
 Brute Airport Bus
 Brute Boxville
 Brute Bus
@@ -85,6 +91,7 @@ Buckingham SuperVolito
 Buckingham Swift
 Buckingham Tugboat
 Bürgerfahrzeug (BF) Bifta
+Bürgerfahrzeug (BF) Club
 Bürgerfahrzeug (BF) Club GTR
 Bürgerfahrzeug (BF) Dune Buggy
 Bürgerfahrzeug (BF) Dune FAV
@@ -100,6 +107,7 @@ Canis Kalahari
 Canis Kamacho
 Canis Mesa
 Canis Seminole
+Canis Seminole Frontier
 Chariot Romero Hearse
 Cheval Fugitive
 Cheval Fugitive (Gruppe6)
@@ -120,6 +128,7 @@ Declasse Burrito (McGill-Olsen)
 Declasse Burrito (Second Generation)
 Declasse Burrito (Snow)
 Declasse Burrito Roof Rack (First Generation)
+Declasse DR1 (Formula Car)
 Declasse Drift Tampa
 Declasse Gang Burrito
 Declasse Gang Burrito (Lost MC)
@@ -147,6 +156,7 @@ Declasse Voodoo
 Declasse Voodoo Custom
 Declasse Yosemite
 Declasse Yosemite (SUV)
+Declasse Yosemite Rancher
 Dewbauchee Exemplar
 Dewbauchee JB 700
 Dewbauchee Massacro
@@ -174,6 +184,7 @@ Dinka Sugoi
 Dinka Thrust
 Dinka Vindicator
 Dundreary Landstalker
+Dundreary Landstalker XL
 Dundreary Regina
 Dundreary Virgo Classic
 Dundreary Virgo Classic Custom
@@ -218,6 +229,7 @@ HVY Insurgent
 HVY Insurgent Police
 HVY Mixer (First Generation)
 HVY Mixer (Second Generation)
+Imponte Beater Dukes
 Imponte Deluxo
 Imponte Dukes
 Imponte Nightshade
@@ -227,6 +239,7 @@ Imponte Ruiner (Wrecked)
 Invetero Coquette
 Invetero Coquette BlackFin
 Invetero Coquette Classic
+Invetero Coquette D10
 Jack Sheepe Lawn Mower
 JoBuilt Hauler
 JoBuilt Hauler Custom
@@ -259,6 +272,7 @@ Lampadati Komoda
 Lampadati Michelli GT
 Lampadati Novak
 Lampadati Pigalle
+Lampadati Tigon
 Lampadati Tropos Rallye
 Lampadati Viseris
 Liberty City Cycles Avarus
@@ -270,6 +284,7 @@ Maibatsu Manchez
 Maibatsu Mule
 Maibatsu Mule Custom
 Maibatsu Penumbra
+Maibatsu Penumbra FF
 Maibatsu Sanchez
 Mammoth Dodo
 Mammoth Patriot
@@ -408,6 +423,7 @@ Vapid Lost Slamvan
 Vapid Minivan
 Vapid Minivan Custom
 Vapid Peyote
+Vapid Peyote Custom
 Vapid Peyote Gasser
 Vapid Radius
 Vapid Razor
