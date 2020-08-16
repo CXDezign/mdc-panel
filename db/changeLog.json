@@ -1,4 +1,13 @@
 {
+	"1.17.4": {
+		"id": "1.17.4",
+		"date": "16/AUG/2020",
+		"changes": {
+			"0": "Paperwork Generators - Generated reports will now display a 'Code' text box as part of the 2nd and final update for the Copy and Paste fix on Chrome. Please copy and paste from the code box. The live MDC will now detect it as HTML code and paste it into the code editor. (<span class='cl-general'>Massive thank you to St3fan[NL]</span>)",
+			"1": "Paperwork Generators - Added missing street 'Lake Vinewood Estate' to the street list.",
+			"2": "Paperwork Generators - Added missing vehicles to the vehicle list: <ul><li>Albany Manana Custom</li><li>Benefactor BR8 (Formula Car)</li><li>Benefactor Glendale Custom</li><li>Benefactor XLS (Armored)</li><li>Bravado Gauntlet Classic Custom</li><li>Bravado Youga Classic 4x4</li><li>Bürgerfahrzeug (BF) Club</li><li>Canis Seminole Frontier</li><li>Declasse DR1 (IndyCar) (Formula Car)</li><li>Declasse Yosemite Rancher</li><li>Dundreary Landstalker XL</li><li>Imponte Beater Dukes</li><li>Invetero Coquette D10</li><li>Lampadati Tigon</li><li>MTL Fire Engine</li><li>MTL Fire Hazardous Material Truck</li><li>Maibatsu Penumbra FF</li><li>Vapid Peyote Custom</li></ul>"
+		}
+	},
 	"1.17.3": {
 		"id": "1.17.3",
 		"date": "04/AUG/2020",
