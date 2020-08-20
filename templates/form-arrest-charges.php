@@ -3,19 +3,30 @@
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="ArrestCharges">
-		<div class="form-row groupSlotCharge">
+		<div class="form-row">
 		<?php
 			// Form - Options Add - Charge
 			$c->form('options', 'forms', array(
-				'size' => '2 mx-auto',
+				'size' => '2 ml-auto',
 				'label' => '',
 				'action' => 'addCharge',
 				'colour' => 'success',
 				'icon' => 'fa-plus-square',
 				'text' => 'Charge'
 			));
+			// Form - Options Add - Drug Charge
+			$c->form('options', 'forms', array(
+				'size' => '2 mr-auto',
+				'label' => '',
+				'action' => 'addDrugCharge',
+				'colour' => 'success',
+				'icon' => 'fa-plus-square',
+				'text' => 'Drug Charge'
+			));
 		?>
 		</div>
+		<div class="form-row groupSlotCharge"></div>
+		<div class="form-row groupSlotChargeDrug"></div>
 		<div class="container mt-5 text-center">
 			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>" role="button">
 				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
@@ -43,8 +54,8 @@
 		'id' => 'inputCrime-',
 		'name' => 'inputCrime[]',
 		'attributes' => 'required data-live-search="true"',
-		'title' => 'Select Charge',
-		'list' => $pg->chargeChooser(),
+		'title' => 'Charge',
+		'list' => $pg->chargeChooser('generic'),
 		'hint' => '',
 		'hintClass' => ''
 	));
@@ -57,7 +68,7 @@
 		'id' => 'inputCrimeClass-',
 		'name' => 'inputCrimeClass[]',
 		'attributes' => 'required',
-		'title' => 'Select Class',
+		'title' => 'Class',
 		'list' => '',
 		'hint' => '',
 		'hintClass' => ''
@@ -71,7 +82,7 @@
 		'id' => 'inputCrimeOffence-',
 		'name' => 'inputCrimeOffence[]',
 		'attributes' => 'required',
-		'title' => 'Select Offence',
+		'title' => 'Offence',
 		'list' => '',
 		'hint' => '',
 		'hintClass' => ''
@@ -85,7 +96,7 @@
 		'id' => 'inputCrimeAddition-',
 		'name' => 'inputCrimeAddition[]',
 		'attributes' => 'required',
-		'title' => 'Select Addition',
+		'title' => 'Addition',
 		'list' => $pg->listChooser('sentencingAdditionsList'),
 		'hint' => '',
 		'hintClass' => ''
@@ -95,6 +106,78 @@
 		'size' => 'auto',
 		'label' => '',
 		'action' => 'removeCharge',
+		'colour' => 'danger',
+		'icon' => 'fa-minus-square m-0',
+		'text' => ''
+	));
+?>
+<input type="hidden" id="inputCrimeDrugSubstanceCategory-" name="inputCrimeSubstanceCategory[]" value="?">
+</div>
+
+<!-- DRUG CHARGE SLOT -->
+<div class="container copyGroupSlotDrugCharge" style="display: none;">
+<?php
+	// Form - List - Charge
+	$c->form('list', 'forms', array(
+		'size' => '5',
+		'label' => '',
+		'icon' => 'cannabis',
+		'class' => 'select-picker-copy inputCrimeSelector',
+		'id' => 'inputCrimeDrug-',
+		'name' => 'inputCrime[]',
+		'attributes' => 'required data-live-search="true"',
+		'title' => 'Charge',
+		'list' => $pg->chargeChooser('drugs'),
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - List - Charge Class
+	$c->form('list', 'forms', array(
+		'size' => 'auto',
+		'label' => '',
+		'icon' => 'ellipsis-v',
+		'class' => 'select-picker-copy inputCrimeClassSelector',
+		'id' => 'inputCrimeDrugClass-',
+		'name' => 'inputCrimeClass[]',
+		'attributes' => 'required',
+		'title' => 'Class',
+		'list' => '',
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - List - Substance Category
+	$c->form('list', 'forms', array(
+		'size' => 'auto',
+		'label' => '',
+		'icon' => 'tag',
+		'class' => 'select-picker-copy inputCrimeSubstanceCategorySelector',
+		'id' => 'inputCrimeDrugSubstanceCategory-',
+		'name' => 'inputCrimeSubstanceCategory[]',
+		'attributes' => 'required',
+		'title' => 'Substance Category',
+		'list' => '',
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - List - Charge Addition
+	$c->form('list', 'forms', array(
+		'size' => 'auto',
+		'label' => '',
+		'icon' => 'exclamation-triangle',
+		'class' => 'select-picker-copy inputCrimeAdditionSelector',
+		'id' => 'inputCrimeDrugAddition-',
+		'name' => 'inputCrimeAddition[]',
+		'attributes' => 'required',
+		'title' => 'Addition',
+		'list' => $pg->listChooser('sentencingAdditionsList'),
+		'hint' => '',
+		'hintClass' => ''
+	));
+	// Form - Options Remove - Charge
+	$c->form('options', 'forms', array(
+		'size' => 'auto',
+		'label' => '',
+		'action' => 'removeDrugCharge',
 		'colour' => 'danger',
 		'icon' => 'fa-minus-square m-0',
 		'text' => ''

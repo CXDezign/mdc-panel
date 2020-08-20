@@ -111,7 +111,7 @@
 				'name' => 'inputCrime[]',
 				'attributes' => 'required data-live-search="true"',
 				'title' => 'Select Charge',
-				'list' => $pg->chargeChooser(),
+				'list' => $pg->chargeChooser('traffic'),
 				'hint' => '',
 				'hintClass' => ''
 			));
@@ -188,7 +188,7 @@
 		'name' => 'inputCrime[]',
 		'attributes' => 'required data-live-search="true"',
 		'title' => 'Select Charge',
-		'list' => $pg->chargeChooser(),
+		'list' => $pg->chargeChooser('traffic'),
 		'hint' => '',
 		'hintClass' => ''
 	));

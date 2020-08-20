@@ -54,14 +54,15 @@
 		// Traffic Report & Arrest Report Generators
 
 			//  Traffic Report & Arrest Report Generators - Dynamic Crime Selector
-			$(document).on('change', 'select.inputCrimeSelector', function (e) {
+			$(document).on('change', 'select.inputCrimeSelector', function(e) {
 
 				e.preventDefault();
 
-				var clickedElementID = '#'+e.target.id;
-				var crimeClassSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeClassSelector select').attr('id');
-				var crimeOffenceSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeOffenceSelector select').attr('id');
-				var crimeAdditionSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeAdditionSelector select').attr('id');
+				let clickedElementID = '#'+e.target.id;
+				let crimeClassSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeClassSelector select').attr('id');
+				let crimeOffenceSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeOffenceSelector select').attr('id');
+				let crimeSubstanceCategorySelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeSubstanceCategorySelector select').attr('id');
+				let crimeAdditionSelector = $(clickedElementID).parents('.crimeSelectorGroup').find('.inputCrimeAdditionSelector select').attr('id');
 
 				$.ajax({
 					url: '/controllers/form-processor.php',
@@ -72,10 +73,11 @@
 						getType: 'getCrime'
 					},
 					success: function(response) {
-						var classSelector = '#'+crimeClassSelector;
-						var offenceSelector = '#'+crimeOffenceSelector;
-						var additionSelector = '#'+crimeAdditionSelector;
-						var response = $.parseJSON(response);
+						let classSelector = '#'+crimeClassSelector;
+						let offenceSelector = '#'+crimeOffenceSelector;
+						let substanceCategorySelector = '#'+crimeSubstanceCategorySelector;
+						let additionSelector = '#'+crimeAdditionSelector;
+						response = $.parseJSON(response);
 
 						$(classSelector).find('option').remove();
 						$(classSelector).append(response[0]);
@@ -84,6 +86,10 @@
 						$(offenceSelector).find('option').remove();
 						$(offenceSelector).append(response[1]);
 						$(offenceSelector).attr('required', true).selectpicker({title: ''}).trigger('change').selectpicker('refresh').selectpicker('render');
+
+						$(substanceCategorySelector).find('option').remove();
+						$(substanceCategorySelector).append(response[2]);
+						$(substanceCategorySelector).attr('required', true).selectpicker({title: ''}).trigger('change').selectpicker('refresh').selectpicker('render');
 
 						$(additionSelector).find('option.bs-title-option').remove();
 						$(additionSelector).selectpicker({title: ''}).selectpicker('refresh').selectpicker('render');
@@ -224,6 +230,8 @@
 
 		// Arrest Report Generator
 
+			var $universalChargeCount = 0;
+
 			// Arrest Report Generator - Charge Slots
 			(function() {
 
@@ -233,17 +241,16 @@
 				let $add = '.addCharge';
 				let $remove = '.removeCharge';
 				let $copyGroup = '<div class="form-row '+$class+' crimeSelectorGroup">'+$('.copyGroupSlotCharge').html()+'</div>';
-				let $count = 0;
 
 				$($add).click(function() {
 					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
 						var Last = $('body').find($group+':last');
-						Last.find("#inputCrime-").attr("id", "inputCrime-"+$count);
-						Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+$count);
-						Last.find("#inputCrimeOffence-").attr("id", "inputCrimeOffence-"+$count);
-						Last.find("#inputCrimeAddition-").attr("id", "inputCrimeAddition-"+$count);
-						$count++;
+						Last.find("#inputCrime-").attr("id", "inputCrime-"+$universalChargeCount);
+						Last.find("#inputCrimeClass-").attr("id", "inputCrimeClass-"+$universalChargeCount);
+						Last.find("#inputCrimeOffence-").attr("id", "inputCrimeOffence-"+$universalChargeCount);
+						Last.find("#inputCrimeAddition-").attr("id", "inputCrimeAddition-"+$universalChargeCount);
+						$universalChargeCount++;
 						copySlotSelectPicker(Last);
 						initialiseTooltips();
 					} else {
@@ -255,6 +262,69 @@
 				});
 
 			})();
+
+			// Arrest Report Generator - Drug Charge Slots
+			(function() {
+
+				let $maxSlots = 30;
+				let $group = '.groupSlotCharge';
+				let $class = $group.replace('.', '');
+				let $add = '.addDrugCharge';
+				let $remove = '.removeDrugCharge';
+				let $copyGroup = '<div class="form-row '+$class+' crimeSelectorGroup">'+$('.copyGroupSlotDrugCharge').html()+'</div>';
+
+				$($add).click(function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						var Last = $('body').find($group+':last');
+						Last.find("#inputCrimeDrug-").attr("id", "inputCrimeDrug-"+$universalChargeCount);
+						Last.find("#inputCrimeDrugClass-").attr("id", "inputCrimeDrugClass-"+$universalChargeCount);
+						Last.find("#inputCrimeDrugSubstanceCategory-").attr("id", "inputCrimeSubstanceDrugCategory-"+$universalChargeCount);
+						Last.find("#inputCrimeDrugAddition-").attr("id", "inputCrimeDrugAddition-"+$universalChargeCount);
+						$universalChargeCount++;
+						copySlotSelectPicker(Last);
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			/*
+			(function() {
+
+				let $maxSlots = 30;
+				let $group = '.groupSlotChargeDrug';
+				let $class = $group.replace('.', '');
+				let $add = '.addDrugCharge';
+				let $remove = '.removeDrugCharge';
+				let $copyGroup = '<div class="form-row '+$class+' crimeDrugSelectorGroup">'+$('.copyGroupSlotDrugCharge').html()+'</div>';
+
+				$($add).click(function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						var Last = $('body').find($group+':last');
+						Last.find("#inputCrimeDrug-").attr("id", "inputCrimeDrug-"+$universalChargeCount);
+						Last.find("#inputCrimeDrugClass-").attr("id", "inputCrimeDrugClass-"+$universalChargeCount);
+						Last.find("#inputCrimeDrugSubstanceCategory-").attr("id", "inputCrimeSubstanceDrugCategory-"+$universalChargeCount);
+						Last.find("#inputCrimeDrugAddition-").attr("id", "inputCrimeDrugAddition-"+$universalChargeCount);
+						$universalChargeCount++;
+						copySlotSelectPicker(Last);
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+			*/
 
 
 		// Patrol Log Generator

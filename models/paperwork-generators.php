@@ -148,18 +148,20 @@ class PaperworkGenerators {
 
 	}
 
-	public function chargeChooser() {
+	public function chargeChooser($typeChooser) {
 
 		$chargeEntries = json_decode(file_get_contents('db/penalSearch.json'), true);
-		$disabledCharges = array(000,423);
+		$disabledCharges = [000,423];
+		$trafficCharges = [401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425];
+		$drugCharges = [505,506,507,508,509];
 
 		$charges = '';
 
 		foreach ($chargeEntries as $charge) {
 
-			$chargeType = $charge['type'];
 			$chargeID = $charge['id'];
-			$charge = $charge['charge'];
+			$chargeName = $charge['charge'];
+			$chargeType = $charge['type'];
 			$chargeDisabled = '';
 
 			switch ($chargeType) {
@@ -181,12 +183,34 @@ class PaperworkGenerators {
 				$chargeColor = 'dark';
 			}
 
-			$chargeContent = "<span class='mr-2 badge badge-".$chargeColor."'>".$chargeID."</span>".$charge;
-			$charges .= '<option
-				data-content="'.$chargeContent.'"
-				value="'.$chargeID.'"
-				'.$chargeDisabled.'>
-			</option>';
+			$chargeContent = "<span class='mr-2 badge badge-".$chargeColor."'>".$chargeID."</span>".$chargeName;
+			if ($typeChooser == 'generic') {
+				if (!in_array($chargeID, $drugCharges)) {
+					$charges .= '<option
+									data-content="'.$chargeContent.'"
+									value="'.$chargeID.'"
+									'.$chargeDisabled.'>
+								</option>';
+				}
+			}
+			if ($typeChooser == 'traffic') {
+				if (in_array($chargeID, $trafficCharges)) {
+					$charges .= '<option
+									data-content="'.$chargeContent.'"
+									value="'.$chargeID.'"
+									'.$chargeDisabled.'>
+								</option>';
+				}
+			}
+			if ($typeChooser == 'drugs') {
+				if (in_array($chargeID, $drugCharges)) {
+					$charges .= '<option
+									data-content="'.$chargeContent.'"
+									value="'.$chargeID.'"
+									'.$chargeDisabled.'>
+								</option>';
+				}
+			}
 
 		}
 
@@ -218,13 +242,26 @@ class PaperworkGenerators {
 		$options = '';
 
 		foreach ($input as $crimeClass => $bool) {
-
 			if ($bool) {
 				$crimeClass++;
 				$class = $this->getCrimeClass($crimeClass);
 				$options .= '<option value="'.$crimeClass.'">Class '.$class.'</option>';
 			}
+		}
 
+		return $options;
+
+	}
+
+	public function getCrimeDrugSubstanceCategory($input) {
+
+		$options = '';
+
+		foreach ($input as $crimeDrugSubstanceCategory => $category) {
+			if ($category) {
+				$crimeDrugSubstanceCategory++;
+				$options .= '<option value="'.$category.'">Category '.$category.'</option>';
+			}
 		}
 
 		return $options;
@@ -236,14 +273,10 @@ class PaperworkGenerators {
 		$options = '';
 
 		foreach ($input as $crimeOffence => $bool) {
-
 			if ($bool) {
-
 				$crimeOffence++;
 				$options .= '<option value="'.$crimeOffence.'">Offence #'.$crimeOffence.'</option>';
-
 			}
-
 		}
 
 		return $options;

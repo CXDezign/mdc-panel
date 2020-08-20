@@ -12,6 +12,8 @@
 
 		if ($getType == 'getCrime') {
 
+			$chargesDrug = [505,506,507,508,509];
+
 			$crimeID = $_REQUEST['crimeID'];
 
 			$crime = $penal[$crimeID];
@@ -19,6 +21,10 @@
 			$crimeOffences = $crime['offence'];
 			$outputClass = array();
 			$outputOffence = array();
+			$outputDrugSubstanceCategories = array();
+			$classes = null;
+			$offences = null;
+			$categories = null;
 
 			foreach ($crimeClasses as $crimeClass => $crimeClassBool) {
 				$outputClass[] .= $crimeClassBool;
@@ -28,10 +34,20 @@
 				$outputOffence[] .= $crimeOffenceBool;
 			}
 
+			if (in_array($crimeID, $chargesDrug)) {
+				if ($crime['drugs']) {
+					$crimeDrugSubstanceCategories = $crime['drugs'];
+					foreach ($crimeDrugSubstanceCategories as $crimeDrugSubstanceCategory => $crimeDrug) {
+						$outputDrugSubstanceCategories[] .= $crimeDrug;
+					}
+					$categories = $pg->getCrimeDrugSubstanceCategory($outputDrugSubstanceCategories);
+				}
+			}
+
 			$classes = $pg->getCrimeClass2(array_reverse($outputClass));
 			$offences = $pg->getCrimeOffence($outputOffence);
 
-			echo json_encode(array($classes, $offences));
+			echo json_encode(array($classes, $offences, $categories));
 
 		}
 
@@ -85,7 +101,7 @@
 		$postInputBadge = $_POST['inputBadge'] ?? 0;
 		$postInputBadgeArray = $_POST['inputBadge'] ?? array();
 		$postInputDefName = $_POST['inputDefName'] ?? $defaultSuspectName;
-		$postInputDistrict = $_POST['inputDistrict'] ?: $defaultDistrict;
+		$postInputDistrict = $_POST['inputDistrict'] ?? $defaultDistrict;
 		$postInputStreet = $_POST['inputStreet'] ?? $defaultStreet;
 		$postInputBuilding = $_POST['inputBuilding'] ?? $defaultBuilding;
 		$postInputVeh = $_POST['inputVeh'] ?? $defaultVehicle;
@@ -608,6 +624,9 @@
 
 				$charges = $_POST['inputCrime'];
 
+				$chargesDrug = [505,506,507,508,509];
+				$multiDimensionalCrimeTimes = [412];
+
 				// Charge List Builder
 				foreach ($charges as $iCharge => $charge) {
 
@@ -615,10 +634,20 @@
 					$charge = $penal[$charge];
 					$chargeID = $charge['id'];
 					$chargeName = $charge['charge'];
-					$chargeOffence = $_POST['inputCrimeOffence'][$iCharge];
+					$chargeOffence = $_POST['inputCrimeOffence'][$iCharge] ?? 1;
 					$chargeAddition = $_POST['inputCrimeAddition'][$iCharge];
-					$chargeFine[] = $charge['fine'][$chargeOffence];
-					$chargeFineFull = '$'.number_format($chargeFine[$iCharge]);
+					$chargeSubstanceCategory = $_POST['inputCrimeSubstanceCategory'][$iCharge];
+
+					if (in_array($chargeID, $chargesDrug)) {
+						$chargeFine[] = $charge['fine'][$chargeSubstanceCategory];
+						$chargeFineFull = '$'.number_format($chargeFine[$iCharge]);
+						$drugChargeTitle = ' (Category '.$chargeSubstanceCategory.')';
+
+					} else {
+						$chargeFine[] = $charge['fine'][$chargeOffence];
+						$chargeFineFull = '$'.number_format($chargeFine[$iCharge]);
+						$drugChargeTitle = null;
+					}
 
 					// Charge Sentencing Additions
 					switch ($chargeAddition) {
@@ -636,10 +665,10 @@
 					$chargeType = $charge['type'];
 					$chargeTypeFull = '';
 
-					// 412 Charge
-					if ($chargeID == 412 && $chargeOffence == 3 ) {
-						$chargeType = 'F';
-					}
+						// 412 Charge
+						if ($chargeID == 412 && $chargeOffence == 3 ) {
+							$chargeType = 'F';
+						}
 
 					// Charge Class Builder
 					$chargeClass = $_POST['inputCrimeClass'][$iCharge];
@@ -722,8 +751,11 @@
 					$chargeExtraFull = '<span class="badge badge-'.$chargeExtraColour.'"><i class="fas fa-fw fa-'.$chargeExtraIcon.' mr-1"></i>'.$chargeExtra[$iCharge].'</span>';
 
 					// Time Builder
-					$multiDimensionalCrimeTimes = array('412');
-					if (in_array($chargeID, $multiDimensionalCrimeTimes)) {
+					if (in_array($chargeID, $chargesDrug)) {
+						$days[] = ($charge['time'][$chargeSubstanceCategory]['days'] / $chargeReduction);
+						$hours[] = ($charge['time'][$chargeSubstanceCategory]['hours'] / $chargeReduction);
+						$mins[] = ($charge['time'][$chargeSubstanceCategory]['min'] / $chargeReduction);
+					} elseif (in_array($chargeID, $multiDimensionalCrimeTimes)) {
 						$days[] = ($charge['time'][$chargeOffence]['days'] / $chargeReduction);
 						$hours[] = ($charge['time'][$chargeOffence]['hours'] / $chargeReduction);
 						$mins[] = ($charge['time'][$chargeOffence]['min'] / $chargeReduction);
@@ -737,7 +769,11 @@
 					$chargeTimeFull = $pg->calculateCrimeTime($days[$iCharge], $hours[$iCharge], $mins[$iCharge]);
 
 					// Finalisation Builders
-					$chargeTitle[] = '<span class="style-underline chargeCopy" data-clipboard-target="#charge-'.$chargeID.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$chargeID.'">'.$chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName.'</span></span>';
+					$chargeOffenceFull = null;
+					if ($chargeOffence > 1) {
+						$chargeOffenceFull = ' (Offence #'.$chargeOffence.')';
+					}
+					$chargeTitle[] = '<span class="style-underline chargeCopy" data-clipboard-target="#charge-'.$chargeID.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$chargeID.'">'.$chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName.$chargeOffenceFull.$drugChargeTitle.'</span></span>';
 
 					// Rows Builder
 					$rowBuilder .= '<tr>
