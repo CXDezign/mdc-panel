@@ -1,4 +1,13 @@
 {
+	"1.17.5": {
+		"id": "1.17.5",
+		"date": "20/AUG/2020",
+		"changes": {
+			"0": "Penal Code - Drug charges 505, 506, 507, 508, 509, have been updated.",
+			"1": "Arrest Charges Calculator - Added a new button specifically for adding drug-related charges.",
+			"2": "Paperwork Generators - Every charge input list now corresponds to their generator type. (Example: Parking Ticket & Traffic Report Generators will display only traffic-related charges."
+		}
+	},
 	"1.17.4": {
 		"id": "1.17.4",
 		"date": "16/AUG/2020",
