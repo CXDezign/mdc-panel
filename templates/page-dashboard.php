@@ -11,6 +11,7 @@
 		$cardDescription = $card['description'];
 		$cardLink = $card['link'];
 		$cardID = $card['ID'];
+		$cardClass = $card['class'];
 		$cardIcon = $card['icon'];
 		$cardTitleIcon = '';
 		$cardLinkTarget = '';
@@ -22,7 +23,7 @@
 		}
 
 		$cards .= '<div class="grid-item">
-			<div class="card card-panel" id="'.$cardID.'">
+			<div class="card card-panel '.$cardClass.'" id="'.$cardID.'">
 				<a href="'.$cardLink.'" '.$cardLinkTarget.' class="d-block">
 					<div class="card-body text-center">
 						<p><i class="fas fa-fw fa-7x fa-'.$cardIcon.' text-muted"></i></p>

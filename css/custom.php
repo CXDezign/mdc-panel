@@ -106,6 +106,10 @@ a:not([href]):hover {
 	text-decoration: none;
 }
 
+.card:hover.cursor-disabled a {
+	cursor: not-allowed!important;
+}
+
 optgroup {
 	font-style: unset;
 }
@@ -223,6 +227,13 @@ optgroup {
 	color: #4095e8;
 	background: rgba(255,255,255,0.1);
 	box-shadow: 0 1px 0 rgba(255,255,255,.3);
+}
+
+#sidebar li:hover.cursor-disabled {
+	color: unset;
+	background: unset;
+	box-shadow: unset;
+	cursor: not-allowed!important;
 }
 
 #sidebar #timestamp {
