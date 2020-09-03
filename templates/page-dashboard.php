@@ -26,7 +26,7 @@
 			<div class="card card-panel '.$cardClass.'" id="'.$cardID.'">
 				<a href="'.$cardLink.'" '.$cardLinkTarget.' class="d-block">
 					<div class="card-body text-center">
-						<p><i class="fas fa-fw fa-7x fa-'.$cardIcon.' text-muted"></i></p>
+						<p><i class="fas fa-fw fa-5x fa-'.$cardIcon.' text-muted"></i></p>
 						<h5 class="card-title">'.$cardTitle.$cardTitleIcon.'</h5>
 						<p class="card-text card-description">'.$cardDescription.'</p>
 					</div>
