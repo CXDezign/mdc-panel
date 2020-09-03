@@ -870,7 +870,7 @@
 
 				$evidence = '';
 				foreach ($postInputEvidenceImageArray as $image) {
-					$evidence .= '<img src="'.$image.'" width="100%" />';
+					$evidence .= '<img src="'.$image.'" style="max-width: 100%" />';
 				}
 			}
 
