@@ -1,4 +1,16 @@
 {
+	"1.17.6": {
+		"id": "1.17.6",
+		"date": "03/SEP/2020",
+		"changes": {
+			"0": "Site - Enable CAD links.",
+			"1": "Site - BBCode.RIP integration.",
+			"2": "Dashboard - Icon sizes decreased.",
+			"3": "Paperwork Generators - Generators have been categorized into different types.",
+			"4": "Parking Ticket Generator - Width of images changed from 100% to max-width 100% in case an image is not as wide as the content page.",
+			"5": "Useful Resources - Wristband & Bracelet breakdown."
+		}
+	},
 	"1.17.5": {
 		"id": "1.17.5",
 		"date": "20/AUG/2020",
