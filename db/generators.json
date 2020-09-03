@@ -1,7 +1,7 @@
 {
 	"0": {
 		"title": "Profiling Samples",
-		"type": "General",
+		"type": "MDC",
 		"link": "/paperwork-generators/profiling-samples",
 		"tooltip": "Generate Profiling Samples (DNA & Fingerprints) records.",
 		"card": "card-generators-samples",
@@ -10,7 +10,7 @@
 	},
 	"1": {
 		"title": "Arrest Charges Calculator",
-		"type": "General",
+		"type": "MDC",
 		"link": "/paperwork-generators/arrest-charges",
 		"tooltip": "Calculate sentences and generate an arrest report.",
 		"card": "card-generators-charges",

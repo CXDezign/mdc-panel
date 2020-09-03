@@ -2,7 +2,6 @@
 
 	$json = json_decode(file_get_contents('db/generators.json'), true);
 
-	$generatorsGeneral = '';
 	$generatorsMDC = '';
 	$generatorsForumLSPD = '';
 
@@ -17,9 +16,9 @@
 		$generatorIcon = $generator['icon'];
 
 		if ($generatorIconType == "icon") {
-			$generatorIcon = '<i class="fas fa-fw fa-7x fa-'.$generatorIcon.' text-muted"></i>';
+			$generatorIcon = '<i class="fas fa-fw fa-5x fa-'.$generatorIcon.' text-muted"></i>';
 		} elseif ($generatorIconType == "image") {
-			$generatorIcon = '<img src="'.$generatorIcon.'" width="112px"/>';
+			$generatorIcon = '<img src="'.$generatorIcon.'" width="80px"/>';
 		}
 
 		$card = '<div class="grid-item">
@@ -39,9 +38,6 @@
 
 		switch($generatorType) {
 
-			case 'General':
-				$generatorsGeneral .= $card;
-				break;
 			case 'MDC':
 				$generatorsMDC .= $card;
 				break;
@@ -58,14 +54,6 @@
 <div class="container" data-aos="fade-out" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-archive mr-2"></i>Paperwork Generators</h1>
 	<hr>
-	<h5>General</h5>
-	<div class="grid" id="generators">
-		<div class="grid-col grid-col--1"></div>
-		<div class="grid-col grid-col--2"></div>
-		<div class="grid-col grid-col--3"></div>
-		<div class="grid-col grid-col--4"></div>
-		<?= $generatorsGeneral ?>
-	</div>
 	<h5>Mobile Data Computer</h5>
 	<div class="grid" id="generators">
 		<div class="grid-col grid-col--1"></div>
