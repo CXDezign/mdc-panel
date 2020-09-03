@@ -76,5 +76,11 @@
 			"1": "/me collects the hook, crouching on the ground, attaching the hook to the undercarriage mounting point of the vehicle, checking the connection.",
 			"2": "/me pushes themself back up, operating the lever on the rear-quarter panel of the tow truck again, raising the hooked vehicle up."
 		}
+	},
+	"10": {
+		"type": "text",
+		"id": "wristbandBraceletBreakdown",
+		"title": "Wristbands & Bracelets Breakdown",
+		"text": "<strong><span style='color: rgba(200,0,0,255)'>Red Wristband</span></strong>: Violent charges.<br><strong><span style='color: rgba(0,0,200,255)'>Blue Wristband</span></strong>: Non-violent charges.<br><strong><span style='color: #FFBF40;'>Yellow Wristband</span></strong>: Medical related concerns. (Terminally Ill, Contageous Disease, etc).<hr><strong><span style='color: #808080;'>White Bracelet:</span></strong> General inmate population.<br><strong><span style='color: #FF8000;'>Orange Bracelet:</span></strong> Juveniles (Male and Female)<br>"
 	}
 }

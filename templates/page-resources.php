@@ -29,6 +29,21 @@
 			</div>';
 		}
 
+		if ($resourceType == 'text') {
+
+			$resourceText = $resource['text'];
+
+			$resources .= '<div class="grid-item">
+				<div class="card card-resource">
+					<div class="card-body">
+						<h5 class="card-title">'.$resourceTitle.'</h5>
+						'.$resourceText.'
+					</div>
+				</div>
+			</div>';
+
+		}
+
 		if ($resourceType == 'copy') {
 
 			$resourceText = $resource['text'];
