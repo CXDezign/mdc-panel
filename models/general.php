@@ -17,6 +17,7 @@ class General {
 			case 'url-github':					return 'https://github.com/xanxTV/MDC-Panel';
 			case 'url-mdc':						return 'https://mdc.gta.world';
 			case 'url-cad':						return 'https://cad.gta.world';
+			case 'url-bbcoderip':				return 'https://bbcode.rip';
 			case 'url-lspd':					return 'https://lspd.gta.world';
 			case 'url-lssd':					return 'https://lssd.gta.world';
 			case 'url-lsfd':					return 'https://lsfd.gta.world';

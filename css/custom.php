@@ -31,6 +31,7 @@
 	$cMap = "#e74c3c";
 	$cGenerators = "#ca9159";
 	$cResources = "#8764d7";
+	$cBBCodeRIP = "#ffc83d";
 	$cDNA = "#FC427B";
 	$cArrestCalculator = "#EAB543";
 	$cArrest = "#cbc2c5";
@@ -578,6 +579,15 @@ optgroup {
 	text-shadow: <?= $cResources ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
+#card-main-bbcoderip:hover {
+	box-shadow: <?= $cBBCodeRIP ?> 0 1px 0px;
+}
+
+#card-main-bbcoderip:hover i {
+	color: <?= $cBBCodeRIP ?>!important;
+	text-shadow: <?= $cBBCodeRIP ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
 #card-main-penal:hover {
 	box-shadow: <?= $golden ?> 0 1px 0px;
 }
@@ -1051,6 +1061,14 @@ small.text-muted {
 
 #card-main-resources:hover i {
 	text-shadow: <?= $cResources ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-main-bbcoderip:hover {
+	box-shadow: <?= $cBBCodeRIP ?>80 0 -1px 0px;
+}
+
+#card-main-bbcoderip:hover i {
+	text-shadow: <?= $cBBCodeRIP ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
 }
 
 #card-main-penal:hover {
