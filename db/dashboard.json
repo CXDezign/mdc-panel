@@ -12,9 +12,9 @@
 		"type": "external",
 		"title": "Computer Aided Dispatch",
 		"description": "Access the Computer Aided Dispatch.",
-		"link": "",
-		"ID": "",
-		"class": "cursor-disabled",
+		"link": "url-cad",
+		"ID": "card-main-cad",
+		"class": "",
 		"icon": "headset"
 	},
 	"2": {

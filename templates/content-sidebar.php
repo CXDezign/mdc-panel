@@ -21,8 +21,8 @@
 				<i class="fas fa-fw fa-desktop mr-2"></i><span class="icon-text">Mobile Data Computer<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
-		<li class="nav-item cursor-disabled">
-			<a class="nav-link disabled" target="_blank" rel="noopener noreferrer" href="" disabled>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-cad') ?>">
 				<i class="fas fa-fw fa-headset mr-2"></i><span class="icon-text">Computer Aided Dispatch<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
