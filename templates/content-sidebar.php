@@ -67,11 +67,6 @@
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" href="/paperwork-generators/evidence-registration-log">
-						<i class="fas fa-fw fa-cannabis mr-2"></i><span class="icon-text">Evidence Log</span>
-					</a>
-				</li>
-				<li>
 					<a class="nav-link" href="/paperwork-generators/patrol-log">
 						<i class="fas fa-fw fa-clipboard-list mr-2"></i><span class="icon-text">Patrol Log</span>
 					</a>

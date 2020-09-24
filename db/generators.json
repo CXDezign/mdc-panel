@@ -54,15 +54,6 @@
 		"icon": "parking"
 	},
 	"6": {
-		"title": "Evidence Registration Log",
-		"type": "ForumLSPD",
-		"link": "/paperwork-generators/evidence-registration-log",
-		"tooltip": "Generate an evidence registration log.",
-		"card": "card-generators-evidence",
-		"iconType": "icon",
-		"icon": "cannabis"
-	},
-	"7": {
 		"title": "Patrol Log",
 		"type": "ForumLSPD",
 		"link": "/paperwork-generators/patrol-log",
@@ -71,7 +62,7 @@
 		"iconType": "icon",
 		"icon": "clipboard-list"
 	},
-	"8": {
+	"7": {
 		"title": "Death Report",
 		"type": "ForumLSPD",
 		"link": "/paperwork-generators/death-report",
@@ -80,7 +71,7 @@
 		"iconType": "icon",
 		"icon": "skull"
 	},
-	"9": {
+	"8": {
 		"title": "TD: Patrol Report",
 		"type": "ForumLSPD",
 		"link": "/paperwork-generators/traffic-division-patrol-report",
@@ -89,7 +80,7 @@
 		"iconType": "image",
 		"icon": "/images/divisions/traffic.png"
 	},
-	"10": {
+	"9": {
 		"title": "MD: Deployment Log",
 		"type": "ForumLSPD",
 		"link": "/paperwork-generators/metropolitan-division-deployment-log",

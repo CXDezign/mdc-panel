@@ -375,68 +375,7 @@
 			$generatedReport = str_replace('				', '', $generatedReport);
 
 		}
-
-		if ($generatorType == 'EvidenceRegistrationLog') {
-
-			// Array Maps
-			$inputItemRegistry = arrayMap($_POST['inputItemRegistry'], 'UNKNOWN ITEM');
-			$inputItemAmount = arrayMap($_POST['inputItemAmount'], '?');
-
-			// Variables
-			$inputSuspectName = $_POST['inputSuspectName'] ?: $defaultName;
-			$inputItemCategory = $_POST['inputItemCategory'] ?: 0;
-
-			// Set Cookies
-			setCookiePost('officerName', $postInputName);
-			setCookiePost('officerRank', $postInputRank);
-
-			// Evidence Resolver
-			$evidence = 'N/A';
-			if (!empty($postInputEvidenceImageArray)) {
-
-				$evidence = '';
-				foreach ($postInputEvidenceImageArray as $eID => $image) {
-					$evidenceCount = $eID + 1;
-					$evidence .= '[altspoiler=EXHIBIT #'.$evidenceCount.'][img]'.$image.'[/img][/altspoiler]';
-				}
-			}
-
-			// Item Resolver
-			$items = '';
-			foreach ($inputItemRegistry as $itemID => $item) {
-				$items .= '[*] x'.$inputItemAmount[$itemID].' - '.$item;
-			}
-
-			// Report Builder
-			$redirectPath = redirectPath(2);
-			$generatedReportType = 'Evidence Registration Log';
-			$generatedThreadURL = 'https://lspd.gta.world/posting.php?mode=post&f=388';
-			$generatedThreadTitle = '['.$er->getItemCategory($inputItemCategory).'] '.$inputSuspectName.' ['.strtoupper($postInputDate).']';
-			$generatedReport = '
-				[divbox2=#fff]
-				[center][lspdlogo=150][/lspdlogo]
-
-				[size=120][b]Los Santos Police Department
-				Mission Row Station[/b][/size]
-				[i]Evidence Registration Log[/i][/center]
-				[color=white]...[/color]
-				[hr][/hr]
-				[color=white]...[/color]
-				[b]Name:[/b] '.$postInputName.'
-				[b]Rank:[/b] '.$pg->getRank($postInputRank).'
-				[b]Date & Time:[/b] '.strtoupper($postInputDate).' - '.$postInputTime.'
-
-				[b]Suspect Name:[/b] '.$inputSuspectName.'
-				[b]Items name & amount:[/b]
-
-				[list]'.$items.'[/list]
-
-				[b]Screenshot:[/b]
-				'.$evidence.'
-				[/divbox2]';
-			$generatedReport = str_replace('				', '', $generatedReport);
-		}
-
+		
 		if ($generatorType == 'TrafficDivisionPatrolReport') {
 
 			// Variables

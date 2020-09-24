@@ -38,7 +38,6 @@
 	$cTraffic = "#c9222e";
 	$cImpound = "#fedd3c";
 	$cParking = "#0066b2";
-	$cEvidence = "#7da522";
 	$cPatrol = "#11cab9";
 	$cDeath = "#F8EFBA";
 	$cTDpatrol = "#5b1d16";
@@ -651,15 +650,6 @@ optgroup {
 	text-shadow: <?= $cParking ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
-#card-generators-evidence:hover {
-	box-shadow: <?= $cEvidence ?> 0 1px 0px;
-}
-
-#card-generators-evidence:hover i {
-	color: <?= $cEvidence ?>!important;
-	text-shadow: <?= $cEvidence ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
-}
-
 #card-generators-death:hover {
 	box-shadow: <?= $cDeath ?> 0 1px 0px;
 }
@@ -1125,14 +1115,6 @@ small.text-muted {
 
 #card-generators-parking:hover i {
 	text-shadow: <?= $cParking ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
-}
-
-#card-generators-evidence:hover {
-	box-shadow: <?= $cEvidence ?>80 0 -1px 0px;
-}
-
-#card-generators-evidence:hover i {
-	text-shadow: <?= $cEvidence ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
 }
 
 #card-generators-death:hover {
