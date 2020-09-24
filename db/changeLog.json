@@ -1,4 +1,16 @@
 {
+	"1.18.0": {
+		"id": "1.18.0",
+		"date": "24/SEP/2020",
+		"changes": {
+			"0": "Site - Updated San Andreas Seal Logo.",
+			"1": "Arrest Report Generator - Post-Arrest Submission now automatically generates.",
+			"2": "Paperwork Generators - Removed Evidence Registration Log Generator.",
+			"3": "Charges - Updated charge 117 to include required case extra information on the table.",
+			"4": "Useful Resources - Updated Citation Appeal.",
+			"5": "Useful Resources - Removed Tow Roleplay."
+		}
+	},
 	"1.17.6": {
 		"id": "1.17.6",
 		"date": "03/SEP/2020",

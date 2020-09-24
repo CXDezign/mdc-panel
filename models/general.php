@@ -7,7 +7,7 @@ class General {
 		switch ($setting) {
 			case 'site-live':					return false;
 			case 'site-name':					return 'MDC Panel';
-			case 'site-version':				return '1.17.6';
+			case 'site-version':				return '1.18.0';
 			case 'site-url':					return $_SERVER['SERVER_NAME'];
 			case 'site-logo':					return '/images/MDC-Panel.svg';
 			case 'site-favicon':				return '/images/MDC-Panel-Favicon.svg';
