@@ -534,6 +534,30 @@ class ArrestReportGenerator extends PaperworkGenerators {
 		return '<strong style="color: #9944dd!important;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> at the district attorney office. <strong style="color: #9944dd!important;">* ))</strong>';
 	}
 
+	public function getPleaRaw($input) {
+
+		switch ($input) {
+			case 1: return 'Guilty';
+			case 2: return 'Not Guilty';
+			case 3: return 'No Contest';
+			case 4: return 'Required Case';
+			default: return 'UNKNOWN PLEA';
+		}
+
+	}
+
+	public function getPleaRawShort($input) {
+
+		switch ($input) {
+			case 1: return 'G';
+			case 2: return 'NG';
+			case 3: return 'NC';
+			case 4: return 'RC';
+			default: return 'UNKNOWN PLEA';
+		}
+		
+	}
+
 }
 
 

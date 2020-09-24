@@ -30,7 +30,7 @@
 							title="'.$generatorTooltip.'">
 							<div class="card-body text-center">
 								<p class="card-text">'.$generatorIcon.'</p>
-								<h6 class="card-title">'.$generatorTitle.'</h6>
+								<h6 class="card-title mb-0">'.$generatorTitle.'</h6>
 							</div>
 						</a>
 					</div>
@@ -83,6 +83,7 @@
 		$('a').tooltip();
 
 		// Hide Charges Table if Accessing Arrest Report Link Directly
+		/*
 		$('body').on('click', '#card-generators-arrest a', function(e) {
 
 			e.preventDefault();
@@ -99,6 +100,7 @@
 			});
 
 		});
+		*/
 
 	});
 </script>
