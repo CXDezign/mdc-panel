@@ -65,9 +65,10 @@
 		"type": "copy",
 		"id": "citationAppeal",
 		"title": "Citation Appeal",
-		"text": "Taking citations is not an admission of guilt, it is only an acknowledgement that they have been received. You have 72 hours to appeal the citation in traffic court or to pay the fine amount through the LSPD online portal."
+		"text": "Paying for citations is an admission of guilt. Taking them is only an acknowledgement they were received. You have 72 hours to appeal in traffic court or to pay for the citation amount through the LSPD online portal."
 	},
 	"9": {
+		"disabled": 1,
 		"type": "roleplay",
 		"id": "roleplayTowHook",
 		"title": "Tow Hook Roleplay",

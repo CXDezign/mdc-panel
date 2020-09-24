@@ -62,27 +62,31 @@
 					</div>
 				</div>
 			</div>';
-
+			
 		}
 
 		if ($resourceType == 'roleplay') {
 
-			$resourceText = $resource['text'];
+			if (!$resource['disabled']) {
 
-			$roleplayLines = '';
-			foreach ($resourceText as $roleplayLineCount => $roleplayLine) {
-				$roleplayLines .= '<textarea class="form-control textboxRP" id="'.$resourceID.$roleplayLineCount.'" readonly>'.$roleplayLine.'</textarea>
-				<a class="btn btn-primary text-white mb-3" data-clipboard-target="#'.$resourceID.$roleplayLineCount.'" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.' - Line '.$roleplayLineCount.'</a>';
-			}
+				$resourceText = $resource['text'];
 
-			$resources .= '<div class="grid-item">
-				<div class="card card-resource">
-					<div class="card-body">
-						<h5 class="card-title">'.$resourceTitle.'</h5>
-						'.$roleplayLines.'
+				$roleplayLines = '';
+				foreach ($resourceText as $roleplayLineCount => $roleplayLine) {
+					$roleplayLines .= '<textarea class="form-control textboxRP" id="'.$resourceID.$roleplayLineCount.'" readonly>'.$roleplayLine.'</textarea>
+					<a class="btn btn-primary text-white mb-3" data-clipboard-target="#'.$resourceID.$roleplayLineCount.'" data-toggle="tooltip" title="Copied!">Copy '.$resourceTitle.' - Line '.$roleplayLineCount.'</a>';
+				}
+
+				$resources .= '<div class="grid-item">
+					<div class="card card-resource">
+						<div class="card-body">
+							<h5 class="card-title">'.$resourceTitle.'</h5>
+							'.$roleplayLines.'
+						</div>
 					</div>
-				</div>
-			</div>';
+				</div>';
+
+			}
 
 		}
 
