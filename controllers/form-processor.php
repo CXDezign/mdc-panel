@@ -34,14 +34,12 @@
 				$outputOffence[] .= $crimeOffenceBool;
 			}
 
-			if (in_array($crimeID, $chargesDrug)) {
-				if ($crime['drugs']) {
+			if (in_array($crimeID, $chargesDrug) && $crime['drugs']) {
 					$crimeDrugSubstanceCategories = $crime['drugs'];
 					foreach ($crimeDrugSubstanceCategories as $crimeDrugSubstanceCategory => $crimeDrug) {
 						$outputDrugSubstanceCategories[] .= $crimeDrug;
 					}
 					$categories = $pg->getCrimeDrugSubstanceCategory($outputDrugSubstanceCategories);
-				}
 			}
 
 			$classes = $pg->getCrimeClass2(array_reverse($outputClass));
@@ -375,7 +373,7 @@
 			$generatedReport = str_replace('				', '', $generatedReport);
 
 		}
-		
+
 		if ($generatorType == 'TrafficDivisionPatrolReport') {
 
 			// Variables
@@ -1110,11 +1108,9 @@
 	function arrayMap($input, $default) {
 
 		$input = $input ?? array();
-		$input = array_map(function($value) use($default) {
-			//global $default;
+		return array_map(function($value) use($default) {
 			return $value === '' ? $default : $value;
 		}, $input);
-		return $input;
 
 	}
 

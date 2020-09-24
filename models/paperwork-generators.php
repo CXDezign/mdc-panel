@@ -184,32 +184,26 @@ class PaperworkGenerators {
 			}
 
 			$chargeContent = "<span class='mr-2 badge badge-".$chargeColor."'>".$chargeID."</span>".$chargeName;
-			if ($typeChooser == 'generic') {
-				if (!in_array($chargeID, $drugCharges)) {
-					$charges .= '<option
-									data-content="'.$chargeContent.'"
-									value="'.$chargeID.'"
-									'.$chargeDisabled.'>
-								</option>';
-				}
+			if ($typeChooser == 'generic' && !in_array($chargeID, $drugCharges)) {
+				$charges .= '<option
+								data-content="'.$chargeContent.'"
+								value="'.$chargeID.'"
+								'.$chargeDisabled.'>
+							</option>';
 			}
-			if ($typeChooser == 'traffic') {
-				if (in_array($chargeID, $trafficCharges)) {
-					$charges .= '<option
-									data-content="'.$chargeContent.'"
-									value="'.$chargeID.'"
-									'.$chargeDisabled.'>
-								</option>';
-				}
+			if ($typeChooser == 'traffic' && in_array($chargeID, $trafficCharges)) {
+				$charges .= '<option
+								data-content="'.$chargeContent.'"
+								value="'.$chargeID.'"
+								'.$chargeDisabled.'>
+							</option>';
 			}
-			if ($typeChooser == 'drugs') {
-				if (in_array($chargeID, $drugCharges)) {
-					$charges .= '<option
-									data-content="'.$chargeContent.'"
-									value="'.$chargeID.'"
-									'.$chargeDisabled.'>
-								</option>';
-				}
+			if ($typeChooser == 'drugs' && in_array($chargeID, $drugCharges)) {
+				$charges .= '<option
+								data-content="'.$chargeContent.'"
+								value="'.$chargeID.'"
+								'.$chargeDisabled.'>
+							</option>';
 			}
 
 		}

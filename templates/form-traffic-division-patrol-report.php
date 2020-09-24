@@ -124,6 +124,8 @@
 		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Targeted Enforcement</h4>
 		<div class="row">
 		<?php
+			$dataOff = '<i class="mr-1 fas fa-fw fa-square"></i>Unchecked';
+			$dataOn = '<i class="mr-1 fas fa-fw fa-check-square"></i>Checked';
 			// Form - Toggle - Speed Enforcement
 			$c->form('toggle', 'forms', array(
 				'size' => '2',
@@ -132,8 +134,8 @@
 				'attributes' => '',
 				'id' => 'inputEnforcementSpeed',
 				'name' => 'inputEnforcementSpeed',
-				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
-				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOff' => $dataOff,
+				'dataOn' => $dataOn,
 				'dataOffStyle' => 'danger',
 				'dataOnStyle' => 'success',
 				'dataWidth' => '160',
@@ -147,8 +149,8 @@
 				'attributes' => '',
 				'id' => 'inputEnforcementParking',
 				'name' => 'inputEnforcementParking',
-				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
-				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOff' => $dataOff,
+				'dataOn' => $dataOn,
 				'dataOffStyle' => 'danger',
 				'dataOnStyle' => 'success',
 				'dataWidth' => '160',
@@ -162,8 +164,8 @@
 				'attributes' => '',
 				'id' => 'inputEnforcementRegistration',
 				'name' => 'inputEnforcementRegistration',
-				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
-				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOff' => $dataOff,
+				'dataOn' => $dataOn,
 				'dataOffStyle' => 'danger',
 				'dataOnStyle' => 'success',
 				'dataWidth' => '160',
@@ -177,8 +179,8 @@
 				'attributes' => '',
 				'id' => 'inputEnforcementMoving',
 				'name' => 'inputEnforcementMoving',
-				'dataOff' => "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked",
-				'dataOn' => "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked",
+				'dataOff' => $dataOff,
+				'dataOn' => $dataOn,
 				'dataOffStyle' => 'danger',
 				'dataOnStyle' => 'success',
 				'dataWidth' => '160',

@@ -38,11 +38,12 @@
 
 		switch($generatorType) {
 
-			case 'MDC':
-				$generatorsMDC .= $card;
-				break;
 			case 'ForumLSPD':
 				$generatorsForumLSPD .= $card;
+				break;
+			case 'MDC':
+			default:
+				$generatorsMDC .= $card;
 				break;
 
 		}
