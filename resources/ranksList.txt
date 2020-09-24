@@ -25,3 +25,8 @@ Division Chief
 Assistant Sheriff
 Undersheriff
 Sheriff
+Probationary Fire Marshal
+Fire Marshal
+Senior Fire Marshal
+Deputy Chief Fire Marshal
+Chief Fire Marshal

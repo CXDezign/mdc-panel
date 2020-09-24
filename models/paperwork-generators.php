@@ -66,6 +66,7 @@ class PaperworkGenerators {
 		$groupCookie = '';
 		$groupLSPD = '';
 		$groupLSSD = '';
+		$groupSFM = '';
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
 			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
@@ -79,6 +80,7 @@ class PaperworkGenerators {
 
 		$ranksLSPD = array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17);
 		$ranksLSSD = array(18,19,20,21,22,23,24,25,26);
+		$ranksSFM = array(27,28,29,30,31);
 
 		foreach ($ranks as $rank) {
 
@@ -90,12 +92,16 @@ class PaperworkGenerators {
 			if (in_array($rankCount, $ranksLSSD)) {
 				$groupLSSD .= $statement;
 			}
+			if (in_array($rankCount, $ranksSFM)) {
+				$groupSFM .= $statement;
+			}
 
 			$rankCount++;
 		}
 
 		return $groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup>
-							<optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>';
+							<optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>
+							<optgroup label="State Fire Marshall">'.$groupSFM.'</optgroup>';
 	}
 	
 	public function divisionalRankChooser() {
