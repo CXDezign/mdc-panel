@@ -9,5 +9,6 @@
 	$chargeTable = (empty($_SESSION['generatedArrestChargeList'])) ? '' : $_SESSION['generatedArrestChargeList'];
 	$chargeTableTotals = (empty($_SESSION['generatedArrestChargeTotals'])) ? '' : $_SESSION['generatedArrestChargeTotals'];
 	$arrestSubmissionTitle = (empty($_SESSION['generatedArrestSubmissionTitle'])) ? '' : $_SESSION['generatedArrestSubmissionTitle'];
+	$arrestSubmissionURL = (empty($_SESSION['generatedArrestSubmissionURL'])) ? '' : $_SESSION['generatedArrestSubmissionURL'];
 	$arrestSubmission = (empty($_SESSION['generatedArrestSubmission'])) ? '' : $_SESSION['generatedArrestSubmission'];
 	$arrestChargeList = (empty($_SESSION['arrestChargeList'])) ? '' : $_SESSION['arrestChargeList'];

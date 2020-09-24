@@ -74,38 +74,22 @@ class General {
 	public function findCookie($cookie) {
 
 		switch ($cookie) {
-			case 'notificationVersion':
-				return $_COOKIE['notificationVersion'] ?? false;
-			case 'toggleMode':
-				return $_COOKIE['toggleMode'] ?? false;
-			case 'toggleClock':
-				return $_COOKIE['toggleClock'] ?? false;
-			case 'toggleBreadcrumb':
-				return $_COOKIE['toggleBreadcrumb'] ?? false;
-			case 'toggleBackgroundLogo':
-				return $_COOKIE['toggleBackgroundLogo'] ?? false;
-			case 'toggleHints':
-				return $_COOKIE['toggleHints'] ?? false;
-			case 'toggleFooter':
-				return $_COOKIE['toggleFooter'] ?? false;
-			case 'toggleLiveVisitorCounter':
-				return $_COOKIE['toggleLiveVisitorCounter'] ?? false;
-			case 'officerName':
-				return $_COOKIE['officerName'] ?? '';
-			case 'officerRank':
-				return $_COOKIE['officerRank'] ?? '';
-			case 'officerBadge':
-				return $_COOKIE['officerBadge'] ?? '';
-			case 'callSign':
-				return $_COOKIE['callSign'] ?? '';
-			case 'defName':
-				return $_COOKIE['defName'] ?? '';
-			case 'defNameURL':
-				return str_replace(' ', '_', $_COOKIE['defName'] ?? '');
-			case 'inputTDPatrolReportURL':
-				return $_COOKIE['inputTDPatrolReportURL'] ?? 'https://lspd.gta.world/viewforum.php?f=101';
-			default:
-				break;
+			case 'notificationVersion':			return $_COOKIE['notificationVersion'] ?? false;
+			case 'toggleMode':					return $_COOKIE['toggleMode'] ?? false;
+			case 'toggleClock':					return $_COOKIE['toggleClock'] ?? false;
+			case 'toggleBreadcrumb':			return $_COOKIE['toggleBreadcrumb'] ?? false;
+			case 'toggleBackgroundLogo':		return $_COOKIE['toggleBackgroundLogo'] ?? false;
+			case 'toggleHints':					return $_COOKIE['toggleHints'] ?? false;
+			case 'toggleFooter':				return $_COOKIE['toggleFooter'] ?? false;
+			case 'toggleLiveVisitorCounter':	return $_COOKIE['toggleLiveVisitorCounter'] ?? false;
+			case 'officerName':					return $_COOKIE['officerName'] ?? '';
+			case 'officerRank':					return $_COOKIE['officerRank'] ?? '';
+			case 'officerBadge':				return $_COOKIE['officerBadge'] ?? '';
+			case 'callSign':					return $_COOKIE['callSign'] ?? '';
+			case 'defName':						return $_COOKIE['defName'] ?? '';
+			case 'defNameURL':					return str_replace(' ', '_', $_COOKIE['defName'] ?? '');
+			case 'inputTDPatrolReportURL':		return $_COOKIE['inputTDPatrolReportURL'] ?? 'https://lspd.gta.world/viewforum.php?f=101';
+			default: break;
 		}
 	}
 

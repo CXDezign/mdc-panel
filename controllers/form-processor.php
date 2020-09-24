@@ -119,6 +119,7 @@
 		$generatedArrestChargeList = '';
 		$generatedArrestChargeTotals = '';
 		$generatedArrestSubmissionTitle = '';
+		$generatedArrestSubmissionURL = '';
 		$generatedArrestSubmission = '';
 
 		if ($generatorType == 'ProfilingSamples') {
@@ -284,6 +285,12 @@
 			$redirectPath = redirectPath(1);
 			$generatedReportType = 'Arrest Report';
 			$generatedReport = $officers.'under the callsign '.$callsign.' on the '.$datetime.'. Conducted an arrest on '.$suspect.', the apprehension took place on '.$location.$narrative.$evidence.$dashboard.$processingBands.$plea;
+
+			if ($inputPlea == 3) {
+				$generatedArrestSubmissionURL = 'https://lspd.gta.world/posting.php?mode=post&f=1674';
+			} else {
+				$generatedArrestSubmissionURL = 'https://lspd.gta.world/posting.php?mode=post&f=1228';
+			}
 
 			$generatedArrestSubmissionTitle = $postInputDefName. ' ['.$plea3.']';
 			$generatedArrestSubmission = '[divbox2=#fff]
@@ -1054,6 +1061,7 @@
 			$generatedArrestSubmissionTitle = '';
 			$generatedArrestSubmission = '';
 		}
+		$_SESSION['generatedArrestSubmissionURL'] = $generatedArrestSubmissionURL;
 
 		// Redirect
 		switch ($redirectPath) {
