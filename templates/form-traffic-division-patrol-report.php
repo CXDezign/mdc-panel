@@ -124,8 +124,8 @@
 		<h4><i class="fas fa-fw fa-clipboard mr-2"></i>Targeted Enforcement</h4>
 		<div class="row">
 		<?php
-			$dataOff = '<i class="mr-1 fas fa-fw fa-square"></i>Unchecked';
-			$dataOn = '<i class="mr-1 fas fa-fw fa-check-square"></i>Checked';
+			$dataOff = "<i class='mr-1 fas fa-fw fa-square'></i>Unchecked";
+			$dataOn = "<i class='mr-1 fas fa-fw fa-check-square'></i>Checked";
 			// Form - Toggle - Speed Enforcement
 			$c->form('toggle', 'forms', array(
 				'size' => '2',
