@@ -1,11 +1,21 @@
 {
+	"1.18.1": {
+		"id": "1.18.1",
+		"date": "07/OCT/2020",
+		"changes": {
+			"0": "Metro Deployment Generator - Removed",
+			"1": "Patrol Log Generator - Removed",
+			"2": "Evidence Registration Generator - Leftover code removed.",
+			"3": "Useful Resources - Resources shuffled to prioritise most to least used cards."
+		}
+	},
 	"1.18.0": {
 		"id": "1.18.0",
 		"date": "24/SEP/2020",
 		"changes": {
 			"0": "Site - Updated San Andreas Seal Logo.",
 			"1": "Arrest Report Generator - Post-Arrest Submission now automatically generates.",
-			"2": "Paperwork Generators - Removed Evidence Registration Log Generator.",
+			"2": "Evidence Registration Log Generator - Removed.",
 			"3": "Paperwork Generators - Added State Fire Marshall ranks.",
 			"4": "Charges - Updated charge 117 to include required case extra information on the table.",
 			"5": "Useful Resources - Updated Citation Appeal.",
