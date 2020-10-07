@@ -23,8 +23,7 @@ class General {
 			case 'url-lsfd':					return 'https://lsfd.gta.world';
 			case 'url-penal-code':				return 'https://forum.gta.world/en/index.php?/topic/26513-san-andreas-penal-code';
 			case 'url-court-laws':				return 'https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722';
-			case 'url-lspd-handbook':			return 'https://lspd.gta.world/viewforum.php?f=433';
-			case 'url-lspd-manual':				return 'https://lspd.gta.world/viewtopic.php?f=20&t=1171';
+			case 'url-lspd-manual':				return 'https://lspd.gta.world/viewforum.php?f=218';
 			case 'url-lspd-reports-records':	return 'https://lspd.gta.world/viewforum.php?f=434';
 			case 'url-post-arrest-submission':	return 'https://lspd.gta.world/viewtopic.php?f=1228&t=22822';
 			case 'url-warrant-service':			return 'https://lspd.gta.world/viewforum.php?f=806';
