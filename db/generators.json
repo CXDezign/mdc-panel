@@ -79,14 +79,5 @@
 		"card": "card-generators-tdpatrol",
 		"iconType": "image",
 		"icon": "/images/divisions/traffic.png"
-	},
-	"9": {
-		"title": "MD: Deployment Log",
-		"type": "ForumLSPD",
-		"link": "/paperwork-generators/metropolitan-division-deployment-log",
-		"tooltip": "Generate a Metropolitan Division deployment log.",
-		"card": "card-generators-mddeployment",
-		"iconType": "image",
-		"icon": "/images/divisions/metro.png"
 	}
 }

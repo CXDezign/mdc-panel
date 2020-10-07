@@ -81,11 +81,6 @@
 						<img class="mr-2" src="/images/divisions/traffic.png" alt="TD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">TD: Patrol Report</span>
 					</a>
 				</li>
-				<li>
-					<a class="nav-link" href="/paperwork-generators/metropolitan-division-deployment-log">
-						<img class="mr-2" src="/images/divisions/metro.png" alt="MD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">MD: Deployment Log</span>
-					</a>
-				</li>
 			</ul>
 		</li>
 		<li class="nav-item">

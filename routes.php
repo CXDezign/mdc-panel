@@ -30,9 +30,6 @@
 		case '/paperwork-generators/traffic-report':
 			$url = "/templates/form-traffic-report.php";
 			break;
-		case '/paperwork-generators/evidence-registration-log':
-			$url = "/templates/form-evidence-registration-log.php";
-			break;
 		case '/paperwork-generators/death-report':
 			$url = "/templates/form-death-report.php";
 			break;
@@ -53,9 +50,6 @@
 			break;
 		case '/paperwork-generators/impound-report':
 			$url = "/templates/form-impound-report.php";
-			break;
-		case '/paperwork-generators/metropolitan-division-deployment-log':
-			$url = "/templates/form-metropolitan-division-deployment-log.php";
 			break;
 		case '/paperwork-generators/profiling-samples':
 			$url = "/templates/form-profiling-samples.php";

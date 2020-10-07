@@ -389,33 +389,9 @@
 
 			})();
 
-		// Parking Ticket Generator + Evidence Registration Log Generator
+		// Parking Ticket Generator
 
-			// Evidence Registration Log - Item Registry
-			(function() {
-				
-				let $maxSlots = 10;
-				let $group = '.groupItemRegistry';
-				let $class = $group.replace('.', '');
-				let $add = '.addItemRegistry';
-				let $remove = '.removeItemRegistry';
-				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupItemRegistry').html()+'</div>';
-
-				$('body').on('click', $add, function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroup);
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-
-			// Parking Ticket Generator + Evidence Registration Log Generator - Evidence Photograph
+			// Parking Ticket Generator - Evidence Photograph
 			(function() {
 				
 				let $maxSlots = 5;
@@ -617,111 +593,6 @@
 				$('body').on('click', $add, function() {
 					if ($('body').find($group).length <= $maxSlots) {
 						$('body').find($group+':last').after($copyGroup);
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-
-
-		// Metropolitan Division: Deployment Log Generator
-
-			// Metropolitan Division: Deployment Log Generator - Team Leader Slots
-			(function() {
-
-				let $maxSlots = 4;
-				let $group = '.groupSlotPlatoonTeamLeader';
-				let $class = $group.replace('.', '');
-				let $add = '.addPlatoonTeamLeader';
-				let $remove = '.removePlatoonTeamLeader';
-				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotPlatoonTeamLeader').html()+'</div>';
-
-				$('body').on('click', $add, function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroup);
-						var Last = $('body').find($group+':last');
-						copySlotSelectPicker(Last);
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-
-			// Metropolitan Division: Deployment Log Generator - Metropolitan Members Slots
-			(function() {
-
-				let $maxSlots = 30;
-				let $group = '.groupSlotMetropolitanMembers';
-				let $class = $group.replace('.', '');
-				let $add = '.addMetropolitanMember';
-				let $remove = '.removeMetropolitanMember';
-				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotMetropolitanMembers').html()+'</div>';
-
-				$('body').on('click', $add, function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroup);
-						var Last = $('body').find($group+':last');
-						copySlotSelectPicker(Last);
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-
-			// Metropolitan Division: Deployment Log Generator - Deployment Event Slots
-			(function() {
-
-				let $maxSlots = 20;
-				let $group = '.groupDeploymentEvent';
-				let $class = $group.replace('.', '');
-				let $add = '.addDeploymentEvent';
-				let $remove = '.removeDeploymentEvent';
-				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupDeploymentEvent').html()+'</div>';
-
-				$('body').on('click', $add, function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroup);
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-
-			// Metropolitan Division: Deployment Log Generator - Injured Member Slots
-			(function() {
-
-				let $maxSlots = 30;
-				let $group = '.groupSlotInjuredTeamMember';
-				let $class = $group.replace('.', '');
-				let $add = '.addInjuredTeamMember';
-				let $remove = '.removeInjuredTeamMember';
-				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotInjuredTeamMember').html()+'</div>';
-
-				$('body').on('click', $add, function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroup);
-						var Last = $('body').find($group+':last');
-						copySlotSelectPicker(Last);
 						initialiseTooltips();
 					} else {
 						maxSlots($maxSlots);

@@ -320,8 +320,6 @@ class PaperworkGenerators {
 		switch ($list) {
 			case 'braceletList':
 			case 'wristbandList':
-			case 'itemCategoryList':
-			case 'metroPlatoonList':
 				$output = '';
 				$entriesCount = 0;
 				break;
@@ -566,18 +564,6 @@ class ArrestReportGenerator extends PaperworkGenerators {
 
 }
 
-
-class EvidenceRegistrationLogGenerator extends PaperworkGenerators {
-
-	public function getItemCategory($input) {
-
-		$items = file('../resources/itemCategoryList.txt', FILE_IGNORE_NEW_LINES);
-		return $items[$input];
-
-	}
-
-}
-
 class ParkingTicketGenerator extends PaperworkGenerators {
 
 	public function illegalParkingChooser() {
@@ -627,109 +613,6 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 		$illegalParkingReasons = file('../resources/illegalParkingList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $illegalParkingReasons[$input];
-
-	}
-
-}
-
-class MetroGenerator extends PaperworkGenerators {
-
-	public function getMetroPlatoon($input) {
-
-		$metroPlatoonList = file('../resources/metroPlatoonList.txt', FILE_IGNORE_NEW_LINES);
-
-		return $metroPlatoonList[$input];
-
-	}
-
-	public function getMetroDeploymentType($input) {
-
-		$metroDeploymentTypes = file('../resources/metroDeploymentTypes.txt', FILE_IGNORE_NEW_LINES);
-
-		return $metroDeploymentTypes[$input-1];
-
-	}
-
-	public function getMetroDivisionalRank($input) {
-
-		$metroDivisionalRank = file('../resources/divisionalRanksList.txt', FILE_IGNORE_NEW_LINES);
-
-		return $metroDivisionalRank[$input];
-
-	}
-
-	public function getMetroDivisionalRankPlatoon($input) {
-
-		switch ($input) {
-			case 0:
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-				return 'B';
-			case 5:
-			case 6:
-			case 7:
-			case 8:
-			case 9:
-				return 'C';
-			case 10:
-			case 11:
-			case 12:
-			case 13:
-			case 14:
-				return 'D';
-			case 15:
-			case 16:
-			case 17:
-			case 18:
-			case 19:
-				return 'K9';
-			default:
-				return '?';
-		}
-
-	}
-
-	public function getMetroDivisionalRankShort($input) {
-
-		switch ($input) {
-			case 0:
-			case 5:
-			case 10:
-			case 15:
-				return 'OIC';
-			case 1:
-			case 6:
-				return 'TL';
-			case 2:
-			case 7:
-				return 'ATL';
-			case 3:
-			case 8:
-				return 'TSO';
-			case 4:
-			case 9:
-				return 'PTSO';
-			case 11:
-				return 'SL';
-			case 12:
-				return 'EL';
-			case 13:
-				return 'SO';
-			case 14:
-				return 'PSO';
-			case 16:
-				return 'CHS';
-			case 17:
-				return 'CS';
-			case 18:
-				return 'CH';
-			case 19:
-				return 'PCH';
-			default:
-				return '?';
-		}
 
 	}
 

@@ -41,7 +41,6 @@
 	$cPatrol = "#11cab9";
 	$cDeath = "#F8EFBA";
 	$cTDpatrol = "#5b1d16";
-	$cMDDeployment = "#ff1e31";
 
 ?>
 
@@ -681,19 +680,6 @@ optgroup {
 	filter: grayscale(0%);
 }
 
-#card-generators-mddeployment:hover {
-	box-shadow: <?= $cMDDeployment ?> 0 1px 0px;
-}
-
-#card-generators-mddeployment img {
-	filter: grayscale(100%);
-	transition: filter .1s linear;
-}
-
-#card-generators-mddeployment:hover img {
-	filter: grayscale(0%);
-}
-
 /*///////////////////////////////////////////////////////////////////////////////////////////
 // MOBILE DEVICES //
 //////////////////*/
@@ -1139,10 +1125,6 @@ small.text-muted {
 
 #card-generators-patrol:hover i {
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
-}
-
-#card-generators-mddeployment:hover {
-	box-shadow: <?= $cMDDeployment ?>80 0 -1px 0px;
 }
 
 <?php
