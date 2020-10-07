@@ -34,23 +34,6 @@
 			alert('Maximum '+$maxSlots+' slots are allowed.');
 		}
 
-		// Update Time Function - Update time field for copy slots
-		function updateTime() {
-
-			$.ajax({
-				url: '/controllers/form-processor.php',
-				type: 'POST',
-				data: {
-					typeUNIX: 'time',
-					getType: 'getUNIX'
-				},
-				success: function(time) {
-					$('.groupSlotEvent:Last').find('.timeSlot').attr("value", time);
-				},
-			});
-
-		}
-
 		// Traffic Report & Arrest Report Generators
 
 			//  Traffic Report & Arrest Report Generators - Dynamic Crime Selector
@@ -289,101 +272,6 @@
 					}
 				});
 				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-
-			/*
-			(function() {
-
-				let $maxSlots = 30;
-				let $group = '.groupSlotChargeDrug';
-				let $class = $group.replace('.', '');
-				let $add = '.addDrugCharge';
-				let $remove = '.removeDrugCharge';
-				let $copyGroup = '<div class="form-row '+$class+' crimeDrugSelectorGroup">'+$('.copyGroupSlotDrugCharge').html()+'</div>';
-
-				$($add).click(function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroup);
-						var Last = $('body').find($group+':last');
-						Last.find("#inputCrimeDrug-").attr("id", "inputCrimeDrug-"+$universalChargeCount);
-						Last.find("#inputCrimeDrugClass-").attr("id", "inputCrimeDrugClass-"+$universalChargeCount);
-						Last.find("#inputCrimeDrugSubstanceCategory-").attr("id", "inputCrimeSubstanceDrugCategory-"+$universalChargeCount);
-						Last.find("#inputCrimeDrugAddition-").attr("id", "inputCrimeDrugAddition-"+$universalChargeCount);
-						$universalChargeCount++;
-						copySlotSelectPicker(Last);
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $remove, function() { 
-					$(this).parents($group).remove();
-				});
-
-			})();
-			*/
-
-
-		// Patrol Log Generator
-		
-			// Patrol Log Generator - Event Slots
-			(function() {
-
-				let $maxSlots = 50;
-				let $group = '.groupSlotEvent';
-				let $class = $group.replace('.', '');
-				let $addGeneric = '.addSlotEventGeneric';
-				let $addTraffic = '.addSlotEventTraffic';
-				let $addArrest = '.addSlotEventArrest';
-				let $removeGeneric = '.removeSlotEventGeneric';
-				let $removeTraffic = '.removeSlotEventTraffic';
-				let $removeArrest = '.removeSlotEventArrest';
-				let $copyGroupGeneric = '<div class="form-row '+$class+'">'+$('.copyGroupSlotEventGeneric').html()+'</div>';
-				let $copyGroupTraffic = '<div class="form-row '+$class+'">'+$('.copyGroupSlotEventTraffic').html()+'</div>';
-				let $copyGroupArrest = '<div class="form-row '+$class+'">'+$('.copyGroupSlotEventArrest').html()+'</div>';
-
-				// Event - Generic
-				$($addGeneric).click(function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroupGeneric);
-						updateTime();
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $removeGeneric, function() { 
-					$(this).parents($group).remove();
-				});
-
-				// Event - Traffic
-				$($addTraffic).click(function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroupTraffic);
-						updateTime();
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});
-				$('body').on('click', $removeTraffic, function() { 
-					$(this).parents($group).remove();
-				});
-
-				// Event - Arrest
-				$($addArrest).click(function() {
-					if ($('body').find($group).length <= $maxSlots) {
-						$('body').find($group+':last').after($copyGroupArrest);
-						updateTime();
-						initialiseTooltips();
-					} else {
-						maxSlots($maxSlots);
-					}
-				});	
-				$('body').on('click', $removeArrest, function() { 
 					$(this).parents($group).remove();
 				});
 

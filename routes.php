@@ -36,9 +36,6 @@
 		case '/paperwork-generators/traffic-division-patrol-report':
 			$url = "/templates/form-traffic-division-patrol-report.php";
 			break;
-		case '/paperwork-generators/patrol-log':
-			$url = "/templates/form-patrol-log.php";
-			break;
 		case '/paperwork-generators/parking-ticket':
 			$url = "/templates/form-parking-ticket.php";
 			break;

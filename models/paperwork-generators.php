@@ -103,48 +103,6 @@ class PaperworkGenerators {
 							<optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>
 							<optgroup label="State Fire Marshall">'.$groupSFM.'</optgroup>';
 	}
-	
-	public function divisionalRankChooser() {
-
-		$ranks = file('resources/divisionalRanksList.txt');
-		$rankCount = 0;
-
-		$groupB = '';
-		$groupC = '';
-		$groupD = '';
-		$groupK9 = '';
-
-		$ranksB = array(0,1,2,3,4);
-		$ranksC = array(5,6,7,8,9);
-		$ranksD = array(10,11,12,13,14);
-		$ranksK9 = array(15,16,17,18,19);
-
-		foreach ($ranks as $rank) {
-
-			$statement = '<option value="'.$rankCount.'">'.$rank.'</option>';
-
-			if (in_array($rankCount, $ranksB)) {
-				$groupB .= $statement;
-			}
-			if (in_array($rankCount, $ranksC)) {
-				$groupC .= $statement;
-			}
-			if (in_array($rankCount, $ranksD)) {
-				$groupD .= $statement;
-			}
-			if (in_array($rankCount, $ranksK9)) {
-				$groupK9 .= $statement;
-			}
-
-			$rankCount++;
-		}
-
-		return '<optgroup label="B Platoon">'.$groupB.'</optgroup>
-				<optgroup label="C Platoon">'.$groupC.'</optgroup>
-				<optgroup label="D Platoon">'.$groupD.'</optgroup>
-				<optgroup label="K9 Platoon">'.$groupK9.'</optgroup>';
-	}
-
 
 	public function getRank($input) {
 

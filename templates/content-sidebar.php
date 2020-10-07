@@ -67,11 +67,6 @@
 					</a>
 				</li>
 				<li>
-					<a class="nav-link" href="/paperwork-generators/patrol-log">
-						<i class="fas fa-fw fa-clipboard-list mr-2"></i><span class="icon-text">Patrol Log</span>
-					</a>
-				</li>
-				<li>
 					<a class="nav-link" href="/paperwork-generators/death-report">
 						<i class="fas fa-fw fa-skull mr-2"></i><span class="icon-text">Death Report</span>
 					</a>
