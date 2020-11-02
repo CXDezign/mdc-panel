@@ -1,10 +1,17 @@
 {
+	"1.18.2": {
+		"id": "1.18.2",
+		"date": "02/NOV/2020",
+		"changes": {
+			"0": "Profiling Samples Generator - Removed."
+		}
+	},
 	"1.18.1": {
 		"id": "1.18.1",
 		"date": "07/OCT/2020",
 		"changes": {
-			"0": "Metro Deployment Generator - Removed",
-			"1": "Patrol Log Generator - Removed",
+			"0": "Metro Deployment Generator - Removed.",
+			"1": "Patrol Log Generator - Removed.",
 			"2": "Evidence Registration Generator - Leftover code removed.",
 			"3": "Useful Resources - Resources shuffled to prioritise most to least used cards."
 		}
