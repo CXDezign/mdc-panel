@@ -284,7 +284,6 @@ class PaperworkGenerators {
 			case 'vehiclesList':
 			case 'districtsList':
 			case 'streetsList':
-			case 'buildingsList':
 				$output = '';
 				$optionValue = false;
 				break;

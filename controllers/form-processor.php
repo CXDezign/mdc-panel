@@ -122,32 +122,6 @@
 		$generatedArrestSubmissionURL = '';
 		$generatedArrestSubmission = '';
 
-		if ($generatorType == 'ProfilingSamples') {
-
-			// Formatters
-			$officers = resolverOfficer($postInputName, $postInputRank, $postInputBadge);
-			$location = textBold(1, $postInputBuilding);
-			$suspect = textBold(1, $postInputDefName);
-			$datetime = textBold(2, $postInputDate).', '.textBold(1, $postInputTime);
-
-			// Set Cookies
-			setCookiePost('officerName', $postInputName);
-			setCookiePost('officerRank', $postInputRank);
-			setCookiePost('officerBadge', $postInputBadge);
-			setCookiePost('defName', $postInputDefName);
-
-			function statement($input) {
-				global $officers, $suspect, $datetime, $location;
-				return $input.' Sample Attached<br>'.textRP(1).' '.$officers.' sampled '.$suspect.'&#39;s '.$input.' on the '.$datetime.'. At the '.$location.' processing unit. '.textRP(1);
-			}
-
-			// Report Builder
-			$redirectPath = redirectPath(1);
-			$generatedReportType = 'Profiling Samples';
-			$generatedReport = statement('Fingerprints').'<br><br>'.statement('DNA');
-
-		}
-
 		if ($generatorType == 'TrafficReport') {
 
 			// Array Maps

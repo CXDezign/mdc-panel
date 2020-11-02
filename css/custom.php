@@ -32,7 +32,6 @@
 	$cGenerators = "#ca9159";
 	$cResources = "#8764d7";
 	$cBBCodeRIP = "#ffc83d";
-	$cDNA = "#FC427B";
 	$cArrestCalculator = "#EAB543";
 	$cArrest = "#cbc2c5";
 	$cTraffic = "#c9222e";
@@ -595,15 +594,6 @@ optgroup {
 	text-shadow: <?= $golden ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
 }
 
-#card-generators-samples:hover {
-	box-shadow: <?= $cDNA ?> 0 1px 0px;
-}
-
-#card-generators-samples:hover i {
-	color: <?= $cDNA ?>!important;
-	text-shadow: <?= $cDNA ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
-}
-
 #card-generators-charges:hover {
 	box-shadow: <?= $cArrestCalculator ?> 0 1px 0px;
 }
@@ -1053,14 +1043,6 @@ small.text-muted {
 
 #card-main-penal:hover i {
 	text-shadow: <?= $golden ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
-}
-
-#card-generators-samples:hover {
-	box-shadow: <?= $cDNA ?> 0 -1px 0px;
-}
-
-#card-generators-samples:hover i {
-	text-shadow: <?= $cDNA ?>80 0 0 15px, 0px -1px 0 rgba(0, 0, 0, .5);
 }
 
 #card-generators-charges:hover {

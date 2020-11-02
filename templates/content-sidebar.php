@@ -37,11 +37,6 @@
 			</a>
 			<ul class="collapse list-unstyled" id="generatorSubmenu">
 				<li>
-					<a class="nav-link" href="/paperwork-generators/profiling-samples">
-						<i class="fas fa-fw fa-dna mr-2"></i><span class="icon-text">Profiling Samples</span>
-					</a>
-				</li>
-				<li>
 					<a class="nav-link" href="/paperwork-generators/arrest-charges">
 						<i class="fas fa-fw fa-gavel mr-2"></i><span class="icon-text">Arrest Charges Calculator</span>
 					</a>

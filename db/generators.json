@@ -1,14 +1,5 @@
 {
 	"0": {
-		"title": "Profiling Samples",
-		"type": "MDC",
-		"link": "/paperwork-generators/profiling-samples",
-		"tooltip": "Generate Profiling Samples (DNA & Fingerprints) records.",
-		"card": "card-generators-samples",
-		"iconType": "icon",
-		"icon": "dna"
-	},
-	"1": {
 		"title": "Arrest Charges Calculator",
 		"type": "MDC",
 		"link": "/paperwork-generators/arrest-charges",
@@ -17,7 +8,7 @@
 		"iconType": "icon",
 		"icon": "gavel"
 	},
-	"2": {
+	"1": {
 		"title": "Arrest Report",
 		"type": "MDC",
 		"link": "/paperwork-generators/arrest-report",
@@ -26,7 +17,7 @@
 		"iconType": "icon",
 		"icon": "landmark"
 	},
-	"3": {
+	"2": {
 		"title": "Traffic Report",
 		"type": "MDC",
 		"link": "/paperwork-generators/traffic-report",
@@ -35,7 +26,7 @@
 		"iconType": "icon",
 		"icon": "car"
 	},
-	"4": {
+	"3": {
 		"title": "Impound Report",
 		"type": "MDC",
 		"link": "/paperwork-generators/impound-report",
@@ -44,7 +35,7 @@
 		"iconType": "icon",
 		"icon": "truck-pickup"
 	},
-	"5": {
+	"4": {
 		"title": "Parking Ticket",
 		"type": "MDC",
 		"link": "/paperwork-generators/parking-ticket",
@@ -53,7 +44,7 @@
 		"iconType": "icon",
 		"icon": "parking"
 	},
-	"6": {
+	"5": {
 		"title": "TD: Patrol Report",
 		"type": "ForumLSPD",
 		"link": "/paperwork-generators/traffic-division-patrol-report",
@@ -62,7 +53,7 @@
 		"iconType": "image",
 		"icon": "/images/divisions/traffic.png"
 	},
-	"7": {
+	"6": {
 		"title": "Death Report",
 		"type": "ForumLSPD",
 		"link": "/paperwork-generators/death-report",
