@@ -1,4 +1,11 @@
 {
+	"1.18.3": {
+		"id": "1.18.3",
+		"date": "24/DEC/2020",
+		"changes": {
+			"0": "Paperwork Generators - District 'Palamino Highlands' was fixed for spelling mistakes, now reads 'Palomino Highlands'."
+		}
+	},
 	"1.18.2": {
 		"id": "1.18.2",
 		"date": "02/NOV/2020",
