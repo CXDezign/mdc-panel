@@ -110,11 +110,5 @@
 				<i class="fas fa-fw fa-plug mr-2"></i><span class="icon-text">Changelogs<span class="badge badge-danger ml-3"><?= $g->getSettings('site-version') ?></span></span>
 			</a>
 		</li>
-		<li class="nav-item">
-			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-github') ?>">
-				<i class="fab fa-fw fa-github mr-2"></i>
-				<span class="icon-text">GitHub Project<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
-			</a>
-		</li>
 	</ul>
 </nav>
