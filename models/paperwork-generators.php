@@ -492,7 +492,7 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$plead = 'UNKNOWN PLEA';
 				break;
 		}
-		return '<strong style="color: #9944dd!important;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> at the district attorney office. <strong style="color: #9944dd!important;">* ))</strong>';
+		return '<strong style="color: #9944dd!important;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> <strong style="color: #9944dd!important;">* ))</strong>';
 	}
 
 	public function getPleaRaw($input) {
