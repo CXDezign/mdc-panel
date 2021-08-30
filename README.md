@@ -11,10 +11,8 @@
 </p>
 
 # MDC Panel
-The following web-application is a hub for links, multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing the paperwork for official GTA World government agencies such as the LSPD, LSSD, LSFD. (GTA V - RageMP - GTA World)
+The following web-application is a hub for links, multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing the paperwork.
 * <a href="https://xanx.co.uk/">MDC Panel</a>
-* <a href="https://gta.world/">RageMP - GTA:V Multiplayer Platform</a>
-* <a href="https://gta.world/">GTA World - Roleplay Community</a>
 
 #### Features
 * Simple and fast form fill-out process for reports, threads, general paperwork.
