@@ -1,18 +1,9 @@
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=security_rating)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=alert_status)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=code_smells)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=xanxTV_MDC-Panel&metric=bugs)](https://sonarcloud.io/dashboard?id=xanxTV_MDC-Panel)
-<br>
 <p align="center">
-  <img width="400px" src="https://mdc.xanx.co.uk/images/MDC-Panel.svg">
+  <img width="400px" src="https://raw.githubusercontent.com/CXDezign/MDC-Panel/9422146d3c4d902c141ad16b97c029f885bc3892/images/MDC-Panel.svg">
 </p>
 
 # MDC Panel
 The following web-application is a hub for links, multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing the paperwork.
-* <a href="https://xanx.co.uk/">MDC Panel</a>
 
 #### Features
 * Simple and fast form fill-out process for reports, threads, general paperwork.
