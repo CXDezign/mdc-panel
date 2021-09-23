@@ -1,32 +1,5 @@
-{
-	"0": {
-		"type": "external",
-		"title": "Mobile Data Computer",
-		"description": "Access the Mobile Data Computer.",
-		"link": "url-mdc",
-		"ID": "card-main-mdc",
-		"class": "",
-		"icon": "desktop"
-	},
-	"1": {
-		"type": "external",
-		"title": "Computer Aided Dispatch",
-		"description": "Access the Computer Aided Dispatch.",
-		"link": "url-cad",
-		"ID": "card-main-cad",
-		"class": "",
-		"icon": "headset"
-	},
-	"2": {
-		"type": "internal",
-		"title": "Street Guide",
-		"description": "Explore the various locations of the San Andreas state.",
-		"link": "/street-guide",
-		"ID": "card-main-map",
-		"class": "",
-		"icon": "map-marker-alt"
-	},
-	"3": {
+[
+	{
 		"type": "internal",
 		"title": "Paperwork Generators",
 		"description": "Generate paperwork reports to assist your work process.",
@@ -34,8 +7,7 @@
 		"ID": "card-main-generators",
 		"class": "",
 		"icon": "archive"
-	},
-	"4": {
+	},{
 		"type": "internal",
 		"title": "Useful Resources",
 		"description": "Access some quick and handy resources.",
@@ -43,14 +15,13 @@
 		"ID": "card-main-resources",
 		"class": "",
 		"icon": "book"
-	},
-	"5": {
-		"type": "external",
-		"title": "BBCode RIP",
-		"description": "Access the BBCode RIP website for forum based paperwork solutions.",
-		"link": "url-bbcoderip",
-		"ID": "card-main-bbcoderip",
+	},{
+		"type": "internal",
+		"title": "Street Guide",
+		"description": "Explore the various locations of the San Andreas state.",
+		"link": "/street-guide",
+		"ID": "card-main-map",
 		"class": "",
-		"icon": "hand-middle-finger"
+		"icon": "map-marker-alt"
 	}
-}
+]

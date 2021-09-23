@@ -15,7 +15,7 @@
 	<meta name="title" content="<?= $g->getSettings('site-name') ?>">
 	<meta name="description" content="<?= $g->getSettings('site-description') ?>">
 	<meta name="author" content="<?= $g->getSettings('site-name') ?>">
-	<meta name="keywords" content="xanx, xanxTV, xanax, xanaxTV, MDC, MDC Panel, Mobile, Data, Computer, Panel, GTA5, GTAV, GTAO, GTA RP, Roleplay, RP, GTA World, GTAW, GTA:World, GTA:W, LSPD, LSSD, LSFD, Government, Penal Code, Los Santos Police Department, Los Santos Fires Department, Los Santos Sheriff's Department, Los Santos, Department, Agencies, Agency, Factions">
+	<meta name="keywords" content="MDC, MDC Panel, Mobile, Data, Computer, Panel, GTA5, GTAV, GTAO, GTA RP, Roleplay, RP, LSPD, LSSD, LSFD, Government, Penal Code, Los Santos Police Department, Los Santos Fires Department, Los Santos Sheriff's Department, Los Santos, Department, Agencies, Agency, Factions">
 	<meta name="robots" content="index">
 	<meta name="googlebot" content="all">
 	<meta name="googlebot-news" content="all">

@@ -1,619 +1,567 @@
-{
-	"1.18.4": {
+[
+	{
+		"id": "2.0.0",
+		"date": "23/SEP/2021",
+		"changes": [
+			"General - Stripped down project of association to an old GTAV community.",
+			"Database - Converted to efficient JSON arrays."
+		]
+	},{
 		"id": "1.18.4",
 		"date": "06/JAN/2021",
-		"changes": {
-			"0": "Paperwork Generators - District 'Palamino Highlands' was fixed for spelling mistakes, now reads 'Palomino Highlands'."
-		}
-	},
-	"1.18.3": {
+		"changes": [
+			"Paperwork Generators - District 'Palamino Highlands' was fixed for spelling mistakes, now reads 'Palomino Highlands'."
+		]
+	},{
 		"id": "1.18.3",
 		"date": "24/DEC/2020",
-		"changes": {
-			"0": "Paperwork Generators - District 'Palamino Highlands' was fixed for spelling mistakes, now reads 'Palomino Highlands'."
-		}
-	},
-	"1.18.2": {
+		"changes": [
+			"Paperwork Generators - District 'Palamino Highlands' was fixed for spelling mistakes, now reads 'Palomino Highlands'."
+		]
+	},{
 		"id": "1.18.2",
 		"date": "02/NOV/2020",
-		"changes": {
-			"0": "Profiling Samples Generator - Removed."
-		}
-	},
-	"1.18.1": {
+		"changes": [
+			"Profiling Samples Generator - Removed."
+		]
+	},{
 		"id": "1.18.1",
 		"date": "07/OCT/2020",
-		"changes": {
-			"0": "Metro Deployment Generator - Removed.",
-			"1": "Patrol Log Generator - Removed.",
-			"2": "Evidence Registration Generator - Leftover code removed.",
-			"3": "Useful Resources - Resources shuffled to prioritise most to least used cards."
-		}
-	},
-	"1.18.0": {
+		"changes": [
+			"Metro Deployment Generator - Removed.",
+			"Patrol Log Generator - Removed.",
+			"Evidence Registration Generator - Leftover code removed.",
+			"Useful Resources - Resources shuffled to prioritise most to least used cards."
+		]
+	},{
 		"id": "1.18.0",
 		"date": "24/SEP/2020",
-		"changes": {
-			"0": "Site - Updated San Andreas Seal Logo.",
-			"1": "Arrest Report Generator - Post-Arrest Submission now automatically generates.",
-			"2": "Evidence Registration Log Generator - Removed.",
-			"3": "Paperwork Generators - Added State Fire Marshall ranks.",
-			"4": "Charges - Updated charge 117 to include required case extra information on the table.",
-			"5": "Useful Resources - Updated Citation Appeal.",
-			"6": "Useful Resources - Removed Tow Roleplay."
-		}
-	},
-	"1.17.6": {
+		"changes": [
+			"Site - Updated San Andreas Seal Logo.",
+			"Arrest Report Generator - Post-Arrest Submission now automatically generates.",
+			"Evidence Registration Log Generator - Removed.",
+			"Paperwork Generators - Added State Fire Marshall ranks.",
+			"Charges - Updated charge 117 to include required case extra information on the table.",
+			"Useful Resources - Updated Citation Appeal.",
+			"Useful Resources - Removed Tow Roleplay."
+		]
+	},{
 		"id": "1.17.6",
 		"date": "03/SEP/2020",
-		"changes": {
-			"0": "Site - Enable CAD links.",
-			"1": "Site - BBCode.RIP integration.",
-			"2": "Dashboard - Icon sizes decreased.",
-			"3": "Paperwork Generators - Generators have been categorized into different types.",
-			"4": "Parking Ticket Generator - Width of images changed from 100% to max-width 100% in case an image is not as wide as the content page.",
-			"5": "Useful Resources - Wristband & Bracelet breakdown."
-		}
-	},
-	"1.17.5": {
+		"changes": [
+			"Site - Enable CAD links.",
+			"Site - BBCode.RIP integration.",
+			"Dashboard - Icon sizes decreased.",
+			"Paperwork Generators - Generators have been categorized into different types.",
+			"Parking Ticket Generator - Width of images changed from 100% to max-width 100% in case an image is not as wide as the content page.",
+			"Useful Resources - Wristband & Bracelet breakdown."
+		]
+	},{
 		"id": "1.17.5",
 		"date": "20/AUG/2020",
-		"changes": {
-			"0": "Penal Code - Drug charges 505, 506, 507, 508, 509, have been updated.",
-			"1": "Arrest Charges Calculator - Added a new button specifically for adding drug-related charges.",
-			"2": "Arrest Charges Calculator - The charge table will now include the offence # in the title of the charge when copying and pasting to promote the usage of offence count.",
-			"3": "Paperwork Generators - Every charge input list now corresponds to their generator type. (Example: Parking Ticket & Traffic Report Generators will display only traffic-related charges."
-		}
-	},
-	"1.17.4": {
+		"changes": [
+			"Penal Code - Drug charges 505, 506, 507, 508, 509, have been updated.",
+			"Arrest Charges Calculator - Added a new button specifically for adding drug-related charges.",
+			"Arrest Charges Calculator - The charge table will now include the offence # in the title of the charge when copying and pasting to promote the usage of offence count.",
+			"Paperwork Generators - Every charge input list now corresponds to their generator type. (Example: Parking Ticket & Traffic Report Generators will display only traffic-related charges."
+		]
+	},{
 		"id": "1.17.4",
 		"date": "16/AUG/2020",
-		"changes": {
-			"0": "Paperwork Generators - Copying and pasting generated reports will no longer have any issues with the day/night modes across websites. Generated reports will now display a 'Code' text box as part of the 2nd and final update for the Copy and Paste fix on Chrome. Please copy and paste from the code box. The live MDC will now detect it as HTML code and paste it into the code editor. (<span class='cl-general'>Massive thank you to St3fan[NL]</span>)",
-			"1": "Paperwork Generators - Added missing street 'Lake Vinewood Estate' to the street list.",
-			"2": "Paperwork Generators - Added missing vehicles to the vehicle list: <ul><li>Albany Manana Custom</li><li>Benefactor BR8 (Formula Car)</li><li>Benefactor Glendale Custom</li><li>Benefactor XLS (Armored)</li><li>Bravado Gauntlet Classic Custom</li><li>Bravado Youga Classic 4x4</li><li>Bürgerfahrzeug (BF) Club</li><li>Canis Seminole Frontier</li><li>Declasse DR1 (IndyCar) (Formula Car)</li><li>Declasse Yosemite Rancher</li><li>Dundreary Landstalker XL</li><li>Imponte Beater Dukes</li><li>Invetero Coquette D10</li><li>Lampadati Tigon</li><li>MTL Fire Engine</li><li>MTL Fire Hazardous Material Truck</li><li>Maibatsu Penumbra FF</li><li>Vapid Peyote Custom</li></ul>"
-		}
-	},
-	"1.17.3": {
+		"changes": [
+			"Paperwork Generators - Copying and pasting generated reports will no longer have any issues with the day/night modes across websites. Generated reports will now display a 'Code' text box as part of the 2nd and final update for the Copy and Paste fix on Chrome. Please copy and paste from the code box. The live MDC will now detect it as HTML code and paste it into the code editor. (<span class='cl-general'>Massive thank you to St3fan[NL]</span>)",
+			"Paperwork Generators - Added missing street 'Lake Vinewood Estate' to the street list.",
+			"Paperwork Generators - Added missing vehicles to the vehicle list: <ul><li>Albany Manana Custom</li><li>Benefactor BR8 (Formula Car)</li><li>Benefactor Glendale Custom</li><li>Benefactor XLS (Armored)</li><li>Bravado Gauntlet Classic Custom</li><li>Bravado Youga Classic 4x4</li><li>Bürgerfahrzeug (BF) Club</li><li>Canis Seminole Frontier</li><li>Declasse DR1 (IndyCar) (Formula Car)</li><li>Declasse Yosemite Rancher</li><li>Dundreary Landstalker XL</li><li>Imponte Beater Dukes</li><li>Invetero Coquette D10</li><li>Lampadati Tigon</li><li>MTL Fire Engine</li><li>MTL Fire Hazardous Material Truck</li><li>Maibatsu Penumbra FF</li><li>Vapid Peyote Custom</li></ul>"
+		]
+	},{
 		"id": "1.17.3",
 		"date": "04/AUG/2020",
-		"changes": {
-			"0": "Arrest Charges Table - Updated column 'Court' to 'Extra' to support wider and more abstract additions to charges.",
-			"1": "Penal Code - Updated charges 208 and 209 as part of the Penal Code update found here: <a target='_blank' href='https://forum.gta.world/en/index.php?/topic/9421-san-andreas-penal-code-changelog/&do=findComment&comment=251421'>22/JUL/2020 - Penal Code Update</a>",
-			"2": "Paperwork Generators - Generated reports are now also editable once submitted within their respective textboxes to allow fixing of any user-made mistakes.",
-			"3": "Paperwork Generators - Removed 'Banham Canyon Drive' from the district list.",
-			"4": "Paperwork Generators - Removed duplicate entry for 'Baytree Canyon Road' from the street list.",
-			"5": "Paperwork Generators - Added missing vehicles to the vehicle list: <ul><li>Buckingham Swift</li><li>Bürgerfahrzeug (BF) Furzen</li><li>Cheval Fugitive (Gruppe6)</li><li>Coil Taranis</li><li>Declasse Burrito (Bugstars)</li><li>Declasse Burrito (McGill-Olsen)</li><li>Declasse Burrito (Second Generation)</li><li>Declasse Burrito (Snow)</li><li>Declasse Burrito Roof Rack (First Generation)</li><li>Declasse Gang Burrito (Lost MC)</li><li>Declasse Sabre</li><li>HVY Bulldozer</li><li>HVY Forklift</li><li>HVY Insurgent</li><li>HVY Insurgent Police</li><li>Imponte Ruiner (Wrecked)</li><li>Jack Sheepe Lawn Mower</li><li>JoBuilt Mammatus</li><li>Jobuilt Velum (5-Seater)</li><li>Maibatsu Frogger</li><li>Mammoth Dodo</li><li>Nagasaki Buzzard</li><li>Nagasaki Dinghy (2-Seater)</li><li>Nagasaki Dinghy (4-Seater)</li><li>Nagasaki Dinghy (Yacht)</li><li>Obey Argento</li><li>Obey Omnis (Rally)</li><li>Ocelot R88 (Formula Car)</li><li>Pegassi Speeder</li><li>Police Predator</li><li>Riot Control Vehicle</li><li>RUNE Zhaba</li><li>Shitzu Tropic</li><li>Vapid Razor</li><li>Vapid Speedo Express</li><li>Vapid Uranus</li><li>Western Company Cargobob</li><li>Western Company Duster</li><li>Western Motorcycle Company Apocalypse Deathbike</li></ul>",
-			"6": "Paperwork Generators - Generated reports now have different HTML tags around coloured text as the 1st part update in preparation for the Copy and Paste issue fix on Chrome. (Issue will not be fixed until the 2nd part of this update is rolled out.)",
-			"7": "Arrest Report Generator - Added missing fullstop at the end of the generated report headline.",
-			"8": "Traffic Division: Patrol Report Generator - Updated to the latest format."
-		}
-	},
-	"1.17.2": {
+		"changes": [
+			"Arrest Charges Table - Updated column 'Court' to 'Extra' to support wider and more abstract additions to charges.",
+			"Paperwork Generators - Generated reports are now also editable once submitted within their respective textboxes to allow fixing of any user-made mistakes.",
+			"Paperwork Generators - Removed 'Banham Canyon Drive' from the district list.",
+			"Paperwork Generators - Removed duplicate entry for 'Baytree Canyon Road' from the street list.",
+			"Paperwork Generators - Added missing vehicles to the vehicle list: <ul><li>Buckingham Swift</li><li>Bürgerfahrzeug (BF) Furzen</li><li>Cheval Fugitive (Gruppe6)</li><li>Coil Taranis</li><li>Declasse Burrito (Bugstars)</li><li>Declasse Burrito (McGill-Olsen)</li><li>Declasse Burrito (Second Generation)</li><li>Declasse Burrito (Snow)</li><li>Declasse Burrito Roof Rack (First Generation)</li><li>Declasse Gang Burrito (Lost MC)</li><li>Declasse Sabre</li><li>HVY Bulldozer</li><li>HVY Forklift</li><li>HVY Insurgent</li><li>HVY Insurgent Police</li><li>Imponte Ruiner (Wrecked)</li><li>Jack Sheepe Lawn Mower</li><li>JoBuilt Mammatus</li><li>Jobuilt Velum (5-Seater)</li><li>Maibatsu Frogger</li><li>Mammoth Dodo</li><li>Nagasaki Buzzard</li><li>Nagasaki Dinghy (2-Seater)</li><li>Nagasaki Dinghy (4-Seater)</li><li>Nagasaki Dinghy (Yacht)</li><li>Obey Argento</li><li>Obey Omnis (Rally)</li><li>Ocelot R88 (Formula Car)</li><li>Pegassi Speeder</li><li>Police Predator</li><li>Riot Control Vehicle</li><li>RUNE Zhaba</li><li>Shitzu Tropic</li><li>Vapid Razor</li><li>Vapid Speedo Express</li><li>Vapid Uranus</li><li>Western Company Cargobob</li><li>Western Company Duster</li><li>Western Motorcycle Company Apocalypse Deathbike</li></ul>",
+			"Paperwork Generators - Generated reports now have different HTML tags around coloured text as the 1st part update in preparation for the Copy and Paste issue fix on Chrome. (Issue will not be fixed until the 2nd part of this update is rolled out.)",
+			"Arrest Report Generator - Added missing fullstop at the end of the generated report headline.",
+			"Traffic Division: Patrol Report Generator - Updated to the latest format."
+		]
+	},{
 		"id": "1.17.2",
 		"date": "27/JUL/2020",
-		"changes": {
-			"0": "Paperwork Generators - Clicking charges on generated reports automatically copies to clipboard. There is no need to select them manually any longer."
-		}
-	},
-	"1.17.1": {
+		"changes": [
+			"Paperwork Generators - Clicking charges on generated reports automatically copies to clipboard. There is no need to select them manually any longer."
+		]
+	},{
 		"id": "1.17.1",
 		"date": "25/JUL/2020",
-		"changes": {
-			"0": "Paperwork Generators - Added missing vehicles to the vehicle list:<ul><li>Annis ZR-380s</li><li>BMX Bike (Bicycle)</li><li>Bravado Bison Ambulance</li><li>Bravado Gresley Hellhound</li><li>Buckingham Maverick</li><li>Buckingham Nimbus</li><li>Buckingham SuperVolito</li><li>Buckingham Tugboat</li><li>Bürgerfahrzeug (BF) Club GTR</li><li>Cruiser Bike (Bicycle)</li><li>Declasse Yosemite (SUV)</li><li>Dinka Double T Custom</li><li>Dinka Marquis</li><li>Endurex Race Bike (Bicycle)</li><li>Grotti Furia</li><li>HVY Airtug</li><li>JoBuilt Hauler Custom</li><li>JoBuilt Phantom Wedge</li><li>Karin Technical</li><li>MTL Brickade</li><li>Nagasaki Dinghy</li><li>Nagasaki Outlaw</li><li>Principe Faggio Mod</li><li>Principe Faggio Sport</li><li>Scorcher Bike</li><li>Shitzu Squalo</li><li>Shitzu Suntrap</li><li>Speedophile Seashark</li><li>Stanley Tractor</li><li>Tri-Cycles Race Bike</li><li>Vapid Caracara 6x6</li><li>Vapid Sadler Retro</li><li>Vapid Sadler Retro Cabin</li><li>Vapid Sadler Retro Cabin Crew</li><li>Whippet Race Bike</li><li>Übermacht Seraph</li></ul>"
-		}
-	},
-	"1.17.0": {
+		"changes": [
+			"Paperwork Generators - Added missing vehicles to the vehicle list:<ul><li>Annis ZR-380s</li><li>BMX Bike (Bicycle)</li><li>Bravado Bison Ambulance</li><li>Bravado Gresley Hellhound</li><li>Buckingham Maverick</li><li>Buckingham Nimbus</li><li>Buckingham SuperVolito</li><li>Buckingham Tugboat</li><li>Bürgerfahrzeug (BF) Club GTR</li><li>Cruiser Bike (Bicycle)</li><li>Declasse Yosemite (SUV)</li><li>Dinka Double T Custom</li><li>Dinka Marquis</li><li>Endurex Race Bike (Bicycle)</li><li>Grotti Furia</li><li>HVY Airtug</li><li>JoBuilt Hauler Custom</li><li>JoBuilt Phantom Wedge</li><li>Karin Technical</li><li>MTL Brickade</li><li>Nagasaki Dinghy</li><li>Nagasaki Outlaw</li><li>Principe Faggio Mod</li><li>Principe Faggio Sport</li><li>Scorcher Bike</li><li>Shitzu Squalo</li><li>Shitzu Suntrap</li><li>Speedophile Seashark</li><li>Stanley Tractor</li><li>Tri-Cycles Race Bike</li><li>Vapid Caracara 6x6</li><li>Vapid Sadler Retro</li><li>Vapid Sadler Retro Cabin</li><li>Vapid Sadler Retro Cabin Crew</li><li>Whippet Race Bike</li><li>Übermacht Seraph</li></ul>"
+		]
+	},{
 		"id": "1.17.0",
 		"date": "18/JUL/2020",
-		"changes": {
-			"0": "Site - Updated Favicons for all possible browsers and best cross-compatibility.",
-			"1": "Site - Updated META tags for better website presentation across platforms and search engine optimisation.",
-			"2": "Paperwork Generators Page - Added hover effects to the Arrest Charges Calculator & Profiling Samples Generator icons.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.17-GeneratorHovers.mp4' type='video/mp4'><source src='/showcase/previews/1.17-GeneratorHovers.webm' type='video/webm'></video>",
-			"3": "Arrest Charges Calculator - All charges have been updated with the latest points update regarding the penal code. <a class='text-primary' target='_blank' href='https://forum.gta.world/en/index.php?/topic/26508-revamping-arrests-points-based-system/'>Points System Update 17/JUL/2020</a>",
-			"4": "Arrest Charges Calculator - Added Important Court Notice regarding maximum sentencing, impounding, and suspension lengths. <img style='max-width: 100%;' src='https://i.imgur.com/j0a494J.png'/>"
-		}
-	},
-	"1.16.5": {
+		"changes": [
+			"Site - Updated Favicons for all possible browsers and best cross-compatibility.",
+			"Site - Updated META tags for better website presentation across platforms and search engine optimisation.",
+			"Paperwork Generators Page - Added hover effects to the Arrest Charges Calculator & Profiling Samples Generator icons.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.17-GeneratorHovers.mp4' type='video/mp4'><source src='/showcase/previews/1.17-GeneratorHovers.webm' type='video/webm'></video>",
+			"Arrest Charges Calculator - Added Important Court Notice regarding maximum sentencing, impounding, and suspension lengths. <img style='max-width: 100%;' src='https://i.imgur.com/j0a494J.png'/>"
+		]
+	},{
 		"id": "1.16.5",
 		"date": "16/JUL/2020",
-		"changes": {
-			"0": "GitHub - Fixed GitHub repository with missing file preventing forks from working.",
-			"1": "Useful Resources - Fixed copy button for Citation Appeals text.",
-			"2": "Useful Resources - Reworked copy function for better future-proofing.",
-			"3": "Death Report Generator - Fixed spelling 'Forensic'. (<span class='cl-general'>Credit to Alphabyte59</span>)"
-		}
-	},
-	"1.16.4": {
+		"changes": [
+			"GitHub - Fixed GitHub repository with missing file preventing forks from working.",
+			"Useful Resources - Fixed copy button for Citation Appeals text.",
+			"Useful Resources - Reworked copy function for better future-proofing.",
+			"Death Report Generator - Fixed spelling 'Forensic'. (<span class='cl-general'>Credit to Alphabyte59</span>)"
+		]
+	},{
 		"id": "1.16.4",
 		"date": "06/JUL/2020",
-		"changes": {
-			"0": "Parking Ticket Generator - Added new illegal parking reason 'At or near a helipad or an aircraft landing zone, if in control of a non-aerial vehicle.'. (<span class='cl-general'>St3fanNL</span>)"
-		}
-	},
-	"1.16.3": {
+		"changes": [
+			"Parking Ticket Generator - Added new illegal parking reason 'At or near a helipad or an aircraft landing zone, if in control of a non-aerial vehicle.'. (<span class='cl-general'>St3fanNL</span>)"
+		]
+	},{
 		"id": "1.16.3",
 		"date": "05/JUL/2020",
-		"changes": {
-			"0": "Paperwork Generators - Penal code changes 'Vandalism' now has a $2,500 fine.",
-			"1": "Parking Ticket Generator - Added citations section for selecting multiple citations (Specifically to allow both 406 & 420 charges).",
-			"2": "Parking Ticket Generator - Changed the grouping and order of the listed reasons for parking ticket reasonings.",
-			"3": "Traffic Report Generator - Updated hint message stylings."
-		}
-	},
-	"1.16.2": {
+		"changes": [
+			"Paperwork Generators - Penal code changes 'Vandalism' now has a $2,500 fine.",
+			"Parking Ticket Generator - Added citations section for selecting multiple citations (Specifically to allow both 406 & 420 charges).",
+			"Parking Ticket Generator - Changed the grouping and order of the listed reasons for parking ticket reasonings.",
+			"Traffic Report Generator - Updated hint message stylings."
+		]
+	},{
 		"id": "1.16.2",
 		"date": "03/JUL/2020",
-		"changes": {
-			"0": "Parking Ticket Generator - Added the ability to select multiple reasons for illegal parking.",
-			"1": "Paperwork Generators - Added missing district to search 'Legion Square'."
-		}
-	},
-	"1.16.1": {
+		"changes": [
+			"Parking Ticket Generator - Added the ability to select multiple reasons for illegal parking.",
+			"Paperwork Generators - Added missing district to search 'Legion Square'."
+		]
+	},{
 		"id": "1.16.1",
 		"date": "02/JUL/2020",
-		"changes": {
-			"0": "Traffic Division: Patrol Report Generator - Updated to the latest template.",
-			"1": "Paperwork Generators - Vehicle 'Benefactor Dubsta2' renamed to 'Benefactor Dubsta Sport'. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)"
-		}
-	},
-	"1.16.0": {
+		"changes": [
+			"Traffic Division: Patrol Report Generator - Updated to the latest template.",
+			"Paperwork Generators - Vehicle 'Benefactor Dubsta2' renamed to 'Benefactor Dubsta Sport'. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)"
+		]
+	},{
 		"id": "1.16.0",
 		"date": "30/JUN/2020",
-		"changes": {
-			"0": "Sidebar - Added missing option 'Arrest Charges Calculator', added 'Profiling Samples Generator'.",
-			"1": "Profiling Samples Generator - Initial commit",
-			"2": "Arrest Report Generator - Added 'Required Case' plea for charges which require court cases.",
-			"3": "Arrest Report Generator - Reworked all hint messages for concise clarity.",
-			"4": "Traffic Report Generator - Reworked all hint messages for concise clarity.",
-			"5": "Traffic Report Generator - License plates will now display as uppercase letters once generated.",
-			"6": "Impound Report Generator - Added a generated title for the generated report screen. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)",
-			"7": "Paperwork Generators - Reordered the paperwork generator tabs.",
-			"8": "Generated Report Page - Cleaned up the page by removing unnecessary jargon, changed text boxes to be singular fields for titles only.",
-			"9": "Generated Report & Thread Page - Changed copy functions.",
-			"10": "Useful Resources - Added 'Post-Arrest Submission Information' & 'Warrant Service' link cards.",
-			"11": "Useful Resources - Added 'Citation Appeal' when handing out citations.",
-			"12": "Useful Resources - Added 'Tow Hook Roleplay' lines for quality of life.",
-			"13": "Street Guide - Added missing street to search 'Tongva Drive'."
-		}
-	},
-	"1.15.3": {
+		"changes": [
+			"Sidebar - Added missing option 'Arrest Charges Calculator', added 'Profiling Samples Generator'.",
+			"Profiling Samples Generator - Initial commit",
+			"Arrest Report Generator - Added 'Required Case' plea for charges which require court cases.",
+			"Arrest Report Generator - Reworked all hint messages for concise clarity.",
+			"Traffic Report Generator - Reworked all hint messages for concise clarity.",
+			"Traffic Report Generator - License plates will now display as uppercase letters once generated.",
+			"Impound Report Generator - Added a generated title for the generated report screen. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)",
+			"Paperwork Generators - Reordered the paperwork generator tabs.",
+			"Generated Report Page - Cleaned up the page by removing unnecessary jargon, changed text boxes to be singular fields for titles only.",
+			"Generated Report & Thread Page - Changed copy functions.",
+			"Useful Resources - Added 'Post-Arrest Submission Information' & 'Warrant Service' link cards.",
+			"Useful Resources - Added 'Citation Appeal' when handing out citations.",
+			"Useful Resources - Added 'Tow Hook Roleplay' lines for quality of life.",
+			"Street Guide - Added missing street to search 'Tongva Drive'."
+		]
+	},{
 		"id": "1.15.3",
 		"date": "25/JUN/2020",
-		"changes": {
-			"0": "Paperwork Generators - Added a missing street name from the street datalist. 'Catfish View' (<span class='cl-general'>Thanks to Bunting (a.k.a mister mumble)</span>)",
-			"1": "Paperwork Generators - Added a missing district name from the district datalist. 'Vespucci' (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
-			"2": "Parking Ticket Generator - Fixed - FOR REAL NOW (no jokes) - the provided insurance expired time not showing up in the final generated report. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
-			"3": "Parking Ticket Generator - Vehicle plates will now automatically change to uppercase upon the generated report.",
-			"4": "Traffic Division: Patrol Report Generator - Increased limit from 30 to 100 after hitting over 30 traffic stops in one patrol. (Credit: myself)",
-			"5": "Arrest Report Generator - The dashboard camera section is now required. No matter the plea of the suspect."
-		}
-	},
-	"1.15.2": {
+		"changes": [
+			"Paperwork Generators - Added a missing street name from the street datalist. 'Catfish View' (<span class='cl-general'>Thanks to Bunting (a.k.a mister mumble)</span>)",
+			"Paperwork Generators - Added a missing district name from the district datalist. 'Vespucci' (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
+			"Parking Ticket Generator - Fixed - FOR REAL NOW (no jokes) - the provided insurance expired time not showing up in the final generated report. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
+			"Parking Ticket Generator - Vehicle plates will now automatically change to uppercase upon the generated report.",
+			"Traffic Division: Patrol Report Generator - Increased limit from 30 to 100 after hitting over 30 traffic stops in one patrol. (Credit: myself)",
+			"Arrest Report Generator - The dashboard camera section is now required. No matter the plea of the suspect."
+		]
+	},{
 		"id": "1.15.2",
 		"date": "20/JUN/2020",
-		"changes": {
-			"0": "Sidebar - Added the missing Metropolitan Division: Deployment Log link. (<span class='cl-general'>Thanks to Humour & Spartan for finding the missing feature</span>)",
-			"1": "Sidebar - Fixed the margin for the dropdown menu not inheriting a different style which overwritten the smaller margin.",
-			"2": "Sidebar - Swapped out the generators under specific division to their respective logos instead of using icons."
-		}
-	},
-	"1.15.1": {
+		"changes": [
+			"Sidebar - Added the missing Metropolitan Division: Deployment Log link. (<span class='cl-general'>Thanks to Humour & Spartan for finding the missing feature</span>)",
+			"Sidebar - Fixed the margin for the dropdown menu not inheriting a different style which overwritten the smaller margin.",
+			"Sidebar - Swapped out the generators under specific division to their respective logos instead of using icons."
+		]
+	},{
 		"id": "1.15.1",
 		"date": "15/JUN/2020",
-		"changes": {
-			"0": "Traffic Report Generator - Fixed the vehicle registered owner field being required, if left empty, will use the Defendant's name. (<span class='cl-general'>Thanks to Spartan for finding the bug</span>)",
-			"1": "Parking Ticket Generator - Fixed the provided insurance expired time not showing up in the final generated report. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
-			"2": "Parking Ticket Generator - Fixed the add photograph button not adding a new photograph slot. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)"
-		}
-	},
-	"1.15.0": {
+		"changes": [
+			"Traffic Report Generator - Fixed the vehicle registered owner field being required, if left empty, will use the Defendant's name. (<span class='cl-general'>Thanks to Spartan for finding the bug</span>)",
+			"Parking Ticket Generator - Fixed the provided insurance expired time not showing up in the final generated report. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)",
+			"Parking Ticket Generator - Fixed the add photograph button not adding a new photograph slot. (<span class='cl-general'>Thanks to Goddessoflife for finding the bug</span>)"
+		]
+	},{
 		"id": "1.15.0",
 		"date": "14/JUN/2020",
-		"changes": {
-			"0": "Site - All required input fields are now highlighted as red if empty, green if filled, any fields without borders are optional/if applicable.<br><img style='max-width: 100%' src='https://i.imgur.com/9hPUCV7.png'/>",
-			"1": "Site - Fixed links text on buttons being the incorrect colour on light mode.",
-			"2": "Paperwork Generators - Most front-end jQuery code for all paperwork generators was re-written for clarity sake.",
-			"3": "Paperwork Generators - Added tooltip functionalities on all dynamic slots which support tooltips.<br><img style='max-width: 100%' src='https://i.imgur.com/xTQy7T6.png'/>",
-			"4": "Paperwork Generators - Updated generator titles to exclude ' - Form' from their titles, deeming them as redundant.",
-			"5": "Arrest Charges Calculator - Charge selector now auto selects charge class, charge offence, and charge addition.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-ChargeAutoSelect.mp4' type='video/mp4'><source src='/showcase/previews/1.15-ChargeAutoSelect.webm' type='video/webm'></video>",
-			"6": "Traffic Division: Patrol Report Generator - Icon changed to the Traffic Division logo.<br><img style='max-width: 100%' src='https://i.imgur.com/kGn83V1.png'/>",
-			"7": "Traffic Division: Patrol Report Generator - Updated the report template to the latest changes regarding marked/unmarked vehicles. (<span class='cl-general'>Courtesy of Donally&#39;s request</span>)<br><img style='max-width: 100%' src='https://i.imgur.com/VpYuI7w.png'/>",
-			"8": "Traffic Report Generator - New Registration & Insurance logic added. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-VehicleDetailsLogic.mp4' type='video/mp4'><source src='/showcase/previews/1.15-VehicleDetailsLogic.webm' type='video/webm'></video>",
-			"9": "Traffic Report Generator - Charge selector now auto selects charge class.",
-			"10": "Parking Ticket Generator - Updated vehicle details section to match the update regarding the Traffic Report Generator.",
-			"11": "Impound Report Generator - Updated vehicle details section to match the update regarding the Traffic Report Generator.",
-			"12": "Impound Report Generator - Fixed a bug where the duration of impound field would automatically default to your badge number.",
-			"13": "Patrol Log Generator - Traffic Events are now only required if a traffic report was written, removing the unnecessary duplication of information and directly pointing to the traffic report ID.<br><img style='max-width: 100%' src='https://i.imgur.com/8AFx4jq.png'/>",
-			"14": "Patrol Log Generator - Fixed a bug where the partner rank was a required field."
-		}
-	},
-	"1.14.0": {
+		"changes": [
+			"Site - All required input fields are now highlighted as red if empty, green if filled, any fields without borders are optional/if applicable.<br><img style='max-width: 100%' src='https://i.imgur.com/9hPUCV7.png'/>",
+			"Site - Fixed links text on buttons being the incorrect colour on light mode.",
+			"Paperwork Generators - Most front-end jQuery code for all paperwork generators was re-written for clarity sake.",
+			"Paperwork Generators - Added tooltip functionalities on all dynamic slots which support tooltips.<br><img style='max-width: 100%' src='https://i.imgur.com/xTQy7T6.png'/>",
+			"Paperwork Generators - Updated generator titles to exclude ' - Form' from their titles, deeming them as redundant.",
+			"Arrest Charges Calculator - Charge selector now auto selects charge class, charge offence, and charge addition.<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-ChargeAutoSelect.mp4' type='video/mp4'><source src='/showcase/previews/1.15-ChargeAutoSelect.webm' type='video/webm'></video>",
+			"Traffic Division: Patrol Report Generator - Icon changed to the Traffic Division logo.<br><img style='max-width: 100%' src='https://i.imgur.com/kGn83V1.png'/>",
+			"Traffic Division: Patrol Report Generator - Updated the report template to the latest changes regarding marked/unmarked vehicles. (<span class='cl-general'>Courtesy of Donally&#39;s request</span>)<br><img style='max-width: 100%' src='https://i.imgur.com/VpYuI7w.png'/>",
+			"Traffic Report Generator - New Registration & Insurance logic added. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)<br><video style='max-width: 100%' controls><source src='/showcase/previews/1.15-VehicleDetailsLogic.mp4' type='video/mp4'><source src='/showcase/previews/1.15-VehicleDetailsLogic.webm' type='video/webm'></video>",
+			"Traffic Report Generator - Charge selector now auto selects charge class.",
+			"Parking Ticket Generator - Updated vehicle details section to match the update regarding the Traffic Report Generator.",
+			"Impound Report Generator - Updated vehicle details section to match the update regarding the Traffic Report Generator.",
+			"Impound Report Generator - Fixed a bug where the duration of impound field would automatically default to your badge number.",
+			"Patrol Log Generator - Traffic Events are now only required if a traffic report was written, removing the unnecessary duplication of information and directly pointing to the traffic report ID.<br><img style='max-width: 100%' src='https://i.imgur.com/8AFx4jq.png'/>",
+			"Patrol Log Generator - Fixed a bug where the partner rank was a required field."
+		]
+	},{
 		"id": "1.14.0",
 		"date": "12/JUN/2020",
-		"changes": {
-			"0": "Site - Site-wide notification displays whenever a website update is released.",
-			"1": "Breadcrumb - Displays character information if set.",
-			"2": "Metropolitan Division: Deployment Log Generator - Initial commit. (<span class='cl-general'>Thanks to Humour & Marty for providing information assistance</span>)",
-			"3": "Traffic Report Generator - Tint input menu and generated report messages reworked. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)"
-		}
-	},
-	"1.13.1": {
+		"changes": [
+			"Site - Site-wide notification displays whenever a website update is released.",
+			"Breadcrumb - Displays character information if set.",
+			"Metropolitan Division: Deployment Log Generator - Initial commit. (<span class='cl-general'>Thanks to Humour & Marty for providing information assistance</span>)",
+			"Traffic Report Generator - Tint input menu and generated report messages reworked. (<span class='cl-general'>Courtesy of Goddessoflife&#39;s suggestion</span>)"
+		]
+	},{
 		"id": "1.13.1",
 		"date": "11/JUN/2020",
-		"changes": {
-			"0": "Paperwork Generators - Disabled option for the upcoming Metro Deployment Log Generator.",
-			"1": "Street Guide - Renamed the 'Mission Row Police Station' to 'Mission Row Community Police Station'. (<span class='cl-general'>Credit: Flash/McClaren</span>)",
-			"2": "Paperwork Generators - Fixed all generator inputs not showing."
-		}
-	},
-	"1.13.0": {
+		"changes": [
+			"Paperwork Generators - Disabled option for the upcoming Metro Deployment Log Generator.",
+			"Street Guide - Renamed the 'Mission Row Police Station' to 'Mission Row Community Police Station'. (<span class='cl-general'>Credit: Flash/McClaren</span>)",
+			"Paperwork Generators - Fixed all generator inputs not showing."
+		]
+	},{
 		"id": "1.13.0",
 		"date": "11/JUN/2020",
-		"changes": {
-			"0": "Site - Dark mode is now the default option, if cookies are cleared or never set. (<span class='cl-general'>Credit: Coakley, for forcing me to make this change</span>)",
-			"1": "Paperwork Generators - Front End Code Complete Rework, All generators have been updated to be using the new code.",
-			"2": "Site - Small Backend code fixes.",
-			"3": "Sidebar - The clock now displays a leading '0' for the hours. After: 01:00, before: 1:00"
-		}
-	},
-	"1.12.0": {
+		"changes": [
+			"Site - Dark mode is now the default option, if cookies are cleared or never set. (<span class='cl-general'>Credit: Coakley, for forcing me to make this change</span>)",
+			"Paperwork Generators - Front End Code Complete Rework, All generators have been updated to be using the new code.",
+			"Site - Small Backend code fixes.",
+			"Sidebar - The clock now displays a leading '0' for the hours. After: 01:00, before: 1:00"
+		]
+	},{
 		"id": "1.12.0",
 		"date": "05/JUN/2020",
-		"changes": {
-			"0": "Arrest Charges Calculator - Extensive backend code rework and update, the code is much more versatile and dynamic for limitless input variations.<br><img style='max-width: 100%' src='https://i.imgur.com/ZyqNTPz.png'/>",
-			"1": "Arrest Charges Calculator - Sentencing Enhancements input are now applicable to charges to promote its usage, reducing both the sentence times and arrest points. (Reductions: Offender 0%, Accomplice 0%, Accessory 50%, Conspiracy 75%)<br><img style='max-width: 100%' src='https://i.imgur.com/S8O62Sy.png'/>",
-			"2": "Arrest Charges Calculator - Arrest Charges now dynamically display which offences (1st, 2nd, 3rd) may be applied to the selected crime.<br><img style='max-width: 100%' src='https://i.imgur.com/E2Uf6xz.png'/><img style='max-width: 100%' src='https://i.imgur.com/9f4mR0R.png'/>",
-			"3": "Arrest Charges Calculator - Crime time calculation rework, now works with the most optimal time-based units splitting. (If time totals are 60 minutes or above, change to hours and minutes instead, if 24 hours or above, change to days and hours, etc)",
-			"4": "Paperwork Generators - Small rank chooser optimisations and code fixes.",
-			"5": "Paperwork Generators - More backend code updates and optimisations.",
-			"6": "Site - Site-wide visual updates and element fixes.",
-			"7": "Site - Backend files reshuffled to appropriate locations, split actual page structure and functional code into separate files. (No more procedural coding.)",
-			"8": "Street Guide - Added missing station 'Rockford Hills Community Police Station'.<br><img style='max-width: 100%' src='https://i.imgur.com/JlQFfSM.png'/>",
-			"9": "Street Guide - Fixed the spelling of the Twin Towers building. (Credit: Tseard)<br><img style='max-width: 100%' src='https://i.imgur.com/3A5wCrz.png'/>"
-		}
-	},
-	"1.11.1": {
+		"changes": [
+			"Arrest Charges Calculator - Extensive backend code rework and update, the code is much more versatile and dynamic for limitless input variations.<br><img style='max-width: 100%' src='https://i.imgur.com/ZyqNTPz.png'/>",
+			"Arrest Charges Calculator - Sentencing Enhancements input are now applicable to charges to promote its usage, reducing both the sentence times and arrest points. (Reductions: Offender 0%, Accomplice 0%, Accessory 50%, Conspiracy 75%)<br><img style='max-width: 100%' src='https://i.imgur.com/S8O62Sy.png'/>",
+			"Arrest Charges Calculator - Arrest Charges now dynamically display which offences (1st, 2nd, 3rd) may be applied to the selected crime.<br><img style='max-width: 100%' src='https://i.imgur.com/E2Uf6xz.png'/><img style='max-width: 100%' src='https://i.imgur.com/9f4mR0R.png'/>",
+			"Arrest Charges Calculator - Crime time calculation rework, now works with the most optimal time-based units splitting. (If time totals are 60 minutes or above, change to hours and minutes instead, if 24 hours or above, change to days and hours, etc)",
+			"Paperwork Generators - Small rank chooser optimisations and code fixes.",
+			"Paperwork Generators - More backend code updates and optimisations.",
+			"Site - Site-wide visual updates and element fixes.",
+			"Site - Backend files reshuffled to appropriate locations, split actual page structure and functional code into separate files. (No more procedural coding.)",
+			"Street Guide - Added missing station 'Rockford Hills Community Police Station'.<br><img style='max-width: 100%' src='https://i.imgur.com/JlQFfSM.png'/>",
+			"Street Guide - Fixed the spelling of the Twin Towers building. (Credit: Tseard)<br><img style='max-width: 100%' src='https://i.imgur.com/3A5wCrz.png'/>"
+		]
+	},{
 		"id": "1.11.1",
 		"date": "03/JUN/2020",
-		"changes": {
-			"0": "Site - Swapped all CDN hosted resources to local for better performance.",
-			"1": "Impound Report Generator - Fixed inaccessible generator. (Credit: Chris Farmer / Disretired)",
-			"2": "Charges Table - Fixed the table header 'Classification' to be 'Type' instead.",
-			"3": "Charges Table - Fixed table headers to be centered with their respective centered table detail fields.",
-			"4": "Changelog - Fixed style to be showing the correct style for the page background."
-		}
-	},
-	"1.11.0": {
+		"changes": [
+			"Site - Swapped all CDN hosted resources to local for better performance.",
+			"Impound Report Generator - Fixed inaccessible generator. (Credit: Chris Farmer / Disretired)",
+			"Charges Table - Fixed the table header 'Classification' to be 'Type' instead.",
+			"Charges Table - Fixed table headers to be centered with their respective centered table detail fields.",
+			"Changelog - Fixed style to be showing the correct style for the page background."
+		]
+	},{
 		"id": "1.11.0",
 		"date": "03/JUN/2020",
-		"changes": {
-			"1": "GitHub - Removed inactive contributors.",
-			"2": "GitHub - Updated logo in documentation to be using the new .svg version.",
-			"3": "Site - Favicon now also updated to .svg format. <br><img width='100px' src='/images/MDC-Panel-Favicon.svg'>",
-			"4": "Site - CDN Resources updated & reshuffled to fix errors caused by unloaded resources.",
-			"5": "Site - Increased concurrent visitor count expiration to 1 hour from 5 minutes.",
-			"6": "Site - Removed duplicate initialisation code.",
-			"7": "Site - Added new site settings for greater site-wide consistency.",
-			"8": "Site - Added Colcade, revamped pages with card elements now dynamically display in columns which automatically collapse dependent on size of browser window. <br><div style='width: 100%; height: 0px; position: relative; padding-bottom: 47.890%;'><iframe src='https://streamable.com/e/ox3kbe' frameborder='0' width='100%' height='100%' allowfullscreen style='width: 100%; height: 100%; position: absolute;'></iframe></div>",
-			"9": "Site - Improved URL routing system with the removal of duplicate code.",
-			"10": "Site - San Andreas Penal Code link updated... again.",
-			"11": "Site - Further backend code reworks and improvements for better stability, security, code-readability, and performance.",
-			"12": "Site - Blown off the virtual dust and removed unused files.",
-			"13": "Dashboard - Added card link to the MDC.",
-			"14": "Sidebar - Removed link stack animation.",
-			"15": "Sidebar - Removed unused links and relocated most to Useful Resources.",
-			"16": "Street Guide - Removal of unused map styles and coordinate debugger console tool. 2733 files removed.",
-			"17": "Useful Resources - Page revamped with various links from sidebar.",
-			"18": "Paperwork Generators - Now updated to work with the latest <a href='https://forum.gta.world/en/index.php?/topic/9421-san-andreas-penal-code-changelog/&do=findComment&comment=219657'>Penal Code</a> update (02/JAN/2020, New Point System, Classification + Types swap, Charge Updates)",
-			"19": "Paperwork Generators - Now dynamically display which classes (A, B, C) may be applied to the selected crime.",
-			"20": "Paperwork Generators - Updated charges .402 & .412 to automatically detect upgrades from Misdemeanour to Felony types of crimes based on user input. <br><img style='max-width: 100%' src='https://i.imgur.com/LFJYIW6.png'>",
-			"21": "Paperwork Generators - Table styling updated to accomodate new columns and information. (Points + Offence #)"
-		}
-	},
-	"1.10.2": {
+		"changes": [
+			"GitHub - Removed inactive contributors.",
+			"GitHub - Updated logo in documentation to be using the new .svg version.",
+			"Site - Favicon now also updated to .svg format. <br><img width='100px' src='/images/MDC-Panel-Favicon.svg'>",
+			"Site - CDN Resources updated & reshuffled to fix errors caused by unloaded resources.",
+			"Site - Increased concurrent visitor count expiration to 1 hour from 5 minutes.",
+			"Site - Removed duplicate initialisation code.",
+			"Site - Added new site settings for greater site-wide consistency.",
+			"Site - Added Colcade, revamped pages with card elements now dynamically display in columns which automatically collapse dependent on size of browser window. <br><div style='width: 100%; height: 0px; position: relative; padding-bottom: 47.890%;'><iframe src='https://streamable.com/e/ox3kbe' frameborder='0' width='100%' height='100%' allowfullscreen style='width: 100%; height: 100%; position: absolute;'></iframe></div>",
+			"Site - Improved URL routing system with the removal of duplicate code.",
+			"Site - San Andreas Penal Code link updated... again.",
+			"Site - Further backend code reworks and improvements for better stability, security, code-readability, and performance.",
+			"Site - Blown off the virtual dust and removed unused files.",
+			"Dashboard - Added card link to the MDC.",
+			"Sidebar - Removed link stack animation.",
+			"Sidebar - Removed unused links and relocated most to Useful Resources.",
+			"Street Guide - Removal of unused map styles and coordinate debugger console tool. 2733 files removed.",
+			"Useful Resources - Page revamped with various links from sidebar.",
+			"Paperwork Generators - Now dynamically display which classes (A, B, C) may be applied to the selected crime.",
+			"Paperwork Generators - Updated charges .402 & .412 to automatically detect upgrades from Misdemeanour to Felony types of crimes based on user input. <br><img style='max-width: 100%' src='https://i.imgur.com/LFJYIW6.png'>",
+			"Paperwork Generators - Table styling updated to accomodate new columns and information. (Points + Offence #)"
+		]
+	},{
 		"id": "1.10.2",
 		"date": "29/MAY/2020",
-		"changes": {
-			"1": "Site - Logo has been reworked to an SVG (Scalable Vector Graphic).<br><img width='200px' src='/images/MDC-Panel.svg'>",
-			"2": "Site - OpenGraph Meta tags have been updated according with the new logo."
-		}
-	},
-	"1.10.1": {
+		"changes": [
+			"Site - Logo has been reworked to an SVG (Scalable Vector Graphic).<br><img width='200px' src='/images/MDC-Panel.svg'>",
+			"Site - OpenGraph Meta tags have been updated according with the new logo."
+		]
+	},{
 		"id": "1.10.1",
 		"date": "27/MAY/2020",
-		"changes": {
-			"1": "Paperwork Generators - Fixed incorrect times on paperwork generators. Credit: Spartan",
-			"2": "Arrest Report Generator - Fixed arrest report generator not generating reports. Credit: Spartan"
-		}
-	},
-	"1.10.0": {
+		"changes": [
+			"Paperwork Generators - Fixed incorrect times on paperwork generators. Credit: Spartan",
+			"Arrest Report Generator - Fixed arrest report generator not generating reports. Credit: Spartan"
+		]
+	},{
 		"id": "1.10.0",
 		"date": "26/MAY/2020",
-		"changes": {
-			"1": "Site - Deprecated files, HTML & JS code removal/fixups.",
-			"2": "Site - Added localisation of site details for better site-wide maintainability.",
-			"3": "Site - Numerous security & performance patches to help improve site responsiveness and safety.",
-			"4": "Site - Cookie handling improved.",
-			"5": "Site - Source code has once again been cleaned up and reduced in size.",
-			"6": "Site - San Andreas Penal Code links fixed, pointing to the correct thread.",
-			"7": "Impound Report Generator - Fixed vehicle plate hint to display correct message."
-		}
-	},
-	"1.9.8": {
+		"changes": [
+			"Site - Deprecated files, HTML & JS code removal/fixups.",
+			"Site - Added localisation of site details for better site-wide maintainability.",
+			"Site - Numerous security & performance patches to help improve site responsiveness and safety.",
+			"Site - Cookie handling improved.",
+			"Site - Source code has once again been cleaned up and reduced in size.",
+			"Site - San Andreas Penal Code links fixed, pointing to the correct thread.",
+			"Impound Report Generator - Fixed vehicle plate hint to display correct message."
+		]
+	},{
 		"id": "1.9.8",
 		"date": "13/MAY/2020",
-		"changes": {
-			"1": "Site - Improved mobile device user-experience with appropriate scalings to content throughout the website.",
-			"2": "Site - Small dark mode input field fixes.",
-			"3": "Sidebar - The sidebar now collapses on mobile devices.",
-			"4": "Sidebar - Updated menu item icons for LSPD, LSSD, and LSFD to their respective logos.",
-			"5": "Sidebar - Removed MDC Panel LSPD thread link.",
-			"6": "Footer - Updated the footer position and fixed visual bugs."
-		}
-	},
-	"1.9.7": {
+		"changes": [
+			"Site - Improved mobile device user-experience with appropriate scalings to content throughout the website.",
+			"Site - Small dark mode input field fixes.",
+			"Sidebar - The sidebar now collapses on mobile devices.",
+			"Sidebar - Updated menu item icons for LSPD, LSSD, and LSFD to their respective logos.",
+			"Sidebar - Removed MDC Panel LSPD thread link.",
+			"Footer - Updated the footer position and fixed visual bugs."
+		]
+	},{
 		"id": "1.9.7",
 		"date": "13/MAY/2020",
-		"changes": {
-			"1": "Site - MDC Panel Project has been made open-source. <a href='https://github.com/xanxTV/MDC-Panel'>GitHub - MDC Panel</a>",
-			"2": "Sidebar - Fixed bottom margin on toggle-able menus.",
-			"3": "Site - San Andreas Penal Code references changed to just Penal Code."
-		}
-	},
-	"1.9.6": {
+		"changes": [
+			"Site - MDC Panel Project has been made open-source. <a href='https://github.com/CXDezign/MDC-Panel'>GitHub - MDC Panel</a>",
+			"Sidebar - Fixed bottom margin on toggle-able menus.",
+			"Site - San Andreas Penal Code references changed to just Penal Code."
+		]
+	},{
 		"id": "1.9.6",
 		"date": "06/MAY/2020",
-		"changes": {
-			"1": "Site - OpenGraph details updated. (Logo and URL fixes for when linking the site in Discord to display short previews.)",
-			"2": "Sidebar - The sidebar is now scrollable if content is overflown.",
-			"3": "Sidebar - Current version of the MDC Panel is now displayed on the Changelog link instead of underneath the logo.",
-			"4": "Traffic Report Generator - Tint level fix. (Credit: Humour for finding the bug.)",
-			"5": "Impound Report Generator - Initial commit. (Credit: Skent)",
-			"6": "Impound Report Generator - Form and report structure adjustments and multiple small fixes and tweaks in both back-end and visual code."
-		}
-	},
-	"1.9.5": {
+		"changes": [
+			"Site - OpenGraph details updated. (Logo and URL fixes for when linking the site in Discord to display short previews.)",
+			"Sidebar - The sidebar is now scrollable if content is overflown.",
+			"Sidebar - Current version of the MDC Panel is now displayed on the Changelog link instead of underneath the logo.",
+			"Traffic Report Generator - Tint level fix. (Credit: Humour for finding the bug.)",
+			"Impound Report Generator - Initial commit. (Credit: Skent)",
+			"Impound Report Generator - Form and report structure adjustments and multiple small fixes and tweaks in both back-end and visual code."
+		]
+	},{
 		"id": "1.9.5",
 		"date": "01/MAY/2020",
-		"changes": {
-			"1": "Site - Backend styling code optimisation.",
-			"2": "Site - Animation delay changes.",
-			"3": "Site - Session variables optimisation.",
-			"4": "Site - Cookie variables optimisation.",
-			"5": "Parking Ticket Generator - Title icon and evidence hint fixes.",
-			"6": "Paperwork Generators - Large backend update regarding processing and defaulting variables."
-		}
-	},
-	"1.9.4": {
+		"changes": [
+			"Site - Backend styling code optimisation.",
+			"Site - Animation delay changes.",
+			"Site - Session variables optimisation.",
+			"Site - Cookie variables optimisation.",
+			"Parking Ticket Generator - Title icon and evidence hint fixes.",
+			"Paperwork Generators - Large backend update regarding processing and defaulting variables."
+		]
+	},{
 		"id": "1.9.4",
 		"date": "01/MAY/2020",
-		"changes": {
-			"1": "Settings - Live visitor counter toggle option.",
-			"2": "Paperwork Generators - Main page recoded to display generators dynamically.",
-			"3": "Parking Ticket Generator - Initial release.",
-			"4": "Traffic Division Patrol Report Generator - Updated to the new format.",
-			"5": "Sidebar - Live visitor counter is now animated."
-		}
-	},
-	"1.9.3": {
+		"changes": [
+			"Settings - Live visitor counter toggle option.",
+			"Paperwork Generators - Main page recoded to display generators dynamically.",
+			"Parking Ticket Generator - Initial release.",
+			"Traffic Division Patrol Report Generator - Updated to the new format.",
+			"Sidebar - Live visitor counter is now animated."
+		]
+	},{
 		"id": "1.9.3",
 		"date": "30/APR/2020",
-		"changes": {
-			"1": "Site - Live visitor counter."
-		}
-	},
-	"1.9.2": {
+		"changes": [
+			"Site - Live visitor counter."
+		]
+	},{
 		"id": "1.9.2",
 		"date": "30/APR/2020",
-		"changes": {
-			"1": "Site - All select inputs have been updated visually and certain menus also now support search boxes.",
-			"2": "Paperwork Generators - Further backend code improvements to select menus."
-		}
-	},
-	"1.9.1": {
+		"changes": [
+			"Site - All select inputs have been updated visually and certain menus also now support search boxes.",
+			"Paperwork Generators - Further backend code improvements to select menus."
+		]
+	},{
 		"id": "1.9.1",
 		"date": "28/APR/2020",
-		"changes": {
-			"1": "Site - All form fill out pages are now secured with alert messages to prevent accidental tab closure.",
-			"2": "Site - Fixed highlighting text whilst using Day Mode.",
-			"3": "Site - Fixed Clock & Breadcrumb animations to be more consistent."
-		}
-	},
-	"1.9.0": {
+		"changes": [
+			"Site - All form fill out pages are now secured with alert messages to prevent accidental tab closure.",
+			"Site - Fixed highlighting text whilst using Day Mode.",
+			"Site - Fixed Clock & Breadcrumb animations to be more consistent."
+		]
+	},{
 		"id": "1.9.0",
 		"date": "27/APR/2020",
-		"changes": {
-			"1": "Site - Updated MDC Panel Logo.",
-			"2": "Site - Added a Favicon.",
-			"3": "Site - Site-wide visual overhaul.",
-			"4": "Site - Reworked entire URL Routing system for neater links.",
-			"5": "Site - Breadcrumb Navigation added.",
-			"6": "Site - Live Sidebar Clock added.",
-			"7": "Site - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, Footer toggles & Clear Cookies.).",
-			"8": "Site - Changelog system added.",
-			"9": "Paperwork Generators - Reworked from the ground-up for code efficiency, error checking, variable defaulting, clutter reduction, and optimisation for upcoming projects.",
-			"10": "Arrest Report Generators - Reworked entire backend code regarding the arrest charges table. The table will now display on the generated arrest report page.",
-			"11": "Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
-			"12": "Traffic Report Generator - Updated to be using the same JSON Penal Code file as the Arrest Report Generator.",
-			"13": "Traffic Division: Patrol Report Generator - Added tips and hints for input fields for clarity."
-		}
-	},
-	"1.8.5": {
+		"changes": [
+			"Site - Updated MDC Panel Logo.",
+			"Site - Added a Favicon.",
+			"Site - Site-wide visual overhaul.",
+			"Site - Reworked entire URL Routing system for neater links.",
+			"Site - Breadcrumb Navigation added.",
+			"Site - Live Sidebar Clock added.",
+			"Site - Site Settings & Preferences added (Day/Night, Live Clock, Breadcrumb, Background Logo, Hints, Footer toggles & Clear Cookies.).",
+			"Site - Changelog system added.",
+			"Paperwork Generators - Reworked from the ground-up for code efficiency, error checking, variable defaulting, clutter reduction, and optimisation for upcoming projects.",
+			"Arrest Report Generators - Reworked entire backend code regarding the arrest charges table. The table will now display on the generated arrest report page.",
+			"Arrest & Traffic Report Generators - If the dashboard camera section is left empty, it will default to the following message instead No dashboard camera video or audio footage attached.",
+			"Traffic Report Generator - Updated to be using the same JSON Penal Code file as the Arrest Report Generator.",
+			"Traffic Division: Patrol Report Generator - Added tips and hints for input fields for clarity."
+		]
+	},{
 		"id": "1.8.5",
 		"date": "19/APR/2020",
-		"changes": {
-			"1": "Arrest Report Generator - All charges now read from one single JSON file instead of two separate files for data extraction when calculating charges and for selectable choices from a list.",
-			"2": "Charges - Fixed charge 116 showing the incorrect charge title."
-		}
-	},
-	"1.8.4": {
+		"changes": [
+			"Arrest Report Generator - All charges now read from one single JSON file instead of two separate files for data extraction when calculating charges and for selectable choices from a list.",
+			"Charges - Fixed charge 116 showing the incorrect charge title."
+		]
+	},{
 		"id": "1.8.4",
 		"date": "06/MAR/2020",
-		"changes": {
-			"1": "Penal Code - Updated all charges to the newest penal code update.",
-			"2": "Arrest Report Generator - Improved code.",
-			"3": "Arrest Charges Form - Fixed numerous icon spacing issues & removal of deprecated tooltip code.",
-			"4": "Arrest Charges Table - Added Court section to table."
-		}
-	},
-	"1.8.3": {
+		"changes": [
+			"Penal Code - Updated all charges to the newest penal code update.",
+			"Arrest Report Generator - Improved code.",
+			"Arrest Charges Form - Fixed numerous icon spacing issues & removal of deprecated tooltip code.",
+			"Arrest Charges Table - Added Court section to table."
+		]
+	},{
 		"id": "1.8.3",
 		"date": "05/MAR/2020",
-		"changes": {
-			"1": "Site - Error tracker fixed.",
-			"2": "Charges - Fixed times for charge 120. depending on offence count."
-		}
-	},
-	"1.8.2": {
+		"changes": [
+			"Site - Error tracker fixed.",
+			"Charges - Fixed times for charge 120. depending on offence count."
+		]
+	},{
 		"id": "1.8.2",
 		"date": "28/FEB/2020",
-		"changes": {
-			"1": "Patrol Log Generator - Initial release.",
-			"2": "Street Guide - Added the LSPD Impound Lot to the map.",
-			"3": "Street Guide - Changed icon for the Twin-Tower Correctional Facility."
-		}
-	},
-	"1.8.1": {
+		"changes": [
+			"Patrol Log Generator - Initial release.",
+			"Street Guide - Added the LSPD Impound Lot to the map.",
+			"Street Guide - Changed icon for the Twin-Tower Correctional Facility."
+		]
+	},{
 		"id": "1.8.1",
 		"date": "23/FEB/2020",
-		"changes": {
-			"1": "Site - Renamed MDC Paperwork Generators to MDC Panel.",
-			"2": "Site - Panel icons now light up when hovering your mouse over them.",
-			"3": "Site - Mobile adjustments for better device scalability.",
-			"4": "Dashboard - Added a main dashboard hub for all the MDC Panel's features.",
-			"5": "Sidebar - Renamed numerous amounts of links and added the following: Dashboard, LSSD, LSFD, MDC Panel - Thread."
-		}
-	},
-	"1.8.0": {
+		"changes": [
+			"Site - Renamed MDC Paperwork Generators to MDC Panel.",
+			"Site - Panel icons now light up when hovering your mouse over them.",
+			"Site - Mobile adjustments for better device scalability.",
+			"Dashboard - Added a main dashboard hub for all the MDC Panel's features.",
+			"Sidebar - Renamed numerous amounts of links and added the following: Dashboard, LSSD, LSFD, MDC Panel - Thread."
+		]
+	},{
 		"id": "1.8.0",
 		"date": "22/FEB/2020",
-		"changes": {
-			"1": "Street Guide - Initial Release.",
-			"2": "Arrest Report Generator - Initial Release",
-			"3": "Sidebar - Initial Release.",
-			"4": "Navigation Bar - Removed.",
-			"5": "Generators - Rearranged the generator panels.",
-			"6": "Added Legion Square to the District list."
-		}
-	},
-	"1.7.0": {
+		"changes": [
+			"Street Guide - Initial Release.",
+			"Arrest Report Generator - Initial Release",
+			"Sidebar - Initial Release.",
+			"Navigation Bar - Removed.",
+			"Generators - Rearranged the generator panels.",
+			"Added Legion Square to the District list."
+		]
+	},{
 		"id": "1.7.0",
 		"date": "14/FEB/2020",
-		"changes": {
-			"1": "Site - Logo for the MDC has been updated.",
-			"2": "Site - The background of the site has changed from the LSPD logo to the San Andreas Seal.",
-			"3": "Traffic Division Patrol Report Generator - Initial release.",
-			"4": "Traffic Report Generator - Fixed the text colouring issues when copying reports and using Dark/Day mode on the actual MDC."
-		}
-	},
-	"1.6.1": {
+		"changes": [
+			"Site - Logo for the MDC has been updated.",
+			"Site - The background of the site has changed from the LSPD logo to the San Andreas Seal.",
+			"Traffic Division Patrol Report Generator - Initial release.",
+			"Traffic Report Generator - Fixed the text colouring issues when copying reports and using Dark/Day mode on the actual MDC."
+		]
+	},{
 		"id": "1.6.1",
 		"date": "22/JAN/2020",
-		"changes": {
-			"1": "Site - Added LSSD ranks.",
-			"2": "Site - Added many missing vehicles from the automatic completion dropdown.",
-			"3": "Added Vehicles - Albany Virgo Classic, Albany V-STR, Annis Kawaii, Benefactor Streiter (Sedan), Benefactor Streiter (SUV), Dinka Blista Kanjo, Dinka Flash, Dinka Sugoi, Karin Everon, Karin Sultan Classic, Lampadati Komoda, Maxwell Asbo, Maxwell Vagrant, Vapid Dominator Classic, Vapid Retinue MK II, Vapid Scout, Vapid Torrence, Överflöd Imorgon, Übermacht Rebla GTS.",
-			"4": "Traffic Report - Added level 5 tint option.",
-			"5": "Traffic Report - Fixed a spelling mistake."
-		}
-	},
-	"1.6.0": {
+		"changes": [
+			"Site - Added LSSD ranks.",
+			"Site - Added many missing vehicles from the automatic completion dropdown.",
+			"Added Vehicles - Albany Virgo Classic, Albany V-STR, Annis Kawaii, Benefactor Streiter (Sedan), Benefactor Streiter (SUV), Dinka Blista Kanjo, Dinka Flash, Dinka Sugoi, Karin Everon, Karin Sultan Classic, Lampadati Komoda, Maxwell Asbo, Maxwell Vagrant, Vapid Dominator Classic, Vapid Retinue MK II, Vapid Scout, Vapid Torrence, Överflöd Imorgon, Übermacht Rebla GTS.",
+			"Traffic Report - Added level 5 tint option.",
+			"Traffic Report - Fixed a spelling mistake."
+		]
+	},{
 		"id": "1.6.0",
 		"date": "22/JAN/2020",
-		"changes": {
-			"1": "Evidence Registration Log - Initial release (old format).",
-			"2": "Site - Background opacity fixed across browsers.",
-			"3": "Site - Fixed San Andreas Penal Code related links.",
-			"4": "Resources - Added a new submenu Resources. Contains quick resources.",
-			"5": "Traffic Report - Fixed copy and paste code for the generator for new MDC.",
-			"6": "Traffic Report - Fixed Create Record link for new MDC."
-		}
-	},
-	"1.5.0": {
+		"changes": [
+			"Evidence Registration Log - Initial release (old format).",
+			"Site - Background opacity fixed across browsers.",
+			"Site - Fixed San Andreas Penal Code related links.",
+			"Resources - Added a new submenu Resources. Contains quick resources.",
+			"Traffic Report - Fixed copy and paste code for the generator for new MDC.",
+			"Traffic Report - Fixed Create Record link for new MDC."
+		]
+	},{
 		"id": "1.5.0",
 		"date": "11/DEC/2019",
-		"changes": {
-			"1": "Evidence Registration Log Generator - Initial release, left disabled until further notice.",
-			"2": "Death Report Generator - now automatically adds N/A for accepted empty input fields once submitted.",
-			"3": "Death Report Generator - Improved the evidence processing code.",
-			"4": "Paperwork Generators - Added icons to the main generator picker page.",
-			"5": "Paperwork Generators - Updated the colour scheme.",
-			"6": "Navigation Bar - Sorted out the order of the navigation links.",
-			"7": "Navigation Bar - Added a Reports and Records Board link under the Los Santos Police Department navigation menu option.",
-			"8": "Navigation Bar - Spaced out the navigation bar title and logo."
-		}
-	},
-	"1.4.1": {
+		"changes": [
+			"Evidence Registration Log Generator - Initial release, left disabled until further notice.",
+			"Death Report Generator - now automatically adds N/A for accepted empty input fields once submitted.",
+			"Death Report Generator - Improved the evidence processing code.",
+			"Paperwork Generators - Added icons to the main generator picker page.",
+			"Paperwork Generators - Updated the colour scheme.",
+			"Navigation Bar - Sorted out the order of the navigation links.",
+			"Navigation Bar - Added a Reports and Records Board link under the Los Santos Police Department navigation menu option.",
+			"Navigation Bar - Spaced out the navigation bar title and logo."
+		]
+	},{
 		"id": "1.4.1",
 		"date": "11/DEC/2019",
-		"changes": {
-			"1": "Site - Added META tags for previewing purposes such as when posting Discord links.",
-			"2": "Site - Added an N/A, Forensic Analyst, and Crime Scene Investigator ranks to the rank chooser.",
-			"3": "Navigation Bar - Fixed a bug where the results page navigation bar would not work correctly when clicking on menus."
-		}
-	},
-	"1.4.0": {
+		"changes": [
+			"Site - Added META tags for previewing purposes such as when posting Discord links.",
+			"Site - Added an N/A, Forensic Analyst, and Crime Scene Investigator ranks to the rank chooser.",
+			"Navigation Bar - Fixed a bug where the results page navigation bar would not work correctly when clicking on menus."
+		]
+	},{
 		"id": "1.4.0",
 		"date": "11/DEC/2019",
-		"changes": {
-			"1": "Site - Website branding and name change to MDC.",
-			"2": "Site - Website has been adjusted and accommodated for future projects and generators.",
-			"3": "Site - Temporary switch to lightmode until a toggle is created.",
-			"4": "Death Report Generator - Initial release.",
-			"5": "Paperwork Generators - Added prepending icons to many input fields for form fill outs.",
-			"6": "Paperwork Generators - Addition of tooltips on hover or on focus to replace small help texts to remove visible clutter.",
-			"7": "Paperwork Generators - Fixed a bug where the rank chooser would remember the user's rank for each added slot."
-		}
-	},
-	"1.3.0": {
+		"changes": [
+			"Site - Website branding and name change to MDC.",
+			"Site - Website has been adjusted and accommodated for future projects and generators.",
+			"Site - Temporary switch to lightmode until a toggle is created.",
+			"Death Report Generator - Initial release.",
+			"Paperwork Generators - Added prepending icons to many input fields for form fill outs.",
+			"Paperwork Generators - Addition of tooltips on hover or on focus to replace small help texts to remove visible clutter.",
+			"Paperwork Generators - Fixed a bug where the rank chooser would remember the user's rank for each added slot."
+		]
+	},{
 		"id": "1.3.0",
 		"date": "27/NOV/2019",
-		"changes": {
-			"1": "Navigation Bar - Useful links and resources.",
-			"2": "Paperwork Generators - Make & Model section swapped from text input to autocomplete text input.",
-			"3": "Paperwork Generators - Street Name section swapped from text input to autocomplete text input.",
-			"4": "Paperwork Generators - District section swapped from text input to autocomplete text input.",
-			"5": "Paperwork Generators - Section Streetname has been renamed to Street Name."
-		}
-	},
-	"1.2.0": {
+		"changes": [
+			"Navigation Bar - Useful links and resources.",
+			"Paperwork Generators - Make & Model section swapped from text input to autocomplete text input.",
+			"Paperwork Generators - Street Name section swapped from text input to autocomplete text input.",
+			"Paperwork Generators - District section swapped from text input to autocomplete text input.",
+			"Paperwork Generators - Section Streetname has been renamed to Street Name."
+		]
+	},{
 		"id": "1.2.0",
 		"date": "26/NOV/2019",
-		"changes": {
-			"1": "Traffic Report Generator - Automatic crime classification detection and colouring.",
-			"2": "Traffic Report Generator - Fine section is now optional as not all crimes have fines attached to them.",
-			"3": "Traffic Report Generator - Crime ID, Title, & Classification section swapped from text input to list input.",
-			"4": "Traffic Report Generator - Crime Classification section was removed.",
-			"5": "Traffic Report Generator - Drivers License section swapped from radio input to list input.",
-			"6": "Traffic Report Generator - Tint Level section swapped from number input to list input.",
-			"7": "Traffic Report Generator - Certain section titles were renamed. (Tints -> Tint Level, Neighbourhood -> District, Defendant Details, Narrative, & Dashboard Camera -> Defendant & Narrative, Crime ID & Title -> Crime ID, Title, & Classification)",
-			"8": "Traffic Report Generator - Certain help messages were edited and refined."
-		}
-	},
-	"1.1.0": {
+		"changes": [
+			"Traffic Report Generator - Automatic crime classification detection and colouring.",
+			"Traffic Report Generator - Fine section is now optional as not all crimes have fines attached to them.",
+			"Traffic Report Generator - Crime ID, Title, & Classification section swapped from text input to list input.",
+			"Traffic Report Generator - Crime Classification section was removed.",
+			"Traffic Report Generator - Drivers License section swapped from radio input to list input.",
+			"Traffic Report Generator - Tint Level section swapped from number input to list input.",
+			"Traffic Report Generator - Certain section titles were renamed. (Tints -> Tint Level, Neighbourhood -> District, Defendant Details, Narrative, & Dashboard Camera -> Defendant & Narrative, Crime ID & Title -> Crime ID, Title, & Classification)",
+			"Traffic Report Generator - Certain help messages were edited and refined."
+		]
+	},{
 		"id": "1.1.0",
 		"date": "23/NOV/2019",
-		"changes": {
-			"1": "Site - Website now supports HTTPS SSL/TLS encryption.",
-			"2": "Site - Dark mode has been activated.",
-			"3": "Site - Small visual details have been adjusted.",
-			"4": "Generated Report - Added Create Record: Defendant Name button.",
-			"5": "Traffic Report Generator - Input fields now highlight when in use.",
-			"6": "Traffic Report Generator - Added Dashboard Camera section.",
-			"7": "Traffic Report Generator - Added Defendant Drivers License section.",
-			"8": "Traffic Report Generator - Added missing icon to the Submit button.",
-			"9": "Traffic Report Generator - Removed unneeded labels for subsequent Officer Slots & Citations.",
-			"10": "Traffic Report Generator - Expanded on various help messages / hints to provide more details.",
-			"11": "Traffic Report Generator - Brackets () around the crime class for citations have been removed."
-		}
-	},
-	"1.0.0": {
+		"changes": [
+			"Site - Website now supports HTTPS SSL/TLS encryption.",
+			"Site - Dark mode has been activated.",
+			"Site - Small visual details have been adjusted.",
+			"Generated Report - Added Create Record: Defendant Name button.",
+			"Traffic Report Generator - Input fields now highlight when in use.",
+			"Traffic Report Generator - Added Dashboard Camera section.",
+			"Traffic Report Generator - Added Defendant Drivers License section.",
+			"Traffic Report Generator - Added missing icon to the Submit button.",
+			"Traffic Report Generator - Removed unneeded labels for subsequent Officer Slots & Citations.",
+			"Traffic Report Generator - Expanded on various help messages / hints to provide more details.",
+			"Traffic Report Generator - Brackets () around the crime class for citations have been removed."
+		]
+	},{
 		"id": "1.0.0",
 		"date": "22/NOV/2019",
-		"changes": {
-			"1": "Initial release."
-		}
+		"changes": [
+			"Site - Initial release."
+		]
 	}
-
-}
+]
