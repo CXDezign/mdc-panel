@@ -3,7 +3,7 @@
 </p>
 
 # MDC Panel
-The following web-application is a hub for links, multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing the paperwork.
+The following web-application is a hub for multi-functional tools, maps, resources, and generators and was purpose-built for processing and easing official government paperwork.
 
 #### Features
 * Simple and fast form fill-out process for reports, threads, general paperwork.
