@@ -27,6 +27,11 @@
 		</div>
 		<div class="form-row groupSlotCharge"></div>
 		<div class="form-row groupSlotChargeDrug"></div>
+		<div class="container mt-5 text-center">
+			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>" role="button">
+				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
+			</a>
+		</div>
 		<div class="container my-5 text-center">
 			<button id="submitCharges" type="submit" name="submit" class="btn btn-primary px-5">
 				<i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest

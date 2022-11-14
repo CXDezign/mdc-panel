@@ -17,6 +17,16 @@
 			</a>
 		</li>
 		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-mdc') ?>">
+				<i class="fas fa-fw fa-desktop mr-2"></i><span class="icon-text">Mobile Data Computer<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-cad') ?>">
+				<i class="fas fa-fw fa-headset mr-2"></i><span class="icon-text">Computer Aided Dispatch<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
+		<li class="nav-item">
 			<a class="nav-link" href="/street-guide">
 				<i class="fas fa-fw fa-map-marker-alt mr-2"></i><span class="icon-text">Street Guide</span>
 			</a>
@@ -68,6 +78,27 @@
 				<i class="fas fa-fw fa-book mr-2"></i><span class="icon-text">Useful Resources</span>
 			</a>
 		</li>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-bbcoderip') ?>">
+				<i class="fas fa-fw fa-hand-middle-finger mr-2"></i><span class="icon-text">BBCode.RIP<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
+		<hr class="my-3">
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lspd') ?>">
+				<img class="mr-2" src="/images/Logo-LSPD.png" alt="LSPD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSPD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lssd') ?>">
+				<img class="mr-2" src="/images/Logo-LSSD.png" alt="LSSD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSSD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lsfd') ?>">
+				<img class="mr-2" src="/images/Logo-LSFD.png" alt="LSFD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
 		<hr class="my-3">
 		<li class="nav-item">
 			<a class="nav-link" href="/settings">
@@ -77,11 +108,6 @@
 		<li class="nav-item">
 			<a class="nav-link" href="/changelogs#<?= $g->getSettings('site-version') ?>">
 				<i class="fas fa-fw fa-plug mr-2"></i><span class="icon-text">Changelogs<span class="badge badge-danger ml-3"><?= $g->getSettings('site-version') ?></span></span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="<?= $g->getSettings('url-github') ?>" target="_blank">
-				<i class="fab fa-fw fa-github mr-2"></i><span class="icon-text">GitHub</span><i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i>
 			</a>
 		</li>
 	</ul>

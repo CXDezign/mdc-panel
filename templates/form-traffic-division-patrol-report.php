@@ -1,5 +1,6 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><img class="mr-2 align-bottom" src="/images/divisions/traffic.png" height="40px">Traffic Division: Patrol Report</h1>
+	<h6><a target="_blank" rel="noopener noreferrer" href="https://lspd.gta.world/viewforum.php?f=101">Traffic Division: Patrol Reports - Category<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></a></h6>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="TrafficDivisionPatrolReport">
@@ -219,6 +220,21 @@
 				'placeholder' => 'Any optional and extra notes regarding the patrol.',
 				'attributes' => '',
 				'hint' => ''
+			));
+			// Form - Textfield - Traffic Division Patrol Report URL
+			$c->form('textfield', 'forms', array(
+				'size' => '12',
+				'type' => 'text',
+				'label' => '<label>Traffic Division: Patrol Report URL</label>',
+				'icon' => 'car-crash',
+				'class' => '',
+				'id' => 'inputTDPatrolReportURL',
+				'name' => 'inputTDPatrolReportURL',
+				'value' => '',
+				'placeholder' => 'Direct URL to your personal Patrol Report thread.',
+				'tooltip' => 'URL',
+				'attributes' => '',
+				'style' => ''
 			));
 		?>
 		</div>

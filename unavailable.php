@@ -41,6 +41,8 @@
 				<h3>WEBSITE TEMPORARILY UNAVAILABLE - MAINTENANCE</h3>
 				<div class="container my-5">
 					The MDC Panel is currently under maintenance and will be unavailable until further notice.
+					<hr>
+					Questions? Message <strong><?= $g->getSettings('site-discord-contact') ?></strong> on Discord.
 				</div>
 			</div>
 		</div>

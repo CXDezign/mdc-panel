@@ -155,8 +155,7 @@ optgroup {
 }
 
 #footer {
-	position: absolute;
-	width: calc(100vw - 260px);
+	position: static;
 	padding: .5rem 0;
 	background-color: #eeeeee;
 	border-top: 1px solid rgba(0,0,0,.1);
