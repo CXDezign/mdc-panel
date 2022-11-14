@@ -1,4 +1,13 @@
 {
+	"2.0.0": {
+		"id": "2.0.0",
+		"date": "14/NOV/2022",
+		"changes": {
+			"0": "Penal Code - Updated the penal code to match the lastest update.",
+			"1": "General - Rolled back a lot of the GTA:W related removals.",
+			"2": "General - Updated the LSPD/LSSD related connections to the lastest content."
+		}
+	},
 	"1.18.4": {
 		"id": "1.18.4",
 		"date": "06/JAN/2021",

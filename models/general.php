@@ -5,28 +5,22 @@ class General {
 	public function getSettings($setting) {
 		
 		switch ($setting) {
-			case 'site-live':					return false;
+			case 'site-live':					return true;
 			case 'site-name':					return 'MDC Panel';
-			case 'site-version':				return '1.18.4';
+			case 'site-version':				return '2.0.0';
 			case 'site-url':					return $_SERVER['SERVER_NAME'];
 			case 'site-logo':					return '/images/MDC-Panel.svg';
 			case 'site-favicon':				return '/images/MDC-Panel-Favicon.svg';
 			case 'site-image':					return '/images/MDC-Panel-OG.png';
 			case 'site-description':			return 'MDC Panel - Multi-functional tools, generators, and resources for official government use.';
-			case 'site-discord-contact':		return 'xanx#0001';
-			case 'url-github':					return 'https://github.com/xanxTV/MDC-Panel';
+			case 'site-discord-contact':		return 'Biscuit#0001';
+			case 'url-github':					return 'https://github.com/biscuitgtaw/MDC-Panel';
 			case 'url-mdc':						return 'https://mdc.gta.world';
 			case 'url-cad':						return 'https://cad.gta.world';
-			case 'url-bbcoderip':				return 'https://bbcode.rip';
 			case 'url-lspd':					return 'https://lspd.gta.world';
 			case 'url-lssd':					return 'https://lssd.gta.world';
 			case 'url-lsfd':					return 'https://lsfd.gta.world';
-			case 'url-penal-code':				return 'https://forum.gta.world/en/index.php?/topic/26513-san-andreas-penal-code';
-			case 'url-court-laws':				return 'https://lspd.gta.world/viewtopic.php?f=665&t=12522&p=60722';
-			case 'url-lspd-manual':				return 'https://lspd.gta.world/viewforum.php?f=218';
-			case 'url-lspd-reports-records':	return 'https://lspd.gta.world/viewforum.php?f=434';
-			case 'url-post-arrest-submission':	return 'https://lspd.gta.world/viewtopic.php?f=1228&t=22822';
-			case 'url-warrant-service':			return 'https://lspd.gta.world/viewforum.php?f=806';
+			case 'url-penal-code':				return 'https://forum.gta.world/en/topic/78852-san-andreas-penal-code/';
 			default: break;
 		}
 	}

@@ -12,68 +12,17 @@
 		"text": "Paying for citations is an admission of guilt. Taking them is only an acknowledgement they were received. You have 72 hours to appeal in traffic court or to pay for the citation amount through the LSPD online portal."
 	},
 	"2": {
-		"disabled": 1,
-		"type": "roleplay",
-		"id": "roleplayTowHook",
-		"title": "Tow Hook Roleplay",
-		"text": {
-			"0": "/me operates the lever on the rear-quarter panel of the tow truck, dropping the hook to the ground.",
-			"1": "/me collects the hook, crouching on the ground, attaching the hook to the undercarriage mounting point of the vehicle, checking the connection.",
-			"2": "/me pushes themself back up, operating the lever on the rear-quarter panel of the tow truck again, raising the hooked vehicle up."
-		}
-	},
-	"3": {
 		"type": "text",
 		"id": "wristbandBraceletBreakdown",
 		"title": "Wristbands & Bracelets Breakdown",
 		"text": "<strong><span style='color: rgba(200,0,0,255)'>Red Wristband</span></strong>: Violent charges.<br><strong><span style='color: rgba(0,0,200,255)'>Blue Wristband</span></strong>: Non-violent charges.<br><strong><span style='color: #FFBF40;'>Yellow Wristband</span></strong>: Medical related concerns. (Terminally Ill, Contageous Disease, etc).<hr><strong><span style='color: #808080;'>White Bracelet:</span></strong> General inmate population.<br><strong><span style='color: #FF8000;'>Orange Bracelet:</span></strong> Juveniles (Male and Female)<br>"
 	},
-	"4": {
+	"3": {
 		"type": "link",
 		"link": "url-penal-code",
 		"id": "card-main-penal",
 		"title": "San Andreas Penal Code",
 		"icon": "balance-scale",
 		"description": "Access the San Andreas Penal Code."
-	},
-	"5": {
-		"type": "link",
-		"link": "url-court-laws",
-		"id": "card-main-penal",
-		"title": "LSPD - Court Laws",
-		"icon": "university",
-		"description": "U.S. Supreme court laws."
-	},
-	"6": {
-		"type": "link",
-		"link": "url-lspd-manual",
-		"id": "card-main-penal",
-		"title": "LSPD - Manual & Handbook",
-		"icon": "book",
-		"description": "Access the Los Santos Police Department Manual & Handbooks."
-	},
-	"8": {
-		"type": "link",
-		"link": "url-lspd-reports-records",
-		"id": "card-main-penal",
-		"title": "LSPD - Reports & Records",
-		"icon": "database",
-		"description": "Access the Los Santos Police Department Reports & Records."
-	},
-	"9": {
-		"type": "link",
-		"link": "url-post-arrest-submission",
-		"id": "card-main-penal",
-		"title": "LSPD - Post-Arrest Submission Information",
-		"icon": "gavel",
-		"description": "Access the District Attorney's Office Post-Arrest Submission Information."
-	},
-	"10": {
-		"type": "link",
-		"link": "url-warrant-service",
-		"id": "card-main-penal",
-		"title": "LSPD - Warrant Service",
-		"icon": "id-badge",
-		"description": "Access the Warrant Service section."
 	}
 }
