@@ -1,4 +1,11 @@
 {
+	"2.0.1": {
+		"id": "2.0.1",
+		"date": "14/NOV/2022",
+		"changes": {
+			"0": "Useful Resources - Added a plea system breakdown and generalized useful resources for both LSSD and LSPD use."
+		}
+	},
 	"2.0.0": {
 		"id": "2.0.0",
 		"date": "14/NOV/2022",

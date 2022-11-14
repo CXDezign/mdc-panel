@@ -7,7 +7,7 @@ class General {
 		switch ($setting) {
 			case 'site-live':					return true;
 			case 'site-name':					return 'MDC Panel';
-			case 'site-version':				return '2.0.0';
+			case 'site-version':				return '2.0.1';
 			case 'site-url':					return $_SERVER['SERVER_NAME'];
 			case 'site-logo':					return '/images/MDC-Panel.svg';
 			case 'site-favicon':				return '/images/MDC-Panel-Favicon.svg';
@@ -21,6 +21,7 @@ class General {
 			case 'url-lssd':					return 'https://lssd.gta.world';
 			case 'url-lsfd':					return 'https://lsfd.gta.world';
 			case 'url-penal-code':				return 'https://forum.gta.world/en/topic/78852-san-andreas-penal-code/';
+			case 'url-bail-schedule':			return 'https://docs.google.com/spreadsheets/d/1z9ro4ynlhHXcYweBgPUj6G_JFbmeKsI6uIZWr4cDd9U/';
 			default: break;
 		}
 	}

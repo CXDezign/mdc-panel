@@ -1,24 +1,65 @@
 {
 	"0": {
 		"type": "copy",
+		"disabled": false,
 		"id": "mirandaRights",
 		"title": "Miranda Rights",
 		"text": "You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?"
 	},
 	"1": {
 		"type": "copy",
+		"disabled": false,
 		"id": "citationAppeal",
 		"title": "Citation Appeal",
-		"text": "Paying for citations is an admission of guilt. Taking them is only an acknowledgement they were received. You have 72 hours to appeal in traffic court or to pay for the citation amount through the LSPD online portal."
+		"text": "Paying for citations is an admission of guilt. Taking them is only an acknowledgement they were received. You have 72 hours to appeal in traffic court or to pay for the citation amount through the government online portal."
 	},
 	"2": {
 		"type": "text",
+		"disabled": false,
+		"id": "pleaSystemBreakdown",
+		"title": "Plea System Breakdown",
+		"text": "All pleas must be collected from the arrested party on an <strong>OOC BASIS</strong> using /b chat. This is mandated by Legal Faction Management.<br/><br/><strong><span style='color: rgba(200,0,0,255)'>Guilty</span>:</strong> The person accepts the charges & calculated jail time, no post arrest submission will be submitted by the MDC.<br/><strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span>:</strong> The person does not accept the charges & calculated jail time, a post arrest submission will be submitted by the MDC, the person is placed into jail for 9999 days.<br/><strong><span style='color: rgba(0,0,200,255)'>No-Contest</span>:</strong> The person does not accept nor deny the charges & calculated jail time, a post arrest submission will be submitted by the MDC, the person is placed into jail for the regular calculated time.<br/><strong><span style='color: rgba(200,0,0,255)'><u>Required Case</u></span>:</strong> The person is arrested for 9999 days, a post arrest submission will be submitted by the MDC.<br/><br/>There are <strong>three basic regulations</strong> for <strong><span style='color: rgba(200,0,0,255)'>Guilty</span></strong> & <strong><span style='color: rgba(0,0,200,255)'>No-Contest</span></strong> pleas:<br/><ul><li>No arrest can exceed 20 Days. 20 Days is the maximum time you can jail someone, no matter the charges. Do not charge for more then 20 Days.</li><li>Do not impound a vehicle for longer then 7 Days. This is the maximum amount of time for an impound.</li><li>Do not suspend someones license for longer then 7 Days. This is the maximum amount of time for a license suspension.</li></ul>"
+	},
+	"3": {
+		"type": "roleplay",
+		"disabled": false,
+		"id": "pleaSystemExplained",
+		"title": "Plea System Explanation",
+		"text": {
+			"0": "/b The plea system functions via an OOC system as mandated by Legal Faction Management, you are therefor asked for your plea via /b chat.",
+			"1": "/b You are able to plea guilty, not guilty or no-contest to the charges that I've listed to you, the courts are roleplayed via the GTA:W forums, therefor all the roleplay in regards to your case will be done via the forums.",
+			"2": "/b Guilty -- Means you accept all the charges and there WILL NOT BE a case on the GTA:W Forums, you are UNABLE to appeal the charges and you'll be placed into jail for the calculated time of the charges.",
+			"3": "/b Not Guilty -- Means you do not accept the charges and there WILL BE a case on the GTA:W Forums, you will have the chance to ask for a public defender, however, you won't be released from jail until the case is resolved.",
+			"4": "/b No Contest -- Means you do not accept nor deny the charges and you have a chance to appeal the case within 30 days by contacting a lawyer yourself, you will be placed into jail for the calculated time of the charges.",
+			"5": "Is there anything that you'd like for me to explain additionally?"
+		}
+	},
+	"4": {
+		"type": "text",
+		"disabled": true,
+		"id": "bailSystemBreakdown",
+		"title": "Bail System Breakdown",
+		"text": "If the suspect enters a <strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span></strong> plea, they may be eligible for bail. The bail system is automatic for <strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span></strong> pleas. By checking the linked <strong>BAIL SCHEDULE</strong>, you'll he able to find a full list of prices and charges for bail. Here are a few notes to follow when reading the sheet:<br/><ul><li><b>ROR</b> -- Means the suspect can be released on $0 bail at your own discretion.</li><li><b>AUTO-BAIL YES</b> -- Means bail must be mentioned if the suspect has pled <strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span></strong>.</li><li><b>NO BAIL</b> -- Means the suspect does not qualify for bail.</li><li><b>AUTO-BAIL DISCRETIONARY</b> -- Means bail is up to the officer's discretion.</li></ul>When setting bail conditions, ensure the following guidelines are followed:<br/><ul><li>If you wish to deny auto-bail, reach out to a Deputy District Attorney.</li><li>Any charges from a CK sutiation isn't eligible for Auto-Bail.</li><li>If someone commits an offense while they're already on bail, they are not elegible for bail.</li></ul>The following steps are to be followed when bailing a suspect:<br/><ol><li>Fine the suspect the added amount of all their charges with the fine reason \"BOND ON DD/MMM/YYYY\".</li><li>File the arrest report normally, but in the District Attorney's Notes section, ensure you add a mention that the suspect is out on bond for $XX,XXX.</li><li>Do not arrest the suspect script-wise, instead, release them infront of the jail.</li></ol>"
+	},
+	"5": {
+		"type": "link",
+		"disabled": true,
+		"link": "url-bail-schedule",
+		"id": "card-bail-schedule",
+		"title": "San Andreas Bail Schedule",
+		"icon": "clipboard-list",
+		"description": "Access the San Andreas Bail Schedule."
+	},
+	"6": {
+		"type": "text",
+		"disabled": false,
 		"id": "wristbandBraceletBreakdown",
 		"title": "Wristbands & Bracelets Breakdown",
 		"text": "<strong><span style='color: rgba(200,0,0,255)'>Red Wristband</span></strong>: Violent charges.<br><strong><span style='color: rgba(0,0,200,255)'>Blue Wristband</span></strong>: Non-violent charges.<br><strong><span style='color: #FFBF40;'>Yellow Wristband</span></strong>: Medical related concerns. (Terminally Ill, Contageous Disease, etc).<hr><strong><span style='color: #808080;'>White Bracelet:</span></strong> General inmate population.<br><strong><span style='color: #FF8000;'>Orange Bracelet:</span></strong> Juveniles (Male and Female)<br>"
 	},
-	"3": {
+	"7": {
 		"type": "link",
+		"disabled": false,
 		"link": "url-penal-code",
 		"id": "card-main-penal",
 		"title": "San Andreas Penal Code",

@@ -10,7 +10,7 @@
 		$resourceTitle = $resource['title'];
 		$resourceID = $resource['id'];
 
-		if ($resourceType == 'link') {
+		if ($resourceType == 'link' && !$resource['disabled']) {
 
 			$resourceLink = $resource['link'];
 			$resourceIcon = $resource['icon'];
@@ -29,7 +29,7 @@
 			</div>';
 		}
 
-		if ($resourceType == 'text') {
+		if ($resourceType == 'text' && !$resource['disabled']) {
 
 			$resourceText = $resource['text'];
 
@@ -44,7 +44,7 @@
 
 		}
 
-		if ($resourceType == 'copy') {
+		if ($resourceType == 'copy' && !$resource['disabled']) {
 
 			$resourceText = $resource['text'];
 
