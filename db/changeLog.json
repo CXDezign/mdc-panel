@@ -1,4 +1,14 @@
 {
+	"2.1.0": {
+		"id": "2.1.0",
+		"date": "15/NOV/2022",
+		"changes": {
+			"0": "Paperwork Generators - Refactored the entire backend system so it's easier to create generators in the future.",
+			"1": "Paperwork Generators - Hidden the <strong><a href=\"/paperwork-generators/lspd/traffic-division-patrol-report\" target=\"_blank\">LSPD TD: Traffic Report</a></strong> generator, however, it's still accessible by link (same will happen with all future division-specific generators).",
+			"2": "Paperwork Generators - Created a new <strong><a href=\"/paperwork-generators/lssd/incident-report\" target=\"_blank\">LSSD Incident Report</a></strong> generator.",
+			"3": "Paperwork Generators - Added a future-proof way of categorizing generators by departments or specific sections."
+		}
+	},
 	"2.0.1": {
 		"id": "2.0.1",
 		"date": "14/NOV/2022",

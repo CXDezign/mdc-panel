@@ -104,11 +104,37 @@ class PaperworkGenerators {
 							<optgroup label="State Fire Marshall">'.$groupSFM.'</optgroup>';
 	}
 
+	public function pClassificationChooser() {
+
+		$classifications = file('resources/classificationsList.txt');
+		$classificationsCount = 0;
+		$group = '';
+
+		foreach ($classifications as $classification) {
+
+			$statement = '<option value="'.$classificationsCount.'">'.$classification.'</option>';
+
+			$group .= $statement;
+
+			$classificationsCount++;
+		}
+
+		return '<optgroup label="Classifications">'.$group.'</optgroup>';
+	}
+
 	public function getRank($input) {
 
 		$ranks = file($_SERVER['DOCUMENT_ROOT'].'/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $ranks[$input];
+
+	}
+
+	public function getClassification($input) {
+
+		$classifications = file($_SERVER['DOCUMENT_ROOT'].'/resources/classificationsList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $classifications[$input];
 
 	}
 

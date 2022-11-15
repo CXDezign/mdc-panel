@@ -392,6 +392,127 @@
 
 		}
 
+		if ($generatorType == 'IncidentReport') {
+
+			// Variables
+			$inputPersonName = $_POST['inputPersonName'] ?: array();
+			$inputPersonName = array_values(array_filter($inputPersonName));
+			$inputClassification = $_POST['inputClassification'] ?: array();
+			$inputClassification = array_values(array_filter($inputClassification));
+			$inputClassificationArray = arrayMap($_POST['inputClassification'], 0);
+			$inputDoB = $_POST['inputDoB'] ?: array();
+			$inputDoB = array_values(array_filter($inputDoB));
+			$inputPhone = $_POST['inputPhone'] ?: array();
+			$inputPhone = array_values(array_filter($inputPhone));
+			$inputResidence = $_POST['inputResidence'] ?: array();
+			$inputResidence = array_values(array_filter($inputResidence));
+			$inputRelation = $_POST['inputRelation'] ?: array();
+			$inputRelation = array_values(array_filter($inputRelation));
+			$inputEvidenceBox = $_POST['inputEvidenceBox'] ?? array();
+			$inputEvidenceBox = array_values(array_filter($inputEvidenceBox));
+			$inputNarrative = $_POST['inputNarrative'] ?: '';
+			$inputIncidentTitle = $_POST['inputIncidentTitle'] ?: '';
+
+			// Set Cookies
+			setCookiePost('callSign', $postInputCallsign);
+			setCookiePost('officerNameArray', $postInputNameArray[0]);
+			setCookiePost('officerRankArray', $postInputRankArray[0]);
+			setCookiePost('officerBadgeArray', $postInputBadgeArray[0]);
+			setCookiePost('defName', $postInputDefName);
+			setCookiePost('defNameURL', $postInputDefName);
+
+			// Officer Resolver
+			$officers = '';
+			foreach ($postInputNameArray as $iOfficer => $officer) {
+				$officers .= resolverOfficerBB($officer, $postInputRankArray[$iOfficer], $postInputBadgeArray[$iOfficer]);
+			}
+
+			// Person Resolver
+			$persons = '';
+			if (!empty($inputPersonName)) {
+
+				$persons = '';
+				$iPersons = count($inputPersonName);
+
+				if ($iPersons > 0) {
+					foreach ($inputPersonName as $indPerson => $person) {
+						$persons .= '[u]Person #' .	$index+1	. ' - '. $person .'[/u]
+[b]Classification:[/b] '. $pg->getClassification($inputClassificationArray[$indPerson]) .'
+[b]Date of Birth:[/b] ' . strtoupper($inputDoB[$indPerson]) . '
+[b]Phone Number:[/b] ' . $inputPhone[$indPerson] . '
+[b]Residence:[/b] ' . $inputResidence[$indPerson] . '
+[b]Relation to Incident:[/b] ' . $inputRelation[$indPerson] .'
+
+';
+									$index++;
+					}
+				}
+			}
+
+			// Evidence Resolver
+			$evidenceImage = '';
+			if (!empty($postInputEvidenceImageArray)) {
+
+				$evidenceImage = '';
+				foreach ($postInputEvidenceImageArray as $eImgID => $image) {
+					$evidenceImageCount = $eImgID + 1;
+					$evidenceImage .= '[altspoiler=EXHIBIT - Photograph #'.$evidenceImageCount.'][img]'.$image.'[/img][/altspoiler]';
+				}
+			}
+
+			$evidenceBox = '';
+			if (!empty($inputEvidenceBox)) {
+
+				$evidenceBox = '';
+				foreach ($inputEvidenceBox as $eBoxID => $box) {
+					$evidenceBoxCount = $eBoxID + 1;
+					$evidenceBox .= '[altspoiler=EXHIBIT - Description #'.$evidenceBoxCount.']'.$box.'[/altspoiler]';
+				}
+			}
+
+			if($evidenceImage == '' && $evidenceBox == '') {
+				$evidenceImage = 'No Evidence Submitted.';
+			}
+
+			// Report Builder
+			$redirectPath = redirectPath(2);
+			$generatedReportType = 'Incident Report';
+			$generatedThreadURL = 'https://lssd.gta.world/posting.php?mode=post&f=1188';
+			$generatedThreadTitle = '[IR] '.$inputIncidentTitle.' - '.$postInputStreet.', '.$postInputDistrict.' - '.strtoupper($postInputDate);
+			$generatedReport = '
+[font=Arial][color=black]
+
+[center][img]https://i.imgur.com/LEWTXbL.png[/img]
+
+[size=125][b]SHERIFF\'S DEPARTMENT
+COUNTY OF LOS SANTOS[/b]
+[i]"A Tradition of Service Since 1850"[/i][/size]
+
+[size=110][u]INCIDENT REPORT[/u][/size][/center][hr][/hr]
+
+[font=arial][color=black][indent][size=105][b]Filing Information[/b][/size]
+
+[indent]
+[b]Time & Date:[/b] '. $postInputTime .', '. $postInputDate .'
+[b]Penal Code (if Criminal):[/b] N/A
+[b]Location:[/b] '. $postInputStreet.', '.$postInputDistrict .'
+
+[b]Filed By:[/b] ' . $officers . '
+[b]Unit Number:[/b] '. $postInputCallsign .'
+[/indent]
+
+[size=105][b]Involved Persons[/b][/size]
+[indent]' . $persons . '[/indent]
+[size=105][b]Narrative[/b][/size]
+[indent]'. $inputNarrative .'[/indent]
+
+[size=105][b]Evidence[/b][/size]
+' . $evidenceBox .'
+' . $evidenceImage;
+			$generatedReport = str_replace('				', '', $generatedReport);
+
+		}
+
 		if ($generatorType == 'TrafficDivisionPatrolReport') {
 
 			// Variables
@@ -952,5 +1073,13 @@
 		global $pg;
 
 		return '<strong>'.$pg->getRank($rank).' '.$name.'</strong> (<strong>#'.$badge.'</strong>), ';
+
+	}
+
+	function resolverOfficerBB($name, $rank, $badge) {
+
+		global $pg;
+
+		return '[b]'.$pg->getRank($rank).' '.$name.'[/b] ([b]#'.$badge.'[/b]), ';
 
 	}

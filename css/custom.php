@@ -40,6 +40,7 @@
 	$cPatrol = "#11cab9";
 	$cDeath = "#F8EFBA";
 	$cTDpatrol = "#5b1d16";
+	$cSDIncident = "#c9222e";
 
 ?>
 
@@ -670,6 +671,15 @@ optgroup {
 	filter: grayscale(0%);
 }
 
+#card-generators-sd-incident:hover {
+	box-shadow: <?= $cSDIncident ?> 0 1px 0px;
+}
+
+#card-generators-sd-incident:hover i {
+	color: <?= $cSDIncident ?>!important;
+	text-shadow: <?= $cSDIncident ?>80 0 0 15px, 0px 1px 0 rgba(0, 0, 0, .75);
+}
+
 /*///////////////////////////////////////////////////////////////////////////////////////////
 // MOBILE DEVICES //
 //////////////////*/
@@ -1107,6 +1117,14 @@ small.text-muted {
 
 #card-generators-patrol:hover i {
 	text-shadow: <?= $cPatrol ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
+}
+
+#card-generators-sd-incident:hover {
+	box-shadow: <?= $cSDIncident ?>80 0 -1px 0px;
+}
+
+#card-generators-sd-incident:hover i {
+	text-shadow: <?= $cSDIncident ?>80 0 0 15px, 0px -1px 0 rgba(255, 255, 255, .5);
 }
 
 <?php

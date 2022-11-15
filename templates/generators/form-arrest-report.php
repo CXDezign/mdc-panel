@@ -2,7 +2,7 @@
 	<?php
 		if ($showChargeTable) {
 			echo '<h1><i class="fas fa-fw fa-gavel mr-2"></i>Sentencing Charges</h1>';
-			require_once 'form-arrest-charge-table.php';
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-arrest-charge-table.php';
 		}
 	?>
 	<h1><i class="fas fa-fw fa-landmark mr-2"></i>Arrest Report</h1>
@@ -65,7 +65,7 @@
 		</div>
 		<?php
 
-			require_once 'sections/location.php';
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/sections/location.php';
 
 		?>
 		<hr>
@@ -162,7 +162,7 @@
 		// COPY SLOTS
 
 		// OFFICER SLOT
-		require_once 'copy-slots/officer.php';
+		require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/copy-slots/officer.php';
 	?>
 </div>
-<?php require_once 'form-footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

@@ -3,7 +3,8 @@
 	$json = json_decode(file_get_contents('db/generators.json'), true);
 
 	$generatorsMDC = '';
-	$generatorsForumLSPD = '';
+	$generatorsLSPD = '';
+	$generatorsLSSD = '';
 
 	foreach ($json as $generator) {
 
@@ -38,8 +39,11 @@
 
 		switch($generatorType) {
 
-			case 'ForumLSPD':
-				$generatorsForumLSPD .= $card;
+			case 'LSPD':
+				$generatorsLSPD .= $card;
+				break;
+			case 'LSSD':
+				$generatorsLSSD .= $card;
 				break;
 			case 'MDC':
 			default:
@@ -63,13 +67,21 @@
 		<div class="grid-col grid-col--4"></div>
 		<?= $generatorsMDC ?>
 	</div>
-	<h5>Forum - LSPD</h5>
+	<h5>Los Santos Police Department</h5>
 	<div class="grid" id="generators">
 		<div class="grid-col grid-col--1"></div>
 		<div class="grid-col grid-col--2"></div>
 		<div class="grid-col grid-col--3"></div>
 		<div class="grid-col grid-col--4"></div>
-		<?= $generatorsForumLSPD ?>
+		<?= $generatorsLSPD ?>
+	</div>
+	<h5>Los Santos Sheriff's Department</h5>
+	<div class="grid" id="generators">
+		<div class="grid-col grid-col--1"></div>
+		<div class="grid-col grid-col--2"></div>
+		<div class="grid-col grid-col--3"></div>
+		<div class="grid-col grid-col--4"></div>
+		<?= $generatorsLSSD ?>
 	</div>
 </div>
 <script type="text/javascript">

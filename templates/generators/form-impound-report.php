@@ -30,7 +30,7 @@
 				'tints' => false,
 			));
 			// Section - Location
-			require_once 'sections/location.php';
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/sections/location.php';
 		?>
 		<hr>
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Impound Details</h4>
@@ -82,5 +82,5 @@ $c->form('vehicle-registered', 'copy-slots', array(
 	'tooltipRO' => 'Registered Owner - Firstname Lastname',
 ));
 
-require_once 'form-footer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php';
 ?>

@@ -22,22 +22,22 @@
 			$url = "/templates/page-resources.php";
 			break;
 		case '/paperwork-generators/arrest-charges':
-			$url = "/templates/form-arrest-charges.php";
+			$url = "/templates/generators/form-arrest-charges.php";
 			break;
 		case '/paperwork-generators/arrest-report':
-			$url = "/templates/form-arrest-report.php";
+			$url = "/templates/generators/form-arrest-report.php";
 			break;
 		case '/paperwork-generators/traffic-report':
-			$url = "/templates/form-traffic-report.php";
+			$url = "/templates/generators/form-traffic-report.php";
 			break;
-		case '/paperwork-generators/death-report':
-			$url = "/templates/form-death-report.php";
+		case '/paperwork-generators/lspd/death-report':
+			$url = "/templates/generators/lspd/form-death-report.php";
 			break;
-		case '/paperwork-generators/traffic-division-patrol-report':
-			$url = "/templates/form-traffic-division-patrol-report.php";
+		case '/paperwork-generators/lspd/traffic-division-patrol-report':
+			$url = "/templates/generators/lspd/form-traffic-division-patrol-report.php";
 			break;
 		case '/paperwork-generators/parking-ticket':
-			$url = "/templates/form-parking-ticket.php";
+			$url = "/templates/generators/form-parking-ticket.php";
 			break;
 		case '/paperwork-generators/generated-thread':
 			$url = "/templates/generated-thread.php";
@@ -46,10 +46,13 @@
 			$url = "/templates/generated-report.php";
 			break;
 		case '/paperwork-generators/impound-report':
-			$url = "/templates/form-impound-report.php";
+			$url = "/templates/generators/form-impound-report.php";
 			break;
 		case '/paperwork-generators/profiling-samples':
 			$url = "/templates/form-profiling-samples.php";
+			break;
+		case '/paperwork-generators/lssd/incident-report':
+			$url = "/templates/generators/lssd/form-incident-report.php";
 			break;
 		case '':
 		case '/':

@@ -13,7 +13,7 @@
 				'callsign' => false
 			));
 			// Section - Location
-			require_once 'sections/location.php';
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/sections/location.php';
 		?>
 		<hr>
 		<h4><i class="fas fa-fw fa-skull mr-2"></i>Deceased Information</h4>
@@ -312,4 +312,4 @@
 	));
 ?>
 </div>
-<?php require_once 'form-footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

@@ -344,4 +344,4 @@
 ?>
 </div>
 
-<?php require_once 'form-footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

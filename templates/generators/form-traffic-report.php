@@ -95,7 +95,7 @@
 				'tints' => true
 			));
 			// Section - Location
-			require_once 'sections/location.php';
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/sections/location.php';
 		?>
 		<hr>
 		<h4><i class="fas fa-fw fa-receipt mr-2"></i>Charges</h4>
@@ -164,7 +164,7 @@
 <!-- COPY SLOTS -->
 <?php
 	// COPY SLOT - OFFICER
-	require_once 'copy-slots/officer.php';
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/copy-slots/officer.php';
 	// COPY SLOT - VEHICLE REGISTERED DETAILS
 	$c->form('vehicle-registered', 'copy-slots', array(
 		'g' => $g,
@@ -173,7 +173,7 @@
 		'tooltipRO' => 'Leave empty if the same as Defendant.',
 	));
 	// COPY SLOT - VEHICLE INSURANCE EXPIRED DATE
-	require_once 'copy-slots/vehicle-insurance-date.php';
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/copy-slots/vehicle-insurance-date.php';
 ?>
 <!-- COPY SLOT - CITATION -->
 <div class="container copyGroupSlotCitation" style="display: none;">
@@ -233,4 +233,4 @@
 ?>
 </div>
 
-<?php require_once 'form-footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

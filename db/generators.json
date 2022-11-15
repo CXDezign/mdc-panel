@@ -45,21 +45,21 @@
 		"icon": "parking"
 	},
 	"5": {
-		"title": "TD: Patrol Report",
-		"type": "ForumLSPD",
-		"link": "/paperwork-generators/traffic-division-patrol-report",
-		"tooltip": "Generate a Traffic Division patrol report.",
-		"card": "card-generators-tdpatrol",
-		"iconType": "image",
-		"icon": "/images/divisions/traffic.png"
-	},
-	"6": {
 		"title": "Death Report",
-		"type": "ForumLSPD",
-		"link": "/paperwork-generators/death-report",
+		"type": "LSPD",
+		"link": "/paperwork-generators/lspd/death-report",
 		"tooltip": "Generate a death report.",
 		"card": "card-generators-death",
 		"iconType": "icon",
 		"icon": "skull"
+	},
+	"6": {
+		"title": "Incident Report",
+		"type": "LSSD",
+		"link": "/paperwork-generators/lssd/incident-report",
+		"tooltip": "Generate an incident report.",
+		"card": "card-generators-sd-incident",
+		"iconType": "icon",
+		"icon": "clipboard-list"
 	}
 }

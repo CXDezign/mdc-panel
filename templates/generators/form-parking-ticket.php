@@ -30,7 +30,7 @@
 				'tints' => false,
 			));
 			// Section - Location
-			require_once 'sections/location.php';
+			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/sections/location.php';
 		?>
 		<hr>
 		<h4><i class="fas fa-fw fa-fingerprint mr-2"></i>Evidence Section</h4>
@@ -156,7 +156,7 @@
 		'tooltipRO' => 'Registered Owner - Firstname Lastname',
 	));
 	// COPY SLOT - VEHICLE INSURANCE EXPIRED DATE
-	require_once 'copy-slots/vehicle-insurance-date.php';
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/copy-slots/vehicle-insurance-date.php';
 ?>
 <!-- COPY SLOT - PHOTOGRAPH -->
 <div class="container copyGroupEvidencePhotograph" style="display: none;">
@@ -244,4 +244,4 @@
 	));
 ?>
 </div>
-<?php require_once 'form-footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

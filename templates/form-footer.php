@@ -106,6 +106,35 @@
 
 			})();
 
+
+		// Person Handling
+
+			// Person Slots
+			(function() {
+				
+				let $maxSlots = 4;
+				let $group = '.groupSlotPerson';
+				let $class = $group.replace('.', '');
+				let $add = '.addPerson';
+				let $remove = '.removePerson';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotPerson').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						copySlotSelectPicker($('body').find($group+':last'));
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+
 		// Traffic Report Generator
 
 			// Traffic Report Generator - Citations Slots
