@@ -65,7 +65,7 @@
 				'class' => '',
 				'id' => 'inputPhone',
 				'name' => 'inputPhone'.$array,
-				'value' => $g->findCookie('officerBadge'),
+				'value' => '',
 				'placeholder' => '#######',
 				'tooltip' => 'Person - Phone',
 				'attributes' => 'required',
