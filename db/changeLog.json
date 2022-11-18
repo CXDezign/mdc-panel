@@ -1,4 +1,12 @@
 {
+	"2.2.1": {
+		"id": "2.2.1",
+		"date": "18/NOV/2022",
+		"changes": {
+			"0": "General - Added SAPR ranks and groups and updated the LSSD ranks to include bonus Deputies and Detectives.",
+			"1": "General - Added a missing vehicle infraction and updated the drug charges in the penal code."
+		}
+	},
 	"2.2.0": {
 		"id": "2.2.0",
 		"date": "18/NOV/2022",

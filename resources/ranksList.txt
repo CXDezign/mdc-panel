@@ -17,6 +17,9 @@ Chief of Police
 Forensic Analyst
 Crime Scene Investigator
 Deputy Sheriff
+Deputy Sheriff (Bonus I)
+Deputy Sheriff (Bonus II)
+Detective
 Sergeant
 Lieutenant
 Captain
@@ -30,3 +33,13 @@ Fire Marshal
 Senior Fire Marshal
 Deputy Chief Fire Marshal
 Chief Fire Marshal
+Cadet
+Ranger
+Senior Ranger
+Corporal
+Sergeant
+Staff Sergeant
+Lieutenant
+Captain
+Commander
+Superintendent
