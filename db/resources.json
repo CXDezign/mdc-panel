@@ -36,14 +36,14 @@
 	},
 	"4": {
 		"type": "text",
-		"disabled": true,
+		"disabled": false,
 		"id": "bailSystemBreakdown",
 		"title": "Bail System Breakdown",
 		"text": "If the suspect enters a <strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span></strong> plea, they may be eligible for bail. The bail system is automatic for <strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span></strong> pleas. By checking the linked <strong>BAIL SCHEDULE</strong>, you'll he able to find a full list of prices and charges for bail. Here are a few notes to follow when reading the sheet:<br/><ul><li><b>ROR</b> -- Means the suspect can be released on $0 bail at your own discretion.</li><li><b>AUTO-BAIL YES</b> -- Means bail must be mentioned if the suspect has pled <strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span></strong>.</li><li><b>NO BAIL</b> -- Means the suspect does not qualify for bail.</li><li><b>AUTO-BAIL DISCRETIONARY</b> -- Means bail is up to the officer's discretion.</li></ul>When setting bail conditions, ensure the following guidelines are followed:<br/><ul><li>If you wish to deny auto-bail, reach out to a Deputy District Attorney.</li><li>Any charges from a CK sutiation isn't eligible for Auto-Bail.</li><li>If someone commits an offense while they're already on bail, they are not elegible for bail.</li></ul>The following steps are to be followed when bailing a suspect:<br/><ol><li>Fine the suspect the added amount of all their charges with the fine reason \"BOND ON DD/MMM/YYYY\".</li><li>File the arrest report normally, but in the District Attorney's Notes section, ensure you add a mention that the suspect is out on bond for $XX,XXX.</li><li>Do not arrest the suspect script-wise, instead, release them infront of the jail.</li></ol>"
 	},
 	"5": {
 		"type": "link",
-		"disabled": true,
+		"disabled": false,
 		"link": "url-bail-schedule",
 		"id": "card-bail-schedule",
 		"title": "San Andreas Bail Schedule",

@@ -1,4 +1,11 @@
 {
+	"2.2.2": {
+		"id": "2.2.2",
+		"date": "18/NOV/2022",
+		"changes": {
+			"0": "Useful Resources - Updated the useful resources with the new bail schedule system and explanation."
+		}
+	},
 	"2.2.1": {
 		"id": "2.2.1",
 		"date": "18/NOV/2022",
