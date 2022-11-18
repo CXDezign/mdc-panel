@@ -61,5 +61,14 @@
 		"card": "card-generators-sd-incident",
 		"iconType": "icon",
 		"icon": "clipboard-list"
+	},
+	"7": {
+		"title": "Use of Force Report",
+		"type": "LSSD",
+		"link": "/paperwork-generators/lssd/uof-report",
+		"tooltip": "Generate a use of force report.",
+		"card": "card-generators-sd-uof",
+		"iconType": "icon",
+		"icon": "fist-raised"
 	}
 }

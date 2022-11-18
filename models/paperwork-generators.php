@@ -122,6 +122,24 @@ class PaperworkGenerators {
 		return '<optgroup label="Classifications">'.$group.'</optgroup>';
 	}
 
+	public function sStatusChooser() {
+
+		$statuses = file('resources/statusList.txt');
+		$statusesCount = 0;
+		$group = '';
+
+		foreach ($statuses as $status) {
+
+			$statement = '<option value="'.$statusesCount.'">'.$status.'</option>';
+
+			$group .= $statement;
+
+			$statusesCount++;
+		}
+
+		return '<optgroup label="Classifications">'.$group.'</optgroup>';
+	}
+
 	public function getRank($input) {
 
 		$ranks = file($_SERVER['DOCUMENT_ROOT'].'/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
@@ -135,6 +153,14 @@ class PaperworkGenerators {
 		$classifications = file($_SERVER['DOCUMENT_ROOT'].'/resources/classificationsList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $classifications[$input];
+
+	}
+
+	public function getStatus($input) {
+
+		$statuses = file($_SERVER['DOCUMENT_ROOT'].'/resources/statusList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $statuses[$input];
 
 	}
 

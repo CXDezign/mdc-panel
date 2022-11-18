@@ -1,4 +1,12 @@
 {
+	"2.2.0": {
+		"id": "2.2.0",
+		"date": "18/NOV/2022",
+		"changes": {
+			"0": "Paperwork Generators - Added a new <strong><a href=\"/paperwork-generators/lssd/uof-report\" target=\"_blank\">LSSD Use of Force</a></strong> generator.",
+			"1": "Paperwork Generators - Capitalized the date timestamp on the <strong><a href=\"/paperwork-generators/lssd/incident-report\" target=\"_blank\">LSSD Incident Report</a></strong> generator."
+		}
+	},
 	"2.1.1": {
 		"id": "2.1.1",
 		"date": "16/NOV/2022",

@@ -430,13 +430,8 @@
 			// Person Resolver
 			$persons = '';
 			if (!empty($inputPersonName)) {
-
-				$persons = '';
-				$iPersons = count($inputPersonName);
-
-				if ($iPersons > 0) {
-					foreach ($inputPersonName as $indPerson => $person) {
-						$persons .= '[u]Person #' .	$index+1	. ' - '. $person .'[/u]
+				foreach ($inputPersonName as $indPerson => $person) {
+					$persons .= '[u]Person #' .	$index+1	. ' - '. $person .'[/u]
 [b]Classification:[/b] '. $pg->getClassification($inputClassificationArray[$indPerson]) .'
 [b]Date of Birth:[/b] ' . strtoupper($inputDoB[$indPerson]) . '
 [b]Phone Number:[/b] ' . $inputPhone[$indPerson] . '
@@ -444,8 +439,7 @@
 [b]Relation to Incident:[/b] ' . $inputRelation[$indPerson] .'
 
 ';
-									$index++;
-					}
+					$index++;
 				}
 			}
 
@@ -493,7 +487,7 @@ COUNTY OF LOS SANTOS[/b]
 [font=arial][color=black][indent][size=105][b]Filing Information[/b][/size]
 
 [indent]
-[b]Time & Date:[/b] '. $postInputTime .', '. $postInputDate .'
+[b]Time & Date:[/b] '. $postInputTime .', '. strtoupper($postInputDate) .'
 [b]Penal Code (if Criminal):[/b] N/A
 [b]Location:[/b] '. $postInputStreet.', '.$postInputDistrict .'
 
@@ -503,6 +497,110 @@ COUNTY OF LOS SANTOS[/b]
 
 [size=105][b]Involved Persons[/b][/size]
 [indent]' . $persons . '[/indent]
+[size=105][b]Narrative[/b][/size]
+[indent]'. $inputNarrative .'[/indent]
+
+[size=105][b]Evidence[/b][/size]
+' . $evidenceBox .'
+' . $evidenceImage;
+			$generatedReport = str_replace('				', '', $generatedReport);
+
+		}
+
+		if ($generatorType == 'UOFReport') {
+
+			// Variables
+			$inputSuspectName = $_POST['inputSuspectName'] ?: array();
+			$inputSuspectName = array_values(array_filter($inputSuspectName));
+			$inputSuspectStatus = $_POST['inputSuspectStatus'] ?: array();
+			$inputSuspectStatus = array_values(array_filter($inputSuspectStatus));
+			$inputSuspectStatusArray = arrayMap($_POST['inputSuspectStatus'], 0);
+			$inputEvidenceBox = $_POST['inputEvidenceBox'] ?? array();
+			$inputEvidenceBox = array_values(array_filter($inputEvidenceBox));
+			$inputNarrative = $_POST['inputNarrative'] ?: '';
+
+			// Set Cookies
+			setCookiePost('callSign', $postInputCallsign);
+			setCookiePost('officerNameArray', $postInputNameArray[0]);
+			setCookiePost('officerRankArray', $postInputRankArray[0]);
+			setCookiePost('officerBadgeArray', $postInputBadgeArray[0]);
+			setCookiePost('defName', $postInputDefName);
+			setCookiePost('defNameURL', $postInputDefName);
+
+			// Officer Resolver
+			$officers = '';
+			foreach ($postInputNameArray as $iOfficer => $officer) {
+				$officers .= resolverOfficerBB($officer, $postInputRankArray[$iOfficer], $postInputBadgeArray[$iOfficer]);
+			}
+
+			// Person Resolver
+			$suspects = 'Unknown';
+			if (!empty($inputSuspectName)) {
+
+				foreach ($inputSuspectName as $indSuspect => $suspect) {
+					$suspects .= '[indent][u]Person #1 - '. $inputSuspectName[$indSuspect] .'[/u]
+[b]Status:[/b] '.$pg->getStatus($inputSuspectStatusArray[$indSuspect]).'[/indent]
+
+';
+					$index++;
+				}
+			}
+
+			// Evidence Resolver
+			$evidenceImage = '';
+			if (!empty($postInputEvidenceImageArray)) {
+
+				$evidenceImage = '';
+				foreach ($postInputEvidenceImageArray as $eImgID => $image) {
+					$evidenceImageCount = $eImgID + 1;
+					$evidenceImage .= '[altspoiler=EXHIBIT - Photograph #'.$evidenceImageCount.'][img]'.$image.'[/img][/altspoiler]';
+				}
+			}
+
+			$evidenceBox = '';
+			if (!empty($inputEvidenceBox)) {
+
+				$evidenceBox = '';
+				foreach ($inputEvidenceBox as $eBoxID => $box) {
+					$evidenceBoxCount = $eBoxID + 1;
+					$evidenceBox .= '[altspoiler=EXHIBIT - Description #'.$evidenceBoxCount.']'.$box.'[/altspoiler]';
+				}
+			}
+
+			if($evidenceImage == '' && $evidenceBox == '') {
+				$evidenceImage = 'No Evidence Submitted.';
+			}
+
+			// Report Builder
+			$redirectPath = redirectPath(2);
+			$generatedReportType = 'Use of Force Report';
+			$generatedThreadURL = 'https://lssd.gta.world/posting.php?mode=post&f=469';
+			$generatedThreadTitle = 'UOF - '.$postInputStreet.', '.$postInputDistrict.' - '.strtoupper($postInputDate);
+			$generatedReport = '
+[font=Arial][color=black]
+
+[center][img]https://i.imgur.com/LEWTXbL.png[/img]
+
+[size=125][b]SHERIFF\'S DEPARTMENT
+COUNTY OF LOS SANTOS[/b]
+[i]"A Tradition of Service Since 1850"[/i][/size]
+
+[size=110][u]USE OF FORCE REPORT[/u][/size][/center][hr][/hr]
+
+[font=arial][color=black][indent][size=105][b]Filing Information[/b][/size]
+
+[indent]
+[b]Time & Date:[/b] '. $postInputTime .', '. strtoupper($postInputDate) .'
+[b]Location:[/b] '. $postInputStreet.', '.$postInputDistrict .'
+
+[b]Filed By:[/b] '.$pg->getRank($postInputRankArray[0]).' '.$postInputNameArray[0].'
+[b]Unit Number:[/b] '. $postInputCallsign .'
+[/indent]
+
+[size=105][b]Suspects[/b][/size]
+'. $suspects .'[size=105][b]Employees Involved (Only include employees who used lethal force)[/b][/size]
+[list]'. $officers .'[/list]
+
 [size=105][b]Narrative[/b][/size]
 [indent]'. $inputNarrative .'[/indent]
 

@@ -107,7 +107,7 @@
 			})();
 
 
-		// Person Handling
+		// Person & Suspect Handling
 
 			// Person Slots
 			(function() {
@@ -118,6 +118,31 @@
 				let $add = '.addPerson';
 				let $remove = '.removePerson';
 				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotPerson').html()+'</div>';
+
+				$('body').on('click', $add, function() {
+					if ($('body').find($group).length <= $maxSlots) {
+						$('body').find($group+':last').after($copyGroup);
+						copySlotSelectPicker($('body').find($group+':last'));
+						initialiseTooltips();
+					} else {
+						maxSlots($maxSlots);
+					}
+				});
+				$('body').on('click', $remove, function() { 
+					$(this).parents($group).remove();
+				});
+
+			})();
+
+			// Suspect Slots
+			(function() {
+				
+				let $maxSlots = 8;
+				let $group = '.groupSlotSuspect';
+				let $class = $group.replace('.', '');
+				let $add = '.addSuspect';
+				let $remove = '.removeSuspect';
+				let $copyGroup = '<div class="form-row '+$class+'">'+$('.copyGroupSlotSuspect').html()+'</div>';
 
 				$('body').on('click', $add, function() {
 					if ($('body').find($group).length <= $maxSlots) {

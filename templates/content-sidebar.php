@@ -71,6 +71,11 @@
 						<i class="fas fa-fw fa-clipboard-list mr-2"></i><span class="icon-text">LSSD - Incident Report</span>
 					</a>
 				</li>
+				<li>
+					<a class="nav-link" href="/paperwork-generators/lssd/uof-report">
+						<i class="fas fa-fw fa-fist-raised mr-2"></i><span class="icon-text">LSSD - Use of Force Report</span>
+					</a>
+				</li>
 			</ul>
 		</li>
 		<li class="nav-item">
