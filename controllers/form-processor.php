@@ -1096,6 +1096,10 @@ COUNTY OF LOS SANTOS[/b]
 				$cookie = 'notificationVersion';
 				$time = $iTime;
 				break;
+			case 'specialNotification':
+				$cookie = 'specialNotification';
+				$time = $iTime;
+				break;
 			case 'callSign':
 				$cookie = 'callSign';
 				$time = $tTime;
