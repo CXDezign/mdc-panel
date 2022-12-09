@@ -61,6 +61,12 @@
 
 		}
 
+		if ($getType == 'hideSpecialNotification') {
+
+			setCookiePost('specialNotification', $g->getSettings('special-notification'));
+
+		}
+
 		/*
 		if ($getType == 'setChargeTable') {
 

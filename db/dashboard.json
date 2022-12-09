@@ -43,5 +43,14 @@
 		"ID": "card-main-resources",
 		"class": "",
 		"icon": "book"
+	},
+	"5": {
+		"type": "external",
+		"title": "BBCode RIP",
+		"description": "Access the BBCode RIP website for forum based paperwork solutions.",
+		"link": "url-bbcoderip",
+		"ID": "card-main-bbcoderip",
+		"class": "",
+		"icon": "hand-middle-finger"
 	}
 }

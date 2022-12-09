@@ -272,6 +272,24 @@ optgroup {
 	background-color: rgba(0,0,0,.4);
 }
 
+#special-notification {
+	display: block;
+	background-color: #ff8000; 
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	transition: transform .5s linear, opacity .5s linear;
+}
+
+#special-notification .badge-trans {
+	background-color: rgba(0,0,0,.2);
+	transition: background-color .15s linear;
+}
+
+#special-notification .badge-trans:hover {
+	background-color: rgba(0,0,0,.4);
+}
+
 /*///////////
 // MASONRY //
 ///////////*/

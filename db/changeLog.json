@@ -1,4 +1,11 @@
 {
+	"2.2.3": {
+		"id": "2.2.3",
+		"date": "9/DEC/2022",
+		"changes": {
+			"0": "General - Re-implemented BBCode.rip connections to the MDC Panel."
+		}
+	},
 	"2.2.2": {
 		"id": "2.2.2",
 		"date": "18/NOV/2022",
