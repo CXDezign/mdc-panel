@@ -48,7 +48,7 @@ class General {
 
 	public function clearCookies() {
 
-		$cookieToggles = array('toggleMode', 'toggleClock', 'toggleBreadcrumb', 'toggleBackgroundLogo', 'toggleHints', 'toggleFooter', 'toggleLiveVisitorCounter', 'notificationVersion');
+		$cookieToggles = array('toggleMode', 'toggleClock', 'toggleBreadcrumb', 'toggleBackgroundLogo', 'toggleHints', 'toggleFooter', 'toggleLiveVisitorCounter', 'notificationVersion', 'specialNotification');
 		$cookieUserDetails = array('officerName', 'officerRank', 'officerBadge', 'callSign', 'defName', 'inputTDPatrolReportURL');
 
 		$cookiesAll = array_merge($cookieToggles, $cookieUserDetails);
