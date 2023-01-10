@@ -20,7 +20,7 @@ if ($g->getSettings('special-notification') && ($g->findCookie('specialNotificat
 ?>
 <div id="special-notification">
 	<div class="container">
-		<i class="mr-1 fas fa-fw fa-bullhorn"></i>We've returned back <a href="<?= $g->getSettings('url-bbcoderip') ?>">🖕BBCode.rip</a> with our special thanks to the original authors. ❤️
+		<i class="mr-1 fas fa-fw fa-bullhorn"></i><?= $g->getSettings('special-notification-msg') ?>
 		<a class="ml-3" id="special-notification-dissmiss"><span class="badge badge-trans p-2"><i class="fas fa-fw fa-times"></i></span></a>
 	</div>
 </div>

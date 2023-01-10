@@ -57,6 +57,9 @@
 		case '/paperwork-generators/lssd/uof-report':
 			$url = "/templates/generators/lssd/form-uof-report.php";
 			break;
+		case '/paperwork-generators/trespass-notice':
+			$url = "/templates/generators/form-trespass-notice.php";
+			break;
 		case '':
 		case '/':
 		case '/dashboard':

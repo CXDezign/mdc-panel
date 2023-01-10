@@ -12,7 +12,7 @@
 
 		if ($getType == 'getCrime') {
 
-			$chargesDrug = [505,506,507,508,509];
+			$chargesDrug = [601,602,603,604,605,606,607];
 
 			$crimeID = $_REQUEST['crimeID'];
 
@@ -456,7 +456,7 @@
 				$evidenceImage = '';
 				foreach ($postInputEvidenceImageArray as $eImgID => $image) {
 					$evidenceImageCount = $eImgID + 1;
-					$evidenceImage .= '[altspoiler=EXHIBIT - Photograph #'.$evidenceImageCount.'][img]'.$image.'[/img][/altspoiler]';
+					$evidenceImage .= '[altspoiler="EXHIBIT - Photograph #'.$evidenceImageCount.'"][img]'.$image.'[/img][/altspoiler]';
 				}
 			}
 
@@ -466,7 +466,7 @@
 				$evidenceBox = '';
 				foreach ($inputEvidenceBox as $eBoxID => $box) {
 					$evidenceBoxCount = $eBoxID + 1;
-					$evidenceBox .= '[altspoiler=EXHIBIT - Description #'.$evidenceBoxCount.']'.$box.'[/altspoiler]';
+					$evidenceBox .= '[altspoiler="EXHIBIT - Description #'.$evidenceBoxCount.'"]'.$box.'[/altspoiler]';
 				}
 			}
 
@@ -559,7 +559,7 @@ COUNTY OF LOS SANTOS[/b]
 				$evidenceImage = '';
 				foreach ($postInputEvidenceImageArray as $eImgID => $image) {
 					$evidenceImageCount = $eImgID + 1;
-					$evidenceImage .= '[altspoiler=EXHIBIT - Photograph #'.$evidenceImageCount.'][img]'.$image.'[/img][/altspoiler]';
+					$evidenceImage .= '[altspoiler="EXHIBIT - Photograph #'.$evidenceImageCount.'"][img]'.$image.'[/img][/altspoiler]';
 				}
 			}
 
@@ -569,7 +569,7 @@ COUNTY OF LOS SANTOS[/b]
 				$evidenceBox = '';
 				foreach ($inputEvidenceBox as $eBoxID => $box) {
 					$evidenceBoxCount = $eBoxID + 1;
-					$evidenceBox .= '[altspoiler=EXHIBIT - Description #'.$evidenceBoxCount.']'.$box.'[/altspoiler]';
+					$evidenceBox .= '[altspoiler="EXHIBIT - Description #'.$evidenceBoxCount.'"]'.$box.'[/altspoiler]';
 				}
 			}
 
@@ -1019,6 +1019,43 @@ COUNTY OF LOS SANTOS[/b]
 
 				<strong>Impound Reason:</strong>
 				<ul><li>'.$inputReason.'</li></ul>';
+
+		}
+
+		if ($generatorType == 'TrespassNotice') {
+
+			// Variables
+			$inputDuration = $_POST['inputDuration'] ?: 0;
+			$inputProperty = $_POST['inputProperty'] ?: 'UNKNOWN PROPERTY';
+			$inputManagerName = $_POST['inputManagerName'] ?: 'Unknown Manager';
+			$inputPhone = $_POST['inputPhone'] ?: '###-###-###';
+
+			// Set Cookies
+			setCookiePost('officerName', $postInputName);
+			setCookiePost('officerRank', $postInputRank);
+			setCookiePost('officerBadge', $postInputBadge);
+			setCookiePost('defName', $postInputDefName);
+
+			// Officer Resolver
+			$officers = resolverOfficer($postInputName, $postInputRank, $postInputBadge);
+
+			$durationResolver = null;
+			if($inputDuration != 0) {
+				$durationResolver = ', for '.textBold(1, $inputDuration).' days. ';
+			} else $durationResolver = ', permanently. ';
+
+			// Report Builder
+			$redirectPath = redirectPath(1);
+			$generatedThreadTitle = 'TRESPASS NOTICE - '.$inputProperty;
+			$generatedReportType = 'Trespass Notice';
+			$generatedReport = $officers.' on the '.textBold(2, $postInputDate).' operating under '.textBold(1, $postInputCallsign).', '.textBold(1, $postInputTime).'.<br>Issued trespass notice to '.textBold(1, $postInputDefName).$durationResolver.'At '.textBold(1, $postInputStreet).', '.textBold(1, $postInputDistrict).'.<br>
+
+				<strong>Property:</strong>
+				<ul><li>'.$inputProperty.'</li></ul>
+				
+				<strong>Manager Information:</strong>
+				<ul><li>'.$inputManagerName.'</li>
+				<li>PH #: '.$inputPhone.'</li></ul>';
 
 		}
 

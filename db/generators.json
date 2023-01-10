@@ -70,5 +70,14 @@
 		"card": "card-generators-sd-uof",
 		"iconType": "icon",
 		"icon": "fist-raised"
+	},
+	"8": {
+		"title": "Trespass Notice",
+		"type": "MDC",
+		"link": "/paperwork-generators/trespass-notice",
+		"tooltip": "Generate a trespass notice.",
+		"card": "card-generators-trespass",
+		"iconType": "icon",
+		"icon": "clipboard"
 	}
 }

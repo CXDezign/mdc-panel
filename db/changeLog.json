@@ -1,4 +1,14 @@
 {
+	"2.3.0": {
+		"id": "2.3.0",
+		"date": "10/JAN/2023",
+		"changes": {
+			"0": "Arrest Calculator - Fixed issues with drug charge categories.",
+			"1": "Arrest Calculator - Added \"Attempted\" under sentencing additions.",
+			"2": "Paperwork Generators - Fixed issues with the <strong><a href=\"/paperwork-generators/lssd/uof-report\" target=\"_blank\">LSSD Use of Force</a></strong> and <strong><a href=\"/paperwork-generators/lssd/incident-report\" target=\"_blank\">LSSD Incident Report</a></strong> generators.",
+			"3": "Paperwork Generators - Added a new <strong><a href=\"/paperwork-generators/trespass-notice\" target=\"_blank\">Trespass Notice</a></strong> generator."
+		}
+	},
 	"2.2.3": {
 		"id": "2.2.3",
 		"date": "9/DEC/2022",

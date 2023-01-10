@@ -62,6 +62,11 @@
 					</a>
 				</li>
 				<li>
+					<a class="nav-link" href="/paperwork-generators/trespass-notice">
+						<i class="fas fa-fw fa-clipboard mr-2"></i><span class="icon-text">Trespass Notice</span>
+					</a>
+				</li>
+				<li>
 					<a class="nav-link" href="/paperwork-generators/lspd/death-report">
 						<i class="fas fa-fw fa-skull mr-2"></i><span class="icon-text">LSPD - Death Report</span>
 					</a>
