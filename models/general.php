@@ -7,7 +7,7 @@ class General {
 		switch ($setting) {
 			case 'site-live':					return true;
 			case 'site-name':					return 'MDC Panel';
-			case 'site-version':				return '2.3.0';
+			case 'site-version':				return '2.3.1';
 			case 'site-url':					return $_SERVER['SERVER_NAME'];
 			case 'site-logo':					return '/images/MDC-Panel.svg';
 			case 'site-favicon':				return '/images/MDC-Panel-Favicon.svg';
@@ -23,8 +23,8 @@ class General {
 			case 'url-penal-code':				return 'https://forum.gta.world/en/topic/78852-san-andreas-penal-code/';
 			case 'url-bail-schedule':			return 'https://docs.google.com/spreadsheets/d/1jlu8AltrHmOR192CAhznfsfZBxrv6_EMGuXFW7SwRdU/';
 			case 'url-bbcoderip':				return 'https://bbcode.booskit.dev/';
-			case 'special-notification': 		return '';
-			case 'special-notification-msg':	return 'Test! ❤️';
+			case 'special-notification': 		return 'feedback-and-suggestions-2023-20-1';
+			case 'special-notification-msg':	return 'I\'m gathering feedback and suggestions for the MDC Panel! If you have any suggestions send it to Biscuit#0001.';
 			default: break;
 		}
 	}

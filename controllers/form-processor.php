@@ -707,7 +707,7 @@ COUNTY OF LOS SANTOS[/b]
 
 				$charges = $_POST['inputCrime'];
 
-				$chargesDrug = [505,506,507,508,509];
+				$chargesDrug = [601,602,603,604,605,606,607];
 				$multiDimensionalCrimeTimes = [412];
 
 				// Charge List Builder
@@ -740,6 +740,12 @@ COUNTY OF LOS SANTOS[/b]
 						case 4:
 							$chargeReduction = 4;
 							break;
+						case 5:
+							$chargeReduction = 2;
+							break;
+						case 6:
+							$chargeReduction = 4;
+							break;
 						default:
 							$chargeReduction = 1;
 					}
@@ -747,11 +753,6 @@ COUNTY OF LOS SANTOS[/b]
 					// Charge Type Builder
 					$chargeType = $charge['type'];
 					$chargeTypeFull = '';
-
-						// 412 Charge
-						if ($chargeID == 412 && $chargeOffence == 3 ) {
-							$chargeType = 'F';
-						}
 
 					// Charge Class Builder
 					$chargeClass = $_POST['inputCrimeClass'][$iCharge];
@@ -769,11 +770,6 @@ COUNTY OF LOS SANTOS[/b]
 						default:
 							$chargeClass = '?';
 							break;
-					}
-
-					// 402 Charge
-					if (($chargeID == 402) && ($chargeClass == 'B' || $chargeClass == 'A')) {
-						$chargeType = 'F';
 					}
 
 					switch ($chargeType) {
