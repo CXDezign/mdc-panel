@@ -68,6 +68,7 @@ class PaperworkGenerators {
 		$groupLSSD = '';
 		$groupSFM = '';
 		$groupSAPR = '';
+		$groupLSPE = '';
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
 			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
@@ -83,6 +84,7 @@ class PaperworkGenerators {
 		$ranksLSSD = array(18,19,20,21,22,23,24,25,26,27,28,29);
 		$ranksSFM = array(30,31,32,33,34);
 		$ranksSAPR = array(35,36,37,38,39,40,41,42,43,44);
+		$ranksLSPE = array(45,46,47);
 
 		foreach ($ranks as $rank) {
 
@@ -100,6 +102,9 @@ class PaperworkGenerators {
 			if (in_array($rankCount, $ranksSAPR)) {
 				$groupSAPR .= $statement;
 			}
+			if (in_array($rankCount, $ranksLSPE)) {
+				$groupLSPE .= $statement;
+			}
 
 			$rankCount++;
 		}
@@ -107,7 +112,8 @@ class PaperworkGenerators {
 		return $groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup>
 							<optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>
 							<optgroup label="State Fire Marshall">'.$groupSFM.'</optgroup>
-							<optgroup label="San Andreas Park Rangers">'.$groupSAPR.'</optgroup>';
+							<optgroup label="San Andreas Park Rangers">'.$groupSAPR.'</optgroup>
+							<optgroup label="Los Santos Parking Enforcement">'.$groupLSPE.'</optgroup>';
 	}
 
 	public function pClassificationChooser() {

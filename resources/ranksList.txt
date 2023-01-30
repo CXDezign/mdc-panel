@@ -43,3 +43,6 @@ Lieutenant
 Captain
 Commander
 Superintendent
+Parking Enforcement Inspector
+Senior Parking Enforcement Inspector
+Commissioner of Parking Enforcement
