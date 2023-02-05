@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/booskitd/mdc-panel
+    - export DEPLOYPATH=/home/boosiyzt/mdc-panel
     - /bin/cp -R * $DEPLOYPATH
