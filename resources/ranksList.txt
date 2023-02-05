@@ -46,3 +46,7 @@ Superintendent
 Parking Enforcement Inspector
 Senior Parking Enforcement Inspector
 Commissioner of Parking Enforcement
+Investigator
+Senior Investigator
+Deputy Administrator
+Administrator
