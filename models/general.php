@@ -23,8 +23,8 @@ class General {
 			case 'url-penal-code':				return 'https://forum.gta.world/en/topic/78852-san-andreas-penal-code/';
 			case 'url-bail-schedule':			return 'https://docs.google.com/spreadsheets/d/1jlu8AltrHmOR192CAhznfsfZBxrv6_EMGuXFW7SwRdU/';
 			case 'url-bbcoderip':				return 'https://bbcode.booskit.dev/';
-			case 'special-notification': 		return 'feedback-and-suggestions-2023-20-1';
-			case 'special-notification-msg':	return 'I\'m gathering feedback and suggestions for the MDC Panel! If you have any suggestions send it to Biscuit#0001.';
+			case 'special-notification': 		return 'discord-server-2023-06-2';
+			case 'special-notification-msg':	return 'Join the <a href="https://discord.gg/rxfYd23TNz" target="_blank">MDC Panel Discord</a> to stay informed of all the latest updates and announcements.';
 			default: break;
 		}
 	}
