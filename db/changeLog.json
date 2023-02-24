@@ -1,4 +1,12 @@
 {
+	"2.3.5": {
+		"id": "2.3.5",
+		"date": "24/FEB/2023",
+		"changes": {
+			"0": "Arrest Calculator - Added auto bail and bail calculator.",
+			"1": "Arrest Calculator - Fixed a bug with the Drug Paraphernalia charge."
+		}
+	},
 	"2.3.4": {
 		"id": "2.3.4",
 		"date": "24/FEB/2023",
