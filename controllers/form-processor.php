@@ -12,7 +12,7 @@
 
 		if ($getType == 'getCrime') {
 
-			$chargesDrug = [601,602,603,604,605,606,607];
+			$chargesDrug = [601,602,603,604,605,606];
 
 			$crimeID = $_REQUEST['crimeID'];
 
@@ -707,7 +707,7 @@ COUNTY OF LOS SANTOS[/b]
 
 				$charges = $_POST['inputCrime'];
 
-				$chargesDrug = [601,602,603,604,605,606,607];
+				$chargesDrug = [601,602,603,604,605,606];
 				$multiDimensionalCrimeTimes = [412];
 
 				// Charge List Builder
@@ -853,6 +853,48 @@ COUNTY OF LOS SANTOS[/b]
 						$chargeOffenceFull = ' (Offence #'.$chargeOffence.')';
 					}
 					$chargeTitle[] = '<span class="style-underline chargeCopy" data-clipboard-target="#charge-'.$chargeID.'" data-toggle="tooltip" title="Copied!"><span id="charge-'.$chargeID.'">'.$chargeType.$chargeClass.' '.$chargeID.'. '.$chargeName.$chargeOffenceFull.$drugChargeTitle.'</span></span>';
+					
+					//Auto bail
+					if (in_array($chargeID, $chargesDrug)) {
+						$autoBailCost = $charge['bail']['cost'][$chargeSubstanceCategory];
+						$autoBailRaw = $charge['bail']['auto'][$chargeSubstanceCategory];
+					} else {
+						$autoBailRaw = $charge['bail']['auto'];
+						$autoBailCost = $charge['bail']['cost'];
+					}
+					
+					switch($autoBailRaw) {
+						case 0:
+							$autoBail = 'NO BAIL';
+							$autoBailIcon = 'minus-circle';
+							$autoBailColour = 'danger';						
+							break;
+						case 1:
+							$autoBail = 'AUTO BAIL';
+							$autoBailIcon = 'check-circle';
+							$autoBailColour = 'success';
+							break;
+						case 2:
+							$autoBail = 'DISCRETIONARY';
+							$autoBailIcon = 'check-circle';
+							$autoBailColour = 'warning';
+							break;
+						default:
+							$autoBail = 'ERROR';
+							break;
+					}
+					$autoBailFull = '<span class="badge badge-'.$autoBailColour.'"><i class="fas fa-fw fa-'.$autoBailIcon.' mr-1"></i>'.$autoBail.'</span>';					
+					
+					
+					if(!is_string($autoBailCost)){
+						if ($autoBailCost > 0){
+							$bailCost[$iCharge] = $autoBailCost;
+							$autoBailCost = '$' . number_format($autoBailCost);
+						} else {
+							$autoBailCost = 'N/A';
+						}
+					} 
+					
 
 					// Rows Builder
 					$rowBuilder .= '<tr>
@@ -866,6 +908,8 @@ COUNTY OF LOS SANTOS[/b]
 						<td class="text-center">'.$chargeImpoundFull.'</td>
 						<td class="text-center">'.$chargeSuspensionFull.'</td>
 						<td class="text-center">'.$chargeExtraFull.'</td>
+						<td class="text-center">'.$autoBailFull.'</td>
+						<td class="text-center">'.$autoBailCost.'</td>
 					</tr>';
 
 				}
@@ -899,6 +943,9 @@ COUNTY OF LOS SANTOS[/b]
 					$chargeSuspensionTotal = 'No Suspensions';
 				}
 
+				//Total Bail
+				$bailCostTotal = '$' .number_format(array_sum($bailCost));
+
 				// Totals Row Builder
 				$rowBuilderTotals = '<tr>
 					<td>'.$chargeTimeTotal.'</td>
@@ -906,6 +953,7 @@ COUNTY OF LOS SANTOS[/b]
 					<td>'.$chargeFineTotal.'</td>
 					<td>'.$chargeImpoundTotal.'</td>
 					<td>'.$chargeSuspensionTotal.'</td>
+					<td>'.$bailCostTotal.'</td>
 				</tr>';
 
 				// Session Builder

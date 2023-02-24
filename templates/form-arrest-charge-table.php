@@ -11,6 +11,8 @@
 		<th scope="col" class="text-center">Impound</th>
 		<th scope="col" class="text-center">Suspension</th>
 		<th scope="col" class="text-center">Extra</th>
+		<th scope="col" class="text-center">Auto Bail</th>
+		<th scope="col" class="text-center">Bail</th>
 	</thead>
 	<tbody style="font-size: 75%!important">
 		<?= $chargeTable ?>
@@ -24,6 +26,7 @@
 		<th>Total Fines</th>
 		<th>Total Impound Time</th>
 		<th>Total Suspension Time</th>
+		<th>Total Bail Cost</th>
 	</thead>
 	<tbody>
 		<?= $chargeTableTotals ?>
