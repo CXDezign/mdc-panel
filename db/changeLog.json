@@ -1,4 +1,11 @@
 {
+	"2.3.4": {
+		"id": "2.3.4",
+		"date": "24/FEB/2023",
+		"changes": {
+			"0": "General - Added the date to the sidebar (special thanks to Aeromantis for programming one line of code for me cause I'm lazy as fuck)."
+		}
+	},
 	"2.3.3": {
 		"id": "2.3.3",
 		"date": "5/FEB/2023",

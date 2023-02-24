@@ -1,4 +1,5 @@
 <div class="container text-white text-center my-3 px-5 container-time" data-aos="flip-up" data-aos-duration="25" data-aos-delay="100">
+	<div><?php echo strtoupper(date("d/M/Y")); ?></div>
 	<div id="timestamp">|</div>
 </div>
 <script>
