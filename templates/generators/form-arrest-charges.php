@@ -33,6 +33,23 @@
 			</a>
 		</div>
 		<div class="container my-5 text-center">
+			<div class="form-row row d-flex justify-content-center">
+			<?php
+					$c->form('list', 'forms', array(
+						'size' => '4',
+						'label' => '<label></label>',
+						'icon' => 'balance-scale',
+						'class' => 'selectpicker',
+						'id' => 'inputPleaPre',
+						'name' => 'inputPleaPre',
+						'attributes' => 'required',
+						'title' => 'Select Plea',
+						'list' => $pg->listChooser('pleaList'),
+						'hint' => '(( This is used to properly calculate the arrest time. No Contest pleas receive the maximum sentence. ))',
+						'hintClass' => 'text-center'
+					));
+				?>
+			</div>			
 			<button id="submitCharges" type="submit" name="submit" class="btn btn-primary px-5">
 				<i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest
 			</button>

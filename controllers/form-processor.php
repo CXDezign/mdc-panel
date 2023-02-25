@@ -829,6 +829,9 @@ COUNTY OF LOS SANTOS[/b]
 					}
 					$chargeExtraFull = '<span class="badge badge-'.$chargeExtraColour.'"><i class="fas fa-fw fa-'.$chargeExtraIcon.' mr-1"></i>'.$chargeExtra[$iCharge].'</span>';
 
+					// Plea for maxtime
+					$pleaPre = $_POST['inputPleaPre'] ?: '';
+
 					// Time Builder
 					if (in_array($chargeID, $chargesDrug)) {
 						$days[] = ($charge['time'][$chargeSubstanceCategory]['days'] / $chargeReduction);
@@ -838,6 +841,10 @@ COUNTY OF LOS SANTOS[/b]
 						$days[] = ($charge['time'][$chargeOffence]['days'] / $chargeReduction);
 						$hours[] = ($charge['time'][$chargeOffence]['hours'] / $chargeReduction);
 						$mins[] = ($charge['time'][$chargeOffence]['min'] / $chargeReduction);
+					} elseif ($pleaPre == 3 && $charge['maxtime']){
+						$days[] = ($charge['maxtime']['days'] / $chargeReduction);
+						$hours[] = ($charge['maxtime']['hours'] / $chargeReduction);
+						$mins[] = ($charge['maxtime']['min'] / $chargeReduction);			
 					} else {
 						$days[] = ($charge['time']['days'] / $chargeReduction);
 						$hours[] = ($charge['time']['hours'] / $chargeReduction);

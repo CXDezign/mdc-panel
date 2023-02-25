@@ -1,4 +1,11 @@
 {
+	"2.3.6": {
+		"id": "2.3.6",
+		"date": "25/FEB/2023",
+		"changes": {
+			"0": "Arrest Calculator - Added Plea selector in order to properly calculate the arrest times for No Contest pleas."
+		}
+	},
 	"2.3.5": {
 		"id": "2.3.5",
 		"date": "24/FEB/2023",
