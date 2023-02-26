@@ -1,7 +1,7 @@
 {
 	"2.3.7": {
 		"id": "2.3.7",
-		"date": "27/FEB/2023",
+		"date": "26/FEB/2023",
 		"changes": {
 			"0": "Arrest Calculator - Added bail status indicator.",
 			"1": "Arrest Calculator - Bail will now only be calculated if 'Not Guilty' is selected.",
