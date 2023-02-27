@@ -27,6 +27,7 @@
 		<th>Total Impound Time</th>
 		<th>Total Suspension Time</th>
 		<th>Total Bail Cost</th>
+		<th>Bail Status</th>
 	</thead>
 	<tbody>
 		<?= $chargeTableTotals ?>
@@ -35,6 +36,18 @@
 <div class="card text-white bg-info">
 	<div class="card-body">
 		<h4 class="card-title text-center font-weight-bold"><i class="mr-2 fas fa-fw fa-info-circle"></i>Important Court Notice</h4>
+		<div class="card-text text-center">
+			<h6>The following only applies to <strong>Not Guilty</strong> pleas:</h6>
+			<div class="row">
+				<div class="col-8 mx-auto text-left">
+					<ul>
+						<li>If they are eligible for bail, you must give it to them.</li>
+						<li>They <strong>must</strong> pay the bail in full before released.</li>
+						<li>If they do not wish to take bail, or are unable to pay it, jail them for <strong>9999</strong> days.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="card-text text-center">
 			<h6>The following only applies to <strong>No Contest</strong> and <strong>Guilty</strong> pleas:</h6>
 			<div class="row">

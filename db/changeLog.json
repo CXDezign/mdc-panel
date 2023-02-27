@@ -1,4 +1,21 @@
 {
+	"2.3.8": {
+		"id": "2.3.8",
+		"date": "27/FEB/2023",
+		"changes": {
+			"0": "Arrest Calculator - Plea field in the arrest report will now auto populate.",
+			"1": "Arrest Calculator - Post arrest submissions removed as it is now handled by the MDC."
+		}
+	},
+	"2.3.7": {
+		"id": "2.3.7",
+		"date": "26/FEB/2023",
+		"changes": {
+			"0": "Arrest Calculator - Added bail status indicator.",
+			"1": "Arrest Calculator - Bail will now only be calculated if 'Not Guilty' is selected.",
+			"2": "Arrest Calculator - Added notice about Not Guilty pleas."
+		}
+	},
 	"2.3.6": {
 		"id": "2.3.6",
 		"date": "25/FEB/2023",

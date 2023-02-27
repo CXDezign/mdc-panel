@@ -60,6 +60,9 @@
 		case '/paperwork-generators/trespass-notice':
 			$url = "/templates/generators/form-trespass-notice.php";
 			break;
+		case '/paperwork-generators/interview-card':
+			$url = "/templates/generators/form-interview-card.php";
+			break;
 		case '':
 		case '/':
 		case '/dashboard':

@@ -143,11 +143,13 @@
 					'label' => '<label>Plea</label>',
 					'icon' => 'balance-scale',
 					'class' => 'selectpicker',
+					'selected' => '1',
 					'id' => 'inputPlea',
+					'selected value' => 1,
 					'name' => 'inputPlea',
 					'attributes' => 'required',
 					'title' => 'Select Plea',
-					'list' => $pg->listChooser('pleaList'),
+					'list' => $pg->listChooser('pleaList', $plea),
 					'hint' => 'Please remember to ask for the suspect&#39;s <strong>GTA:W</strong> forum name if pleading <strong>Not Guilty</strong>, <strong>No Contest</strong>, or <strong>Required Case</strong>.',
 					'hintClass' => 'text-center'
 				));
