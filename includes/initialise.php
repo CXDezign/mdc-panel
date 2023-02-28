@@ -18,3 +18,4 @@
 	$pg = new PaperworkGenerators();
 	$ar = new ArrestReportGenerator();
 	$pt = new ParkingTicketGenerator();
+	$da = new LSDAGenerator();

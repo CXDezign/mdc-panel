@@ -1,8 +1,10 @@
 <?php
 
-class PaperworkGenerators {
+class PaperworkGenerators
+{
 
-	public function dateResolver($date1, $date2) {
+	public function dateResolver($date1, $date2)
+	{
 
 		if (!$date2) {
 			return $date1;
@@ -11,12 +13,12 @@ class PaperworkGenerators {
 		} else {
 			return $date1 . ' - ' . $date2;
 		}
-
 	}
 
-	public function calculateCrimeTime($iDays, $iHours, $iMinutes) {
+	public function calculateCrimeTime($iDays, $iHours, $iMinutes)
+	{
 
-		$inputTime = ($iDays+($iHours/24+($iMinutes/60/24)));
+		$inputTime = ($iDays + ($iHours / 24 + ($iMinutes / 60 / 24)));
 
 		$seconds = intval(ceil(86400 * $inputTime));
 
@@ -36,13 +38,13 @@ class PaperworkGenerators {
 		}
 
 		if ($hours != 0) {
-			$hours = ' '.$hours.' Hours';
+			$hours = ' ' . $hours . ' Hours';
 		} else {
 			$hours = '';
 		}
 
 		if ($minutes != 0) {
-			$minutes = ' '.$minutes.' Minutes';
+			$minutes = ' ' . $minutes . ' Minutes';
 		} else {
 			$minutes = '';
 		}
@@ -55,10 +57,10 @@ class PaperworkGenerators {
 		}
 
 		return $output;
-
 	}
 
-	public function rankChooser($cookie) {
+	public function rankChooser($cookie)
+	{
 
 		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
@@ -70,27 +72,29 @@ class PaperworkGenerators {
 		$groupSAPR = '';
 		$groupLSPE = '';
 		$groupSAAA = '';
+		$groupLSDA = '';
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
 			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
 			$groupCookie .= '
 			<optgroup label="Saved Cookie">
-				<option selected value="'.$officerCookie.'">
-					'.$this->getRank($officerCookie).'
+				<option selected value="' . $officerCookie . '">
+					' . $this->getRank($officerCookie) . '
 				</option>
 			</optgroup>';
 		}
 
-		$ranksLSPD = array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17);
-		$ranksLSSD = array(18,19,20,21,22,23,24,25,26,27,28,29);
-		$ranksSFM = array(30,31,32,33,34);
-		$ranksSAPR = array(35,36,37,38,39,40,41,42,43,44);
-		$ranksLSPE = array(45,46,47);
-		$ranksSAAA = array(48,49,50);
+		$ranksLSPD = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
+		$ranksLSSD = array(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29);
+		$ranksSFM = array(30, 31, 32, 33, 34);
+		$ranksSAPR = array(35, 36, 37, 38, 39, 40, 41, 42, 43, 44);
+		$ranksLSPE = array(45, 46, 47);
+		$ranksSAAA = array(48, 49, 50);
+		$ranksLSDA = array(52, 53, 54, 55);
 
 		foreach ($ranks as $rank) {
 
-			$statement = '<option value="'.$rankCount.'">'.$rank.'</option>';
+			$statement = '<option value="' . $rankCount . '">' . $rank . '</option>';
 
 			if (in_array($rankCount, $ranksLSPD)) {
 				$groupLSPD .= $statement;
@@ -110,19 +114,24 @@ class PaperworkGenerators {
 			if (in_array($rankCount, $ranksSAAA)) {
 				$groupSAAA .= $statement;
 			}
+			if (in_array($rankCount, $ranksLSDA)) {
+				$groupLSDA .= $statement;
+			}
 
 			$rankCount++;
 		}
 
-		return $groupCookie.'<optgroup label="Los Santos Police Department">'.$groupLSPD.'</optgroup>
-							<optgroup label="Los Santos Sheriff&#39s Department">'.$groupLSSD.'</optgroup>
-							<optgroup label="State Fire Marshall">'.$groupSFM.'</optgroup>
-							<optgroup label="San Andreas Park Rangers">'.$groupSAPR.'</optgroup>
-							<optgroup label="Los Santos Parking Enforcement">'.$groupLSPE.'</optgroup>
-							<optgroup label="San Andreas Aviation Administration">'.$groupSAAA.'</optgroup>';
+		return $groupCookie . '<optgroup label="Los Santos Police Department">' . $groupLSPD . '</optgroup>
+							<optgroup label="Los Santos Sheriff&#39s Department">' . $groupLSSD . '</optgroup>
+							<optgroup label="State Fire Marshall">' . $groupSFM . '</optgroup>
+							<optgroup label="San Andreas Park Rangers">' . $groupSAPR . '</optgroup>
+							<optgroup label="Los Santos Parking Enforcement">' . $groupLSPE . '</optgroup>
+							<optgroup label="San Andreas Aviation Administration">' . $groupSAAA . '</optgroup>
+							<optgroup label="Los Santos District Attorney&#39s Office">' . $groupLSDA . '</optgroup>';
 	}
 
-	public function pClassificationChooser() {
+	public function pClassificationChooser()
+	{
 
 		$classifications = file('resources/classificationsList.txt');
 		$classificationsCount = 0;
@@ -130,17 +139,18 @@ class PaperworkGenerators {
 
 		foreach ($classifications as $classification) {
 
-			$statement = '<option value="'.$classificationsCount.'">'.$classification.'</option>';
+			$statement = '<option value="' . $classificationsCount . '">' . $classification . '</option>';
 
 			$group .= $statement;
 
 			$classificationsCount++;
 		}
 
-		return '<optgroup label="Classifications">'.$group.'</optgroup>';
+		return '<optgroup label="Classifications">' . $group . '</optgroup>';
 	}
 
-	public function sStatusChooser() {
+	public function sStatusChooser()
+	{
 
 		$statuses = file('resources/statusList.txt');
 		$statusesCount = 0;
@@ -148,46 +158,51 @@ class PaperworkGenerators {
 
 		foreach ($statuses as $status) {
 
-			$statement = '<option value="'.$statusesCount.'">'.$status.'</option>';
+			$statement = '<option value="' . $statusesCount . '">' . $status . '</option>';
 
 			$group .= $statement;
 
 			$statusesCount++;
 		}
 
-		return '<optgroup label="Classifications">'.$group.'</optgroup>';
+		return '<optgroup label="Classifications">' . $group . '</optgroup>';
 	}
 
-	public function getRank($input) {
+	public function getRank($input)
+	{
 
-		$ranks = file($_SERVER['DOCUMENT_ROOT'].'/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
+		$ranks = file($_SERVER['DOCUMENT_ROOT'] . '/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
 
-		return $ranks[$input];
+		if(count($ranks)<intval($input)) {
+			return "[ERROR]";
+		}
 
+		return $ranks[intval($input)];
 	}
 
-	public function getClassification($input) {
+	public function getClassification($input)
+	{
 
-		$classifications = file($_SERVER['DOCUMENT_ROOT'].'/resources/classificationsList.txt', FILE_IGNORE_NEW_LINES);
+		$classifications = file($_SERVER['DOCUMENT_ROOT'] . '/resources/classificationsList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $classifications[$input];
-
 	}
 
-	public function getStatus($input) {
+	public function getStatus($input)
+	{
 
-		$statuses = file($_SERVER['DOCUMENT_ROOT'].'/resources/statusList.txt', FILE_IGNORE_NEW_LINES);
+		$statuses = file($_SERVER['DOCUMENT_ROOT'] . '/resources/statusList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $statuses[$input];
-
 	}
 
-	public function chargeChooser($typeChooser) {
+	public function chargeChooser($typeChooser)
+	{
 
 		$chargeEntries = json_decode(file_get_contents('db/penalSearch.json'), true);
-		$disabledCharges = [000,423];
-		$trafficCharges = [401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426];
-		$drugCharges = [601,602,603,604,605,606];
+		$disabledCharges = [000, 423];
+		$trafficCharges = [401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426];
+		$drugCharges = [601, 602, 603, 604, 605, 606];
 
 		$charges = '';
 
@@ -217,36 +232,35 @@ class PaperworkGenerators {
 				$chargeColor = 'dark';
 			}
 
-			$chargeContent = "<span class='mr-2 badge badge-".$chargeColor."'>".$chargeID."</span>".$chargeName;
+			$chargeContent = "<span class='mr-2 badge badge-" . $chargeColor . "'>" . $chargeID . "</span>" . $chargeName;
 			if ($typeChooser == 'generic' && !in_array($chargeID, $drugCharges)) {
 				$charges .= '<option
-								data-content="'.$chargeContent.'"
-								value="'.$chargeID.'"
-								'.$chargeDisabled.'>
+								data-content="' . $chargeContent . '"
+								value="' . $chargeID . '"
+								' . $chargeDisabled . '>
 							</option>';
 			}
 			if ($typeChooser == 'traffic' && in_array($chargeID, $trafficCharges)) {
 				$charges .= '<option
-								data-content="'.$chargeContent.'"
-								value="'.$chargeID.'"
-								'.$chargeDisabled.'>
+								data-content="' . $chargeContent . '"
+								value="' . $chargeID . '"
+								' . $chargeDisabled . '>
 							</option>';
 			}
 			if ($typeChooser == 'drugs' && in_array($chargeID, $drugCharges)) {
 				$charges .= '<option
-								data-content="'.$chargeContent.'"
-								value="'.$chargeID.'"
-								'.$chargeDisabled.'>
+								data-content="' . $chargeContent . '"
+								value="' . $chargeID . '"
+								' . $chargeDisabled . '>
 							</option>';
 			}
-
 		}
 
 		return $charges;
-
 	}
 
-	public function getCrimeClass($input) {
+	public function getCrimeClass($input)
+	{
 
 		switch ($input) {
 			case 1:
@@ -265,7 +279,8 @@ class PaperworkGenerators {
 		return $type;
 	}
 
-	public function getCrimeClass2($input) {
+	public function getCrimeClass2($input)
+	{
 
 		$options = '';
 
@@ -273,53 +288,53 @@ class PaperworkGenerators {
 			if ($bool) {
 				$crimeClass++;
 				$class = $this->getCrimeClass($crimeClass);
-				$options .= '<option value="'.$crimeClass.'">Class '.$class.'</option>';
+				$options .= '<option value="' . $crimeClass . '">Class ' . $class . '</option>';
 			}
 		}
 
 		return $options;
-
 	}
 
-	public function getCrimeDrugSubstanceCategory($input) {
+	public function getCrimeDrugSubstanceCategory($input)
+	{
 
 		$options = '';
 
 		foreach ($input as $crimeDrugSubstanceCategory => $category) {
 			if ($category) {
 				$crimeDrugSubstanceCategory++;
-				$options .= '<option value="'.$category.'">Category '.$category.'</option>';
+				$options .= '<option value="' . $category . '">Category ' . $category . '</option>';
 			}
 		}
 
 		return $options;
-
 	}
 
-	public function getCrimeOffence($input) {
+	public function getCrimeOffence($input)
+	{
 
 		$options = '';
 
 		foreach ($input as $crimeOffence => $bool) {
 			if ($bool) {
 				$crimeOffence++;
-				$options .= '<option value="'.$crimeOffence.'">Offence #'.$crimeOffence.'</option>';
+				$options .= '<option value="' . $crimeOffence . '">Offence #' . $crimeOffence . '</option>';
 			}
 		}
 
 		return $options;
-
 	}
 
-	public function getCrimeSentencing($input) {
+	public function getCrimeSentencing($input)
+	{
 
 		$sentences = file($_SERVER['DOCUMENT_ROOT'] . '/resources/sentencingAdditionsList.txt', FILE_IGNORE_NEW_LINES);
 
-		return $sentences[$input-1];
-
+		return $sentences[$input - 1];
 	}
 
-	public function getCrimeColour($input) {
+	public function getCrimeColour($input)
+	{
 
 		switch ($input) {
 			case 'I':
@@ -336,12 +351,13 @@ class PaperworkGenerators {
 				$colour = '#000';
 				break;
 		}
-		return '<strong style="color: '.$colour.'!important;">';
+		return '<strong style="color: ' . $colour . '!important;">';
 	}
 
-	public function listChooser($list, $plea = null) {
+	public function listChooser($list, $plea = null)
+	{
 
-		$listEntries = file('resources/'.$list.'.txt');
+		$listEntries = file('resources/' . $list . '.txt');
 		$entriesCount = 1;
 		$optionValue = true;
 
@@ -356,59 +372,60 @@ class PaperworkGenerators {
 			case 'streetsList':
 				$output = '';
 				$optionValue = false;
-				break;		
+				break;
 			default:
 				$output = '';
 		}
-		if($plea){
+		if ($plea) {
 			foreach ($listEntries as $listItem) {
-				if ($entriesCount == $plea){
-					$output .= '<option selected value="'.$entriesCount.'">'.$listItem.'</option>';
+				if ($entriesCount == $plea) {
+					$output .= '<option selected value="' . $entriesCount . '">' . $listItem . '</option>';
 				} else {
-					$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
+					$output .= '<option value="' . $entriesCount . '">' . $listItem . '</option>';
 				}
 				$entriesCount++;
 			}
 		} else {
 			foreach ($listEntries as $listItem) {
 				if ($optionValue) {
-					$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
+					$output .= '<option value="' . $entriesCount . '">' . $listItem . '</option>';
 				} elseif (!$optionValue) {
-					$output .= '<option>'.$listItem.'</option>';
+					$output .= '<option>' . $listItem . '</option>';
 				}
 				$entriesCount++;
 			}
 		}
 
-		
+
 
 		return $output;
-
 	}
 
-	public function getDashboardCamera($input) {
+	public function getDashboardCamera($input)
+	{
 
 		if (empty($input)) {
 			$dashboardCamera = 'No dashboard camera video or audio footage attached.';
 		} else {
 			$dashboardCamera = $input;
 		}
-		return '<strong style="color: #9944dd!important;">*</strong> '.$dashboardCamera.' <strong style="color: #9944dd!important;">*</strong>';
+		return '<strong style="color: #9944dd!important;">*</strong> ' . $dashboardCamera . ' <strong style="color: #9944dd!important;">*</strong>';
 	}
 
-	public function tintChooser() {
+	public function tintChooser()
+	{
 
 		$tints = file('resources/tintsList.txt');
 
 		$groupTintLegal = '';
 		$groupTintIllegal = '';
 
-		$legalTintLevels = array(0,3,4,5);
-		$illegalTintLevels = array(1,2);
+		$legalTintLevels = array(0, 3, 4, 5);
+		$illegalTintLevels = array(1, 2);
 
 		foreach ($tints as $iTint => $tint) {
 
-			$statement = '<option value="'.$iTint.'">'.$tint.'</option>';
+			$statement = '<option value="' . $iTint . '">' . $tint . '</option>';
 
 			if (in_array($iTint, $legalTintLevels)) {
 				$groupTintLegal .= $statement;
@@ -416,16 +433,15 @@ class PaperworkGenerators {
 			if (in_array($iTint, $illegalTintLevels)) {
 				$groupTintIllegal .= $statement;
 			}
-
 		}
 
 		return '<option value="10">Uninspected</option>
-		<optgroup label="Legal">'.$groupTintLegal.'</optgroup>
-		<optgroup label="Illegal">'.$groupTintIllegal.'</optgroup>';
-
+		<optgroup label="Legal">' . $groupTintLegal . '</optgroup>
+		<optgroup label="Illegal">' . $groupTintIllegal . '</optgroup>';
 	}
 
-	public function getDefLicense($input) {
+	public function getDefLicense($input)
+	{
 
 		switch ($input) {
 			case 1:
@@ -449,10 +465,10 @@ class PaperworkGenerators {
 		}
 
 		return $defLicense;
-
 	}
 
-	public function getVehicleTint($input) {
+	public function getVehicleTint($input)
+	{
 
 		$string = '';
 
@@ -471,21 +487,21 @@ class PaperworkGenerators {
 				return 'The vehicle was not inspected with the tint meter device.';
 		}
 
-		return 'The vehicle was inspected with the tint meter device, resulting with '.$string.' tint level (<strong>Level '.$input.'</strong>).';
-
+		return 'The vehicle was inspected with the tint meter device, resulting with ' . $string . ' tint level (<strong>Level ' . $input . '</strong>).';
 	}
 
-	public function getVehicleRO($input) {
+	public function getVehicleRO($input)
+	{
 
 		if (empty($input)) {
 			return '<strong>unknown registered owner</strong>';
 		} else {
-			return 'registered to <strong>'.$input.'</strong>';
+			return 'registered to <strong>' . $input . '</strong>';
 		}
-
 	}
 
-	public function getVehiclePlates($input, $type) {
+	public function getVehiclePlates($input, $type)
+	{
 
 		$b = '';
 		$bb = '';
@@ -503,18 +519,18 @@ class PaperworkGenerators {
 		}
 
 		if (empty($input)) {
-			return $b.'unregistered'.$bb;
+			return $b . 'unregistered' . $bb;
 		} else {
-			return 'identification plate reading '.$b.$input.$bb;
+			return 'identification plate reading ' . $b . $input . $bb;
 		}
-
 	}
-
 }
 
-class ArrestReportGenerator extends PaperworkGenerators {
+class ArrestReportGenerator extends PaperworkGenerators
+{
 
-	public function getBracelet($input) {
+	public function getBracelet($input)
+	{
 
 		switch ($input) {
 			case 1:
@@ -530,10 +546,11 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$color = 'inherit';
 				break;
 		}
-		return '<span style="color: '.$color.'!important;">'.$bracelet.'</span> Bracelet';
+		return '<span style="color: ' . $color . '!important;">' . $bracelet . '</span> Bracelet';
 	}
 
-	public function getWristband($input) {
+	public function getWristband($input)
+	{
 
 		switch ($input) {
 			case 1:
@@ -553,10 +570,11 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$color = 'inherit';
 				break;
 		}
-		return '<span style="color: '.$color.'!important;">'.$wristband.'</span> Wristband';
+		return '<span style="color: ' . $color . '!important;">' . $wristband . '</span> Wristband';
 	}
 
-	public function getPlea($input, $suspect) {
+	public function getPlea($input, $suspect)
+	{
 
 		switch ($input) {
 			case 1:
@@ -569,45 +587,95 @@ class ArrestReportGenerator extends PaperworkGenerators {
 				$plead = 'No Contest';
 				break;
 			case 4:
-				return '<strong>(( <span style="color: #9944dd!important;">* '.$suspect.' - Required Case *</span> ))</strong>';
+				return '<strong>(( <span style="color: #9944dd!important;">* ' . $suspect . ' - Required Case *</span> ))</strong>';
 			default:
 				$plead = 'UNKNOWN PLEA';
 				break;
 		}
-		return '<strong style="color: #9944dd!important;">(( *</strong> <strong>'.$suspect.'</strong> pleads <strong>'.$plead.'</strong> <strong style="color: #9944dd!important;">* ))</strong>';
+		return '<strong style="color: #9944dd!important;">(( *</strong> <strong>' . $suspect . '</strong> pleads <strong>' . $plead . '</strong> <strong style="color: #9944dd!important;">* ))</strong>';
 	}
 
-	public function getPleaRaw($input) {
+	public function getPleaRaw($input)
+	{
 
 		switch ($input) {
-			case 1: return 'Guilty';
-			case 2: return 'Not Guilty';
-			case 3: return 'No Contest';
-			case 4: return 'Required Case';
-			default: return 'UNKNOWN PLEA';
+			case 1:
+				return 'Guilty';
+			case 2:
+				return 'Not Guilty';
+			case 3:
+				return 'No Contest';
+			case 4:
+				return 'Required Case';
+			default:
+				return 'UNKNOWN PLEA';
 		}
-
 	}
 
-	public function getPleaRawShort($input) {
+	public function getPleaRawShort($input)
+	{
 
 		switch ($input) {
-			case 1: return 'G';
-			case 2: return 'NG';
-			case 3: return 'NC';
-			case 4: return 'RC';
-			default: return 'UNKNOWN PLEA';
+			case 1:
+				return 'G';
+			case 2:
+				return 'NG';
+			case 3:
+				return 'NC';
+			case 4:
+				return 'RC';
+			default:
+				return 'UNKNOWN PLEA';
 		}
-		
 	}
-
 }
 
-class ParkingTicketGenerator extends PaperworkGenerators {
+class LSDAGenerator extends PaperworkGenerators
+{
+	public function bailReasonsChooser()
+	{
 
-	public function illegalParkingChooser() {
+		$bailReasons = file('resources/bailReasonsList.txt');
+		$bailReasonsCount = 0;
 
-		$illegalParkingReasons = file ('resources/illegalParkingList.txt');
+		$groupCondition = '';
+		$groupDenial = '';
+
+
+
+		foreach ($bailReasons as $bailReason) {
+
+			$statement = '<option value="' . $bailReasonsCount . '">' . substr($bailReason,1) . '</option>';
+
+			if(str_starts_with($bailReason,"C")){
+				$groupCondition.=$statement;
+			}else if (str_starts_with($bailReason,"D")){
+				$groupDenial.=$statement;
+
+			}
+
+			$bailReasonsCount++;
+		}
+
+		return '<optgroup label="Bail Conditions">' . $groupCondition . '</optgroup>
+		<optgroup label="Bail Denial Reasons">' . $groupDenial . '</optgroup>';
+	}
+
+	public function getBailReason($input)
+	{
+
+		$illegalParkingReasons = file('../resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
+
+		return $illegalParkingReasons[$input];
+	}
+}
+class ParkingTicketGenerator extends PaperworkGenerators
+{
+
+	public function illegalParkingChooser()
+	{
+
+		$illegalParkingReasons = file('resources/illegalParkingList.txt');
 		$illegalParkingReasonsCount = 0;
 
 		$groupVehicleStatus = '';
@@ -616,13 +684,13 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 		$groupSidewalk = '';
 
 		$reasonsVS = array(0);
-		$reasonsPR = array(1,2,3,4,5);
-		$reasonsOS = array(6,7,8,9,10,11,12,13);
-		$reasonsSW = array(14,15,16,17);
+		$reasonsPR = array(1, 2, 3, 4, 5);
+		$reasonsOS = array(6, 7, 8, 9, 10, 11, 12, 13);
+		$reasonsSW = array(14, 15, 16, 17);
 
 		foreach ($illegalParkingReasons as $illegalParkingReason) {
 
-			$statement = '<option value="'.$illegalParkingReasonsCount.'">'.$illegalParkingReason.'</option>';
+			$statement = '<option value="' . $illegalParkingReasonsCount . '">' . $illegalParkingReason . '</option>';
 
 			if (in_array($illegalParkingReasonsCount, $reasonsVS)) {
 				$groupVehicleStatus .= $statement;
@@ -640,19 +708,17 @@ class ParkingTicketGenerator extends PaperworkGenerators {
 			$illegalParkingReasonsCount++;
 		}
 
-		return '<optgroup label="Vehicle Status">'.$groupVehicleStatus.'</optgroup>
-		<optgroup label="Parking">'.$groupParkingRelated.'</optgroup>
-		<optgroup label="Obstruction">'.$groupObstruction.'</optgroup>
-		<optgroup label="Pedestrian">'.$groupSidewalk.'</optgroup>';
-
+		return '<optgroup label="Vehicle Status">' . $groupVehicleStatus . '</optgroup>
+		<optgroup label="Parking">' . $groupParkingRelated . '</optgroup>
+		<optgroup label="Obstruction">' . $groupObstruction . '</optgroup>
+		<optgroup label="Pedestrian">' . $groupSidewalk . '</optgroup>';
 	}
-	
-	public function getIllegalParking($input) {
+
+	public function getIllegalParking($input)
+	{
 
 		$illegalParkingReasons = file('../resources/illegalParkingList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $illegalParkingReasons[$input];
-
 	}
-
 }
