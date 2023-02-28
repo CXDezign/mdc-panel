@@ -12,3 +12,4 @@
 	$arrestSubmissionURL = (empty($_SESSION['generatedArrestSubmissionURL'])) ? '' : $_SESSION['generatedArrestSubmissionURL'];
 	$arrestSubmission = (empty($_SESSION['generatedArrestSubmission'])) ? '' : $_SESSION['generatedArrestSubmission'];
 	$arrestChargeList = (empty($_SESSION['arrestChargeList'])) ? '' : $_SESSION['arrestChargeList'];
+	$plea = (empty($_SESSION['plea'])) ? '' : $_SESSION['plea'];

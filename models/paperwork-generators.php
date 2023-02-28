@@ -339,7 +339,7 @@ class PaperworkGenerators {
 		return '<strong style="color: '.$colour.'!important;">';
 	}
 
-	public function listChooser($list) {
+	public function listChooser($list, $plea = null) {
 
 		$listEntries = file('resources/'.$list.'.txt');
 		$entriesCount = 1;
@@ -356,19 +356,31 @@ class PaperworkGenerators {
 			case 'streetsList':
 				$output = '';
 				$optionValue = false;
-				break;
+				break;		
 			default:
 				$output = '';
 		}
-
-		foreach ($listEntries as $listItem) {
-			if ($optionValue) {
-				$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
-			} elseif (!$optionValue) {
-				$output .= '<option>'.$listItem.'</option>';
+		if($plea){
+			foreach ($listEntries as $listItem) {
+				if ($entriesCount == $plea){
+					$output .= '<option selected value="'.$entriesCount.'">'.$listItem.'</option>';
+				} else {
+					$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
+				}
+				$entriesCount++;
 			}
-			$entriesCount++;
+		} else {
+			foreach ($listEntries as $listItem) {
+				if ($optionValue) {
+					$output .= '<option value="'.$entriesCount.'">'.$listItem.'</option>';
+				} elseif (!$optionValue) {
+					$output .= '<option>'.$listItem.'</option>';
+				}
+				$entriesCount++;
+			}
 		}
+
+		
 
 		return $output;
 
