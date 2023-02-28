@@ -109,6 +109,11 @@
 				<img class="mr-2" src="/images/Logo-LSFD.png" alt="LSFD Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSFD<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
+		<li class="nav-item">
+			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-lsda') ?>">
+				<img class="mr-2" src="/images/Logo-LSDA.png" alt="LSDA Logo" width="16px" style="margin-top: -4px" /><span class="icon-text">LSDA<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
+			</a>
+		</li>
 		<hr class="my-3">
 		<li class="nav-item">
 			<a class="nav-link" href="/settings">
