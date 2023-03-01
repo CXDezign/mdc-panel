@@ -38,7 +38,7 @@
 		$('#guidelineDropdown').on('toggle', function() {
 			$.ajax({
 				type: "POST",
-				url: "controllers/form-processor.php",
+				url: "/controllers/form-processor.php",
 				data: {
 					openStatus: $('#guidelineDropdown').prop('open')
 				},
