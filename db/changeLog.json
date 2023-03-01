@@ -1,25 +1,10 @@
 {
-<<<<<<< Updated upstream
 	"2.3.8": {
 		"id": "2.3.8",
 		"date": "27/FEB/2023",
 		"changes": {
 			"0": "Arrest Calculator - Plea field in the arrest report will now auto populate.",
 			"1": "Arrest Calculator - Post arrest submissions removed as it is now handled by the MDC."
-=======
-	"2.4.0": {
-		"id": "2.4.0",
-		"date": "01/MAR/2023",
-		"changes": {
-			"0": "General - Added the possibility of having a legal character (attorney) stored as a cookie, will be used for judicial petition generators.",
-			"1": "General - Added a link to LSDA forums on the sidebar.",
-			"2": "Judicial Generators - Added petition for bail generator for LSDA.",
-			"3": "Paperwork generators - Changed the way in which forms marked as \"report\" are copied, to be able to be used directly on GTAW forums. ",
-			"4": "Arrest Calculator - Plea field in the arrest report will now auto populate.",
-			"5": "Arrest Calculator - Post arrest submissions removed as it is now handled by the MDC.",
-			"6": "Arrest Calculator - Updated Rules & Guidelines",
-			"7": "Arrest Calculator - The dropdown state for the Rules & Guidelines will be remembered."
->>>>>>> Stashed changes
 		}
 	},
 	"2.3.7": {

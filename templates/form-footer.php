@@ -34,21 +34,6 @@
 			alert('Maximum '+$maxSlots+' slots are allowed.');
 		}
 
-		// Charging Guidelines Dropdown
-		$('#guidelineDropdown').on('toggle', function() {
-			$.ajax({
-				type: "POST",
-				url: "controllers/form-processor.php",
-				data: {
-					openStatus: $('#guidelineDropdown').prop('open')
-				},
-				dataType: "text",
-				success: function (response) {
-					
-				}
-			});
-		})
-
 		// Traffic Report & Arrest Report Generators
 
 			//  Traffic Report & Arrest Report Generators - Dynamic Crime Selector
