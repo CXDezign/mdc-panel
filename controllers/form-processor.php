@@ -75,6 +75,128 @@
 		}
 		*/
 
+<<<<<<< Updated upstream
+=======
+// Generator Types
+
+if (isset($_POST['generatorType'])) {
+
+	// Initialise Constant Variables
+	$generatorType = $_POST['generatorType'];
+	$checked = '[cbc][/cbc]';
+	$unchecked = '[cb][/cb]';
+
+	// Default Values
+	$defaultName = 'UNKNOWN NAME';
+	$defaultSuspectName = 'UNKNOWN SUSPECT NAME';
+	$defaultDistrict = 'UNKNOWN DISTRICT';
+	$defaultStreet = 'UNKNOWN STREET';
+	$defaultBuilding = 'UNKNOWN BUILDING';
+	$defaultVehicle = 'UNKNOWN VEHICLE';
+	$defaultVehiclePlate = 'UNKNOWN VEHICLE IDENTIFICATION PLATE';
+	$defaultRegisteredOwner = 'UNKNOWN REGISTERED OWNER';
+
+	// Common Post Values
+	$postInputDate = $_POST['inputDate'] ?? $g->getUNIX('date');
+	$postInputTime = $_POST['inputTime'] ?? $g->getUNIX('time');
+	$postInputCallsign = $_POST['inputCallsign'] ?? 'N/A';
+	$postInputName = $_POST['inputName'] ?? $defaultName;
+	$postInputNameArray = $_POST['inputName'] ?? array();
+	$postInputRank = $_POST['inputRank'] ?? 0;
+	$postInputRankArray = $_POST['inputRank'] ?? array();
+	$postInputBadge = $_POST['inputBadge'] ?? 0;
+	$postInputBadgeArray = $_POST['inputBadge'] ?? array();
+	$postInputDefName = $_POST['inputDefName'] ?? $defaultSuspectName;
+	$postInputDistrict = $_POST['inputDistrict'] ?? $defaultDistrict;
+	$postInputStreet = $_POST['inputStreet'] ?? $defaultStreet;
+	$postInputBuilding = $_POST['inputBuilding'] ?? $defaultBuilding;
+	$postInputVeh = $_POST['inputVeh'] ?? $defaultVehicle;
+	$postInputVehPlate = $_POST['inputVehPlate'] ?? $defaultVehiclePlate;
+	$postInputEvidenceImageArray = $_POST['inputEvidenceImage'] ?? array();
+	$postInputEvidenceImageArray = array_values(array_filter($postInputEvidenceImageArray));
+	$postInputVehRO = $_POST['inputVehRO'] ?? $defaultRegisteredOwner;
+	$guidelineDropdownStatus = $_POST['openStatus'] ?? '';
+
+	// Session Variables
+	$generatedReportType = '';
+	$generatedReport = '';
+	$generatedThreadURL = '';
+	$generatedThreadTitle = '';
+	$showGeneratedArrestChargeTables = false;
+	$generatedArrestChargeList = '';
+	$generatedArrestChargeTotals = '';
+
+
+	if ($generatorType == 'TrafficReport') {
+
+		// Array Maps
+		$postInputNameArray = arrayMap($_POST['inputName'], $defaultName);
+		$postInputRankArray = arrayMap($_POST['inputRank'], 0);
+		$postInputBadgeArray = arrayMap($_POST['inputBadge'], '');
+		$inputCrime = arrayMap($_POST['inputCrime'], 'UNKNOWN CHARGE');
+		$inputCrimeClass = arrayMap($_POST['inputCrimeClass'], 0);
+		$inputCrimeFine = arrayMap($_POST['inputCrimeFine'], 0);
+
+		// Variables
+		$inputDefLicense = $_POST['inputDefLicense'] ?: 0;
+		$inputNarrative = $_POST['inputNarrative'] ?: '';
+		$inputDashcam = $_POST['inputDashcam'] ?: '';
+		$inputVehRegistered = $_POST['inputVehRegistered'] ?: false;
+		$inputVehRO = $_POST['inputVehRO'] ?: $postInputDefName;
+		$inputVehTint = $_POST['inputVehTint'] ?? -1;
+		$inputVehInsurance = $_POST['inputVehInsurance'] ?: false;
+		$inputVehInsuranceDate = $_POST['inputVehInsuranceDate'] ?? $g->getUNIX('date');
+		$inputVehInsuranceTime = $_POST['inputVehInsuranceTime'] ?? $g->getUNIX('time');
+
+		// Cookies
+		setCookiePost('callSign', $postInputCallsign);
+		setCookiePost('officerNameArray', $postInputNameArray[0]);
+		setCookiePost('officerRankArray', $postInputRankArray[0]);
+		setCookiePost('officerBadgeArray', $postInputBadgeArray[0]);
+		setCookiePost('defName', $postInputDefName);
+		setCookiePost('openStatus', $guidelineDropdownStatus);
+		// Officer Resolver
+		$officers = '';
+		foreach ($postInputNameArray as $iOfficer => $officer) {
+			$officers .= resolverOfficer($officer, $postInputRankArray[$iOfficer], $postInputBadgeArray[$iOfficer]);
+		}
+
+		// Vehicle Registered Resolver
+		$registered = '';
+		if (!$inputVehRegistered) {
+			$registered = 'The vehicle was <strong>registered</strong> to ' . textBold(1, $inputVehRO) . ', with the identification plate reading ' . textBold(2, $postInputVehPlate) . '.<br>';
+		} else {
+			$registered = 'The vehicle was <strong>unregistered</strong> at the time of the traffic stop.<br>';
+		}
+
+		// Vehicle Insurance Resolver
+		$insurance = '';
+		if ($inputVehInsurance) {
+			$insurance = 'The vehicle was uninsured at the time of the conducted traffic stop, having expired on the ' . textBold(2, $inputVehInsuranceDate) . ', ' . textBold(1, $inputVehInsuranceTime) . '.<br>';
+		}
+
+		// Crime Resolver
+		$fines = '';
+		foreach ($inputCrime as $iCrime => $crime) {
+			$charge = $penal[$crime];
+			$chargeTitle = $charge['charge'];
+			$chargeType = $charge['type'];
+			$chargeClass = '?';
+			if (!empty($inputCrimeClass[$iCrime])) {
+				$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCrime]);
+			}
+			if ($inputCrimeFine[$iCrime] == 0) {
+				$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-' . $crime . '" data-toggle="tooltip" title="Copied!"><span id="charge-' . $crime . '">' . $pg->getCrimeColour($chargeType) . $chargeType . $chargeClass . ' ' . $crime . '. ' . $chargeTitle . '</strong></span></strong></li>';
+			} else {
+				$fines .= '<li><strong class="style-underline chargeCopy" data-clipboard-target="#charge-' . $crime . '" data-toggle="tooltip" title="Copied!"><span id="charge-' . $crime . '">' . $pg->getCrimeColour($chargeType) . $chargeType . $chargeClass . ' ' . $crime . '. ' . $chargeTitle . '</strong></span></strong> - <strong style="color: green!important;">$' . number_format($inputCrimeFine[$iCrime]) . '</strong> Citation</li>';
+			}
+		}
+
+		// Report Builder
+		$redirectPath = redirectPath(1);
+		$generatedReportType = 'Traffic Report';
+		$generatedReport = $officers . 'under the call sign ' . textBold(2, $postInputCallsign) . ' on the ' . textBold(2, $postInputDate) . ', ' . textBold(1, $postInputTime) . '.<br>Conducted a traffic stop on a ' . textBold(1, $postInputVeh) . ', on ' . textBold(1, $postInputStreet) . ', ' . textBold(1, $postInputDistrict) . '.<br>' . $registered . $insurance . $pg->getVehicleTint($inputVehTint) . '<br>The driver was identified as ' . textBold(1, $postInputDefName) . ', possessing ' . $pg->getDefLicense($inputDefLicense) . '<br>' . $inputNarrative . '<br><br>Following charge(s) were issued:<ul>' . $fines . '</ul>' . $pg->getDashboardCamera($inputDashcam);
+>>>>>>> Stashed changes
 	}
 
 	// Generator Types
