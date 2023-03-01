@@ -79,5 +79,15 @@
 		"card": "card-generators-trespass",
 		"iconType": "icon",
 		"icon": "clipboard"
+	
+	},
+	"9": {
+		"title": "Petition for Bail",
+		"type": "LSDA",
+		"link": "/paperwork-generators/lsda/bail-petition",
+		"tooltip": "Generate a petition for bail form.",
+		"card": "card-generators-bail",
+		"iconType": "icon",
+		"icon": "user-lock"
 	}
 }

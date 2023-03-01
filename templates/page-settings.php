@@ -189,6 +189,54 @@
 					required>
 				</div>
 			</div>
+		</div>
+		<hr>
+
+	<h4 class="d-block text-center mb-3"><i class="fas fa-gavel fa-fw mr-2"></i>Legal Character Settings</h4>
+		<div class="row">
+			<div class="form-group col-xl-6">
+				<label class="d-block text-center">Full Name</label>
+				<input
+				class="form-control"
+				type="text"
+				id="l_inputName"
+				name="l_inputName"
+				placeholder="Firstname Lastname"
+				value="<?= $g->findCookie('legalName') ?>"
+				required>
+			</div>
+			<div class="form-group col-xl-4">
+				<label class="d-block text-center">Rank</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-fw fa-user-shield"></i></span>
+					</div>
+					<select
+					class="form-control selectpicker"
+					id="l_inputRank"
+					name="l_inputRank"
+					title="Select Rank"
+					required>
+					<?= $pg->rankChooser(2) ?>
+					</select>
+				</div>
+			</div>
+			<div class="form-group col-xl-2">
+				<label class="d-block text-center">Badge</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-fw fa-hashtag"></i></span>
+					</div>
+					<input
+					class="form-control" 
+					type="number"
+					id="l_inputBadge"
+					name="l_inputBadge"
+					placeholder="####"
+					value="<?= $g->findCookie('legalBadge') ?>"
+					required>
+				</div>
+			</div>
 			<div class="container my-5 text-center">
 				<button id="submit" type="submit" name="submit" class="btn btn-primary px-5">
 					<i class="fas fa-save fa-fw mr-1"></i>Save Character Settings
@@ -343,8 +391,11 @@
 			name = $.trim($("#inputName").val());
 			rank = $.trim($("#inputRank").val());
 			badge = $.trim($("#inputBadge").val());
+			l_name = $.trim($("#l_inputName").val());
+			l_rank = $.trim($("#l_inputRank").val());
+			l_badge = $.trim($("#l_inputBadge").val());
 
-			if (name === "" || rank === "" || badge === "") {
+			if ((name === "" || rank === "" || badge === "") & (l_name === "" || l_rank === "" || l_badge === "")) {
 
 				$('#submit').tooltip({
 					trigger : 'click',
@@ -368,7 +419,10 @@
 						type: "settingsCharacter",
 						name: $("#inputName").val(),
 						rank: $("#inputRank").val(),
-						badge: $("#inputBadge").val()
+						badge: $("#inputBadge").val(),
+						l_name: $("#l_inputName").val(),
+						l_rank: $("#l_inputRank").val(),
+						l_badge: $("#l_inputBadge").val()
 					},
 					success: function () {
 						setTimeout(function() {

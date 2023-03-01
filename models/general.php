@@ -7,7 +7,7 @@ class General {
 		switch ($setting) {
 			case 'site-live':					return true;
 			case 'site-name':					return 'MDC Panel';
-			case 'site-version':				return '2.3.8';
+			case 'site-version':				return '2.4.0';
 			case 'site-url':					return $_SERVER['SERVER_NAME'];
 			case 'site-logo':					return '/images/MDC-Panel.svg';
 			case 'site-favicon':				return '/images/MDC-Panel-Favicon.svg';
@@ -20,6 +20,7 @@ class General {
 			case 'url-lspd':					return 'https://lspd.gta.world';
 			case 'url-lssd':					return 'https://lssd.gta.world';
 			case 'url-lsfd':					return 'https://lsfd.gta.world';
+			case 'url-lsda':					return 'https://lsda.gta.world';
 			case 'url-penal-code':				return 'https://forum.gta.world/en/topic/78852-san-andreas-penal-code/';
 			case 'url-bail-schedule':			return 'https://docs.google.com/spreadsheets/d/1jlu8AltrHmOR192CAhznfsfZBxrv6_EMGuXFW7SwRdU/';
 			case 'url-bbcoderip':				return 'https://bbcode.booskit.dev/';
@@ -82,6 +83,9 @@ class General {
 			case 'officerName':					return $_COOKIE['officerName'] ?? '';
 			case 'officerRank':					return $_COOKIE['officerRank'] ?? '';
 			case 'officerBadge':				return $_COOKIE['officerBadge'] ?? '';
+			case 'legalName':					return $_COOKIE['legalName'] ?? '';
+			case 'legalRank':					return $_COOKIE['legalRank'] ?? '';
+			case 'legalBadge':					return $_COOKIE['legalBadge'] ?? '';
 			case 'callSign':					return $_COOKIE['callSign'] ?? '';
 			case 'defName':						return $_COOKIE['defName'] ?? '';
 			case 'defNameURL':					return str_replace(' ', '_', $_COOKIE['defName'] ?? '');
