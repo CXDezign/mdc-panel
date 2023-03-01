@@ -72,6 +72,12 @@ if (isset($_REQUEST['getType'])) {
 		*/
 }
 
+
+if(isset($_POST['openStatus'])) {
+	$guidelineDropdownStatus = $_POST['openStatus'] ?? '';
+	setCookiePost('openStatus', $guidelineDropdownStatus);
+}
+
 // Generator Types
 
 if (isset($_POST['generatorType'])) {
@@ -110,7 +116,7 @@ if (isset($_POST['generatorType'])) {
 	$postInputEvidenceImageArray = $_POST['inputEvidenceImage'] ?? array();
 	$postInputEvidenceImageArray = array_values(array_filter($postInputEvidenceImageArray));
 	$postInputVehRO = $_POST['inputVehRO'] ?? $defaultRegisteredOwner;
-	$guidelineDropdownStatus = $_POST['openStatus'] ?? '';
+	
 
 	// Session Variables
 	$generatedReportType = '';
@@ -149,7 +155,7 @@ if (isset($_POST['generatorType'])) {
 		setCookiePost('officerRankArray', $postInputRankArray[0]);
 		setCookiePost('officerBadgeArray', $postInputBadgeArray[0]);
 		setCookiePost('defName', $postInputDefName);
-		setCookiePost('openStatus', $guidelineDropdownStatus);
+		
 		// Officer Resolver
 		$officers = '';
 		foreach ($postInputNameArray as $iOfficer => $officer) {
