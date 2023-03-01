@@ -1,23 +1,23 @@
-Cturn up at court on each date the case is assigned to call,
-Cabstention from criminal activity while subject to the bail order,
-Cabstention from consumption of alcohol or other intoxicating substances,
-Cabstention from consumption of drugs except in accordance with a medical prescription,
-Corder to keep cellphone active,
-Corder to surrender weapons to law enforcement,
-Csurrender the passport to the court and not leave the state without the court's authorization,
-Csurrender the driving license to the court, and not driving on the public road while subject to the bail order, 
-Cno contact with felons / registered gang members.
-Dexcessive amount of criminal points,
-Dflight danger,
-Ddanger to community,
-Dunable with comply with previous court orders,
-Rignition interlock system,
-Rin person check-ins with designated agency,
-Rmental health treatment,
-Ralcohol abuse treatment,
-Rsubstance abuse treatment,
-Ralcohol and drug testing,
-Rresidential treatment program,
-Rhome relocation during case pendency,
-Relectronic monitoring / GPS,
-Rhome detention,
+CTurn up at court on each date the case is assigned to call
+CAbstention from criminal activity while subject to the bail order
+CAbstention from consumption of alcohol or other intoxicating substances
+CAbstention from consumption of drugs except in accordance with a medical prescription
+COrder to keep cellphone active
+COrder to surrender weapons to law enforcement
+CSurrender the passport to the court and not leave the state without the court's authorization
+CSurrender the driving license to the court, and not driving on the public road while subject to the bail order
+CNo contact with felons / registered gang members
+DExcessive amount of criminal points
+DFlight danger
+DDanger to community
+DUnable with comply with previous court orders
+RIgnition interlock system
+RIn person check-ins with designated agency
+RMental health treatment
+RAlcohol abuse treatment
+RSubstance abuse treatment
+RAlcohol and drug testing
+RResidential treatment program
+RHome relocation during case pendency
+RElectronic monitoring / GPS
+RHome detention
