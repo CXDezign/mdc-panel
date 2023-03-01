@@ -1280,6 +1280,9 @@ function setCookiePost($inputCookie, $inputVariable)
 			$cookie = 'defNameURL';
 			$time = $dTime;
 			break;
+		case 'openStatus':
+			$cookie = 'openStatus';
+			break;	
 		case 'inputTDPatrolReportURL':
 			$cookie = 'inputTDPatrolReportURL';
 			$time = $iTime;
