@@ -50,3 +50,7 @@ Investigator
 Senior Investigator
 Deputy Administrator
 Administrator
+Deputy District Attorney
+Assistant District Attorney
+District Attorney
+Chief of Staff

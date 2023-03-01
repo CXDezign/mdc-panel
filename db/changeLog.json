@@ -1,4 +1,14 @@
 {
+	"2.3.9": {
+		"id": "2.3.9",
+		"date": "01/MAR/2023",
+		"changes": {
+			"0": "General - Added the possibility of having a legal character (attorney) stored as a cookie, will be used for judicial petition generators.",
+			"1": "General - Added a link to LSDA forums on the sidebar.",
+			"2": "Judicial Generators - Added petition for bail generator for LSDA.",
+			"3": "Paperwork generators - Changed the way in which forms marked as \"report\" are copied, to be able to be used directly on GTAW forums. "
+		}
+	},
 	"2.3.8": {
 		"id": "2.3.8",
 		"date": "27/FEB/2023",

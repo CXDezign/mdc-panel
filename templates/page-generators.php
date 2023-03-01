@@ -5,6 +5,7 @@
 	$generatorsMDC = '';
 	$generatorsLSPD = '';
 	$generatorsLSSD = '';
+	$generatorsLSDA = '';
 
 	foreach ($json as $generator) {
 
@@ -45,6 +46,9 @@
 			case 'LSSD':
 				$generatorsLSSD .= $card;
 				break;
+			case 'LSDA':
+				$generatorsLSDA .= $card;
+				break;
 			case 'MDC':
 			default:
 				$generatorsMDC .= $card;
@@ -82,6 +86,14 @@
 		<div class="grid-col grid-col--3"></div>
 		<div class="grid-col grid-col--4"></div>
 		<?= $generatorsLSSD ?>
+	</div>
+	<h5>Los Santos District Attorney's Office</h5>
+	<div class="grid" id="generators">
+		<div class="grid-col grid-col--1"></div>
+		<div class="grid-col grid-col--2"></div>
+		<div class="grid-col grid-col--3"></div>
+		<div class="grid-col grid-col--4"></div>
+		<?= $generatorsLSDA ?>
 	</div>
 </div>
 <script type="text/javascript">

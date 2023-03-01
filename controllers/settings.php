@@ -114,6 +114,9 @@
 		setCookiePost('officerName', $_POST['name']);
 		setCookiePost('officerRank', $_POST['rank']);
 		setCookiePost('officerBadge', $_POST['badge']);
+		setCookiePost('legalName', $_POST['l_name']);
+		setCookiePost('legalRank', $_POST['l_rank']);
+		setCookiePost('legalBadge', $_POST['l_badge']);
 
 	}
 
