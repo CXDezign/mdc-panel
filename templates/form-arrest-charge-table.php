@@ -36,7 +36,7 @@
 <details id="guidelineDropdown" class="card text-white bg-info p-2 text-center"
 <?php
 	$openStatus = $g->findCookie('openStatus');
-	if ($openStatus == "true") {
+	if ($openStatus == 1) {
 		echo "open";
 	}
 ?>

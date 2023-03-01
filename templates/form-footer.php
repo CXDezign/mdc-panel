@@ -36,11 +36,18 @@
 
 		// Charging Guidelines Dropdown
 		$('#guidelineDropdown').on('toggle', function() {
+			let openStatus = 0;
+			if($('#guidelineDropdown').prop('open')){
+				openStatus = 1;
+			} else {
+				openStatus = 0;
+			}
+
 			$.ajax({
 				type: "POST",
-				url: "controllers/form-processor.php",
+				url: "/controllers/form-processor.php",
 				data: {
-					openStatus: $('#guidelineDropdown').prop('open')
+					openStatus: openStatus
 				},
 				dataType: "text",
 				success: function (response) {

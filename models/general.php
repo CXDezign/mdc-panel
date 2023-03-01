@@ -91,6 +91,7 @@ class General {
 			case 'defNameURL':					return str_replace(' ', '_', $_COOKIE['defName'] ?? '');
 			case 'inputTDPatrolReportURL':		return $_COOKIE['inputTDPatrolReportURL'] ?? 'https://lspd.gta.world/viewforum.php?f=101';
 			case 'specialNotification':         return $_COOKIE['specialNotification'] ?? false;
+			case 'openStatus':         			return $_COOKIE['openStatus'] ?? 1;
 			default: break;
 		}
 	}

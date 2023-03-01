@@ -74,7 +74,7 @@ if (isset($_REQUEST['getType'])) {
 
 
 if(isset($_POST['openStatus'])) {
-	$guidelineDropdownStatus = $_POST['openStatus'] ?? '';
+	$guidelineDropdownStatus = $_POST['openStatus'] ?? 0;
 	setCookiePost('openStatus', $guidelineDropdownStatus);
 }
 
@@ -1280,6 +1280,9 @@ function setCookiePost($inputCookie, $inputVariable)
 			$cookie = 'defNameURL';
 			$time = $dTime;
 			break;
+		case 'openStatus':
+			$cookie = 'openStatus';
+			break;	
 		case 'inputTDPatrolReportURL':
 			$cookie = 'inputTDPatrolReportURL';
 			$time = $iTime;
