@@ -42,7 +42,7 @@
 	}
 ?>
 >
-	<summary>Arrest & Charging Guidelines</summary>
+	<summary>Arrest & Charging Guidelines <?php echo $openStatus; ?></summary>
 	<div class="card text-white bg-info">
 		<div class="card-body">
 			<h4 class="card-title text-center font-weight-bold"><i class="mr-2 fas fa-fw fa-info-circle"></i>Arresting & Charging</h4>
