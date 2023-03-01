@@ -48,7 +48,7 @@
 				'class' => '',
 				'id' => 'employeeName',
 				'name' => 'employeeName',
-				'value' => '',
+				'value' => $g->findCookie('legalName') ,
 				'placeholder' => 'Firstname Lastname',
 				'tooltip' => 'Employee - Full Name',
 				'attributes' => 'required',
@@ -63,7 +63,7 @@
 				'name' => 'inputRank',
 				'attributes' => 'required',
 				'title' => 'Select Rank',
-				'list' => $pg->rankChooser(0),
+				'list' => $pg->rankChooser(2) ,
 				'hint' => '',
 				'hintClass' => ''
 			));

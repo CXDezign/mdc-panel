@@ -1088,6 +1088,8 @@ COUNTY OF LOS SANTOS[/b]
 				<li>PH #: ' . $inputPhone . '</li></ul>';
 	}
 
+
+	//[LSDA:] Petition for bail
 	if ($generatorType == 'BailPetition') {
 		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
 

@@ -83,6 +83,9 @@ class General {
 			case 'officerName':					return $_COOKIE['officerName'] ?? '';
 			case 'officerRank':					return $_COOKIE['officerRank'] ?? '';
 			case 'officerBadge':				return $_COOKIE['officerBadge'] ?? '';
+			case 'legalName':					return $_COOKIE['legalName'] ?? '';
+			case 'legalRank':					return $_COOKIE['legalRank'] ?? '';
+			case 'legalBadge':					return $_COOKIE['legalBadge'] ?? '';
 			case 'callSign':					return $_COOKIE['callSign'] ?? '';
 			case 'defName':						return $_COOKIE['defName'] ?? '';
 			case 'defNameURL':					return str_replace(' ', '_', $_COOKIE['defName'] ?? '');

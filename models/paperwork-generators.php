@@ -83,6 +83,15 @@ class PaperworkGenerators
 				</option>
 			</optgroup>';
 		}
+		if ($cookie === 2 && isset($_COOKIE['legalRank'])) {
+			$officerCookie = htmlspecialchars($_COOKIE['legalRank']);
+			$groupCookie .= '
+			<optgroup label="Saved Cookie">
+				<option selected value="' . $officerCookie . '">
+					' . $this->getRank($officerCookie) . '
+				</option>
+			</optgroup>';
+		}
 
 		$ranksLSPD = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
 		$ranksLSSD = array(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29);
@@ -640,6 +649,7 @@ class LSDAGenerator extends PaperworkGenerators
 
 		$groupCondition = '';
 		$groupDenial = '';
+		$groupRestrictive = '';
 
 
 
@@ -652,13 +662,17 @@ class LSDAGenerator extends PaperworkGenerators
 			}else if (str_starts_with($bailReason,"D")){
 				$groupDenial.=$statement;
 
+			}else if (str_starts_with($bailReason,"R")){
+				$groupRestrictive.=$statement;
+
 			}
 
 			$bailReasonsCount++;
 		}
 
 		return '<optgroup label="Bail Conditions">' . $groupCondition . '</optgroup>
-		<optgroup label="Bail Denial Reasons">' . $groupDenial . '</optgroup>';
+		<optgroup label="Bail Denial Reasons">' . $groupDenial . '</optgroup>
+		<optgroup label="Restrictive Bail Conditions">' . $groupRestrictive . '</optgroup>';
 	}
 
 	public function getBailReason($input)
