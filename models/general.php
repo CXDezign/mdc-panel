@@ -7,7 +7,7 @@ class General {
 		switch ($setting) {
 			case 'site-live':					return true;
 			case 'site-name':					return 'MDC Panel';
-			case 'site-version':				return '2.4.0';
+			case 'site-version':				return '2.4.1';
 			case 'site-url':					return $_SERVER['SERVER_NAME'];
 			case 'site-logo':					return '/images/MDC-Panel.svg';
 			case 'site-favicon':				return '/images/MDC-Panel-Favicon.svg';
@@ -15,6 +15,7 @@ class General {
 			case 'site-description':			return 'MDC Panel - Multi-functional tools, generators, and resources for official government use.';
 			case 'site-discord-contact':		return 'Biscuit#0001';
 			case 'url-github':					return 'https://github.com/biscuitgtaw/MDC-Panel';
+			case 'url-discord':					return 'https://discord.gg/rxfYd23TNz';
 			case 'url-mdc':						return 'https://mdc.gta.world';
 			case 'url-cad':						return 'https://cad.gta.world';
 			case 'url-lspd':					return 'https://lspd.gta.world';
@@ -24,7 +25,7 @@ class General {
 			case 'url-penal-code':				return 'https://forum.gta.world/en/topic/78852-san-andreas-penal-code/';
 			case 'url-bail-schedule':			return 'https://docs.google.com/spreadsheets/d/1jlu8AltrHmOR192CAhznfsfZBxrv6_EMGuXFW7SwRdU/';
 			case 'url-bbcoderip':				return 'https://bbcode.booskit.dev/';
-			case 'special-notification': 		return 'discord-server-2023-06-2';
+			case 'special-notification': 		return false;
 			case 'special-notification-msg':	return 'Join the <a href="https://discord.gg/rxfYd23TNz" target="_blank">MDC Panel Discord</a> to stay informed of all the latest updates and announcements.';
 			default: break;
 		}
