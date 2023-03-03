@@ -122,12 +122,12 @@
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-github') ?>">
-				<i class="fab fa-fw fa-github mr-2"></i><span class="icon-text">Github</span>
+				<i class="fab fa-fw fa-github mr-2"></i><span class="icon-text">Github<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" target="_blank" rel="noopener noreferrer" href="<?= $g->getSettings('url-discord') ?>">
-				<i class="fab fa-fw fa-discord mr-2"></i><span class="icon-text">Discord</span>
+				<i class="fab fa-fw fa-discord mr-2"></i><span class="icon-text">Discord<i class="fas fa-fw fa-xs fa-ss fa-external-link-alt ml-2"></i></span>
 			</a>
 		</li>
 		<li class="nav-item">
