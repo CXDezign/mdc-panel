@@ -1,4 +1,12 @@
 {
+	"2.4.1": {
+		"id": "2.4.1",
+		"date": "03/MAR/2023",
+		"changes": {
+			"0": "General - Added a link to the MDC Panel Discord to the sidebar.",
+			"1": "General - Added a link to the MDC Panel Github to the sidebar."
+		}
+	},
 	"2.4.0": {
 		"id": "2.4.0",
 		"date": "01/MAR/2023",
