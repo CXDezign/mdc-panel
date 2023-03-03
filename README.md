@@ -109,10 +109,6 @@ Save the hosts file.</dd>
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/xanxTV/MDC-Panel/tags). 
-
 ## Contributors
 
 * **CXDezign** - *Creator & Founder* - [CXDezign](https://github.com/CXDezign)
