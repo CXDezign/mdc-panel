@@ -77,15 +77,22 @@ The following steps will, in brief, explain how to setup your project up and run
 * Enter the following: <code>sudo nano /etc/hosts</code>
 </dd>
 
-<dd>Add the following line at the bottom of the hosts file: <code>127.0.0.1 MDC.dev</code>
+<dd>Add the following line at the bottom of the hosts file: <code>127.0.0.1 panel.local</code>
 Save the hosts file.</dd>
 </dl>
 
-#### 4. Local Website Access
+#### 4. Create a visitors database
+
+<dl>
+<dd>Locate the `db` folder within your MDC Panel repository and create an empty json file with the name `visitors.json`.</dd>
+<dd>This is important as otherwise the website will not load properly!</dd>
+</dl>
+
+#### 5. Local Website Access
 
 <dl>
 <dd>Turn on your web-development platform and access the local website for development/testing purposes.</dd>
-<dd><a href="http://MDC.dev">http://MDC.dev</a></dd>
+<dd><a href="http://panel.local">http://panel.local</a></dd>
 </dl>
 </dd>
 </dl>
@@ -108,12 +115,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Contributors
 
-* **CXDezign** - *Creator & Project Manager* - [CXDezign](https://github.com/CXDezign)
+* **CXDezign** - *Creator & Founder* - [CXDezign](https://github.com/CXDezign)
+* **Biscuit** - *Developer & Project Manager* - [Biscuit](https://github.com/biscuitgtaw)
+* **aeromantis** - *Developer* - [aeromantis](https://github.com/aeromantis)
 * **Skent** - *Initial Arrest Report, Patrol Log, and Impound Report Generators* - [Skenticus](https://github.com/Skenticus)
 * **Cascade** - *Base Leaflet code* - [Cascadee88](https://github.com/Cascadee88)
 * **Spartan** - *Constant suggestions and interest in the project*.
-* **Brett** - *For making my life harder with each Penal Code update :)*.
+* **Wedged** - *Constant suggestions and interest in the project*.
+* **Brett** - *Original Penal Code creator and maintainer*.
 
 ## Donations
 
-* **RoamPT** - £3.83
+I am not accepting donations for this project, you can help by contributing to the project or by donating to either the original creator [CXDezign](https://github.com/CXDezign) and/or by donating to GTA:W.
