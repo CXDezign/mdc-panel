@@ -103,7 +103,7 @@
 			<div class="card-text text-center">			
 				<div class="row">								
 					<div class="col-8 mx-auto text-centre">	
-					<h5>The following only applies to <strong>No Contest</strong> pleas:</h6>
+					<h5>The following only applies to <strong>Guilty</strong> pleas:</h6>
 					</div>	
 					<div class="col-8 mx-auto text-left">
 						<ul>
