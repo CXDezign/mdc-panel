@@ -5,16 +5,97 @@ class PaperworkGenerators
 	private $penal = null;
 	public function __construct()
 	{
-		$this->penal = json_decode(file_get_contents(dirname(__FILE__,2).'/db/penalSearch.json'), true);
+		$this->penal = json_decode(file_get_contents(dirname(__FILE__, 2) . '/db/penalSearch.json'), true);
 	}
 
-	public function penalCode(){
+	public function penalCode()
+	{
 		return $this->penal;
 	}
 
 
-	public function processCharges($prefix){
-		
+	public function processCharges($prefix = "inputCrime")
+	{
+		$charges = [];
+		$penal = $this->penal;
+
+		$crime = $_POST[$prefix . ""];
+		$class = $_POST[$prefix . "Class"];
+		$offence = $_POST[$prefix . "Offence"];
+		$addition = $_POST[$prefix . "Offence"];
+
+		foreach ($crime as $iCharge => $charge) {
+			$penal_charge = $penal[$charge];
+
+			$chargeClass = $class[$iCharge];
+
+			switch ($chargeClass) {
+				case 1:
+					$chargeClass = 'C';
+					break;
+				case 2:
+					$chargeClass = 'B';
+					break;
+				case 3:
+					$chargeClass = 'A';
+					break;
+				default:
+					$chargeClass = '?';
+					break;
+			}
+
+			$chargeType = $penal_charge['type'];
+			$chargeTypeFull = '';
+			switch ($chargeType) {
+				case 'F':
+					$chargeTypeFull = '<strong class="text-danger">Felony</strong>';
+					break;
+				case 'M':
+					$chargeTypeFull = '<strong class="text-warning">Misdemeanor</strong>';
+					break;
+				case 'I':
+					$chargeTypeFull = '<strong class="text-success">Infraction</strong>';
+					break;
+				default:
+					$chargeTypeFull = '<strong class="text-danger">UNKNOWN</strong>';
+					break;
+			}
+
+			switch ($addition) {
+				case 3:
+					$chargeReduction = 2;
+					break;
+				case 4:
+					$chargeReduction = 4;
+					break;
+				case 5:
+					$chargeReduction = 2;
+					break;
+				case 6:
+					$chargeReduction = 4;
+					break;
+				default:
+					$chargeReduction = 1;
+			}
+
+			$chargePoints = ceil($penal_charge['points'][$chargeClass] / $chargeReduction);
+
+
+			array_push($charges, [
+				//"penal_charge"=> $penal_charge,
+				"id"=> $penal_charge["id"],
+				"name" => $penal_charge["charge"],
+				"chargeOffence" => $offence[$iCharge] ?? 1,
+				"addition" => $addition[$iCharge],
+				"class"=> $chargeClass,
+				"type"=> $chargeType,
+				"reduction"=> $chargeReduction,
+				"points"=> $chargePoints
+				//"type_full"=> $chargeTypeFull
+
+			]);
+		}
+		return $charges;
 	}
 
 
@@ -197,7 +278,7 @@ class PaperworkGenerators
 
 		$ranks = file($_SERVER['DOCUMENT_ROOT'] . '/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
 
-		if(count($ranks)<intval($input)) {
+		if (count($ranks) < intval($input)) {
 			return "[ERROR]";
 		}
 
@@ -670,16 +751,17 @@ class LSDAGenerator extends PaperworkGenerators
 
 		foreach ($bailReasons as $bailReason) {
 
-			$statement = '<option value="' . $bailReasonsCount . '">' . substr($bailReason,1) . '</option>';
+			$statement = '<option value="' . $bailReasonsCount . '">' . substr($bailReason, 1) . '</option>';
+			$statement_selected = '<option selected class="standardCondition" value="' . $bailReasonsCount . '">' . substr($bailReason, 1) . '</option>';
 
-			if(str_starts_with($bailReason,"C")){
-				$groupCondition.=$statement;
-			}else if (str_starts_with($bailReason,"D")){
-				$groupDenial.=$statement;
-
-			}else if (str_starts_with($bailReason,"R")){
-				$groupRestrictive.=$statement;
-
+			if (str_starts_with($bailReason, "C")) {
+				$groupCondition .= $statement;
+			} else if (str_starts_with($bailReason, "D")) {
+				$groupDenial .= $statement;
+			} else if (str_starts_with($bailReason, "S")) {
+				$groupCondition .= $statement_selected;
+			} else if (str_starts_with($bailReason, "R")) {
+				$groupRestrictive .= $statement;
 			}
 
 			$bailReasonsCount++;

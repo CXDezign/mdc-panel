@@ -1,5 +1,5 @@
-CTurn up at court on each date the case is assigned to call
-CAbstention from criminal activity while subject to the bail order
+STurn up at court on each date the case is assigned to call
+SAbstention from criminal activity while subject to the bail order
 CAbstention from consumption of alcohol or other intoxicating substances
 CAbstention from consumption of drugs except in accordance with a medical prescription
 COrder to keep cellphone active

@@ -128,6 +128,11 @@ if (isset($_POST['generatorType'])) {
 	$generatedArrestChargeTotals = '';
 
 
+	if($generatorType == 'ArrestChargesTest'){
+		echo json_encode($pg->processCharges(), JSON_PRETTY_PRINT);
+		die();
+	}
+
 	if ($generatorType == 'TrafficReport') {
 
 		// Array Maps

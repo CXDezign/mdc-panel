@@ -1,5 +1,13 @@
+<?php 
+//DEFAULT VALUES
+if(!isset($prefix)) $prefix = "inputCrime"; 
+if(!isset($groupClass)) $groupClass = "copyGroupSlotCharge"; 
+if(!isset($charges_types)) $charges_types = "generic"; 
+
+?>
+
 <!-- CHARGE SLOT -->
-<div class="container copyGroupSlotCharge" style="display: none;">
+<div class="container <?= $groupClass ?>" style="display: none;">
 <?php
 	// Form - List - Charge
 	$c->form('list', 'forms', array(
@@ -11,7 +19,7 @@
 		'name' => $prefix.'[]',
 		'attributes' => 'required data-live-search="true"',
 		'title' => 'Charge',
-		'list' => $pg->chargeChooser('generic'),
+		'list' => $pg->chargeChooser($charges_types),
 		'hint' => '',
 		'hintClass' => ''
 	));
@@ -67,5 +75,5 @@
 		'text' => ''
 	));
 ?>
-<input type="hidden" id="inputCrimeDrugSubstanceCategory-" name="<?= $prefix ?>SubstanceCategory[]" value="?">
+<input type="hidden" id="<?= $prefix ?>DrugSubstanceCategory-" name="<?= $prefix ?>SubstanceCategory[]" value="?">
 </div>

@@ -24,6 +24,9 @@
 		case '/paperwork-generators/arrest-charges':
 			$url = "/templates/generators/form-arrest-charges.php";
 			break;
+		case '/test':
+			$url = "/templates/generators/charges-test.php";
+			break;
 		case '/paperwork-generators/arrest-report':
 			$url = "/templates/generators/form-arrest-report.php";
 			break;

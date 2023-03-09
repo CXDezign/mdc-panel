@@ -48,7 +48,7 @@
 				'class' => '',
 				'id' => 'employeeName',
 				'name' => 'employeeName',
-				'value' => $g->findCookie('legalName') ,
+				'value' => $g->findCookie('legalName'),
 				'placeholder' => 'Firstname Lastname',
 				'tooltip' => 'Employee - Full Name',
 				'attributes' => 'required',
@@ -63,7 +63,7 @@
 				'name' => 'inputRank',
 				'attributes' => 'required',
 				'title' => 'Select Rank',
-				'list' => $pg->rankChooser(2) ,
+				'list' => $pg->rankChooser(2),
 				'hint' => '',
 				'hintClass' => ''
 			));
@@ -96,7 +96,25 @@
 		</div>
 		<div class="form-row groupSlotCharge"></div>
 		<div class="form-row groupSlotChargeDrug"></div>
-		
+		<div class="form-row">
+			<?php
+			// Form - List - Citation Reason
+			$c->form('list', 'forms', array(
+				'size' => '12',
+				'label' => '<label>Bail Reasons(s)</label>',
+				'icon' => 'gavel',
+				'class' => 'selectpicker',
+				'id' => 'inputReason',
+				'name' => 'inputReason[]',
+				'attributes' => 'required multiple data-live-search="true"',
+				'title' => 'Select Bail Condition / Denial Reason',
+				'list' => $da->bailReasonsChooser(),
+				'hint' => '<small>Select multiple if applicable.</small>',
+				'hintClass' => ''
+			));
+			?>
+		</div>
+
 		<div class="container mt-5 text-center">
 			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>" role="button">
 				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
@@ -260,4 +278,18 @@
 	));
 	?>
 </div>
+<script>
+	let $recommendBail = $('#inputApproveBail');
+	$recommendBail.on('change', '',function() {
+
+		let recommend = $($recommendBail).is(':checked');
+		if (!recommend) {
+			$('.standardCondition').attr("selected", true)
+		} else {
+			$('.standardCondition').attr("selected", false)
+		}
+		$('#inputReason').selectpicker('render');
+
+	});
+</script>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>
