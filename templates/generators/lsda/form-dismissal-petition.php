@@ -1,8 +1,8 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Petition for bail Generator</h1>
+	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Petition for Dismissal</h1>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
-		<input type="hidden" id="generatorType" name="generatorType" value="BailPetition">
+		<input type="hidden" id="generatorType" name="generatorType" value="DA_DismissalPetition">
 		<div class="form-row">
 			<?php
 			// Form - Textfield - Suspect's Name
@@ -19,20 +19,6 @@
 				'tooltip' => 'Defendant - Full Name',
 				'attributes' => 'required',
 				'style' => ''
-			));
-			$c->form('toggle', 'forms', array(
-				'size' => '3',
-				'label' => 'Recommend Bail',
-				'class' => '',
-				'attributes' => '',
-				'id' => 'inputApproveBail',
-				'name' => 'inputApproveBail',
-				'dataOff' => "<i class='mr-1 fas fa-fw fa-check-circle'></i>Recommend bail",
-				'dataOn' => "<i class='mr-1 fas fa-fw fa-times-circle'></i>Recommend NOT bail",
-				'dataOffStyle' => 'success',
-				'dataOnStyle' => 'danger',
-				'dataWidth' => '100%',
-				'dataHeight' => '38'
 			));
 			?>
 		</div>
@@ -96,14 +82,12 @@
 		</div>
 		<div class="form-row groupSlotCharge"></div>
 		<div class="form-row groupSlotChargeDrug"></div>
-		
+
 		<div class="container mt-5 text-center">
 			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>" role="button">
 				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
 			</a>
-			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-bail-schedule'); ?>" role="button">
-				<i class="fas fa-archive fa-fw mr-1"></i>Open Bail Schedule
-			</a>
+
 		</div>
 		<div class="container my-5 text-center">
 			<div class="form-row row d-flex justify-content-center">

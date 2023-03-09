@@ -4,7 +4,7 @@
 	<form action="/controllers/form-processor.php" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="ArrestCharges">
 		<div class="form-row">
-		<?php
+			<?php
 			// Form - Options Add - Charge
 			$c->form('options', 'forms', array(
 				'size' => '2 ml-auto',
@@ -23,7 +23,7 @@
 				'icon' => 'fa-plus-square',
 				'text' => 'Drug Charge'
 			));
-		?>
+			?>
 		</div>
 		<div class="form-row groupSlotCharge"></div>
 		<div class="form-row groupSlotChargeDrug"></div>
@@ -34,22 +34,22 @@
 		</div>
 		<div class="container my-5 text-center">
 			<div class="form-row row d-flex justify-content-center">
-			<?php
-					$c->form('list', 'forms', array(
-						'size' => '4',
-						'label' => '<label></label>',
-						'icon' => 'balance-scale',
-						'class' => 'selectpicker',
-						'id' => 'inputPleaPre',
-						'name' => 'inputPleaPre',
-						'attributes' => 'required',
-						'title' => 'Select Plea',
-						'list' => $pg->listChooser('pleaList'),
-						'hint' => '(( This is used to properly calculate the arrest time. No Contest pleas receive the maximum sentence. ))',
-						'hintClass' => 'text-center'
-					));
+				<?php
+				$c->form('list', 'forms', array(
+					'size' => '4',
+					'label' => '<label></label>',
+					'icon' => 'balance-scale',
+					'class' => 'selectpicker',
+					'id' => 'inputPleaPre',
+					'name' => 'inputPleaPre',
+					'attributes' => 'required',
+					'title' => 'Select Plea',
+					'list' => $pg->listChooser('pleaList'),
+					'hint' => '(( This is used to properly calculate the arrest time. No Contest pleas receive the maximum sentence. ))',
+					'hintClass' => 'text-center'
+				));
 				?>
-			</div>			
+			</div>
 			<button id="submitCharges" type="submit" name="submit" class="btn btn-primary px-5">
 				<i class="fas fa-fw fa-plus-square mr-1"></i>Calculate Arrest
 			</button>
@@ -59,81 +59,19 @@
 
 <!-- COPY SLOTS -->
 
-<!-- CHARGE SLOT -->
-<div class="container copyGroupSlotCharge" style="display: none;">
-<?php
-	// Form - List - Charge
-	$c->form('list', 'forms', array(
-		'size' => '5',
-		'label' => '',
-		'icon' => 'gavel',
-		'class' => 'select-picker-copy inputCrimeSelector',
-		'id' => 'inputCrime-',
-		'name' => 'inputCrime[]',
-		'attributes' => 'required data-live-search="true"',
-		'title' => 'Charge',
-		'list' => $pg->chargeChooser('generic'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Class
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'ellipsis-v',
-		'class' => 'select-picker-copy inputCrimeClassSelector',
-		'id' => 'inputCrimeClass-',
-		'name' => 'inputCrimeClass[]',
-		'attributes' => 'required',
-		'title' => 'Class',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Offence
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'hashtag',
-		'class' => 'select-picker-copy inputCrimeOffenceSelector',
-		'id' => 'inputCrimeOffence-',
-		'name' => 'inputCrimeOffence[]',
-		'attributes' => 'required',
-		'title' => 'Offence',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Addition
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'exclamation-triangle',
-		'class' => 'select-picker-copy inputCrimeAdditionSelector',
-		'id' => 'inputCrimeAddition-',
-		'name' => 'inputCrimeAddition[]',
-		'attributes' => 'required',
-		'title' => 'Addition',
-		'list' => $pg->listChooser('sentencingAdditionsList'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - Options Remove - Charge
-	$c->form('options', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'action' => 'removeCharge',
-		'colour' => 'danger',
-		'icon' => 'fa-minus-square m-0',
-		'text' => ''
-	));
+<?php $c->form('charge', 'copy-slots', array(
+	'g' => $g,
+	'pg' => $pg,
+	'c' => $c,
+	'prefix'=> 'inputCrime'
+
+));
+
 ?>
-<input type="hidden" id="inputCrimeDrugSubstanceCategory-" name="inputCrimeSubstanceCategory[]" value="?">
-</div>
 
 <!-- DRUG CHARGE SLOT -->
 <div class="container copyGroupSlotDrugCharge" style="display: none;">
-<?php
+	<?php
 	// Form - List - Charge
 	$c->form('list', 'forms', array(
 		'size' => '5',
@@ -199,6 +137,6 @@
 		'icon' => 'fa-minus-square m-0',
 		'text' => ''
 	));
-?>
+	?>
 </div>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

@@ -2,6 +2,21 @@
 
 class PaperworkGenerators
 {
+	private $penal = null;
+	public function __construct()
+	{
+		$this->penal = json_decode(file_get_contents(dirname(__FILE__,2).'/db/penalSearch.json'), true);
+	}
+
+	public function penalCode(){
+		return $this->penal;
+	}
+
+
+	public function processCharges($prefix){
+		
+	}
+
 
 	public function dateResolver($date1, $date2)
 	{
@@ -208,7 +223,7 @@ class PaperworkGenerators
 	public function chargeChooser($typeChooser)
 	{
 
-		$chargeEntries = json_decode(file_get_contents('db/penalSearch.json'), true);
+		$chargeEntries = $this->penal;
 		$disabledCharges = [000, 423];
 		$trafficCharges = [401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426];
 		$drugCharges = [601, 602, 603, 604, 605, 606];

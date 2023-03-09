@@ -60,6 +60,9 @@
 		case '/paperwork-generators/lsda/bail-petition':
 			$url = "/templates/generators/lsda/form-bail-petition.php";
 			break;
+		case '/paperwork-generators/lsda/dismissal-petition':
+			$url = "/templates/generators/lsda/form-dismissal-petition.php";
+			break;
 		case '/paperwork-generators/trespass-notice':
 			$url = "/templates/generators/form-trespass-notice.php";
 			break;

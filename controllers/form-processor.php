@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/initialise.php';
 
-$penal = json_decode(file_get_contents('../db/penalSearch.json'), true);
+$penal = $pg->penalCode();
 
 // GET Types
 
@@ -1177,6 +1177,74 @@ In response to these charges&nbsp;the District Attorney\'s Office is requesting 
 </ul><hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
 <span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by '.$pg->getRank($_POST["inputRank"]).'<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">'.$_POST["employeeName"].'</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be the official bail petition&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
 </p>';
+		$redirectPath = "report";
+	}
+
+
+	//LSDA Dismissal Petition
+	if ($generatorType == 'DA_DismissalPetition') {
+		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
+
+		$chargesList = array_key_exists("inputCrime", $_POST)?arrayMap($_POST['inputCrime'], 'UNKNOWN CHARGE'):[];
+		$chargesGroup = "";
+		$inputCrimeClass = array_key_exists("inputCrimeClass", $_POST)?arrayMap($_POST['inputCrimeClass'], 0):[];
+		
+		$chargesDrug = [601, 602, 603, 604, 605, 606];
+		$multiDimensionalCrimeTimes = [412];
+		$bailArray = [];
+		$bond = 0;
+		// Charge List Builder
+		foreach ($chargesList as $iCharge => $crime) {
+		
+			$charge = $penal[$crime];
+			$chargeTitle = $charge['charge'];
+			$chargeType = $charge['type'];
+			$chargeName = $charge['charge'];
+			$chargeID = $charge['id'];
+
+			$chargeClass = '?';
+			$chargeSubstanceCategory = $_POST['inputCrimeSubstanceCategory'][$iCharge];
+			
+
+			if (!empty($inputCrimeClass[$iCharge])) {
+				$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCharge]);
+			}
+
+			
+			$chargesGroup.='<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+			<strong>'. $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle .')</strong>
+			</li>';
+
+			$bond += $autoBailCost;
+		
+		}
+
+
+
+
+		$generatedReport = '
+		<p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
+		<u><strong><span style="font-size:24px;">Supe<span>&#xFEFF;</span>rior Court of San Andreas</span></strong></u>
+		</p>
+		<p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
+		<a href="https://i.imgur.com/tNqYJgz.png" title="Enlarge image" data-wrappedlink="" data-ipslightbox="" data-ipslightbox-group="undefined"><img alt="tNqYJgz.png" class="ipsImage ipsImage_thumbnailed" data-ratio="100.00" height="260" width="260" src="https://i.imgur.com/tNqYJgz.png"></a></p>
+		<p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
+		<u><strong><span style="font-size:18px;">Criminal Division</span></strong></u>
+		</p>
+		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
+		<span style="font-size:20px;"><strong>Petition for Dismissal</strong></span>
+		</p>
+		<p style="background-color:#fafafa;color:#555555;font-size:14px;">
+		By decree of the State of San Andreas Penal Code and enforcement&nbsp;authority of the San Andreas State Constitution, Defendant&nbsp;<strong>' . $_POST["inputDefName"] . '</strong><span>&nbsp;</span>was&nbsp;arrested by a law enforcement entity of the state, and&nbsp;the following charges were requested to be pursued against the Defendant;
+		</p>
+		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><ul style="background-color:#fafafa;color:#555555;font-size:14px;">
+		'.$chargesGroup.'
+		</ul><hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
+		In response to these charges&nbsp;the District Attorney\'s Office has found insufficient justification&nbsp;to proceed with an arraignment for the charges listed. The District Attorney\'s Office wishes to drop and/or dismiss all criminal charges levied against the Defendant in relation to this specific instance.
+		</p>
+		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
+		<span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by '.$pg->getRank($_POST["inputRank"]).'<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">'.$_POST["employeeName"].'</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be an official petition for dismissal&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
+		</p>';
 		$redirectPath = "report";
 	}
 
