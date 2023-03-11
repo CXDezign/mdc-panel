@@ -73,7 +73,7 @@ if (isset($_REQUEST['getType'])) {
 }
 
 
-if(isset($_POST['openStatus'])) {
+if (isset($_POST['openStatus'])) {
 	$guidelineDropdownStatus = $_POST['openStatus'] ?? 0;
 	setCookiePost('openStatus', $guidelineDropdownStatus);
 }
@@ -116,7 +116,7 @@ if (isset($_POST['generatorType'])) {
 	$postInputEvidenceImageArray = $_POST['inputEvidenceImage'] ?? array();
 	$postInputEvidenceImageArray = array_values(array_filter($postInputEvidenceImageArray));
 	$postInputVehRO = $_POST['inputVehRO'] ?? $defaultRegisteredOwner;
-	
+
 
 	// Session Variables
 	$generatedReportType = '';
@@ -128,7 +128,7 @@ if (isset($_POST['generatorType'])) {
 	$generatedArrestChargeTotals = '';
 
 
-	if($generatorType == 'ArrestChargesTest'){
+	if ($generatorType == 'ArrestChargesTest') {
 		echo json_encode($pg->processCharges(), JSON_PRETTY_PRINT);
 		die();
 	}
@@ -160,7 +160,7 @@ if (isset($_POST['generatorType'])) {
 		setCookiePost('officerRankArray', $postInputRankArray[0]);
 		setCookiePost('officerBadgeArray', $postInputBadgeArray[0]);
 		setCookiePost('defName', $postInputDefName);
-		
+
 		// Officer Resolver
 		$officers = '';
 		foreach ($postInputNameArray as $iOfficer => $officer) {
@@ -1105,52 +1105,49 @@ COUNTY OF LOS SANTOS[/b]
 	if ($generatorType == 'BailPetition') {
 		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
 
-		$chargesList = array_key_exists("inputCrime", $_POST)?arrayMap($_POST['inputCrime'], 'UNKNOWN CHARGE'):[];
-		$chargesGroup = "";
-		$inputCrimeClass = array_key_exists("inputCrimeClass", $_POST)?arrayMap($_POST['inputCrimeClass'], 0):[];
-		
-		$chargesDrug = [601, 602, 603, 604, 605, 606];
-		$multiDimensionalCrimeTimes = [412];
-		$bailArray = [];
+		$action = $_POST["inputApproveBail"];
 		$bond = 0;
 		// Charge List Builder
-		foreach ($chargesList as $iCharge => $crime) {
-		
-			$charge = $penal[$crime];
-			$chargeTitle = $charge['charge'];
+		foreach ($pg->processCharges() as $iCharge => $charge) {
+
+			$chargeClass = $charge['class'];
 			$chargeType = $charge['type'];
-			$chargeName = $charge['charge'];
+			$chargeName = $charge['name'];
 			$chargeID = $charge['id'];
 
-			$chargeClass = '?';
-			$chargeSubstanceCategory = $_POST['inputCrimeSubstanceCategory'][$iCharge];
-			
-
-			if (!empty($inputCrimeClass[$iCharge])) {
-				$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCharge]);
-			}
-			if (in_array($chargeID, $chargesDrug)) {
-				$autoBailCost = $charge['bail']['cost'][$chargeSubstanceCategory];
-			} else {
-				$autoBailCost = $charge['bail']['cost'];
-			}
-			
-			$chargesGroup.='<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>'. $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle .' - $'.number_format($autoBailCost*10, 0, '.', ',').' ($'.number_format($autoBailCost, 0, '.', ',').')</strong>
+			if ($action == 1) {
+				$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+			<strong>' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . ' - $' . number_format($charge['autoBailCost'] * 10, 0, '.', ',') . ' ($' . number_format($charge['autoBailCost'], 0, '.', ',') . ')</strong>
 			</li>';
 
-			$bond += $autoBailCost;
-		
+				$bond += $charge['autoBailCost'];
+			}else
+			$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+			<strong>' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . ' - '.($action==0?"ROR": "NO BAIL").'</strong>
+			</li>';
 		}
 
 
 		$conditionsGroup = '';
 		foreach (arrayMap($_POST["inputReason"], "") as $value) {
-			if(!empty($value)){
-				$conditionsGroup.= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-				<strong>'.substr($da->getBailReason($value),1).'</strong>
+			if (!empty($value)) {
+				$conditionsGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+				<strong>' . substr($da->getBailReason($value), 1) . '</strong>
 				</li>';
 			}
+		}
+
+		switch($action){
+			case 1:
+				$total = '<strong>Bail Total: '.($bond == 0 ? "ROR" : "$" . number_format($bond * 10, 0, '.', ',')) . ' | Total for Bond: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond, 0, '.', ','));
+				break;
+			case 0: 
+				$total = '<strong>Bail Total: ROR</strong>';
+				break;
+			case 2: 
+				$total = '<strong>Bail NOT Recommended</strong>';
+				break;
+
 		}
 
 		$generatedReport = '
@@ -1170,17 +1167,17 @@ COUNTY OF LOS SANTOS[/b]
 By decree of the State of San Andreas Penal Code and enforcement&nbsp;authority of the San Andreas State Constitution, defendant&nbsp;<strong>' . $_POST["inputDefName"] . '</strong><span>&nbsp;</span>has been officially arrested by law enforcement entities of the state, and is expected to face the following charges;
 </p>
 <hr style="background-color:#fafafa;color:#555555;font-size:14px;"><ul style="background-color:#fafafa;color:#555555;font-size:14px;">
-'.$chargesGroup.'
+' . $chargesGroup . '
 <li style="background-color:#fafafa;color:#555555;font-size:14px;">
-<strong>Bail Total: '.($bond == 0?"ROR":"$".number_format($bond*10, 0, '.', ',')).' | Total for Bond: '.($bond == 0?"ROR":"$".number_format($bond, 0, '.', ',')).'</strong>
+' . $total . '</strong>
 </li>
 </ul><hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
-In response to these charges&nbsp;the District Attorney\'s Office is requesting the court to grant bail for the defendant, as we enter our pre-trial stage and compile all necessary evidence and facts of the case to present an official arraignment. In the official opinion of the District Attorney\'s Office in relation to the charges, we are recommending that bail be '.($_POST["inputApproveBail"]==1?"<b>NOT</b> ":"").'given on the following conditions;
+In response to these charges&nbsp;the District Attorney\'s Office is requesting the court to grant bail for the defendant, as we enter our pre-trial stage and compile all necessary evidence and facts of the case to present an official arraignment. In the official opinion of the District Attorney\'s Office in relation to the charges, we are recommending that bail be ' . ($action == 2 ? "<b>NOT</b> " : "") . 'given on the following conditions;
 </p>
 <hr style="background-color:#fafafa;color:#555555;font-size:14px;"><ul style="background-color:#fafafa;color:#555555;font-size:14px;">
-'.$conditionsGroup.'
+' . $conditionsGroup . '
 </ul><hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
-<span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by '.$pg->getRank($_POST["inputRank"]).'<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">'.$_POST["employeeName"].'</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be the official bail petition&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
+<span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by ' . $pg->getRank($_POST["inputRank"]) . '<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">' . $_POST["employeeName"] . '</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be the official bail petition&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
 </p>';
 		$redirectPath = "report";
 	}
@@ -1189,39 +1186,14 @@ In response to these charges&nbsp;the District Attorney\'s Office is requesting 
 	//LSDA Dismissal Petition
 	if ($generatorType == 'DA_DismissalPetition') {
 		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
-
-		$chargesList = array_key_exists("inputCrime", $_POST)?arrayMap($_POST['inputCrime'], 'UNKNOWN CHARGE'):[];
 		$chargesGroup = "";
-		$inputCrimeClass = array_key_exists("inputCrimeClass", $_POST)?arrayMap($_POST['inputCrimeClass'], 0):[];
-		
-		$chargesDrug = [601, 602, 603, 604, 605, 606];
-		$multiDimensionalCrimeTimes = [412];
-		$bailArray = [];
-		$bond = 0;
+
 		// Charge List Builder
-		foreach ($chargesList as $iCharge => $crime) {
-		
-			$charge = $penal[$crime];
-			$chargeTitle = $charge['charge'];
-			$chargeType = $charge['type'];
-			$chargeName = $charge['charge'];
-			$chargeID = $charge['id'];
+		foreach (($pg->processCharges()) as $charge) {
 
-			$chargeClass = '?';
-			$chargeSubstanceCategory = $_POST['inputCrimeSubstanceCategory'][$iCharge];
-			
-
-			if (!empty($inputCrimeClass[$iCharge])) {
-				$chargeClass = $pg->getCrimeClass($inputCrimeClass[$iCharge]);
-			}
-
-			
-			$chargesGroup.='<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>'. $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle .')</strong>
+			$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+			<strong>' . $charge["type"] . $charge["class"] . ' ' . $charge["id"] . '. ' . $charge["name"] . '</strong>
 			</li>';
-
-			$bond += $autoBailCost;
-		
 		}
 
 
@@ -1243,12 +1215,12 @@ In response to these charges&nbsp;the District Attorney\'s Office is requesting 
 		By decree of the State of San Andreas Penal Code and enforcement&nbsp;authority of the San Andreas State Constitution, Defendant&nbsp;<strong>' . $_POST["inputDefName"] . '</strong><span>&nbsp;</span>was&nbsp;arrested by a law enforcement entity of the state, and&nbsp;the following charges were requested to be pursued against the Defendant;
 		</p>
 		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><ul style="background-color:#fafafa;color:#555555;font-size:14px;">
-		'.$chargesGroup.'
+		' . $chargesGroup . '
 		</ul><hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
 		In response to these charges&nbsp;the District Attorney\'s Office has found insufficient justification&nbsp;to proceed with an arraignment for the charges listed. The District Attorney\'s Office wishes to drop and/or dismiss all criminal charges levied against the Defendant in relation to this specific instance.
 		</p>
 		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
-		<span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by '.$pg->getRank($_POST["inputRank"]).'<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">'.$_POST["employeeName"].'</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be an official petition for dismissal&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
+		<span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by ' . $pg->getRank($_POST["inputRank"]) . '<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">' . $_POST["employeeName"] . '</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be an official petition for dismissal&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
 		</p>';
 		$redirectPath = "report";
 	}
@@ -1355,7 +1327,7 @@ function setCookiePost($inputCookie, $inputVariable)
 			break;
 		case 'openStatus':
 			$cookie = 'openStatus';
-			break;	
+			break;
 		case 'inputTDPatrolReportURL':
 			$cookie = 'inputTDPatrolReportURL';
 			$time = $iTime;

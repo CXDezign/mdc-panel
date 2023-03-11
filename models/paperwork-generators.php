@@ -13,6 +13,8 @@ class PaperworkGenerators
 		return $this->penal;
 	}
 
+	public $chargesDrug = [601, 602, 603, 604, 605, 606];
+
 
 	public function processCharges($prefix = "inputCrime")
 	{
@@ -23,6 +25,7 @@ class PaperworkGenerators
 		$class = $_POST[$prefix . "Class"];
 		$offence = $_POST[$prefix . "Offence"];
 		$addition = $_POST[$prefix . "Offence"];
+		$substance_cat = $_POST[$prefix . "SubstanceCategory"];
 
 		foreach ($crime as $iCharge => $charge) {
 			$penal_charge = $penal[$charge];
@@ -80,6 +83,12 @@ class PaperworkGenerators
 
 			$chargePoints = ceil($penal_charge['points'][$chargeClass] / $chargeReduction);
 
+			if (in_array($penal_charge["id"], $this->chargesDrug)) {
+				$chargeSubstanceCategory = $substance_cat[$iCharge];
+				$autoBailCost = $penal_charge['bail']['cost'][$chargeSubstanceCategory];
+			} else {
+				$autoBailCost = $penal_charge['bail']['cost'];
+			}
 
 			array_push($charges, [
 				//"penal_charge"=> $penal_charge,
@@ -90,8 +99,9 @@ class PaperworkGenerators
 				"class"=> $chargeClass,
 				"type"=> $chargeType,
 				"reduction"=> $chargeReduction,
-				"points"=> $chargePoints
+				"points"=> $chargePoints,
 				//"type_full"=> $chargeTypeFull
+				"autoBailCost"=> $autoBailCost
 
 			]);
 		}
@@ -155,20 +165,23 @@ class PaperworkGenerators
 		return $output;
 	}
 
-	public function rankChooser($cookie)
+	public function rankChooser($cookie, $faction = 'all')
 	{
 
 		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
 
 		$groupCookie = '';
-		$groupLSPD = '';
-		$groupLSSD = '';
-		$groupSFM = '';
-		$groupSAPR = '';
-		$groupLSPE = '';
-		$groupSAAA = '';
-		$groupLSDA = '';
+		$group = [
+			"LSPD"=> '',
+			'LSSD'=> '',
+			'SFM'=> '',
+			'SAPR'=> '',
+			'LSPE'=> '',
+			'SAAA'=> '',
+			'LSDA'=> '',
+		];
+
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
 			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
@@ -202,37 +215,39 @@ class PaperworkGenerators
 			$statement = '<option value="' . $rankCount . '">' . $rank . '</option>';
 
 			if (in_array($rankCount, $ranksLSPD)) {
-				$groupLSPD .= $statement;
+				$group['LSPD'] .= $statement;
 			}
 			if (in_array($rankCount, $ranksLSSD)) {
-				$groupLSSD .= $statement;
+				$group['LSSD'] .= $statement;
 			}
 			if (in_array($rankCount, $ranksSFM)) {
-				$groupSFM .= $statement;
+				$group['SFM'] .= $statement;
 			}
 			if (in_array($rankCount, $ranksSAPR)) {
-				$groupSAPR .= $statement;
+				$group['SAPR'] .= $statement;
 			}
 			if (in_array($rankCount, $ranksLSPE)) {
-				$groupLSPE .= $statement;
+				$group['LSPE'] .= $statement;
 			}
 			if (in_array($rankCount, $ranksSAAA)) {
-				$groupSAAA .= $statement;
+				$group['SAAA'] .= $statement;
 			}
 			if (in_array($rankCount, $ranksLSDA)) {
-				$groupLSDA .= $statement;
+				$group['LSDA'] .= $statement;
 			}
 
 			$rankCount++;
 		}
-
-		return $groupCookie . '<optgroup label="Los Santos Police Department">' . $groupLSPD . '</optgroup>
-							<optgroup label="Los Santos Sheriff&#39s Department">' . $groupLSSD . '</optgroup>
-							<optgroup label="State Fire Marshall">' . $groupSFM . '</optgroup>
-							<optgroup label="San Andreas Park Rangers">' . $groupSAPR . '</optgroup>
-							<optgroup label="Los Santos Parking Enforcement">' . $groupLSPE . '</optgroup>
-							<optgroup label="San Andreas Aviation Administration">' . $groupSAAA . '</optgroup>
-							<optgroup label="Los Santos District Attorney&#39s Office">' . $groupLSDA . '</optgroup>';
+		
+		if($faction == "all")
+		return $groupCookie . '<optgroup label="Los Santos Police Department">' . $group['LSPD'] . '</optgroup>
+							<optgroup label="Los Santos Sheriff&#39s Department">' . $group['LSSD'] . '</optgroup>
+							<optgroup label="State Fire Marshall">' . $group['SFM'] . '</optgroup>
+							<optgroup label="San Andreas Park Rangers">' . $group['SAPR'] . '</optgroup>
+							<optgroup label="Los Santos Parking Enforcement">' . $group['LSPE'] . '</optgroup>
+							<optgroup label="San Andreas Aviation Administration">' . $group['SAAA'] . '</optgroup>
+							<optgroup label="Los Santos District Attorney&#39s Office">' . $group['LSDA'] . '</optgroup>';
+		else return $groupCookie.'<optgroup>'.$group[$faction].'</optgroup>';
 	}
 
 	public function pClassificationChooser()

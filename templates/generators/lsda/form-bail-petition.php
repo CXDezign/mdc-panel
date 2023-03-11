@@ -20,7 +20,7 @@
 				'attributes' => 'required',
 				'style' => ''
 			));
-			$c->form('toggle', 'forms', array(
+			/*$c->form('toggle', 'forms', array(
 				'size' => '3',
 				'label' => 'Recommend Bail',
 				'class' => '',
@@ -33,7 +33,28 @@
 				'dataOnStyle' => 'danger',
 				'dataWidth' => '100%',
 				'dataHeight' => '38'
+			));*/
+
+			
+			// Form - List - Citation Reason
+			$c->form('list', 'forms', array(
+				'size' => '3',
+				'label' => '<label>Recommended Action</label>',
+				'icon' => 'book',
+				'class' => 'selectpicker',
+				'id' => 'inputApproveBail',
+				'name' => 'inputApproveBail',
+				'attributes' => 'required',
+				'title' => 'Input recommendation',
+				'list' => 
+					"<option value=\"0\"> Release on Own Recognizance</option>".
+					"<option selected value=\"1\"> Recommend bail</option>".
+					"<option value=\"2\"> Not Recommend bail</option>"
+				,
+				'hint' => '',
+				'hintClass' => ''
 			));
+			
 			?>
 		</div>
 		<div class="form-row">
@@ -63,7 +84,7 @@
 				'name' => 'inputRank',
 				'attributes' => 'required',
 				'title' => 'Select Rank',
-				'list' => $pg->rankChooser(2),
+				'list' => $pg->rankChooser(2, 'LSDA') ,
 				'hint' => '',
 				'hintClass' => ''
 			));
@@ -137,153 +158,34 @@
 <!-- COPY SLOTS -->
 
 <!-- CHARGE SLOT -->
-<div class="container copyGroupSlotCharge" style="display: none;">
-	<?php
-	// Form - List - Charge
-	$c->form('list', 'forms', array(
-		'size' => '5',
-		'label' => '',
-		'icon' => 'gavel',
-		'class' => 'select-picker-copy inputCrimeSelector',
-		'id' => 'inputCrime-',
-		'name' => 'inputCrime[]',
-		'attributes' => 'required data-live-search="true"',
-		'title' => 'Charge',
-		'list' => $pg->chargeChooser('generic'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Class
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'ellipsis-v',
-		'class' => 'select-picker-copy inputCrimeClassSelector',
-		'id' => 'inputCrimeClass-',
-		'name' => 'inputCrimeClass[]',
-		'attributes' => 'required',
-		'title' => 'Class',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Offence
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'hashtag',
-		'class' => 'select-picker-copy inputCrimeOffenceSelector',
-		'id' => 'inputCrimeOffence-',
-		'name' => 'inputCrimeOffence[]',
-		'attributes' => 'required',
-		'title' => 'Offence',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Addition
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'exclamation-triangle',
-		'class' => 'select-picker-copy inputCrimeAdditionSelector',
-		'id' => 'inputCrimeAddition-',
-		'name' => 'inputCrimeAddition[]',
-		'attributes' => 'required',
-		'title' => 'Addition',
-		'list' => $pg->listChooser('sentencingAdditionsList'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - Options Remove - Charge
-	$c->form('options', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'action' => 'removeCharge',
-		'colour' => 'danger',
-		'icon' => 'fa-minus-square m-0',
-		'text' => ''
-	));
-	?>
-	<input type="hidden" id="inputCrimeDrugSubstanceCategory-" name="inputCrimeSubstanceCategory[]" value="?">
-</div>
+<?php $c->form('charge', 'copy-slots', array(
+	'g' => $g,
+	'pg' => $pg,
+	'c' => $c,
+	'prefix'=> 'inputCrime'
 
+));
+
+?>
 <!-- DRUG CHARGE SLOT -->
-<div class="container copyGroupSlotDrugCharge" style="display: none;">
-	<?php
-	// Form - List - Charge
-	$c->form('list', 'forms', array(
-		'size' => '5',
-		'label' => '',
-		'icon' => 'cannabis',
-		'class' => 'select-picker-copy inputCrimeSelector',
-		'id' => 'inputCrimeDrug-',
-		'name' => 'inputCrime[]',
-		'attributes' => 'required data-live-search="true"',
-		'title' => 'Charge',
-		'list' => $pg->chargeChooser('drugs'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Class
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'ellipsis-v',
-		'class' => 'select-picker-copy inputCrimeClassSelector',
-		'id' => 'inputCrimeDrugClass-',
-		'name' => 'inputCrimeClass[]',
-		'attributes' => 'required',
-		'title' => 'Class',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Substance Category
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'tag',
-		'class' => 'select-picker-copy inputCrimeSubstanceCategorySelector',
-		'id' => 'inputCrimeDrugSubstanceCategory-',
-		'name' => 'inputCrimeSubstanceCategory[]',
-		'attributes' => 'required',
-		'title' => 'Substance Category',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Addition
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'exclamation-triangle',
-		'class' => 'select-picker-copy inputCrimeAdditionSelector',
-		'id' => 'inputCrimeDrugAddition-',
-		'name' => 'inputCrimeAddition[]',
-		'attributes' => 'required',
-		'title' => 'Addition',
-		'list' => $pg->listChooser('sentencingAdditionsList'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - Options Remove - Charge
-	$c->form('options', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'action' => 'removeDrugCharge',
-		'colour' => 'danger',
-		'icon' => 'fa-minus-square m-0',
-		'text' => ''
-	));
-	?>
-</div>
+<?php $c->form('charge', 'copy-slots', array(
+	'g' => $g,
+	'pg' => $pg,
+	'c' => $c,
+	'prefix'=> 'inputCrime',
+	'charges_types'=> 'drugs'
+
+));
+
+?>
+
+
 <script>
 	let $recommendBail = $('#inputApproveBail');
 	$recommendBail.on('change', '',function() {
 
-		let recommend = $($recommendBail).is(':checked');
-		if (!recommend) {
+		let recommend = $($recommendBail).val()!=2;
+		if (recommend) {
 			$('.standardCondition').attr("selected", true)
 		} else {
 			$('.standardCondition').attr("selected", false)

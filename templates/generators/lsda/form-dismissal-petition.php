@@ -49,7 +49,7 @@
 				'name' => 'inputRank',
 				'attributes' => 'required',
 				'title' => 'Select Rank',
-				'list' => $pg->rankChooser(2) ,
+				'list' => $pg->rankChooser(2, 'LSDA') ,
 				'hint' => '',
 				'hintClass' => ''
 			));
@@ -102,77 +102,18 @@
 
 <!-- COPY SLOTS -->
 
-<!-- CHARGE SLOT -->
-<div class="container copyGroupSlotCharge" style="display: none;">
-	<?php
-	// Form - List - Charge
-	$c->form('list', 'forms', array(
-		'size' => '5',
-		'label' => '',
-		'icon' => 'gavel',
-		'class' => 'select-picker-copy inputCrimeSelector',
-		'id' => 'inputCrime-',
-		'name' => 'inputCrime[]',
-		'attributes' => 'required data-live-search="true"',
-		'title' => 'Charge',
-		'list' => $pg->chargeChooser('generic'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Class
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'ellipsis-v',
-		'class' => 'select-picker-copy inputCrimeClassSelector',
-		'id' => 'inputCrimeClass-',
-		'name' => 'inputCrimeClass[]',
-		'attributes' => 'required',
-		'title' => 'Class',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Offence
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'hashtag',
-		'class' => 'select-picker-copy inputCrimeOffenceSelector',
-		'id' => 'inputCrimeOffence-',
-		'name' => 'inputCrimeOffence[]',
-		'attributes' => 'required',
-		'title' => 'Offence',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Addition
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'exclamation-triangle',
-		'class' => 'select-picker-copy inputCrimeAdditionSelector',
-		'id' => 'inputCrimeAddition-',
-		'name' => 'inputCrimeAddition[]',
-		'attributes' => 'required',
-		'title' => 'Addition',
-		'list' => $pg->listChooser('sentencingAdditionsList'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - Options Remove - Charge
-	$c->form('options', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'action' => 'removeCharge',
-		'colour' => 'danger',
-		'icon' => 'fa-minus-square m-0',
-		'text' => ''
-	));
-	?>
-	<input type="hidden" id="inputCrimeDrugSubstanceCategory-" name="inputCrimeSubstanceCategory[]" value="?">
-</div>
+<!-- COPY SLOTS -->
+
+<?php $c->form('charge', 'copy-slots', array(
+	'g' => $g,
+	'pg' => $pg,
+	'c' => $c,
+	'prefix'=> 'inputCrime'
+
+));
+
+?>
+
 
 <!-- DRUG CHARGE SLOT -->
 <div class="container copyGroupSlotDrugCharge" style="display: none;">
@@ -206,19 +147,7 @@
 		'hintClass' => ''
 	));
 	// Form - List - Substance Category
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'tag',
-		'class' => 'select-picker-copy inputCrimeSubstanceCategorySelector',
-		'id' => 'inputCrimeDrugSubstanceCategory-',
-		'name' => 'inputCrimeSubstanceCategory[]',
-		'attributes' => 'required',
-		'title' => 'Substance Category',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
+	
 	// Form - List - Charge Addition
 	$c->form('list', 'forms', array(
 		'size' => 'auto',
