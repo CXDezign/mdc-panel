@@ -12,8 +12,6 @@ if (isset($_REQUEST['getType'])) {
 
 	if ($getType == 'getCrime') {
 
-		$chargesDrug = [601, 602, 603, 604, 605, 606];
-
 		$crimeID = $_REQUEST['crimeID'];
 
 		$crime = $penal[$crimeID];
@@ -34,7 +32,7 @@ if (isset($_REQUEST['getType'])) {
 			$outputOffence[] .= $crimeOffenceBool;
 		}
 
-		if (in_array($crimeID, $chargesDrug) && $crime['drugs']) {
+		if (in_array($crimeID, $pg->chargesDrug) && $crime['drugs']) {
 			$crimeDrugSubstanceCategories = $crime['drugs'];
 			foreach ($crimeDrugSubstanceCategories as $crimeDrugSubstanceCategory => $crimeDrug) {
 				$outputDrugSubstanceCategories[] .= $crimeDrug;
@@ -677,7 +675,6 @@ COUNTY OF LOS SANTOS[/b]
 
 			$charges = $_POST['inputCrime'];
 
-			$chargesDrug = [601, 602, 603, 604, 605, 606];
 			$multiDimensionalCrimeTimes = [412];
 			$bailArray = [];
 			// Charge List Builder
@@ -692,7 +689,7 @@ COUNTY OF LOS SANTOS[/b]
 				$chargeSubstanceCategory = $_POST['inputCrimeSubstanceCategory'][$iCharge];
 				$bailCost = [];
 
-				if (in_array($chargeID, $chargesDrug)) {
+				if (in_array($chargeID, $pg->chargesDrug)) {
 					$chargeFine[] = $charge['fine'][$chargeSubstanceCategory];
 					$chargeFineFull = '$' . number_format($chargeFine[$iCharge]);
 					$drugChargeTitle = ' (Category ' . $chargeSubstanceCategory . ')';
@@ -803,7 +800,7 @@ COUNTY OF LOS SANTOS[/b]
 				$pleaPre = $_POST['inputPleaPre'] ?: '';
 
 				// Time Builder
-				if (in_array($chargeID, $chargesDrug)) {
+				if (in_array($chargeID, $pg->chargesDrug)) {
 					$days[] = ($charge['time'][$chargeSubstanceCategory]['days'] / $chargeReduction);
 					$hours[] = ($charge['time'][$chargeSubstanceCategory]['hours'] / $chargeReduction);
 					$mins[] = ($charge['time'][$chargeSubstanceCategory]['min'] / $chargeReduction);
@@ -832,7 +829,7 @@ COUNTY OF LOS SANTOS[/b]
 				$chargeTitle[] = '<span class="style-underline chargeCopy" data-clipboard-target="#charge-' . $chargeID . '" data-toggle="tooltip" title="Copied!"><span id="charge-' . $chargeID . '">' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . '</span></span>';
 
 				//Auto bail
-				if (in_array($chargeID, $chargesDrug) && $pleaPre == 2) {
+				if (in_array($chargeID, $pg->chargesDrug) && $pleaPre == 2) {
 					$autoBailCost = $charge['bail']['cost'][$chargeSubstanceCategory];
 					$autoBailRaw = $charge['bail']['auto'][$chargeSubstanceCategory];
 				} elseif ($pleaPre == 2) {
@@ -1121,9 +1118,9 @@ COUNTY OF LOS SANTOS[/b]
 			</li>';
 
 				$bond += $charge['autoBailCost'];
-			}else
-			$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . ' - '.($action==0?"ROR": "NO BAIL").'</strong>
+			} else
+				$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+			<strong>' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . ' - ' . ($action == 0 ? "ROR" : "NO BAIL") . '</strong>
 			</li>';
 		}
 
@@ -1137,17 +1134,16 @@ COUNTY OF LOS SANTOS[/b]
 			}
 		}
 
-		switch($action){
+		switch ($action) {
 			case 1:
-				$total = '<strong>Bail Total: '.($bond == 0 ? "ROR" : "$" . number_format($bond * 10, 0, '.', ',')) . ' | Total for Bond: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond, 0, '.', ','));
+				$total = '<strong>Bail Total: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond * 10, 0, '.', ',')) . ' | Total for Bond: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond, 0, '.', ','));
 				break;
-			case 0: 
+			case 0:
 				$total = '<strong>Bail Total: ROR</strong>';
 				break;
-			case 2: 
+			case 2:
 				$total = '<strong>Bail NOT Recommended</strong>';
 				break;
-
 		}
 
 		$generatedReport = '
@@ -1187,41 +1183,22 @@ In response to these charges&nbsp;the District Attorney\'s Office is requesting 
 	if ($generatorType == 'DA_DismissalPetition') {
 		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
 		$chargesGroup = "";
+		$defendant = $_POST["inputDefName"];
 
 		// Charge List Builder
 		foreach (($pg->processCharges()) as $charge) {
 
 			$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>' . $charge["type"] . $charge["class"] . ' ' . $charge["id"] . '. ' . $charge["name"] . '</strong>
+			<strong>' . $charge["type"] . $charge["class"] . ' ' . $charge["id"] . '. ' . $charge["name"] . ' ' . $charge["drugChargeTitle"] . '</strong>
 			</li>';
 		}
 
 
-
-
-		$generatedReport = '
-		<p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
-		<u><strong><span style="font-size:24px;">Supe<span>&#xFEFF;</span>rior Court of San Andreas</span></strong></u>
-		</p>
-		<p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
-		<a href="https://i.imgur.com/tNqYJgz.png" title="Enlarge image" data-wrappedlink="" data-ipslightbox="" data-ipslightbox-group="undefined"><img alt="tNqYJgz.png" class="ipsImage ipsImage_thumbnailed" data-ratio="100.00" height="260" width="260" src="https://i.imgur.com/tNqYJgz.png"></a></p>
-		<p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
-		<u><strong><span style="font-size:18px;">Criminal Division</span></strong></u>
-		</p>
-		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;text-align:center;">
-		<span style="font-size:20px;"><strong>Petition for Dismissal</strong></span>
-		</p>
-		<p style="background-color:#fafafa;color:#555555;font-size:14px;">
-		By decree of the State of San Andreas Penal Code and enforcement&nbsp;authority of the San Andreas State Constitution, Defendant&nbsp;<strong>' . $_POST["inputDefName"] . '</strong><span>&nbsp;</span>was&nbsp;arrested by a law enforcement entity of the state, and&nbsp;the following charges were requested to be pursued against the Defendant;
-		</p>
-		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><ul style="background-color:#fafafa;color:#555555;font-size:14px;">
-		' . $chargesGroup . '
-		</ul><hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
-		In response to these charges&nbsp;the District Attorney\'s Office has found insufficient justification&nbsp;to proceed with an arraignment for the charges listed. The District Attorney\'s Office wishes to drop and/or dismiss all criminal charges levied against the Defendant in relation to this specific instance.
-		</p>
-		<hr style="background-color:#fafafa;color:#555555;font-size:14px;"><p style="background-color:#fafafa;color:#555555;font-size:14px;">
-		<span style="background-color:#fafafa;color:#555555;font-size:14px;">The District Attorney\'s Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by ' . $pg->getRank($_POST["inputRank"]) . '<span>&nbsp;</span></span><strong style="background-color:#fafafa;color:#555555;font-size:14px;">' . $_POST["employeeName"] . '</strong><span style="background-color:#fafafa;color:#555555;font-size:14px;"><span>&nbsp;</span>that this shall be an official petition for dismissal&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
-		</p>';
+		$generatedReport = $c->form('templates/generators/lsda/formats/dismissal', '', [
+			"chargesGroup" => $chargesGroup,
+			"defendant" => $defendant,
+			"pg" => $pg
+		], false);
 		$redirectPath = "report";
 	}
 

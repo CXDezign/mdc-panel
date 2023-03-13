@@ -23,6 +23,7 @@ class Content {
 				$directory = '/templates/copy-slots/';
 				break;
 			default:
+				$directory = '/';
 				break;
 		}
 
@@ -39,6 +40,7 @@ class Content {
 			// End buffering and return its contents
 			$output = ob_get_clean();
 		}
+		
 		if ($print) {
 			print $output;
 		}

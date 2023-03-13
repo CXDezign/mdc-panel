@@ -82,26 +82,28 @@ class PaperworkGenerators
 			}
 
 			$chargePoints = ceil($penal_charge['points'][$chargeClass] / $chargeReduction);
-
+			$drugChargeTitle = "";
 			if (in_array($penal_charge["id"], $this->chargesDrug)) {
 				$chargeSubstanceCategory = $substance_cat[$iCharge];
 				$autoBailCost = $penal_charge['bail']['cost'][$chargeSubstanceCategory];
+				$drugChargeTitle = ' (Category ' . $chargeSubstanceCategory . ')';
 			} else {
 				$autoBailCost = $penal_charge['bail']['cost'];
 			}
 
 			array_push($charges, [
 				//"penal_charge"=> $penal_charge,
-				"id"=> $penal_charge["id"],
+				"id" => $penal_charge["id"],
 				"name" => $penal_charge["charge"],
 				"chargeOffence" => $offence[$iCharge] ?? 1,
 				"addition" => $addition[$iCharge],
-				"class"=> $chargeClass,
-				"type"=> $chargeType,
-				"reduction"=> $chargeReduction,
-				"points"=> $chargePoints,
+				"class" => $chargeClass,
+				"type" => $chargeType,
+				"reduction" => $chargeReduction,
+				"points" => $chargePoints,
 				//"type_full"=> $chargeTypeFull
-				"autoBailCost"=> $autoBailCost
+				"autoBailCost" => $autoBailCost,
+				"drugChargeTitle" => $drugChargeTitle
 
 			]);
 		}
@@ -173,13 +175,13 @@ class PaperworkGenerators
 
 		$groupCookie = '';
 		$group = [
-			"LSPD"=> '',
-			'LSSD'=> '',
-			'SFM'=> '',
-			'SAPR'=> '',
-			'LSPE'=> '',
-			'SAAA'=> '',
-			'LSDA'=> '',
+			"LSPD" => '',
+			'LSSD' => '',
+			'SFM' => '',
+			'SAPR' => '',
+			'LSPE' => '',
+			'SAAA' => '',
+			'LSDA' => '',
 		];
 
 
@@ -238,16 +240,16 @@ class PaperworkGenerators
 
 			$rankCount++;
 		}
-		
-		if($faction == "all")
-		return $groupCookie . '<optgroup label="Los Santos Police Department">' . $group['LSPD'] . '</optgroup>
+
+		if ($faction == "all")
+			return $groupCookie . '<optgroup label="Los Santos Police Department">' . $group['LSPD'] . '</optgroup>
 							<optgroup label="Los Santos Sheriff&#39s Department">' . $group['LSSD'] . '</optgroup>
 							<optgroup label="State Fire Marshall">' . $group['SFM'] . '</optgroup>
 							<optgroup label="San Andreas Park Rangers">' . $group['SAPR'] . '</optgroup>
 							<optgroup label="Los Santos Parking Enforcement">' . $group['LSPE'] . '</optgroup>
 							<optgroup label="San Andreas Aviation Administration">' . $group['SAAA'] . '</optgroup>
 							<optgroup label="Los Santos District Attorney&#39s Office">' . $group['LSDA'] . '</optgroup>';
-		else return $groupCookie.'<optgroup>'.$group[$faction].'</optgroup>';
+		else return $groupCookie . '<optgroup>' . $group[$faction] . '</optgroup>';
 	}
 
 	public function pClassificationChooser()
@@ -322,7 +324,6 @@ class PaperworkGenerators
 		$chargeEntries = $this->penal;
 		$disabledCharges = [000, 423];
 		$trafficCharges = [401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426];
-		$drugCharges = [601, 602, 603, 604, 605, 606];
 
 		$charges = '';
 
@@ -353,7 +354,7 @@ class PaperworkGenerators
 			}
 
 			$chargeContent = "<span class='mr-2 badge badge-" . $chargeColor . "'>" . $chargeID . "</span>" . $chargeName;
-			if ($typeChooser == 'generic' && !in_array($chargeID, $drugCharges)) {
+			if ($typeChooser == 'generic' && !in_array($chargeID, $this->chargesDrug)) {
 				$charges .= '<option
 								data-content="' . $chargeContent . '"
 								value="' . $chargeID . '"
@@ -367,7 +368,7 @@ class PaperworkGenerators
 								' . $chargeDisabled . '>
 							</option>';
 			}
-			if ($typeChooser == 'drugs' && in_array($chargeID, $drugCharges)) {
+			if ($typeChooser == 'drugs' && in_array($chargeID, $this->chargesDrug)) {
 				$charges .= '<option
 								data-content="' . $chargeContent . '"
 								value="' . $chargeID . '"

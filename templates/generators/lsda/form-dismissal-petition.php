@@ -114,63 +114,16 @@
 
 ?>
 
-
 <!-- DRUG CHARGE SLOT -->
-<div class="container copyGroupSlotDrugCharge" style="display: none;">
-	<?php
-	// Form - List - Charge
-	$c->form('list', 'forms', array(
-		'size' => '5',
-		'label' => '',
-		'icon' => 'cannabis',
-		'class' => 'select-picker-copy inputCrimeSelector',
-		'id' => 'inputCrimeDrug-',
-		'name' => 'inputCrime[]',
-		'attributes' => 'required data-live-search="true"',
-		'title' => 'Charge',
-		'list' => $pg->chargeChooser('drugs'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Charge Class
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'ellipsis-v',
-		'class' => 'select-picker-copy inputCrimeClassSelector',
-		'id' => 'inputCrimeDrugClass-',
-		'name' => 'inputCrimeClass[]',
-		'attributes' => 'required',
-		'title' => 'Class',
-		'list' => '',
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - List - Substance Category
-	
-	// Form - List - Charge Addition
-	$c->form('list', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'icon' => 'exclamation-triangle',
-		'class' => 'select-picker-copy inputCrimeAdditionSelector',
-		'id' => 'inputCrimeDrugAddition-',
-		'name' => 'inputCrimeAddition[]',
-		'attributes' => 'required',
-		'title' => 'Addition',
-		'list' => $pg->listChooser('sentencingAdditionsList'),
-		'hint' => '',
-		'hintClass' => ''
-	));
-	// Form - Options Remove - Charge
-	$c->form('options', 'forms', array(
-		'size' => 'auto',
-		'label' => '',
-		'action' => 'removeDrugCharge',
-		'colour' => 'danger',
-		'icon' => 'fa-minus-square m-0',
-		'text' => ''
-	));
-	?>
+<?php $c->form('charge', 'copy-slots', array(
+	'g' => $g,
+	'pg' => $pg,
+	'c' => $c,
+	'prefix'=> 'inputCrime',
+	'charges_types'=> 'drugs'
+));
+
+?>
+
 </div>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>
