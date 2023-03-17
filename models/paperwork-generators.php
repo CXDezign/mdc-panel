@@ -14,24 +14,29 @@ class PaperworkGenerators
 	];
 
 
-	private $penal = null;
+	private $penal_ls = null;
+	private $penal_lc = null;
 	public function __construct()
 	{
-		$this->penal = json_decode(file_get_contents(dirname(__FILE__, 2) . '/db/penalSearch.json'), true);
+		$this->penal_ls = json_decode(file_get_contents(dirname(__FILE__, 2) . '/db/penalSearch_LS.json'), true);
+		$this->penal_lc = json_decode(file_get_contents(dirname(__FILE__, 2) . '/db/penalSearch_LC.json'), true);
 	}
 
-	public function penalCode()
+
+	public function penalCode($server="LS")
 	{
-		return $this->penal;
+		if(strtoupper($server) == "LC")
+			return $this->penal_lc;
+		return $this->penal_ls;
 	}
 
 	public $chargesDrug = [601, 602, 603, 604, 605, 606];
 
 
-	public function processCharges($prefix = "inputCrime")
+	public function processCharges($prefix = "inputCrime", $server = "LS")
 	{
 		$charges = [];
-		$penal = $this->penal;
+		$penal = $this->penalCode($server);
 
 		$crime = $_POST[$prefix . ""];
 		$class = $_POST[$prefix . "Class"];
@@ -300,10 +305,10 @@ class PaperworkGenerators
 		return $statuses[$input];
 	}
 
-	public function chargeChooser($typeChooser)
+	public function chargeChooser($typeChooser, $server = "LS")
 	{
 
-		$chargeEntries = $this->penal;
+		$chargeEntries = $this->penalCode($server);
 		$disabledCharges = [000, 423];
 		$trafficCharges = [401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426];
 
