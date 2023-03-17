@@ -217,7 +217,7 @@
 					name="l_inputRank"
 					title="Select Rank"
 					required>
-					<?= $pg->rankChooser(2) ?>
+					<?= $pg->rankChooser(2, ["LSDA", "JSA"]) ?>
 					</select>
 				</div>
 			</div>

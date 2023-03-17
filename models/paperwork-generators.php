@@ -2,6 +2,18 @@
 
 class PaperworkGenerators
 {
+	private $factions = [
+		"LSPD" => ["name" => "Los Santos Police Department", "ranks" => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]],
+		"LSSD" => ["name" => "Los Santos Sheriff's Department", "ranks" => [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]],
+		"SFM" => ["name" => "State Fire Marshal", "ranks" => [30, 31, 32, 33, 34]],
+		"SAPR" => ["name" => "San Andreas Park Rangers", "ranks" => [35, 36, 37, 38, 39, 40, 41, 42, 43, 44]],
+		"LSPE" => ["name" => "Los Santos Parking Enforcement", "ranks" => [45, 46, 47]],
+		"SAAA" => ["name" => "San Andreas Aviation Administration", "ranks" => [48, 49, 50]],
+		"LSDA" => ["name" => "Los Santos District Attorney's Office", "ranks" => [52, 53, 54, 55]],
+		"JSA" => ["name" => "Judiciary of San Andreas", "ranks" => [56, 57, 58, 59, 60, 61]],
+	];
+
+
 	private $penal = null;
 	public function __construct()
 	{
@@ -182,15 +194,7 @@ class PaperworkGenerators
 		$rankCount = 0;
 
 		$groupCookie = '';
-		$group = [
-			"LSPD" => '',
-			'LSSD' => '',
-			'SFM' => '',
-			'SAPR' => '',
-			'LSPE' => '',
-			'SAAA' => '',
-			'LSDA' => '',
-		];
+		$group = [];
 
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
@@ -211,60 +215,23 @@ class PaperworkGenerators
 				</option>
 			</optgroup>';
 		}
+		if ($faction == "all") $faction = array_keys($this->factions);
+		else if (gettype($faction) == "string") $faction = [$faction];
 
-		$ranksLSPD = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
-		$ranksLSSD = array(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29);
-		$ranksSFM = array(30, 31, 32, 33, 34);
-		$ranksSAPR = array(35, 36, 37, 38, 39, 40, 41, 42, 43, 44);
-		$ranksLSPE = array(45, 46, 47);
-		$ranksSAAA = array(48, 49, 50);
-		$ranksLSDA = array(52, 53, 54, 55);
 
-		foreach ($ranks as $rank) {
+		$out = "";
+		foreach ($faction as $faccion) {
 
-			$statement = '<option value="' . $rankCount . '">' . $rank . '</option>';
-
-			if (in_array($rankCount, $ranksLSPD)) {
-				$group['LSPD'] .= $statement;
+			if (array_key_exists($faccion, $this->factions)) {
+				$output = '<optgroup label="' . $this->factions[$faccion]["name"] . '">';
+				foreach ($this->factions[$faccion]["ranks"] as $value) {
+					$output  .= '<option value="' . $value . '">' . $ranks[$value] . '</option>';
+				}
+				$output .=  '</optgroup>';
+				$out .= $output;
 			}
-			if (in_array($rankCount, $ranksLSSD)) {
-				$group['LSSD'] .= $statement;
-			}
-			if (in_array($rankCount, $ranksSFM)) {
-				$group['SFM'] .= $statement;
-			}
-			if (in_array($rankCount, $ranksSAPR)) {
-				$group['SAPR'] .= $statement;
-			}
-			if (in_array($rankCount, $ranksLSPE)) {
-				$group['LSPE'] .= $statement;
-			}
-			if (in_array($rankCount, $ranksSAAA)) {
-				$group['SAAA'] .= $statement;
-			}
-			if (in_array($rankCount, $ranksLSDA)) {
-				$group['LSDA'] .= $statement;
-			}
-
-			$rankCount++;
 		}
-
-		if (gettype($faction) == "array"){
-			$out = "";
-			foreach ($faction as $value) {
-				$out.= '<optgroup label="'.$value.'">' . $group[$value] . '</optgroup>';
-			}
-			return $groupCookie.$out;
-		}
-		else if ($faction == "all")
-			return $groupCookie . '<optgroup label="Los Santos Police Department">' . $group['LSPD'] . '</optgroup>
-							<optgroup label="Los Santos Sheriff&#39s Department">' . $group['LSSD'] . '</optgroup>
-							<optgroup label="State Fire Marshall">' . $group['SFM'] . '</optgroup>
-							<optgroup label="San Andreas Park Rangers">' . $group['SAPR'] . '</optgroup>
-							<optgroup label="Los Santos Parking Enforcement">' . $group['LSPE'] . '</optgroup>
-							<optgroup label="San Andreas Aviation Administration">' . $group['SAAA'] . '</optgroup>
-							<optgroup label="Los Santos District Attorney&#39s Office">' . $group['LSDA'] . '</optgroup>';
-		else return $groupCookie . '<optgroup label="'.$faction.'">' . $group[$faction] . '</optgroup>';
+		return $groupCookie . $out;
 	}
 
 	public function pClassificationChooser()
