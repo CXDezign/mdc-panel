@@ -10,7 +10,7 @@
 				'c' => $c,
 				'time' => true,
 				'patrol' => false,
-				'callsign' => true
+				'callsign' => true,
 			));
 			// Section - Officers
 			$c->form('officer', 'sections', array(
@@ -18,7 +18,9 @@
 				'pg' => $pg,
 				'c' => $c,
 				'badge' => true,
-				'slots' => true
+				'slots' => true,
+				'faction' => "LSSD"
+
 			));
 			// Section - Location
 			require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/sections/location.php';

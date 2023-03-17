@@ -167,6 +167,14 @@ class PaperworkGenerators
 		return $output;
 	}
 
+
+	/**
+	 * 
+	 * @param string|array $faction
+	 * 
+	 * @return string
+	 * 
+	 */
 	public function rankChooser($cookie, $faction = 'all')
 	{
 
@@ -241,7 +249,14 @@ class PaperworkGenerators
 			$rankCount++;
 		}
 
-		if ($faction == "all")
+		if (gettype($faction) == "array"){
+			$out = "";
+			foreach ($faction as $value) {
+				$out.= '<optgroup label="'.$value.'">' . $group[$value] . '</optgroup>';
+			}
+			return $groupCookie.$out;
+		}
+		else if ($faction == "all")
 			return $groupCookie . '<optgroup label="Los Santos Police Department">' . $group['LSPD'] . '</optgroup>
 							<optgroup label="Los Santos Sheriff&#39s Department">' . $group['LSSD'] . '</optgroup>
 							<optgroup label="State Fire Marshall">' . $group['SFM'] . '</optgroup>
@@ -249,7 +264,7 @@ class PaperworkGenerators
 							<optgroup label="Los Santos Parking Enforcement">' . $group['LSPE'] . '</optgroup>
 							<optgroup label="San Andreas Aviation Administration">' . $group['SAAA'] . '</optgroup>
 							<optgroup label="Los Santos District Attorney&#39s Office">' . $group['LSDA'] . '</optgroup>';
-		else return $groupCookie . '<optgroup>' . $group[$faction] . '</optgroup>';
+		else return $groupCookie . '<optgroup label="'.$faction.'">' . $group[$faction] . '</optgroup>';
 	}
 
 	public function pClassificationChooser()

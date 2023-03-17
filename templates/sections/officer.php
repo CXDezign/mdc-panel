@@ -6,6 +6,8 @@
 		$array = '[]';
 	}
 
+	if(!isset($faction)) $faction = "all"
+
 ?>
 <hr>
 <h4 class="mb-2"><i class="fas fa-fw fa-user-shield mr-2"></i>Officer Section</h4>
@@ -36,7 +38,7 @@
 			'name' => 'inputRank'.$array,
 			'attributes' => 'required',
 			'title' => 'Select Rank',
-			'list' => $pg->rankChooser(1),
+			'list' => $pg->rankChooser(1, $faction),
 			'hint' => '',
 			'hintClass' => ''
 		));

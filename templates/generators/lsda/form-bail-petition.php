@@ -20,23 +20,8 @@
 				'attributes' => 'required',
 				'style' => ''
 			));
-			/*$c->form('toggle', 'forms', array(
-				'size' => '3',
-				'label' => 'Recommend Bail',
-				'class' => '',
-				'attributes' => '',
-				'id' => 'inputApproveBail',
-				'name' => 'inputApproveBail',
-				'dataOff' => "<i class='mr-1 fas fa-fw fa-check-circle'></i>Recommend bail",
-				'dataOn' => "<i class='mr-1 fas fa-fw fa-times-circle'></i>Recommend NOT bail",
-				'dataOffStyle' => 'success',
-				'dataOnStyle' => 'danger',
-				'dataWidth' => '100%',
-				'dataHeight' => '38'
-			));*/
-
 			
-			// Form - List - Citation Reason
+			// Form - List - Bail Options
 			$c->form('list', 'forms', array(
 				'size' => '3',
 				'label' => '<label>Recommended Action</label>',
