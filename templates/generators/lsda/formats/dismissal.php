@@ -28,3 +28,5 @@
         <span style="font-size:14px;">The District Attorney's Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by <?= $pg->getRank($_POST["inputRank"]) ?><span>&nbsp;</span></span><strong style="font-size:14px;"><?= $_POST["employeeName"] ?></strong><span style="font-size:14px;"><span>&nbsp;</span>that this shall be an official petition for dismissal&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
     </p>
 </div>
+
+<p>@mention</p>
