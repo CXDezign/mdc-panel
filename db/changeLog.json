@@ -1,4 +1,14 @@
 {
+	"2.5.0": {
+		"id": "2.5.0",
+		"date": "24/MAR/2023",
+		"changes": {
+			"0": "General - Restructured the backend for the charge selector system (special thanks to Jan).",
+			"1": "General - Created a foundation supporting the LC Server (special thanks to Jan).",
+			"2": "Paperwork Generators - Updated the <strong><a href=\"/paperwork-generators/lsda/bail-petition\" target=\"_blank\">Petition for Bail</a></strong> generator (special thanks to Jan).",
+			"3": "Paperwork Generators - Created a new <strong><a href=\"/paperwork-generators/lsda/dismissal-petition\" target=\"_blank\">Petition for Dismissal</a></strong> generator (special thanks to Jan)."
+		}
+	},
 	"2.4.2": {
 		"id": "2.4.2",
 		"date": "04/MAR/2023",
@@ -21,7 +31,7 @@
 			"0": "General - Added the possibility of having a legal character (attorney) stored as a cookie, will be used for judicial petition generators.",
 			"1": "General - Added a link to LSDA forums on the sidebar.",
 			"2": "Judicial Generators - Added petition for bail generator for LSDA.",
-			"3": "Paperwork generators - Changed the way in which forms marked as \"report\" are copied, to be able to be used directly on GTAW forums. ",
+			"3": "Paperwork Generators - Changed the way in which forms marked as \"report\" are copied, to be able to be used directly on GTAW forums. ",
 			"4": "Arrest Calculator - Plea field in the arrest report will now auto populate.",
 			"5": "Arrest Calculator - Post arrest submissions removed as it is now handled by the MDC.",
 			"6": "Arrest Calculator - Updated Rules & Guidelines",
