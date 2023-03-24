@@ -118,7 +118,7 @@ class PaperworkGenerators
 				"type" => $chargeType,
 				"reduction" => $chargeReduction,
 				"points" => $chargePoints,
-				//"type_full"=> $chargeTypeFull
+				"type_full"=> $chargeTypeFull,
 				"autoBailCost" => $autoBailCost,
 				"drugChargeTitle" => $drugChargeTitle
 
@@ -743,7 +743,7 @@ class LSDAGenerator extends PaperworkGenerators
 	public function bailReasonsChooser()
 	{
 
-		$bailReasons = file('resources/bailReasonsList.txt');
+		$bailReasons = file(dirname(__FILE__, 2) .'/resources/bailReasonsList.txt');
 		$bailReasonsCount = 0;
 
 		$groupCondition = '';
@@ -778,7 +778,7 @@ class LSDAGenerator extends PaperworkGenerators
 	public function getBailReason($input)
 	{
 
-		$illegalParkingReasons = file('../resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
+		$illegalParkingReasons = file(dirname(__FILE__, 2) .'/resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $illegalParkingReasons[$input];
 	}

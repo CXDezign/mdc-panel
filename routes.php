@@ -6,6 +6,9 @@
 		case '/paperwork-generators/error':
 			$url = "/templates/error.php";
 			break;
+		case '/paperwork-generators/form-processor':
+			$url = "/controllers/form-processor.php";
+			break;
 		case '/settings':
 			$url = "/templates/page-settings.php";
 			break;

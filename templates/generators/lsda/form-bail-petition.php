@@ -1,7 +1,7 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
 	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Petition for bail Generator</h1>
 	<hr>
-	<form action="/controllers/form-processor.php" method="POST">
+	<form action="/paperwork-generators/form-processor" method="POST">
 		<input type="hidden" id="generatorType" name="generatorType" value="BailPetition">
 		<div class="form-row">
 			<?php

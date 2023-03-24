@@ -39,7 +39,7 @@ class Content {
 
 			// End buffering and return its contents
 			$output = ob_get_clean();
-		}
+		}else  echo "ERROR";
 		
 		if ($print) {
 			print $output;

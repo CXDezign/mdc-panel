@@ -962,6 +962,8 @@ COUNTY OF LOS SANTOS[/b]
 		} else {
 			$showGeneratedArrestChargeTables = false;
 		}
+		$_SESSION['plea'] = $pleaPre;
+	
 	}
 
 	if ($generatorType == 'ParkingTicket') {
@@ -1101,9 +1103,12 @@ COUNTY OF LOS SANTOS[/b]
 	//[LSDA:] Petition for bail
 	if ($generatorType == 'BailPetition') {
 		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
-
+		$internalCharges = "";
+		$chargesGroup = "";
 		$action = $_POST["inputApproveBail"];
 		$bond = 0;
+		$defendant = $_POST["inputDefName"];
+
 		// Charge List Builder
 		foreach ($pg->processCharges() as $iCharge => $charge) {
 
@@ -1113,22 +1118,26 @@ COUNTY OF LOS SANTOS[/b]
 			$chargeID = $charge['id'];
 
 			if ($action == 1) {
-				$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . ' - $' . number_format($charge['autoBailCost'] * 10, 0, '.', ',') . ' ($' . number_format($charge['autoBailCost'], 0, '.', ',') . ')</strong>
+				$chargesGroup .= '<li style="color:#555555;font-size:14px;">
+			<strong>' . $charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . $charge["chargeOffence"] . $charge["drugChargeTitle"] . ' - $' . number_format($charge['autoBailCost'] * 10, 0, '.', ',') . ' ($' . number_format($charge['autoBailCost'], 0, '.', ',') . ')</strong>
 			</li>';
 
 				$bond += $charge['autoBailCost'];
 			} else
-				$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>' . $chargeType . $chargeClass . ' ' . $chargeID . '. ' . $chargeName . $chargeOffenceFull . $drugChargeTitle . ' - ' . ($action == 0 ? "ROR" : "NO BAIL") . '</strong>
+				$chargesGroup .= '<li style="color:#555555;font-size:14px;">
+			<strong>' . $charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $chargeName .  ' - ' . ($action == 0 ? "ROR" : "NO BAIL") . '</strong>
 			</li>';
+
+
+			$internalCharges .="[*]".$charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . "
+";
 		}
 
 
 		$conditionsGroup = '';
 		foreach (arrayMap($_POST["inputReason"], "") as $value) {
 			if (!empty($value)) {
-				$conditionsGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
+				$conditionsGroup .= '<li style="color:#555555;font-size:14px;">
 				<strong>' . substr($da->getBailReason($value), 1) . '</strong>
 				</li>';
 			}
@@ -1149,13 +1158,32 @@ COUNTY OF LOS SANTOS[/b]
 		$generatedReport = $c->form('templates/generators/lsda/formats/bail', '', [
 			"conditionsGroup" => $conditionsGroup,
 			"defendant" => $defendant,
-			"total"=> $total,
-			"chargesGroup"=> $chargesGroup,
-			"action"=> $action,
+			"total" => $total,
+			"chargesGroup" => $chargesGroup,
+			"action" => $action,
 
 			"pg" => $pg
 		], false);
-		$redirectPath = "report";
+
+		$extra = "[divbox=white]
+[center][b]CASE INFORMATION:[/b][/center]
+
+[b]Defendant Name:[/b] " . $defendant . "
+[b]Docket Number:[/b] [url=INSERT THE URL TO THE CASE ON GTAW FORUMS HERE]XXX-XX[/url]
+
+[b]Trial Deputy:[/b] " . $_POST["employeeName"] . " 
+[hr]
+[center][b][u]CHARGES BROUGHT AGAINST THE DEFENDANT:[/u][/b][/center]
+[list]
+"
+. $internalCharges ."
+[/list]
+[hr]
+[center][b][u]TRIAL INFORMATION:[/u][/b][/center]
+[b]Strategy (Optional):[/b] Briefly explain your trial strategy or seek advice from senior prosecutors.
+[/divbox]";
+
+		$redirectPath = "court";
 	}
 
 
@@ -1179,7 +1207,7 @@ COUNTY OF LOS SANTOS[/b]
 			"defendant" => $defendant,
 			"pg" => $pg
 		], false);
-		$redirectPath = "report";
+		$redirectPath = "court";
 	}
 
 	// Generator Finalisation
@@ -1191,10 +1219,20 @@ COUNTY OF LOS SANTOS[/b]
 	$_SESSION['generatedArrestChargeList'] = $generatedArrestChargeList;
 	$_SESSION['generatedArrestChargeTotals'] = $generatedArrestChargeTotals;
 	$_SESSION['arrestChargeList'] = $arrestChargeList;
-	$_SESSION['plea'] = $pleaPre;
 
 	// Redirect
 	switch ($redirectPath) {
+		case 'court':
+			//header('Location: /paperwork-generators/generated-court');
+			echo $c->form("templates/generated-court", "", [
+				"courtURL" => "https://forum.gta.world/en/forum/389-criminal-division/",
+				"extra" => empty($extra)?null:$extra,
+				"g"=> $g,
+				"type"=> $type,
+				"title"=> $generatedThreadTitle,
+				"report"=> $generatedReport,
+			], false);
+			return;
 		case 'report':
 			header('Location: /paperwork-generators/generated-report');
 			break;
