@@ -1,9 +1,9 @@
-CTurn up at court on each date the case is assigned to call
-CAbstention from criminal activity while subject to the bail order
+STurn up at court on each date the case is assigned to call
+SAbstention from criminal activity while subject to the bail order
 CAbstention from consumption of alcohol or other intoxicating substances
 CAbstention from consumption of drugs except in accordance with a medical prescription
 COrder to keep cellphone active
-COrder to surrender weapons to law enforcement
+COrder to surrender weapons to law enforcement, and to obtain a receipt including the EL tag that shall be presented to the court.
 CSurrender the passport to the court and not leave the state without the court's authorization
 CSurrender the driving license to the court, and not driving on the public road while subject to the bail order
 CNo contact with felons / registered gang members
@@ -20,4 +20,4 @@ RAlcohol and drug testing
 RResidential treatment program
 RHome relocation during case pendency
 RElectronic monitoring / GPS
-RHome detention
+RHome detention 

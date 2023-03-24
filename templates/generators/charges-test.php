@@ -2,7 +2,7 @@
 	<h1><i class="fas fa-fw fa-gavel mr-2"></i>Arrest Charges Calculator</h1>
 	<hr>
 	<form action="/controllers/form-processor.php" method="POST">
-		<input type="hidden" id="generatorType" name="generatorType" value="ArrestCharges">
+		<input type="hidden" id="generatorType" name="generatorType" value="ArrestChargesTest">
 		<div class="form-row">
 			<?php
 			// Form - Options Add - Charge
@@ -42,7 +42,7 @@
 					'class' => 'selectpicker',
 					'id' => 'inputPleaPre',
 					'name' => 'inputPleaPre',
-					'attributes' => 'required',
+					'attributes' => '',
 					'title' => 'Select Plea',
 					'list' => $pg->listChooser('pleaList'),
 					'hint' => '(( This is used to properly calculate the arrest time. No Contest pleas receive the maximum sentence. ))',

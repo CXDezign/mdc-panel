@@ -2,6 +2,131 @@
 
 class PaperworkGenerators
 {
+	private $factions = [
+		"LSPD" => ["name" => "Los Santos Police Department", "ranks" => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]],
+		"LSSD" => ["name" => "Los Santos Sheriff's Department", "ranks" => [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]],
+		"SFM" => ["name" => "State Fire Marshal", "ranks" => [30, 31, 32, 33, 34]],
+		"SAPR" => ["name" => "San Andreas Park Rangers", "ranks" => [35, 36, 37, 38, 39, 40, 41, 42, 43, 44]],
+		"LSPE" => ["name" => "Los Santos Parking Enforcement", "ranks" => [45, 46, 47]],
+		"SAAA" => ["name" => "San Andreas Aviation Administration", "ranks" => [48, 49, 50]],
+		"LSDA" => ["name" => "Los Santos District Attorney's Office", "ranks" => [52, 53, 54, 55]],
+		"JSA" => ["name" => "Judiciary of San Andreas", "ranks" => [56, 57, 58, 59, 60, 61]],
+	];
+
+
+	private $penal_ls = null;
+	private $penal_lc = null;
+	public function __construct()
+	{
+		$this->penal_ls = json_decode(file_get_contents(dirname(__FILE__, 2) . '/db/penalSearch_LS.json'), true);
+		$this->penal_lc = json_decode(file_get_contents(dirname(__FILE__, 2) . '/db/penalSearch_LC.json'), true);
+	}
+
+
+	public function penalCode($server="LS")
+	{
+		if(strtoupper($server) == "LC")
+			return $this->penal_lc;
+		return $this->penal_ls;
+	}
+
+	public $chargesDrug = [601, 602, 603, 604, 605, 606];
+
+
+	public function processCharges($prefix = "inputCrime", $server = "LS")
+	{
+		$charges = [];
+		$penal = $this->penalCode($server);
+
+		$crime = $_POST[$prefix . ""];
+		$class = $_POST[$prefix . "Class"];
+		$offence = $_POST[$prefix . "Offence"];
+		$addition = $_POST[$prefix . "Offence"];
+		$substance_cat = $_POST[$prefix . "SubstanceCategory"];
+
+		foreach ($crime as $iCharge => $charge) {
+			$penal_charge = $penal[$charge];
+
+			$chargeClass = $class[$iCharge];
+
+			switch ($chargeClass) {
+				case 1:
+					$chargeClass = 'C';
+					break;
+				case 2:
+					$chargeClass = 'B';
+					break;
+				case 3:
+					$chargeClass = 'A';
+					break;
+				default:
+					$chargeClass = '?';
+					break;
+			}
+
+			$chargeType = $penal_charge['type'];
+			$chargeTypeFull = '';
+			switch ($chargeType) {
+				case 'F':
+					$chargeTypeFull = '<strong class="text-danger">Felony</strong>';
+					break;
+				case 'M':
+					$chargeTypeFull = '<strong class="text-warning">Misdemeanor</strong>';
+					break;
+				case 'I':
+					$chargeTypeFull = '<strong class="text-success">Infraction</strong>';
+					break;
+				default:
+					$chargeTypeFull = '<strong class="text-danger">UNKNOWN</strong>';
+					break;
+			}
+
+			switch ($addition) {
+				case 3:
+					$chargeReduction = 2;
+					break;
+				case 4:
+					$chargeReduction = 4;
+					break;
+				case 5:
+					$chargeReduction = 2;
+					break;
+				case 6:
+					$chargeReduction = 4;
+					break;
+				default:
+					$chargeReduction = 1;
+			}
+
+			$chargePoints = ceil($penal_charge['points'][$chargeClass] / $chargeReduction);
+			$drugChargeTitle = "";
+			if (in_array($penal_charge["id"], $this->chargesDrug)) {
+				$chargeSubstanceCategory = $substance_cat[$iCharge];
+				$autoBailCost = $penal_charge['bail']['cost'][$chargeSubstanceCategory];
+				$drugChargeTitle = ' (Category ' . $chargeSubstanceCategory . ')';
+			} else {
+				$autoBailCost = $penal_charge['bail']['cost'];
+			}
+
+			array_push($charges, [
+				//"penal_charge"=> $penal_charge,
+				"id" => $penal_charge["id"],
+				"name" => $penal_charge["charge"],
+				"chargeOffence" => $offence[$iCharge] ?? 1,
+				"addition" => $addition[$iCharge],
+				"class" => $chargeClass,
+				"type" => $chargeType,
+				"reduction" => $chargeReduction,
+				"points" => $chargePoints,
+				"type_full"=> $chargeTypeFull,
+				"autoBailCost" => $autoBailCost,
+				"drugChargeTitle" => $drugChargeTitle
+
+			]);
+		}
+		return $charges;
+	}
+
 
 	public function dateResolver($date1, $date2)
 	{
@@ -59,20 +184,23 @@ class PaperworkGenerators
 		return $output;
 	}
 
-	public function rankChooser($cookie)
+
+	/**
+	 * 
+	 * @param string|array $faction
+	 * 
+	 * @return string
+	 * 
+	 */
+	public function rankChooser($cookie, $faction = 'all')
 	{
 
 		$ranks = file('resources/ranksList.txt');
 		$rankCount = 0;
 
 		$groupCookie = '';
-		$groupLSPD = '';
-		$groupLSSD = '';
-		$groupSFM = '';
-		$groupSAPR = '';
-		$groupLSPE = '';
-		$groupSAAA = '';
-		$groupLSDA = '';
+		$group = [];
+
 
 		if ($cookie === 1 && isset($_COOKIE['officerRank'])) {
 			$officerCookie = htmlspecialchars($_COOKIE['officerRank']);
@@ -92,51 +220,23 @@ class PaperworkGenerators
 				</option>
 			</optgroup>';
 		}
+		if ($faction == "all") $faction = array_keys($this->factions);
+		else if (gettype($faction) == "string") $faction = [$faction];
 
-		$ranksLSPD = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
-		$ranksLSSD = array(18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29);
-		$ranksSFM = array(30, 31, 32, 33, 34);
-		$ranksSAPR = array(35, 36, 37, 38, 39, 40, 41, 42, 43, 44);
-		$ranksLSPE = array(45, 46, 47);
-		$ranksSAAA = array(48, 49, 50);
-		$ranksLSDA = array(52, 53, 54, 55);
 
-		foreach ($ranks as $rank) {
+		$out = "";
+		foreach ($faction as $faccion) {
 
-			$statement = '<option value="' . $rankCount . '">' . $rank . '</option>';
-
-			if (in_array($rankCount, $ranksLSPD)) {
-				$groupLSPD .= $statement;
+			if (array_key_exists($faccion, $this->factions)) {
+				$output = '<optgroup label="' . $this->factions[$faccion]["name"] . '">';
+				foreach ($this->factions[$faccion]["ranks"] as $value) {
+					$output  .= '<option value="' . $value . '">' . $ranks[$value] . '</option>';
+				}
+				$output .=  '</optgroup>';
+				$out .= $output;
 			}
-			if (in_array($rankCount, $ranksLSSD)) {
-				$groupLSSD .= $statement;
-			}
-			if (in_array($rankCount, $ranksSFM)) {
-				$groupSFM .= $statement;
-			}
-			if (in_array($rankCount, $ranksSAPR)) {
-				$groupSAPR .= $statement;
-			}
-			if (in_array($rankCount, $ranksLSPE)) {
-				$groupLSPE .= $statement;
-			}
-			if (in_array($rankCount, $ranksSAAA)) {
-				$groupSAAA .= $statement;
-			}
-			if (in_array($rankCount, $ranksLSDA)) {
-				$groupLSDA .= $statement;
-			}
-
-			$rankCount++;
 		}
-
-		return $groupCookie . '<optgroup label="Los Santos Police Department">' . $groupLSPD . '</optgroup>
-							<optgroup label="Los Santos Sheriff&#39s Department">' . $groupLSSD . '</optgroup>
-							<optgroup label="State Fire Marshall">' . $groupSFM . '</optgroup>
-							<optgroup label="San Andreas Park Rangers">' . $groupSAPR . '</optgroup>
-							<optgroup label="Los Santos Parking Enforcement">' . $groupLSPE . '</optgroup>
-							<optgroup label="San Andreas Aviation Administration">' . $groupSAAA . '</optgroup>
-							<optgroup label="Los Santos District Attorney&#39s Office">' . $groupLSDA . '</optgroup>';
+		return $groupCookie . $out;
 	}
 
 	public function pClassificationChooser()
@@ -182,7 +282,7 @@ class PaperworkGenerators
 
 		$ranks = file($_SERVER['DOCUMENT_ROOT'] . '/resources/ranksList.txt', FILE_IGNORE_NEW_LINES);
 
-		if(count($ranks)<intval($input)) {
+		if (count($ranks) < intval($input)) {
 			return "[ERROR]";
 		}
 
@@ -205,13 +305,12 @@ class PaperworkGenerators
 		return $statuses[$input];
 	}
 
-	public function chargeChooser($typeChooser)
+	public function chargeChooser($typeChooser, $server = "LS")
 	{
 
-		$chargeEntries = json_decode(file_get_contents('db/penalSearch.json'), true);
+		$chargeEntries = $this->penalCode($server);
 		$disabledCharges = [000, 423];
 		$trafficCharges = [401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426];
-		$drugCharges = [601, 602, 603, 604, 605, 606];
 
 		$charges = '';
 
@@ -242,7 +341,7 @@ class PaperworkGenerators
 			}
 
 			$chargeContent = "<span class='mr-2 badge badge-" . $chargeColor . "'>" . $chargeID . "</span>" . $chargeName;
-			if ($typeChooser == 'generic' && !in_array($chargeID, $drugCharges)) {
+			if ($typeChooser == 'generic' && !in_array($chargeID, $this->chargesDrug)) {
 				$charges .= '<option
 								data-content="' . $chargeContent . '"
 								value="' . $chargeID . '"
@@ -256,7 +355,7 @@ class PaperworkGenerators
 								' . $chargeDisabled . '>
 							</option>';
 			}
-			if ($typeChooser == 'drugs' && in_array($chargeID, $drugCharges)) {
+			if ($typeChooser == 'drugs' && in_array($chargeID, $this->chargesDrug)) {
 				$charges .= '<option
 								data-content="' . $chargeContent . '"
 								value="' . $chargeID . '"
@@ -644,7 +743,7 @@ class LSDAGenerator extends PaperworkGenerators
 	public function bailReasonsChooser()
 	{
 
-		$bailReasons = file('resources/bailReasonsList.txt');
+		$bailReasons = file(dirname(__FILE__, 2) .'/resources/bailReasonsList.txt');
 		$bailReasonsCount = 0;
 
 		$groupCondition = '';
@@ -655,16 +754,17 @@ class LSDAGenerator extends PaperworkGenerators
 
 		foreach ($bailReasons as $bailReason) {
 
-			$statement = '<option value="' . $bailReasonsCount . '">' . substr($bailReason,1) . '</option>';
+			$statement = '<option value="' . $bailReasonsCount . '">' . substr($bailReason, 1) . '</option>';
+			$statement_selected = '<option selected class="standardCondition" value="' . $bailReasonsCount . '">' . substr($bailReason, 1) . '</option>';
 
-			if(str_starts_with($bailReason,"C")){
-				$groupCondition.=$statement;
-			}else if (str_starts_with($bailReason,"D")){
-				$groupDenial.=$statement;
-
-			}else if (str_starts_with($bailReason,"R")){
-				$groupRestrictive.=$statement;
-
+			if (str_starts_with($bailReason, "C")) {
+				$groupCondition .= $statement;
+			} else if (str_starts_with($bailReason, "D")) {
+				$groupDenial .= $statement;
+			} else if (str_starts_with($bailReason, "S")) {
+				$groupCondition .= $statement_selected;
+			} else if (str_starts_with($bailReason, "R")) {
+				$groupRestrictive .= $statement;
 			}
 
 			$bailReasonsCount++;
@@ -678,7 +778,7 @@ class LSDAGenerator extends PaperworkGenerators
 	public function getBailReason($input)
 	{
 
-		$illegalParkingReasons = file('../resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
+		$illegalParkingReasons = file(dirname(__FILE__, 2) .'/resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $illegalParkingReasons[$input];
 	}

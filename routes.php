@@ -6,6 +6,9 @@
 		case '/paperwork-generators/error':
 			$url = "/templates/error.php";
 			break;
+		case '/paperwork-generators/form-processor':
+			$url = "/controllers/form-processor.php";
+			break;
 		case '/settings':
 			$url = "/templates/page-settings.php";
 			break;
@@ -23,6 +26,9 @@
 			break;
 		case '/paperwork-generators/arrest-charges':
 			$url = "/templates/generators/form-arrest-charges.php";
+			break;
+		case '/test':
+			$url = "/templates/generators/charges-test.php";
 			break;
 		case '/paperwork-generators/arrest-report':
 			$url = "/templates/generators/form-arrest-report.php";
@@ -59,6 +65,9 @@
 			break;
 		case '/paperwork-generators/lsda/bail-petition':
 			$url = "/templates/generators/lsda/form-bail-petition.php";
+			break;
+		case '/paperwork-generators/lsda/dismissal-petition':
+			$url = "/templates/generators/lsda/form-dismissal-petition.php";
 			break;
 		case '/paperwork-generators/trespass-notice':
 			$url = "/templates/generators/form-trespass-notice.php";

@@ -1,8 +1,8 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Petition for bail Generator</h1>
+	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Petition for Dismissal</h1>
 	<hr>
 	<form action="/paperwork-generators/form-processor" method="POST">
-		<input type="hidden" id="generatorType" name="generatorType" value="BailPetition">
+		<input type="hidden" id="generatorType" name="generatorType" value="DA_DismissalPetition">
 		<div class="form-row">
 			<?php
 			// Form - Textfield - Suspect's Name
@@ -20,26 +20,6 @@
 				'attributes' => 'required',
 				'style' => ''
 			));
-			
-			// Form - List - Bail Options
-			$c->form('list', 'forms', array(
-				'size' => '3',
-				'label' => '<label>Recommended Action</label>',
-				'icon' => 'book',
-				'class' => 'selectpicker',
-				'id' => 'inputApproveBail',
-				'name' => 'inputApproveBail',
-				'attributes' => 'required',
-				'title' => 'Input recommendation',
-				'list' => 
-					"<option value=\"0\"> Release on Own Recognizance</option>".
-					"<option selected value=\"1\"> Recommend bail</option>".
-					"<option value=\"2\"> Not Recommend bail</option>"
-				,
-				'hint' => '',
-				'hintClass' => ''
-			));
-			
 			?>
 		</div>
 		<div class="form-row">
@@ -54,7 +34,7 @@
 				'class' => '',
 				'id' => 'employeeName',
 				'name' => 'employeeName',
-				'value' => $g->findCookie('legalName'),
+				'value' => $g->findCookie('legalName') ,
 				'placeholder' => 'Firstname Lastname',
 				'tooltip' => 'Employee - Full Name',
 				'attributes' => 'required',
@@ -102,32 +82,12 @@
 		</div>
 		<div class="form-row groupSlotCharge"></div>
 		<div class="form-row groupSlotChargeDrug"></div>
-		<div class="form-row">
-			<?php
-			// Form - List - Citation Reason
-			$c->form('list', 'forms', array(
-				'size' => '12',
-				'label' => '<label>Bail Reasons(s)</label>',
-				'icon' => 'gavel',
-				'class' => 'selectpicker',
-				'id' => 'inputReason',
-				'name' => 'inputReason[]',
-				'attributes' => 'required multiple data-live-search="true"',
-				'title' => 'Select Bail Condition / Denial Reason',
-				'list' => $da->bailReasonsChooser(),
-				'hint' => '<small>Select multiple if applicable.</small>',
-				'hintClass' => ''
-			));
-			?>
-		</div>
 
 		<div class="container mt-5 text-center">
 			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-penal-code'); ?>" role="button">
 				<i class="fas fa-archive fa-fw mr-1"></i>Open Penal Code
 			</a>
-			<a class="btn btn-info px-5" target="_blank" href="<?= $g->getSettings('url-bail-schedule'); ?>" role="button">
-				<i class="fas fa-archive fa-fw mr-1"></i>Open Bail Schedule
-			</a>
+
 		</div>
 		<div class="container my-5 text-center">
 			<div class="form-row row d-flex justify-content-center">
@@ -142,7 +102,8 @@
 
 <!-- COPY SLOTS -->
 
-<!-- CHARGE SLOT -->
+<!-- COPY SLOTS -->
+
 <?php $c->form('charge', 'copy-slots', array(
 	'g' => $g,
 	'pg' => $pg,
@@ -152,6 +113,7 @@
 ));
 
 ?>
+
 <!-- DRUG CHARGE SLOT -->
 <?php $c->form('charge', 'copy-slots', array(
 	'g' => $g,
@@ -159,24 +121,9 @@
 	'c' => $c,
 	'prefix'=> 'inputCrime',
 	'charges_types'=> 'drugs'
-
 ));
 
 ?>
 
-
-<script>
-	let $recommendBail = $('#inputApproveBail');
-	$recommendBail.on('change', '',function() {
-
-		let recommend = $($recommendBail).val()!=2;
-		if (recommend) {
-			$('.standardCondition').attr("selected", true)
-		} else {
-			$('.standardCondition').attr("selected", false)
-		}
-		$('#inputReason').selectpicker('render');
-
-	});
-</script>
+</div>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/form-footer.php'; ?>

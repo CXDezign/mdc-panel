@@ -107,7 +107,7 @@
 				'name' => 'inputRespondingRank',
 				'attributes' => 'required',
 				'title' => 'Select Rank',
-				'list' => $pg->rankChooser(0),
+				'list' => $pg->rankChooser(0, "LSPD"),
 				'hint' => '',
 				'hintClass' => ''
 			));

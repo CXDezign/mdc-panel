@@ -17,7 +17,8 @@
 				'pg' => $pg,
 				'c' => $c,
 				'badge' => true,
-				'slots' => false
+				'slots' => false,
+				"faction"=> ["LSPE", "LSPD", "LSSD", "SAPR", "SFM"]
 			));
 			// Section - Vehicle
 			$c->form('vehicle', 'sections', array(

@@ -54,3 +54,9 @@ Deputy District Attorney
 Assistant District Attorney
 District Attorney
 Chief of Staff
+Court Commissioner I
+Court Commissioner II
+Judge
+Supervising Judge
+Presiding Judge
+Chief Justice

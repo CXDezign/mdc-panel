@@ -6,6 +6,7 @@
 	$generatorsLSPD = '';
 	$generatorsLSSD = '';
 	$generatorsLSDA = '';
+	$generatorsJSA = '';
 
 	foreach ($json as $generator) {
 
@@ -48,6 +49,9 @@
 				break;
 			case 'LSDA':
 				$generatorsLSDA .= $card;
+				break;
+			case 'JSA':
+				$generatorsJSA .= $card;
 				break;
 			case 'MDC':
 			default:
@@ -94,6 +98,14 @@
 		<div class="grid-col grid-col--3"></div>
 		<div class="grid-col grid-col--4"></div>
 		<?= $generatorsLSDA ?>
+	</div>
+	<h5>Court Procedures</h5>
+	<div class="grid" id="generators">
+		<div class="grid-col grid-col--1"></div>
+		<div class="grid-col grid-col--2"></div>
+		<div class="grid-col grid-col--3"></div>
+		<div class="grid-col grid-col--4"></div>
+		<?= $generatorsJSA ?>
 	</div>
 </div>
 <script type="text/javascript">
