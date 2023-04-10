@@ -1189,23 +1189,33 @@ COUNTY OF LOS SANTOS[/b]
 
 	//LSDA Dismissal Petition
 	if ($generatorType == 'DA_DismissalPetition') {
-		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
+		$generatedThreadTitle = '[' . date("y") . 'GJCR' . str_pad($_POST["petitionNumber"], 5, "0", STR_PAD_LEFT) . '] People of the State of San Andreas v. ' . $_POST["inputDefName"];
 		$chargesGroup = "";
 		$defendant = $_POST["inputDefName"];
 
-		// Charge List Builder
-		foreach (($pg->processCharges()) as $charge) {
+		$generatedReport = $c->form('templates/generators/lsda/formats/dismissal', '', [
+			"charges" => $pg->processCharges(),
+			"defendant" => $defendant,
+			"pg" => $pg,
+			"motion_name" => "<strong>MOTION TO DISMISS</strong>",
+			"filler"=> $pg->getRank($_POST["inputRank"]). " ". $_POST["employeeName"]
 
-			$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>' . $charge["type"] . $charge["class"] . ' ' . $charge["id"] . '. ' . $charge["name"] . ' ' . $charge["drugChargeTitle"] . '</strong>
-			</li>';
-		}
-
+		], false);
+		$redirectPath = "court";
+	}
+	//LSDA Dismissal Petition - Speedy Trial
+	if ($generatorType == 'JSA_SpeedyTrial') {
+		$generatedThreadTitle = '[' . date("y") . 'GJCR' . str_pad($_POST["petitionNumber"], 5, "0", STR_PAD_LEFT) . '] People of the State of San Andreas v. ' . $_POST["inputDefName"];
+		$chargesGroup = "";
+		$defendant = $_POST["inputDefName"];
 
 		$generatedReport = $c->form('templates/generators/lsda/formats/dismissal', '', [
-			"chargesGroup" => $chargesGroup,
+			"charges" => $pg->processCharges(),
 			"defendant" => $defendant,
-			"pg" => $pg
+			"pg" => $pg,
+			"motion_name" => "<strong>MOTION TO DISMISS</strong><br>SPEEDY TRIAL<br>VIOLATION",
+			"filler"=> $_POST["employeeName"]
+
 		], false);
 		$redirectPath = "court";
 	}

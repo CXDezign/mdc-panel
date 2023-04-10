@@ -1,8 +1,8 @@
 <div class="container" data-aos="fade-in" data-aos-duration="500" data-aos-delay="250">
-	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Petition for Dismissal</h1>
+	<h1><i class="fas fa-fw fa-user-lock mr-2"></i>Motion to dismiss for a speedy trial violation</h1>
 	<hr>
 	<form action="/paperwork-generators/form-processor" method="POST">
-		<input type="hidden" id="generatorType" name="generatorType" value="DA_DismissalPetition">
+		<input type="hidden" id="generatorType" name="generatorType" value="JSA_SpeedyTrial">
 		<div class="form-row">
 			<?php
 			// Form - Textfield - Suspect's Name
@@ -58,19 +58,6 @@
 				'attributes' => 'required',
 				'style' => ''
 			));
-			$c->form('list', 'forms', array(
-				'size' => '3',
-				'label' => '<label>Employee&#39;s Rank</label>',
-				'icon' => 'user-shield',
-				'class' => 'selectpicker',
-				'id' => 'inputRank',
-				'name' => 'inputRank',
-				'attributes' => 'required',
-				'title' => 'Select Rank',
-				'list' => $pg->rankChooser(2, 'LSDA'),
-				'hint' => '',
-				'hintClass' => ''
-			));
 
 			?>
 
@@ -103,14 +90,15 @@
 
 		<?php
 		$c->form('textbox', 'forms', array(
-			'size' => '6',
+			'size' => '9',
 			'label' => '<label>Reason for Dismissal</label>',
 			'icon' => 'book',
 			'id' => 'inputReason',
 			'name' => 'inputReason',
-			'rows' => '4',
+			'rows' => '6',
 			'placeholder' => '',
 			'attributes' => '',
+			'value' => 'The petitioner request this court to dismiss the charges as a whole on the basis of speedy trial violations as the arrest occurred on the XX of XX '.date("Y").', it has been more than XX hours with no arraignment as a whole.',
 			'hint' => ''
 		));
 		?>

@@ -1,31 +1,30 @@
-<div style="background-color:#fafafa;color:#555555;padding:5px; border-radius:3px;">
-    <p style="color:#555555;font-size:14px;text-align:center;">
-        <u><strong><span style="font-size:24px;">Superior Court of San Andreas</span></strong></u>
+<div style="background-color:#ffffff;color:#555555;font-size:13px;padding:15px;border-radius:5px;font-family:Arial, Helvetica, sans-serif;">
+    <?php
+
+    require_once(dirname(__FILE__) . '/header.php') ?>
+    <hr style="">
+
+    <p style="text-align:center;">
+        <span style="color:#000000;"><span style="font-size:16px;"><strong>II. MOTION</strong></span></span>
     </p>
-    <p style="font-size:14px;text-align:center;">
-        <a href="https://i.imgur.com/tNqYJgz.png" title="Enlarge image" data-wrappedlink="" data-ipslightbox="" data-ipslightbox-group="undefined"><img alt="tNqYJgz.png" class="ipsImage ipsImage_thumbnailed" data-ratio="100.00" height="260" width="260" src="https://i.imgur.com/tNqYJgz.png"></a>
+    <p style="text-align:center;">
+        &nbsp;
     </p>
-    <p style="font-size:14px;text-align:center;">
-        <u><strong><span style="font-size:18px;">Criminal Division</span></strong></u>
+    <p style="background-color:#ffffff;color:#555555;font-size:14px;">
+        <span style="color:#000000;"><span style="font-size:14px;">I, the Plaintiff/Defendant named above, hereby move the Court to dismiss the Petitioner’s complaint on the following grounds:</span></span>
     </p>
-    <hr style="font-size:14px;">
-    <p style="font-size:14px;text-align:center;">
-        <span style="font-size:20px;"><strong>Petition for Dismissal</strong></span>
+    <p style="background-color:#ffffff;color:#555555;font-size:14px;">
+        <?= $_POST["inputReason"] ?>
     </p>
-    <p style="font-size:14px;">
-        By decree of the State of San Andreas Penal Code and enforcement&nbsp;authority of the San Andreas State Constitution, Defendant&nbsp;<strong><?= $defendant ?></strong><span>&nbsp;</span>was&nbsp;arrested by a law enforcement entity of the state, and&nbsp;the following charges were requested to be pursued against the Defendant;
+    <hr style="">
+    <p style="text-align:justify;">
+        <span style="font-size:14px;"><span style="color:#000000;">I&nbsp;<strong><?=$filler?></strong>, affirm that the above stated facts are true and accurate to the best of my knowledge and belief. This shall be the official statement for the dismissal of the designated offenses submitted for the Superior Court to dismiss or reduce the accusatory instrument.</span></span>
     </p>
-    <hr style="font-size:14px;">
-    <ul style="font-size:14px;">
-        <?= $chargesGroup ?>
-    </ul>
-    <hr style="font-size:14px;">
-    <p style="font-size:14px;">
-        In response to these charges&nbsp;the District Attorney's Office has found insufficient justification&nbsp;to proceed with an arraignment for the charges listed. The District Attorney's Office wishes to drop and/or dismiss all criminal charges levied against the Defendant in relation to this specific instance.
+    <p style="">
+        &nbsp;
     </p>
-    <hr style="font-size:14px;">
-    <p style="font-size:14px;">
-        <span style="font-size:14px;">The District Attorney's Office affirms that all information submitted is accurate, and truthful given all the information and evidence available, and has been affirmed by <?= $pg->getRank($_POST["inputRank"]) ?><span>&nbsp;</span></span><strong style="font-size:14px;"><?= $_POST["employeeName"] ?></strong><span style="font-size:14px;"><span>&nbsp;</span>that this shall be an official petition for dismissal&nbsp;submitted for the approval of the&nbsp;Superior Court.&nbsp;</span>
+    <p style="">
+        <span style="font-size:14px;"><span style="color:#000000;">on&nbsp;<strong><?= strtoupper(date("F d, y")) ?></strong></span></span>
     </p>
 </div>
 

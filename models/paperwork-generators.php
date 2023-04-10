@@ -38,6 +38,7 @@ class PaperworkGenerators
 		$charges = [];
 		$penal = $this->penalCode($server);
 
+		if(!array_key_exists($prefix, $_POST)) return [];
 		$crime = $_POST[$prefix . ""];
 		$class = $_POST[$prefix . "Class"];
 		$offence = $_POST[$prefix . "Offence"];
@@ -104,12 +105,14 @@ class PaperworkGenerators
 				$chargeSubstanceCategory = $substance_cat[$iCharge];
 				$autoBailCost = $penal_charge['bail']['cost'][$chargeSubstanceCategory];
 				$drugChargeTitle = ' (Category ' . $chargeSubstanceCategory . ')';
+				$charge_fine = $penal_charge['fine'][$chargeSubstanceCategory];
 			} else {
 				$autoBailCost = $penal_charge['bail']['cost'];
+				$charge_fine = $penal_charge['fine'][$offence[$iCharge] ?? 1];
 			}
 
 			array_push($charges, [
-				//"penal_charge"=> $penal_charge,
+				"penal_charge"=> $penal_charge,
 				"id" => $penal_charge["id"],
 				"name" => $penal_charge["charge"],
 				"chargeOffence" => $offence[$iCharge] ?? 1,
@@ -120,7 +123,9 @@ class PaperworkGenerators
 				"points" => $chargePoints,
 				"type_full"=> $chargeTypeFull,
 				"autoBailCost" => $autoBailCost,
-				"drugChargeTitle" => $drugChargeTitle
+				"drugChargeTitle" => $drugChargeTitle,
+				"fullName"=> $chargeType . $chargeClass . ' ' . $penal_charge["id"] . '. ' . $penal_charge["charge"],
+				"fine"=> $charge_fine
 
 			]);
 		}
