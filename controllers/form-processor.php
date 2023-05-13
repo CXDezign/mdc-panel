@@ -1215,6 +1215,18 @@ COUNTY OF LOS SANTOS[/b]
 		$redirectPath = "court";
 	}
 
+
+	if(empty($generatedReport)){
+		if(file_exists(dirname(__FILE__).'/forms-backend/'.$generatorType.'.php'))
+			include (dirname(__FILE__).'/forms-backend/'.$generatorType.'.php');
+
+			//echo dirname(__FILE__).'/forms-backend/'.$generatorType.'.php';
+			//echo $generatedReport;
+		//die;
+	}
+
+
+
 	// Generator Finalisation
 	$_SESSION['generatedReport'] = $generatedReport;
 	$_SESSION['generatedReportType'] = $generatedReportType;

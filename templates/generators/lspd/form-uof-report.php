@@ -20,10 +20,10 @@
 			'attributes' => '',
 			'id' => 'inputReportType',
 			'name' => 'inputReportType',
-			'dataOff' => "<i class='mr-1 fas fa-fw fa-check-circle'></i>Initial CUOF",
-			'dataOn' => "<i class='mr-1 fas fa-fw fa-times-circle'></i>Supplementary CUOF",
-			'dataOffStyle' => 'success',
-			'dataOnStyle' => 'danger',
+			'dataOff' => "<i class='mr-1 fas fa-fw fa-check-circle'></i>Initial Report",
+			'dataOn' => "<i class='mr-1 fas fa-fw fa-times-circle'></i>Supplementary Report",
+			'dataOffStyle' => 'primary',
+			'dataOnStyle' => 'secondary',
 			'dataWidth' => '100%',
 			'dataHeight' => '38'
 		));
@@ -173,6 +173,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/copy-slots/suspect.php';
 		let value = $('#inputReportType').is(':checked');
 		$('#generatorSubType').val(value?1:0);
 		$('.VisibleInitial').css("display", value?"none":"block");
+		$('.VisibleInitial input, .VisibleInitial select').attr("required", !value);
 		
 	});
 </script>
