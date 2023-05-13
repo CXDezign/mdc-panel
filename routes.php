@@ -42,6 +42,9 @@
 		case '/paperwork-generators/lspd/traffic-division-patrol-report':
 			$url = "/templates/generators/lspd/form-traffic-division-patrol-report.php";
 			break;
+		case '/paperwork-generators/lspd/uof-report':
+				$url = "/templates/generators/lspd/form-uof-report.php";
+				break;
 		case '/paperwork-generators/parking-ticket':
 			$url = "/templates/generators/form-parking-ticket.php";
 			break;

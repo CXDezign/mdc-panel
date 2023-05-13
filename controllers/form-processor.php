@@ -1111,26 +1111,9 @@ COUNTY OF LOS SANTOS[/b]
 
 		// Charge List Builder
 		foreach ($pg->processCharges() as $iCharge => $charge) {
-
-			$chargeClass = $charge['class'];
-			$chargeType = $charge['type'];
-			$chargeName = $charge['name'];
-			$chargeID = $charge['id'];
-
-			if ($action == 1) {
-				$chargesGroup .= '<li style="color:#555555;font-size:14px;">
-			<strong>' . $charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . $charge["chargeOffence"] . $charge["drugChargeTitle"] . ' - $' . number_format($charge['autoBailCost'] * 10, 0, '.', ',') . ' ($' . number_format($charge['autoBailCost'], 0, '.', ',') . ')</strong>
-			</li>';
-
-				$bond += $charge['autoBailCost'];
-			} else
-				$chargesGroup .= '<li style="color:#555555;font-size:14px;">
-			<strong>' . $charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $chargeName .  ' - ' . ($action == 0 ? "ROR" : "NO BAIL") . '</strong>
-			</li>';
-
-
 			$internalCharges .="[*]".$charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . "
 ";
+			$bond += $charge["autoBailCost"];
 		}
 
 
@@ -1145,24 +1128,36 @@ COUNTY OF LOS SANTOS[/b]
 
 		switch ($action) {
 			case 1:
-				$total = '<strong>Bail Total: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond * 10, 0, '.', ',')) . ' | Total for Bond: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond, 0, '.', ','));
+				$total = 'grant bail';
+				$bailLong = "That Defendant shall deposit, with the clerk of the court, \$".$bond." as bail security indicated on his bail bond with the following conditions:";
 				break;
 			case 0:
-				$total = '<strong>Bail Total: ROR</strong>';
+				$total = 'release the defendant on their own recognizance';
+				$bailLong = "That Defendant shall be released without bail on their own recognizance.";
+
 				break;
 			case 2:
-				$total = '<strong>Bail NOT Recommended</strong>';
+				$total = 'commit the defendant into custody';
+				$bailLong = "That Defendant shall not be granted bail and instead be committed to custody for the following reasons:";
+
 				break;
 		}
 
-		$generatedReport = $c->form('templates/generators/lsda/formats/bail', '', [
-			"conditionsGroup" => $conditionsGroup,
-			"defendant" => $defendant,
-			"total" => $total,
-			"chargesGroup" => $chargesGroup,
-			"action" => $action,
+		$generatedThreadTitle = '[' . date("y") . 'GJCR' . str_pad($_POST["petitionNumber"], 5, "0", STR_PAD_LEFT) . '] People of the State of San Andreas v. ' . $_POST["inputDefName"];
+		$defendant = $_POST["inputDefName"];
 
-			"pg" => $pg
+		$generatedReport = $c->form('templates/generators/lsda/formats/arraignment', '', [
+			"charges" => $pg->processCharges(),
+			"defendant" => $defendant,
+			"pg" => $pg,
+			"motion_name" => "<strong>ARRAIGNMENT</strong>",
+			"filler"=> $pg->getRank($_POST["inputRank"]). " ". $_POST["employeeName"],
+			"exhibits"=> $_POST["exhibits"],
+			"bailSummary"=> $total,
+			"bailLong"=> $bailLong,
+			"bailMoney"=> $bond,
+			"bailReasons"=> $conditionsGroup,
+
 		], false);
 
 		$extra = "[divbox=white]

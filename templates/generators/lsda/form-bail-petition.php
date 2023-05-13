@@ -41,6 +41,36 @@
 			));
 			
 			?>
+			<?php
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'number',
+				'label' => '',
+				'icon' => 'calendar-check',
+				'class' => '',
+				'id' => 'petitionNumber',
+				'name' => 'petitionNumber',
+				'value' => '',
+				'placeholder' => '#####',
+				'tooltip' => 'Petition Number',
+				'attributes' => 'required',
+				'style' => 'text-transform: uppercase;'
+			));
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'number',
+				'label' => '',
+				'icon' => 'calendar-check',
+				'class' => '',
+				'id' => 'exhibitsNumber',
+				'name' => 'exhibits',
+				'value' => '',
+				'placeholder' => '#####',
+				'tooltip' => 'Exhibits Number',
+				'attributes' => 'required',
+				'style' => 'text-transform: uppercase;'
+			));
+			?>
 		</div>
 		<div class="form-row">
 
