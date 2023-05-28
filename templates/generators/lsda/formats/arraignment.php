@@ -24,6 +24,7 @@
         <p>
             (insert spoiler)
         </p>
+        <br>
     <?php } ?>
 
     <hr>
@@ -41,10 +42,10 @@
     </p>
     <ul>
         <li>
-            <span style="font-size:14px;"><span style="color:#000000;">X Day(s),&nbsp;X Hours(s) imprisonment.</span></span>
+            <span style="font-size:14px;"><span style="color:#000000;"><?= $days ?> Day(s),&nbsp;<?= $hours ?> Hours(s) imprisonment.</span></span>
         </li>
         <li>
-            <span style="font-size:14px;"><span style="color:#000000;">$X fine, restitution, reparation.&nbsp;</span></span>
+            <span style="font-size:14px;"><span style="color:#000000;">$<?= $fine ?> fine, restitution, reparation.&nbsp;</span></span>
         </li>
     </ul>
     <hr>

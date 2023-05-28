@@ -25,13 +25,16 @@
     }
 
     // Person Resolver
-    $suspects = 'Unknown';
+    $suspects = '';
     if (!empty($inputSuspectName)) {
 
         foreach ($inputSuspectName as $indSuspect => $suspect) {
-            $suspects .= '[indent][u]Person #1 - ' . $inputSuspectName[$indSuspect] . '[/u]
-[b]Status:[/b] ' . $pg->getStatus($inputSuspectStatusArray[$indSuspect]) . '[/indent]
-
+            $suspects .= '
+[b]SUBJECT NAME:[/b] '.$inputSuspectName[$indSuspect].'
+[b]MDC RECORD:[/b] [url=https://mdc.gta.world/record/'.str_replace(" ", "_", $inputSuspectName[$indSuspect]).']ACCESS[/url]
+[b]STATUS:[/b] ' . $inputSuspectStatusArray[$indSuspect]==1?"DECEASED":"ALIVE" . '
+[b]NOTES:[/b]
+[hr][/hr]
 ';
             $index++;
         }
@@ -66,55 +69,63 @@
     $redirectPath = redirectPath(2);
     $generatedReportType = 'Use of Force Report';
     $generatedThreadURL = 'https://lspd.gta.world/viewforum.php?f=1830';
-    $generatedThreadTitle = 'UOF - ' . $postInputStreet . ', ' . $postInputDistrict . ' - ' . strtoupper($postInputDate);
+
+    preg_match_all('/\b\w/', $postInputNameArray[0], $matches);
+    $initials = implode('', $matches[0]);
+
+
+    //$generatedThreadTitle = 'UOF - ' . $postInputStreet . ', ' . $postInputDistrict . ' - ' . strtoupper($postInputDate);
+    $generatedThreadTitle = 'CUOF - '.$initials.' - '.strtoupper($postInputDate);
 
     echo $_POST["generatorSubType"];
     if ($_POST["generatorSubType"] == 0)
         $generatedReport = '
-[font=Arial][color=black]
-
-[center][img]https://i.imgur.com/LEWTXbL.png[/img]
-
-[size=125][b]SHERIFF\'S DEPARTMENT
-COUNTY OF LOS SANTOS[/b]
-[i]"A Tradition of Service Since 1850"[/i][/size]
-
-[size=110][u]USE OF FORCE REPORT[/u][/size][/center][hr][/hr]
-
-[font=arial][color=black][indent][size=105][b]Filing Information[/b][/size]
-
-[indent]
-[b]Time & Date:[/b] ' . $postInputTime . ', ' . strtoupper($postInputDate) . '
-[b]Location:[/b] ' . $postInputStreet . ', ' . $postInputDistrict . '
-
-[b]Filed By:[/b] ' . $pg->getRank($postInputRankArray[0]) . ' ' . $postInputNameArray[0] . '
-[b]Unit Number:[/b] ' . $postInputCallsign . '
-[/indent]
-
-[size=105][b]Suspects[/b][/size]
-' . $suspects . '[size=105][b]Employees Involved (Only include employees who used lethal force)[/b][/size]
-[list]' . $officers . '[/list]
-
-[size=105][b]Narrative[/b][/size]
-[indent]' . $inputNarrative . '[/indent]
-
-[size=105][b]Evidence[/b][/size]
+[divbox2=white][center][img]https://i.ibb.co/60wDx20/UOF.png[/img][/center][hr][/hr]
+[divbox=#083a6b][b][color=#FFFFFF]1. REPORT INFORMATION[/color][/b][/divbox]
+[divbox=white]
+[b]REPORTING EMPLOYEE:[/b] '. $pg->getRank($postInputRankArray[0]) . ' ' . $postInputNameArray[0] .'
+[b]DATE AND TIME OF INCIDENT:[/b] '. strtoupper($postInputDate). ', '. $postInputTime   . '
+[b]LOCATION OF INCIDENT:[/b] ' . $postInputStreet . ', ' . $postInputDistrict . '
+[b]TYPE OF UOF:[/b] Officer Involved Shooting / In-Custody Death / Other
+[/divbox][hr][/hr]
+[divbox=white][b]NARRATIVE:[/b]
+[LIST]
+[*]'. $inputNarrative
+.'
+[/LIST][/divbox]
+[hr][/hr]
+[divbox=#083a6b][b][color=#FFFFFF]2. INVOLVED SUBJECTS[/color][/b][/divbox]
+[divbox=white]
+'.$suspects.'
+[b]Involved Employee(s):[/b]
+[LIST]
+'.$officers.'
+[/LIST]
+[b]Supervisor:[/b]
+[LIST]Rank First Last
+[/LIST][/divbox]
+[hr][/hr]
+[divbox=#083a6b][b][color=#FFFFFF]3. EVIDENCE (if applicable)[/color][/b][/divbox]
 ' . $evidenceBox . '
-' . $evidenceImage;
+' . $evidenceImage.'
+[/divbox2]';
  else 
     $generatedReport = '
 [divbox2=white][center][img]https://i.ibb.co/60wDx20/UOF.png[/img][/center][hr][/hr]
 [divbox=#083a6b][b][color=#FFFFFF]1. SUPPLEMENTARY REPORT INFORMATION[/color][/b][/divbox]
 [divbox=white]
-[b]REPORTING EMPLOYEE:[/b]
-[b]DATE AND TIME OF INCIDENT:[/b]
+[b]REPORTING EMPLOYEE:[/b] ' . $pg->getRank($postInputRankArray[0]) . ' ' . $postInputNameArray[0] . '
+[b]DATE AND TIME OF INCIDENT:[/b] '. strtoupper($postInputDate) . '-' .$postInputTime .'
 [/divbox][hr][/hr]
 [divbox=white][b]NARRATIVE:[/b]
-[LIST]Please provide a full narrative of events, following departmental report format.
+[LIST]
+[*]'.$inputNarrative.'
 [/LIST][/divbox]
 [hr][/hr]
 [divbox=#083a6b][b][color=#FFFFFF]2. EVIDENCE (if applicable)[/color][/b][/divbox]
-[spoiler][/spoiler]
+[spoiler]' . $evidenceBox . '
+' . $evidenceImage.'
+[/spoiler]
 [/divbox2]
     
 ';

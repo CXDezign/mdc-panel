@@ -11,7 +11,7 @@
 			'c' => $c,
 			'time' => true,
 			'patrol' => false,
-			'callsign' => true
+			'callsign' => false
 		));
 		$c->form('toggle', 'forms', array(
 			'size' => '3',

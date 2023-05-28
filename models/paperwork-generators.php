@@ -101,14 +101,19 @@ class PaperworkGenerators
 
 			$chargePoints = ceil($penal_charge['points'][$chargeClass] / $chargeReduction);
 			$drugChargeTitle = "";
+			
 			if (in_array($penal_charge["id"], $this->chargesDrug)) {
+				
 				$chargeSubstanceCategory = $substance_cat[$iCharge];
 				$autoBailCost = $penal_charge['bail']['cost'][$chargeSubstanceCategory];
 				$drugChargeTitle = ' (Category ' . $chargeSubstanceCategory . ')';
 				$charge_fine = $penal_charge['fine'][$chargeSubstanceCategory];
+				$time = $penal_charge["time"][$chargeSubstanceCategory];
+
 			} else {
 				$autoBailCost = $penal_charge['bail']['cost'];
 				$charge_fine = $penal_charge['fine'][$offence[$iCharge] ?? 1];
+				$time = $penal_charge["time"];
 			}
 
 			array_push($charges, [
@@ -124,8 +129,9 @@ class PaperworkGenerators
 				"type_full"=> $chargeTypeFull,
 				"autoBailCost" => $autoBailCost,
 				"drugChargeTitle" => $drugChargeTitle,
-				"fullName"=> $chargeType . $chargeClass . ' ' . $penal_charge["id"] . '. ' . $penal_charge["charge"],
-				"fine"=> $charge_fine
+				"fullName"=> $chargeType . $chargeClass . ' ' . $penal_charge["id"] . '. ' . $penal_charge["charge"].$drugChargeTitle ,
+				"fine"=> $charge_fine,
+				"time"=> $time
 
 			]);
 		}

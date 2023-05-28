@@ -164,7 +164,7 @@
                                 </p>
                                 <?php foreach ($charges as $charge) { ?>
                                     <p style="text-align:center;">
-                                        <span style="font-size:14px;"><span style="color:#000000;"><?= $charge["penal_charge"]["time"]["days"] ?> Days, <?= $charge["penal_charge"]["time"]["hours"] ?> Hours Imprisonment, <?= empty($charge["fine"]) ? "no" : "$" . $charge["fine"] ?> fine.</span></span>
+                                        <span style="font-size:14px;"><span style="color:#000000;"><?= $charge["time"]["days"] ?> Days, <?= $charge["time"]["hours"] ?> Hours Imprisonment, <?= empty($charge["fine"]) ? "no" : "$" . $charge["fine"] ?> fine.</span></span>
                                     </p>
                                     <p style="text-align:center;">
                                         &nbsp;

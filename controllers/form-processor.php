@@ -1106,15 +1106,25 @@ COUNTY OF LOS SANTOS[/b]
 		$internalCharges = "";
 		$chargesGroup = "";
 		$action = $_POST["inputApproveBail"];
-		$bond = 0;
 		$defendant = $_POST["inputDefName"];
+
+		$bond = 0;
+		$hours = 0;
+		$days = 0;
+		$fine = 0;
 
 		// Charge List Builder
 		foreach ($pg->processCharges() as $iCharge => $charge) {
 			$internalCharges .="[*]".$charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . "
 ";
 			$bond += $charge["autoBailCost"];
+			$days += $charge["time"]["days"];
+			$hours += $charge["time"]["hours"];
+			$fine += $charge["fine"];
 		}
+
+		$days += floor($hours/24); 
+		$hours = fmod($hours, 24);
 
 
 		$conditionsGroup = '';
@@ -1157,6 +1167,9 @@ COUNTY OF LOS SANTOS[/b]
 			"bailLong"=> $bailLong,
 			"bailMoney"=> $bond,
 			"bailReasons"=> $conditionsGroup,
+			"fine"=> $fine, 
+			"days"=> $days,
+			"hours"=> $hours
 
 		], false);
 
@@ -1164,7 +1177,7 @@ COUNTY OF LOS SANTOS[/b]
 [center][b]CASE INFORMATION:[/b][/center]
 
 [b]Defendant Name:[/b] " . $defendant . "
-[b]Docket Number:[/b] [url=INSERT THE URL TO THE CASE ON GTAW FORUMS HERE]XXX-XX[/url]
+[b]Docket Number:[/b] [url=INSERT THE URL TO THE CASE ON GTAW FORUMS HERE]".$generatedThreadTitle."[/url]
 
 [b]Trial Deputy:[/b] " . $_POST["employeeName"] . " 
 [hr]
