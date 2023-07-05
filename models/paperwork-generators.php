@@ -23,9 +23,9 @@ class PaperworkGenerators
 	}
 
 
-	public function penalCode($server="LS")
+	public function penalCode($server = "LS")
 	{
-		if(strtoupper($server) == "LC")
+		if (strtoupper($server) == "LC")
 			return $this->penal_lc;
 		return $this->penal_ls;
 	}
@@ -38,11 +38,11 @@ class PaperworkGenerators
 		$charges = [];
 		$penal = $this->penalCode($server);
 
-		if(!array_key_exists($prefix, $_POST)) return [];
+		if (!array_key_exists($prefix, $_POST)) return [];
 		$crime = $_POST[$prefix . ""];
 		$class = $_POST[$prefix . "Class"];
 		$offence = $_POST[$prefix . "Offence"];
-		$addition = $_POST[$prefix . "Offence"];
+		$addition = $_POST[$prefix . "Addition"];
 		$substance_cat = $_POST[$prefix . "SubstanceCategory"];
 
 		foreach ($crime as $iCharge => $charge) {
@@ -82,7 +82,9 @@ class PaperworkGenerators
 					break;
 			}
 
-			switch ($addition) {
+			$additionName = "(".$this->getCrimeSentencing($addition[$iCharge]).")";
+
+			switch ($addition[$iCharge]) {
 				case 3:
 					$chargeReduction = 2;
 					break;
@@ -95,29 +97,34 @@ class PaperworkGenerators
 				case 6:
 					$chargeReduction = 4;
 					break;
+
 				default:
+					$additionName = "";
+
+				case 2:
 					$chargeReduction = 1;
+					break;
 			}
 
 			$chargePoints = ceil($penal_charge['points'][$chargeClass] / $chargeReduction);
 			$drugChargeTitle = "";
-			
+
 			if (in_array($penal_charge["id"], $this->chargesDrug)) {
-				
+
 				$chargeSubstanceCategory = $substance_cat[$iCharge];
 				$autoBailCost = $penal_charge['bail']['cost'][$chargeSubstanceCategory];
 				$drugChargeTitle = ' (Category ' . $chargeSubstanceCategory . ')';
 				$charge_fine = $penal_charge['fine'][$chargeSubstanceCategory];
 				$time = $penal_charge["time"][$chargeSubstanceCategory];
-
 			} else {
 				$autoBailCost = $penal_charge['bail']['cost'];
 				$charge_fine = $penal_charge['fine'][$offence[$iCharge] ?? 1];
 				$time = $penal_charge["time"];
 			}
 
+
 			array_push($charges, [
-				"penal_charge"=> $penal_charge,
+				"penal_charge" => $penal_charge,
 				"id" => $penal_charge["id"],
 				"name" => $penal_charge["charge"],
 				"chargeOffence" => $offence[$iCharge] ?? 1,
@@ -126,12 +133,12 @@ class PaperworkGenerators
 				"type" => $chargeType,
 				"reduction" => $chargeReduction,
 				"points" => $chargePoints,
-				"type_full"=> $chargeTypeFull,
+				"type_full" => $chargeTypeFull,
 				"autoBailCost" => $autoBailCost,
 				"drugChargeTitle" => $drugChargeTitle,
-				"fullName"=> $chargeType . $chargeClass . ' ' . $penal_charge["id"] . '. ' . $penal_charge["charge"].$drugChargeTitle ,
-				"fine"=> $charge_fine,
-				"time"=> $time
+				"fullName" => $chargeType . $chargeClass . ' ' . $penal_charge["id"] . '. ' . $penal_charge["charge"] . $drugChargeTitle . " " . $additionName,
+				"fine" => $charge_fine,
+				"time" => $time
 
 			]);
 		}
@@ -754,7 +761,7 @@ class LSDAGenerator extends PaperworkGenerators
 	public function bailReasonsChooser()
 	{
 
-		$bailReasons = file(dirname(__FILE__, 2) .'/resources/bailReasonsList.txt');
+		$bailReasons = file(dirname(__FILE__, 2) . '/resources/bailReasonsList.txt');
 		$bailReasonsCount = 0;
 
 		$groupCondition = '';
@@ -789,7 +796,7 @@ class LSDAGenerator extends PaperworkGenerators
 	public function getBailReason($input)
 	{
 
-		$illegalParkingReasons = file(dirname(__FILE__, 2) .'/resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
+		$illegalParkingReasons = file(dirname(__FILE__, 2) . '/resources/bailReasonsList.txt', FILE_IGNORE_NEW_LINES);
 
 		return $illegalParkingReasons[$input];
 	}

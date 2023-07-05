@@ -45,7 +45,7 @@
 			$c->form('textfield', 'forms', array(
 				'size' => '2',
 				'type' => 'number',
-				'label' => '',
+				'label' => 'Petition Number',
 				'icon' => 'calendar-check',
 				'class' => '',
 				'id' => 'petitionNumber',
@@ -59,8 +59,8 @@
 			$c->form('textfield', 'forms', array(
 				'size' => '2',
 				'type' => 'number',
-				'label' => '',
-				'icon' => 'calendar-check',
+				'label' => 'Number of Exhibits',
+				'icon' => 'box',
 				'class' => '',
 				'id' => 'exhibitsNumber',
 				'name' => 'exhibits',
@@ -104,6 +104,20 @@
 				'hintClass' => ''
 			));
 
+			$c->form('textfield', 'forms', array(
+				'size' => '2',
+				'type' => 'number',
+				'label' => 'PAS Number:',
+				'icon' => 'file',
+				'class' => '',
+				'id' => 'pasID',
+				'name' => 'pasID',
+				'value' => '',
+				'placeholder' => '#####',
+				'tooltip' => 'PAS Number',
+				'attributes' => 'required',
+				'style' => 'text-transform: uppercase;'
+			));
 			?>
 
 		</div>

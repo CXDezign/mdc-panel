@@ -1178,6 +1178,7 @@ COUNTY OF LOS SANTOS[/b]
 
 [b]Defendant Name:[/b] " . $defendant . "
 [b]Docket Number:[/b] [url=INSERT THE URL TO THE CASE ON GTAW FORUMS HERE]".$generatedThreadTitle."[/url]
+[b]Post Arrest Submission:[/b] [url=https://mdc.gta.world/postarrest/view/".$_POST["pasID"]."]ACCESS[/url]
 
 [b]Trial Deputy:[/b] " . $_POST["employeeName"] . " 
 [hr]
