@@ -98,5 +98,14 @@
 		"card": "card-generators-bail",
 		"iconType": "icon",
 		"icon": "key"
+	},
+	"11": {
+		"title": "Petition for Dismissal (SPEEDY TRIAL VIOLATION)",
+		"type": "JSA",
+		"link": "/paperwork-generators/jsa/speedy-trial",
+		"tooltip": "Generate a petition for dismissal form.",
+		"card": "card-generators-bail",
+		"iconType": "icon",
+		"icon": "key"
 	}
 }

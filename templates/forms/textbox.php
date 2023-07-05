@@ -11,7 +11,7 @@
 			rows="<?= $rows ?>"
 			placeholder="<?= $placeholder ?>"
 			<?= $attributes ?>
-			style="min-height: 100px"></textarea>
+			style="min-height: 100px"><?= isset($value)?$value:"" ?></textarea>
 	</div>
 	<small class="form-text text-muted text-center">
 		<?= $hint ?>

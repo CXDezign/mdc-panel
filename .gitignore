@@ -10,3 +10,4 @@ debug2.php
 templates/example-arrest-report
 todo.txt
 db/visitors.json
+.vscode/*

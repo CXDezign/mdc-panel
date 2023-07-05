@@ -1106,32 +1106,25 @@ COUNTY OF LOS SANTOS[/b]
 		$internalCharges = "";
 		$chargesGroup = "";
 		$action = $_POST["inputApproveBail"];
-		$bond = 0;
 		$defendant = $_POST["inputDefName"];
+
+		$bond = 0;
+		$hours = 0;
+		$days = 0;
+		$fine = 0;
 
 		// Charge List Builder
 		foreach ($pg->processCharges() as $iCharge => $charge) {
-
-			$chargeClass = $charge['class'];
-			$chargeType = $charge['type'];
-			$chargeName = $charge['name'];
-			$chargeID = $charge['id'];
-
-			if ($action == 1) {
-				$chargesGroup .= '<li style="color:#555555;font-size:14px;">
-			<strong>' . $charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . $charge["chargeOffence"] . $charge["drugChargeTitle"] . ' - $' . number_format($charge['autoBailCost'] * 10, 0, '.', ',') . ' ($' . number_format($charge['autoBailCost'], 0, '.', ',') . ')</strong>
-			</li>';
-
-				$bond += $charge['autoBailCost'];
-			} else
-				$chargesGroup .= '<li style="color:#555555;font-size:14px;">
-			<strong>' . $charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $chargeName .  ' - ' . ($action == 0 ? "ROR" : "NO BAIL") . '</strong>
-			</li>';
-
-
 			$internalCharges .="[*]".$charge['type'] . $charge['class'] . ' ' . $charge['id'] . '. ' . $charge["name"] . "
 ";
+			$bond += $charge["autoBailCost"];
+			$days += $charge["time"]["days"];
+			$hours += $charge["time"]["hours"];
+			$fine += $charge["fine"];
 		}
+
+		$days += floor($hours/24); 
+		$hours = fmod($hours, 24);
 
 
 		$conditionsGroup = '';
@@ -1145,31 +1138,47 @@ COUNTY OF LOS SANTOS[/b]
 
 		switch ($action) {
 			case 1:
-				$total = '<strong>Bail Total: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond * 10, 0, '.', ',')) . ' | Total for Bond: ' . ($bond == 0 ? "ROR" : "$" . number_format($bond, 0, '.', ','));
+				$total = 'grant bail';
+				$bailLong = "That Defendant shall deposit, with the clerk of the court, \$".$bond." as bail security indicated on his bail bond with the following conditions:";
 				break;
 			case 0:
-				$total = '<strong>Bail Total: ROR</strong>';
+				$total = 'release the defendant on their own recognizance';
+				$bailLong = "That Defendant shall be released without bail on their own recognizance.";
+
 				break;
 			case 2:
-				$total = '<strong>Bail NOT Recommended</strong>';
+				$total = 'commit the defendant into custody';
+				$bailLong = "That Defendant shall not be granted bail and instead be committed to custody for the following reasons:";
+
 				break;
 		}
 
-		$generatedReport = $c->form('templates/generators/lsda/formats/bail', '', [
-			"conditionsGroup" => $conditionsGroup,
-			"defendant" => $defendant,
-			"total" => $total,
-			"chargesGroup" => $chargesGroup,
-			"action" => $action,
+		$generatedThreadTitle = '[' . date("y") . 'GJCR' . str_pad($_POST["petitionNumber"], 5, "0", STR_PAD_LEFT) . '] People of the State of San Andreas v. ' . $_POST["inputDefName"];
+		$defendant = $_POST["inputDefName"];
 
-			"pg" => $pg
+		$generatedReport = $c->form('templates/generators/lsda/formats/arraignment', '', [
+			"charges" => $pg->processCharges(),
+			"defendant" => $defendant,
+			"pg" => $pg,
+			"motion_name" => "<strong>ARRAIGNMENT</strong>",
+			"filler"=> $pg->getRank($_POST["inputRank"]). " ". $_POST["employeeName"],
+			"exhibits"=> $_POST["exhibits"],
+			"bailSummary"=> $total,
+			"bailLong"=> $bailLong,
+			"bailMoney"=> $bond,
+			"bailReasons"=> $conditionsGroup,
+			"fine"=> $fine, 
+			"days"=> $days,
+			"hours"=> $hours
+
 		], false);
 
 		$extra = "[divbox=white]
 [center][b]CASE INFORMATION:[/b][/center]
 
 [b]Defendant Name:[/b] " . $defendant . "
-[b]Docket Number:[/b] [url=INSERT THE URL TO THE CASE ON GTAW FORUMS HERE]XXX-XX[/url]
+[b]Docket Number:[/b] [url=INSERT THE URL TO THE CASE ON GTAW FORUMS HERE]".$generatedThreadTitle."[/url]
+[b]Post Arrest Submission:[/b] [url=https://mdc.gta.world/postarrest/view/".$_POST["pasID"]."]ACCESS[/url]
 
 [b]Trial Deputy:[/b] " . $_POST["employeeName"] . " 
 [hr]
@@ -1189,26 +1198,48 @@ COUNTY OF LOS SANTOS[/b]
 
 	//LSDA Dismissal Petition
 	if ($generatorType == 'DA_DismissalPetition') {
-		$generatedThreadTitle = '[CFXXX-' . date("y") . '] State of San Andreas v. ' . $_POST["inputDefName"];
+		$generatedThreadTitle = '[' . date("y") . 'GJCR' . str_pad($_POST["petitionNumber"], 5, "0", STR_PAD_LEFT) . '] People of the State of San Andreas v. ' . $_POST["inputDefName"];
 		$chargesGroup = "";
 		$defendant = $_POST["inputDefName"];
 
-		// Charge List Builder
-		foreach (($pg->processCharges()) as $charge) {
-
-			$chargesGroup .= '<li style="background-color:#fafafa;color:#555555;font-size:14px;">
-			<strong>' . $charge["type"] . $charge["class"] . ' ' . $charge["id"] . '. ' . $charge["name"] . ' ' . $charge["drugChargeTitle"] . '</strong>
-			</li>';
-		}
-
-
 		$generatedReport = $c->form('templates/generators/lsda/formats/dismissal', '', [
-			"chargesGroup" => $chargesGroup,
+			"charges" => $pg->processCharges(),
 			"defendant" => $defendant,
-			"pg" => $pg
+			"pg" => $pg,
+			"motion_name" => "<strong>MOTION TO DISMISS</strong>",
+			"filler"=> $pg->getRank($_POST["inputRank"]). " ". $_POST["employeeName"]
+
 		], false);
 		$redirectPath = "court";
 	}
+	//LSDA Dismissal Petition - Speedy Trial
+	if ($generatorType == 'JSA_SpeedyTrial') {
+		$generatedThreadTitle = '[' . date("y") . 'GJCR' . str_pad($_POST["petitionNumber"], 5, "0", STR_PAD_LEFT) . '] People of the State of San Andreas v. ' . $_POST["inputDefName"];
+		$chargesGroup = "";
+		$defendant = $_POST["inputDefName"];
+
+		$generatedReport = $c->form('templates/generators/lsda/formats/dismissal', '', [
+			"charges" => $pg->processCharges(),
+			"defendant" => $defendant,
+			"pg" => $pg,
+			"motion_name" => "<strong>MOTION TO DISMISS</strong><br>SPEEDY TRIAL<br>VIOLATION",
+			"filler"=> $_POST["employeeName"]
+
+		], false);
+		$redirectPath = "court";
+	}
+
+
+	if(empty($generatedReport)){
+		if(file_exists(dirname(__FILE__).'/forms-backend/'.$generatorType.'.php'))
+			include (dirname(__FILE__).'/forms-backend/'.$generatorType.'.php');
+
+			//echo dirname(__FILE__).'/forms-backend/'.$generatorType.'.php';
+			//echo $generatedReport;
+		//die;
+	}
+
+
 
 	// Generator Finalisation
 	$_SESSION['generatedReport'] = $generatedReport;
